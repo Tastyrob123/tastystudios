@@ -1,0 +1,767 @@
+{
+ "_": "Festes Antwortbuch der Rezeption im Chat, Carlton-Europe (Robert 19.10.2026 05:10: «feste Demo-Antworten in den Gäste-Chat»). Nur Angaben von der Website (Zimmer, Essen & Trinken, Wellness, Kontakt & Anreise, Gut zu wissen, Hunde, AGB). Antwortet, wenn die KI nicht antwortet: im Server (_gast/gast.py, online als api/gast_antwortbuch.json) und im Browser (assets/js/gast.js). Stichwörter klein, ohne Akzente; s2 zählt doppelt. warten_ms: so lange wartet das Fenster auf die Funktion, dann antwortet es selbst (mit Guthaben höher stellen, die KI braucht einige Sekunden).",
+ "warten_ms": 1200,
+ "oft": [
+  "fruehstueck",
+  "wellness",
+  "anreise"
+ ],
+ "themen": [
+  {
+   "id": "storno",
+   "s2": [
+    "storno",
+    "stornier",
+    "annull",
+    "cancel",
+    "absagen",
+    "no-show",
+    "umbuchen",
+    "rebook",
+    "annul",
+    "cancel my booking",
+    "kostenlos storn",
+    "free of charge"
+   ],
+   "s": [
+    "kosten zuruck",
+    "refund",
+    "rembours",
+    "booking",
+    "buchung",
+    "reservation"
+   ],
+   "q": {
+    "de": "Kann ich kostenlos stornieren?",
+    "en": "Can I cancel free of charge?",
+    "fr": "Puis-je annuler sans frais ?"
+   },
+   "a": {
+    "de": "Ja, bis 48 Stunden vor der Anreise, 14 Uhr Ortszeit, annullieren Sie ohne Kosten. Bei einer späteren Annullation verrechnen wir die erste Nacht, bei einer Nichtanreise den ganzen Aufenthalt. Massgebend ist, wann Ihre Nachricht bei uns eintrifft: +41 33 826 01 60 oder info@carltoneurope.ch.",
+    "en": "Yes, you can cancel free of charge up to 48 hours before arrival, 2 pm local time. For later cancellations we charge the first night, for a no-show the whole stay. What counts is when your message reaches us: +41 33 826 01 60 or info@carltoneurope.ch.",
+    "fr": "Oui, vous pouvez annuler sans frais jusqu’à 48 heures avant l’arrivée, 14 h heure locale. Pour une annulation plus tardive, nous facturons la première nuit, en cas de non-présentation tout le séjour. C’est l’arrivée de votre message qui compte : +41 33 826 01 60 ou info@carltoneurope.ch."
+   }
+  },
+  {
+   "id": "buchen",
+   "maske": true,
+   "s2": [
+    "buchen",
+    "buchung",
+    "book",
+    "booking",
+    "reserver une chambre",
+    "zimmer reservieren",
+    "freie zimmer",
+    "verfugbar",
+    "availability",
+    "available",
+    "disponib"
+   ],
+   "s": [
+    "reservier",
+    "frei ",
+    "libre",
+    "reservation"
+   ],
+   "q": {
+    "de": "Ich möchte ein Zimmer buchen.",
+    "en": "I would like to book a room.",
+    "fr": "Je voudrais réserver une chambre."
+   },
+   "a": {
+    "de": "Sehr gerne. Wählen Sie unten Anreise, Abreise und Zimmer, die Buchungsseite des Hauses zeigt Ihnen freie Zimmer und den Tagespreis. Als Direktbucher haben Sie Check-in ab 14 Uhr garantiert, und am Sonntag dürfen Sie bis 12 Uhr bleiben.",
+    "en": "With pleasure. Choose your arrival, departure and room below, the hotel’s booking page shows free rooms and the rate of the day. Booking direct, you are guaranteed check-in from 2 pm, and on Sundays you may stay until noon.",
+    "fr": "Avec plaisir. Choisissez ci-dessous l’arrivée, le départ et la chambre, la page de réservation de l’hôtel affiche les chambres libres et le tarif du jour. En réservant directement, l’arrivée dès 14 h est garantie, et le dimanche vous pouvez rester jusqu’à midi."
+   }
+  },
+  {
+   "id": "tisch",
+   "s2": [
+    "tisch",
+    "table",
+    "abendessen reserv",
+    "dinner reserv"
+   ],
+   "s": [
+    "reservier",
+    "reserv"
+   ],
+   "q": {
+    "de": "Kann ich einen Tisch reservieren?",
+    "en": "Can I reserve a table?",
+    "fr": "Puis-je réserver une table ?"
+   },
+   "a": {
+    "de": "Gerne halten wir Ihnen einen Tisch im Hansen-Ritschard-Saal frei. Am einfachsten rufen Sie uns an: +41 33 826 01 60.\n- Mittags: 12 bis 13.30 Uhr\n- Abends: 18 bis 21 Uhr, Freitag und Samstag bis 21.30 Uhr",
+    "en": "We will gladly keep a table for you in the Hansen-Ritschard-Saal. The easiest way is to call us: +41 33 826 01 60.\n- Lunch: 12 to 1.30 pm\n- Dinner: 6 to 9 pm, Fridays and Saturdays until 9.30 pm",
+    "fr": "Nous vous réservons volontiers une table dans la salle Hansen-Ritschard. Le plus simple est de nous appeler : +41 33 826 01 60.\n- Midi : 12 h à 13 h 30\n- Soir : 18 h à 21 h, vendredi et samedi jusqu’à 21 h 30"
+   }
+  },
+  {
+   "id": "restaurant",
+   "s2": [
+    "restaurant",
+    "essen",
+    "abendessen",
+    "mittagessen",
+    "kuche",
+    "speisekarte",
+    "menu",
+    "dinner",
+    "lunch",
+    "food",
+    " eat",
+    "manger",
+    "diner",
+    " dejeuner",
+    "fondue",
+    "hansen",
+    "vegetar",
+    "vegan",
+    "la carte"
+   ],
+   "s": [
+    "hunger",
+    "gericht",
+    "dish",
+    "plat",
+    "wein",
+    "wine",
+    "vin ",
+    "bar",
+    "kaminbar"
+   ],
+   "q": {
+    "de": "Wann hat das Restaurant geöffnet?",
+    "en": "When is the restaurant open?",
+    "fr": "Quand le restaurant est-il ouvert ?"
+   },
+   "a": {
+    "de": "In unserem Hotelrestaurant, dem Hansen-Ritschard-Saal, kochen wir regional und saisonal, mit einer grossen Auswahl an Schweizer Weinen. Kleinere Portionen sind möglich, und auf Wunsch gibt es gerne einen Nachschlag.\n- Mittags: 12 bis 13.30 Uhr\n- Abends: 18 bis 21 Uhr\n- Freitag und Samstag: 18 bis 21.30 Uhr\nAn der Kaminbar gibt es tagsüber Kaffee, Hausgemachtes und ein Glas Wein.",
+    "en": "In our hotel restaurant, the Hansen-Ritschard-Saal, we cook regional and seasonal food, with a wide choice of Swiss wines. Smaller portions are possible, and a second helping is gladly served.\n- Lunch: 12 to 1.30 pm\n- Dinner: 6 to 9 pm\n- Fridays and Saturdays: 6 to 9.30 pm\nDuring the day the fireside bar serves coffee, house specialities and a glass of wine.",
+    "fr": "Dans notre restaurant, la salle Hansen-Ritschard, nous cuisinons régional et de saison, avec un grand choix de vins suisses. Des portions plus petites sont possibles, et nous resservons volontiers.\n- Midi : 12 h à 13 h 30\n- Soir : 18 h à 21 h\n- Vendredi et samedi : 18 h à 21 h 30\nLa journée, le bar de la cheminée sert café, créations maison et un verre de vin."
+   }
+  },
+  {
+   "id": "fruehstueck",
+   "s2": [
+    "fruhstuck",
+    "fruehstueck",
+    "breakfast",
+    "petit-dejeuner",
+    "petit dejeuner",
+    "zmorge",
+    "lunchbox",
+    "fruhstucks-box"
+   ],
+   "s": [
+    "morgens",
+    "buffet",
+    "kaffee am morgen"
+   ],
+   "q": {
+    "de": "Bis wann gibt es Frühstück?",
+    "en": "Until when is breakfast served?",
+    "fr": "Jusqu’à quelle heure le petit-déjeuner est-il servi ?"
+   },
+   "a": {
+    "de": "Das Frühstücksbuffet steht im Hansen-Ritschard-Saal für Sie bereit:\n- Montag bis Samstag: 07:00 – 10:00\n- Sonntag und Feiertage: 07:00 – 11:00\nFrühaufsteher und Langschläfer bestellen das 24-Stunden-Frühstück. Für einen Ausflug packen wir Ihnen eine Frühstücks-Box, bitte bis 20 Uhr am Vorabend an der Rezeption bestellen.",
+    "en": "The breakfast buffet is ready for you in the Hansen-Ritschard-Saal:\n- Monday to Saturday: 07:00 – 10:00\n- Sundays and holidays: 07:00 – 11:00\nEarly risers and late sleepers can order our 24-hour breakfast. For an outing we pack you a breakfast box, please order it at reception by 8 pm the evening before.",
+    "fr": "Le buffet du petit-déjeuner vous attend dans la salle Hansen-Ritschard :\n- Du lundi au samedi : 07:00 – 10:00\n- Dimanche et jours fériés : 07:00 – 11:00\nLève-tôt et grasse matinée : commandez notre petit-déjeuner 24 heures sur 24. Pour une excursion, nous préparons une box petit-déjeuner, à commander à la réception la veille avant 20 h."
+   }
+  },
+  {
+   "id": "wellness",
+   "s2": [
+    "sauna",
+    "wellness",
+    " spa",
+    "dampfbad",
+    "steam",
+    "hammam",
+    "kneipp",
+    "dorfli",
+    "baden",
+    "swim",
+    "schwimm",
+    "piscine",
+    "teich",
+    "relax"
+   ],
+   "s": [
+    "heizen",
+    "entspann",
+    "massage",
+    "pool",
+    "heat",
+    "chauff"
+   ],
+   "q": {
+    "de": "Wann ist die Sauna offen?",
+    "en": "When is the sauna open?",
+    "fr": "Quand le sauna est-il ouvert ?"
+   },
+   "a": {
+    "de": "Im Untergeschoss des Carlton wartet das «Oberländer Wellnessdörfli» im Chalet-Stil:\n- Finnische Sauna: 90 Grad\n- Bio-Sauna: 65 Grad\n- Dazu: Dampfbad, Erlebnisduschen, Kneipp-Becken\n- Täglich: 8 bis 22 Uhr\n- Eintritt: CHF 30, ab Superior inklusive\nZum Heizen brauchen wir etwa eine Stunde, bitte reservieren Sie mindestens eine Stunde vorher an der Rezeption. Im Hotelpark lädt zudem der Naturbade- und Schwimmteich ein.",
+    "en": "In the basement of the Carlton, the chalet-style “Oberländer Wellnessdörfli” awaits you:\n- Finnish sauna: 90 degrees\n- Bio sauna: 65 degrees\n- Also: steam bath, adventure showers, Kneipp pool\n- Daily: 8 am to 10 pm\n- Admission: CHF 30, included from Superior\nWe need about an hour to heat up, so please book at least one hour ahead at reception. The natural swimming pond in the hotel park invites you too.",
+    "fr": "Au sous-sol du Carlton vous attend l’« Oberländer Wellnessdörfli » dans le style chalet :\n- Sauna finlandais : 90 degrés\n- Bio-sauna : 65 degrés\n- En plus : bain de vapeur, douches à effets, bassin Kneipp\n- Tous les jours : 8 h à 22 h\n- Entrée : CHF 30, comprise dès Superior\nIl nous faut environ une heure pour chauffer, merci de réserver au moins une heure à l’avance à la réception. L’étang de baignade naturel du parc vous attend aussi."
+   }
+  },
+  {
+   "id": "seminar",
+   "s2": [
+    "seminar",
+    "tagung",
+    "meeting",
+    "konferenz",
+    "conference",
+    "reunion",
+    "workshop",
+    "saal",
+    "sale",
+    "salle",
+    "firmen",
+    "business"
+   ],
+   "s": [
+    "beamer",
+    "projector",
+    "team"
+   ],
+   "q": {
+    "de": "Haben Sie Räume für ein Seminar?",
+    "en": "Do you have rooms for a seminar?",
+    "fr": "Avez-vous des salles pour un séminaire ?"
+   },
+   "a": {
+    "de": "Ja, acht Säle liegen bei uns im Parterre nebeneinander, vom Salon Carlton bis zum Hansen-Ritschard-Saal für bis zu 200 Personen. Seminarpauschalen gibt es ab CHF 75 pro Person, ein ganzer Tag dauert von 8 bis 18 Uhr. Für Ihr Angebot melden Sie sich gerne: +41 33 826 01 60 oder info@carltoneurope.ch.",
+    "en": "Yes, eight halls sit side by side on our ground floor, from the Salon Carlton to the Hansen-Ritschard-Saal for up to 200 people. Seminar packages start at CHF 75 per person, a full day runs from 8 am to 6 pm. For your offer, please get in touch: +41 33 826 01 60 or info@carltoneurope.ch.",
+    "fr": "Oui, huit salles se trouvent côte à côte au rez-de-chaussée, du Salon Carlton à la salle Hansen-Ritschard pour 200 personnes. Les forfaits séminaire commencent à CHF 75 par personne, une journée complète dure de 8 h à 18 h. Pour votre offre : +41 33 826 01 60 ou info@carltoneurope.ch."
+   }
+  },
+  {
+   "id": "feste",
+   "s2": [
+    "hochzeit",
+    "wedding",
+    "mariage",
+    "feier",
+    "fest",
+    "party",
+    "celebrat",
+    "geburtstag feiern",
+    "apero",
+    "jubil",
+    "fete"
+   ],
+   "s": [
+    "gruppe",
+    "group",
+    "groupe",
+    "gaste",
+    "guests"
+   ],
+   "q": {
+    "de": "Können wir bei Ihnen Hochzeit feiern?",
+    "en": "Can we hold our wedding with you?",
+    "fr": "Pouvons-nous fêter notre mariage chez vous ?"
+   },
+   "a": {
+    "de": "Sehr gerne. Vom romantischen Jugendstilsaal bis zum loftartigen Hansen-Ritschard-Saal feiern Sie bei uns Hochzeiten bis 120 Gäste, mit Apéro im Weinkeller oder auf der Dachterrasse. Für Ihr Fest beraten wir Sie gerne persönlich: +41 33 826 01 60 oder info@carltoneurope.ch.",
+    "en": "With pleasure. From the romantic Art Nouveau hall to the loft-style Hansen-Ritschard-Saal, you can celebrate weddings of up to 120 guests, with an aperitif in the wine cellar or on the roof terrace. We will gladly advise you personally: +41 33 826 01 60 or info@carltoneurope.ch.",
+    "fr": "Avec plaisir. De la romantique salle Art nouveau à la salle Hansen-Ritschard façon loft, vous fêtez chez nous des mariages jusqu’à 120 invités, avec apéritif dans la cave ou sur la terrasse du toit. Nous vous conseillons volontiers : +41 33 826 01 60 ou info@carltoneurope.ch."
+   }
+  },
+  {
+   "id": "zimmer",
+   "s2": [
+    "zimmer",
+    "suite",
+    "apartment",
+    "appartement",
+    "room",
+    "chambre",
+    "kategorie",
+    "classic",
+    "superior",
+    "signature",
+    "aarmuhle",
+    "penthouse",
+    "balkon",
+    "balcony"
+   ],
+   "s": [
+    "ubernacht",
+    "nacht",
+    "night",
+    "nuit",
+    "bett",
+    "bed",
+    " lit "
+   ],
+   "q": {
+    "de": "Welche Zimmer gibt es?",
+    "en": "What kind of rooms do you have?",
+    "fr": "Quelles chambres proposez-vous ?"
+   },
+   "a": {
+    "de": "Bei uns ist kein Zimmer wie das andere:\n- Classic: gemütlich und dezent, Einzel- und Doppelzimmer\n- Superior: grösser, teils mit Balkon, Wellnessdörfli inklusive\n- Signature-Suiten: zehn Suiten, jede anders, Wellnessdörfli inklusive\n- Aarmühle-Penthouse-Suite: zwei Schlafzimmer und die wohl schönste Dachterrasse von Interlaken\n- Serviced Apartments: ab CHF 140 pro Nacht, auch für länger\nDen Tagespreis für Ihre Daten zeigt die Buchungsseite. Wenn Sie mögen, wählen wir gleich gemeinsam.",
+    "en": "With us, no two rooms are alike:\n- Classic: cosy and understated, single and double rooms\n- Superior: larger, some with balcony, Wellnessdörfli included\n- Signature Suites: ten suites, each different, Wellnessdörfli included\n- Aarmühle Penthouse Suite: two bedrooms and probably the finest roof terrace in Interlaken\n- Serviced Apartments: from CHF 140 per night, also for longer stays\nThe booking page shows the rate for your dates. If you like, we can choose together right away.",
+    "fr": "Chez nous, aucune chambre ne ressemble à une autre :\n- Classic : chaleureuse et discrète, chambres simples et doubles\n- Superior : plus grande, parfois avec balcon, Wellnessdörfli compris\n- Signature Suites : dix suites, toutes différentes, Wellnessdörfli compris\n- Suite penthouse Aarmühle : deux chambres et sans doute la plus belle terrasse sur le toit d’Interlaken\n- Appartements avec services : dès CHF 140 par nuit, aussi pour un long séjour\nLa page de réservation indique le tarif pour vos dates. Si vous le souhaitez, choisissons ensemble."
+   }
+  },
+  {
+   "id": "checkin",
+   "s2": [
+    "check-in",
+    "checkin",
+    "check in",
+    "check-out",
+    "checkout",
+    "check out",
+    "einchecken",
+    "auschecken",
+    "abreise",
+    "late",
+    "spat ankommen",
+    "spat an",
+    "nach 23",
+    "after 11",
+    "apres 23",
+    "eingang",
+    "arrivee tardive",
+    "late arrival",
+    "gepack",
+    "luggage",
+    "bagage"
+   ],
+   "s": [
+    "ankunft",
+    "ankomme",
+    "arrive",
+    "nachts",
+    "night",
+    "code",
+    "zimmer raumen",
+    "depart"
+   ],
+   "q": {
+    "de": "Ab wann kann ich einchecken?",
+    "en": "When can I check in?",
+    "fr": "À partir de quelle heure puis-je arriver ?"
+   },
+   "a": {
+    "de": "Ihr Zimmer ist ab 14 Uhr für Sie bereit. Am Abreisetag dürfen Sie bis 11 Uhr bleiben, sonntags und an Feiertagen bis 12 Uhr; ein Late Check-out kostet CHF 50 pro Stunde.\n- Haupteingang: 07:00 – 23:00 offen\n- Später: mit dem Code, den Sie beim Check-in erhalten\n- Rezeption: täglich von 7 Uhr bis Mitternacht\nIhr Gepäck bewahren wir vor der Anreise und nach der Abreise gerne sicher auf.",
+    "en": "Your room is ready from 2 pm. On your day of departure you may stay until 11 am, on Sundays and holidays until noon; a late check-out costs CHF 50 per hour.\n- Main entrance: open 07:00 – 23:00\n- Later: with the code you receive at check-in\n- Reception: daily from 7 am to midnight\nWe will gladly store your luggage safely before arrival and after departure.",
+    "fr": "Votre chambre est prête dès 14 h. Le jour du départ, vous pouvez rester jusqu’à 11 h, le dimanche et les jours fériés jusqu’à midi ; un départ tardif coûte CHF 50 par heure.\n- Entrée principale : ouverte de 07:00 à 23:00\n- Plus tard : avec le code reçu à l’arrivée\n- Réception : tous les jours de 7 h à minuit\nNous gardons volontiers vos bagages en lieu sûr avant l’arrivée et après le départ."
+   }
+  },
+  {
+   "id": "anreise",
+   "s2": [
+    "anreise",
+    "anfahrt",
+    "bahn",
+    "zug",
+    "train",
+    "bahnhof",
+    "station",
+    "gare",
+    "flughafen",
+    "airport",
+    "aeroport",
+    "taxi",
+    "shuttle",
+    "transfer",
+    "adresse",
+    "address",
+    "wie komme",
+    "how do i get",
+    "comment venir",
+    "weg zum hotel"
+   ],
+   "s": [
+    "auto",
+    "car ",
+    "voiture",
+    "abholen",
+    "pick up",
+    "fahren"
+   ],
+   "q": {
+    "de": "Wie komme ich zum Hotel?",
+    "en": "How do I get to the hotel?",
+    "fr": "Comment venir à l’hôtel ?"
+   },
+   "a": {
+    "de": "Sie finden uns am Höheweg 92–94 in 3800 Interlaken.\n- Bahnhof Interlaken Ost: 200 Meter\n- Schiff- und Fährterminal: 350 Meter\n- Autobahnausfahrt Interlaken Ost: 800 Meter\nGegen Gebühr holen wir Sie und Ihr Gepäck am Bahnhof ab, und gerne bestellt Ihnen die Rezeption ein Taxi. Mit dem Gepäck-Special der SBB wartet Ihr Koffer schon im Zimmer.",
+    "en": "You will find us at Höheweg 92–94, 3800 Interlaken.\n- Interlaken Ost station: 200 metres\n- Boat and ferry terminal: 350 metres\n- Motorway exit Interlaken Ost: 800 metres\nFor a fee we pick you and your luggage up at the station, and reception will gladly order you a taxi. With the SBB luggage service, your suitcase is already waiting in your room.",
+    "fr": "Vous nous trouvez au Höheweg 92–94, 3800 Interlaken.\n- Gare d’Interlaken Ost : 200 mètres\n- Débarcadère des bateaux : 350 mètres\n- Sortie d’autoroute Interlaken Ost : 800 mètres\nMoyennant un supplément, nous venons vous chercher à la gare avec vos bagages, et la réception vous commande volontiers un taxi. Avec le service bagages des CFF, votre valise vous attend déjà dans la chambre."
+   }
+  },
+  {
+   "id": "parken",
+   "s2": [
+    "parkplatz",
+    "parken",
+    "parking",
+    "garage",
+    "einstellhalle",
+    "parkservice",
+    "e-auto",
+    "ladestation",
+    "charging",
+    "recharge",
+    "stationnement",
+    "place de parc",
+    " parc "
+   ],
+   "s": [
+    "auto",
+    "car ",
+    "voiture"
+   ],
+   "q": {
+    "de": "Was kostet ein Parkplatz?",
+    "en": "How much is parking?",
+    "fr": "Combien coûte une place de parc ?"
+   },
+   "a": {
+    "de": "Für Ihr Auto gibt es zwei Möglichkeiten:\n- Aussenparkplatz: CHF 15 pro Nacht, nicht reservierbar\n- Einstellhalle: CHF 25 pro Nacht, reservierbar\nAuf Wunsch parkieren wir Ihr Auto für Sie, melden Sie den Parkservice einfach an der Rezeption an. Ihr E-Auto laden Sie an zwei MOVE-Stationen mit bis zu 22 kW oder an unserer eigenen mit 11 kW, gebührenpflichtig.",
+    "en": "There are two options for your car:\n- Outdoor space: CHF 15 per night, cannot be reserved\n- Indoor garage: CHF 25 per night, can be reserved\nOn request we park your car for you, just let reception know. You can charge your electric car at two MOVE stations with up to 22 kW or at our own with 11 kW, for a fee.",
+    "fr": "Deux possibilités pour votre voiture :\n- Place extérieure : CHF 15 par nuit, sans réservation\n- Garage : CHF 25 par nuit, réservable\nSur demande, nous garons votre voiture pour vous, annoncez simplement le service à la réception. Votre voiture électrique se recharge à deux bornes MOVE jusqu’à 22 kW ou à notre propre borne de 11 kW, payant."
+   }
+  },
+  {
+   "id": "hund",
+   "s2": [
+    "hund",
+    "hunde",
+    "dog",
+    "chien",
+    "haustier",
+    "pet",
+    "animal",
+    "aris"
+   ],
+   "s": [
+    "tier",
+    "napf",
+    "leine"
+   ],
+   "q": {
+    "de": "Kann ich mit meinem Hund kommen?",
+    "en": "Can I bring my dog?",
+    "fr": "Puis-je venir avec mon chien ?"
+   },
+   "a": {
+    "de": "Sehr gerne, wir sind eines der ersten Erwachsenen- und Hundehotels der Schweiz, und Aris, unser Hotelhund, freut sich schon.\n- Erste Nacht: CHF 25\n- Jede weitere Nacht: CHF 10\n- Superior und Signature: kostenlos\nAuf dem Zimmer warten Hundebett, Frotteetuch, Napf und Biskuits, draussen ein eingezäunter Bereich mit Dusche. Ihr Hund darf mit ins Restaurant und fährt gratis auf den Harder Kulm.",
+    "en": "With pleasure, we are one of the first adults and dog hotels in Switzerland, and Aris, our hotel dog, is looking forward to meeting yours.\n- First night: CHF 25\n- Each further night: CHF 10\n- Superior and Signature: free\nIn your room you will find a dog bed, towel, bowl and biscuits, outside a fenced area with a shower. Your dog may join you in the restaurant and rides up the Harder Kulm for free.",
+    "fr": "Avec plaisir, nous sommes l’un des premiers hôtels pour adultes et chiens de Suisse, et Aris, notre chien d’hôtel, se réjouit déjà.\n- Première nuit : CHF 25\n- Chaque nuit suivante : CHF 10\n- Superior et Signature : gratuit\nDans la chambre : panier, serviette, gamelle et biscuits ; dehors, un espace clôturé avec douche. Votre chien peut vous accompagner au restaurant et monte gratuitement au Harder Kulm."
+   }
+  },
+  {
+   "id": "kinder",
+   "s2": [
+    "kinder",
+    "child",
+    "children",
+    "kids",
+    "enfant",
+    "familie",
+    "family",
+    "famille",
+    "baby",
+    "bebe",
+    "teen",
+    "jugend",
+    "ab 16",
+    "adults",
+    "erwachsen",
+    " age ",
+    " alter ",
+    " kind"
+   ],
+   "s": [
+    "sohn",
+    "tochter",
+    "son ",
+    "daughter",
+    "fille",
+    "fils"
+   ],
+   "q": {
+    "de": "Dürfen Kinder mitkommen?",
+    "en": "Are children welcome?",
+    "fr": "Les enfants sont-ils les bienvenus ?"
+   },
+   "a": {
+    "de": "Das Carlton-Europe ist ein Vintage Erwachsenenhotel: Seit Januar 2019 begrüssen wir Hotelgäste ab 16 Jahren. So bleibt es im ganzen Haus ruhig, vom Frühstück bis in die Kaminbar. Mit Jugendlichen ab 16 sind Sie herzlich willkommen.",
+    "en": "The Carlton-Europe is a vintage adults hotel: since January 2019 we welcome hotel guests aged 16 and over. That keeps the whole house calm, from breakfast to the fireside bar. Teenagers from 16 are warmly welcome.",
+    "fr": "Le Carlton-Europe est un hôtel vintage pour adultes : depuis janvier 2019, nous accueillons les clients dès 16 ans. Ainsi, la maison reste calme, du petit-déjeuner au bar de la cheminée. Les adolescents dès 16 ans sont les bienvenus."
+   }
+  },
+  {
+   "id": "ausfluege",
+   "s2": [
+    "wetter",
+    "weather",
+    "meteo",
+    "ausflug",
+    "ausfluge",
+    "unternehm",
+    "wandern",
+    "hike",
+    "hiking",
+    "randonnee",
+    "excursion",
+    "outing",
+    "aktivitat",
+    "activit",
+    "harder",
+    "jungfrau",
+    "schiff",
+    "boat",
+    "bateau",
+    "regen",
+    "rain",
+    "pluie",
+    "gastekarte",
+    "guest card",
+    "carte d'hote",
+    "sehenswurdig",
+    "things to do",
+    "que faire",
+    "bike",
+    "velo",
+    "spazier",
+    "walk",
+    "promenade"
+   ],
+   "s": [
+    "heute",
+    "today",
+    "aujourd",
+    "morgen",
+    "tomorrow",
+    "demain",
+    "berg",
+    "mountain",
+    "montagne",
+    " see ",
+    " lake ",
+    " lac "
+   ],
+   "q": {
+    "de": "Was können wir heute unternehmen?",
+    "en": "What can we do today?",
+    "fr": "Que pouvons-nous faire aujourd’hui ?"
+   },
+   "a": {
+    "de": "Ein paar Ideen ab unserer Haustür:\n- Bei Sonne: mit der Harderbahn auf unseren Hausberg Harder Kulm, die Talstation liegt gleich in der Nähe\n- Auf dem Wasser: das Schiff auf dem Brienzersee, der Steg ist 350 Meter entfernt\n- Hoch hinaus: Jungfraujoch, Schynige Platte, Grindelwald-First, Mürren und Schilthorn\n- Bei Regen: das Wellnessdörfli, täglich 8 bis 22 Uhr\nMit der Gästekarte Interlaken fahren Sie in der Region kostenlos mit dem öffentlichen Verkehr. Wie das Wetter heute wird, sagt Ihnen die Rezeption gerne.",
+    "en": "A few ideas from our front door:\n- When it’s sunny: take the Harderbahn up to our local mountain, Harder Kulm, the valley station is close by\n- On the water: a boat trip on Lake Brienz, the pier is 350 metres away\n- Up high: Jungfraujoch, Schynige Platte, Grindelwald-First, Mürren and Schilthorn\n- When it rains: the Wellnessdörfli, daily 8 am to 10 pm\nWith the Interlaken guest card, public transport in the region is free. Reception will gladly tell you what the weather has in store today.",
+    "fr": "Quelques idées depuis notre porte :\n- Par beau temps : le funiculaire du Harder jusqu’au Harder Kulm, la station de départ est tout près\n- Sur l’eau : le bateau sur le lac de Brienz, le débarcadère est à 350 mètres\n- En altitude : Jungfraujoch, Schynige Platte, Grindelwald-First, Mürren et Schilthorn\n- Par temps de pluie : le Wellnessdörfli, tous les jours de 8 h à 22 h\nAvec la carte d’hôte d’Interlaken, les transports publics de la région sont gratuits. La réception vous dit volontiers quel temps il fera aujourd’hui."
+   }
+  },
+  {
+   "id": "service",
+   "s2": [
+    "zimmerservice",
+    "roomservice",
+    "room service",
+    "service en chambre",
+    "aufs zimmer",
+    "wasche",
+    "laundry",
+    "linge",
+    "waschen",
+    "waschmaschine",
+    "trockner",
+    "bademantel",
+    "bathrobe",
+    "peignoir",
+    "kissen",
+    "pillow",
+    "oreiller"
+   ],
+   "s": [
+    "bestellen",
+    "order",
+    "commander",
+    "decke",
+    "blanket"
+   ],
+   "q": {
+    "de": "Zimmerservice bestellen",
+    "en": "Order room service",
+    "fr": "Commander le service en chambre"
+   },
+   "a": {
+    "de": "Gerne bringen wir Ihnen etwas aufs Zimmer:\n- Zimmerservice: 07:00 – 22:00, CHF 5 für Getränke, CHF 10 für Speisen pro Bestellung\n- Wäsche: bis 09:00 an der Rezeption abgeben, zurück innert 24 oder 48 Stunden\n- Selbst waschen: Waschmaschine und Trockner im Ski- und Bike-Raum, CHF 1 pro 10 Minuten\n- Kissen und Decken: Dinkel, Hirse oder anatomisch, bis 22 Uhr organisiert\nRufen Sie einfach die Rezeption an.",
+    "en": "We are happy to bring something to your room:\n- Room service: 07:00 – 22:00, CHF 5 for drinks, CHF 10 for food per order\n- Laundry: hand it in at reception by 09:00, back within 24 or 48 hours\n- Wash it yourself: washing machine and dryer in the ski and bike room, CHF 1 per 10 minutes\n- Pillows and duvets: spelt, millet or anatomical, arranged until 10 pm\nJust call reception.",
+    "fr": "Nous vous apportons volontiers quelque chose en chambre :\n- Service en chambre : 07:00 – 22:00, CHF 5 pour les boissons, CHF 10 pour les plats par commande\n- Linge : à déposer à la réception avant 09:00, retour en 24 ou 48 heures\n- Laver soi-même : lave-linge et séchoir dans le local ski et vélo, CHF 1 par 10 minutes\n- Oreillers et duvets : épeautre, millet ou anatomiques, jusqu’à 22 h\nAppelez simplement la réception."
+   }
+  },
+  {
+   "id": "gutschein",
+   "s2": [
+    "gutschein",
+    "voucher",
+    "gift",
+    "geschenk",
+    "cadeau",
+    "bon cadeau",
+    "schenken",
+    "offrir"
+   ],
+   "s": [
+    "present",
+    "geburtstag",
+    "birthday",
+    "anniversaire"
+   ],
+   "q": {
+    "de": "Kann ich einen Gutschein schenken?",
+    "en": "Can I give a gift voucher?",
+    "fr": "Puis-je offrir un bon cadeau ?"
+   },
+   "a": {
+    "de": "Ein schönes Geschenk. Wir stellen Ihnen gerne einen Gutschein aus:\n- Übernachtung im Doppelzimmer\n- Übernachtung in einer Signature-Suite\n- Nacht in der Aarmühle-Suite mit Dachterrasse\n- Wertgutschein für alle unsere Leistungen\nBestellen können Sie ihn über «Gutschein schenken» auf der Website oder an der Rezeption.",
+    "en": "A lovely present. We are happy to issue a voucher:\n- A night in a double room\n- A night in a Signature Suite\n- A night in the Aarmühle Suite with roof terrace\n- A value voucher for all our services\nYou can order it via “Give a voucher” on the website or at reception.",
+    "fr": "Un beau cadeau. Nous établissons volontiers un bon :\n- Nuit en chambre double\n- Nuit dans une Signature Suite\n- Nuit dans la suite Aarmühle avec terrasse\n- Bon de valeur pour toutes nos prestations\nVous pouvez le commander via « Offrir un bon » sur le site ou à la réception."
+   }
+  },
+  {
+   "id": "wlan",
+   "s2": [
+    "wlan",
+    "wifi",
+    "wi-fi",
+    "internet",
+    "passwort",
+    "password",
+    "mot de passe",
+    "netz"
+   ],
+   "s": [
+    "online",
+    "laptop"
+   ],
+   "q": {
+    "de": "Gibt es WLAN?",
+    "en": "Is there Wi-Fi?",
+    "fr": "Y a-t-il le Wi-Fi ?"
+   },
+   "a": {
+    "de": "Ja, im ganzen Haus surfen Sie kostenlos im WLAN. Die Zugangsdaten stehen auf dem Informationsblatt, das Sie beim Check-in erhalten.",
+    "en": "Yes, Wi-Fi is free throughout the hotel. You will find the login on the information sheet you receive at check-in.",
+    "fr": "Oui, le Wi-Fi est gratuit dans tout l’hôtel. Les identifiants figurent sur la fiche d’information remise à l’arrivée."
+   }
+  },
+  {
+   "id": "barrierefrei",
+   "s2": [
+    "barrierefrei",
+    "rollstuhl",
+    "wheelchair",
+    "fauteuil roulant",
+    "accessib",
+    "behinder",
+    "disab",
+    "handicap",
+    "gehhilfe",
+    "rollator"
+   ],
+   "s": [
+    "treppe",
+    "stairs",
+    "escalier",
+    "lift",
+    "aufzug",
+    "elevator",
+    "ascenseur"
+   ],
+   "q": {
+    "de": "Ist das Hotel barrierefrei?",
+    "en": "Is the hotel accessible?",
+    "fr": "L’hôtel est-il accessible ?"
+   },
+   "a": {
+    "de": "Das Haus stammt aus dem Jahr 1898, und jedes Zimmer ist anders. Damit Zimmer und Wege genau zu Ihnen passen, beraten wir Sie gerne persönlich: +41 33 826 01 60 oder info@carltoneurope.ch.",
+    "en": "The house dates from 1898, and every room is different. So that room and routes suit you exactly, we will gladly advise you personally: +41 33 826 01 60 or info@carltoneurope.ch.",
+    "fr": "La maison date de 1898, et chaque chambre est différente. Pour que chambre et parcours vous conviennent, nous vous conseillons volontiers personnellement : +41 33 826 01 60 ou info@carltoneurope.ch."
+   }
+  },
+  {
+   "id": "kontakt",
+   "s2": [
+    "kontakt",
+    "contact",
+    "telefon",
+    "phone",
+    "telephone",
+    "anrufen",
+    "call",
+    "appeler",
+    "mail",
+    "e-mail",
+    "rezeption",
+    "reception",
+    "erreich",
+    "offnungszeit",
+    "opening hours",
+    "horaires"
+   ],
+   "s": [
+    "sprechen",
+    "speak",
+    "parler"
+   ],
+   "q": {
+    "de": "Wie erreiche ich die Rezeption?",
+    "en": "How do I reach reception?",
+    "fr": "Comment joindre la réception ?"
+   },
+   "a": {
+    "de": "Unsere Rezeption ist 365 Tage im Jahr für Sie da, von 7 Uhr morgens bis Mitternacht.\n- Telefon: +41 33 826 01 60\n- E-Mail: info@carltoneurope.ch\n- Adresse: Höheweg 92–94, 3800 Interlaken",
+    "en": "Our reception is there for you 365 days a year, from 7 am to midnight.\n- Phone: +41 33 826 01 60\n- Email: info@carltoneurope.ch\n- Address: Höheweg 92–94, 3800 Interlaken",
+    "fr": "Notre réception est là pour vous 365 jours par an, de 7 h à minuit.\n- Téléphone : +41 33 826 01 60\n- E-mail : info@carltoneurope.ch\n- Adresse : Höheweg 92–94, 3800 Interlaken"
+   }
+  },
+  {
+   "id": "sprachen",
+   "s2": [
+    "sprache",
+    "sprachen",
+    "language",
+    "langue",
+    "english",
+    "englisch",
+    "anglais",
+    "francais",
+    "franzosisch",
+    "french",
+    "deutsch",
+    "german",
+    "allemand"
+   ],
+   "s": [],
+   "q": {
+    "de": "In welchen Sprachen kann ich fragen?",
+    "en": "Which languages can I use?",
+    "fr": "Dans quelles langues puis-je écrire ?"
+   },
+   "a": {
+    "de": "Fragen Sie ruhig auf Deutsch, Englisch oder Französisch, ich antworte in Ihrer Sprache. Auch die Website des Hauses gibt es in diesen drei Sprachen.",
+    "en": "Feel free to ask in German, English or French, I will reply in your language. The hotel’s website is available in these three languages too.",
+    "fr": "Écrivez en allemand, en anglais ou en français, je réponds dans votre langue. Le site de l’hôtel existe aussi dans ces trois langues."
+   }
+  }
+ ],
+ "ohne": {
+  "de": "Da gebe ich Ihre Frage am besten an unser Team an der Rezeption weiter, es hilft Ihnen persönlich: +41 33 826 01 60 oder info@carltoneurope.ch, täglich von 7 Uhr bis Mitternacht. Oft gefragt wird auch:",
+  "en": "That question is best answered by our reception team in person: +41 33 826 01 60 or info@carltoneurope.ch, daily from 7 am to midnight. Guests often ask about:",
+  "fr": "Notre équipe de la réception vous répond volontiers en personne : +41 33 826 01 60 ou info@carltoneurope.ch, tous les jours de 7 h à minuit. On nous demande souvent :"
+ }
+}

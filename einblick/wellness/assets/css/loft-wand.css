@@ -1,0 +1,27 @@
+/* Wellness & Spa · Startseite, Loft-Suite «Text in der Mitte der Wand» (Robert 01.11.2026, Fassung 5 aus _varianten/loft-start-15, links die Kerzen).
+   Sieben Bilder als Wand mit schmalen Fugen, in der Mitte der Text mittig gesetzt. Bewegung: die Wand kommt als Ganzes herauf, die Fotos setzen sich
+   in ihren Rahmen (1,12 → 1), ausgelöst in loft-wand.js, sobald die Fotos geladen sind. Nur transform, nie eingeblendet. */
+.lsx{--fu:8px}
+.lsx .lf-marke{margin:0}
+.lsx .rt{font-size:clamp(42px,4.4vw,76px);text-wrap:balance;margin-top:clamp(18px,2vw,28px)}
+.lsx .rl{font-size:clamp(16px,1.2vw,18px);margin-top:clamp(16px,1.6vw,22px);max-width:42ch}
+.lsx .lf-etagen{margin-top:clamp(20px,2vw,28px)}
+.lsx .lf-zeile{margin:18px 0 0}
+.lsx .r-knoepfe{margin-top:clamp(22px,2.4vw,34px)}
+:where(.lsx) figure{min-height:0}
+.lsx figure img{transform:scale(1.12);transition:transform 2.4s var(--e1) calc(var(--n,0)*.12s)}
+.lsx.ls-los figure img{transform:none}
+.l5{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:clamp(150px,22vh,240px) auto clamp(150px,22vh,240px);
+ grid-template-areas:"a b b c" "a t t c" "e f f g";gap:var(--fu);transform:translate3d(0,100px,0);transition:transform 1.6s var(--e1)}
+.ls05.ls-los .l5{transform:none}
+.l5-a{grid-area:a}.l5-b{grid-area:b}.l5-c{grid-area:c}.l5-e{grid-area:e}.l5-f{grid-area:f}.l5-g{grid-area:g}
+.l5-t{grid-area:t;text-align:center;padding:clamp(34px,3.6vw,60px) clamp(16px,2vw,36px);display:flex;flex-direction:column;align-items:center}
+.l5-t .rl{margin-left:auto;margin-right:auto}
+.l5-t .lf-etagen{width:100%;text-align:center}
+@media (prefers-reduced-motion:reduce){.lsx *{transform:none!important;transition:none!important}}
+/* Handy und schmale Fenster: Text zuerst, dann die Bilder in zwei Spalten, die beiden breiten Bilder über die ganze Breite */
+@media (max-width:900px){
+ .l5{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-template-areas:"t t" "b b" "a c" "f f" "e g"}
+ .l5>figure{aspect-ratio:4/5}.l5-b,.l5-f{aspect-ratio:16/10!important}.l5-t{padding:0 0 24px}
+ .lsx .lf-etagen{grid-template-columns:1fr}
+}

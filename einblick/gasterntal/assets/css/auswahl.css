@@ -1,0 +1,61 @@
+/* Berghotel Gasterntal — jede Auswahl im Stil des Hauses (Tasty Studios 13.10.2026). Verhalten: assets/js/auswahl.js.
+   Karte wie der Kalender der Buchungsleiste (.kal in main.css): Schiefergrau, helle Holzlinie, Titel-Schrift, gewählt = helle Taste. Keine Punkte. */
+.hw{position:relative;display:block;width:100%;min-width:0}
+.hw-nativ{position:absolute!important;inset:0;width:100%!important;height:100%!important;opacity:0!important;pointer-events:none!important}
+.hw-nativ::-webkit-calendar-picker-indicator{display:none}
+.hw-knopf{-webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-width:0;min-height:1.5em;margin:0;padding:0;border:0;border-radius:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-align:left;cursor:pointer;line-height:1.2;-webkit-tap-highlight-color:transparent}
+.hw-knopf .hw-wert{font:inherit;font-weight:inherit;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hw-knopf svg{flex:none;width:15px;height:15px;fill:none;stroke:var(--holz);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .45s var(--e1)}
+.hell .dn-rechner .hw-knopf svg{stroke:var(--tanne)}
+.hw-knopf[aria-expanded="true"] svg{transform:rotate(180deg)}
+.hw-knopf.hw-leer .hw-wert{opacity:.62}
+.hw-knopf:focus-visible{outline:0;box-shadow:0 2px 0 var(--holz)}
+/* Felder, die den Stil ihres Formulars erben: Schrift des Feldes (dn-sel: Titel-Schrift, sonst Fliesstext) */
+.dn-sel .hw-knopf{font:600 1.18rem/1.2 var(--titel)}
+.dn-karte-dunkel :not(.dn-sel)>.hw .hw-knopf,.dn-gs-form :not(.dn-sel)>.hw .hw-knopf{font:500 1.04rem var(--sans)}
+
+.hw-karte{position:fixed;z-index:2147483000;box-sizing:border-box;margin:0;color:var(--papier);text-align:left;border-radius:26px;
+  background:linear-gradient(180deg,#434b50,#22272a);box-shadow:inset 0 0 0 1px rgba(214,187,150,.36),inset 0 1px 0 rgba(255,255,255,.16),0 3px 0 #0d1011,0 40px 60px -28px #000;
+  opacity:0;transform:translateY(-10px) scale(.97);transform-origin:50% 0;transition:opacity .22s var(--e2),transform .42s var(--e1);outline:0}
+.hw-karte.hw--oben{transform-origin:50% 100%;transform:translateY(10px) scale(.97)}
+.hw-karte.hw--auf{opacity:1;transform:none}
+
+/* Listen */
+.hw-liste{max-height:min(54vh,400px);max-width:calc(100vw - 16px);overflow:auto;overscroll-behavior:contain;padding:8px;list-style:none;scrollbar-width:thin}
+.hw-liste li{position:relative;padding:11px 16px;border-radius:16px;font:600 1.14rem/1.2 var(--titel);color:var(--papier);cursor:pointer;transition:background-color .2s,color .2s}
+.hw-liste li+li{margin-top:2px}
+.hw-liste li.hw-hier{background-color:rgba(var(--lh),.12)}
+.hw-liste li[aria-selected="true"]{color:var(--tinte);background:linear-gradient(#fdfefe,#dfe4e5 55%,#c7cfd3);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 #9da2a3,0 8px 14px -8px #000}
+.hw-liste li[aria-disabled="true"]{opacity:.38;cursor:default}
+
+/* Kalender */
+.hw-kal{width:min(352px,calc(100vw - 16px));padding:18px 18px 14px}
+.hw-kal__kopf{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.hw-kal__kopf b{display:block;font-family:var(--titel);font-weight:600;font-size:1.45rem;line-height:1;white-space:nowrap}
+.hw-kal__kopf small,.hw-zeit__kopf small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--holz);margin-bottom:6px}
+.hw-kal__pf{display:flex;gap:8px}
+.hw-kal__pf button{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--tinte);background:linear-gradient(#f7f9f9,#c7cfd3);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 #9da2a3,0 8px 12px -8px #000;transition:transform .4s var(--e2)}
+.hw-kal__pf button:hover{transform:translateY(-1px)}.hw-kal__pf button:active{transform:translateY(1px)}
+.hw-kal__pf svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.7}
+.hw-kal__woche,.hw-kal__raster{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.hw-kal__woche span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--holz);text-align:center;padding-bottom:8px}
+.hw-kal__raster{row-gap:3px;padding:8px 0 4px;border-top:1px solid rgba(var(--lh),.14)}
+.hw-tag{position:relative;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;font-family:var(--titel);font-weight:600;font-size:1.12rem;color:var(--papier);transition:background-color .25s}
+.hw-tag:hover,.hw-tag:focus-visible{outline:0;background-color:rgba(var(--lh),.14)}
+.hw-tag.hw-heute{box-shadow:inset 0 0 0 1px rgba(214,187,150,.7)}
+.hw-tag[disabled]{color:rgba(var(--lh),.24);pointer-events:none}
+.hw-tag.hw-zu{text-decoration:line-through;text-decoration-color:rgba(197,0,15,.8)}
+.hw-tag[aria-pressed="true"]{color:var(--tinte);background:linear-gradient(#fdfefe,#dfe4e5 55%,#c7cfd3);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 #9da2a3,0 8px 14px -8px #000}
+.hw-kal__fuss{margin-top:8px;padding-top:11px;border-top:1px solid rgba(var(--lh),.14);font-size:.86rem;line-height:1.4;opacity:.82}
+
+/* Uhrzeit */
+.hw-zeit{padding:16px 14px 12px}
+.hw-zeit__kopf{padding:0 6px}
+.hw-zeit__sp{display:flex;align-items:stretch;justify-content:center;gap:6px;padding-top:8px;border-top:1px solid rgba(var(--lh),.14)}
+.hw-zeit__sp>i{align-self:center;font:600 1.4rem/1 var(--titel);font-style:normal;color:var(--holz)}
+.hw-zeit__spalte{display:flex;flex-direction:column;gap:2px;width:76px;max-height:232px;overflow:auto;overscroll-behavior:contain;padding:2px;scrollbar-width:thin}
+.hw-z{flex:none;padding:9px 0;border-radius:14px;font:600 1.2rem/1 var(--titel);color:var(--papier);text-align:center;transition:background-color .2s}
+.hw-z:hover,.hw-z:focus-visible{outline:0;background-color:rgba(var(--lh),.14)}
+.hw-z[aria-selected="true"]{color:var(--tinte);background:linear-gradient(#fdfefe,#dfe4e5 55%,#c7cfd3);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 #9da2a3}
+@media (prefers-reduced-motion:reduce){.hw-karte{transition:none}}
+.still .hw-karte{transition:none}

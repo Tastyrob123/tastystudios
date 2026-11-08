@@ -1,0 +1,93 @@
+[
+ {
+  "k": "nacht",
+  "n": "Nacht",
+  "h": "#10151D",
+  "rgb": [
+   16,
+   21,
+   29
+  ],
+  "r": "Grundton: das Wasser nach Einbruch der Dunkelheit",
+  "g": "nacht",
+  "woher": "haus.py MARKE"
+ },
+ {
+  "k": "nacht-tief",
+  "n": "Nacht tief",
+  "h": "#0B0F15",
+  "rgb": [
+   11,
+   15,
+   21
+  ],
+  "r": "die tiefste Fläche, Schatten",
+  "g": "nacht",
+  "woher": "Kleid der Werkzeuge"
+ },
+ {
+  "k": "leinen",
+  "n": "Leinen",
+  "h": "#EFE7DA",
+  "rgb": [
+   239,
+   231,
+   218
+  ],
+  "r": "helle Flächen: die Bettwäsche",
+  "g": "leinen",
+  "woher": "haus.py MARKE"
+ },
+ {
+  "k": "licht",
+  "n": "Licht",
+  "h": "#E2AE68",
+  "rgb": [
+   226,
+   174,
+   104
+  ],
+  "r": "nur als Linie und Knauf: die Fenster am Abend",
+  "g": "licht",
+  "woher": "haus.py MARKE"
+ },
+ {
+  "k": "messing",
+  "n": "Messing",
+  "h": "#A8844F",
+  "rgb": [
+   168,
+   132,
+   79
+  ],
+  "r": "Linien, kleine Schrift: Lampen und Schlüssel",
+  "g": "messing",
+  "woher": "haus.py MARKE"
+ },
+ {
+  "k": "backstein",
+  "n": "Backstein",
+  "h": "#8C4B34",
+  "rgb": [
+   140,
+   75,
+   52
+  ],
+  "r": "sparsam: die Fassade",
+  "g": "backstein",
+  "woher": "haus.py MARKE"
+ },
+ {
+  "k": "flaschengrün",
+  "n": "Flaschengrün",
+  "h": "#16221D",
+  "rgb": [
+   22,
+   34,
+   29
+  ],
+  "r": "nur die Tafel: Fliesen und Wände des Gastraums",
+  "g": "flaschengrün",
+  "woher": "haus.py MARKE"
+ }
+]

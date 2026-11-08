@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<script src="../_kleid/demo.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Besucher · Maloja</title><!-- der Name des Werkzeugs kommt aus dem Kleid (WO_HAUS.namen), registre.js setzt ihn -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#201812">
+<script src="../_kleid/haus.js"></script>
+<script src="oberflaeche/kleid/ihrhaus.js"></script>
+<script src="auftakt.js"></script>
+<link rel="icon" href="../_haus/marke/zeichen.svg" type="image/svg+xml">
+<link rel="preload" href="../_haus/fonts/TenorSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../_haus/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="../_haus/img/m-aussen-1400.webp" fetchpriority="high">
+<link rel="stylesheet" href="../_kleid/werkzeug.css">
+<link rel="stylesheet" href="oberflaeche/grund.css">
+<link rel="stylesheet" href="oberflaeche/rahmen-buehne.css">
+<link rel="stylesheet" href="oberflaeche/kleid/ihrhaus.css">
+<!-- registre.css nach dem Paket: grund.css setzt im Raum (.wo-app :where(p, ul, dl …)) Abstände auf null, die Inhalte des Werkzeugs brauchen ihre eigenen -->
+<link rel="stylesheet" href="registre.css">
+<link rel="stylesheet" href="haus.css">
+<script src="/besuch.js?v=3c4c57a56e" defer></script><script src="/verweil.js?v=5881fd455d" defer></script></head>
+<body class="rg wo-app">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="zeichen"></g></defs></svg>
+<header class="wo-kopf" id="kopf"></header>
+<aside class="wo-rand" id="rand" aria-label="Bereiche"></aside>
+<main class="wo-raum" id="haupt">
+  <div class="flaeche" id="flaeche" tabindex="-1">
+    <div class="in">
+      <div class="tuer-zu" id="tuer" hidden><h1>Startet nicht.</h1><p id="tuer-t">Die Besuche liessen sich nicht laden.</p></div>
+      <div id="ansicht" aria-live="polite"><div class="lade-platz" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+</main>
+<footer class="wo-leiste" id="leiste"></footer>
+<div class="meldung" id="meldung" aria-live="polite"></div>
+<script src="oberflaeche/oberflaeche.js"></script>
+<script src="beispiel.js"></script>
+<script src="registre.js"></script>
+<script src="rundgang.js" defer></script>
+</body>
+</html>

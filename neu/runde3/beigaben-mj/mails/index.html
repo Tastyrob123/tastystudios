@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mails · Maloja · Tasty Studios</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:'Baskerville CE';font-weight:300 700;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/TenorSans.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-weight:200 800;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/HankenGrotesk-latin.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-weight:400;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/DMMono-normal-400.woff2') format('woff2')}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#201812 url(/neu/runde3/beigaben-mj/tapete-nacht.svg) 0 0/360px auto;color:#fff;font-family:'Hanken Grotesk',Arial,sans-serif}
+.mu-kopf{max-width:900px;margin:0 auto;padding:clamp(56px,8vw,110px) 24px clamp(30px,4vw,54px);text-align:center}
+.mu-kopf svg{display:block;width:clamp(72px,8vw,112px);height:auto;margin:0 auto 18px;fill:#bf9163}
+.mu-kopf small{display:block;font-family:'Baskerville CE',Georgia,serif;font-size:1.06rem;color:#bf9163}
+.mu-kopf h1{margin:16px 0 0;font-family:'Baskerville CE',Georgia,serif;font-weight:400;font-size:clamp(2.2rem,5.4vw,5rem);line-height:1.08}
+.mu-kopf h1 em{font-style:normal;color:#bf9163}
+.mu-kopf p{max-width:60ch;margin:22px auto 0;font-size:1.1rem;line-height:1.66;color:rgba(255,255,255,.82)}
+.mu-z{display:inline-flex;align-items:center;gap:10px;margin:26px 6px 0;padding:14px 24px;border-radius:999px;background:linear-gradient(180deg,#f8f6f2,#c8b8a8);color:#201812;font-family:'DM Mono',Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.mu-z--l{background:transparent;color:#bf9163;box-shadow:inset 0 0 0 1px rgba(191,145,99,.5)}
+/* Robert 18.10.2026 13:43: «Die Mails bitte … so zum seitlichen Scrollen … So lange die nebeneinander … immer so die halbe Mail angezeigt, aber man kann die ausklappen» */
+.mu-band{position:relative;padding:0 0 clamp(70px,9vw,130px)}
+.mu-g{display:flex;gap:clamp(22px,3vw,40px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:clamp(16px,6vw,90px);padding:6px clamp(16px,6vw,90px) 30px;scrollbar-width:none;align-items:flex-start}
+.mu-g::-webkit-scrollbar{display:none}
+.mu-k{flex:0 0 min(600px,86vw);min-width:0;scroll-snap-align:start}
+.mu-f{position:relative;max-height:680px;overflow:hidden;border-radius:30px;background:#16100c;box-shadow:inset 0 1px 0 rgba(191,145,99,.28),0 0 0 1px rgba(191,145,99,.16),0 40px 70px -34px rgba(0,0,0,.95),0 14px 26px -14px rgba(0,0,0,.7);transition:max-height .5s ease,transform .5s cubic-bezier(.16,1,.3,1)}
+@media (hover:hover){.mu-k:hover .mu-f{transform:translateY(-6px)}}
+.mu-f::after{content:'';position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(180deg,rgba(22,16,12,0),#16100c 85%);pointer-events:none;transition:opacity .3s}
+.mu-k.auf .mu-f{max-height:none}.mu-k.auf .mu-f::after{opacity:0}
+.mu-auf{display:inline-flex;align-items:center;gap:10px;margin:-26px 0 0 22px;position:relative;z-index:1;padding:12px 22px;border:0;border-radius:999px;background:linear-gradient(180deg,#f8f6f2,#c8b8a8);color:#201812;font-family:'DM Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.mu-auf span+span{display:none}.mu-k.auf .mu-auf span{display:none}.mu-k.auf .mu-auf span+span{display:inline}.mu-k.auf .mu-auf{margin-top:16px}
+.mu-pf{display:flex;justify-content:center;gap:14px;margin:4px 0 0}
+.mu-pf button{width:52px;height:52px;border-radius:50%;border:0;background:rgba(191,145,99,.12);box-shadow:inset 0 0 0 1px rgba(191,145,99,.5);color:#bf9163;font-size:20px;cursor:pointer}
+@media (hover:none){.mu-pf{display:none}}
+.mu-b{margin:0 0 16px}
+.mu-b span{display:block;margin-bottom:8px;font-family:'DM Mono',Menlo,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#bf9163}
+.mu-b b{display:block;font-family:'Baskerville CE',Georgia,serif;font-weight:400;font-size:1.25rem;line-height:1.3}
+.mu-b dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0 0;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.72)}
+.mu-b dt{font-family:'DM Mono',Menlo,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#bf9163;padding-top:3px}.mu-b dd{margin:0}
+.mu-k iframe{display:block;width:100%;height:1100px;border:0;background:#16100c}
+.mu-l{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0}
+.mu-l a{font-family:'DM Mono',Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#bf9163}
+.mu-fuss{max-width:900px;margin:0 auto;padding:0 24px 60px;text-align:center;font-size:.85rem;line-height:1.6;color:rgba(255,255,255,.6)}
+</style><script src="/besuch.js?v=3c4c57a56e" defer></script><script src="/verweil.js?v=5881fd455d" defer></script></head><body>
+<header class="mu-kopf"><svg viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><g fill="currentColor" transform="translate(22.00 12.00) scale(0.5458)"><path d="M18.8 22.0H12.0V92.0H16.400000000000002V34.9H16.8L47.7 93.2H49.5L81.10000000000001 35.3H81.5V92.0H90.60000000000001V22.0H83.7L51.300000000000004 82.1H50.900000000000006Z"/></g><circle cx="50" cy="79.21" r="3.4" fill="#d52b1e"/></svg><small>Mails</small><h1>6 Vorlagen, <em>im Ton Ihres Restaurants.</em></h1>
+<p>So könnten die Nachrichten aussehen, die Ihre Gäste von der Reservierung bis nach dem Abend bekommen. Jede liegt als Vorlage mit Platzhaltern bereit, die Ihr Mailprogramm füllt. Gast, Daten und Nummern hier sind Beispiele, verschickt wird nichts.</p>
+<a class="mu-z" href="/werkzeuge-r.html#paket">Zur Übersicht</a><a class="mu-z mu-z--l" href="/neu/runde3/beigaben-mj/mails/platzhalter.txt" target="_blank" rel="noopener">Platzhalter und Fälle</a></header>
+<main class="mu-band"><div class="mu-g"><section class="mu-k" id="ticket"><div class="mu-b"><span>01 · Ihr Tisch ist reserviert</span><b>Ihr Tisch ist reserviert</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>Als Bestätigung, sobald ein Tisch reserviert ist.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/01-ticket/index.html" title="Ihr Tisch ist reserviert" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/01-ticket/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/01-ticket/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section><section class="mu-k" id="warteliste"><div class="mu-b"><span>02 · Ein Tisch ist frei</span><b>Ein Tisch ist frei geworden</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>An die Warteliste, sobald ein Tisch frei wird.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/02-warteliste/index.html" title="Ein Tisch ist frei" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/02-warteliste/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/02-warteliste/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section><section class="mu-k" id="danke"><div class="mu-b"><span>03 · Danke für Ihren Besuch</span><b>Danke für Ihren Besuch</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>Am Tag nach dem Abend.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/03-danke/index.html" title="Danke für Ihren Besuch" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/03-danke/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/03-danke/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section><section class="mu-k" id="rueckblick"><div class="mu-b"><span>04 · Rückblick auf den Abend</span><b>Ein Abend im Kontorsaal</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>An die Gäste des Abends.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/04-rueckblick/index.html" title="Rückblick auf den Abend" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/04-rueckblick/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/04-rueckblick/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section><section class="mu-k" id="abend"><div class="mu-b"><span>05 · Das Menü diese Woche</span><b>Die Abende im Advent</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>An alle Gäste, die Post von Maloja möchten.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/05-abend/index.html" title="Das Menü diese Woche" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/05-abend/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/05-abend/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section><section class="mu-k" id="einladung"><div class="mu-b"><span>06 · Einladung an Stammgäste</span><b>Einladung: Feiern in der Arvenstube</b>
+<dl><dt>Absender</dt><dd>tisch@maloja-hamburg.de</dd><dt>Wann</dt><dd>An ausgewählte Gäste.</dd></dl></div>
+<div class="mu-f"><iframe src="/neu/runde3/beigaben-mj/mails/06-einladung/index.html" title="Einladung an Stammgäste" loading="lazy" scrolling="no"></iframe></div>
+<button class="mu-auf" type="button" aria-expanded="false"><span>Ganze Mail</span><span>Zuklappen</span></button>
+<p class="mu-l"><a href="/neu/runde3/beigaben-mj/mails/06-einladung/index.html" target="_blank" rel="noopener">Vorschau allein</a><a href="/neu/runde3/beigaben-mj/mails/06-einladung/template.html" target="_blank" rel="noopener">Vorlage mit Platzhaltern</a></p></section></div><div class="mu-pf"><button type="button" data-r="-1" aria-label="Zurück">‹</button><button type="button" data-r="1" aria-label="Weiter">›</button></div></main>
+<p class="mu-fuss">Die Mails am Beispiel von Maloja, einem Restaurant in einem Kontor der Hamburger Speicherstadt · Tasty Studios, Hamburg.</p>
+<script>(function(){var g=document.querySelector('.mu-g');document.querySelectorAll('.mu-pf button').forEach(function(b){b.addEventListener('click',function(){var k=g.querySelector('.mu-k');g.scrollBy({left:(+b.dataset.r)*(k.getBoundingClientRect().width+parseFloat(getComputedStyle(g).columnGap||32)),behavior:'smooth'})})});
+document.querySelectorAll('.mu-auf').forEach(function(b){b.addEventListener('click',function(){var k=b.closest('.mu-k'),a=k.classList.toggle('auf');b.setAttribute('aria-expanded',a);if(!a)k.scrollIntoView({block:'nearest'})})});})();</script>
+<script>document.querySelectorAll('.mu-k iframe').forEach(function(f){function h(){try{f.style.height=f.contentDocument.documentElement.scrollHeight+'px'}catch(x){}}f.addEventListener('load',function(){h();setTimeout(h,600)});});</script>
+</body></html>

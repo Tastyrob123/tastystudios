@@ -1,0 +1,68 @@
+/* 7b · Angebote, Fassung 8 «Ein Satz über dem Bild» (Robert 25.10.2026). Randloses Bild der Stube nach dem Spiel, darüber der Satz;
+   darunter die Woche mit dem Winterlineal und der Preis mit Erklärung. Bewegung: die Wochen wachsen am Datum (nur transform). */
+.js8{padding:0!important}
+.js8-b{position:relative;height:min(92vh,880px);overflow:hidden}
+.js8 .js8-f{position:absolute;inset:0;margin:0;border-radius:0!important;box-shadow:none!important}
+.js8-f img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 94%}
+.js8-f::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(20,14,8,.2),rgba(20,14,8,.3) 40%,rgba(20,14,8,.94)),linear-gradient(90deg,transparent 50%,rgba(20,14,8,.45))}
+.js8-ki{position:absolute;right:14px;bottom:12px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.js8-t{position:absolute;left:var(--rand);right:var(--rand);bottom:clamp(60px,6vw,96px);z-index:2;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:60px;align-items:end}
+.js8-t .ro{color:#F1E2B4}
+.js8-t blockquote{margin:14px 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(36px,3.8vw,64px);line-height:1.1;letter-spacing:-.02em;color:#fff}
+.js8-t .rl{margin:0;color:#fff;opacity:.92}
+.js8-u{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(36px,5vw,96px);align-items:end;padding:clamp(60px,6vw,96px) var(--rand) clamp(80px,8vw,130px)}
+.js8-u .rl{margin-top:10px}
+.js8-p{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(16px,1.25vw,19px);line-height:1.5;color:#E8DFD2}
+.js8-p b{display:block;font-weight:300;font-size:clamp(38px,3.4vw,54px);line-height:1;letter-spacing:-.02em;color:var(--ms-h);margin-bottom:10px}
+.js8-p small{display:block;margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ms-h);line-height:1.8}
+.js8 .r-knoepfe{margin-top:clamp(24px,2.6vw,36px)}
+.js8 .jw2-w i{transform:scaleX(0);transform-origin:0 50%;transition:transform .9s var(--e1) calc(var(--n)*.22s + .4s)}
+.js8.da .jw2-w i{transform:none}
+@media (max-width:900px){
+  .js8-t,.js8-u{grid-template-columns:1fr;gap:24px}
+  .js8-b{height:auto;overflow:visible}
+  .js8 .js8-f{position:relative;inset:auto;aspect-ratio:4/5}
+  .js8 .jw2-m{font-size:8.5px;letter-spacing:.06em}
+  .js8-f img{object-position:50% 100%}
+  .js8-t{position:relative;left:auto;right:auto;bottom:auto;margin-top:-140px;padding:0 var(--rand)}
+  .js8 .jw2-w em{display:none}
+}
+@media (prefers-reduced-motion:reduce){.js8 .jw2-w i{transition:none;transform:none}}
+
+/* 7c · Angebote, Fassung 10 «Nahaufnahme und Begriffe» (Robert 25.10.2026). Links die Karten ganz nah, rechts die Wörter am Jasstisch;
+   darunter Woche, Lineal und Preis wie in Fassung 8. Bewegung: die Wochen wachsen am Datum (nur transform). */
+.js10-o{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,96px);align-items:center}
+.js10 .js10-f{position:relative;aspect-ratio:1}
+.js10 .rt{font-size:clamp(40px,4vw,68px)}
+.js10-gl{margin:24px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:30px}
+.js10-gl li{padding:12px 0;border-top:1px solid rgba(217,183,88,.3)}
+.js10-gl b{display:block;font-family:var(--licht);font-weight:400;font-size:19px;color:var(--ms-h)}
+.js10-gl span{font-size:14px;line-height:1.45;opacity:.85}
+.js10 .js8-u{padding:clamp(36px,3.6vw,56px) 0 0;margin-top:clamp(50px,5vw,80px);border-top:1px solid rgba(217,183,88,.3)}
+.js10 .r-knoepfe{margin-top:clamp(24px,2.6vw,36px)}
+.js10 .jw2-w i{transform:scaleX(0);transform-origin:0 50%;transition:transform .9s var(--e1) calc(var(--n)*.22s + .4s)}
+.js10.da .jw2-w i{transform:none}
+@media (max-width:900px){
+  .js10-o,.js10 .js8-u{grid-template-columns:1fr;gap:24px}
+  .js10-gl{grid-template-columns:1fr}
+  .js10 .jw2-w em{display:none}
+  .js10 .jw2-m{font-size:8.5px;letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){.js10 .jw2-w i{transition:none;transform:none}}
+
+/* Termine als ruhige Reihe (Robert 26.10.2026: «übersichtlicher und schöner»). Sechs Wochen in zwei Reihen à drei, jede an ihrer eigenen
+   Messinglinie mit Punkt; ersetzt das Lineal. Bewegung: die Linien ziehen sich nacheinander, die Punkte setzen auf (nur transform, opacity). */
+.jt{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,2.6vw,36px) clamp(18px,2vw,32px);margin:clamp(30px,3vw,44px) 0 0}
+.jt-l{display:none}
+.jt-w{position:relative;padding-top:20px}
+.jt-w::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:rgba(217,183,88,.4);transform-origin:0 50%}
+.jt-p{position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:linear-gradient(180deg,#F1E2B4,#C9A54E);box-shadow:0 0 0 5px rgba(201,165,78,.16)}
+.jt-m{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ms-h)}
+.jt-d{margin:8px 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(28px,2.5vw,40px);line-height:1;letter-spacing:-.02em;color:#F4EDE3;white-space:nowrap}
+.jt-j{margin:8px 0 0;font-size:13px;opacity:.6;white-space:nowrap}
+.js8 .jt-w::before,.js10 .jt-w::before{transform:scaleX(0);transition:transform 1.1s var(--e1) calc(var(--n)*.14s + .2s)}
+.js8 .jt-p,.js10 .jt-p{opacity:0;transform:scale(.4);transition:opacity .5s ease calc(var(--n)*.14s + .5s),transform .7s var(--e1) calc(var(--n)*.14s + .5s)}
+.js8.da .jt-w::before,.js10.da .jt-w::before{transform:none}
+.js8.da .jt-p,.js10.da .jt-p{opacity:1;transform:none}
+@media (max-width:420px){.jt{column-gap:14px}.jt-d{font-size:26px}}
+@media (prefers-reduced-motion:reduce){.jt-w::before,.jt-p{transition:none!important;transform:none!important;opacity:1!important}}

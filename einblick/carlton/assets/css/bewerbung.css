@@ -1,0 +1,70 @@
+/* Bewerbung im Fenster (assets/js/bewerbung.js, Robert 17.10.2026: «stell beim Carlton die Bewerbung auch aufs Fenster um, kein Mailprogramm»).
+   Mitte des Bildschirms, links das Bild vom Empfang, rechts das Blatt der Kurzbewerbung im Kleid der Seite (.blatt, .felder, .feld, .kn).
+   Auftritt nur transform, deckend ab dem ersten Bild, Hintergrund ohne Weichzeichner (Regel 55). */
+.cb__hinter{position:fixed;inset:0;z-index:2147483000;background:rgba(6,20,43,.7)}
+.cb__hinter[hidden]{display:none}
+dialog.cb{position:fixed;inset:0;z-index:2147483001;margin:auto;padding:0;border:0;background:none;color:var(--tinte);width:min(1080px,calc(100vw - 48px));max-height:calc(100dvh - 48px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+dialog.cb[open]{animation:cb-auf .9s var(--e1) both}
+@keyframes cb-auf{from{transform:translateY(36px) scale(.97)}}
+html.cb-offen{overflow:hidden}
+.cb__in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-radius:var(--r-l);overflow:hidden;background:#fdf8ec;box-shadow:0 0 0 1px rgba(220,198,143,.45),0 4px 0 #a39370,0 40px 80px -30px rgba(0,0,0,.9)}
+.cb__bild{margin:0;position:relative;min-height:100%;background:var(--navy)}
+.cb__bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cb__bild::after{content:'';position:absolute;inset:auto 0 0;height:4px;background:linear-gradient(90deg,#b89a5a,var(--gold),#b89a5a)}
+dialog.cb .cb__blatt{border-radius:0;box-shadow:none;padding:clamp(28px,3.2vw,48px) clamp(24px,3.4vw,52px) clamp(24px,2.8vw,40px)}
+.cb__zu{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;z-index:2;
+  background:linear-gradient(#1d3f73,var(--blau) 55%,var(--navy));box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -2px 0 #050f22,0 10px 18px -10px rgba(6,20,43,.8)}
+.cb__zu span{grid-area:1/1;width:15px;height:1.5px;background:var(--gold);transform:rotate(45deg)}
+.cb__zu span+span{transform:rotate(-45deg)}
+.cb__kopf{padding-right:52px}
+.cb__zeichen{display:block;width:62px;height:auto;margin:0 0 14px;color:var(--taupe)}
+.cb__kopf .mono{margin:0}
+.cb__kopf .d2{margin:10px 0 0;color:var(--tinte)}
+.cb__kopf .d2 em{color:var(--blau)}
+.cb__satz{margin:14px 0 0;max-width:52ch;font-size:1.02rem;line-height:1.6;color:rgba(12,21,38,.78)}
+dialog.cb .felder{margin-top:clamp(18px,2vw,26px)}
+dialog.cb .feld.falsch{box-shadow:inset 0 1px 3px rgba(74,58,26,.28),inset 0 0 0 1.5px #a8452f}
+.cb__honig{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cb__meldung{margin:12px 0 0;font-size:.98rem;color:#8a3324}
+.cb__meldung a{color:inherit;text-decoration:underline}
+.cb__meldung[hidden],.cb__form[hidden],.cb__danke[hidden]{display:none}
+dialog.cb .kn-reihe{margin-top:clamp(16px,1.8vw,22px)}
+.cb__klein{margin:12px 0 0;font-size:.9rem;line-height:1.5;color:rgba(12,21,38,.62);max-width:56ch}
+.cb__danke{padding-top:clamp(18px,2vw,26px)}
+.cb__danke .d3{margin:0;color:var(--tinte)}
+.cb__zettel{margin:20px 0 0;max-width:460px;border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe);padding:4px 0}
+.cb__zettel div{display:grid;grid-template-columns:140px 1fr;gap:12px;padding:9px 0}
+.cb__zettel div+div{border-top:1px solid rgba(138,117,69,.3)}
+.cb__zettel dt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);padding-top:3px}
+.cb__zettel dd{margin:0;overflow-wrap:anywhere}
+@media (max-width:860px){
+  dialog.cb{width:calc(100vw - 32px);max-height:calc(100dvh - 32px)}
+  .cb__in{grid-template-columns:minmax(0,1fr)}
+  .cb__bild{min-height:0;aspect-ratio:16/9}
+  .cb__zu{top:12px;right:12px}
+  .cb__kopf{padding-right:0}
+  dialog.cb .felder{grid-template-columns:minmax(0,1fr)}
+  .cb__zettel div{grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){dialog.cb[open]{animation:none}}
+/* Fokus: kein Kasten im Feld, das ganze Feld bekommt die Goldkante */
+dialog.cb .feld input:focus,dialog.cb .feld select:focus,dialog.cb .feld textarea:focus{outline:0}
+dialog.cb .feld:focus-within{box-shadow:inset 0 1px 3px rgba(74,58,26,.28),inset 0 0 0 1.5px var(--taupe)}
+/* Sauna reservieren über Calendly, Vorschau (assets/js/sauna.js, Robert 18.10.2026): Tage und Uhrzeiten als Knöpfe im Kleid des Blatts */
+.cs__nr{margin:clamp(18px,2vw,24px) 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+.cs__tage{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.cs__tag{display:grid;justify-items:center;gap:2px;padding:8px 2px 9px;border:0;border-radius:12px;cursor:pointer;color:var(--tinte);background:#f6eedb;box-shadow:inset 0 0 0 1px rgba(138,117,69,.35);font:inherit;transition:background-color .5s,box-shadow .5s,color .5s}
+.cs__tag small{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)}
+.cs__tag b{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1}
+.cs__tag:hover{box-shadow:inset 0 0 0 1px var(--taupe)}
+.cs__tag.an{background:var(--navy,#0b1f40);color:#fff;box-shadow:inset 0 0 0 1px var(--navy,#0b1f40)}
+.cs__tag.an small{color:var(--gold)}
+.cs__tag:disabled{opacity:.38;cursor:default;box-shadow:inset 0 0 0 1px rgba(138,117,69,.18)}
+.cs__hinweis{margin:0 0 8px;font-size:.95rem;color:rgba(12,21,38,.7)}
+.cs__hinweis[hidden]{display:none}
+.cs__zeiten{display:flex;flex-wrap:wrap;gap:8px}
+.cs__zeit{min-width:72px;padding:9px 12px;border:0;border-radius:999px;cursor:pointer;color:var(--tinte);background:#f6eedb;box-shadow:inset 0 0 0 1px rgba(138,117,69,.35);font:500 13px/1 var(--mono);letter-spacing:.06em;transition:background-color .5s,color .5s}
+.cs__zeit:hover{box-shadow:inset 0 0 0 1px var(--taupe)}
+.cs__zeit.an{background:var(--navy,#0b1f40);color:#fff}
+dialog.cb--sauna .kn-reihe{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){.cs__tage{grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.cs__tag b{font-size:1.1rem}.cs__tag small{font-size:8.5px;letter-spacing:.06em}}

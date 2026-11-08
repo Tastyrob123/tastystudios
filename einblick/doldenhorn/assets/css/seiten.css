@@ -1,0 +1,928 @@
+/* Waldhotel Doldenhorn — Seitenbau 13.10.2026 (Tasty Studios)
+   Was die neuen Seiten über main.css hinaus brauchen: Unterseiten in Leiste und Menü, die Zimmer-Seiten, Sauna World, Halbpension, Veranstaltungen,
+   Reisen ohne Stress, Abreise und die Umgebungskarte. Farben, Schriften und Masse kommen aus main.css (:root). Bewegung nur über transform und opacity.
+   Eigene Datei, damit main.css unberührt bleibt. Geladen auf allen Seiten, weil Leiste, Menü und Fuss überall stehen. */
+
+/* ---------- Leiste: unter einem Menüpunkt klappen seine Unterseiten auf (Maus oder Tastatur). Ein Blatt aus Elfenbein wie die Terminkarten ---------- */
+.nav__g{position:relative;display:flex}
+.nav__u{position:absolute;z-index:3;top:calc(100% + 16px);left:50%;min-width:232px;padding:8px 22px 10px;border-radius:18px;color:var(--tinte);
+  background:linear-gradient(180deg,#fffdf8,#f3ecdd 60%,#e6dcc6);box-shadow:inset 0 0 0 1px rgba(138,117,69,.22),0 3px 0 #efe6d3,0 4px 0 #b3a688,0 30px 34px -22px rgba(0,0,0,.8);
+  opacity:0;visibility:hidden;transform:translate(-50%,-8px);transition:opacity .28s var(--e2),transform .5s var(--e1),visibility 0s .28s}
+.nav__u::before{content:'';position:absolute;left:0;right:0;top:-26px;height:26px}
+.nav__g:hover .nav__u,.nav__g:focus-within .nav__u{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .28s var(--e2),transform .5s var(--e1)}
+.nav__links .nav__u a{display:block;padding:12px 0 11px;font-family:var(--titel);font-weight:700;font-size:1.123rem;line-height:1.25;letter-spacing:.01em;text-transform:none;white-space:nowrap;color:var(--tinte);border-bottom:1px solid rgba(var(--ld),.15)}
+.nav__links .nav__u a:last-child{border-bottom:0}
+.nav__links .nav__u a::after{display:none}
+.nav__links .nav__u a:hover,.nav__links .nav__u a[aria-current]{color:var(--stahl)}
+.auf-foto .nav__links .nav__u a{color:var(--tinte)}
+.auf-foto .nav__links .nav__u a:hover,.auf-foto .nav__links .nav__u a[aria-current]{color:var(--stahl)}
+.nav.weg .nav__u{visibility:hidden}
+/* Menü am Handy: die Unterseiten stehen klein unter ihrer grossen Zeile */
+.menue__u{display:flex;flex-wrap:wrap;gap:2px 20px;margin:2px 0 14px;opacity:0;transform:translateY(10px);transition:opacity .5s var(--e2),transform .9s var(--e1);transition-delay:calc(var(--i)*55ms + 140ms)}
+.offen .menue__u{opacity:1;transform:none}
+.menue__links .menue__u a{display:inline-block;overflow:visible;font-family:var(--sans);font-weight:500;font-size:1.102rem;line-height:1.7;color:var(--hellgold)}
+
+/* ---------- Raster richten sich nach der Stückzahl: fällt ein Termin weg, bleibt keine halb leere Reihe ---------- */
+@media (min-width:700px){
+  .termine--4[data-zahl="3"],.termine--3[data-zahl="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .termine--4[data-zahl="2"],.termine--3[data-zahl="2"]{grid-template-columns:repeat(2,minmax(0,1fr));max-width:860px;margin-inline:auto}
+  .termine--4[data-zahl="1"],.termine--3[data-zahl="1"]{grid-template-columns:minmax(0,420px);justify-content:center}
+}
+@media (max-width:699px){.termine--4[data-zahl="3"],.termine--4[data-zahl="1"]{grid-template-columns:minmax(0,1fr)}}
+.va-blaetter{margin-top:0}
+.va-blaetter .kal h3{-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}   /* lange Wörter («Vorweihnachtliche») trennen am schmalen Handy, statt über das Blatt zu laufen */
+.va-leer{text-align:center;margin-top:10px}
+@media (max-width:359px){.termine--4.va-blaetter,.termine--4.va-blaetter[data-zahl]{grid-template-columns:minmax(0,1fr)}}   /* am schmalsten Handy untereinander */
+/* am Handy stehen die Blätter zu zweit nebeneinander: Kopf, Wochentage und Tage enger, damit nichts am Rand anstösst */
+@media (max-width:560px){.va-blaetter .kal__m{font-size:10.8px;letter-spacing:.1em;padding-inline:6px}.va-blaetter .kal__m::before,.va-blaetter .kal__m::after{display:none}.va-blaetter .kal__w{font-size:9.72px;letter-spacing:.07em;padding-inline:4px}.va-blaetter .kal__t{font-size:clamp(2.268rem,11.88vw,3.24rem)}}
+
+/* ---------- Helle Angaben und Werte auf dunklem Grund ---------- */
+.angaben--dunkel{border-top-color:rgba(var(--lh),.22)}
+.werte--dunkel,.werte--dunkel div{border-color:rgba(var(--lh),.2)}
+.werte--dunkel dt{color:var(--hellgold)}
+.werte dd small{display:block;margin-top:5px;font-family:var(--mono);font-weight:400;font-size:11.34px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
+.dn-karte-dunkel textarea{width:100%;min-width:0;border:0;background:transparent;color:inherit;font:500 1.123rem var(--sans);padding:0;resize:vertical}
+.dn-karte-dunkel textarea:focus{outline:none}
+.reise--oben{margin-top:0;padding-top:0;border-top:0}
+
+/* ---------- Zimmer einzeln: Name über dem Buchungsfeld, die anderen Kategorien als hohe Fotos mit Namen darunter ---------- */
+.zs__name{margin-bottom:16px;font-family:var(--titel);font-weight:700;font-size:clamp(1.62rem,2.376vw,2.16rem);line-height:1.1;color:var(--hellgold)}
+.zs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,2.6vw,40px) clamp(14px,1.7vw,26px)}
+.zs--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.zs .frei__b{border-radius:26px}
+.zs .frei b{margin-top:clamp(14px,1.6vw,22px);font-size:clamp(1.512rem,2.268vw,2.268rem);line-height:1.1}
+.zs .frei small{margin-top:8px;font-size:clamp(1.08rem,1.188vw,1.188rem);opacity:.84}
+@media (max-width:900px){.zs,.zs--3{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Sauna World: Grade als grosse Zahlen, darunter Name und Satz des Hauses; Dampf, Salz und Eis als Karten ---------- */
+.sw-grade .jahr{min-width:0}
+.sw-grade .jahr p{max-width:30ch;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+.sw-grade .jahr p strong{display:inline;font-family:var(--titel);font-weight:700;font-size:1.253rem;line-height:1.25;color:var(--hellgold)}
+.sw-grade .jahr b span::after{content:'°';font-size:.5em;vertical-align:top;margin-left:.04em;opacity:.8}
+.termin__d--zeichen{align-items:center;min-height:clamp(2.5rem,4.2vw,4rem)}
+.termin__d--zeichen svg{width:58px;height:auto;color:var(--gold)}
+.sw-stufen{margin-top:clamp(34px,4vw,60px)}
+@media (max-width:420px){.sw-grade .jahr p strong{font-size:1.123rem}.sw-grade .jahr{padding-inline:10px}}
+@media (max-width:900px){.jahre.sw-grade{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:clamp(24px,5vw,40px)}.jahre.sw-grade .jahr:nth-child(odd){padding-left:0;border-left:0}}
+
+/* ---------- Halbpension: je Haus ein Foto und darunter sein Blatt; die drei Restaurants nebeneinander ---------- */
+.hp{align-items:stretch}
+.hp__haus{display:flex;flex-direction:column;gap:clamp(14px,1.7vw,24px);min-width:0}
+.hp__haus .blatt{flex:1;display:flex;flex-direction:column}
+.hp__haus .blatt .knoepfe{margin-top:auto!important;padding-top:20px}
+@media (min-width:901px){.orte--fest.orte--drei{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ---------- Umgebungskarte: links die Karte auf einem Blatt, rechts die Orte. Der gewählte Ort steht dunkel in der Liste und wächst auf der Karte ---------- */
+.uk{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:clamp(28px,4.4vw,80px);align-items:start}
+.uk__blatt{margin:0;padding:clamp(14px,1.8vw,26px) clamp(14px,1.8vw,26px) clamp(16px,1.8vw,24px)}
+.uk__blatt .blatt__fuss{margin-top:12px;font-size:.929rem}
+.uk__svg{display:block;width:100%;height:auto;overflow:visible}
+.uk-strasse{fill:none;stroke:#cdc1a4;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.uk-bahn{fill:none;stroke:#0f1620;stroke-width:2;stroke-linejoin:round}
+.uk-bahn--s{stroke-width:8;stroke-dasharray:1.6 12}
+.uk-fluss{fill:none;stroke:#3d5370;stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round}
+.uk-fluss--b{stroke-width:2.8}
+.uk-see{fill:#a9bbd2;stroke:#3d5370;stroke-width:2.2;stroke-linejoin:round}
+.uk-seil{stroke:#a3833c;stroke-width:2.6;stroke-dasharray:8 6}
+.uk-ort{cursor:pointer}
+.uk-ort text{font-family:var(--titel);font-weight:700;font-size:25.92px;fill:#0f1620;paint-order:stroke;stroke:#fbf8f1;stroke-width:7px;stroke-linejoin:round}
+.uk-ort--hotel text{font-size:30.24px}
+.uk-ring{fill:#fbf8f1;stroke:#3d5370;stroke-width:2.8}
+.uk-kern{fill:#3d5370}
+.uk-hof{fill:#142235;stroke:#b89850;stroke-width:2}
+.uk-tannen{fill:#e3d2a6}
+.uk-pfeil,.uk-nord path,.uk-mass path{fill:none;stroke:#0f1620;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.uk-nord text,.uk-mass text{font-family:var(--mono);font-size:17.28px;letter-spacing:.14em;fill:#0f1620}
+.uk-z{transform-box:fill-box;transform-origin:50% 50%;transition:transform .7s var(--e1)}
+.uk-ort.an .uk-z{transform:scale(1.5)}
+.uk-ort.an .uk-ring{stroke:#a3833c}
+.uk-ort.an .uk-kern{fill:#a3833c}
+.uk-ort.an text{fill:#27405f}
+.uk-see.an{fill:#d9c48c}
+.uk__zeilen{margin-top:clamp(18px,2vw,28px);border-top:1px solid rgba(var(--ld),.22)}
+.uk-zeile{display:grid;gap:6px;width:100%;margin:0;padding:17px 18px 18px;border:0;border-bottom:1px solid rgba(var(--ld),.22);border-radius:0;background:none;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.uk-zeile b{font-family:var(--titel);font-weight:700;font-size:clamp(1.296rem,1.728vw,1.62rem);line-height:1.2}
+.uk-zeile span{font-size:1.08rem;line-height:1.5;opacity:.9}
+/* nur der gewählte Ort zeigt seinen Satz; so bleibt die Liste so hoch wie die Karte */
+.uk-zeile span,.uk-zeile small{display:none}
+.uk-zeile[aria-pressed="true"] span,.uk-zeile[aria-pressed="true"] small{display:block}
+.uk-zeile small{font-family:var(--mono);font-size:11.34px;letter-spacing:.14em;text-transform:uppercase;color:var(--stahl)}
+.uk-zeile[aria-pressed="true"]{border-radius:14px;border-bottom-color:transparent;color:var(--papier);background:linear-gradient(#27405f,#16263c);box-shadow:inset 0 1px 0 rgba(226,236,255,.2),0 18px 24px -18px rgba(var(--ld),.7)}
+.uk-zeile[aria-pressed="true"] small{color:var(--hellgold)}
+.uk-zeile:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:900px){
+  .uk{grid-template-columns:minmax(0,1fr)}
+  .uk-ort text{font-size:36.72px;stroke-width:9px}
+  .uk-ort--hotel text{font-size:41.04px}
+  .uk-nord text,.uk-mass text{font-size:25.92px}
+  .uk-ort--hotel .uk-z{transform:scale(1.5)}
+  .uk-ort--hotel.an .uk-z{transform:scale(1.9)}
+}
+@media (prefers-reduced-motion:reduce){.uk-z,.nav__u,.menue__u{transition:none}}
+
+/* ---------- Robert 15.10.2026 abends: Zimmer, Gourmet-Knöpfe, Buchungskarte, Kategorien-Kopf ---------- */
+/* Zimmer-Übersicht: das grosse Foto ragt wie im Seitenkopf bis an den Rand, Fotos grösser; Name und Knöpfe mittig im Textbereich, «Dieses Zimmer buchen» zuerst.
+   Nur zimmer.html (Küche und Restaurants nutzen denselben Baustein, dort entscheidet Robert nach Varianten) */
+@media (min-width:901px){
+  :is(#economy,#ambiance,#junior-suite,#suite).schau{grid-template-columns:minmax(0,8fr) minmax(0,4.6fr)}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau--um{grid-template-columns:minmax(0,4.6fr) minmax(0,8fr)}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau .mos{aspect-ratio:1.42/1}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau:not(.schau--um) .mos__b:first-child{margin-left:calc(-1*var(--rand) - max(0px,(100vw - var(--max))/2))}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau:not(.schau--um) .mos__b:first-child .rahmen__k{border-radius:0 30px 30px 0}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau--um .mos__b:first-child{margin-right:calc(-1*var(--rand) - max(0px,(100vw - var(--max))/2))}
+  :is(#economy,#ambiance,#junior-suite,#suite).schau--um .mos__b:first-child .rahmen__k{border-radius:30px 0 0 30px}
+}
+:is(#economy,#ambiance,#junior-suite,#suite).schau .schau__n{text-align:center}
+:is(#economy,#ambiance,#junior-suite,#suite).schau .knoepfe,:is(#economy,#ambiance,#junior-suite,#suite).schau .knoepfe:has(>.kn-zeile){display:grid;grid-template-columns:auto auto;justify-content:center;gap:14px 12px}
+:is(#economy,#ambiance,#junior-suite,#suite).schau .knoepfe>.kn-zeile{grid-row:1;grid-column:1/-1;justify-self:center}
+@media (max-width:420px){:is(#economy,#ambiance,#junior-suite,#suite).schau .knoepfe,:is(#economy,#ambiance,#junior-suite,#suite).schau .knoepfe:has(>.kn-zeile){grid-template-columns:auto}}
+
+/* Gourmet-Aufenthalt auf den Zimmerseiten: die zwei Knöpfe mittig und mit mehr Luft unter dem Preissatz */
+#gourmet .termine--3+.leise+.knoepfe{justify-content:center;margin-top:clamp(40px,4.4vw,64px)!important}
+
+/* Buchungskarte der Zimmerseiten: Hausausweis mit innerer Goldlinie, warmem Licht von oben, Name mittig zwischen zwei Goldstrichen, Knöpfe mittig */
+#buchen .dn-karte-dunkel[data-zimmer]{isolation:isolate;overflow:hidden;padding:clamp(30px,3.4vw,50px) clamp(24px,3vw,46px) clamp(30px,3.2vw,46px);border-radius:var(--r-xl);
+  background:radial-gradient(120% 70% at 50% -12%,rgba(227,210,166,.13),rgba(227,210,166,0) 62%),linear-gradient(180deg,#14223a 0%,#0c1626 58%,#09111d 100%);
+  box-shadow:inset 0 1px 0 rgba(255,246,222,.14),inset 0 0 0 1px rgba(227,210,166,.42),0 50px 70px -40px rgba(0,0,0,.85),0 12px 22px -12px rgba(0,0,0,.5)}
+#buchen .dn-karte-dunkel[data-zimmer]::before{content:'';position:absolute;inset:clamp(9px,.9vw,13px);z-index:-1;border-radius:calc(var(--r-xl) - 9px);border:1px solid rgba(227,210,166,.26);box-shadow:inset 0 0 0 4px rgba(6,10,18,.2),inset 0 0 0 5px rgba(227,210,166,.1);pointer-events:none}
+#buchen .dn-karte-dunkel[data-zimmer] .zs__name{display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.6vw,22px);margin:0 0 clamp(22px,2.4vw,32px);text-align:center;font-size:clamp(2.052rem,3.024vw,2.808rem)}
+#buchen .dn-karte-dunkel[data-zimmer] .zs__name::before,#buchen .dn-karte-dunkel[data-zimmer] .zs__name::after{content:'';flex:0 1 clamp(34px,4vw,64px);height:1px;background:linear-gradient(90deg,rgba(227,210,166,0),rgba(227,210,166,.85))}
+#buchen .dn-karte-dunkel[data-zimmer] .zs__name::after{background:linear-gradient(90deg,rgba(227,210,166,.85),rgba(227,210,166,0))}
+#buchen .dn-karte-dunkel[data-zimmer] .feld{background:rgba(3,6,12,.48);box-shadow:inset 0 1px 3px rgba(0,0,0,.6),inset 0 0 0 1px rgba(227,210,166,.18)}
+#buchen .dn-karte-dunkel[data-zimmer] .knoepfe{justify-content:center;margin-top:clamp(24px,2.6vw,34px)!important}
+
+/* Die anderen Kategorien: Titel und Satz als ein Block mittig über den drei Zimmern */
+#weitere .kopfzeile{display:block;text-align:center}
+#weitere .kopfzeile p{max-width:none;margin:clamp(14px,1.6vw,22px) auto 0;font-family:var(--titel);font-size:clamp(1.242rem,1.62vw,1.566rem)}
+
+/* Drei Restaurants, ein Haus: oben ein Foto des Restaurants, bündig mit der Karte */
+.orte--fest .ort--bild{display:flex;flex-direction:column;padding-top:0;overflow:hidden;border-radius:18px}
+.ort--bild .ort__b{display:block;position:relative;aspect-ratio:16/9;margin:0 calc(-1*clamp(14px,1.6vw,24px)) 22px;overflow:hidden;background:#060b13}
+.ort--bild .ort__b img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.8s var(--e1)}
+@media (hover:hover){.ort--bild:hover .ort__b img{transform:scale(1.04)}}
+.ort--bild::before{z-index:2}
+@media (max-width:900px){.orte--fest .ort--bild{margin-bottom:14px}.ort--bild .ort__b{margin-inline:calc(-1*clamp(14px,1.6vw,24px))}}
+
+/* Bankette und Familienfeste: links ein grosses Foto und darunter drei kleine, oben und unten bündig mit dem Text; «Bankett anfragen» blau zuerst, die zwei weiteren hell, alles mittig */
+#bankett .paar{align-items:stretch}
+#bankett .bk-kn,#bankett .bk-kn:has(>.kn-zeile){display:grid;grid-template-columns:auto auto;justify-content:center;gap:14px 12px;margin-top:clamp(28px,3vw,40px)}
+#bankett .bk-kn>.kn-zeile{grid-row:1;grid-column:1/-1;justify-self:center}
+.bk-mos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr) auto;gap:clamp(10px,1.2vw,16px);min-height:0}
+.bk-mos>.rahmen:first-child{grid-column:1/-1;display:flex;flex-direction:column;min-height:clamp(320px,30vw,460px)}
+.bk-mos>.rahmen:first-child .rahmen__k{flex:1;aspect-ratio:auto}
+.bk-mos>.rahmen:first-child .rahmen__k img{position:absolute;inset:0}
+.bk-mos>.rahmen:not(:first-child){padding:5px;border-radius:20px}
+.bk-mos>.rahmen:not(:first-child) .rahmen__k{border-radius:15px}
+.bk-mos>.rahmen:not(:first-child) .kerbe{--e:14px;font-size:clamp(.918rem,1.08vw,1.134rem);padding:9px 14px 7px 11px}
+@media (max-width:900px){.bk-mos>.rahmen:first-child{min-height:0}.bk-mos>.rahmen:first-child .rahmen__k{aspect-ratio:3/2}.bk-mos>.rahmen:not(:first-child) .kerbe{font-size:.778rem;padding:7px 10px 5px 8px}}
+@media (max-width:420px){#bankett .bk-kn,#bankett .bk-kn:has(>.kn-zeile){grid-template-columns:auto}}
+
+/* ---------- Kalenderblätter (Angebote, Veranstaltungen, Reisen ohne Stress), Robert 15.10.2026: edler und klar anders als die Preiskacheln ----------
+   Kopf wie ein Einband aus Nachtblau mit Goldprägung und zwei Messingringen über der Kante, Blatt in Elfenbein mit innerer Goldlinie,
+   Datum in Gold, die Tage als durchgehendes Band statt einzelner Kästchen, kein Eselsohr. */
+.kal{overflow:visible;border-radius:16px;background:linear-gradient(180deg,#fffcf5 0%,#f7f0e1 55%,#efe5d0 100%);
+  box-shadow:inset 0 0 0 1px rgba(150,122,62,.32),0 3px 0 #f2eadb,0 4px 0 rgba(150,122,62,.45),0 7px 0 #ece2cd,0 8px 0 rgba(150,122,62,.35),0 36px 40px -26px rgba(var(--ld),.62)}
+.kal::after{content:'';position:absolute;inset:auto clamp(10px,1vw,14px) clamp(10px,1vw,14px);top:calc(clamp(46px,4vw,56px) + clamp(8px,.8vw,12px));width:auto;height:auto;border-radius:0 0 9px 9px;background:none;
+  border:1px solid rgba(150,122,62,.3);border-top:0;box-shadow:inset 0 0 0 3px rgba(255,252,245,.6),inset 0 0 0 4px rgba(150,122,62,.12);pointer-events:none}
+.kal__m{min-height:clamp(46px,4vw,56px);display:flex;align-items:center;justify-content:center;padding:14px 44px 12px;border-radius:16px 16px 0 0;border-bottom:0;
+  font-family:var(--titel);font-weight:700;font-size:clamp(1.026rem,1.242vw,1.242rem);letter-spacing:.16em;color:#e8d3a2;
+  background:radial-gradient(90% 140% at 50% 0,rgba(232,211,162,.14),rgba(232,211,162,0) 60%),linear-gradient(180deg,#22385a 0%,#152740 60%,#0f1d31 100%);
+  box-shadow:inset 0 1px 0 rgba(255,246,222,.16),inset 0 -1px 0 rgba(232,211,162,.5),inset 0 -4px 0 #0f1d31,inset 0 -5px 0 rgba(232,211,162,.22)}
+.kal__m::before,.kal__m::after{top:-9px;margin-top:0;width:10px;height:22px;border-radius:6px;
+  background:linear-gradient(90deg,#8a6d33 0%,#f3dfa8 38%,#c9a660 60%,#7a5e28 100%);box-shadow:0 2px 3px rgba(0,0,0,.45),inset 0 0 0 1px rgba(90,68,28,.5)}
+.kal__m::before{left:24%}.kal__m::after{right:24%}
+.kal__w{padding-top:clamp(20px,2vw,28px);background:none;color:#8a6d33;font-size:11.34px;letter-spacing:.26em}
+.kal__t{color:#9a7b3c;background:linear-gradient(180deg,#b8954d 0%,#8a6a2c 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.04em}
+.kal .kal__tage{gap:0;margin-top:clamp(14px,1.4vw,20px);padding:6px 0;border-top:1px solid rgba(150,122,62,.28);border-bottom:1px solid rgba(150,122,62,.28)}
+.kal__tage li{border-radius:0;color:rgba(var(--ld),.42);background:none;box-shadow:none}
+.kal__tage i{color:inherit}
+.kal__tage :is(.fest,.zw){color:#f6ecd4;background:linear-gradient(180deg,#22385a,#132440);box-shadow:none}
+.kal__tage :is(.fest,.zw) i{color:#d9bd7c;opacity:1}
+.kal__tage .zw{background:linear-gradient(180deg,#2e4568,#1c3150);color:rgba(246,236,212,.82)}
+.kal__tage :is(.fest,.zw):first-child,.kal__tage li:not(.fest,.zw)+:is(.fest,.zw){border-top-left-radius:10px;border-bottom-left-radius:10px}
+.kal__tage :is(.fest,.zw):last-child,.kal__tage :is(.fest,.zw):has(+li:not(.fest,.zw)){border-top-right-radius:10px;border-bottom-right-radius:10px}
+.kal h3{position:relative;margin-top:clamp(14px,1.4vw,20px);border-top:0;padding-top:clamp(16px,1.6vw,22px);color:#16263c}
+.kal h3::before{content:'';position:absolute;left:50%;top:0;width:clamp(60px,6vw,90px);height:1px;margin-left:calc(-1*clamp(30px,3vw,45px));background:linear-gradient(90deg,rgba(150,122,62,0),rgba(150,122,62,.85),rgba(150,122,62,0))}
+@media (max-width:900px){.kal__m::before{left:14%}.kal__m::after{right:14%}.kal--w .kal__m{padding-inline:26px}}
+@media (max-width:560px){.va-blaetter .kal__m::before,.va-blaetter .kal__m::after{display:block;width:7px;height:16px;top:-6px}}
+
+/* Das Haus, Anreise und Kontakt: die zwei Knöpfe mittig in ihrer Karte */
+#anreise .tafelkarte .knoepfe{justify-content:center}
+
+/* Das Haus, Kontakt-Kasten: so hoch wie die Karte daneben, jede Kachel mittig gesetzt (Bezeichnung oben zwischen zwei Goldstrichen, Angabe darunter, Pfeil-Knauf unter der Angabe statt in der Ecke) */
+@media (min-width:901px){#anreise .weit__unten{align-items:stretch}#anreise .weit__r--kasten{display:flex;align-self:stretch;padding-top:0}#anreise .kkasten{flex:1;grid-auto-rows:1fr}}
+#anreise .kkasten__f{align-items:center;justify-content:center;gap:clamp(12px,1.2vw,18px);text-align:center}
+#anreise .kkasten__o{display:flex;align-items:center;gap:10px}
+#anreise .kkasten__o::before,#anreise .kkasten__o::after{content:'';width:clamp(16px,1.6vw,26px);height:1px;background:rgba(184,152,80,.6)}
+#anreise .kkasten__f small{max-width:24ch;margin-inline:auto}
+#anreise .kkasten__f i{position:static;order:3;width:34px;height:34px}
+
+/* Reisen ohne Stress, «Inbegriffen»: die zwei Fotos rechts genau so hoch wie das Blatt links, kein leerer Raum unter dem Blatt */
+@media (min-width:901px){
+  #woche .paar--blatt{align-items:stretch}
+  #woche .paar--blatt>[data-gruppe]{grid-template-rows:repeat(2,minmax(0,1fr))}
+  #woche .paar--blatt>[data-gruppe]>.rahmen{display:flex;min-height:0}
+  #woche .paar--blatt>[data-gruppe] .rahmen__k{flex:1;aspect-ratio:auto;min-height:0}
+  #woche .paar--blatt>[data-gruppe] .rahmen__k img{position:absolute;inset:0}
+}
+
+/* Reisen ohne Stress, «Ihre Woche anfragen» (Robert 15.10.2026: edler): links ein Briefbogen aus Elfenbein mit Goldrahmen, Felder nur mit Goldlinie unten;
+   rechts die Richtpreis-Karte wie ein Hausausweis, Betrag mittig in Gold, Zierstrich, Knöpfe mittig, so hoch wie der Bogen */
+form[data-reise].dn-rechner{align-items:stretch}
+form[data-reise] .dn-rechner__wahl{position:relative;padding:clamp(28px,3.2vw,48px) clamp(24px,3vw,46px);border-radius:var(--r-l);
+  background:linear-gradient(180deg,#fffdf8 0%,#f8f2e5 100%);box-shadow:inset 0 0 0 1px rgba(150,122,62,.3),0 2px 0 #efe6d3,0 3px 0 rgba(150,122,62,.35),0 34px 44px -30px rgba(var(--ld),.55)}
+form[data-reise] .dn-rechner__wahl::before{content:'';position:absolute;inset:clamp(9px,.9vw,13px);border:1px solid rgba(150,122,62,.28);border-radius:calc(var(--r-l) - 10px);pointer-events:none}
+form[data-reise] .dn-rechner__wahl .felder{gap:clamp(18px,1.8vw,26px) clamp(18px,2vw,30px)}
+.hell form[data-reise] .feld{padding:4px 2px 10px;border-radius:0;background:none;box-shadow:inset 0 -1px 0 rgba(150,122,62,.5)}
+.hell form[data-reise] .feld:has(:focus-visible){box-shadow:inset 0 -2px 0 #9a7b3c}
+.hell form[data-reise] .feld span{font-size:11.34px;letter-spacing:.2em;color:#8a6d33}
+.hell form[data-reise] .feld :is(input,select,textarea){font-family:var(--titel);font-weight:500;font-size:clamp(1.166rem,1.35vw,1.318rem)}
+form[data-reise] .dn-rechner__ergebnis{align-self:stretch;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:clamp(34px,3.6vw,54px) clamp(26px,3vw,46px);border-radius:var(--r-xl);
+  background:radial-gradient(110% 60% at 50% -8%,rgba(227,210,166,.14),rgba(227,210,166,0) 60%),linear-gradient(180deg,#1a2c48 0%,#111f34 60%,#0c1727 100%);
+  box-shadow:inset 0 1px 0 rgba(255,246,222,.14),inset 0 0 0 1px rgba(227,210,166,.42),0 50px 70px -40px rgba(var(--ld),.8),0 12px 22px -12px rgba(var(--ld),.45)}
+form[data-reise] .dn-rechner__ergebnis::before{inset:clamp(9px,.9vw,13px);border-color:rgba(227,210,166,.26);border-radius:calc(var(--r-xl) - 10px);box-shadow:inset 0 0 0 4px rgba(6,10,18,.2),inset 0 0 0 5px rgba(227,210,166,.1)}
+form[data-reise] .dn-rechner__ergebnis>.mono{display:flex;align-items:center;justify-content:center;gap:12px;letter-spacing:.24em}
+form[data-reise] .dn-rechner__ergebnis>.mono::before,form[data-reise] .dn-rechner__ergebnis>.mono::after{content:'';width:clamp(22px,2.4vw,40px);height:1px;background:rgba(227,210,166,.6)}
+form[data-reise] .dn-rechner__summe{justify-content:center;margin-top:clamp(14px,1.4vw,20px)}
+form[data-reise] .dn-rechner__summe small{color:#d9bd7c;opacity:1}
+form[data-reise] .dn-rechner__summe b{font-size:clamp(3.456rem,5.832vw,5.832rem);color:#e8d3a2;background:linear-gradient(180deg,#f3e2b8 0%,#c9a660 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+form[data-reise] .dn-rechner__zeilen{margin-top:clamp(22px,2.2vw,30px);padding-top:clamp(16px,1.6vw,22px);border-top:1px solid rgba(227,210,166,.28);text-align:left}
+form[data-reise] .dn-rechner__hinweis{text-align:center}
+form[data-reise] .dn-rechner__ergebnis .knoepfe{justify-content:center;margin-top:clamp(24px,2.6vw,34px)}
+
+/* ---------- Gutschein auf «Angebote» (Robert 15.10.2026: luxuriöser, mit Bild vom Gutschein, nicht wie im Rivage) ----------
+   Links unter dem Text die Gutscheinkarte selbst: Elfenbein mit Goldschnitt und doppelter Goldlinie, das Zeichen des Hauses, Wert in Gold,
+   leicht schräg auf einem nachtblauen Umschlag mit goldenem Futter. Sie zeigt, was rechts gewählt wird. Rechts das Formular als Mappe mit Goldlinie,
+   Reiter als Schriftzug mit Goldstrich statt Pillen, Felder nur mit Goldlinie unten, Wert mittig. */
+.gs-bild{position:relative;width:min(100%,520px);aspect-ratio:1.55/1;margin:clamp(40px,4.6vw,70px) auto 0}
+.gs-bild__umschlag{position:absolute;inset:6% -4% -6% 8%;border-radius:10px;background:linear-gradient(160deg,#1d3150 0%,#0f1c30 70%);transform:rotate(4deg);
+  box-shadow:inset 0 0 0 1px rgba(227,210,166,.28),0 40px 50px -30px rgba(0,0,0,.8)}
+.gs-bild__umschlag::before{content:'';position:absolute;left:0;right:0;top:0;height:46%;clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0;
+  background:linear-gradient(180deg,#d9bd7c,#9a7b3c);opacity:.9}
+.gs-bild__karte{position:absolute;inset:0 6% 8% 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(18px,2.2vw,30px);border-radius:8px;transform:rotate(-3deg);
+  color:#16263c;background:linear-gradient(180deg,#fffdf7 0%,#f6eedd 100%);
+  box-shadow:inset 0 0 0 3px #fffdf7,inset 0 0 0 4px #b8954d,inset 0 0 0 7px #fffdf7,inset 0 0 0 8px rgba(184,149,77,.5),0 2px 0 #c9a660,0 30px 40px -24px rgba(0,0,0,.75)}
+.gs-bild__z{width:clamp(22px,2vw,30px);height:auto;color:#9a7b3c}
+.gs-bild__haus{margin-top:8px;font-family:var(--mono);font-size:clamp(9.18px,.778vw,10.8px);letter-spacing:.22em;text-transform:uppercase;color:#8a6d33}
+.gs-bild__titel{margin-top:clamp(6px,.8vw,12px);font-family:var(--titel);font-weight:700;font-size:clamp(2.052rem,3.24vw,3.024rem);line-height:1}
+.gs-bild__strich{width:clamp(50px,5vw,80px);height:1px;margin:clamp(8px,1vw,14px) 0;background:linear-gradient(90deg,rgba(184,149,77,0),#b8954d,rgba(184,149,77,0))}
+.gs-bild__wert{font-family:var(--titel);font-weight:700;font-size:clamp(1.404rem,2.16vw,2.052rem);line-height:1.1;background:linear-gradient(180deg,#b8954d,#7f6026);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gs-bild__was{margin-top:4px;font-size:clamp(.842rem,.972vw,.994rem);line-height:1.35;color:rgba(22,38,60,.75);max-width:30ch}
+.gs-bild__fuer{margin-top:clamp(6px,.8vw,10px);font-family:var(--titel);font-style:italic;font-size:clamp(1.026rem,1.188vw,1.188rem);color:#16263c}
+@media (max-width:900px){.gs-bild{width:min(92%,420px);margin-top:34px;margin-bottom:20px}}
+
+#gutschein .dn-gs-form{position:relative;padding:clamp(30px,3.4vw,50px) clamp(24px,3vw,46px);border-radius:var(--r-xl);
+  background:radial-gradient(110% 50% at 50% -6%,rgba(227,210,166,.12),rgba(227,210,166,0) 60%),linear-gradient(180deg,#14233a 0%,#0d1829 100%);
+  box-shadow:inset 0 1px 0 rgba(255,246,222,.12),inset 0 0 0 1px rgba(227,210,166,.4),0 50px 70px -40px rgba(0,0,0,.85)}
+#gutschein .dn-gs-form::before{content:'';position:absolute;inset:clamp(9px,.9vw,13px);border:1px solid rgba(227,210,166,.24);border-radius:calc(var(--r-xl) - 10px);pointer-events:none}
+#gutschein .tabs--rechner{justify-content:center;gap:clamp(14px,2vw,30px);margin-bottom:clamp(14px,1.6vw,22px);padding-bottom:12px;border-bottom:1px solid rgba(227,210,166,.22)}
+#gutschein .tabs--rechner .tab,#gutschein .tabs--rechner .tab[aria-pressed="true"]{position:relative;min-height:38px;padding:0 2px;border:0;border-radius:0;background:none;color:rgba(246,236,212,.62)}
+#gutschein .tabs--rechner .tab[aria-pressed="true"]{color:#e8d3a2}
+#gutschein .tabs--rechner .tab[aria-pressed="true"]::after{content:'';position:absolute;left:0;right:0;bottom:-13px;height:2px;background:#c9a660}
+#gutschein .dn-gs-form .feld{padding:4px 2px 10px;border-radius:0;background:none;box-shadow:inset 0 -1px 0 rgba(227,210,166,.4)}
+#gutschein .dn-gs-form .feld:has(:focus-visible){box-shadow:inset 0 -2px 0 #c9a660}
+#gutschein .dn-gs-summe{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+#gutschein .dn-gs-summe b{background:linear-gradient(180deg,#f3e2b8,#c9a660);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#gutschein .dn-gs-form>.knoepfe{justify-content:center}
+
+/* Küche: ein grosses Foto, ein oder zwei kleine vorn über die untere Ecke zum Text hin, ohne Rand um die Fotos (Robert 16.10.2026, Fassung 4) */
+.schau.schau--lage{align-items:center}
+.schau--um .lage{order:2}
+.lage{position:relative;padding-bottom:clamp(54px,5.6vw,92px)}
+.lage__b{margin:0;position:relative}
+.lage__b .rahmen__k{display:block;aspect-ratio:4/3;background:#d9d2c4}
+.lage__g{width:88%;margin-right:auto}
+.lage__g .rahmen__k{border-radius:30px;box-shadow:0 34px 40px -28px rgba(var(--ld),.72)}
+.schau--um .lage__g{margin:0 0 0 auto}
+.lage__klein{position:absolute;bottom:0;right:0;display:flex;gap:clamp(10px,1.2vw,18px);width:44%}
+.lage--2 .lage__klein{width:66%}
+.lage--3 .lage__klein{width:86%}
+.schau--um .lage__klein{right:auto;left:0}
+.lage__k{flex:1 1 0;min-width:0}
+.lage__k .rahmen__k{border-radius:22px;box-shadow:0 40px 50px -30px rgba(var(--ld),.78)}
+@media (min-width:901px){.schau.schau--lage{align-items:center}}
+@media (max-width:900px){
+  .schau--um .lage{order:0}
+  .lage__g{width:92%}.lage__g .rahmen__k{border-radius:22px}.lage__k .rahmen__k{border-radius:16px}
+  .lage__klein{width:48%}.lage--2 .lage__klein{width:76%}.lage--3 .lage__klein{width:94%}
+}
+
+
+/* Küche, Kopf in Nachtblau mit goldener Tannen-Tapete (Robert 16.10.2026, Fassung 5 aus kopf-varianten.html) */
+.seitenkopf--nacht{background:var(--nacht);color:var(--papier)}
+.seitenkopf--nacht::before{background-image:linear-gradient(rgba(13,22,33,0) 55%,var(--nacht)),url(../img/tapete-gold-085.png?v=1)}
+.seitenkopf--nacht .gold{color:var(--hellgold)}
+.seitenkopf--nacht .seitenkopf__bild{box-shadow:0 50px 60px -40px rgba(0,0,0,.9)}
+/* Küche: die Auszeichnungen laufen am Fuss des nachtblauen Kopfs durch (Robert 16.10.2026) */
+.ehren--kopf{position:relative;left:auto;right:auto;bottom:auto;margin-top:clamp(44px,4.6vw,76px);padding-block:0 6px}
+.seitenkopf--nacht:has(.ehren--kopf){padding-bottom:clamp(36px,3.6vw,60px)}
+@media (max-width:900px){.ehren--kopf{margin-top:34px}.seitenkopf--nacht:has(.ehren--kopf){padding-bottom:30px}}
+/* Küche, Foodkonzept: Fotos ohne hellen Rand, die Kerbe nachtblau, damit sie sich vom Papier abhebt (Robert 16.10.2026) */
+#foodkonzept .trio__b{box-shadow:0 40px 46px -28px rgba(var(--ld),.8)}
+#foodkonzept .kerbe{--f:var(--nacht);color:var(--papier)}
+
+/* 16.10.2026 23:25 · Kalenderblätter mit kurzer Beschreibung und Verweis (D.TERMIN_TEXT) */
+.kal__text{margin:10px auto 0;max-width:34ch;padding:0 clamp(16px,1.8vw,26px);font-size:1.026rem;line-height:1.5;color:#3a4250}
+.kal__link{display:inline-flex;align-items:center;gap:10px;margin:14px auto clamp(20px,2vw,28px);font-family:var(--mono);font-size:11.88px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinte)}
+.kal__link i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:var(--papier);background:linear-gradient(#27405f,#0f1b2b);box-shadow:inset 0 1px 0 #5a7396,inset 0 -2px 0 #060b13;transition:transform .5s var(--e1)}
+.kal__link i svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.5}
+.kal__link:hover i{transform:translate(2px,-2px)}
+.va-blaetter .kal{display:flex;flex-direction:column}
+.va-blaetter .kal h3{margin-bottom:0}
+.va-blaetter .kal__link{margin-top:auto;padding-top:14px}
+
+/* 16.10.2026 23:30 · Küchenfest (Halbpension): neben dem Foto am Pass ein schmales Band mit Essensbildern, das langsam nach unten läuft.
+   Ein Element in Bewegung, nur transform, harte Kanten (kein Verlauf über Bewegtem), läuft nur, solange es im Bild ist (seiten.js setzt .laeuft). */
+.kfg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.36fr);gap:clamp(10px,1.2vw,18px);align-items:stretch}
+.kfg>.rahmen{min-width:0}
+.kfg__band{position:relative;overflow:hidden;border-radius:var(--r-l);contain:paint}
+.kfg__lauf{position:absolute;left:0;right:0;top:0;display:grid;gap:clamp(10px,1.2vw,16px);animation:kfg-ab 46s linear infinite;animation-play-state:paused}   /* absolut: das Band nimmt die Höhe des Fotos, nicht die seiner Bilder */
+.kfg.laeuft .kfg__lauf{animation-play-state:running}
+.kfg__b{display:block;aspect-ratio:4/5;border-radius:var(--r-m);overflow:hidden;box-shadow:0 10px 22px -14px rgba(15,22,32,.6)}
+.kfg__b img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes kfg-ab{from{transform:translateY(calc(-50% - clamp(5px,.6vw,8px)))}to{transform:translateY(0)}}
+@media (max-width:700px){
+  .kfg{grid-template-columns:minmax(0,1fr)}
+  .kfg__band{height:42vw}
+  .kfg__lauf{display:flex;width:max-content;right:auto;bottom:0;animation-name:kfg-rechts}
+  .kfg__b{height:100%;aspect-ratio:auto}
+  .kfg__b{width:34vw}
+  @keyframes kfg-rechts{from{transform:translateX(calc(-50% - 5px))}to{transform:translateX(0)}}
+}
+@media (prefers-reduced-motion:reduce){.kfg__lauf{animation:none}}
+html.still .kfg__lauf,html.dh-ruhig .kfg__lauf{animation:none}
+
+/* =========================== 16.10.2026 23:35 · Robert: «Wir können nicht überall dieselbe Anordnung von Bildern haben. Und auch denselben Stil.» ===========================
+   Drei eigene Anordnungen statt der Foto-Gruppe (trio) auf allen Seiten: Raumfolge (Seminare oben), Ansichtskarten (Seminare, Rahmenprogramm), Medaillons (Reisen ohne Stress).
+   Dazu «Die Preise» auf Reisen ohne Stress als Fahrplan («komplett anders designen»). Alles steht still, bewegt wird nur der Auftritt (bewegung.js). */
+
+/* Raumfolge: drei hohe Bilder wie eine Flucht von Räumen, das mittlere tiefer */
+.rfolge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);align-items:start;padding-bottom:clamp(30px,3.4vw,56px)}
+.rfolge__r{margin:0;min-width:0}
+.rfolge__r:nth-child(2){margin-top:clamp(30px,3.4vw,56px)}
+/* Raumfolge (Robert 17.10.2026: «statt der Bögen irgendwas anderes»): hohe Rechtecke mit feinem Innenrahmen, der Name als Türschild auf der unteren Kante */
+.rfolge__r{position:relative}
+.rfolge__b{position:relative;display:block;aspect-ratio:3/5;border-radius:var(--r-m);overflow:hidden;box-shadow:0 2px 4px rgba(15,22,32,.12),0 26px 44px -26px rgba(15,22,32,.55)}
+.rfolge__b::after{content:'';position:absolute;inset:9px;border:1px solid rgba(241,236,226,.55);border-radius:calc(var(--r-m) - 9px);pointer-events:none}
+.rfolge__b img{width:100%;height:100%;object-fit:cover;display:block}
+.rfolge__r figcaption{position:relative;z-index:2;width:max-content;max-width:88%;margin:-19px auto 0;padding:11px 18px 10px;border-radius:8px;background:var(--blau);color:var(--papier);text-align:center;font-family:var(--mono);font-size:11.88px;letter-spacing:.2em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(184,152,80,.55),0 12px 20px -12px rgba(15,22,32,.7)}
+@media (max-width:900px){.rfolge__r figcaption{font-size:10px;letter-spacing:.14em;padding:9px 11px 8px;margin-top:-16px}}
+
+/* Ansichtskarten: zwei Bilder mit weissem Rand, leicht gedreht und versetzt */
+.pkarten{position:relative;min-height:clamp(380px,38vw,560px)}
+.pkarte{position:absolute;margin:0;width:66%;padding:clamp(10px,1vw,14px) clamp(10px,1vw,14px) 0;background:#fffdf8;border-radius:6px;box-shadow:0 2px 4px rgba(15,22,32,.14),0 30px 50px -28px rgba(15,22,32,.6)}
+.pkarte--0{left:0;top:0;rotate:-3deg}
+.pkarte--1{right:0;bottom:0;rotate:2.5deg}
+.pkarte__b{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+.pkarte__b img{width:100%;height:100%;object-fit:cover;display:block}
+.pkarte figcaption{padding:12px 4px 14px;font-family:var(--titel);font-weight:700;font-size:clamp(1.026rem,1.188vw,1.188rem);color:var(--tinte)}
+@media (max-width:900px){.pkarten{min-height:0;display:grid;gap:18px}.pkarte{position:relative;width:88%}.pkarte--1{justify-self:end}}
+
+/* Medaillons: breites Bild, zwei runde Bilder mit Goldring über der unteren Kante */
+.medl{position:relative;padding-bottom:clamp(70px,7vw,110px)}
+.medl__g{display:block;aspect-ratio:5/4;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 30px 60px -34px rgba(15,22,32,.6)}
+.medl__g img{width:100%;height:100%;object-fit:cover;display:block}
+.medl__k{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:clamp(24px,4vw,64px)}
+.medl__k figure{margin:0;display:grid;justify-items:center;gap:10px}
+.medl__r{display:block;width:clamp(120px,12vw,180px);aspect-ratio:1;border-radius:50%;overflow:hidden;padding:6px;background:#fffdf8;box-shadow:0 0 0 1px var(--gold),0 22px 40px -22px rgba(15,22,32,.7)}
+.medl__r img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+.medl__k figcaption{font-family:var(--mono);font-size:11.88px;letter-spacing:.2em;text-transform:uppercase;color:var(--stahl)}
+
+/* Fahrplan: ein Blatt, links die Wochen als Strecke, rechts die Preise */
+.fplan{position:relative;margin-top:clamp(26px,3vw,44px);padding:clamp(28px,3.4vw,54px);border-radius:var(--r-l);color:var(--tinte);background:linear-gradient(180deg,#fffdf8,#f4eddf);box-shadow:inset 0 1px 0 #fff,0 3px 0 #d8ccb0,0 50px 80px -44px rgba(0,0,0,.8)}
+.fplan::before{content:'';position:absolute;inset:10px;border:1px solid rgba(184,152,80,.5);border-radius:calc(var(--r-l) - 10px);pointer-events:none}
+.fplan__kopf{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(14px,1.6vw,24px);padding-bottom:clamp(18px,2vw,26px);border-bottom:3px double rgba(184,152,80,.6)}
+.fplan__kopf svg{width:34px;height:auto;color:var(--gold)}
+.fplan__o{font-family:var(--mono);font-size:11.88px;letter-spacing:.22em;text-transform:uppercase;color:#8a7442;margin:0}
+.fplan__kopf h3{margin:6px 0 0;font-family:var(--titel);font-weight:700;font-size:clamp(1.512rem,2.376vw,2.268rem);line-height:1.15}
+.fplan__q{margin:0;text-align:right;font-family:var(--mono);font-size:11.88px;letter-spacing:.14em;line-height:1.8;text-transform:uppercase;color:#6b6354}
+.fplan__teile{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(26px,3.6vw,60px);margin-top:clamp(22px,2.6vw,34px)}
+.fplan__t{margin:0 0 6px;font-family:var(--mono);font-size:11.88px;letter-spacing:.22em;text-transform:uppercase;color:#8a7442}
+.fplan__wochen ol{margin:0;padding:0;list-style:none}
+.fplan__wochen li{display:grid;grid-template-columns:auto minmax(60px,1fr) auto;align-items:center;gap:clamp(12px,1.4vw,20px);padding:clamp(14px,1.5vw,20px) 0;border-bottom:1px solid rgba(var(--ld),.13)}
+.fplan__an,.fplan__ab{display:grid;gap:3px}
+.fplan__ab{text-align:right}
+.fplan__an small,.fplan__ab small{font-family:var(--mono);font-size:10.8px;letter-spacing:.2em;text-transform:uppercase;color:#8a8070}
+.fplan__an b,.fplan__ab b{font-family:var(--titel);font-weight:700;font-size:clamp(1.188rem,1.62vw,1.512rem);white-space:nowrap}
+.fplan__weg{position:relative;display:flex;align-items:center;gap:8px}
+.fplan__weg::before{content:'';position:absolute;left:8px;right:8px;top:50%;border-top:2px dotted rgba(184,152,80,.8)}
+.fplan__weg i{position:relative;flex:none;width:11px;height:11px;border-radius:50%;background:#fffdf8;box-shadow:0 0 0 2px var(--gold)}
+.fplan__weg i:last-child{background:var(--gold)}
+.fplan__weg em{position:relative;margin:0 auto;padding:2px 10px;font-style:normal;font-family:var(--mono);font-size:10.8px;letter-spacing:.16em;text-transform:uppercase;color:var(--stahl);background:#faf6ee}
+.fplan__preise table{width:100%;border-collapse:collapse}
+.fplan__preise th,.fplan__preise td{padding:clamp(14px,1.5vw,20px) 0;border-bottom:1px solid rgba(var(--ld),.13);text-align:right;vertical-align:baseline}
+.fplan__preise thead th{padding-top:0;font-family:var(--mono);font-weight:400;font-size:10.8px;letter-spacing:.18em;text-transform:uppercase;color:#8a8070}
+.fplan__preise tbody th{text-align:left;font-family:var(--titel);font-weight:700;font-size:clamp(1.134rem,1.512vw,1.404rem)}
+.fplan__preise td{font-family:var(--titel);font-weight:700;font-size:clamp(1.188rem,1.728vw,1.62rem);padding-left:16px;color:var(--stahl)}
+.fplan__preise td:nth-of-type(1){color:var(--tinte)}
+.fplan__fuss{margin:clamp(20px,2.2vw,28px) 0 0;font-size:.972rem;line-height:1.55;color:#5b5446}
+@media (max-width:900px){.fplan__teile{grid-template-columns:minmax(0,1fr)}.fplan__kopf{grid-template-columns:auto 1fr}.fplan__q{grid-column:1/-1;text-align:left}}
+@media (max-width:480px){.fplan__wochen li{grid-template-columns:1fr 1fr}.fplan__weg{display:none}.fplan__an b,.fplan__ab b{font-size:1.08rem}}
+/* 17.10.2026 · Robert zu den Kalenderblättern: «da sitzen die Texte nicht richtig mittig in den Kacheln». Der Text stand links (eine allgemeinere Regel setzte den Rand auf 0),
+   jetzt mittig wie Titel und Verweis; Titel am Rechner ohne Silbentrennung, Zeilen gleich lang. */
+.kal .kal__text{margin-left:auto;margin-right:auto}
+@media (min-width:901px){.kal h3,.va-blaetter .kal h3{-webkit-hyphens:manual;hyphens:manual;text-wrap:balance}}
+/* 17.10.2026 · Reisen ohne Stress, «Von Tür zu Tür»: Bild links, drei Kacheln aus der Umgebung statt zwei Kreisen (umgebung_kacheln() in bau.py).
+   Jede Kachel ein Bild mit hellem Rand, das Foto füllt die Kachel bis an den Rand, Schatten läuft weich aus. */
+.umk{position:relative;padding-bottom:clamp(84px,8vw,124px)}
+.umk__g{display:block;aspect-ratio:5/4;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 30px 60px -34px rgba(15,22,32,.55)}
+.umk__g img{width:100%;height:100%;object-fit:cover;display:block}
+.umk__k{position:absolute;left:clamp(14px,2vw,30px);right:clamp(14px,2vw,30px);bottom:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,20px)}
+.umk__k figure{margin:0;display:grid;gap:10px;justify-items:center}
+.umk__b{display:block;width:100%;aspect-ratio:4/3;padding:6px;border-radius:18px;background:#fffdf8;box-shadow:0 0 0 1px rgba(184,152,80,.55),0 26px 44px -26px rgba(15,22,32,.6)}
+.umk__b img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px}
+.umk__k figcaption{font-family:var(--mono);font-size:11.88px;letter-spacing:.2em;text-transform:uppercase;color:var(--stahl);text-align:center}
+@media (max-width:900px){.umk__k{left:8px;right:8px;gap:8px}.umk__b{padding:4px;border-radius:12px}.umk__b img{border-radius:9px}.umk__k figcaption{font-size:10px;letter-spacing:.12em}}
+
+/* ---------- 17.10.2026 · Robert zu «Die Preise» (Reisen ohne Stress): «viel edler machen. Luxuriöser.» Der Fahrplan wird ein Billet erster Klasse:
+   nachtblaues Blatt mit Goldschnitt, doppelte Goldlinie innen, Goldprägung für Titel, Daten und Preise, Perforation zwischen Wochen und Preisen,
+   Strecke als feine Goldlinie mit Rauten. Steht still, bewegt wird nur der Auftritt. ---------- */
+.fplan{color:#efe6d2;background:radial-gradient(120% 90% at 50% 0%,#24395a 0%,#162740 46%,#0e1a2c 100%);
+  box-shadow:inset 0 1px 0 rgba(243,227,186,.28),inset 0 0 0 1px rgba(201,166,96,.5),0 2px 0 #b8975a,0 60px 90px -50px rgba(0,0,0,.95)}
+.fplan::before{inset:12px;border:1px solid rgba(201,166,96,.55);box-shadow:inset 0 0 0 4px rgba(14,26,44,0),inset 0 0 0 5px rgba(201,166,96,.22)}
+.fplan__kopf{grid-template-columns:auto 1fr auto;border-bottom:0;padding-bottom:clamp(22px,2.4vw,32px);position:relative}
+.fplan__kopf::after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;border-top:1px solid rgba(201,166,96,.7);border-bottom:1px solid rgba(201,166,96,.35)}
+.fplan__kopf svg{width:40px;color:#c9a660;filter:drop-shadow(0 1px 0 rgba(0,0,0,.4))}
+.fplan__o,.fplan__t{color:#c9a660}
+.fplan__kopf h3,.fplan__preise td,.fplan__an b,.fplan__ab b{background:linear-gradient(180deg,#f7e7bd 0%,#d9b46a 55%,#b38a45 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e3c27e}
+.fplan__kopf h3{font-size:clamp(1.62rem,2.6vw,2.5rem);letter-spacing:.005em}
+.fplan__q{color:rgba(239,230,210,.62)}
+.fplan__teile{position:relative;gap:clamp(40px,5vw,84px)}
+@media (min-width:901px){.fplan__teile::before{content:'';position:absolute;top:-6px;bottom:-6px;left:calc(55.5% - 1px);border-left:2px dotted rgba(201,166,96,.45)}}
+.fplan__wochen li,.fplan__preise th,.fplan__preise td{border-bottom:1px solid rgba(201,166,96,.2)}
+.fplan__an small,.fplan__ab small,.fplan__preise thead th{color:rgba(239,230,210,.5)}
+.fplan__weg::before{border-top:0;height:1px;background:linear-gradient(90deg,rgba(201,166,96,.25),#c9a660 50%,rgba(201,166,96,.25))}
+.fplan__weg i{width:9px;height:9px;border-radius:1px;transform:rotate(45deg);background:#0f1b2d;box-shadow:0 0 0 1.5px #c9a660}
+.fplan__weg i:last-child{background:linear-gradient(135deg,#f3e2b8,#b38a45)}
+.fplan__weg em{color:rgba(239,230,210,.75);background:#15243a;border:1px solid rgba(201,166,96,.35);border-radius:999px;padding:3px 12px}
+.fplan__preise tbody th{color:#efe6d2}
+.fplan__preise td{font-size:clamp(1.3rem,1.9vw,1.8rem)}
+.fplan__preise td:nth-of-type(1){color:#e3c27e}
+.fplan__preise td:nth-of-type(2){background:none;-webkit-text-fill-color:currentColor;color:rgba(239,230,210,.78)}
+.fplan__fuss{color:rgba(239,230,210,.6);font-size:.92rem;text-align:center;padding-top:clamp(18px,2vw,26px);border-top:1px solid rgba(201,166,96,.2)}
+@media (max-width:480px){.fplan__preise td{font-size:1.15rem;padding-left:10px}.fplan__preise tbody th{font-size:1.02rem}.fplan__preise thead th{font-size:9.5px;letter-spacing:.1em}}
+
+
+/* ======================================================================================================
+   17.10.2026 · «Vor Ihrer Anreise» als Ankunftsbrief (Robert: «luxuriöser, eleganter, komplett anders, was richtig gut zur Marke passt»).
+   Meldeschein auf Elfenbein mit Goldschnitt · Geschenke als Karten mit gezeichnetem Goldmotiv · Tisch: Restaurants als Fotokarten, der Rest als ein Satz ·
+   am Ende der Ankunftsbrief mit Punktlinien bis zum Preis. Alles steht still, nur der Auftritt bewegt.
+   ====================================================================================================== */
+.ab .ab-bild{margin-top:clamp(24px,2.8vw,40px)}
+.ab-schein{position:relative;padding:clamp(28px,3.4vw,50px) clamp(24px,3.2vw,48px) clamp(26px,3vw,44px);border-radius:var(--r-l);color:var(--tinte);
+  background:linear-gradient(180deg,#fffdf8,#f3ecdd);box-shadow:inset 0 1px 0 #fff,0 2px 0 #d8ccb0,0 50px 80px -46px rgba(15,22,32,.7)}
+.ab-schein::before{content:'';position:absolute;inset:11px;border:1px solid rgba(184,152,80,.55);border-radius:calc(var(--r-l) - 11px);pointer-events:none}
+.ab-schein::after{content:'';position:absolute;inset:16px;border:1px solid rgba(184,152,80,.2);border-radius:calc(var(--r-l) - 16px);pointer-events:none}
+.ab-schein__kopf{display:grid;justify-items:center;gap:12px;text-align:center;padding-bottom:clamp(18px,2vw,26px);border-bottom:3px double rgba(184,152,80,.55)}
+.ab-schein__kopf svg{width:34px;height:auto;color:var(--gold)}
+.ab-schein__kopf p{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#8a7442}
+.ab-schein__felder{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,26px) clamp(20px,2.4vw,34px);margin-top:clamp(20px,2.4vw,30px)}
+.ab-feld{display:grid;gap:6px;min-width:0}
+.ab-feld>span{font-family:var(--mono);font-size:10.8px;letter-spacing:.2em;text-transform:uppercase;color:#8a7442}
+.ab-feld input,.ab-feld .dw-feld,.ab-feld [class*="dw-"]{font-family:var(--titel);font-weight:700;font-size:1.3rem}
+.ab-feld input{width:100%;min-width:0;padding:6px 0 9px;border:0;border-bottom:1px solid rgba(184,152,80,.6);border-radius:0;background:transparent;color:var(--tinte);outline:0}
+.ab-feld input::placeholder{font-family:var(--sans);font-weight:400;font-size:1rem;color:rgba(15,22,32,.35)}
+.ab-feld input:focus{border-bottom-color:var(--gold);box-shadow:0 1px 0 var(--gold)}
+.ab-zeiten{margin:clamp(22px,2.6vw,32px) 0 0;padding:0;border:0;min-width:0}
+.ab-zeiten legend{padding:0;margin-bottom:12px;font-family:var(--mono);font-size:10.8px;letter-spacing:.2em;text-transform:uppercase;color:#8a7442}
+.ab-zeiten>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ab-zeit{position:relative;cursor:pointer}
+.ab-zeit input{position:absolute;opacity:0;pointer-events:none}
+.ab-zeit span{display:grid;justify-items:center;gap:4px;padding:14px 6px 12px;border-radius:14px;background:#faf6ec;box-shadow:inset 0 0 0 1px rgba(184,152,80,.35);transition:background .35s,box-shadow .35s,color .35s}
+.ab-zeit b{font-family:var(--titel);font-weight:700;font-size:1.2rem;line-height:1;white-space:nowrap}
+.ab-zeit small{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a7442}
+.ab-zeit:hover span{box-shadow:inset 0 0 0 1px var(--gold)}
+.ab-zeit input:checked+span{background:linear-gradient(#27405f,#16263c);color:#f3e2b8;box-shadow:inset 0 0 0 1px rgba(201,166,96,.8),0 14px 22px -14px rgba(15,22,32,.8)}
+.ab-zeit input:checked+span small{color:rgba(243,226,184,.7)}
+.ab-zeit input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+
+.ab-gaben{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);margin-top:clamp(28px,3.2vw,48px)}
+.ab-gabe{position:relative;display:grid;justify-items:center;align-content:start;gap:10px;text-align:center;padding:clamp(26px,2.6vw,38px) clamp(16px,1.6vw,24px) clamp(22px,2.2vw,30px);border-radius:var(--r-l);
+  background:radial-gradient(130% 110% at 50% 0%,#22385a 0%,#15253c 58%,#0f1b2d 100%);color:#efe6d2;box-shadow:inset 0 1px 0 rgba(243,227,186,.25),inset 0 0 0 1px rgba(201,166,96,.42),0 34px 50px -34px rgba(0,0,0,.9);transition:box-shadow .5s}
+.ab-gabe::before{content:'';position:absolute;inset:8px;border:1px solid rgba(201,166,96,.22);border-radius:calc(var(--r-l) - 8px);pointer-events:none;transition:border-color .5s}
+.ab-gabe:hover::before{border-color:rgba(201,166,96,.6)}
+.ab-gabe.gewaehlt{box-shadow:inset 0 1px 0 rgba(243,227,186,.35),inset 0 0 0 1.5px #c9a660,0 34px 50px -30px rgba(0,0,0,.95),0 0 0 1px rgba(201,166,96,.35)}
+.ab-gabe.gewaehlt::before{border-color:rgba(201,166,96,.7)}
+.ab-gabe__ikon{display:grid;place-items:center;width:84px;height:84px;margin-bottom:6px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(201,166,96,.18),rgba(201,166,96,0) 70%);box-shadow:inset 0 0 0 1px rgba(201,166,96,.4)}
+.ab-gabe__ikon svg{width:46px;height:46px;fill:none;stroke:#d9b46a;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ab-gabe b{font-family:var(--titel);font-weight:700;font-size:clamp(1.1rem,1.35vw,1.3rem);line-height:1.25;min-height:2.5em;display:grid;align-items:center}
+.ab-gabe i{font-style:normal;font-family:var(--titel);font-weight:700;font-size:1.2rem;background:linear-gradient(180deg,#f7e7bd,#d9b46a 58%,#b38a45);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e3c27e}
+.ab-zaehler{display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:4px;border-radius:999px;background:rgba(6,11,19,.45);box-shadow:inset 0 0 0 1px rgba(201,166,96,.35)}
+.ab-zaehler button{width:34px;height:34px;border:0;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;line-height:1;color:#0f1b2d;background:linear-gradient(#f6f1e6,#d5cbb8);cursor:pointer;box-shadow:inset 0 1px 0 #fffdf8,inset 0 -2px 0 #a79c86}
+.ab-zaehler input{width:34px;border:0;background:transparent;text-align:center;font-family:var(--titel);font-weight:700;font-size:1.15rem;color:#f3e2b8;-moz-appearance:textfield}
+.ab-zaehler input::-webkit-outer-spin-button,.ab-zaehler input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+
+.ab-lokale{display:grid;grid-template-columns:minmax(0,.7fr) repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px);margin-top:clamp(28px,3.2vw,48px)}
+.ab-lokal{position:relative;display:grid;cursor:pointer;border-radius:var(--r-l);overflow:hidden;background:#0c1522;box-shadow:inset 0 0 0 1px rgba(201,166,96,.3),0 30px 46px -34px rgba(0,0,0,.9)}
+.ab-lokal input{position:absolute;opacity:0;pointer-events:none}
+.ab-lokal__b{display:block;aspect-ratio:4/3;overflow:hidden}
+.ab-lokal__b img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--e1)}
+.ab-lokal:hover .ab-lokal__b img{transform:scale(1.04)}
+.ab-lokal__n{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 14px 18px;color:#efe6d2}
+.ab-lokal__n b{font-family:var(--titel);font-weight:700;font-size:clamp(1.05rem,1.3vw,1.25rem);text-align:center}
+.ab-lokal__kein{display:grid;align-content:center;justify-items:center;gap:6px;height:100%;padding:20px;text-align:center;color:#efe6d2}
+.ab-lokal__kein b{font-family:var(--titel);font-weight:700;font-size:1.2rem}
+.ab-lokal__kein small{font-size:.92rem;opacity:.65}
+.ab-lokal::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 2px rgba(201,166,96,0);transition:box-shadow .45s}
+.ab-lokal:has(input:checked)::after{box-shadow:inset 0 0 0 2px #c9a660,inset 0 0 0 5px rgba(12,21,34,.9),inset 0 0 0 6px rgba(201,166,96,.5)}
+.ab-lokal:has(input:checked) .ab-lokal__n b,.ab-lokal:has(input:checked) .ab-lokal__kein b{color:#e3c27e}
+.ab-lokal:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:3px}
+.ab-lokalzeit{margin:16px 0 0;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,230,210,.6);min-height:1.5em}
+.ab-satz{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:10px 14px;margin:clamp(22px,2.6vw,36px) auto 0;max-width:1000px;
+  font-family:var(--titel);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.4rem);line-height:1.5;color:#efe6d2;text-align:center}
+.ab-satz__f{display:inline-block;min-width:0;border-bottom:1px solid rgba(201,166,96,.7)}
+.ab-satz__f input,.ab-satz__f select,.ab-satz__f [class*="dw-"]{font:inherit;color:#e3c27e;background:transparent;border:0}
+.ab-satz__f--kurz{min-width:2.2em}
+.ab-satz__f .dw-feld,.ab-satz__f .dw-knopf,.ab-satz__f button{background:transparent!important;box-shadow:none!important;color:#e3c27e!important;font:inherit!important;padding:0 4px!important;height:auto!important;min-height:0!important}
+
+.ab-brief{position:relative;max-width:760px;margin:0 auto;padding:clamp(34px,4vw,60px) clamp(26px,4vw,64px) clamp(30px,3.4vw,50px);border-radius:6px;color:var(--tinte);
+  background:linear-gradient(180deg,#fffdf8,#f3ecdd);box-shadow:inset 0 1px 0 #fff,0 2px 0 #d8ccb0,0 60px 90px -50px rgba(0,0,0,.95)}
+.ab-brief::before{content:'';position:absolute;inset:12px;border:1px solid rgba(184,152,80,.55);pointer-events:none}
+.ab-brief__kopf{display:grid;justify-items:center;gap:10px;text-align:center}
+.ab-brief__kopf svg{width:38px;height:auto;color:var(--gold)}
+.ab-brief__o{margin:6px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#8a7442}
+.ab-brief__kopf h3{margin:0;font-family:var(--titel);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.15}
+.ab-brief__liste{list-style:none;margin:clamp(22px,2.6vw,34px) 0 0;padding:clamp(14px,1.6vw,20px) 0 0;border-top:3px double rgba(184,152,80,.55);display:grid;gap:4px}
+.ab-brief__liste li{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:1.05rem}
+.ab-brief__liste li span{font-family:var(--titel);font-weight:700;font-size:1.12rem}
+.ab-brief__liste li i{flex:1;min-width:24px;border-bottom:1.5px dotted rgba(184,152,80,.75);transform:translateY(-4px)}
+.ab-brief__liste li b{font-weight:400;text-align:right;color:#3a4250}
+.ab-brief__summe{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:14px;padding-top:16px;border-top:1px solid rgba(184,152,80,.45)}
+.ab-brief__summe>span{font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#8a7442}
+.ab-brief__summe b{font-family:var(--titel);font-weight:700;font-size:clamp(2rem,3.4vw,3rem);line-height:1;color:#16263c}
+.ab-brief__summe b small{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.16em;margin-right:10px;color:#8a7442;vertical-align:middle}
+.ab-brief__klein{margin:12px 0 0;font-size:.95rem;color:#5b5446;text-align:right}
+.ab-brief .knoepfe{margin-top:clamp(22px,2.6vw,32px)}
+
+@media (max-width:900px){
+  .ab-schein__felder{grid-template-columns:minmax(0,1fr)}
+  .ab-zeiten>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-gaben{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-lokale{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ab-lokal--kein{grid-column:1/-1}.ab-lokal__kein{padding:16px}
+  .ab-satz{font-size:1.3rem}
+  .ab-brief__klein{text-align:left}
+}
+@media (max-width:480px){.ab-gabe{padding:20px 10px}.ab-gabe__ikon{width:64px;height:64px}.ab-gabe__ikon svg{width:36px;height:36px}.ab-gabe b{font-size:1rem}}
+.ab-gabe__ikon svg{width:54px;height:54px}
+.ab-brief__liste li b{white-space:nowrap}
+.ab-lokal__kein svg{width:30px;height:auto;color:rgba(201,166,96,.75);margin-bottom:6px}
+@media (max-width:600px){.ab-brief__liste li{flex-wrap:wrap;gap:2px 10px}.ab-brief__liste li i{display:none}.ab-brief__liste li b{white-space:normal;text-align:left;flex-basis:100%}}
+@media (max-width:600px){
+  .ab-lokale{grid-template-columns:minmax(0,1fr);gap:10px}
+  .ab-lokal:not(.ab-lokal--kein){grid-template-columns:42% 1fr;align-items:center}
+  .ab-lokal__b{aspect-ratio:4/3;height:100%}
+  .ab-lokal__n{justify-content:flex-start;padding:14px 16px}
+  .ab-lokal__kein{grid-template-columns:auto 1fr;justify-items:start;text-align:left;column-gap:14px;padding:14px 18px}
+  .ab-lokal__kein svg{grid-row:span 2;margin:0}
+}
+@media (max-width:600px){.ab-lokal__n b{text-align:left}}
+
+/* ---------- 17.10.2026 · Umgebungskarte (Robert): «beim Rüberstreichen reaktiver, aber nicht auslösen» · «das Bild mit den Kacheln unten abschliessen, links und rechts»
+   · «in ihrer Karte noch Miniaturbilder». Drüberfahren hebt die Zeile leicht an und zeigt den Ort auf der Karte vor (seiten.js setzt .vor), gewählt wird erst mit Klick.
+   Karte und Liste enden unten auf einer Linie. Die geöffnete Karte zeigt zwei Fotos des Orts. ---------- */
+@media (min-width:901px){
+  .uk{align-items:stretch}
+  .uk__blatt{display:flex;flex-direction:column}
+  .uk__blatt .uk__svg{flex:1;height:100%;min-height:0}
+  .uk__liste{display:flex;flex-direction:column}
+  .uk__zeilen{flex:1}
+}
+.uk-zeile>span:not(.uk-bilder),.uk-zeile>small,.uk-zeile>.uk-bilder{display:none}
+.uk-zeile[aria-pressed="true"]>span:not(.uk-bilder),.uk-zeile[aria-pressed="true"]>small{display:block}
+.uk-zeile .wq{display:inline!important}
+.uk-zeile[aria-pressed="true"]>.uk-bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
+.uk-bilder img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:0 0 0 1px rgba(201,166,96,.45),0 14px 22px -16px rgba(0,0,0,.8)}
+.uk-zeile{position:relative;transition:background .35s,padding .45s var(--e1),color .3s}
+.uk-zeile b{transition:color .3s}
+.uk-zeile:not([aria-pressed="true"])::before{content:'';position:absolute;left:0;top:50%;width:3px;height:0;margin-top:0;border-radius:2px;background:#b8975a;transition:height .4s var(--e1),margin-top .4s var(--e1)}
+@media (hover:hover){
+  .uk-zeile:not([aria-pressed="true"]):hover{padding-left:28px;background:rgba(184,152,80,.09)}
+  .uk-zeile:not([aria-pressed="true"]):hover b{color:#27405f}
+  .uk-zeile:not([aria-pressed="true"]):hover::before{height:56%;margin-top:-14%}
+}
+.uk-ort.vor:not(.an) .uk-z{transform:scale(1.3)}
+.uk-ort.vor:not(.an) .uk-ring{stroke:#b8975a}
+.uk-ort.vor:not(.an) .uk-kern{fill:#b8975a}
+.uk-ort.vor:not(.an) text{fill:#27405f}
+.uk-see.vor:not(.an){fill:#e6d7ad}
+
+/* ---------- 17.10.2026 · «So kommen Sie an» (umgebung.html): das Luftbild bleibt gross und steht still, rechts greift eine handgezeichnete Ankommenskarte
+   halb über seine untere Kante, links darunter die Fakten, die Knöpfe danach. Karte: Elfenbein mit Goldschnitt, Tusche-Strich in Nachtblau, Wald als kleine Tannen. ---------- */
+.ak{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(28px,4vw,72px);align-items:start}
+.ak-bild{grid-column:1/-1;grid-row:1}
+.ak-fakten{grid-column:1;grid-row:2;align-self:center;padding-top:clamp(24px,3vw,44px)}
+.ak-fakten .angaben{grid-template-columns:minmax(0,1fr);margin-top:0}
+.ak-fakten .angabe{border-left:0;padding-left:0;border-top:1px solid rgba(201,166,96,.25);padding-top:clamp(14px,1.6vw,20px)}
+.ak-karte{grid-column:2;grid-row:1/3;align-self:end;position:relative;z-index:2;margin:0 clamp(0px,2vw,30px) 0 0;padding:clamp(18px,2vw,28px) clamp(18px,2vw,28px) clamp(14px,1.6vw,20px);border-radius:var(--r-l);color:var(--tinte);
+  background:linear-gradient(180deg,#fffdf8,#f3ecdd);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(184,152,80,.5),0 3px 0 #cbbd9c,0 60px 80px -40px rgba(0,0,0,.95)}
+.ak-karte::before{content:'';position:absolute;inset:9px;border:1px solid rgba(184,152,80,.45);border-radius:calc(var(--r-l) - 9px);pointer-events:none}
+.ak-bild{margin-bottom:0}
+.ak-karte{max-width:520px;justify-self:end;width:100%}
+.ak-haus use{color:#e3d2a6}
+.ak-kopf{display:grid;gap:4px;text-align:center;margin-bottom:8px}
+.ak-kopf b{font-family:var(--titel);font-weight:700;font-size:clamp(1.2rem,1.7vw,1.55rem)}
+.ak-svg{display:block;width:100%;height:auto}
+.ak-strasse{fill:none;stroke:#d9caa6;stroke-width:4.2;stroke-linecap:round;stroke-linejoin:round}
+.ak-fluss{fill:none;stroke:#3d5370;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.ak-bahn{fill:none;stroke:#1a2433;stroke-width:1.2}
+.ak-bahn--s{stroke-width:5;stroke-dasharray:1 7}
+.ak-tanne{fill:#2f4a3c;opacity:.85}
+.ak-weg{fill:none;stroke:#b08a44;stroke-width:2;stroke-linecap:round;stroke-dasharray:1 5}
+.ak-ring{fill:#fffdf8;stroke:#3d5370;stroke-width:1.6}
+.ak-kern{fill:#3d5370}
+.ak-ort text,.ak-haus text{font-family:var(--titel);font-weight:700;font-size:9.5px;fill:#16263c;paint-order:stroke;stroke:#fdf9f1;stroke-width:4px;stroke-linejoin:round}
+.ak-haus circle{fill:#142235;stroke:#c9a660;stroke-width:1.6}
+.ak-haus use{fill:#e3d2a6}
+.ak-haus text{font-size:11px}
+.ak-klein{font-family:var(--mono);font-size:6.4px;letter-spacing:.16em;text-transform:uppercase;fill:#8a7442;paint-order:stroke;stroke:#fdf9f1;stroke-width:3px}
+.ak-nord path{fill:none;stroke:#16263c;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.ak-nord text{font-family:var(--mono);font-size:8px;fill:#16263c}
+.ak-fuss{margin:6px 0 0;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8a8070}
+@media (max-width:900px){.ak{grid-template-columns:minmax(0,1fr)}.ak-karte{grid-column:1;grid-row:2;margin:-60px 12px 0}.ak-fakten{grid-row:3}}
+
+/* 17.10.2026 · Curling im Winter (veranstaltungen.html): Robert «ein Foto von so einem Curling-Ding unten links drüber lappen». Ein alter Abzug (Curling in
+   Kandersteg um 1915, gemeinfrei) liegt mit weissem Rand über der unteren linken Ecke. Foto und Abzug bewegen sich als ein Stück, das Foto gleitet nicht. */
+.cu-bild{position:relative;padding:0 0 clamp(40px,5vw,80px) clamp(30px,4vw,70px)}
+.cu-abzug{position:absolute;left:0;bottom:0;width:clamp(150px,17vw,250px);margin:0;padding:9px 9px 0;background:#f7f3ea;border-radius:3px;rotate:-3.5deg;
+  box-shadow:0 1px 0 #d8cfbd,0 24px 40px -18px rgba(0,0,0,.9)}
+.cu-abzug span{display:block;aspect-ratio:1;overflow:hidden}
+.cu-abzug img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.25) contrast(1.05)}
+.cu-abzug figcaption{padding:9px 2px 11px;text-align:center;font-family:var(--titel);font-style:italic;font-size:.86rem;line-height:1.25;color:#3a3f4a}
+@media (max-width:900px){.cu-bild{padding:0 0 60px 26px}.cu-abzug{width:140px}}
+.ak-kopf .am-o{margin:0;font-family:var(--mono);font-size:11.88px;letter-spacing:.24em;text-transform:uppercase;color:#8a7442}
+.ehren.ehren--kopf{padding-bottom:34px;margin-bottom:-28px}
+
+/* 17.10.2026 · Robert: Meldeschein «bündig abschliessend» mit der linken Spalte, dort zwei Bilder (Empfang und Halle). Die Karte reicht von der Oberkante des Titels
+   bis zur Unterkante der Bilder; im Schein stehen die Ankunftszeiten unten. */
+@media (min-width:901px){
+  .ab-paar{align-items:stretch}
+  .ab-links{display:flex;flex-direction:column}
+  .ab-bilder{margin-top:auto;padding-top:clamp(24px,2.8vw,40px)}
+  .ab-schein{display:flex;flex-direction:column}
+  .ab-schein .ab-zeiten{margin-top:auto;padding-top:clamp(22px,2.6vw,32px)}
+}
+.ab-bilder{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,18px)}
+@media (max-width:900px){.ab-bilder{margin-top:clamp(22px,4vw,30px)}}
+/* 17.10.2026 · Tisch: statt des Satzes eine Reservierungskarte, vier Felder in einer Reihe wie der Meldeschein (Robert: Satz «absolut nicht cool»). */
+.ab-tischkarte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,40px);max-width:1080px;margin:clamp(20px,2.4vw,32px) auto 0;padding:clamp(22px,2.4vw,32px) clamp(24px,3vw,44px);
+  border-radius:var(--r-l);background:radial-gradient(130% 120% at 50% 0%,#1d3150 0%,#13223a 60%,#0e1a2c 100%);box-shadow:inset 0 1px 0 rgba(243,227,186,.2),inset 0 0 0 1px rgba(201,166,96,.45),0 34px 50px -36px rgba(0,0,0,.9)}
+.ab-tischkarte .ab-feld>span{color:#c9a660}
+.ab-tischkarte .ab-feld input,.ab-tischkarte .ab-feld select{width:100%;padding:6px 0 9px;border:0;border-bottom:1px solid rgba(201,166,96,.55);border-radius:0;background:transparent;color:#f3e2b8;font-family:var(--titel);font-weight:700;font-size:1.3rem;color-scheme:dark}
+.ab-tischkarte .ab-feld [class*="dw-"]{color:#f3e2b8!important}
+@media (max-width:900px){.ab-tischkarte{grid-template-columns:1fr 1fr}}
+/* Spa-Termin: das Bild füllt die linke Spalte bis zum Ende des Menüs (Robert: «Leerraum links unten»). */
+.ab-spabild{margin-top:clamp(24px,2.8vw,40px)}
+@media (min-width:901px){
+  #massage .ab-spabild{flex:1;display:flex;min-height:320px}
+  #massage .ab-spabild .rahmen__k{flex:1;aspect-ratio:auto}
+}
+/* Schlusssatz: kleiner, mittig, mit gleichem Abstand nach oben und unten */
+.ab-schluss{max-width:76ch;margin:clamp(30px,3.4vw,48px) auto 0;text-align:center;font-size:.95rem;line-height:1.6;color:rgba(239,230,210,.62)}
+.ab-schluss a{color:rgba(239,230,210,.86)}
+#senden{padding-bottom:clamp(56px,6vw,96px)}
+/* 17.10.2026 · Überraschungen mit Fotos (Robert: «Bilder generieren … alles auf eine Höhe, von den Massen aufeinander abgestimmt»): jede Karte teilt dieselben vier Zeilen
+   (Foto, Name, Preis, Zähler) über ein gemeinsames Raster, so stehen Namen, Preise und Zähler aller Karten auf einer Linie. */
+.ab-gaben{grid-template-rows:auto auto auto auto;row-gap:0}
+.ab-gabe{grid-row:span 4;display:grid;grid-template-rows:subgrid;row-gap:12px;justify-items:center;align-items:center;padding:clamp(10px,1vw,14px) clamp(10px,1vw,14px) clamp(20px,2vw,28px)}
+.ab-gabe__bild{display:block;width:100%;aspect-ratio:4/3;border-radius:calc(var(--r-l) - 8px);overflow:hidden;background:#0c1522;box-shadow:inset 0 0 0 1px rgba(201,166,96,.3)}
+.ab-gabe__bild img{width:100%;height:100%;object-fit:cover;display:block}
+.ab-gabe b{min-height:0;padding:6px 10px 0;align-self:center}
+.ab-gabe i{align-self:center}
+.ab-gabe .ab-zaehler{margin-top:2px;align-self:end}
+.ab-gabe::before{inset:6px}
+.ab-gaben{grid-auto-rows:auto}.ab-gabe{min-width:0}.ab-gabe b{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+@media (max-width:900px){.ab-gaben{row-gap:14px}}
+@media (max-width:480px){.ab-gabe b{-webkit-hyphens:manual;hyphens:manual;font-size:.95rem}}
+
+/* ---------- 17.10.2026 · Restaurant-Seiten, erster Abschnitt: Fassung 7 «Weinetikett» aus restaurant-varianten2.html (Robert: «7», dann «das Original wie auf dem Bild»).
+   Masse 1:1 aus der Vorlage (.p07 in restaurant_varianten2.py): Foto 78 % breit im Format 16:10, Etikett 52 % (höchstens 520 px) unten rechts, Name in einer Zeile. etikett() in bau.py. ---------- */
+.etk{position:relative;padding-bottom:clamp(60px,8vw,120px)}
+.etk__b{margin:0;width:78%;aspect-ratio:16/10;border-radius:var(--r-xl);overflow:hidden}
+.etk__b .rahmen__k{display:block;width:100%;height:100%;border-radius:0}
+.etk__b img{width:100%;height:100%;object-fit:cover;display:block}
+.etk__et{position:absolute;right:0;bottom:0;width:min(520px,52%);padding:clamp(28px,3vw,42px);text-align:center;color:var(--tinte);background:#f8f2e4;
+  box-shadow:inset 0 0 0 6px #f8f2e4,inset 0 0 0 7px #9c7a3c,inset 0 0 0 10px #f8f2e4,inset 0 0 0 11px rgba(156,122,60,.6),0 40px 60px -30px rgba(15,22,32,.8)}
+.etk__et>svg{width:28px;height:auto;color:#9c7a3c}
+.etk__o{margin:10px 0 6px;font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#8a7442}
+.etk__n{font-family:var(--titel);font-weight:700;font-size:clamp(2rem,3vw,2.8rem);line-height:1.04}
+.etk__n .gold{color:var(--stahl)}
+.etk__s{margin:18px auto 0;max-width:52ch;font-size:.98rem;line-height:1.6}
+.etk__et .werte{margin-top:24px}
+.etk__et .werte div{justify-content:center}
+.etk__kn{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;justify-content:center}
+@media (max-width:900px){.etk__b{width:100%}.etk__et{position:relative;width:auto;margin:-50px 12px 0}}
+@media (max-width:560px){.etk__et .werte div{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;text-align:center;justify-items:center}.etk__et{padding:30px 20px}}
+
+/* 17.10.2026 · «Vor Ihrer Anreise», Ihr Aufenthalt: Robert «drei Polaroids, die ein bisschen überlappen» statt der zwei Fotos. Weisser Rand, unten breiter mit Ortsangabe,
+   leicht gedreht, das mittlere liegt oben. Stehen still, nur der Auftritt bewegt sie. */
+.ab-polas{display:flex;justify-content:center;align-items:flex-end;gap:0;padding:0 5% 10px}
+.ab-pola{position:relative;flex:0 0 38%;margin-left:-5%;margin-right:-5%;padding:10px 10px 0;background:#fdfbf6;border-radius:3px;box-shadow:0 1px 0 #ddd3bf,0 24px 36px -18px rgba(15,22,32,.6)}
+.ab-pola span{display:block;aspect-ratio:1;overflow:hidden}
+.ab-pola img{width:100%;height:100%;object-fit:cover;display:block}
+.ab-pola figcaption{padding:10px 2px 13px;text-align:center;font-family:var(--titel);font-style:italic;font-size:.95rem;line-height:1.2;color:#3a3f4a}
+.ab-pola--0{rotate:-5deg;margin-bottom:-6px;z-index:1}
+.ab-pola--1{rotate:2.5deg;margin-bottom:22px;z-index:3}
+.ab-pola--2{rotate:-2deg;margin-bottom:-2px;z-index:2}
+@media (max-width:560px){.ab-pola{padding:6px 6px 0}.ab-pola figcaption{font-size:.8rem;padding:7px 2px 9px}}
+/* 17.10.2026 · Robert: «die Polaroids bitte grösser, auf den Text verzichten wir». Ohne Absatz unter dem Titel füllen die drei Polaroids die Spalte bis zur Unterkante des Meldescheins. */
+@media (min-width:901px){
+  .ab-polas{padding:clamp(30px,3.4vw,52px) 6% 14px}
+  .ab-pola{flex:0 0 46%;margin-left:-7%;margin-right:-7%;padding:12px 12px 0}
+  .ab-pola figcaption{font-size:1.05rem;padding:12px 2px 15px}
+}
+@media (min-width:901px){
+  .ab-polas{padding:clamp(18px,2vw,30px) 9% 14px}
+  .ab-pola{flex:0 0 52%;margin-left:-10%;margin-right:-10%;padding:13px 13px 0}
+  .ab-schein .ab-zeiten{padding-top:0}
+  .ab-schein .ab-schein__felder{margin-bottom:clamp(22px,2.6vw,32px)}
+}
+@media (min-width:901px){
+  .ab-polas{padding:clamp(18px,2vw,30px) 0 14px}
+  .ab-pola{flex:0 0 50%;margin-left:-12.5%;margin-right:-12.5%;padding:14px 14px 0}
+  .ab-pola span{aspect-ratio:4/5}
+}
+@media (min-width:901px){
+  .ab-polas{justify-content:flex-start}
+  .ab-pola{flex:0 0 48%;margin-left:-11%;margin-right:-11%}
+  .ab-pola--0{margin-left:0}.ab-pola--2{margin-right:0}
+  .ab-pola--0 figcaption{text-align:left;padding-left:12px}
+  .ab-pola--2 figcaption{text-align:right;padding-right:12px}
+}
+@media (min-width:901px){.ab-pola{flex-basis:46.5%}.ab-pola--0{margin-left:5%}}
+/* 17.10.2026 · Robert: Polaroids «sehen nicht gut aus, mach was anderes». Zwei Bogenfenster wie die Rundbögen des Hauses (Hallenbad, Empfang): Foto im Bogen,
+   eine feine Goldlinie innen, darunter die Ortsangabe. Die beiden füllen die Spalte bis zur Unterkante des Meldescheins. Stehen still. */
+.ab-bogen{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px);margin-top:clamp(24px,2.8vw,40px)}
+.ab-bogen__f{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.ab-bogen__f span{position:relative;display:block;flex:1;min-height:260px;aspect-ratio:3/4;border-radius:999px 999px 6px 6px;overflow:hidden;background:#d9d2c4;box-shadow:0 30px 44px -30px rgba(15,22,32,.6)}
+.ab-bogen__f span::after{content:'';position:absolute;inset:8px;border:1px solid rgba(243,226,184,.75);border-radius:999px 999px 3px 3px;pointer-events:none}
+.ab-bogen__f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ab-bogen__f figcaption{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a7442}
+@media (min-width:901px){
+  .ab-links .ab-bogen{flex:1;display:grid}
+  .ab-bogen__f span{aspect-ratio:auto}
+}
+@media (max-width:900px){.ab-bogen__f span{min-height:0;aspect-ratio:3/4}}
+/* 17.10.2026 · Robert: «drei Bilder, ein grosses und zwei kleine übereinander, alles abgerundete Ecken». Links die Halle gross, rechts Empfang und Kamin gestapelt;
+   das Gefüge füllt die Spalte bis zur Unterkante des Meldescheins. */
+.ab-mos{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:clamp(10px,1.2vw,16px);margin-top:clamp(24px,2.8vw,40px)}
+.ab-mos__b{position:relative;display:block;overflow:hidden;border-radius:clamp(16px,1.6vw,24px);background:#d9d2c4;box-shadow:0 0 0 1px rgba(var(--ld),.08),0 26px 40px -30px rgba(15,22,32,.6)}
+.ab-mos__b--0{grid-row:1 / span 2}
+.ab-mos__b img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (min-width:901px){.ab-links .ab-mos{flex:1;min-height:300px}}
+@media (max-width:900px){.ab-mos{aspect-ratio:4/3}}
+/* 17.10.2026 · Robert: «wenn man oben über die Leiste fährt, flackert dieses Schild, das herunterkommt». Kein reines :hover mehr: das Blatt öffnet erst, wenn die Maus
+   kurz auf dem Menüpunkt ruht, schliesst mit kleiner Verzögerung, und es ist immer nur eines offen (seiten.js setzt .offen). Tastatur weiter über :focus-visible. */
+@media (hover:hover){
+  .nav__g:hover .nav__u{opacity:0;visibility:hidden;transform:translate(-50%,-8px);transition:opacity .2s var(--e2),transform .4s var(--e1),visibility 0s .2s}
+  .nav__g.offen .nav__u,.nav__g:has(:focus-visible) .nav__u{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .22s var(--e2),transform .45s var(--e1)}
+  .nav__g:focus-within:not(:has(:focus-visible)):not(.offen) .nav__u{opacity:0;visibility:hidden}
+}
+/* 17.10.2026 · Curling im Winter: Robert «das grosse Bild wie so ein Fenster». Baustein Fenster wie .bruch: das Foto steht fest im Hintergrund, der gerundete Rahmen
+   wandert beim Scrollen darüber. Der Abzug von 1915 liegt weiter über der Ecke und schwebt allein herein. */
+.cu-fenster{position:relative;aspect-ratio:3/2;border-radius:var(--r-xl);clip-path:inset(0 round var(--r-xl));background:#0b1422;box-shadow:inset 0 0 0 1px rgba(201,166,96,.35)}
+.cu-fenster__bild{position:fixed;inset:0;z-index:0;pointer-events:none}
+.cu-fenster__bild img{width:100%;height:100%;object-fit:cover;display:block}
+.cu-fenster::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 7px rgba(255,255,255,.06),inset 0 0 0 8px rgba(201,166,96,.4);pointer-events:none;z-index:1}
+/* 17.10.2026 · Angebote: (1) Gourmet-Aufenthalt «links Text, rechts Karte»; (2) neben Küchenfest und Mittagsmenü die dritte Kachel «Reisen ohne Stress» (Robert:
+   «da müsste noch eine Kachel hin»). Spa «In guten Händen»: die drei Fotos ohne hellen Rahmen (Robert: «rahmenlose Kacheln»). */
+@media (min-width:901px){#gourmet .paar--blatt{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}#gourmet .paar--blatt>.blatt{order:2}}
+a.termin--link{display:block;color:inherit;text-decoration:none}
+#haende .trio__b{box-shadow:0 40px 46px -28px rgba(var(--ld),.75)}
+/* Umgebung: Robert «die Übergänge müssen sanfter sein». Kein Höhen-Animieren (Regel 55): die Karte öffnet sofort, ihr Inhalt gleitet aber ruhig hoch,
+   Fläche und Schrift wechseln weich, die Fotos kommen leicht vergrössert und setzen sich. */
+.uk-zeile{transition:background-color .5s var(--e2),color .45s var(--e2),box-shadow .5s var(--e2),border-radius .5s var(--e2),padding .45s var(--e1)}
+.uk-zeile[aria-pressed="true"]>:not(b){animation:uk-auf .7s var(--e1) both}
+.uk-zeile[aria-pressed="true"]>small{animation-delay:.08s}
+.uk-zeile[aria-pressed="true"] .uk-bilder img{animation:uk-bild .9s var(--e1) both}
+.uk-zeile[aria-pressed="true"] .uk-bilder img+img{animation-delay:.07s}
+@keyframes uk-auf{from{transform:translateY(12px)}to{transform:none}}
+@keyframes uk-bild{from{transform:scale(1.06)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.uk-zeile[aria-pressed="true"]>:not(b),.uk-zeile[aria-pressed="true"] .uk-bilder img{animation:none}}
+@media (min-width:901px){.cu-fenster__bild{right:auto;width:56vw}}   /* das feste Foto deckt nur die linke Hälfte, so sieht man durch das Fenster den Baum und die Berge */
+#kalender .termine>.termin{align-self:stretch;display:flex}#kalender .termine>.termin>.termin__k{flex:1}   /* drei Kacheln gleich hoch */
+/* Zimmerseiten, Tausch: während der Flug läuft, zeigt der leere Rahmen den hellen Grund statt Nachtschwarz (seiten.js setzt .tauscht) */
+.hell .tauscht .rahmen__k{background:#e7dfcf}
+
+/* ---------- 17.10.2026 · Angebote, «Reisen ohne Stress»: Fassung 12 «Hell und ruhig» aus reisen-varianten.html (Robert: «12 nehmen, mal gucken wie das aussieht»).
+   Masse 1:1 aus .r12 der Vorlage: Papier, viel Weissraum, ein Foto im Passepartout, rechts Liste, Preis, Knöpfe. Preistabelle und Wochen stehen auf reisen-ohne-stress.html. ---------- */
+.rh-t{font-family:var(--titel);font-weight:700;font-size:clamp(2.6rem,4.6vw,4.4rem);line-height:1.04}
+.rh-t .gold{color:var(--stahl)}
+.rh-s{margin-top:16px;font-size:1.13rem;line-height:1.6;max-width:56ch;opacity:.9}
+.rh-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,5vw,90px);align-items:center;margin-top:40px}
+.rh-pp{margin:0;padding:clamp(18px,2vw,30px);background:#fffdf8;box-shadow:0 0 0 1px rgba(184,152,80,.35),0 40px 50px -36px rgba(15,22,32,.5)}
+.rh-pp span{display:block;aspect-ratio:4/3;overflow:hidden}
+.rh-pp img{display:block;width:100%;height:100%;object-fit:cover}
+.rh-l{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid rgba(var(--ld),.2)}
+.rh-l li{padding:12px 0;border-bottom:1px solid rgba(var(--ld),.2);font-family:var(--titel);font-weight:700;font-size:1.12rem;line-height:1.35}
+.rh-p{margin-top:22px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline}
+.rh-p small{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#8a7442}
+.rh-p b{font-family:var(--titel);font-size:clamp(2.2rem,3.4vw,3.2rem);line-height:1;color:#27405f}
+.rh-p span{grid-column:1/-1;font-size:.95rem;opacity:.75;margin-top:4px}
+.rh-kn{margin-top:26px;justify-content:center}   /* Robert 17.10.2026: «die Buttons mittig in ihrem Bereich» */
+@media (max-width:900px){.rh-g{grid-template-columns:1fr}}
+/* 17.10.2026 · Zimmerseiten, «Die anderen Kategorien»: Robert «Grössen und Preise unter den Namen edler darstellen». Statt einer grauen Zeile zwei Angaben
+   nebeneinander: Bezeichnung klein in Gold-Versalien, Wert in der Titelschrift, feine Goldlinie dazwischen, oben ein kurzer Goldstrich unter dem Namen. */
+.zs__ang{display:flex;justify-content:center;align-items:stretch;margin-top:14px;padding-top:14px;position:relative}
+.zs__ang::before{content:'';position:absolute;top:0;left:50%;width:44px;height:1px;margin-left:-22px;background:linear-gradient(90deg,rgba(184,152,80,0),#b8975a,rgba(184,152,80,0))}
+.zs__ang>span{display:grid;gap:5px;justify-items:center;padding:0 clamp(16px,1.8vw,26px);font-family:var(--titel);font-weight:700;font-size:clamp(1.08rem,1.3vw,1.26rem);color:#27405f}
+.zs__ang>span+span{border-left:1px solid rgba(184,152,80,.5)}
+.zs__ang i{font-style:normal;font-family:var(--mono);font-weight:400;font-size:10.8px;letter-spacing:.2em;text-transform:uppercase;color:#8a7442}
+/* 17.10.2026 · «Von Tür zu Tür»: Robert «da bitte ohne Rahmen». Die drei Kacheln ohne hellen Rand und ohne Goldlinie, nur das Foto mit runden Ecken und weichem Schatten. */
+.umk__b{padding:0;background:none;border-radius:16px;overflow:hidden;box-shadow:0 26px 40px -24px rgba(15,22,32,.6)}
+.umk__b img{border-radius:0}
+@media (max-width:900px){.umk__b{padding:0;border-radius:12px}}
+/* 17.10.2026 · Robert zu «Am dritten Donnerstag» (halbpension.html): «die Bilder oben bündig mit der Überschrift, unten mit den Buttons; die Buttons mittig in
+   ihren Bereich». Foto und laufendes Band füllen die Höhe der Textspalte; die zwei Knöpfe stehen gleich breit untereinander in der Mitte der Spalte. */
+@media (min-width:901px){
+  #kuechenfest .paar{align-items:stretch!important}
+  #kuechenfest .kfg{height:100%}
+  #kuechenfest .kfg>.rahmen{display:flex}
+  #kuechenfest .kfg>.rahmen .rahmen__k{flex:1;aspect-ratio:auto;height:auto}
+}
+#kuechenfest .knoepfe{display:grid;grid-template-columns:max-content;justify-content:center;justify-items:stretch;gap:14px}
+#kuechenfest .knoepfe .kn{margin:0}
+
+/* Heiraten: Einkerbungen umgekehrt, Creme mit blauer Schrift (Robert 17.10.2026) */
+.kerbe-creme .kerbe,.fl--blau.kerbe-creme .trio .kerbe{--f:var(--papier);color:var(--blau)}
+
+/* Heiraten, «Geplant mit dem Event-Team» (Robert 17.10.2026): Bildgruppe schliesst oben mit dem Titel und unten mit den Knöpfen ab */
+.plan-paar{align-items:stretch}
+.plan-paar>div:first-child{display:flex;flex-direction:column;justify-content:flex-start}
+.plan-paar .trio{aspect-ratio:auto;height:100%;min-height:0}
+.plan-paar .trio .drift:nth-child(1){top:0;bottom:0;width:66%}
+.plan-paar .trio .drift:nth-child(1) .trio__b{aspect-ratio:auto;height:100%}
+.plan-paar .trio .drift:nth-child(1){height:100%}
+.plan-paar .trio .drift:nth-child(2){top:7%;width:42%}
+.plan-paar .trio .drift:nth-child(3){bottom:9%;right:4%;width:50%}
+@media (max-width:900px){.plan-paar .trio{height:auto;aspect-ratio:1/.98;min-height:0}}
+
+#ueberraschung .trio__b{box-shadow:0 40px 46px -28px rgba(var(--ld),.75)}   /* Robert 17.10.2026: «da bitte ohne Rahmen» */
+
+/* Angebote, «Ein Abend zum Verschenken» (Robert 17.10.2026): links statt der Gutscheinkarte ein Foto aus dem Haus, das mit der Wahl rechts wechselt
+   (Haus am Abend, Au Gourmet, Spa, Suite), Name, Empfänger und Wert in der Einkerbung. Rechts die Kachel ohne Leerraum, Wert und Knopf in einer Zeile. */
+#gutschein .paar>div:first-child{display:flex;flex-direction:column}
+.gv{position:relative;flex:1 0 auto;height:clamp(240px,20vw,300px);margin:clamp(30px,3.4vw,48px) 0 0;border-radius:var(--r-xl);overflow:hidden;background:#0b1422;box-shadow:0 0 0 1px rgba(227,210,166,.22),0 40px 60px -36px #000}
+.gv__b,.gv__b>span{position:absolute;inset:0}
+.gv__b>span{opacity:0;transition:opacity .7s var(--e2)}
+.gv__b img{width:100%;height:100%;object-fit:cover;display:block}
+.gv[data-art="wert"] [data-gv="wert"],.gv[data-art="menu"] [data-gv="menu"],.gv[data-art="massage"] [data-gv="massage"],.gv[data-art="aufenthalt"] [data-gv="aufenthalt"]{opacity:1}
+.gv .kerbe.gv__k{--f:var(--blau);display:grid;gap:4px;max-width:78%;padding:clamp(14px,1.4vw,20px) clamp(24px,2.4vw,34px) clamp(12px,1.2vw,16px) clamp(18px,1.8vw,24px);margin:0}
+.gv__k small{font-family:var(--mono);font-size:11.34px;letter-spacing:.16em;text-transform:uppercase;color:var(--hellgold)}
+.gv__was{font-family:var(--titel);font-weight:700;font-size:clamp(1.2rem,1.7vw,1.62rem);line-height:1.15;color:var(--papier)}
+.gv__wert{font-family:var(--titel);font-weight:700;font-size:clamp(1.08rem,1.3vw,1.3rem);color:#e8d3a2}
+@media (min-width:901px){
+  #gutschein .dn-gs-form>.dn-gs-summe{margin-top:auto}
+  #gutschein .dn-gs-form{gap:0}
+}
+#gutschein .dn-gs-summe{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:16px;margin-top:clamp(22px,2.4vw,32px);padding-top:clamp(18px,2vw,26px)}
+#gutschein .dn-gs-summe .mono{display:block;font-size:11.34px;letter-spacing:.18em}
+#gutschein .dn-gs-summe b{font-size:clamp(2rem,2.6vw,2.6rem);line-height:1}
+#gutschein .dn-gs-form>.dn-gs-summe+.knoepfe{margin-top:clamp(18px,2vw,26px)}
+#gutschein .dn-gs-form textarea{min-height:5.4em;line-height:1.8;background:repeating-linear-gradient(180deg,transparent 0 calc(1.8em - 1px),rgba(227,210,166,.16) calc(1.8em - 1px) 1.8em);background-attachment:local}
+#gutschein .dn-gs-form .tabs--rechner{position:relative}
+@media (max-width:900px){.gv{flex:none;aspect-ratio:4/3;min-height:0}}
+#gutschein label.feld:is([data-nur-art="wert"],[data-nur-art="menu"]){grid-column:1/-1}   /* Betrag und Menü über die ganze Breite, darunter «Für» und «Ihr Name» nebeneinander */
+@media (min-width:901px){#gutschein .dn-gs-form>.felder{flex:1;align-content:space-evenly}#gutschein .dn-gs-form>.dn-gs-summe{margin-top:clamp(22px,2.4vw,32px)}}   /* Kachel so hoch wie links, die Höhe verteilt sich auf die Felder statt als Loch über dem Wert */
+
+/* Einkerbungen seitenweit (Robert 17.10.2026: «Blau auf Blau ist dann bitte in der Einkerbung beige und blauer Text. Weiss auf Weiss finde ich okay»):
+   auf jeder dunklen Fläche ist die Einkerbung Creme mit blauer Schrift; auf hellen Flächen bleibt sie hell. */
+html body :is(.fl--nacht,.fl--blau,.fl--tief,.fuss) .kerbe:not(.hell *){--f:var(--papier)!important;color:var(--blau)!important}
+html body :is(.fl--nacht,.fl--blau,.fl--tief,.fuss) .kerbe:not(.hell *) :is(small,i){color:#8a7442!important}
+html body :is(.fl--nacht,.fl--blau,.fl--tief,.fuss) .kerbe:not(.hell *) :is(b,.gv__was){color:var(--blau)!important}
+html body :is(.fl--nacht,.fl--blau,.fl--tief,.fuss) .kerbe:not(.hell *) .gv__wert{color:#8a7442!important}
+/* Umgebung, sanfter (Robert 18.10.2026, 14:03): Inhalt der geöffneten Karte kommt langsamer und blendet weich ein, die Fotos folgen nacheinander */
+.uk-zeile[aria-pressed="true"]>:not(b){animation:uk-auf2 1s var(--e1) both}
+.uk-zeile[aria-pressed="true"]>small{animation-delay:.14s}
+.uk-zeile[aria-pressed="true"] .uk-bilder img{animation:uk-bild2 1.2s var(--e1) both}
+.uk-zeile[aria-pressed="true"] .uk-bilder img+img{animation-delay:.12s}
+@keyframes uk-auf2{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes uk-bild2{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+.uk-zeile{transition:background-color .7s var(--e2),color .6s var(--e2),box-shadow .7s var(--e2),border-radius .7s var(--e2),padding .6s var(--e1)}
+@media (prefers-reduced-motion:reduce){.uk-zeile[aria-pressed="true"]>:not(b),.uk-zeile[aria-pressed="true"] .uk-bilder img{animation:none}}
+/* Abreise, Kasten «Zum Bahnhof» (Robert 18.10.2026, 14:06: «das Blau ist irgendwie zu dunkel in dem Kasten. Das Gelb passt gar nicht zum Stil der Seite»):
+   helleres Nachtblau der Leiste, Felder als helle Flächen darin, Beschriftung und Werte in Papierweiss statt Gold. */
+#shuttle form.dn-karte-dunkel{background:linear-gradient(180deg,#2c4768,#1f3554);box-shadow:inset 0 1px 0 rgba(226,236,255,.2),0 30px 60px -34px rgba(15,22,32,.55)}
+#shuttle form.dn-karte-dunkel .feld{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+#shuttle form.dn-karte-dunkel .feld>span{color:rgba(246,241,230,.66)}
+#shuttle form.dn-karte-dunkel :is(input,select,textarea){color:#f6f1e6}
+#shuttle form.dn-karte-dunkel :is(input,textarea)::placeholder{color:rgba(246,241,230,.5)}
+#shuttle form.dn-karte-dunkel .feld:has(:focus-visible){box-shadow:inset 0 0 0 1px rgba(246,241,230,.55)}
+#shuttle form.dn-karte-dunkel :is(p,small) a{color:#f6f1e6}
+
+/* Umgebung, Robert 18.10.2026, 18:19 («springt richtig einmal nach unten»): der vorige Ort behält beim Zuklappen seinen Inhalt, bis die Zeile zu ist;
+   die Liste rückt nicht von selbst nach (die Seite hält die angetippte Zeile selbst an ihrem Platz) */
+.uk-zeile.zu>span:not(.uk-bilder),.uk-zeile.zu>small{display:block}
+.uk-zeile.zu>.uk-bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
+.uk-zeile.zu>:not(b){animation:none}
+[data-umgebung]{overflow-anchor:none}
+
+/* Gutschein-Karte (Robert 18.10.2026, 23:47: «Bitte prüfen Sie, dass die Überschriften alle in den Karten sitzen»): lange Namen brechen in der Karte um, mit Luft rechts */
+.gv .kerbe.gv__k{white-space:normal;width:max-content;max-width:min(84%,22em);box-sizing:border-box}
+.gv .kerbe.gv__k :is(.gv__was,small,.gv__wert){white-space:normal;overflow-wrap:break-word;min-width:0}
+@media (max-width:900px){.gv .kerbe.gv__k{max-width:88%}}
+/* Sprung auf den Gutschein (Robert 18.10.2026, 23:47): die Reiter des Formulars landen unter der Kopfleiste, nicht dahinter */
+#gutschein{scroll-margin-top:clamp(96px,8vw,124px)}
+/* Überschriften bleiben in ihren Karten (Robert 18.10.2026, 23:47), auch am Handy mit langen Wörtern */
+.ab-gabe>b{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;max-width:100%}
+@media (max-width:560px){.rahmen__k>.kerbe{max-width:calc(100% - 4px);box-sizing:border-box;white-space:normal;hyphens:auto;-webkit-hyphens:auto}}

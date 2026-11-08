@@ -1,0 +1,169 @@
+/* Eigenes CSS der Unterseite anreise.html (siehe seiten/anreise.py). Lädt auf allen Seiten: nur Klassen mit Vorsilbe «an-».
+   Neubau 20.10.2026: zwei Wege ins Saastal als eine Platte aus zwei Hälften (Abend mit Zug und Postauto, Tag mit dem Auto), Ankunft mit Hausschild.
+   Bewegt wird nur über transform; jede Platte steigt als Ganzes deckend von unten, die Fotos zoomen im Rahmen (Regel 55, Tasty-Sprache Stufe 2.3). */
+
+.an-mitte{text-align:center}
+.an-mitte .d2,.an-mitte .leise{margin-left:auto;margin-right:auto}
+.an-mitte .leise{max-width:60ch}
+
+/* ---------- 1. Linie ins Tal: die zwei Zeiten auf der Karte klar getrennt ---------- */
+.an-flug__zeit{display:grid;gap:6px;max-width:none}
+.an-flug__zeit span{display:flex;align-items:baseline;gap:12px;padding-top:8px;border-top:1px solid rgba(10,42,74,.12)}
+.an-flug__zeit b{min-width:5.6em;font:400 1.35rem/1 var(--titel);color:var(--laerche-tief)}
+
+/* Schluss des Flugs (Z2 20.10.2026): kürzere Strecke, weniger Luft danach, beide Karten deckend; die zweite Karte mit Foto steigt von unten,
+   sobald die Karte nah ist (.nah setzt montemoro.js), die erste geht dabei nach unten weg. Das Deckvermögen überstimmt die Deckkraft aus dem Skript. */
+.an-k-flug .flug__wrap{height:200svh;margin-bottom:0!important}
+.an-k-flug .kapitel__innen{padding-bottom:0}
+.an-k-flug .flug__text{background:var(--papier);box-shadow:0 40px 70px -40px rgba(7,27,46,.45),0 14px 26px -18px rgba(7,27,46,.3)}
+.an-k-flug .flug__text--2{top:50%;max-width:460px;padding:0;overflow:hidden}
+.an-k-flug .flug__text--2>:not(figure){margin-left:clamp(24px,2.6vw,36px);margin-right:clamp(24px,2.6vw,36px)}
+.an-k-flug .flug__text--2 .ueber{margin-top:clamp(22px,2.4vw,30px)}
+.an-k-flug .flug__text--2 .flug__minuten{margin-bottom:clamp(22px,2.4vw,30px)}
+.an-flug__bild{position:relative;height:clamp(180px,24vh,250px);margin:0;overflow:hidden;background:var(--wandschatten)}
+.an-flug__bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.an-k-flug .flug__text--1,.an-k-flug .flug__text--2{transition:transform 1.2s var(--e1),opacity .25s linear}
+.an-k-flug .flug:not(.nah)~.flug__text--1{opacity:1!important;transform:none}
+.an-k-flug .flug.nah~.flug__text--1{opacity:0!important;transform:translateY(60px);pointer-events:none}
+.an-k-flug .flug:not(.nah)~.flug__text--2{opacity:0!important;transform:translateY(-50%) translateY(90px);pointer-events:none}
+.an-k-flug .flug.nah~.flug__text--2{opacity:1!important;transform:translateY(-50%);pointer-events:auto!important}
+.an-k-flug .flug.nah~.flug__text--2 .an-flug__bild img{transform:none}
+.an-k-wege .kapitel__innen{padding-top:calc(var(--gh) + clamp(56px,6vw,96px))}
+.an-flug__oben{display:none}
+@media(max-width:800px){
+  .an-k-flug .flug__wrap{height:190svh}
+  .an-flug__bild{display:none}
+  .an-flug__oben{display:block;position:absolute;z-index:2;left:0;right:0;top:0;height:min(30svh,250px);margin:0;overflow:hidden;background:var(--wandschatten);transition:transform 1.2s var(--e1),opacity .25s linear}
+  .an-flug__oben img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .an-k-flug .flug:not(.nah)~.an-flug__oben{opacity:0;transform:translateY(60px)}
+  .an-k-flug .flug.nah~.an-flug__oben{opacity:1;transform:none}
+  .an-k-flug .flug__text--2{top:auto;bottom:16px;padding:20px}
+  .an-k-flug .flug__text--2>:not(figure){margin-left:0;margin-right:0}
+  .an-k-flug .flug__text--2 .ueber{margin-top:0}
+  .an-k-flug .flug__text--2 .flug__minuten{margin-bottom:0}
+  .an-k-flug .flug:not(.nah)~.flug__text--2{transform:translateY(90px)}
+  .an-k-flug .flug.nah~.flug__text--2{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.an-k-flug .flug__text--1,.an-k-flug .flug__text--2{transition:none}}
+
+/* ---------- 2. Zwei Wege: eine Platte, zwei Hälften liegen aneinander ---------- */
+.an-wege{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);box-shadow:0 60px 90px -60px rgba(7,27,46,.55),0 24px 40px -30px rgba(7,27,46,.35)}
+.an-weg{display:flex;flex-direction:column;min-width:0}
+.an-weg__bild{position:relative;height:clamp(240px,24vw,360px);overflow:hidden;background:var(--wandschatten)}
+.an-weg__bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.an-weg__bild figcaption,.an-ankunft figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.an-weg__text{flex:1;display:flex;flex-direction:column;padding:clamp(30px,3.6vw,58px) clamp(26px,3.6vw,58px) clamp(34px,4vw,62px)}
+.an-weg--zug{background:var(--nacht);color:var(--papier)}
+.an-weg--zug .ueber{color:var(--messing)}
+.an-weg--auto{background:var(--papier)}
+
+.an-dauer{display:flex;align-items:baseline;gap:12px;margin:14px 0 4px}
+.an-dauer b{font:400 clamp(4.4rem,7vw,7.4rem)/.86 var(--titel);letter-spacing:.005em;font-weight:400;font-variant-numeric:tabular-nums}
+.an-dauer b i{font-style:normal}
+.an-dauer small{font:400 11px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.an-weg--zug .an-dauer b{color:#F2B98F}
+.an-weg--zug .an-dauer small{color:rgba(245,242,238,.62)}
+.an-weg--auto .an-dauer b{color:var(--laerche)}
+.an-weg--auto .an-dauer small{color:var(--grau)}
+
+.an-weg__satz{max-width:52ch;margin-top:18px;font-size:1rem;line-height:1.75;color:rgba(245,242,238,.8)}
+.an-ab__kopf{margin-top:clamp(30px,3vw,44px);padding-bottom:12px;font:400 10.5px/1.4 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--messing);border-bottom:1px solid rgba(179,152,103,.4)}
+.an-ab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.an-ab li{display:flex;flex-direction:column;gap:6px;padding:18px 16px 4px 0}
+.an-ab li+li{padding-left:18px;border-left:1px solid rgba(179,152,103,.28)}
+.an-ab span{font:400 10px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(245,242,238,.6)}
+.an-ab b{font:400 clamp(2.4rem,3.4vw,3.4rem)/1 var(--titel);font-weight:400;color:var(--papier);font-variant-numeric:tabular-nums}
+.an-ab small{font-size:.86rem;line-height:1.4;color:rgba(245,242,238,.62)}
+
+.an-gratis{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 26px;align-items:center;margin-top:auto;padding-top:clamp(30px,3vw,44px)}
+.an-gratis>*{position:relative}
+.an-gratis::before{content:'';grid-column:1/-1;height:1px;background:rgba(179,152,103,.4);margin-bottom:clamp(16px,1.6vw,22px)}
+.an-gratis__wort{font:400 clamp(2.4rem,3.4vw,3.4rem)/1 var(--titel);color:#F2B98F}
+.an-gratis__titel{font:400 1.12rem/1.3 var(--titel);letter-spacing:.01em;color:var(--papier)}
+.an-gratis__bed{margin-top:6px;font-size:.86rem;line-height:1.6;color:rgba(245,242,238,.62)}
+.an-gratis.vorbei{display:none}
+
+.an-strecke{position:relative;margin-top:clamp(26px,2.6vw,38px)}
+.an-strecke::before{content:'';position:absolute;left:4px;top:12px;bottom:30px;width:1px;background:var(--laerche)}
+.an-strecke li{position:relative;padding:0 0 clamp(18px,1.8vw,26px) 34px}
+.an-strecke li::before{content:'';position:absolute;left:0;top:7px;width:9px;height:9px;background:var(--nacht)}
+.an-strecke li.an-strecke__ziel::before{left:-2px;top:5px;width:13px;height:13px;background:var(--laerche)}
+.an-strecke b{display:block;font:400 clamp(1.35rem,1.7vw,1.7rem)/1.1 var(--titel);font-weight:400;color:var(--nacht)}
+.an-strecke small{display:block;margin-top:4px;font-size:.95rem;line-height:1.55;color:var(--grau)}
+.an-gratis--park::before{background:rgba(10,42,74,.14)}
+.an-gratis--park .an-gratis__wort{color:var(--laerche)}
+.an-gratis--park .an-gratis__titel{color:var(--nacht)}
+.an-gratis--park .an-gratis__bed{color:var(--grau)}
+
+/* ---------- 3. Ankunft: Haus und Empfang bündig, darunter das Hausschild ---------- */
+.an-k-ankunft .kap__kopf .leise{margin-top:20px}
+.an-ankunft{box-shadow:0 60px 90px -60px rgba(7,27,46,.55),0 24px 40px -30px rgba(7,27,46,.35)}
+.an-ankunft__bilder{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);height:clamp(360px,38vw,580px)}
+.an-ankunft__bilder figure{position:relative;margin:0;overflow:hidden;background:var(--wandschatten)}
+.an-ankunft__bilder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.an-schild{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:clamp(54px,5vw,74px) clamp(26px,3.6vw,58px) clamp(34px,3.6vw,52px);background:var(--nacht);color:var(--papier)}
+.an-schild__kamm{position:absolute;left:50%;top:clamp(18px,1.8vw,26px);width:54px;height:auto;margin-left:-27px;color:var(--messing)}
+.an-schild__f{padding:0 clamp(16px,2.4vw,40px);text-align:center}
+.an-schild__f+.an-schild__f{border-left:1px solid rgba(179,152,103,.3)}
+.an-schild .ueber{color:var(--messing)}
+.an-schild__gross{margin-top:10px;font:400 clamp(1.4rem,2vw,2rem)/1.1 var(--titel);color:var(--papier)}
+.an-schild__gross a{text-decoration:none;border-bottom:1px solid rgba(242,185,143,.5)}
+.an-schild__gross a:hover{border-color:#F2B98F}
+.an-schild__klein{margin-top:8px;font-size:.88rem;line-height:1.55;color:rgba(245,242,238,.62)}
+.an-k-ankunft .kn-reihe--mitte{margin-top:clamp(40px,4vw,60px)}
+.an-k-ankunft .weiter{justify-content:center}
+
+/* ---------- Bewegung: die Platten steigen als Ganzes deckend von unten, die Fotos zoomen im Rahmen ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .an-wege[data-steig],.js .an-ankunft[data-steig]{transform:translateY(clamp(70px,8vw,130px));transition:transform 1.6s var(--e1);transition-delay:0s}
+  .js .an-wege[data-steig].da,.js .an-ankunft[data-steig].da{transform:none}
+  .js .an-weg__bild[data-bilder] img,.js .an-ankunft__bilder [data-bilder] img{transform:scale(1.14);transition:transform 2.6s var(--e1)}
+  .js .an-weg__bild[data-bilder].da img,.js .an-ankunft__bilder [data-bilder].da img{transform:none}
+}
+
+/* ---------- Handy ---------- */
+@media(max-width:900px){
+  .an-wege{grid-template-columns:1fr}
+  .an-weg__bild{height:56vw}
+  .an-ankunft__bilder{grid-template-columns:1fr;height:auto}
+  .an-ankunft__haus{height:70vw}
+  .an-ankunft__empfang{height:56vw}
+  .an-schild{grid-template-columns:1fr;gap:26px;padding-top:62px}
+  .an-schild__f{padding:0}
+  .an-schild__f+.an-schild__f{border-left:0;border-top:1px solid rgba(179,152,103,.3);padding-top:24px}
+}
+@media(max-width:480px){
+  .an-ab{grid-template-columns:1fr}
+  .an-ab li{flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:4px 14px;padding:14px 0 12px}
+  .an-ab li+li{padding-left:0;border-left:0;border-top:1px solid rgba(179,152,103,.22)}
+  .an-ab span{flex:0 0 100%}
+  .an-gratis{grid-template-columns:1fr}
+  .an-dauer b{font-size:4.6rem}
+}
+
+/* ---------- Dorfkarte am Schluss des Flugs (Robert 24.10.2026, seiten/dorfkarte.py): ein Blatt Papier mit Strassen, Bach und Häusern aus OpenStreetMap,
+   der Fussweg von der Bushaltestelle bis vor das Haus erscheint Strich für Strich (nur Deckkraft), sobald die Kamera beim Haus ist ---------- */
+.an-k-flug .flug.nah .ort--haus{opacity:0;transition:opacity .6s var(--sanft)}
+.dorfkarte .dk-blatt{fill:#FBF9F5;stroke:none}
+.dorfkarte .dk-rahmen{fill:none;stroke:var(--messing);stroke-width:.14;opacity:.8}
+.dorfkarte .dk-bach{fill:none;stroke:#8FA9C2;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.dorfkarte .dk-str{fill:none;stroke:var(--wandschatten);stroke-width:1.05;stroke-linecap:round;stroke-linejoin:round}
+.dorfkarte .dk-weg{fill:none;stroke:var(--wandschatten);stroke-width:.34;stroke-dasharray:.9 .6;stroke-linecap:round}
+.dorfkarte .dk-haus{fill:#E3DAD0;stroke:#CDBFB1;stroke-width:.08}
+.dorfkarte .dk-haus--hotel{fill:var(--nacht);stroke:none}
+.dorfkarte .dk-route line{stroke:var(--laerche);stroke-width:.62;stroke-linecap:round;opacity:0;transition:opacity .5s var(--sanft);transition-delay:calc(var(--k) * 45ms + .4s)}
+.flug.nah .dorfkarte .dk-route line{opacity:1}
+.dorfkarte .dk-ort rect{transform-box:fill-box;transform-origin:center;rotate:45deg;fill:var(--laerche)}
+.dorfkarte .dk-ort--hotel rect{fill:var(--nacht)}
+.dorfkarte .dk-ort--lift rect,.dorfkarte .dk-ort--spa rect{fill:var(--nachtblau)}
+.dorfkarte .dk-n{font:400 2.05px var(--titel);fill:var(--nacht);letter-spacing:.02em}
+.dorfkarte .dk-n--hotel{font-size:2.5px;fill:var(--laerche-tief)}
+.dorfkarte .dk-s{font:400 1.15px var(--text);fill:var(--grau)}
+.dorfkarte .dk-nord path{fill:var(--nacht)}.dorfkarte .dk-nord text{font:400 1.3px var(--mono);fill:var(--nacht)}
+.dorfkarte .dk-quelle{font:400 .95px var(--mono);letter-spacing:.08em;fill:var(--grau);text-transform:uppercase}
+@media(max-width:800px){.dorfkarte .dk-n{font-size:2.6px}.dorfkarte .dk-n--hotel{font-size:3px}.dorfkarte .dk-s{font-size:1.6px}.dorfkarte .dk-quelle{font-size:1.3px}}
+@media (prefers-reduced-motion:reduce){.dorfkarte .dk-route line{opacity:1;transition:none}}
+.an-k-flug .flug__schema{transition:opacity .5s var(--sanft)}
+.an-k-flug .flug.nah~.flug__schema{opacity:0}
+@media(max-width:800px){.an-k-flug .an-flug__oben{display:none}}
+@media(max-width:800px){.dorfkarte .dk-ort--spa,.dorfkarte .dk-ort--lift,.dorfkarte .dk-quelle{display:none}}

@@ -1,0 +1,53 @@
+# Ihr Haus — Mail-Vorlagen (Stand 04.11.2026)
+
+8 HTML-Mails im Stil der neuen Website. Je Fall:
+
+- `NN-<fall>/template.html` — Vorlage mit `{{platzhaltern}}` für den Versand (Tabellen, Stil im Element, Bilder über `{{asset_base}}`).
+- `NN-<fall>/index.html` — dieselbe Mail mit Beispielwerten zum Ansehen.
+- `index.html` — Übersicht fürs Haus, alle untereinander.
+
+Gemeinsam: `img/` (Kopf mit Zeichen auf der Tapete, Fotos 1200 × 600 unter 100 KB, Zeichen). Schriften: Cormorant Garamond, Instrument Sans und DM Mono, wo das Mailprogramm sie kennt, sonst Georgia und Helvetica.
+Bau: `python3 beigaben_mails.py` (Bilder und Mails), `python3 beigaben_mails.py mails` (Bilder bleiben). Nur Deutsch.
+
+Vor einem echten Versand braucht es das Mailprogramm des Hauses und dessen Prüfung; Absender, Zeitpunkte und Abmelde-Link stellt das Haus ein.
+
+## Die Fälle
+
+| Nr | Fall | Betreff | Absender | Ausgelöst |
+|---|---|---|---|---|
+| 01 | Ihre Buchung | `Ihre Buchung ist bestätigt · {{buchungsnummer}}` | willkommen@ihr-haus.de | Direkt nach der Buchung auf der Website oder am Empfang. |
+| 02 | Vor Ihrer Anreise | `Bald sind Sie bei uns · {{anreise}}` | willkommen@ihr-haus.de | Sieben Tage vor der Anreise (den Zeitpunkt wählt das Haus). |
+| 03 | Ihr Tisch | `Ihr Tisch an der Tafel · {{datum}}, {{uhrzeit}} Uhr` | willkommen@ihr-haus.de | Nach einer Reservierung am Telefon, am Empfang oder auf der Website. |
+| 04 | Ihre Anfrage | `Ihre Anfrage ist bei uns · {{anlass}} am {{wunschtermin}}` | willkommen@ihr-haus.de | Nach dem Absenden einer Anfrage auf der Kontaktseite. |
+| 05 | Auf Wiedersehen | `Auf Wiedersehen am Sandtorkai` | willkommen@ihr-haus.de | Ein bis zwei Tage nach der Abreise. |
+| 06 | Die Tafel im Advent | `Die Tafel im Advent` | willkommen@ihr-haus.de | Nachricht an Gäste, die Neuigkeiten abonniert haben (mit Abmelde-Link). |
+| 07 | Der Hafen im Winter | `Der Hafen im Winter` | willkommen@ihr-haus.de | Im Herbst an Gäste, die Neuigkeiten abonniert haben (mit Abmelde-Link). |
+| 08 | Annullation | `Ihre Annullation ist bestätigt · {{buchungsnummer}}` | willkommen@ihr-haus.de | Nach der Annullation einer Buchung (Website oder Empfang). |
+
+## Platzhalter
+
+| Platzhalter | Bedeutung |
+|---|---|
+| `{{asset_base}}` | Adresse, unter der der Ordner «mails» liegt, ohne «/» am Ende. |
+| `{{website}}` | Adresse der Website, ohne «/» am Ende. |
+| `{{anrede}}` | Anrede mit Namen, z. B. «Guten Tag Frau Albers». Ohne Namen: «Guten Tag». |
+| `{{gast_name}}` | Vor- und Nachname. |
+| `{{buchungsnummer}}` | Buchungsnummer. |
+| `{{zimmer}}` | Zimmer wie auf der Website. |
+| `{{anreise}}` | Tag der Anreise, ausgeschrieben. |
+| `{{abreise}}` | Tag der Abreise, ausgeschrieben. |
+| `{{gaeste}}` | Zahl der Gäste. |
+| `{{gesamtpreis}}` | Total mit «€». |
+| `{{zahlung}}` | Wie bezahlt wird. |
+| `{{datum}}` | Tag der Reservierung. |
+| `{{uhrzeit}}` | Zeit, z. B. «19.00». |
+| `{{personen}}` | Zahl der Personen. |
+| `{{anlass}}` | Anlass der Feier. |
+| `{{wunschtermin}}` | Wunschtermin. |
+| `{{annullationsdatum}}` | Tag der Annullation. |
+| `{{gebuehr}}` | Annullationsgebühr oder «keine». |
+| `{{abmelden}}` | Abmelde-Link des Versandprogramms (nur Nachrichten an Abonnenten). |
+
+## Herkunft
+
+Angaben aus der Hausakte von Ihr Haus (haus.py). Anreden, Übergänge und Kartenbeschriftungen sind von Tasty Studios.

@@ -1,0 +1,119 @@
+/* Eigenes CSS der Unterseite saastal.html (siehe seiten/saastal.py), Neubau 20.10.2026 abends. Nur Klassen st-…, die Datei lädt auf allen Seiten.
+   Eine Bewegungsidee: die Spur (Abdrücke erscheinen nach der Uhr, sobald ihr Stück den Rand berührt). Sonst nur transform und opacity (Regel 55). */
+
+/* ---------- Zahlen ---------- */
+.st-zahl{font:400 1em/1 var(--titel);color:var(--laerche);white-space:nowrap;font-variant-numeric:tabular-nums}
+.st-zahl i{display:inline-block;font-style:normal;text-align:right}
+
+/* ---------- Abdrücke: zwei Füsse im Wechsel, schmal wie eine Sohle ---------- */
+.st-tr{flex:0 1 13px;display:block;width:13px;min-width:8px;height:6px;border-radius:60% 40% 40% 60% / 50%;background:var(--nacht);opacity:.5}
+.st-tr:nth-child(odd){translate:0 -4px}.st-tr:nth-child(even){translate:0 4px}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-stlauf] .st-tr{opacity:0;transition:opacity .45s var(--sanft);transition-delay:calc(var(--k) * 85ms)}
+  .js [data-stlauf].da .st-tr{opacity:.5}
+}
+
+/* ---------- 2 Zu Fuss vom Haus ---------- */
+.st-fuss{--grund:var(--papier)}
+.st-fuss__buehne{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,9fr);gap:0;align-items:end}
+.fo.st-f.st-fuss__haus{aspect-ratio:4/5;height:auto;z-index:1}
+.st-fuss__rechts{display:grid;grid-template-rows:auto 1fr;padding-left:clamp(36px,4.6vw,76px)}
+.st-fuss__kopf .leise{max-width:40ch}
+.st-weg{align-self:end;display:grid;grid-template-columns:minmax(0,1.1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto;align-items:start;margin-left:calc(-1 * clamp(36px,4.6vw,76px));padding-top:clamp(40px,5vw,70px)}
+.st-weg__stueck{display:flex;align-items:center;justify-content:space-evenly;height:12px;margin-top:calc(clamp(4.4rem,6.6vw,6.8rem) + 14px);padding:0 14px}
+.st-halt{display:grid;justify-items:center;text-align:center;width:clamp(150px,12vw,180px)}
+.st-halt__min{display:flex;align-items:baseline;gap:8px;height:clamp(4.4rem,6.6vw,6.8rem);font-size:clamp(4.4rem,6.6vw,6.8rem);line-height:1}
+.st-halt__min small{font:400 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--grau)}
+.st-halt__marke{display:block;width:12px;height:12px;margin:14px 0 18px;rotate:45deg;background:var(--laerche)}
+.st-halt__ort{font:400 1.35rem/1.15 var(--titel);color:var(--nacht)}
+.st-halt__satz{margin-top:8px;font-size:.92rem;line-height:1.6;color:var(--grau)}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-stlauf] .st-halt{transform:translateY(clamp(18px,2vw,30px));opacity:.001;transition:transform 1.2s var(--e1),opacity .9s var(--sanft);transition-delay:var(--t)}
+  .js [data-stlauf].da .st-halt{transform:none;opacity:1}
+}
+@media(max-width:900px){
+  .st-fuss__buehne{grid-template-columns:1fr}
+  .fo.st-f.st-fuss__haus{aspect-ratio:4/3}
+  .st-fuss__rechts{padding:clamp(40px,8vw,60px) 0 0}
+  .st-weg{grid-template-columns:44px minmax(0,1fr);margin-left:0;padding-top:34px}
+  .st-weg__stueck{grid-column:1;flex-direction:column;justify-content:space-evenly;width:44px;height:auto;min-height:120px;margin:0;padding:12px 0}
+  .st-weg__stueck .st-tr{rotate:90deg}
+  .st-weg__stueck .st-tr{flex:none;width:12px;height:5px}
+  .st-weg__stueck .st-tr:nth-child(odd){translate:-7px 0}.st-weg__stueck .st-tr:nth-child(even){translate:7px 0}
+  .st-weg__stueck+.st-halt{grid-column:1/-1}
+  .st-halt{display:grid;grid-template-columns:44px auto minmax(0,1fr);grid-template-areas:'m z o' 'm z s';justify-items:start;align-items:center;column-gap:16px;text-align:left;width:auto}
+  .st-halt__marke{grid-area:m;justify-self:center;margin:0}
+  .st-halt__min{grid-area:z;height:auto;font-size:3.6rem}
+  .st-halt__ort{grid-area:o;align-self:end}
+  .st-halt__satz{grid-area:s;align-self:start;margin-top:4px}
+}
+
+/* ---------- 3 Sommer und Winter: zwei Hälften desselben Tals ---------- */
+.st-tal{position:relative;margin-top:calc(-1 * var(--gh))}
+.st-tal__grat{position:absolute;z-index:2;top:0;width:50%;height:calc(var(--gh) + 1px);display:block}
+.st-tal__grat--l{left:0;fill:var(--fassade)}.st-tal__grat--r{right:0;fill:var(--nacht)}
+.st-tal__innen{position:relative;display:grid;grid-template-columns:1fr 1fr;padding-top:var(--gh);
+  background:linear-gradient(90deg,var(--fassade) 50%,var(--nacht) 50%)}
+.st-haelfte{display:grid;align-content:start;gap:clamp(80px,8vw,130px);padding:clamp(90px,10vw,150px) 0 clamp(110px,11vw,170px)}
+.st-haelfte--sommer{padding-right:clamp(48px,4.4vw,72px)}
+.st-haelfte--winter{align-content:space-between;padding-left:clamp(48px,4.4vw,72px);
+  --tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing);color:var(--papier)}
+.st-haelfte__kopf{max-width:640px}
+.st-haelfte--sommer .st-haelfte__kopf{padding-left:var(--rand);justify-self:end;width:100%}
+.st-haelfte--winter .st-haelfte__kopf{padding-right:var(--rand)}
+.st-haelfte--sommer .st-ziel__text{padding-left:var(--rand)}
+.st-haelfte--winter .st-ziel__text{padding-right:var(--rand)}
+.st-haelfte__kopf .d2{font-size:clamp(2.4rem,3.8vw,4.4rem)}
+.st-haelfte__kopf .leise{max-width:46ch}
+
+/* Rahmen: ein Foto oder mehrere Panoramen des Hauses aneinander */
+.fo.st-f{height:auto;aspect-ratio:2.4/1}
+.fo.st-f--hoch{aspect-ratio:1.7/1}
+.fo.st-stapel{display:grid;height:auto;gap:0}
+.st-z{position:relative;display:block;overflow:hidden;aspect-ratio:2.4/1}
+.st-stapel--drei .st-z--0{aspect-ratio:1.8/1}
+.st-haelfte--winter .fo{background:#0E3256;box-shadow:0 0 0 1px rgba(179,152,103,.12),0 46px 64px -34px rgba(0,0,0,.75),0 16px 26px -16px rgba(0,0,0,.45)}
+
+/* Ziel: Bild, darunter Name und Satz an der Kante zur Naht */
+.st-ziel{display:grid;gap:26px}
+.st-haelfte--sommer .st-ziel__text{text-align:right;justify-self:end}
+.st-ziel__text{max-width:44ch}
+.st-ziel__t{font:400 clamp(1.7rem,2.3vw,2.4rem)/1.08 var(--titel);color:var(--kopf,var(--nacht))}
+.st-ziel__s{margin-top:10px;font-size:1rem;line-height:1.7;color:var(--leise,var(--grau))}
+.st-inkl,.st-quelle{margin-top:14px;font:400 10.5px/1.6 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--akzent,var(--laerche-tief))}
+.st-gross{display:flex;align-items:baseline;justify-content:flex-end;flex-wrap:wrap;gap:4px 14px;margin-top:14px;font:400 clamp(3.4rem,5vw,5.6rem)/1 var(--titel);color:var(--nacht)}
+.st-gross span{flex-basis:100%;font:400 10.5px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--grau)}
+.st-orte{margin-top:16px;font:400 clamp(1.2rem,1.6vw,1.6rem)/1.5 var(--titel);color:var(--nacht)}
+.st-orte span{white-space:nowrap}.st-orte__tr{margin:0 .1em;color:var(--laerche);opacity:.8}
+
+/* Höhen der drei Skigebiete */
+.st-hoehen{margin-top:34px;border-top:1px solid rgba(179,152,103,.34)}
+.st-hoehen li{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(179,152,103,.2)}
+.st-hoehen li span{font:400 11px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--messing)}
+.st-hoehen .st-zahl{font-size:clamp(2.6rem,3.6vw,3.8rem)}
+
+/* Die Naht: die Spur läuft weiter, ein Schritt im Sommer, einer im Winter */
+.st-naht{position:absolute;z-index:1;left:50%;top:calc(var(--gh) + clamp(60px,6vw,100px));bottom:clamp(80px,8vw,120px);width:0;display:flex;flex-direction:column}
+.st-naht__stueck{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly}
+.st-tr--naht{rotate:90deg;width:17px;height:7px;flex:none}
+.st-tr--naht:nth-child(odd){translate:-14px 0;background:var(--nacht)}
+.st-tr--naht:nth-child(even){translate:14px 0;background:var(--papier)}
+
+/* ---------- 4 Überleitung ---------- */
+.st-ende{--grund:var(--papier);margin-top:calc(-1 * var(--gh))}
+.st-ende .kapitel__innen{padding-top:calc(var(--gh) + clamp(60px,6vw,100px));padding-bottom:clamp(90px,9vw,140px)}
+.st-ende .weiter{justify-content:center;margin-top:0!important}
+
+@media(max-width:900px){
+  .st-tal__innen{grid-template-columns:1fr;background:none}
+  .st-tal__grat--l{width:100%}.st-tal__grat--r{display:none}
+  .st-haelfte{gap:clamp(64px,14vw,96px);padding:clamp(70px,14vw,100px) 0 clamp(90px,16vw,120px)}
+  .st-haelfte__kopf,.st-ziel__text,.st-haelfte--sommer .st-haelfte__kopf,.st-haelfte--sommer .st-ziel__text,.st-haelfte--winter .st-haelfte__kopf,.st-haelfte--winter .st-ziel__text{padding-left:var(--rand);padding-right:var(--rand)}
+  .st-haelfte--sommer{background:var(--fassade);justify-items:start}
+  .st-haelfte--sommer .st-ziel__text{text-align:left;justify-self:start}
+  .st-gross{justify-content:flex-start}
+  .st-haelfte--winter{position:relative;margin-top:calc(-1 * var(--gh));background:var(--nacht);padding-top:calc(var(--gh) + clamp(70px,14vw,100px));
+    -webkit-mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat;
+    mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat}
+  .st-naht{display:none}
+}

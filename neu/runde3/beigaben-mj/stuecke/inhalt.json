@@ -1,0 +1,1893 @@
+{
+ "abendplakat-001": {
+  "titel": "Das Menü · 10. bis 14. November · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-steinbutt",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#b98a5a"
+  }
+ },
+ "abendplakat-002": {
+  "titel": "Das Menü · 10. bis 14. November · Rückseite mit Daten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "grund": "#2a2a2b",
+   "ueber": "DAS\nMENÜ",
+   "tag1": "10 / 11 / 26",
+   "zeit1": "18:30 UHR",
+   "text": "SIEBEN GÄNGE\nVON HAND ANGERICHTET",
+   "tag2": "14 / 11 / 26",
+   "zeit2": "18:30 UHR"
+  }
+ },
+ "abendplakat-003": {
+  "titel": "Das Menü · 17. bis 21. November · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-saal-abend",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#9a6f45"
+  }
+ },
+ "abendplakat-004": {
+  "titel": "Das Menü · 17. bis 21. November · Rückseite mit Daten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "grund": "#2a2a2b",
+   "ueber": "DAS\nMENÜ",
+   "tag1": "17 / 11 / 26",
+   "zeit1": "18:30 UHR",
+   "text": "SIEBEN GÄNGE\nVON HAND ANGERICHTET",
+   "tag2": "21 / 11 / 26",
+   "zeit2": "18:30 UHR"
+  }
+ },
+ "abendplakat-005": {
+  "titel": "Das Menü · 24. bis 28. November · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-fenster",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#c49b6e"
+  }
+ },
+ "abendplakat-006": {
+  "titel": "Das Menü · 24. bis 28. November · Rückseite mit Daten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "grund": "#2a2a2b",
+   "ueber": "DAS\nMENÜ",
+   "tag1": "24 / 11 / 26",
+   "zeit1": "18:30 UHR",
+   "text": "SIEBEN GÄNGE\nVON HAND ANGERICHTET",
+   "tag2": "28 / 11 / 26",
+   "zeit2": "18:30 UHR"
+  }
+ },
+ "abendplakat-007": {
+  "titel": "Das Menü · 1. bis 5. Dezember · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-kalb",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#a87d52"
+  }
+ },
+ "abendplakat-008": {
+  "titel": "Das Menü · 1. bis 5. Dezember · Rückseite mit Daten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "grund": "#2a2a2b",
+   "ueber": "DAS\nMENÜ",
+   "tag1": "01 / 12 / 26",
+   "zeit1": "18:30 UHR",
+   "text": "SIEBEN GÄNGE\nVON HAND ANGERICHTET",
+   "tag2": "05 / 12 / 26",
+   "zeit2": "18:30 UHR"
+  }
+ },
+ "abendplakat-009": {
+  "titel": "Das Menü · 8. bis 12. Dezember · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-capuns",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#8f6a46"
+  }
+ },
+ "abendplakat-010": {
+  "titel": "Das Menü · 15. bis 19. Dezember · Plakat, vorne und hinten",
+  "bereich": "Anlässe & Events",
+  "inhalt": {
+   "bild": "m-nusstorte",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "DAS MENÜ · SPEICHERSTADT · HAMBURG",
+   "akzent": "#b98a5a"
+  }
+ },
+ "aushang-001": {
+  "titel": "Aushang · Heute ab 18 Uhr",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Die Bar",
+   "titel": "Heute ab 18 Uhr",
+   "text": "Die Bar öffnet um 18 Uhr, auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.",
+   "aktion": "Die Bar am Fenster"
+  }
+ },
+ "aushang-002": {
+  "titel": "Aushang · Heute ab 18.30 Uhr",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Der Kontorsaal",
+   "titel": "Heute ab 18.30 Uhr",
+   "text": "Dienstag bis Samstag ab 18.30 Uhr, letzter Einlass 21 Uhr.",
+   "aktion": "Maloja"
+  }
+ },
+ "aushang-003": {
+  "titel": "Aushang · Sonntag und Montag",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Ruhetag",
+   "titel": "Sonntag und Montag",
+   "text": "Sonntag und Montag Ruhetag. Dienstag bis Samstag ab 18.30 Uhr decken wir wieder für Sie ein.",
+   "aktion": "Danke, Maloja"
+  }
+ },
+ "aushang-004": {
+  "titel": "Aushang · Tische bis sechs Gäste",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Reservieren",
+   "titel": "Tische bis sechs Gäste",
+   "text": "Tische bis sechs Gäste reservieren Sie hier. Für grössere Runden schreiben Sie uns, wir antworten am selben Tag.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "aushang-005": {
+  "titel": "Aushang · Unverträglichkeiten",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Die Küche",
+   "titel": "Unverträglichkeiten",
+   "text": "Sagen Sie es uns bei der Reservierung. Allergene stehen bei jedem Gericht auf der Karte.",
+   "aktion": "Danke, Maloja"
+  }
+ },
+ "aushang-006": {
+  "titel": "Aushang · Kinder willkommen",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Kinder",
+   "titel": "Kinder willkommen",
+   "text": "Kinder sind willkommen. Für sie gibt es auf Wunsch eine kleine Karte.",
+   "aktion": "Maloja"
+  }
+ },
+ "aushang-007": {
+  "titel": "Aushang · Hunde in der Bar",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Hunde",
+   "titel": "Hunde in der Bar",
+   "text": "Gut erzogene Hunde sind in der Bar willkommen.",
+   "aktion": "Die Bar am Fenster"
+  }
+ },
+ "aushang-008": {
+  "titel": "Aushang · Bis 48 Stunden vorher",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Absage",
+   "titel": "Bis 48 Stunden vorher",
+   "text": "Bis 48 Stunden vorher kostenfrei. Danach berechnen wir das Menü.",
+   "aktion": "040 3290 1180"
+  }
+ },
+ "aushang-009": {
+  "titel": "Aushang · Steinbutt",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Neu an der Bar",
+   "titel": "Steinbutt",
+   "text": "Mit Chasselas-Sauce und jungem Lauch. Ab heute an der Bar auch einzeln.",
+   "aktion": "48 €"
+  }
+ },
+ "aushang-010": {
+  "titel": "Aushang · Die Arvenstube",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Feiern",
+   "titel": "Die Arvenstube",
+   "text": "Eine Stube ganz aus Arvenholz, wie im Engadin, mit einem Kachelofen und einem langen Tisch. Für bis zu 12 Gäste, nur für Sie.",
+   "aktion": "Bis 12 Gäste"
+  }
+ },
+ "einladung-001": {
+  "titel": "Einladung zum Menü",
+  "bereich": "Saal",
+  "wo": "an ausgewählte Gäste",
+  "inhalt": {
+   "ueber": "SPEICHERSTADT · HAMBURG",
+   "titel": "Ein Abend im Kontorsaal",
+   "wann": "Donnerstag, 26. November",
+   "wo": "Pickhuben 6 · 20457 Hamburg",
+   "text": "Sieben Gänge aus der Schweiz und von der Küste, dazu Chasselas und Riesling. Ab 18.30 Uhr.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "einladung-002": {
+  "titel": "Einladung in die Arvenstube",
+  "bereich": "Feiern",
+  "wo": "an die Gäste einer Feier",
+  "inhalt": {
+   "ueber": "Zur goldenen Hochzeit",
+   "titel": "Familie Brandt lädt ein",
+   "wann": "Samstag, 12. Dezember, 18.30 Uhr",
+   "wo": "In der Arvenstube · Pickhuben 6 · 20457 Hamburg",
+   "text": "Ein langer Tisch aus Arvenholz, der Kachelofen und fünf Gänge aus der Karte der Saison.",
+   "aktion": "Um Antwort bis zum 28. November"
+  }
+ },
+ "einladung-003": {
+  "titel": "Einladung zum Jahresabschluss",
+  "bereich": "Feiern",
+  "wo": "an die Gäste einer Firma",
+  "inhalt": {
+   "ueber": "Studio Nordlicht",
+   "titel": "Das Jahr im Kontor",
+   "wann": "Donnerstag, 10. Dezember, 19 Uhr",
+   "wo": "Im Kontorsaal · Pickhuben 6 · 20457 Hamburg",
+   "text": "Der ganze Saal mit den hohen Fenstern zum Fleet, sieben Gänge und die Weinbegleitung.",
+   "aktion": "Um Antwort bis zum 1. Dezember"
+  }
+ },
+ "etikett-001": {
+  "titel": "Untersetzer · Maloja",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Ein Kontor am Fleet",
+   "titel": "Maloja",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "fuss": "Pickhuben 6"
+  }
+ },
+ "etikett-002": {
+  "titel": "Untersetzer · Pickhuben 6",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Hamburg",
+   "titel": "Pickhuben 6",
+   "unter": "Im ersten Stock",
+   "fuss": ""
+  }
+ },
+ "etikett-003": {
+  "titel": "Untersetzer · Die Bar",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Dienstag bis Samstag",
+   "titel": "Die Bar",
+   "unter": "Ab 18 Uhr",
+   "fuss": ""
+  }
+ },
+ "etikett-004": {
+  "titel": "Untersetzer · Chasselas",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Aus der Waadt",
+   "titel": "Chasselas",
+   "unter": "zur Weinbegleitung",
+   "fuss": "Maloja · Hamburg"
+  }
+ },
+ "etikett-005": {
+  "titel": "Untersetzer · Riesling",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Von der Mosel",
+   "titel": "Riesling",
+   "unter": "zur Weinbegleitung",
+   "fuss": ""
+  }
+ },
+ "etikett-006": {
+  "titel": "Untersetzer · Alpkäse",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Aus Graubünden",
+   "titel": "Alpkäse",
+   "unter": "vom Wagen",
+   "fuss": ""
+  }
+ },
+ "etikett-007": {
+  "titel": "Untersetzer · Nusstorte",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Aus dem Engadin",
+   "titel": "Nusstorte",
+   "unter": "zum Schluss",
+   "fuss": ""
+  }
+ },
+ "etikett-008": {
+  "titel": "Untersetzer · Steinbutt",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Von der Küste",
+   "titel": "Steinbutt",
+   "unter": "Neu an der Bar",
+   "fuss": ""
+  }
+ },
+ "etikett-009": {
+  "titel": "Untersetzer · Die Arvenstube",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "titel": "Die Arvenstube",
+   "text": "Ganz aus Arvenholz, wie im Engadin. Für Ihre nächste Feier."
+  }
+ },
+ "etikett-010": {
+  "titel": "Untersetzer · Bis bald",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "titel": "Bis bald",
+   "text": "Maloja wünscht einen guten Heimweg. Dienstag bis Samstag decken wir wieder für Sie ein."
+  }
+ },
+ "etikett-011": {
+  "titel": "Untersetzer · Baumwall",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Mit der U3",
+   "titel": "Baumwall",
+   "unter": "wenige Minuten über die Brücken",
+   "fuss": ""
+  }
+ },
+ "etikett-012": {
+  "titel": "Untersetzer · L. Albers",
+  "bereich": "Bar",
+  "wo": "an der Bar, unter dem Glas",
+  "inhalt": {
+   "ueber": "Reserviert für",
+   "titel": "L. Albers",
+   "unter": "an der Bar",
+   "fuss": "Ab 18 Uhr"
+  }
+ },
+ "flyer-001": {
+  "titel": "Flyer · Ein Kontor über dem Fleet",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-saal",
+   "ueber": "Der Kontorsaal",
+   "titel": "Ein Kontor über dem Fleet",
+   "text": "Eine breite Granittreppe hinauf, dann öffnet sich der Saal: hohe Bogenfenster zum Wasser, weisses Leinen, Wände aus Arvenholz.",
+   "aktion": "Dienstag bis Samstag ab 18.30 Uhr"
+  }
+ },
+ "flyer-002": {
+  "titel": "Flyer · Die Arvenstube",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-stube",
+   "ueber": "Feiern",
+   "titel": "Die Arvenstube",
+   "text": "Eine Stube ganz aus Arvenholz, wie im Engadin, mit einem Kachelofen und einem langen Tisch. Für bis zu 12 Gäste, nur für Sie.",
+   "aktion": "Bis 12 Gäste"
+  }
+ },
+ "flyer-003": {
+  "titel": "Flyer · Die Bar am Fenster",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-bar",
+   "ueber": "Die Bar",
+   "titel": "Die Bar am Fenster",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Die Bar öffnet um 18 Uhr, auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln."
+  }
+ },
+ "flyer-004": {
+  "titel": "Flyer · Sieben Gänge",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-steinbutt",
+   "ueber": "Das Menü",
+   "titel": "Sieben Gänge",
+   "text": "Aus der Schweiz und von der Küste, jeder Gang von Hand angerichtet.",
+   "aktion": "Sieben Gänge 168 € · Weinbegleitung 98 €"
+  }
+ },
+ "flyer-005": {
+  "titel": "Flyer · Ebenso sieben Gänge",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-souffle",
+   "ueber": "Vegetarisch",
+   "titel": "Ebenso sieben Gänge",
+   "text": "Vom Bündner Zopf über das Alpkäse-Soufflé mit Holunder bis zur Engadiner Nusstorte.",
+   "aktion": "Zum selben Preis"
+  }
+ },
+ "flyer-006": {
+  "titel": "Flyer · Chasselas neben Riesling",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-glas",
+   "ueber": "Wein",
+   "titel": "Chasselas neben Riesling",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Die Weinbegleitung kommt aus der Schweiz und aus Deutschland: Chasselas aus der Waadt neben Riesling von der Mosel."
+  }
+ },
+ "flyer-007": {
+  "titel": "Flyer · Der Kontorsaal",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-saal-abend",
+   "ueber": "Feiern",
+   "titel": "Der Kontorsaal",
+   "text": "Der ganze Saal mit den hohen Fenstern zum Fleet, für bis zu 34 Gäste. Für Hochzeiten, Jubiläen und Abende mit Geschäftspartnern.",
+   "aktion": "Bis 34 Gäste"
+  }
+ },
+ "flyer-008": {
+  "titel": "Flyer · Mitten in der Speicherstadt",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-bruecke",
+   "ueber": "Anfahrt",
+   "titel": "Mitten in der Speicherstadt",
+   "text": "Mit der U3 bis Baumwall, dann wenige Minuten über die Brücken. Mit dem Auto ins Parkhaus am Brooktorkai.",
+   "aktion": "Pickhuben 6 · 20457 Hamburg"
+  }
+ },
+ "flyer-009": {
+  "titel": "Flyer · Aus den Bergen",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-alpkaese",
+   "ueber": "Woher es kommt",
+   "titel": "Aus den Bergen",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Alpkäse aus Graubünden, Bündner Gerste, Nüsse und Mehl aus dem Engadin, Weine aus der Waadt und dem Wallis."
+  }
+ },
+ "flyer-010": {
+  "titel": "Flyer · Von der Küste",
+  "bereich": "Restaurant",
+  "wo": "an der Bar zum Mitnehmen",
+  "inhalt": {
+   "bild": "m-fisch",
+   "ueber": "Woher es kommt",
+   "titel": "Von der Küste",
+   "text": "Steinbutt aus der Nordsee, Saibling aus der Ostsee, Aal aus der Elbe, Gemüse aus den Vierlanden vor der Stadt.",
+   "aktion": "Maloja"
+  }
+ },
+ "gutschein-001": {
+  "titel": "Gutschein · Ein Abend im Kontor",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "Ein Abend im Kontor",
+   "text": "Sieben Gänge für zwei, mit der Weinbegleitung aus der Schweiz und Deutschland."
+  }
+ },
+ "gutschein-002": {
+  "titel": "Gutschein · Sieben Gänge für zwei",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "Sieben Gänge für zwei",
+   "text": "Das ganze Menü, jeder Gang von Hand angerichtet."
+  }
+ },
+ "gutschein-003": {
+  "titel": "Gutschein · Fünf Gänge für zwei",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "Fünf Gänge für zwei",
+   "text": "Brot und Butter, Gerstensuppe, Steinbutt, Kalb Zürcher Art, Engadiner Nusstorte."
+  }
+ },
+ "gutschein-004": {
+  "titel": "Gutschein · Für einen Abend im Maloja",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Wertgutschein",
+   "titel": "Für einen Abend im Maloja",
+   "text": "Für das Menü, ein Glas an der Bar oder beides."
+  }
+ },
+ "gutschein-005": {
+  "titel": "Gutschein · An der Bar",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "An der Bar",
+   "text": "Ein Glas Chasselas und ein Teller vom Abend."
+  }
+ },
+ "gutschein-006": {
+  "titel": "Gutschein · Die Arvenstube",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "Die Arvenstube",
+   "text": "Ein Abend für zwölf Gäste am langen Tisch."
+  }
+ },
+ "gutschein-007": {
+  "titel": "Gutschein · Ein Abend im Advent",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Zu Weihnachten",
+   "titel": "Ein Abend im Advent",
+   "text": "Sieben Gänge im Kontorsaal, einzulösen Dienstag bis Samstag."
+  }
+ },
+ "gutschein-008": {
+  "titel": "Gutschein · Die Weinbegleitung",
+  "bereich": "Anlässe & Events",
+  "wo": "zum Verschenken",
+  "inhalt": {
+   "ueber": "Gutschein",
+   "titel": "Die Weinbegleitung",
+   "text": "Zu jedem Gang das passende Glas, für zwei."
+  }
+ },
+ "hinweiskarte-001": {
+  "titel": "Hinweiskarte · Allergene",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Am Tisch",
+   "titel": "Allergene",
+   "text": "Allergene stehen bei jedem Gericht auf der Karte. Unser Service berät Sie gern.",
+   "aktion": "Maloja"
+  }
+ },
+ "hinweiskarte-002": {
+  "titel": "Hinweiskarte · Die Weinbegleitung",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Zum Menü",
+   "titel": "Die Weinbegleitung",
+   "text": "Die Weinbegleitung kommt aus der Schweiz und aus Deutschland: Chasselas aus der Waadt neben Riesling von der Mosel.",
+   "aktion": "98 €"
+  }
+ },
+ "hinweiskarte-003": {
+  "titel": "Hinweiskarte · Käse vom Wagen",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Zum Schluss",
+   "titel": "Käse vom Wagen",
+   "text": "Alpkäse aus Graubünden mit Feigensenf. Der Wagen kommt an Ihren Tisch.",
+   "aktion": "Maloja"
+  }
+ },
+ "hinweiskarte-004": {
+  "titel": "Hinweiskarte · Fünf Gänge",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Kürzer",
+   "titel": "Fünf Gänge",
+   "text": "Brot und Butter, Gerstensuppe, Steinbutt, Kalb Zürcher Art und Engadiner Nusstorte.",
+   "aktion": "138 €"
+  }
+ },
+ "hinweiskarte-005": {
+  "titel": "Hinweiskarte · Vegetarisch",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Ohne Fleisch",
+   "titel": "Vegetarisch",
+   "text": "Das Menü gibt es ebenso vegetarisch in sieben Gängen, zum selben Preis.",
+   "aktion": "Maloja"
+  }
+ },
+ "hinweiskarte-006": {
+  "titel": "Hinweiskarte · Gerichte einzeln",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "An der Bar",
+   "titel": "Gerichte einzeln",
+   "text": "Die Bar öffnet um 18 Uhr, auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.",
+   "aktion": "Ab 18 Uhr"
+  }
+ },
+ "hinweiskarte-007": {
+  "titel": "Hinweiskarte · Eine kleine Karte",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Für Kinder",
+   "titel": "Eine kleine Karte",
+   "text": "Kinder sind willkommen. Für sie gibt es auf Wunsch eine kleine Karte.",
+   "aktion": "Maloja"
+  }
+ },
+ "hinweiskarte-008": {
+  "titel": "Hinweiskarte · Zwei Herkünfte",
+  "bereich": "Am Tisch",
+  "wo": "am Tisch",
+  "inhalt": {
+   "ueber": "Woher",
+   "titel": "Zwei Herkünfte",
+   "text": "Aus den Bergen: Alpkäse, Gerste, Nüsse. Von der Küste: Steinbutt, Saibling, Aal und Gemüse aus den Vierlanden.",
+   "aktion": "Maloja"
+  }
+ },
+ "instagram-001": {
+  "titel": "Beitrag · Ein Kontor am Fleet",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "hero",
+   "ueber": "Maloja",
+   "titel": "Ein Kontor am Fleet",
+   "text": "Kurz bevor im ersten Stock die Kerzen angehen.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-002": {
+  "titel": "Beitrag · Steinbutt",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-steinbutt",
+   "ueber": "Das Menü",
+   "titel": "Steinbutt",
+   "text": "Chasselas-Sauce, junger Lauch. Der vierte Gang, von Hand angerichtet.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-003": {
+  "titel": "Beitrag · Ein langer Tisch",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-stube",
+   "ueber": "Die Arvenstube",
+   "titel": "Ein langer Tisch",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Arvenholz von der Decke bis zum Boden, ein Kachelofen, zwölf Plätze."
+  }
+ },
+ "instagram-004": {
+  "titel": "Beitrag · Ein Tisch für zwei",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-fenster",
+   "ueber": "Am Fenster",
+   "titel": "Ein Tisch für zwei",
+   "text": "Das Fleet vor dem Bogenfenster, die Kerze brennt schon.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-005": {
+  "titel": "Beitrag · Brot und Butter",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-brot",
+   "ueber": "Zum Anfang",
+   "titel": "Brot und Butter",
+   "text": "Bündner Zopf, Roggenbrot, gesalzene Butter. So beginnt jeder Abend.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-006": {
+  "titel": "Beitrag · Alpkäse aus Graubünden",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-alpkaese",
+   "ueber": "Aus den Bergen",
+   "titel": "Alpkäse aus Graubünden",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Er kommt an den Tisch, auf dem Wagen aus Arvenholz."
+  }
+ },
+ "instagram-007": {
+  "titel": "Beitrag · Steinbutt aus der Nordsee",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-fisch",
+   "ueber": "Von der Küste",
+   "titel": "Steinbutt aus der Nordsee",
+   "text": "Saibling aus der Ostsee, Aal aus der Elbe, Gemüse aus den Vierlanden.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-008": {
+  "titel": "Beitrag · Ab 18 Uhr",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-bar",
+   "ueber": "Die Bar",
+   "titel": "Ab 18 Uhr",
+   "text": "Auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-009": {
+  "titel": "Beitrag · Engadiner Nusstorte",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-nusstorte",
+   "ueber": "Zum Schluss",
+   "titel": "Engadiner Nusstorte",
+   "text": "Vierländer Apfel, geschlagener Rahm.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-010": {
+  "titel": "Beitrag · Von Hand angerichtet",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-haende",
+   "ueber": "Am Pass",
+   "titel": "Von Hand angerichtet",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Jeder Teller, jeder Abend."
+  }
+ },
+ "instagram-011": {
+  "titel": "Beitrag · Die Brücke im Nebel",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-bruecke",
+   "titel": "Die Brücke im Nebel",
+   "unter": "Ein Morgen im November"
+  }
+ },
+ "instagram-012": {
+  "titel": "Beitrag · Chasselas aus der Waadt",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-glas",
+   "ueber": "Wein",
+   "titel": "Chasselas aus der Waadt",
+   "text": "Neben Riesling von der Mosel, in der Weinbegleitung zum Menü.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-013": {
+  "titel": "Beitrag · Kalb Zürcher Art",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-kalb",
+   "ueber": "Aus Zürich",
+   "titel": "Kalb Zürcher Art",
+   "text": "Rahm und Pilze, Rösti aus Bamberger Hörnchen.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "instagram-014": {
+  "titel": "Beitrag · Der Saal am Abend",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-saal-abend",
+   "ueber": "Der Kontorsaal",
+   "titel": "Der Saal am Abend",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Nur 34 Plätze, jeder mit Blick auf die Speicherstadt."
+  }
+ },
+ "instagram-015": {
+  "titel": "Beitrag · Alpkäse-Soufflé",
+  "bereich": "Feed",
+  "wo": "im Feed",
+  "inhalt": {
+   "bild": "m-souffle",
+   "ueber": "Vegetarisch",
+   "titel": "Alpkäse-Soufflé",
+   "text": "Mit Holunder. Das vegetarische Menü hat ebenso sieben Gänge.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "menuekarte-001": {
+  "titel": "Menükarte · 10. bis 14. November",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Dienstag bis Samstag, 10. bis 14. November",
+   "liste": [
+    {
+     "gang": "Bünden · Hamburg",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "Bünden · Elbe",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch"
+    },
+    {
+     "gang": "Bünden · Ostsee",
+     "name": "Capuns",
+     "detail": "Mangold, Saibling aus der Ostsee, Rahm"
+    },
+    {
+     "gang": "Waadt · Nordsee",
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch"
+    },
+    {
+     "gang": "Zürich · Franken",
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "Alp",
+     "name": "Käse vom Wagen",
+     "detail": "Alpkäse aus Graubünden, Feigensenf"
+    },
+    {
+     "gang": "Engadin · Vierlande",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#b98a5a",
+   "fuss": "Sieben Gänge 168 € · Weinbegleitung 98 €"
+  }
+ },
+ "menuekarte-002": {
+  "titel": "Menükarte · 17. bis 21. November",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Dienstag bis Samstag, 17. bis 21. November",
+   "liste": [
+    {
+     "gang": "Bünden · Hamburg",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "Bünden · Elbe",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch"
+    },
+    {
+     "gang": "Bünden · Ostsee",
+     "name": "Capuns",
+     "detail": "Mangold, Saibling aus der Ostsee, Rahm"
+    },
+    {
+     "gang": "Waadt · Nordsee",
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch"
+    },
+    {
+     "gang": "Zürich · Franken",
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "Alp",
+     "name": "Käse vom Wagen",
+     "detail": "Alpkäse aus Graubünden, Feigensenf"
+    },
+    {
+     "gang": "Engadin · Vierlande",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#9a6f45",
+   "fuss": "Sieben Gänge 168 € · Weinbegleitung 98 €"
+  }
+ },
+ "menuekarte-003": {
+  "titel": "Menükarte · 24. bis 28. November",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Dienstag bis Samstag, 24. bis 28. November",
+   "liste": [
+    {
+     "gang": "Bünden · Hamburg",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "Bünden · Elbe",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch"
+    },
+    {
+     "gang": "Bünden · Ostsee",
+     "name": "Capuns",
+     "detail": "Mangold, Saibling aus der Ostsee, Rahm"
+    },
+    {
+     "gang": "Waadt · Nordsee",
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch"
+    },
+    {
+     "gang": "Zürich · Franken",
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "Alp",
+     "name": "Käse vom Wagen",
+     "detail": "Alpkäse aus Graubünden, Feigensenf"
+    },
+    {
+     "gang": "Engadin · Vierlande",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#c49b6e",
+   "fuss": "Sieben Gänge 168 € · Weinbegleitung 98 €"
+  }
+ },
+ "menuekarte-004": {
+  "titel": "Menükarte · 1. bis 5. Dezember",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Dienstag bis Samstag, 1. bis 5. Dezember",
+   "liste": [
+    {
+     "gang": "Bünden · Hamburg",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "Bünden · Elbe",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch"
+    },
+    {
+     "gang": "Bünden · Ostsee",
+     "name": "Capuns",
+     "detail": "Mangold, Saibling aus der Ostsee, Rahm"
+    },
+    {
+     "gang": "Waadt · Nordsee",
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch"
+    },
+    {
+     "gang": "Zürich · Franken",
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "Alp",
+     "name": "Käse vom Wagen",
+     "detail": "Alpkäse aus Graubünden, Feigensenf"
+    },
+    {
+     "gang": "Engadin · Vierlande",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#a87d52",
+   "fuss": "Sieben Gänge 168 € · Weinbegleitung 98 €"
+  }
+ },
+ "menuekarte-005": {
+  "titel": "Menükarte · vegetarische Fassung",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Vegetarisch, ebenso sieben Gänge",
+   "liste": [
+    {
+     "gang": "",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, Wurzelgemüse aus den Vierlanden"
+    },
+    {
+     "gang": "",
+     "name": "Capuns",
+     "detail": "Mangold, Bergkäse, Rahm"
+    },
+    {
+     "gang": "",
+     "name": "Alpkäse-Soufflé",
+     "detail": "Holunder"
+    },
+    {
+     "gang": "",
+     "name": "Sellerie Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "",
+     "name": "Käse vom Wagen",
+     "detail": "Alpkäse aus Graubünden, Feigensenf"
+    },
+    {
+     "gang": "",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#9a6f45",
+   "fuss": "Zum selben Preis, am selben Tisch"
+  }
+ },
+ "menuekarte-006": {
+  "titel": "Woher es kommt",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Woher es kommt",
+   "text": "Zwei Herkünfte an einem Tisch: die Berge und die Küste.",
+   "liste": [
+    {
+     "name": "Aus den Bergen",
+     "detail": "Alpkäse aus Graubünden, Bündner Gerste, Nüsse und Mehl aus dem Engadin, Weine aus der Waadt und dem Wallis.",
+     "preis": ""
+    },
+    {
+     "name": "Von der Küste",
+     "detail": "Steinbutt aus der Nordsee, Saibling aus der Ostsee, Aal aus der Elbe, Gemüse aus den Vierlanden vor der Stadt.",
+     "preis": ""
+    }
+   ],
+   "fuss": "Maloja · Pickhuben 6 · 20457 Hamburg"
+  }
+ },
+ "menuekarte-007": {
+  "titel": "Fünf Gänge",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Das Menü",
+   "titel": "Fünf Gänge",
+   "text": "Aus der Karte der Saison, jeder Gang von Hand angerichtet.",
+   "liste": [
+    {
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+     "preis": ""
+    },
+    {
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch",
+     "preis": ""
+    },
+    {
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch",
+     "preis": ""
+    },
+    {
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+     "preis": ""
+    },
+    {
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm",
+     "preis": ""
+    }
+   ],
+   "fuss": "Fünf Gänge 138 €"
+  }
+ },
+ "menuekarte-008": {
+  "titel": "Weinbegleitung",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Das Menü",
+   "titel": "Zu jedem Gang ein Glas",
+   "text": "Die Weinbegleitung kommt aus der Schweiz und aus Deutschland: Chasselas aus der Waadt neben Riesling von der Mosel.",
+   "liste": [
+    {
+     "name": "Chasselas",
+     "detail": "aus der Waadt",
+     "preis": ""
+    },
+    {
+     "name": "Riesling",
+     "detail": "von der Mosel",
+     "preis": ""
+    }
+   ],
+   "fuss": "Weinbegleitung 98 €"
+  }
+ },
+ "menuekarte-009": {
+  "titel": "Menükarte · Goldene Hochzeit in der Arvenstube",
+  "bereich": "Feiern",
+  "wo": "am Platz",
+  "inhalt": {
+   "titel": "Menü",
+   "ueber": "Für Familie Brandt, zur goldenen Hochzeit",
+   "liste": [
+    {
+     "gang": "Bünden · Hamburg",
+     "name": "Brot und Butter",
+     "detail": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "gang": "Bünden · Elbe",
+     "name": "Gerstensuppe",
+     "detail": "Nach Bündner Art, geräucherter Aal, Schnittlauch"
+    },
+    {
+     "gang": "Waadt · Nordsee",
+     "name": "Steinbutt",
+     "detail": "Chasselas-Sauce, junger Lauch"
+    },
+    {
+     "gang": "Zürich · Franken",
+     "name": "Kalb Zürcher Art",
+     "detail": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "gang": "Engadin · Vierlande",
+     "name": "Engadiner Nusstorte",
+     "detail": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ],
+   "akzent": "#9a6f45",
+   "fuss": "In der Arvenstube · Samstag, 12. Dezember"
+  }
+ },
+ "newsletter-001": {
+  "titel": "Newsletter · Die Abende im Advent",
+  "bereich": "Newsletter",
+  "wo": "an alle Gäste",
+  "inhalt": {
+   "bild": "m-fenster",
+   "ueber": "Maloja",
+   "titel": "Die Abende im Advent",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Dienstag bis Samstag ab 18.30 Uhr, sieben Gänge von Hand angerichtet. Reservieren Sie gern früh."
+  }
+ },
+ "newsletter-002": {
+  "titel": "Kopfbild · Das Kontor",
+  "bereich": "Newsletter",
+  "wo": "über jeder E-Mail",
+  "inhalt": {
+   "bild": "hero",
+   "titel": "Maloja",
+   "unter": "Maloja · Pickhuben 6 · 20457 Hamburg"
+  }
+ },
+ "newsletter-003": {
+  "titel": "Kopfbild · Das Menü",
+  "bereich": "Newsletter",
+  "wo": "über E-Mails zum Menü",
+  "inhalt": {
+   "bild": "m-saal-abend",
+   "titel": "Das Menü",
+   "unter": "Dienstag bis Samstag ab 18.30 Uhr"
+  }
+ },
+ "plakat-001": {
+  "titel": "Plakat · Maloja",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "bild": "hero",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "SPEICHERSTADT · HAMBURG",
+   "akzent": "#b98a5a"
+  }
+ },
+ "plakat-002": {
+  "titel": "Plakat · Das Menü",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "bild": "m-steinbutt",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "SPEICHERSTADT · HAMBURG",
+   "akzent": "#9a6f45"
+  }
+ },
+ "plakat-003": {
+  "titel": "Plakat · Die Arvenstube",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "bild": "m-stube",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "SPEICHERSTADT · HAMBURG",
+   "akzent": "#c49b6e"
+  }
+ },
+ "plakat-004": {
+  "titel": "Plakat · Der Kontorsaal",
+  "bereich": "Restaurant",
+  "wo": "am Eingang",
+  "inhalt": {
+   "bild": "m-saal-abend",
+   "ueber": "",
+   "ueberfarbe": "weiss",
+   "zeile": "SPEICHERSTADT · HAMBURG",
+   "akzent": "#a87d52"
+  }
+ },
+ "plakat-005": {
+  "titel": "Plakat · Die Bar am Fenster",
+  "bereich": "Bar",
+  "wo": "am Eingang",
+  "inhalt": {
+   "bild": "m-bar",
+   "ueber": "Die Bar",
+   "titel": "Die Bar am Fenster",
+   "text": "Die Bar öffnet um 18 Uhr, auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.",
+   "aktion": "Ab 18 Uhr"
+  }
+ },
+ "pressemappe-001": {
+  "titel": "Deckblatt Pressemappe",
+  "bereich": "Restaurant",
+  "wo": "für Medien",
+  "inhalt": {
+   "ueber": "SPEICHERSTADT · HAMBURG",
+   "titel": "Maloja",
+   "unter": "Die Alpen und die Küste an einem Tisch",
+   "fuss": "Maloja · Pickhuben 6 · 20457 Hamburg"
+  }
+ },
+ "pressemappe-002": {
+  "titel": "Deckblatt Feiern",
+  "bereich": "Feiern",
+  "wo": "für Anfragen zu Feiern",
+  "inhalt": {
+   "bild": "m-stube",
+   "ueber": "Feiern im Kontor",
+   "titel": "Die Arvenstube",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Eine Stube ganz aus Arvenholz, wie im Engadin, mit einem Kachelofen und einem langen Tisch. Für bis zu 12 Gäste, nur für Sie."
+  }
+ },
+ "pressemappe-003": {
+  "titel": "Deckblatt Das Menü",
+  "bereich": "Saal",
+  "wo": "für Medien",
+  "inhalt": {
+   "bild": "m-pass",
+   "ueber": "Das Menü",
+   "titel": "Zwei Herkünfte, ein Teller",
+   "text": "Ein Kontor in der Speicherstadt, in dem Schweizer und norddeutsche Küche an einem Tisch zusammenkommen.",
+   "aktion": "Maloja · Pickhuben 6 · 20457 Hamburg"
+  }
+ },
+ "programm-001": {
+  "titel": "Die sieben Gänge und ihre Herkunft",
+  "bereich": "Saal",
+  "wo": "am Platz, Pressemappe",
+  "inhalt": {
+   "ueber": "Das Menü",
+   "titel": "Die Alpen und die Küste.",
+   "fuss": "Maloja · Pickhuben 6 · 20457 Hamburg",
+   "termine": [
+    {
+     "wann": "Bünden · Hamburg",
+     "was": "Brot und Butter",
+     "wo": ""
+    },
+    {
+     "wann": "Bünden · Elbe",
+     "was": "Gerstensuppe",
+     "wo": ""
+    },
+    {
+     "wann": "Bünden · Ostsee",
+     "was": "Capuns",
+     "wo": ""
+    },
+    {
+     "wann": "Waadt · Nordsee",
+     "was": "Steinbutt",
+     "wo": ""
+    },
+    {
+     "wann": "Zürich · Franken",
+     "was": "Kalb Zürcher Art",
+     "wo": ""
+    },
+    {
+     "wann": "Alp",
+     "was": "Käse vom Wagen",
+     "wo": ""
+    },
+    {
+     "wann": "Engadin · Vierlande",
+     "was": "Engadiner Nusstorte",
+     "wo": ""
+    }
+   ]
+  }
+ },
+ "programm-002": {
+  "titel": "Die Abende im Advent",
+  "bereich": "Saal",
+  "wo": "an der Bar",
+  "inhalt": {
+   "ueber": "Der Kontorsaal",
+   "titel": "Die Abende im Advent",
+   "fuss": "Dienstag bis Samstag ab 18.30 Uhr",
+   "termine": [
+    {
+     "wann": "24. bis 28. November",
+     "was": "Sieben Gänge, von Hand angerichtet",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "1. bis 5. Dezember",
+     "was": "Sieben Gänge, von Hand angerichtet",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "8. bis 12. Dezember",
+     "was": "Sieben Gänge, von Hand angerichtet",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "15. bis 19. Dezember",
+     "was": "Sieben Gänge, von Hand angerichtet",
+     "wo": "Kontorsaal"
+    }
+   ]
+  }
+ },
+ "programm-003": {
+  "titel": "Ein Abend im Maloja",
+  "bereich": "Restaurant",
+  "wo": "für Gäste, die zum ersten Mal kommen",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Ein Abend im Kontor",
+   "fuss": "Maloja · Pickhuben 6 · 20457 Hamburg",
+   "termine": [
+    {
+     "wann": "18 Uhr",
+     "was": "Die Bar öffnet, ein Glas am Fenster",
+     "wo": "Die Bar"
+    },
+    {
+     "wann": "18.30 Uhr",
+     "was": "Der Saal öffnet, Brot und Butter",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "Danach",
+     "was": "Sieben Gänge im Takt des Tisches",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "Zum Schluss",
+     "was": "Käse vom Wagen, Engadiner Nusstorte",
+     "wo": "Kontorsaal"
+    }
+   ]
+  }
+ },
+ "stoerung-001": {
+  "titel": "Der Kontorsaal ist heute reserviert",
+  "bereich": "Saal",
+  "wo": "am Eingang",
+  "inhalt": {
+   "ueber": "Der Kontorsaal",
+   "titel": "Heute geschlossene Gesellschaft",
+   "text": "Der Kontorsaal ist heute Abend für eine Feier reserviert. Die Bar am Fenster ist ab 18 Uhr für Sie da.",
+   "aktion": "Danke für Ihr Verständnis"
+  }
+ },
+ "stoerung-002": {
+  "titel": "Die Arvenstube ist heute reserviert",
+  "bereich": "Feiern",
+  "wo": "an der Tür der Stube",
+  "inhalt": {
+   "ueber": "Die Arvenstube",
+   "titel": "Heute eine Feier",
+   "text": "Die Arvenstube ist heute für eine Familie reserviert. Danke, dass Sie die Tür geschlossen lassen.",
+   "aktion": "Maloja"
+  }
+ },
+ "story-001": {
+  "titel": "Story · Nebel über dem Fleet",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-bruecke",
+   "ueber": "Ein Morgen in der Speicherstadt",
+   "titel": "Nebel über dem Fleet",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Am Abend decken wir für Sie ein."
+  }
+ },
+ "story-002": {
+  "titel": "Story · Am Pass",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-pass",
+   "ueber": "Die Küche",
+   "titel": "Am Pass",
+   "text": "Jeder Teller von Hand angerichtet.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "story-003": {
+  "titel": "Story · Am Kachelofen",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-stube",
+   "ueber": "Die Arvenstube",
+   "titel": "Am Kachelofen",
+   "text": "Ein langer Tisch für zwölf.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "story-004": {
+  "titel": "Story · Ab 18 Uhr",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-bar",
+   "ueber": "Die Bar",
+   "titel": "Ab 18 Uhr",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Auch ohne Reservierung."
+  }
+ },
+ "story-005": {
+  "titel": "Story · Das Fleet",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-fleet",
+   "ueber": "Vor der Tür",
+   "titel": "Das Fleet",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Zur blauen Stunde."
+  }
+ },
+ "story-006": {
+  "titel": "Story · Bündner Zopf",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-brot",
+   "ueber": "Zum Anfang",
+   "titel": "Bündner Zopf",
+   "text": "Mit gesalzener Butter.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "story-007": {
+  "titel": "Story · Alpkäse",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-kaese",
+   "ueber": "Vom Wagen",
+   "titel": "Alpkäse",
+   "text": "Aus Graubünden, mit Feigensenf.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "story-008": {
+  "titel": "Story · Ein Tisch für zwei",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-fenster",
+   "ueber": "Am Fenster",
+   "titel": "Ein Tisch für zwei",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Mit Blick aufs Fleet."
+  }
+ },
+ "story-009": {
+  "titel": "Story · Aus der Schweiz und Deutschland",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "m-wein",
+   "ueber": "Die Weinwand",
+   "titel": "Aus der Schweiz und Deutschland",
+   "unter": "SPEICHERSTADT · HAMBURG",
+   "text": "Zu jedem Gang das passende Glas."
+  }
+ },
+ "story-010": {
+  "titel": "Story · Das Kontor bei Nacht",
+  "bereich": "Feed",
+  "wo": "Story",
+  "inhalt": {
+   "bild": "schluss",
+   "ueber": "Gute Nacht",
+   "titel": "Das Kontor bei Nacht",
+   "text": "Bis Dienstag, ab 18.30 Uhr.",
+   "aktion": "maloja-hamburg.de"
+  }
+ },
+ "teamaushang-001": {
+  "titel": "Ablauf eines Abends",
+  "bereich": "Team",
+  "wo": "in der Küche, intern",
+  "inhalt": {
+   "ueber": "Intern · Der Abend",
+   "titel": "So läuft der Abend",
+   "fuss": "Lena Hartmann, Gastgeberin",
+   "termine": [
+    {
+     "wann": "17.30 Uhr",
+     "was": "Tische decken, Kerzen, Karten an die Plätze",
+     "wo": "Service"
+    },
+    {
+     "wann": "18 Uhr",
+     "was": "Die Bar öffnet",
+     "wo": "Bar"
+    },
+    {
+     "wann": "18.15 Uhr",
+     "was": "Kurze Runde: Gänge, Unverträglichkeiten, Weine",
+     "wo": "am Pass"
+    },
+    {
+     "wann": "18.30 Uhr",
+     "was": "Der Saal öffnet, Brot und Butter",
+     "wo": "Kontorsaal"
+    },
+    {
+     "wann": "21 Uhr",
+     "was": "Letzter Einlass",
+     "wo": "Eingang"
+    }
+   ]
+  }
+ },
+ "teamaushang-002": {
+  "titel": "Hinweis fürs Team: Wünsche heute",
+  "bereich": "Team",
+  "wo": "am Pass",
+  "inhalt": {
+   "ueber": "Intern · Küche",
+   "titel": "Heute: drei Wünsche für die Küche",
+   "text": "Tisch 2 ohne Fisch, Tisch 7 vegetarisch, Tisch 4 ohne Nüsse. Jeder Gang wird eigens angerichtet.",
+   "aktion": "Marc, Küche"
+  }
+ },
+ "tisch-001": {
+  "titel": "Brot und Butter, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-brot",
+   "ueber": "Bünden · Hamburg",
+   "titel": "Brot und Butter",
+   "text": "Bündner Zopf, Roggenbrot, gesalzene Butter.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-002": {
+  "titel": "Gerstensuppe, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-suppe",
+   "ueber": "Bünden · Elbe",
+   "titel": "Gerstensuppe",
+   "text": "Nach Bündner Art, geräucherter Aal, Schnittlauch.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-003": {
+  "titel": "Capuns, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-capuns",
+   "ueber": "Bünden · Ostsee",
+   "titel": "Capuns",
+   "text": "Mangold, Saibling aus der Ostsee, Rahm.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-004": {
+  "titel": "Steinbutt, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-steinbutt",
+   "ueber": "Waadt · Nordsee",
+   "titel": "Steinbutt",
+   "text": "Chasselas-Sauce, junger Lauch.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-005": {
+  "titel": "Kalb Zürcher Art, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-kalb",
+   "ueber": "Zürich · Franken",
+   "titel": "Kalb Zürcher Art",
+   "text": "Rahm und Pilze, Rösti aus Bamberger Hörnchen.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-006": {
+  "titel": "Käse vom Wagen, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-kaese",
+   "ueber": "Alp",
+   "titel": "Käse vom Wagen",
+   "text": "Alpkäse aus Graubünden, Feigensenf.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-007": {
+  "titel": "Engadiner Nusstorte, am Tisch",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-nusstorte",
+   "ueber": "Engadin · Vierlande",
+   "titel": "Engadiner Nusstorte",
+   "text": "Vierländer Apfel, geschlagener Rahm.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-008": {
+  "titel": "Reservieren im Kontorsaal",
+  "bereich": "Saal",
+  "wo": "an der Bar",
+  "inhalt": {
+   "ueber": "Der Kontorsaal",
+   "titel": "Ein Tisch am Fenster",
+   "text": "Tische bis sechs Gäste reservieren Sie hier. Für grössere Runden schreiben Sie uns, wir antworten am selben Tag.",
+   "aktion": "Sieben Gänge 168 €"
+  }
+ },
+ "tisch-009": {
+  "titel": "Die Bar · Karte am Tisch",
+  "bereich": "Bar",
+  "wo": "an der Bar",
+  "inhalt": {
+   "bild": "m-suppe",
+   "ueber": "An der Bar",
+   "titel": "Gerstensuppe",
+   "text": "Geräucherter Aal, Schnittlauch. Auch einzeln, ab 18 Uhr.",
+   "aktion": "24 €"
+  }
+ },
+ "tisch-010": {
+  "titel": "Vegetarisch · Aufsteller",
+  "bereich": "Saal",
+  "wo": "am Tisch",
+  "inhalt": {
+   "bild": "m-souffle",
+   "ueber": "Ebenso sieben Gänge",
+   "titel": "Vegetarisch",
+   "text": "Alpkäse-Soufflé mit Holunder, Sellerie Zürcher Art, zum selben Preis.",
+   "aktion": "Das Menü"
+  }
+ },
+ "tisch-011": {
+  "titel": "Die Arvenstube · Aufsteller",
+  "bereich": "Feiern",
+  "wo": "an der Tür der Stube",
+  "inhalt": {
+   "ueber": "Für Ihre Feier",
+   "titel": "Die Arvenstube",
+   "unter": "bis 12 Gäste",
+   "fuss": "Fragen Sie unsere Gastgeberin"
+  }
+ },
+ "tischkarte-001": {
+  "titel": "Platzkarte · Katrin Hollmann",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Katrin Hollmann",
+   "unter": "Freitag, 19 Uhr",
+   "fuss": ""
+  }
+ },
+ "tischkarte-002": {
+  "titel": "Platzkarte · Familie Petersen",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Familie Petersen",
+   "unter": "Am Fenster, ab 19.30 Uhr",
+   "fuss": ""
+  }
+ },
+ "tischkarte-003": {
+  "titel": "Platzkarte · Am Fenster",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Am Fenster",
+   "unter": "mit Blick aufs Fleet",
+   "fuss": ""
+  }
+ },
+ "tischkarte-004": {
+  "titel": "Platzkarte · Reserviert",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Reserviert",
+   "unter": "für Sie, ab 18.30 Uhr",
+   "fuss": ""
+  }
+ },
+ "tischkarte-005": {
+  "titel": "Platzkarte · Familie Brandt",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Familie Brandt",
+   "unter": "Zur goldenen Hochzeit",
+   "fuss": ""
+  }
+ },
+ "tischkarte-006": {
+  "titel": "Platzkarte · Dr. Ulrike Brandes",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Dr. Ulrike Brandes",
+   "unter": "In der Arvenstube",
+   "fuss": ""
+  }
+ },
+ "tischkarte-007": {
+  "titel": "Platzkarte · Lea Albers",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Lea Albers",
+   "unter": "Samstag, 19 Uhr",
+   "fuss": ""
+  }
+ },
+ "tischkarte-008": {
+  "titel": "Platzkarte · Tisch am Fleet",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Tisch am Fleet",
+   "unter": "für zwei",
+   "fuss": ""
+  }
+ },
+ "tischkarte-009": {
+  "titel": "Platzkarte · Studio Nordlicht",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Studio Nordlicht",
+   "unter": "Donnerstag, 19 Uhr",
+   "fuss": ""
+  }
+ },
+ "tischkarte-010": {
+  "titel": "Platzkarte · Der lange Tisch",
+  "bereich": "Saal",
+  "wo": "am Platz",
+  "inhalt": {
+   "ueber": "Maloja",
+   "titel": "Der lange Tisch",
+   "unter": "für Ihre Feier",
+   "fuss": ""
+  }
+ }
+}

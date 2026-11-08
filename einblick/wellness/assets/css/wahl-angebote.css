@@ -1,0 +1,251 @@
+/* Angebote-Seite · gewählte Fassungen (Robert 01.11.2026), eingebaut von wahl/angebote.py. Je Teil die Regeln der gewählten Fassung aus ihrer Runde.
+   Nur transform, nie eingeblendet; die Klassen der vier Teile überschneiden sich nicht (mw, zz/zw, anl/a-/a1, gv/gk/g13/go). */
+
+/* 1 · Kopf «Mit wem kommen Sie?», Fassung 2 «Unter dem Sternenhimmel» (_varianten/mit-wem-15) */
+.mw-warte body{visibility:hidden}
+header.mw{--g:10px;--r:clamp(14px,1.4vw,22px);--sch:0 46px 80px -40px rgba(0,0,0,.78),0 10px 22px -14px rgba(0,0,0,.5);
+ padding:clamp(118px,10vw,150px) var(--rand) clamp(56px,5.4vw,96px)}
+.mw-in{max-width:1680px;margin:0 auto;position:relative}
+header.mw figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--sch);background:#2A1D13}
+header.mw figure img{display:block;width:100%;height:100%;object-fit:cover}
+header.mw .ro{margin:0 0 18px}
+header.mw .rt{font-size:clamp(50px,6.4vw,112px);font-size:min(14.6cqi,124px);line-height:1;letter-spacing:-.025em}
+header.mw .mw-t,.mw02 .mw-tafel{container-type:inline-size}
+header.mw .rt .sl{padding-bottom:.08em}
+header.mw .rl{margin:0;font-size:clamp(17px,1.4vw,21px);line-height:1.58;max-width:34ch}
+header.mw .rt+.rl{margin-top:clamp(18px,2vw,30px)}
+header.mw .r-knoepfe{justify-content:flex-start;margin-top:clamp(26px,2.6vw,40px)}
+.mw-js header.mw.ri .rt .sl>span{transform:translateY(110%);transition:transform 1.4s var(--e1)}
+.mw-js header.mw.ri .rt .sl+.sl>span{transition-delay:.08s}
+.mw-js header.mw.ri.mw-los .rt .sl>span{transform:none}
+.mw-js header.mw .mw-hoch{transform:translate3d(0,var(--weg,90px),0);transition:transform 1.5s cubic-bezier(.33,1,.68,1) calc(var(--n,0)*.12s)}
+.mw-js header.mw .mw-zoom img{transform:scale(1.14);transition:transform 2.4s cubic-bezier(.33,1,.68,1) calc(var(--n,0)*.22s)}
+.mw-js header.mw .mw-gleit img{transform:translate3d(0,-7%,0) scale(1.14);transition:transform 3s cubic-bezier(.33,1,.68,1)}
+.mw-js header.mw.mw-los .mw-hoch,.mw-js header.mw.mw-los .mw-zoom img,.mw-js header.mw.mw-los .mw-gleit img{transform:none}
+@media(prefers-reduced-motion:reduce){
+.mw-js header.mw .mw-hoch,.mw-js header.mw .mw-zoom img,.mw-js header.mw .mw-gleit img,.mw-js header.mw.ri .rt .sl>span{transform:none;transition:none}
+}
+.mw02 .mw-stern{position:relative;height:clamp(500px,calc(100svh - 190px),880px)}
+.mw02 .mw-gross{position:absolute;inset:0}
+.mw02 .mw-gross::after{content:"";position:absolute;inset:0;background:radial-gradient(115% 110% at 0% 0%,rgba(14,10,22,.88) 0%,rgba(14,10,22,.6) 46%,rgba(14,10,22,0) 80%)}
+.mw02 .mw-tafel{position:absolute;z-index:2;left:clamp(28px,4vw,72px);top:clamp(30px,4.4vw,80px);width:min(800px,56%);color:#F7F1E8}
+.mw02 .mw-tafel .rl{text-shadow:0 1px 18px rgba(0,0,0,.45)}
+.mw02 .mw-k1{position:absolute;z-index:3;right:calc(clamp(22px,3vw,56px) + 26%);bottom:-56px;width:20%;aspect-ratio:4/3}
+.mw02 .mw-k2{position:absolute;z-index:3;right:clamp(22px,3vw,56px);bottom:-40px;width:24%;aspect-ratio:3/2}
+.mw02{padding-bottom:clamp(90px,8vw,140px)}
+@media(max-width:800px){
+header.mw{padding:112px 16px 56px;--g:8px}
+header.mw .rl{font-size:17px}
+.mw02 .mw-stern{height:auto;display:flex;flex-direction:column;gap:var(--g)}
+.mw02 .mw-gross{position:relative;inset:auto;aspect-ratio:4/3;order:2}
+.mw02 .mw-gross::after{display:none}
+.mw02 .mw-tafel{position:static;max-width:none;width:100%;order:1;padding-bottom:24px}
+.mw02 .mw-k1,.mw02 .mw-k2{position:relative;right:auto;top:auto;bottom:auto;width:auto;order:3}
+.mw02 .mw-k1{width:58%;aspect-ratio:4/3;margin-top:-18%;margin-left:auto;margin-right:6%;z-index:3}
+.mw02 .mw-k2{display:none}
+.mw02{padding-bottom:56px}
+}
+
+/* 2 · «Zu zweit», Fassung 13 «Drei Bänder im Wechsel» (_varianten/zu-zweit-15) */
+.zzw{--r:clamp(14px,1.4vw,22px);--g:12px;--sch:0 40px 70px -40px rgba(24,33,63,.55),0 10px 22px -14px rgba(24,33,63,.22);--gold:#8A6A2A;--ez:cubic-bezier(.33,1,.68,1);color:#18213F}
+.zzw+.uanl{margin-top:clamp(70px,7vw,120px)}
+.zzw figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--sch);background:#1B2440}
+.zzw figure img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.zzw .rk{white-space:nowrap}
+.zz-kopf .ro{margin:0 0 4px}
+.zzw .zz-t{font-size:clamp(52px,5.8vw,100px);line-height:1}
+.zwk{display:flex;flex-direction:column;border-radius:var(--r);background:#fff;box-shadow:var(--sch);overflow:hidden;color:#18213F}
+.zwk-in{display:flex;flex-direction:column;flex:1;padding:clamp(20px,2vw,32px)}
+.zwk h3,.zwr h3{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(20px,1.6vw,26px);line-height:1.22;letter-spacing:-.005em}
+.zwk-d{margin:8px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.zwk-l{margin:18px 0 0;padding:0;list-style:none;font-family:var(--sans);font-size:14.5px;line-height:1.5;flex:1}
+.zwk-l li{padding:10px 0;border-top:1px solid rgba(138,106,42,.22)}
+.zwk-p{margin:18px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.7;color:var(--gold)}
+.zwk .rk{align-self:flex-start;margin-top:16px}
+.zzw .zwk-bild{border-radius:0;box-shadow:none;aspect-ratio:3/2;flex:none}
+.zwk--breit .zwk-l{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-content:start}
+.zwk--kompakt .zwk-in{padding:clamp(18px,1.6vw,26px)}
+.zwk--kompakt .zwk-l{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;align-content:start;margin-top:12px;font-size:14px}
+.zwk--kompakt .zwk-l li{padding:8px 0}
+.zwk--gross h3{font-size:clamp(26px,2.4vw,38px)}
+.zwk--gross .zwk-l{font-size:15.5px}
+.zwk--preis .zwk-p{order:-1;margin:0 0 16px;font-family:var(--licht);font-size:clamp(22px,1.9vw,30px);letter-spacing:-.005em;text-transform:none;line-height:1.2;color:#18213F}
+.zz-weiter{margin-top:var(--g)}
+.zz-weiter .uan-w{display:block;margin:0;padding:0;list-style:none}
+.zz-weiter .uan-w a{color:inherit}
+.zz-platte{background:#fff;border-radius:var(--r);box-shadow:var(--sch);padding:0 clamp(18px,2vw,28px)}
+.zz-platte .uan-w a{border-top:0}
+.zwr{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) auto;gap:clamp(18px,2vw,32px);align-items:start;padding:clamp(20px,2vw,30px);background:#fff;border-radius:var(--r);box-shadow:var(--sch)}
+.zwr .zwk-l{margin:0}
+.zwr .zwk-l li:first-child{border-top:0;padding-top:2px}
+.zwr-c{display:flex;flex-direction:column;align-items:flex-start}
+.zwr-c .zwk-p{margin:0}
+.zzw .zwk--blatt{background:none;box-shadow:none;border-radius:0;position:relative;overflow:visible}
+.zwk--blatt+.zwk--blatt::before{content:"";position:absolute;left:0;top:6%;bottom:6%;width:1px;background:rgba(138,106,42,.22)}
+.zwk--blatt .zwk-in{padding:8px clamp(14px,1.6vw,26px)}
+.zwk--blatt .rk{height:48px;padding-left:18px;gap:10px;font-size:10.5px;letter-spacing:.16em}
+.zwk--blatt .rk em{width:38px;height:38px}
+.z13 .zz-kopf{margin-bottom:clamp(14px,1.6vw,24px)}
+.z13-band{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--g)}
+.z13-band+.z13-band{margin-top:var(--g)}
+.z13-band--r .z13-b{order:2}
+.z13-b{position:relative;min-height:320px}
+.zzw .z13-gross{position:absolute;inset:0}
+.z13 .z13-klein{position:absolute;z-index:2;width:40%;aspect-ratio:4/3;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transform:translate3d(0,80px,0);transition:transform 1.6s var(--e1) .25s}
+.z13-band--r .z13-klein{right:auto;left:clamp(14px,2vw,26px)}
+.z13-gross img{transform:scale(1.1);transition:transform 2.6s var(--ez)}
+.z13-band.zz-los .z13-klein,.z13-band.zz-los .z13-gross img{transform:none}
+@media(max-width:1180px){
+.zwr{grid-template-columns:minmax(0,1fr) auto}
+.zwr .zwk-l{grid-column:1/-1;grid-row:2}
+.zwk--blatt+.zwk--blatt::before{left:clamp(14px,1.6vw,26px);right:clamp(14px,1.6vw,26px);top:0;bottom:auto;width:auto;height:1px}
+.zwk--blatt .zwk-in{padding:20px clamp(14px,1.6vw,26px)}
+.zwk--kompakt .zwk-l{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+.zzw .z13-gross{position:relative;inset:auto;height:100%}
+.z13-band,.zwk--breit .zwk-l,.zwr{grid-template-columns:1fr}
+.zwr .zwk-l{grid-row:auto}
+.z13-band--r .z13-b{order:0}
+.z13-b{min-height:0;aspect-ratio:4/3}
+.zzw .zz-t{font-size:clamp(48px,13vw,64px)}
+}
+@media(prefers-reduced-motion:reduce){
+.zzw *,.zzw{transition:none!important}
+.zzw [class]{transform:none!important}
+}
+
+/* 3 · Mit Kindern, Mit Freundinnen, Für alle: Fassung 1 «Drei Spalten» (_varianten/anlaesse-15) */
+.anl{--e:cubic-bezier(.33,1,.68,1);--r:clamp(14px,1.4vw,22px);--sch:0 34px 60px -36px rgba(24,33,63,.55),0 8px 18px -12px rgba(24,33,63,.22);--fu:12px;--gold:#8A6A2A;margin-top:clamp(60px,6vw,100px)}
+.anl figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--sch);background:#E4DCCF}
+.anl figure img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.anl .a-kopf .ro{margin:0 0 10px}
+.anl .a-t{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(40px,4.2vw,72px);line-height:1.04;letter-spacing:-.02em;color:inherit}
+.anl .uan-w{margin:22px 0 0}
+.anl .uan-w a{color:inherit}
+.anl .uan{margin:0}
+.anl .uan .ul2{flex:none}
+.anl .uan .uz-p{margin-top:auto;padding-top:18px}
+.anl .rk{white-space:nowrap}
+.a-bereit [data-an]{transform:translate3d(0,80px,0);transition:transform 1.5s var(--e)}
+.a-bereit [data-an].a-da{transform:none}
+.a-bereit [data-an] figure img{transform:scale(1.1);transition:transform 2.4s var(--e)}
+.a-bereit [data-an].a-da figure img{transform:none}
+.a1-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr);gap:var(--fu) clamp(14px,1.6vw,24px);align-items:stretch}
+.a1-s{display:flex;flex-direction:column;gap:18px}
+.anl01 .a-t{font-size:clamp(34px,3.3vw,56px)}
+.a1-b{flex:1;display:grid;gap:var(--fu);min-height:320px}
+.a1-b3{grid-template-columns:1fr 1fr;grid-template-rows:1.4fr 1fr}
+.a1-b3 .a1-gross{grid-column:1/-1}
+.a1-b2{flex:none;grid-template-columns:1fr 1fr;min-height:0;height:clamp(160px,14vw,230px)}
+.a1-s .uan-w{grid-template-columns:1fr;margin:0}
+.a-bereit .a1-s{transition-delay:calc(var(--i)*.12s)}
+@media (max-width:900px){
+.anl .a-t{font-size:clamp(36px,9vw,52px)!important}
+.anl .uan-w{grid-template-columns:1fr}
+.a1-g{grid-template-columns:1fr}
+.a1-b{min-height:0}
+.a1-b3{height:110vw;flex:none}
+.a1-b2{height:46vw}
+}
+@media (prefers-reduced-motion:reduce){
+.anl *,.anl *::before,.anl *::after{transition:none!important}
+}
+
+/* 4 · Gutschein, Fassung 13 «Karte mit Bild» (_varianten/gutschein-15) */
+.gv{--zug:cubic-bezier(.33,1,.68,1);--sch:0 44px 74px -42px rgba(24,33,63,.55),0 12px 24px -16px rgba(24,33,63,.3);--fuge:10px;padding-top:clamp(80px,8vw,130px);padding-bottom:clamp(80px,8vw,130px)}
+.gv .gw{max-width:var(--max,1400px);margin:0 auto;position:relative}
+:where(.gv) figure{margin:0;position:relative;overflow:hidden;border-radius:var(--rund-m);box-shadow:var(--sch);background:#E8E1D8}
+:where(.gv) figure img{display:block;width:100%;height:100%;object-fit:cover}
+.gv-tw{container-type:inline-size}
+.gv .gv-t{font-size:min(96px,10.6cqi);line-height:1.02}
+.gv .gv-t .sl>span{white-space:nowrap}
+.gv .gv-kn{margin-top:clamp(26px,2.6vw,38px)}
+.gv .gv-kn--mitte{justify-content:center}
+.gv .rk{white-space:nowrap}
+.gk{position:relative;isolation:isolate;overflow:hidden;border-radius:clamp(16px,1.6vw,24px);aspect-ratio:1.6;display:flex;flex-direction:column;justify-content:flex-end;
+ padding:clamp(24px,2.6vw,40px) clamp(26px,2.8vw,44px);color:#F4F2EC;container-type:inline-size}
+.gk::before,.gk::after{content:"";position:absolute;pointer-events:none;border-radius:inherit;z-index:-1}
+.gk::before{inset:clamp(9px,.9vw,13px);border:1px solid rgba(217,183,88,.5);border-radius:clamp(10px,1vw,14px)}
+.gk::after{inset:clamp(13px,1.25vw,18px);border:1px solid rgba(217,183,88,.2);border-radius:clamp(8px,.8vw,11px)}
+.gk-z{position:absolute;right:9%;top:13%;width:19%;color:#D9B758;filter:drop-shadow(0 1px 0 rgba(0,0,0,.5)) drop-shadow(0 -1px 0 rgba(255,236,190,.28))}
+.gk-z svg{display:block;width:100%;height:auto}
+.gk-o{margin:0;font-family:var(--mono);font-size:clamp(9.5px,2.3cqi,12px);letter-spacing:.34em;text-transform:uppercase;color:#D9B758}
+.gk-name{margin:.45em 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(20px,7.4cqi,46px);line-height:1.12;letter-spacing:-.005em}
+.gk-ort{margin:1.1em 0 0;font-family:var(--mono);font-size:clamp(9.5px,2.3cqi,12px);letter-spacing:.32em;text-transform:uppercase;color:#E9D49A}
+.gk--nacht{background:radial-gradient(120% 90% at 18% 0%,#25336A 0%,transparent 60%),linear-gradient(165deg,#18224C,#0A1129 70%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(217,183,88,.38),0 2px 0 -1px #C9A54E,0 54px 84px -44px rgba(10,17,41,.85),0 14px 26px -16px rgba(10,17,41,.5)}
+.gk--papier{color:#18213F;background:linear-gradient(170deg,#FFFDF8,#F5EEE2 70%,#EFE6D7);
+ box-shadow:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(168,138,58,.32),0 2px 0 -1px #D7B566,0 3px 0 -1px #B08A3A,0 50px 80px -44px rgba(24,33,63,.55),0 12px 24px -16px rgba(24,33,63,.3)}
+.gk--papier::before{border-color:rgba(168,138,58,.55)}
+.gk--papier::after{border-color:rgba(168,138,58,.24)}
+.gk--papier .gk-z{color:#B8923F;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 -1px 0 rgba(90,62,20,.3))}
+.gk--papier .gk-o,.gk--papier .gk-ort{color:#8A6A2A}
+.gk--schoko{background:radial-gradient(110% 80% at 85% 0%,#3B2B1C 0%,transparent 55%),linear-gradient(165deg,#2C2015,#17100A 75%);
+ box-shadow:inset 0 1px 0 rgba(255,236,200,.12),inset 0 0 0 1px rgba(217,183,88,.45),0 2px 0 -1px #D9B758,0 3px 0 -1px #9C7A34,0 54px 84px -44px rgba(0,0,0,.8),0 14px 26px -16px rgba(0,0,0,.5)}
+.gl{list-style:none;margin:clamp(26px,2.6vw,36px) 0 0;padding:0}
+.gl li{border-top:1px solid rgba(24,33,63,.14)}
+.gl li:last-child{border-bottom:1px solid rgba(24,33,63,.14)}
+.gl a{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 2px;color:inherit;text-decoration:none;font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.35vw,21px);line-height:1.3}
+.gl i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:linear-gradient(180deg,#F1E2B4,#C9A54E);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 3px 8px rgba(24,33,63,.22);transition:transform .6s var(--zug)}
+.gl i svg{width:12px;height:12px;stroke:#1B2440;fill:none;stroke-width:1.5}
+.gl a:hover i{transform:translateX(3px)}
+.gl--zeile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2vw,30px)}
+.gl--zeile li,.gl--zeile li:last-child{border-bottom:1px solid rgba(24,33,63,.14)}
+.gl--hell li,.gl--hell li:last-child{border-color:rgba(233,212,154,.22)}
+.gl--hell a{color:#F4F2EC}
+.ri-nacht .gl li,.ri-nacht .gl li:last-child{border-color:rgba(233,212,154,.22)}
+.gl--mitte{display:flex;flex-wrap:wrap;justify-content:center;gap:0 26px}
+.gl--mitte li,.gl--mitte li:last-child{border:0}
+.gl--mitte a{padding:8px 0;gap:10px;font-size:clamp(16px,1.2vw,19px)}
+.gv [data-gv]{transition:transform 1.5s var(--zug)}
+:where(.gv) figure img{transition:transform 2.4s var(--zug)}
+@media(prefers-reduced-motion:reduce){
+.gv *,.gv [data-gv]{transition:none!important;transform:none!important}
+}
+.g13-kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,70px);align-items:end;margin-bottom:clamp(26px,3vw,44px)}
+.g13-r .gl{margin:0}
+.g13-gross{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);height:min(60vh,540px);border-radius:var(--rund);overflow:hidden;transform:translate3d(0,90px,0);
+ box-shadow:0 2px 0 -1px #C9A54E,0 60px 100px -50px rgba(10,17,41,.75),0 16px 30px -18px rgba(10,17,41,.45)}
+.g13-gross.gv-an{transform:none}
+.g13-ge{border-radius:0;box-shadow:none}
+.g13-ge img{transform:scale(1.12)}
+.g13-gross.gv-an .g13-ge img{transform:none}
+.g13-ka{aspect-ratio:auto;border-radius:0;box-shadow:inset 1px 0 0 rgba(217,183,88,.4)}
+.g13-ka .gk-name{font-size:clamp(26px,8cqi,52px)}
+@media(max-width:800px){
+.gv{--fuge:8px}
+.gl--zeile{grid-template-columns:1fr}
+.gl--zeile li{border-bottom:0}
+.gl--zeile li:first-child{border-top:1px solid rgba(24,33,63,.14)}
+.gl--zeile li:last-child{border-bottom:1px solid rgba(24,33,63,.14)}
+.g13-kopf{grid-template-columns:1fr}
+.g13-gross{grid-template-columns:1fr;height:auto}
+.g13-ge{height:62vw}
+.g13-ka{aspect-ratio:1.5}
+}
+
+/* 4b · Gutschein, oberer Bereich neu (Robert: «viel schöner, luxuriöser und eleganter»): mittig gesetzt wie der Kopf eines gedruckten Gutscheins,
+   das Z in Messing zwischen zwei feinen Linien, Titel in einer Zeile, die Angebote zwischen Messinglinien, getrennt durch die Sterne des Hauses. */
+.gv .go{display:flex;flex-direction:column;align-items:center;text-align:center;margin:0 auto clamp(30px,3.2vw,50px);transform:translate3d(0,60px,0)}
+.gv .go.gv-an{transform:none}
+.go-z{display:flex;align-items:center;gap:clamp(14px,1.4vw,20px);margin:0 0 clamp(14px,1.6vw,22px);color:#C9A54E}
+.go-z svg{display:block;width:clamp(38px,3vw,50px);height:auto;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 -1px 0 rgba(90,62,20,.25))}
+.go-z i{display:block;width:clamp(70px,9vw,140px);height:1px;background:linear-gradient(90deg,rgba(168,138,58,0),rgba(168,138,58,.75))}
+.go-z i:last-child{background:linear-gradient(270deg,rgba(168,138,58,0),rgba(168,138,58,.75))}
+.gv .go-t{font-size:clamp(44px,5.4vw,92px);line-height:1.04;text-wrap:balance}
+.gv .go-t .sl{display:inline-block}
+.go-l{list-style:none;margin:clamp(22px,2.4vw,34px) 0 0;padding:clamp(12px,1.2vw,16px) clamp(10px,2vw,30px);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px clamp(16px,1.8vw,26px);
+ width:min(100%,1060px);border-top:1px solid rgba(168,138,58,.38);border-bottom:1px solid rgba(168,138,58,.38)}
+.go-l a{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.35vw,21px);line-height:1.35;color:#18213F;text-decoration:none;transition:color .4s}
+.go-l a:hover{color:#8A6A2A}
+.go-stern{display:flex;color:#C9A54E}.go-stern svg{display:block;width:9px;height:9px}
+.gv .go-kn{justify-content:center;margin-top:clamp(24px,2.6vw,36px)}
+@media(max-width:800px){.gv .go-t{font-size:min(9.4vw,46px)}.gv .go-t .sl{display:block}.go-l{flex-direction:column;gap:10px;padding:14px 0}.go-stern{display:none}}
+
+/* Gutschein oben = Fassung 5 «Mit dem geprägten Z» (Robert 01.11.2026, _varianten/gutschein-oben-15): das Z gross hinter dem Titel, blind geprägt,
+   Ton in Ton im Papier; es setzt sich beim Ankommen langsam an seinen Platz (gv-an aus wahl-angebote.js). Nur transform. */
+.gv .go05{position:relative;isolation:isolate;padding:clamp(10px,1vw,20px) 0}
+.go05-z{position:absolute;z-index:-1;left:50%;top:50%;width:clamp(220px,22vw,340px);margin-left:calc(clamp(220px,22vw,340px)/-2);transform:translate3d(0,-46%,0) scale(1.08);transition:transform 2.6s cubic-bezier(.33,1,.68,1);color:#EEE5D8}
+.go05-z svg{display:block;width:100%;height:auto;filter:drop-shadow(1px 1px 0 rgba(255,255,255,.95)) drop-shadow(-1px -1px 0 rgba(138,106,42,.16))}
+.go05.gv-an .go05-z{transform:translate3d(0,-50%,0)}

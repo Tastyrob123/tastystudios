@@ -1,0 +1,140 @@
+/* kleid/ihrhaus.css · Ihr Haus am Hafen · Kleid der Werkzeuge (Vorführung). Werte aus haus.py MARKE und ../_kleid/werkzeug.css:
+   Nacht #10151d (Flächen #171d28, #1f2633) als dunkle Flächen; Leinen #efe7da als Raum; Licht #e2ae68 nur als Linie und Knauf; Messing #a8844f für kleine
+   Schrift und Linien; Backstein #8c4b34 sparsam für die Betonung; Tinte #1c2029. Schrift wie die Website: Titel Cormorant Garamond 500, Lauf Instrument Sans.
+   Nie fett, nie kursiv. Eigene Form des Hauses: der Speicher am Kai. Flächen wie Leinen auf Eiche (Radius 14 bis 18 px wie die Werkzeuge des Hauses),
+   oben eine feine Kante in Licht wie ein Fenster am Abend; Knopf = Platte mit rundem Knauf in Licht. Rahmen: Die Bühne. Schriften liefert ../_kleid/werkzeug.css. */
+:root{
+  --wo-sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --wo-mono:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --wo-etikett:'Instrument Sans',system-ui,sans-serif;
+  --wo-e1:cubic-bezier(.22,.68,.26,1); --wo-e2:cubic-bezier(.2,.62,.24,1);
+  --wo-nacht:#171d28; --wo-nacht2:#1f2633; --wo-tief:#10151d;
+  --wo-g1:#f4dcb7; --wo-g2:#ebc48f; --wo-g3:#e2ae68;
+  --wo-gold:#e2ae68; --wo-akzent:#8c4b34; --wo-kerze:#e2ae68; --wo-dc:#8c4b34;
+  --wo-papier:#efe7da; --wo-papier2:#e5dac8; --wo-blatt:#f6f0e6; --wo-weiss:#fbf8f2;
+  --wo-tinte:#1c2029; --wo-leise:#5e5a51; --wo-linie:rgba(28,32,41,.13); --wo-linie-d:rgba(226,174,104,.30);
+  --wo-punkt:#e2ae68; --wo-gut:#4a6b56;
+  --wo-titel:'Cormorant Garamond',Georgia,serif; --wo-titel-g:500; --wo-titel-ls:0;
+  --wo-r1:18px; --wo-r2:14px; --wo-r3:14px; --wo-rk:999px;
+  --wo-tapete:#10151d url('tapete-nacht.svg') 0 0/260px 260px;
+  --wo-tapete-fein:var(--wo-tapete);
+}
+
+/* ================= Ihr Haus · Speicher am Kai ================= */
+/* Titel in Cormorant Garamond 500 wie die Website, normale Schreibung; Betonung über die Farbe (auf Hell Backstein), nie fett, nie kursiv */
+.wo-sb__h,.wo-zw{font-family:var(--wo-titel);font-weight:500;letter-spacing:0}
+.wo-zw em{font-style:normal;color:var(--wo-akzent)}
+/* Fehlerbuch 10a: auf dunkler Fläche ist jede Titelzeile hell; die Betonung ist ein leiserer Ton desselben Leinens */
+.wo-sb .wo-sb__h em,[data-wo-rahmen] .wo-sb .wo-sb__h em,#ansicht .wo-sb .wo-sb__h em,body .wo-sb .wo-sb__h em{font-style:normal;color:rgba(239,231,218,.74);font-weight:500}
+/* Etiketten gesperrt in Instrument Sans, Zahlen mit festen Ziffern */
+.wo-bk__t small,.wo-mk,.wo-sb__zier span{font-family:var(--wo-etikett);letter-spacing:.18em}
+.wo-zahl{font-family:var(--wo-mono);font-variant-numeric:tabular-nums}
+.wo-dc{--wo-akzent:#8c4b34;--wo-kerze:#8c4b34}
+
+/* Leinen auf Eiche: helle Flächen tragen oben eine feine Kante in Licht, wie ein Fenster des Speichers am Abend */
+.wo-lage,.wo-ag,.wo-det__kopf{border-top:1px solid var(--wo-kerze)}
+[data-wo-rahmen="buehne"] .wo-kopf{border-bottom:1px solid rgba(226,174,104,.24)}
+/* Die Bühne: unten die Kaimauer in Nacht mit einer Kante aus Licht */
+[data-wo-rahmen="buehne"] .wo-sb{border-bottom:5px solid var(--wo-nacht2);box-shadow:inset 0 -1px 0 rgba(226,174,104,.5),0 0 0 1px var(--wo-linie-d),0 40px 60px -40px rgba(8,11,16,.8)}
+/* Über den Abschnittstiteln: eine feine Linie in Messing (kein Punkt-Etikett, kein Schmuck) */
+.wo-zw::before{content:'';display:block;width:42px;height:1px;margin-bottom:14px;background:var(--wo-kerze)}
+/* Fotos wie am Abend am Wasser: unten leicht in die Nacht */
+.wo-sb__foto::after{background:linear-gradient(0deg,rgba(16,21,29,.5),transparent 55%)}
+.wo-lg__z,.wo-ag__z{border-radius:14px}
+.wo-bk__t small,.wo-mk{color:#8a6c3f}
+.wo-re.wo-an,.wo-re[aria-current="true"],.wo-re[aria-current="page"]{background:linear-gradient(180deg,#232b39,#121823)}
+.wo-re.wo-an,.wo-re[aria-current="true"],.wo-re[aria-current="page"],.wo-re.wo-an *,.wo-re[aria-current] *{color:#efe7da}
+/* die Zahl im Knauf bleibt auch beim gewählten Eintrag dunkel auf Licht */
+.wo-re.wo-an .wo-zahl,.wo-re[aria-current="true"] .wo-zahl,.wo-re[aria-current="page"] .wo-zahl{color:var(--wo-tief)}
+
+/* Knöpfe wie die Website: Platte mit Tiefe, runder Knauf in Licht (../_kleid/werkzeug.css .kn) */
+.wo-kn:not(.wo-kn--rund){border-radius:999px}
+.wo-kn--gold{color:#10151d;background:linear-gradient(180deg,#f3d3a6 0%,#e2ae68 55%,#c8924f 100%);box-shadow:inset 0 1px 0 rgba(255,246,232,.7),inset 0 -1px 0 rgba(80,52,20,.4),0 14px 26px -14px rgba(16,21,29,.75),0 3px 8px -3px rgba(16,21,29,.35)}
+.wo-kn--dunkel{color:#efe7da;background:linear-gradient(180deg,#2a3242 0%,#1f2633 46%,#121823 100%);box-shadow:inset 0 1px 0 rgba(255,250,240,.12),inset 0 -1px 0 rgba(8,11,16,.5),0 16px 30px -16px rgba(16,21,29,.75),0 3px 8px -3px rgba(16,21,29,.35)}
+.wo-kn--hell{color:#1c2029;background:linear-gradient(180deg,#f6efe3 0%,#ede4d4 52%,#e2d6c2 100%)}
+[data-wo-rahmen="buehne"] .wo-leiste{border-radius:18px}
+
+/* Ecke oben links in allen Werkzeugen gleich: der Hafenkran im Ring aus Nacht mit einer Kante in Licht, darunter Bereich · Haus */
+.wo-marke-w{position:relative;padding-left:60px!important;min-height:46px}
+.wo-marke-w::before{content:'';position:absolute;left:0;top:50%;width:46px;height:46px;margin-top:-23px;border-radius:50%;
+  background:radial-gradient(circle at 50% 38%,#2a3242,#10151d 76%);box-shadow:inset 0 0 0 1px rgba(226,174,104,.85),inset 0 0 0 4px rgba(8,11,16,.55),0 6px 14px -8px rgba(0,0,0,.8)}
+.wo-marke-w .wo-zeichen{position:absolute;left:10px;top:50%;width:26px;height:26px;max-width:none;margin-top:-13px;color:#e2ae68}
+.wo-marke-w b{font-family:var(--wo-titel);font-weight:500}
+.wo-marke-w small{color:rgba(226,174,104,.92)!important}
+
+/* Auftritt der Bühne wie bei den abgenommenen Häusern (Fehlerbuch 10a): Foto schwebt 40 px von unten und zoomt von 1,06 auf 1,
+   Zier, Titel, Satz und Knöpfe folgen 40 px von unten, 0,85 s, Staffel 0,12 s. Nur transform, deckend. */
+@keyframes woAufFoto{from{translate:0 40px;scale:1.06}}
+@keyframes woAuf{from{translate:0 40px}}
+/* Bewegung 29.10.2026 im Ton des Abends am Wasser ruhig und lang.
+   Das Foto im Rahmen zoomt 2,6 s langsam ein (von 1,12), der Titel kommt 1,15 s aus der Tiefe, die Kurve läuft weich aus. Läuft ab dem ersten Bild,
+   wartet auf kein Skript. Das Foto zieht beim Scrollen etwas langsamer mit (Scroll-Zeitachse, nur wo der Browser sie kann, im Compositor). */
+@keyframes woZoom{from{scale:1.12}}
+@keyframes woHoch{from{translate:0 34px}}
+@media screen and (prefers-reduced-motion:no-preference){
+  html:not(.still) .wo-sb__foto{animation:woAufFoto 1.1s cubic-bezier(.19,1,.22,1) both}
+  html:not(.still) .wo-sb__foto{overflow:hidden}
+  html:not(.still) .wo-sb__foto img{animation:woZoom 2.6s cubic-bezier(.19,1,.22,1) both}
+  html:not(.still) :is(.wo-sb__zier,.wo-sb__h,.wo-sb__satz,.wo-sb__kn){animation:woHoch 1.15s cubic-bezier(.19,1,.22,1) both}
+  html:not(.still) .wo-sb__zier{animation-delay:.1s}
+  html:not(.still) .wo-sb__h{animation-delay:.18s}
+  html:not(.still) .wo-sb__satz{animation-delay:.3s}
+  html:not(.still) .wo-sb__kn{animation-delay:.42s}
+  /* Titel zeilenweise (Kriterium 37): kleid/ihrhaus.js teilt ihn in Wörter mit Zeilennummer --z; jede Zeile steigt 0,11 s nach der vorigen */
+  html:not(.still) .wo-sb__h.wo-zl{animation:none}
+  html:not(.still) .wo-sb__h.wo-zl .wo-w{display:inline-block;animation:woHoch 1.15s cubic-bezier(.19,1,.22,1) both;animation-delay:calc(.18s + var(--z,0) * .11s)}
+  @supports (animation-timeline:view()){
+    @keyframes woZug{from{translate:0 -6%}to{translate:0 0}}   /* das Foto ist 12 % höher als sein Rahmen: beim Ziehen entsteht nie ein Spalt */
+    html:not(.still) .wo-sb__foto img{height:112%;animation:woZoom 2.6s cubic-bezier(.19,1,.22,1) both,woZug linear both;animation-timeline:auto,view();animation-range:normal,exit 0% exit 100%}
+  }
+  /* Knöpfe geben beim Drücken nach (nur beim Drücken, die Übergänge der Werkzeuge bleiben) */
+  :is(.wo-kn,.wo-rund,.wo-ag,.wo-bk,.kn,button):active{scale:.975;transition:scale .12s ease-out}
+}
+
+/* Untere Leiste (Fehlerbuch 10a): der Titel bricht nie um; wird es eng, verschwindet erst der Satz, dann die Beschriftung der Knöpfe */
+.wo-leiste__t b{white-space:nowrap}
+
+/* Kopf bei wenig Breite (Fehlerbuch 10a): der Titel in der Mitte nimmt nur den freien Platz, wird kleiner und kürzt notfalls mit «…»; er überdeckt nie einen Knopf */
+@media (min-width:901px){
+  .wo-kopf{grid-template-columns:auto minmax(0,1fr) auto}
+  .wo-kopf__mitte{min-width:0;max-width:100%}
+  .wo-kopf__mitte b,.wo-kopf__mitte small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+}
+@media (min-width:901px) and (max-width:1240px){
+  .wo-kopf__mitte b{font-size:18px}
+  .wo-kopf .wo-kn--gold.wo-kn--klein>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wo-kopf .wo-kn--gold.wo-kn--klein{padding:0;gap:0;width:42px;height:42px;min-height:0;min-width:0;border-radius:50%;justify-content:center;align-items:center}   /* nur noch der runde Knauf, nie eine Kachel (30.10.2026) */
+}
+
+/* Zierzeile im Startbild: bricht um, wenn der Platz nicht reicht; die Linie daneben gibt unter 1240 px ihren Platz dem Text */
+.wo-sb__zier{min-width:0;max-width:100%}
+.wo-sb__zier span{min-width:0;white-space:normal;overflow:visible;line-height:1.6}
+@media (max-width:1240px){.wo-sb__zier i{display:none}}
+
+/* Luft unter der Bühne (Fehlerbuch 10a, 20.10.2026): mindestens 30 px bis zu den ersten Kacheln, am Handy 24 px */
+.wo-sb{margin-bottom:34px}
+@media (max-width:760px){.wo-sb{margin-bottom:24px}}
+
+/* Fehlerbuch 10a: auf jeder dunklen Fläche ist die Schrift hell, auch auf Knöpfen und Einträgen, die immer dunkel sind */
+.wo-kopf,.wo-kopf a,.wo-sb,.wo-sb a:not(.wo-kn){color:#efe7da}
+
+/* Nie kursiv: die Stamm-Bausteine Brief und Blatt setzen Georgia kursiv; bei Ihr Haus aufrecht in Cormorant, Hervorhebung über die Farbe */
+.wo-brief em,.wo-brief i,.wo-bl em,.wo-bl i{font-style:normal}
+.wo-bl__rub span,.wo-bl__g span,.wo-bl__h{font-family:var(--wo-titel);font-style:normal;font-weight:500}
+.wo-brief mark,.wo-brief em{background:none;color:var(--wo-akzent)}
+.wo-lu{font-style:normal;background:linear-gradient(180deg,transparent 55%,rgba(226,174,104,.32) 55%)}
+
+/* Nie fett: der Stamm setzt im Blatt Gerichtsnamen fett (.wo-bl__g b 700); bei Ihr Haus in Cormorant 500 */
+.wo-bl__g b{font-family:var(--wo-titel);font-weight:500;letter-spacing:.02em}
+
+/* Schrift optisch mittig in Knöpfen und Pillen (Messlauf-Regel text-mitte).
+   Die Zeilenbox wurde zentriert, nicht die Versalhöhe: in Chromium sass die Schrift 0,6 bis 1,3 px zu hoch. text-box schneidet die Zeile auf Versalhöhe und Grundlinie zu,
+   dann zentriert der Knopf genau die Buchstaben. Ohne text-box (ältere Browser) ein kleiner gemessener Ausgleich. */
+.wo-kn>span,.wo-re>span,.wo-kopf__ber>span{text-box:trim-both cap alphabetic}
+.wo-re .wo-zahl{display:block;height:auto;padding:7px;line-height:1;text-align:center;text-box:trim-both cap alphabetic}
+@supports not (text-box:trim-both cap alphabetic){.wo-kn>span,.wo-re>span,.wo-kopf__ber>span{position:relative;top:.05em}}
+
+/* Messlauf 29.10.2026 (Regel einzelwort): kein einzelnes Wort allein in der letzten Titelzeile */
+h1,h2,h3,h4,figcaption{text-wrap:balance}
+.rdg-karte h3,.wo-zw,.wo-sb__h{text-wrap:balance}
+/* Messlauf 29.10.2026 (Regel reihe): wo die Kacheltitel neben dem Pfeil umbrechen (schmale Spalten), reserviert jeder Titel zwei Zeilen, damit die Reihe auf einer Linie steht */
+@media (min-width:901px) and (max-width:1365px){.wo-ber .wo-bk__t b{min-height:2.4em}}

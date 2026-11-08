@@ -1,0 +1,59 @@
+/* Wellness & Spa · Zimmerabschnitte (Robert 25.10.2026: Fassung 1 «Klassisch» aus _varianten/zimmergalerie): Angaben, grosses Bild, darunter alle kleinen Bilder zum Antippen. */
+.zgs{--gold:#8A6A2A}
+/* Grundaufbau */
+.zgs{--rk:clamp(14px,1.4vw,22px)}
+.zgs .zd-z img{width:34px;height:auto}
+.zgs-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4.5vw,80px);align-items:start;transform:translateY(40px);transition:transform 1.4s var(--e1)}
+.zgs-in.sw-da{transform:none}
+.zgs--r .zgs-in{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.zgs--r .zgs-in>.zg-info,.zgs--r .zgs-in>.zg-info-w{order:2}
+.zgs figure{margin:0}
+.zg-info{padding-top:clamp(4px,1vw,16px);min-width:0}
+.zg-n{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(32px,3.2vw,54px);line-height:1.06;letter-spacing:-.02em}
+.zg-lead{margin:14px 0 0;max-width:34ch;font-family:var(--licht);font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:#4A536B}
+.zg-eck{margin:22px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);border-top:1px solid rgba(24,33,63,.14);border-bottom:1px solid rgba(24,33,63,.14)}
+.zg-eck span{padding:12px 18px 12px 0;font-family:var(--licht);font-size:16px;line-height:1.35}
+.zg-eck span+span{padding-left:18px;border-left:1px solid rgba(24,33,63,.14)}
+.zg-eck i,.zg-tafel dt{display:block;margin-bottom:4px;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.zgs .ul2{margin-top:16px}
+.zg-preis{margin:24px 0 0;display:flex;flex-direction:column;gap:6px}
+.zg-preis b{font-family:var(--licht);font-weight:400;font-size:clamp(24px,2vw,32px);letter-spacing:-.01em}
+.zg-preis span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.zgs .r-knoepfe{margin-top:24px}
+
+/* Galerie */
+.zg{min-width:0}
+.zg-gross{position:relative;aspect-ratio:3/2;border-radius:var(--rk);overflow:hidden;background:#EEE8DE;
+ box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 40px 70px -40px rgba(24,33,63,.55),0 10px 22px -14px rgba(24,33,63,.3)}
+.zg-b{position:absolute!important;inset:0;border-radius:0!important;box-shadow:none!important;opacity:0;transition:opacity .55s ease}
+.zg-b.an{opacity:1}
+.zg-b img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.03);transition:transform 1.4s var(--e1)}
+.zg-b.an img{transform:none}
+.zg-b.hoch img{object-fit:contain}
+.zg-minis{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:12px}
+.zg-m{position:relative;padding:0;border:0;aspect-ratio:3/2;border-radius:8px;overflow:hidden;cursor:pointer;background:#EEE8DE;opacity:.55;box-shadow:0 0 0 1px rgba(24,33,63,.08);transition:opacity .3s,box-shadow .3s}
+.zg-m img{display:block;width:100%;height:100%;object-fit:cover}
+.zg-m:hover,.zg-m:focus-visible{opacity:1}
+.zg-m.an{opacity:1;box-shadow:0 0 0 2px #C9A54E}
+
+@media (max-width:900px){
+ .zgs-in,.zgs--r .zgs-in{grid-template-columns:1fr!important}
+ .zgs-in>.zg{order:-1}
+ .zgs--r .zgs-in>.zg-info{order:2}
+ .zg-minis{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:74px;overflow-x:auto;scrollbar-width:none;padding:2px;justify-content:start}
+}
+
+/* Zimmerseite 26.10.2026: Aufbau der Startseite (Versetzte Rahmen) mit kleinen Bildern darunter. Steht nach zimmer-rahmen.css nicht nötig: eigene Klassen .zr */
+.zr{--rk:clamp(14px,1.4vw,22px);--gold:#8A6A2A;padding-top:clamp(20px,2.4vw,40px);padding-bottom:clamp(20px,2.4vw,40px)}
+.zr--erst{padding-top:clamp(70px,7vw,120px)}
+.zr+.zr{padding-top:0}
+.zr .r4{align-items:start}
+.zr .r4-spalte{min-width:0}
+.zr .r4--r .r4-spalte{order:2}
+.zr .r4-bild .zg-gross{position:relative;z-index:1;height:100%;aspect-ratio:auto}
+.zr .zg-minis{position:relative;z-index:1;margin-top:58px}
+.zr .r4-text{padding-top:clamp(10px,3vw,50px)}
+.zr .zv-aus{max-width:none}
+.zr .zv-preis{margin-top:20px;font-size:13px}
+.zr .r-knoepfe{flex-wrap:wrap;gap:12px}
+@media (max-width:900px){.zr .r4--r .r4-spalte{order:0}.zr .zg-minis{margin-top:40px}}

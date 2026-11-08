@@ -1,0 +1,145 @@
+/* Loft-Suite-Seite, Fassung 6 «Collage» (Robert 26.10.2026 aus _varianten/loft-seite-15). Dicht, Fuge 6 px; grosse Bilder überlappen, Text auf
+   dunklen Platten. Bewegung je Blick: Titel aus dem Schlitz, Fotos setzen sich im Rahmen (nur transform). Am Handy ein Raster in zwei Spalten. */
+.lv{--gp:6px;--sk:#22180F;--sk2:#170F09;--cr:#F6F1EA;--ms:#D9B758;--msh:#E9D49A;--tp:clamp(22px,2.6vw,48px)}
+.lv .lv-s{padding:var(--gp) var(--gp) 0;background:var(--sk);color:var(--cr);position:relative;overflow:hidden}
+.lv .lv-s:last-of-type{padding-bottom:var(--gp)}
+.lv .lv-s.ri-leinen{background:#EEE8DE;color:#18213F}
+.lv .lv-s.ri-hell{background:#F6F1EA;color:#18213F}
+.lv .lv-g{display:grid;gap:var(--gp)}
+.lv .lv-f{position:relative;overflow:hidden;margin:0;min-height:0;min-width:0;background:#120c07}
+.lv .lv-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.4s var(--e1)}
+.lv .ri.da .lv-f img{transform:none}
+.lv .lv-f figcaption{position:absolute;left:14px;right:14px;bottom:12px;z-index:2;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#F6F1EA;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+.lv .lv-st{width:10px;height:10px;flex:none;color:var(--ms)}
+.lv .lv-t{padding:var(--tp);display:flex;flex-direction:column;justify-content:center;min-width:0;background:var(--sk)}
+.lv .ri-leinen .lv-t{background:#EEE8DE}.lv .ri-hell .lv-t{background:#F6F1EA}
+.lv .lv-t>*:first-child{margin-top:0}
+.lv .rt{font-weight:300;font-size:clamp(32px,3.3vw,60px);line-height:1.02;letter-spacing:-.02em;margin:0}
+.lv h1.rt{font-size:clamp(38px,4.2vw,78px)}
+.lv .lv-g .lv-t h2.rt{font-size:clamp(26px,2.3vw,42px)}
+.lv .lv-g .lv-t h1.rt{font-size:clamp(32px,3.2vw,58px)}
+.lv .ro{margin:0 0 12px;color:var(--msh)}
+.lv .ri-leinen .ro,.lv .ri-hell .ro{color:#8A6A2A}
+.lv .lf-marke{margin:0 0 18px}.lv .lf-marke img{width:clamp(150px,12vw,210px);height:auto}
+.lv .lv-p{margin:18px 0 0;font-size:clamp(15px,1.1vw,18px);line-height:1.6;opacity:.86;max-width:560px}
+.lv .lv-gross{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(24px,2.3vw,40px);line-height:1.2;letter-spacing:-.01em}
+.lv .lv-mittel{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(19px,1.6vw,28px);line-height:1.28}
+.lv .r-knoepfe{margin-top:22px}
+.lv .lv-li{list-style:none;margin:18px 0 0;padding:0}
+.lv .lv-li li{padding:11px 0;border-top:1px solid rgba(217,183,88,.32);font-family:var(--licht);font-weight:300;font-size:clamp(15px,1.1vw,18px)}
+.lv .lv-fk{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px;margin:22px 0 0}
+.lv .lv-fk div{border-top:1px solid rgba(217,183,88,.45);padding-top:10px}
+.lv .lv-fk dt{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--msh);margin-bottom:6px}
+.lv .ri-leinen .lv-fk dt,.lv .ri-hell .lv-fk dt{color:#8A6A2A}
+.lv .lv-fk dd{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(15px,1.2vw,19px)}
+.lv .lv-fk4{grid-template-columns:repeat(4,1fr);margin:0}
+.lv .lv-aus{list-style:none;margin:6px 0 0;padding:0;columns:2;column-gap:28px}
+.lv .lv-aus3{columns:3}.lv .lv-aus4{columns:4}.lv .lv-aus2{columns:2}
+.lv .lv-aus li{break-inside:avoid;padding:9px 0;border-top:1px solid rgba(217,183,88,.28);font-family:var(--licht);font-weight:300;font-size:clamp(14px,1vw,16px)}
+.lv .ri-leinen .lv-aus li,.lv .ri-hell .lv-aus li,.lv .v7-hell .lv-aus li{border-color:rgba(138,106,42,.3)}
+.lv .lv-pr p{margin:0;display:grid;gap:8px}
+.lv .lv-pr b{font-family:var(--licht);font-weight:300;font-size:clamp(36px,3.6vw,64px);line-height:1;letter-spacing:-.02em}
+.lv .lv-pr span{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--msh)}
+.lv .ri-leinen .lv-pr span,.lv .ri-hell .lv-pr span{color:#8A6A2A}
+.lv .lv-life{width:clamp(150px,15vw,260px);height:auto;display:block;margin:0 0 16px}
+.lv header.lv-s{padding-top:92px}
+
+/* 6 · Collage: Felder frei gesetzt, überlappend (am Handy gewöhnliches Raster) */
+.lv .v6-box{display:block;position:relative}
+.lv .v6-box>*{position:absolute}
+.v6-ba{height:max(700px,calc(100svh - 98px))}
+.v6-et{left:0;top:0;width:64%;height:100%}
+.v6-be{left:58%;top:6%;width:27%;height:60%;z-index:2;box-shadow:0 30px 60px -24px #000}
+.v6-kr{left:86.5%;top:0;width:13.5%;height:48%}
+.v6-platte{left:2%;bottom:3%;width:44%;z-index:3}
+.v6-fk{left:66%;top:69%;width:34%;height:31%;justify-content:flex-start!important}
+.v6-fk .lv-fk{margin:0}
+.v6-bb{height:44vw}
+.v6-wh{left:0;top:0;width:38%;height:100%}
+.v6-sa{left:33%;top:14%;width:25%;height:72%;z-index:2;box-shadow:0 30px 60px -24px #000}
+.v6-tr{left:59%;top:0;width:15%;height:100%}
+.v6-da{left:74.5%;top:0;width:25.5%;height:36%}
+.v6-platte2{left:74.5%;top:37%;width:25.5%;height:63%;justify-content:flex-start!important}
+.v6-platte2 .rt{font-size:clamp(22px,1.9vw,34px)!important}.v6-platte2 .lv-li{margin:10px 0 18px}.v6-platte2 .lv-li li{padding:7px 0}
+.v6-bc{height:40vw}
+.v6-ki{left:0;top:0;width:56%;height:100%}
+.v6-le{left:50%;top:9%;width:33%;height:56%;z-index:2;box-shadow:0 30px 60px -24px #000}
+.v6-platte3{left:50%;top:67%;width:33%;height:33%;z-index:3}
+.v6-ke{left:84%;top:0;width:16%;height:100%}
+.v6-bd{height:46vw}
+.v6-mi{left:0;top:0;width:100%;height:100%}
+.v6-platte4{left:2%;bottom:4%;width:38%;z-index:2}
+.v6-aus{right:2%;top:6%;width:40%;z-index:2}
+
+@media (max-width:900px){
+ .lv header.lv-s{padding-top:78px}
+ .lv .lv-g{display:grid!important;grid-template-columns:1fr 1fr!important;height:auto!important}
+ .lv .lv-g>*{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;height:auto!important;margin:0!important;box-shadow:none!important}
+ .lv .lv-g>.lv-t{grid-column:1/-1}
+ .lv .lv-g>.lv-f{aspect-ratio:3/4}
+ .v6-et,.v6-ki,.v6-mi{grid-column:1/-1;aspect-ratio:4/3!important}
+ .lv .lv-aus{columns:1}
+}
+@media (prefers-reduced-motion:reduce){.lv .lv-f img{transform:none!important;transition:none!important}}
+
+/* Tiefe (Robert 26.10.2026: «man erkennt die Übergänge zwischen den Bildern so schlecht … mehr 3D-Effekt … abgerundete Kacheln»).
+   Jede Kachel gerundet, mit feiner heller Kante; Schatten wachsen mit der Ebene (--z 0 hinten … 3 vorn). Beim Scrollen wandert jede Ebene
+   mit eigener Tiefe (--k, loft-tiefe.js, nur transform, nur ab 901 px und ohne reduzierte Bewegung). Kein Anheben beim Überfahren. */
+.lv{--rk:clamp(12px,1.3vw,22px)}
+.lv .lv-s{overflow:visible}
+.lv .lv-f,.lv .v6-box>.lv-t{border-radius:var(--rk);transform:translate3d(0,var(--y,0px),0);will-change:transform}
+.lv .lv-f::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+  box-shadow:inset 0 0 0 1px rgba(255,236,205,.16),inset 0 1px 0 rgba(255,255,255,.22)}
+.lv .v6-box>.lv-t{background:#1f150d;box-shadow:inset 0 0 0 1px rgba(217,183,88,.28),0 40px 80px -30px rgba(0,0,0,.9),0 14px 28px -14px rgba(0,0,0,.7)}
+/* Ebenen: hinten flach, vorn hoch */
+.v6-et,.v6-wh,.v6-ki,.v6-mi{--k:0;box-shadow:0 22px 46px -22px rgba(0,0,0,.75)}
+.v6-kr,.v6-tr,.v6-da,.v6-ke{--k:.025;box-shadow:0 30px 60px -26px rgba(0,0,0,.85),0 10px 20px -12px rgba(0,0,0,.6)}
+.v6-be,.v6-sa,.v6-le{--k:.055;box-shadow:0 60px 110px -34px rgba(0,0,0,.95),0 22px 36px -18px rgba(0,0,0,.8)!important}
+.v6-platte,.v6-platte3,.v6-platte4,.v6-aus{--k:.07}
+.v6-platte2{--k:.035}
+.v6-fk{--k:.035}
+/* Fugen etwas weiter, damit die Rundungen lesbar sind */
+.v6-tr{left:59.5%;width:14.4%}.v6-da{left:74.6%;width:25.4%;height:35.4%}.v6-platte2{left:74.6%;width:25.4%;top:37%;height:63%;padding-top:clamp(18px,1.8vw,30px)!important;padding-bottom:clamp(14px,1.4vw,24px)!important}
+.v6-platte2 .rt{font-size:clamp(20px,1.7vw,30px)!important}.v6-platte2 .lv-li li{padding:6px 0;font-size:clamp(13px,.95vw,16px)}.v6-platte2 .ro{margin-bottom:6px}
+.v6-ke{left:84.4%;width:15.6%}
+@media (max-width:900px){.lv .lv-f,.lv .v6-box>.lv-t{transform:none!important}}
+@media (prefers-reduced-motion:reduce){.lv .lv-f,.lv .v6-box>.lv-t{transform:none!important}}
+
+/* Luft in den Platten, keine Kante auf Kante (Robert 26.10.2026: «Texte sehr gequetscht … Kachel überdeckt die drunter so Kanten genau»).
+   Jede Platte endet mindestens 4 % vor dem Blockrand oder überlappt deutlich; Text mit grosszügigem Innenraum. */
+.lv .v6-box>.lv-t{padding:clamp(30px,3vw,58px) clamp(30px,3.2vw,60px)}
+.lv .v6-box .lv-p{line-height:1.7}
+.lv .v6-box .lv-mittel{line-height:1.42;font-size:clamp(18px,1.45vw,26px)}
+.lv .v6-box .lv-life{width:clamp(130px,11vw,200px);margin-bottom:18px}
+.v6-bc{height:46vw}
+.v6-le{top:7%;height:52%}
+.v6-platte3{top:63%;height:auto;bottom:auto;min-height:0}
+.v6-platte2{top:39%;height:auto;bottom:4%;justify-content:center!important}
+.v6-da{height:37%}
+.v6-aus{top:9%}
+.v6-platte4{bottom:7%}
+.v6-fk{top:71%;height:auto;bottom:4%;justify-content:center!important}
+.v6-platte{bottom:6%}
+.v6-platte2 .lv-li{margin:12px 0 22px}.v6-platte2 .lv-li li{padding:8px 0}
+/* Platten wandern im Takt des Bildes über ihnen; der Lifestyle-Block bekommt Raum, damit seine Platte vor der Unterkante endet. */
+.v6-bc{height:48vw}
+.v6-le{top:7%;height:48%}
+.v6-platte3{top:59%;--k:.055}
+.v6-platte2{--k:.025}
+.v6-platte,.v6-platte4,.v6-aus{--k:.04}
+/* Kacheln, die an den Blockrand stossen, stehen still (sonst schieben sie sich über den Nachbarblock); nur Schwebendes wandert. */
+.v6-et,.v6-wh,.v6-ki,.v6-mi,.v6-tr,.v6-ke,.v6-kr,.v6-da{--k:0}
+/* Abstand zum Blockrand auch in Bewegung mindestens ~25 px (gemessen in WebKit 1440). */
+.v6-bc{height:50vw}
+.v6-le{top:7%;height:46%;--k:.025}
+.v6-platte3{top:57%;--k:.025}
+.v6-fk,.v6-platte2{--k:0;bottom:5%}
+.v6-platte,.v6-platte4{--k:.02}
+/* Schmale Bildschirme bis 1180 px: Raster statt Collage (die Platten hätten dort zu wenig Höhe). */
+@media (max-width:1180px){
+ .lv .lv-g{display:grid!important;grid-template-columns:1fr 1fr!important;height:auto!important}
+ .lv .lv-g>*{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:auto!important;height:auto!important;margin:0!important;transform:none!important}
+ .lv .lv-g>.lv-t{grid-column:1/-1}
+ .lv .lv-g>.lv-f{aspect-ratio:3/4}
+ .v6-et,.v6-ki,.v6-mi{grid-column:1/-1;aspect-ratio:16/10!important}
+}

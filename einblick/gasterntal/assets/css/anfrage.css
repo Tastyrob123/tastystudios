@@ -1,0 +1,50 @@
+/* Anfrage-Fenster (assets/js/anfrage.js, Robert 17.10.2026, übernommen vom Waldhotel Doldenhorn): Briefbogen des Hauses auf der Seite, statt Mailprogramm.
+   Papier mit Holzlinie und Schriftzug des Hauses, Felder vertieft wie im Kontaktkasten, Knöpfe des Hauses. Auftritt nur transform, das Blatt ist ab dem ersten Bild deckend.
+   Hintergrund ohne Weichzeichner (Regel 55). */
+.anf__hinter{position:fixed;inset:0;z-index:2147483000;background:rgba(14,18,20,.66)}
+.anf__hinter[hidden]{display:none}
+dialog.anf{position:fixed;inset:0;z-index:2147483001;margin:auto;padding:0;border:0;background:none;color:var(--tinte);width:min(720px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+dialog.anf[open]{animation:anf-auf .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes anf-auf{from{transform:translateY(36px) scale(.97)}}
+html.anf-offen{overflow:hidden}
+.anf{--holz-d:#a68458}
+.anf__blatt{position:relative;background:var(--blatt);border-radius:var(--r-l);padding:clamp(30px,4.4vw,52px) clamp(22px,4.4vw,56px) clamp(26px,3.6vw,44px);box-shadow:0 2px 4px rgba(10,13,14,.3),0 30px 70px -20px rgba(10,13,14,.6)}
+.anf__blatt::before{content:'';position:absolute;inset:9px;border:1px solid rgba(166,132,88,.38);border-radius:calc(var(--r-l) - 9px);pointer-events:none}
+.anf__zu{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(#3a4146,#262b2f 55%,#14181a);box-shadow:inset 0 1px 0 #5d666b,inset 0 -2px 0 #0a0d0e;display:grid;place-items:center;z-index:2}
+.anf__zu span{grid-area:1/1;width:15px;height:1.5px;background:var(--papier);transform:rotate(45deg)}
+.anf__zu span+span{transform:rotate(-45deg)}
+.anf__kopf{text-align:center;margin-bottom:clamp(20px,2.6vw,30px)}
+.anf__zeichen{display:block;width:min(210px,52%);height:auto;margin:0 auto 14px;color:var(--tinte);fill:currentColor}
+.anf__kl{font-family:var(--mono);font-size:.778rem;letter-spacing:.24em;text-transform:uppercase;color:#7d6544;margin:0}
+.anf__titel{font-family:var(--titel);font-weight:700;font-size:clamp(1.836rem,3.456vw,2.7rem);line-height:1.1;margin:10px auto 0;max-width:20ch;color:var(--tinte)}
+.anf__linie{display:block;width:72px;height:1px;background:var(--holz-d);margin:18px auto 0}
+.anf__form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.anf__form[hidden],.anf__danke[hidden],.anf__feld[hidden]{display:none}
+.anf__feld{display:grid;gap:7px;min-width:0}
+.anf__feld--ganz{grid-column:1/-1}
+.anf__feld>span{font-family:var(--mono);font-size:.756rem;letter-spacing:.2em;text-transform:uppercase;color:#5b6366}
+.anf__feld input,.anf__feld textarea{width:100%;min-width:0;font:inherit;font-size:1.08rem;color:var(--tinte);background:#eef1f1;border:1px solid #d9dfe0;border-radius:14px;padding:13px 16px;box-shadow:inset 0 2px 5px rgba(20,26,28,.08);outline:0}
+.anf__feld textarea{resize:vertical;min-height:120px;line-height:1.5}
+.anf__feld input:focus,.anf__feld textarea:focus{border-color:var(--holz-d);box-shadow:inset 0 2px 5px rgba(20,26,28,.08),0 0 0 3px rgba(166,132,88,.18)}
+.anf__feld.falsch input{border-color:#a8452f}
+.anf__honig{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.anf__meldung{grid-column:1/-1;margin:0;font-size:1.026rem;color:#8a3324}
+.anf__meldung a{color:inherit}
+.anf__fuss{grid-column:1/-1;display:grid;justify-items:center;gap:14px;margin-top:10px;text-align:center}
+.anf__klein{margin:0;font-size:.929rem;line-height:1.5;color:#5b6366;max-width:46ch}
+.anf__danke{text-align:center}
+.anf__dank{font-family:var(--titel);font-weight:700;font-size:clamp(1.62rem,2.808vw,2.16rem);margin:0}
+.anf__dank-satz{margin:10px auto 0;max-width:42ch;color:#3c4447}
+.anf__zettel{margin:22px auto 0;max-width:460px;border-top:1px solid var(--holz-d);border-bottom:1px solid var(--holz-d);padding:6px 0;text-align:left}
+.anf__zettel div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:9px 0}
+.anf__zettel div+div{border-top:1px solid #dde2e3}
+.anf__zettel dt{font-family:var(--mono);font-size:.756rem;letter-spacing:.2em;text-transform:uppercase;color:#7d6544;padding-top:3px}
+.anf__zettel dd{margin:0;overflow-wrap:anywhere}
+.anf__fuss--mitte{margin-top:24px}
+@media (max-width:600px){.anf__form{grid-template-columns:1fr}.anf__zettel div{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){dialog.anf[open]{animation:none}}
+html.still dialog.anf[open]{animation:none}
+/* Datum im Hausstil (auswahl.js setzt einen Knopf an die Stelle des Feldes): dieselbe vertiefte Fläche wie die anderen Felder */
+.anf__feld .dw-knopf{min-height:50px;font-size:1.08rem;color:var(--tinte);background:#eef1f1;border:1px solid #d9dfe0;border-radius:14px;padding:13px 16px;box-shadow:inset 0 2px 5px rgba(20,26,28,.08)}
+.anf__feld .dw-knopf:focus-visible{border-color:var(--holz-d);outline:0}
+

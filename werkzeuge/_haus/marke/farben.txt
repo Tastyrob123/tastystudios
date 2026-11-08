@@ -1,0 +1,6 @@
+Nacht	#10151d	Grundton: das Wasser nach Einbruch der Dunkelheit
+Leinen	#efe7da	helle Flächen: die Bettwäsche
+Licht	#e2ae68	nur als Linie und Knauf: die Fenster am Abend
+Messing	#a8844f	Linien, kleine Schrift: Lampen und Schlüssel
+Backstein	#8c4b34	sparsam: die Fassade
+Flaschengrün	#16221d	nur die Tafel: Fliesen und Wände des Gastraums

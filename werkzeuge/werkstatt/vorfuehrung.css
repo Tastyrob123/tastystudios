@@ -1,0 +1,58 @@
+/* Drucksachen & Feed · Vorführung: Ablauf beim Speichern (PDF, Bild, ZIP) im Kleid von Ihr Haus */
+.vf{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:24px;background:rgba(8,11,16,.62);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.vf[hidden]{display:none}
+.vf__karte{width:min(760px,100%);max-height:calc(100vh - 48px);overflow:auto}
+.vf__schritte{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.vf__schritte li{display:flex;align-items:center;gap:12px;font-size:14px;opacity:.45;transition:opacity .3s}
+.vf__schritte li i{position:relative;width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(168,132,79,.5);flex:none}
+.vf__schritte li.jetzt{opacity:1}
+.vf__schritte li.jetzt i::after{content:'';position:absolute;inset:5px;border-radius:50%;border:2px solid #a8844f;border-right-color:transparent;animation:vf-dreh .8s linear infinite}
+.vf__schritte li.fertig{opacity:1}
+.vf__schritte li.fertig i{background:#a8844f;box-shadow:none}
+.vf__schritte li.fertig i::after{content:'';position:absolute;left:7px;top:4px;width:6px;height:10px;border:solid #fbf8f2;border-width:0 2px 2px 0;transform:rotate(45deg)}
+@keyframes vf-dreh{to{transform:rotate(360deg)}}
+.vf__seiten{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0 4px}
+.vf__seiten:empty{display:none}
+.vf__seite{margin:0;flex:0 1 200px;display:flex;flex-direction:column;gap:6px}
+.vf__seite img{display:block;width:100%;height:auto;box-shadow:0 14px 30px -18px rgba(0,0,0,.55),0 0 0 1px rgba(28,32,41,.12)}
+.vf__seite--marken img{outline:1px dashed rgba(28,32,41,.35);outline-offset:6px}
+.vf__seite figcaption{font-size:12px;color:#5a5f68}
+.vf__datei{margin:14px 0 4px;display:flex;flex-direction:column;gap:3px}
+.vf__datei b{font-weight:600;word-break:break-all}
+.vf__datei small{color:#5a5f68;font-size:13px}
+@media (prefers-reduced-motion:reduce){.vf__schritte li.jetzt i::after{animation:none}}
+/* Hinweis der Vorführung (demo.js, DEMO.hinweis): wie im Kleid aller Werkzeuge (../_kleid/werkzeug.css), hier ohne das ganze Kleid zu laden */
+.demo-hinweis{position:fixed;z-index:9999;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#efe7da;color:#1c2029;border-radius:14px;padding:12px 18px;
+  font:500 13px/1.4 'Instrument Sans',system-ui,sans-serif;max-width:min(440px,calc(100vw - 32px));text-align:center;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);transition:opacity .35s cubic-bezier(.2,.68,.24,1),transform .35s cubic-bezier(.2,.68,.24,1)}
+.demo-hinweis.da{opacity:1;transform:translate(-50%,0)}
+/* Ergebnis der Markenprüfung: Bei zugeklappter rechter Leiste (Spalte 0 px) liegt die Platte rechts über der Arbeitsfläche, so breit wie die Leiste */
+.studio.rechts-zu .lp{grid-column:2/4;left:auto;width:min(370px,100%)}
+/* Bildfolgen der Führung (bildfolge.js) an der Stelle der Filme der Vorlage: gleiche Fläche, Bild für Bild überblendet und langsam herangezoomt */
+ds-bildfolge{position:relative;display:block;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0b0f15;cursor:pointer;isolation:isolate}
+ds-bildfolge img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s cubic-bezier(.2,.68,.24,1);will-change:transform,opacity}
+ds-bildfolge img.jetzt{opacity:1}
+.bf__zeit{position:absolute;left:14px;right:14px;bottom:12px;z-index:2;height:2px;border-radius:2px;background:rgba(239,231,218,.28);overflow:hidden}
+.bf__zeit i{position:absolute;inset:0;background:#e2ae68;transform-origin:0 50%;transform:scaleX(0)}
+.bf__knauf{position:absolute;left:50%;top:50%;z-index:2;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;color:#e2ae68;
+  background:linear-gradient(180deg,#5f5546,#0e131a 50%,#0b0f15);box-shadow:inset 0 1px 0 rgba(247,242,234,.3),inset 0 -2px 0 rgba(0,0,0,.45),0 0 0 1px rgba(226,174,104,.4),0 14px 30px -12px rgba(0,0,0,.6);
+  opacity:0;transform:scale(.9);transition:opacity .35s,transform .35s;pointer-events:none}
+.bf__knauf svg{width:22px;height:22px;margin-left:3px}
+ds-bildfolge:not(.spielt) .bf__knauf{opacity:1;transform:none}
+.hk__film ds-bildfolge{max-height:44vh}
+.hk--video ds-bildfolge{border-radius:18px;box-shadow:0 0 0 1px rgba(201,154,88,.35),0 24px 44px -20px rgba(0,0,0,.6)}
+@media (prefers-reduced-motion:reduce){ds-bildfolge img{transition:opacity .3s}}
+/* Bedienleiste der Demo (wie die Leiste des Videos der Vorlage) */
+ds-bildfolge.bf--leiste .bf__zeit{display:none}
+.bf__leiste{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;gap:12px;padding:28px 16px 12px;color:#efe7da;background:linear-gradient(0deg,rgba(11,15,21,.82),rgba(11,15,21,0));cursor:default}
+.bf__k{flex:none;width:34px;height:34px;border:0;border-radius:50%;display:grid;place-items:center;color:#e2ae68;background:rgba(16,21,29,.55);box-shadow:0 0 0 1px rgba(226,174,104,.35);cursor:pointer}
+.bf__k svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7}
+.bf__spiel svg path{fill:currentColor;stroke:none}
+.bf__spiel .aus{display:none}
+ds-bildfolge.spielt .bf__spiel .an{display:none}
+ds-bildfolge.spielt .bf__spiel .aus{display:block}
+.bf__t{flex:none;font:500 12px/1 'Instrument Sans',system-ui,sans-serif;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.bf__balken{position:relative;flex:1;height:22px;display:flex;align-items:center;cursor:pointer;touch-action:none}
+.bf__balken>span{position:relative;display:block;width:100%;height:3px;border-radius:3px;background:rgba(239,231,218,.3)}
+.bf__balken i{position:absolute;inset:0;border-radius:3px;background:#e2ae68;transform-origin:0 50%;transform:scaleX(0)}
+.bf__balken b{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#efe7da;box-shadow:0 0 0 2px #e2ae68}
+ds-bildfolge:fullscreen{max-height:none;border-radius:0}

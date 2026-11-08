@@ -1,0 +1,18 @@
+{
+ "kontor": {"von": "kontor", "adresse": "?ansicht=start"},
+ "kontor-2": {"von": "kontor", "adresse": "?ansicht=b:start"},
+ "lagerbuch": {"von": "lagerbuch", "adresse": "#woche"},
+ "werkstatt": {"von": "werkstatt", "adresse": "#start"},
+ "winde": {"von": "winde", "adresse": "#start"},
+ "winde-chat": {"von": "winde", "adresse": "#start", "klick": "Chat ausprobieren"},
+ "musterkammer-fotos": {"von": "musterkammer", "adresse": "#bilder"},
+ "musterkammer-marke": {"von": "musterkammer", "adresse": "#dateien"},
+ "logbuch": {"von": "logbuch", "adresse": "#start"},
+ "logbuch-herkunft": {"von": "logbuch", "adresse": "#herkunft"},
+ "karte-1": {"von": "lagerbuch", "adresse": "#tafel-herbst", "rahmen": ".vorschau__f", "element": "section.blatt", "dpr": 2.5, "ordner": "karten", "datei": "1-tafel", "name": "Die Tafel im Herbst"},
+ "karte-2": {"von": "lagerbuch", "adresse": "#fruehstueck", "rahmen": ".vorschau__f", "element": "section.blatt", "dpr": 2.5, "ordner": "karten", "datei": "2-fruehstueck", "name": "Frühstück"},
+ "karte-3": {"von": "lagerbuch", "adresse": "#bar", "rahmen": ".vorschau__f", "element": "section.blatt", "dpr": 2.5, "ordner": "karten", "datei": "3-bar", "name": "Die Bar"},
+ "druck-1": {"von": "werkstatt", "adresse": "#neu", "element": "button.stueck:has-text(\"Jede Woche an der Tafel ihr Plakat\") .papier--vorn", "dpr": 3, "ordner": "druck", "datei": "1-plakat", "name": "Plakat der Woche"},
+ "druck-2": {"von": "werkstatt", "adresse": "#neu", "element": "button.stueck:has-text(\"Menükarte am Platz\") .papier--vorn", "dpr": 4, "ordner": "druck", "datei": "2-menuekarte", "name": "Menükarte am Platz"},
+ "druck-3": {"von": "werkstatt", "adresse": "#neu", "element": "button.stueck:has-text(\"Für den Eingang, den Empfang und die Bar\") .papier--vorn", "dpr": 3, "ordner": "druck", "datei": "3-plakat-hoch", "name": "Plakat und Pressemappe"}
+}

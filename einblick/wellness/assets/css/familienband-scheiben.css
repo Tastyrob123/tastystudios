@@ -1,0 +1,23 @@
+/* Fuss mit Familienband, Fassung 1 «Vier Scheiben» (Robert 26.10.2026, Entwurfs-Maschine _varianten/fuss-15b).
+   Reihenfolge: Teil des Hauses (footer.rf), darunter das Familienband, ganz unten die Rechtszeile (footer.rf-ende), FAMILIEN-FOOTER.md Punkt 6.
+   Das Band behält Inhalte, Reihenfolge, Texte und Fotos; neu ist nur die Anordnung: vier hohe Scheiben Kante an Kante wie die Fensterfront
+   des Pavillons, aussen gerundet; das eigene Haus trägt unten einen Messingstrich statt des Rahmens. Grund wie der Fuss, damit es eine Fläche ist.
+   Bewegung: jede Scheibe schwebt deckend herauf, sobald ihre Oberkante den unteren Rand erreicht (familienband-scheiben.js). Nur transform. */
+.rest .familienband{--fb-grund:#070C1F;--fbr:clamp(14px,1.4vw,22px);border-top:1px solid rgba(217,183,88,.2);padding-top:clamp(60px,6vw,96px);padding-bottom:clamp(50px,5vw,80px)}
+.rest .familienband .fb__haeuser{gap:6px;max-width:1320px}
+.rest .familienband .fb__kopf{max-width:1320px}
+.rest .fb__haus figure{position:relative;aspect-ratio:2/3;margin:0 0 18px;border-radius:0}
+.rest .fb__haus:first-child figure{border-radius:var(--fbr) 0 0 var(--fbr)}
+.rest .fb__haus:last-child figure{border-radius:0 var(--fbr) var(--fbr) 0}
+.rest .fb__haus--hier figure{outline:0}
+.rest .fb__haus--hier figure::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--fb-akzent)}
+.rest .fb__haus .fb__name,.rest .fb__haus .fb__zusatz,.rest .fb__haus .fb__ort,.rest .fb__haus .fb__hier,.rest .fb__haus .fb__weiter{padding-right:14px}
+.rest .fb__haus{transform:translate3d(0,110px,0) scale(.96);transition:transform 1.2s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 70ms)}
+.rest .fb__haus.da{transform:none}
+.rf-ende{padding-top:0;padding-bottom:26px}
+.rf-ende .rf-u{margin-top:0;padding-top:24px;border-top:1px solid rgba(217,183,88,.14)}
+@media (max-width:800px){
+  .rest .familienband .fb__haeuser{grid-template-columns:1fr 1fr;row-gap:30px}
+  .rest .fb__haus figure,.rest .fb__haus:first-child figure,.rest .fb__haus:last-child figure{border-radius:var(--fbr)}
+}
+@media (prefers-reduced-motion:reduce){.rest .fb__haus{transform:none!important;transition:none!important}}

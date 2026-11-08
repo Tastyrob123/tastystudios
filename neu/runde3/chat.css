@@ -1,0 +1,114 @@
+/* Chat unten rechts und Sprache unten links (Robert 04.11.2026). Aufbau wie die Rezeption im Chat des Grand Beau-Rivage, in den Farben von Tasty Studios.
+   Feste Flächen ohne Weichzeichner, bewegt wird nur transform und opacity. */
+.fc,.fc-knopf,.fc-dunkel,.sprache{--c-nacht:#111421;--c-flaeche:#1b1e30;--c-hell:#f8f1e8;--c-creme:#ebdbce;--c-taupe:#9e947f;--c-linie:rgba(235,219,206,.16)}
+
+/* Knopf: das Zeichen im Kreis, mit Tiefe wie «Projekt starten» */
+.fc-knopf{position:fixed;z-index:70;right:max(16px,calc(var(--rand)*.5));bottom:max(16px,calc(var(--rand)*.4));width:50px;height:50px;border-radius:50%;
+  display:grid;place-items:center;color:var(--c-creme);
+  background:linear-gradient(180deg,#414770 0%,#262b47 46%,#151a2c 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 0 -2px 3px rgba(0,0,0,.5),0 0 0 1px rgba(235,219,206,.34),0 3px 0 0 #090b14,0 3px 0 1px rgba(235,219,206,.14),0 22px 30px -14px rgba(0,0,0,.95);
+  transition:transform .55s var(--e2),opacity .4s ease}
+.fc-knopf:hover{transform:translateY(-2px)}
+.fc-knopf:active{transform:translateY(1px) scale(.97)}
+.fc-knopf>span{grid-area:1/1;display:grid;place-items:center;transition:transform .5s var(--e2),opacity .3s}
+.fc-knopf__z .t{width:21px}
+.fc-knopf__x{opacity:0;transform:rotate(-90deg) scale(.6)}
+.fc-knopf__x svg{width:15px;height:15px;stroke:currentColor;stroke-width:1.4;fill:none}
+.fc-offen .fc-knopf__z{opacity:0;transform:rotate(90deg) scale(.6)}
+.fc-offen .fc-knopf__x{opacity:1;transform:none}
+
+/* Sprache unten links: Pille mit Tiefe, DE / EN / FR */
+.sprache{position:fixed;z-index:61;left:max(16px,calc(var(--rand)*.5));bottom:max(16px,calc(var(--rand)*.4));display:flex;align-items:center;gap:2px;height:38px;padding:0 8px;border-radius:999px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--c-hell);
+  background:linear-gradient(180deg,#2e3354 0%,#1d2138 50%,#121628 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.26),inset 0 -2px 3px rgba(0,0,0,.45),0 0 0 1px rgba(235,219,206,.3),0 3px 0 0 #090b14,0 18px 28px -14px rgba(0,0,0,.9);
+  transition:transform .55s var(--e2),opacity .4s ease}
+.sprache button{position:relative;padding:7px 7px 6px;color:rgba(248,241,232,.5);letter-spacing:inherit;transition:color .3s}
+.sprache button:hover{color:#fff}
+.sprache button[aria-pressed="true"]{color:#fff}
+/* Strich genau unter den Buchstaben: ohne Rand des Knopfs und ohne die Sperrung nach dem letzten Buchstaben */
+.sprache button[aria-pressed="true"]::after{content:'';position:absolute;left:7px;right:calc(7px + .14em);bottom:4px;height:1px;background:var(--c-creme)}
+.sprache i{font-style:normal;opacity:.3}
+@media (max-width:560px){.sprache{height:36px;padding:0 6px;font-size:10.5px}}
+
+/* Nur im Auftakt sichtbar (Robert 04.11.2026), offener Chat bleibt stehen; im Handy-Menü weg */
+.ecken-aus .sprache,.ecken-aus .fc-knopf:not([aria-expanded="true"]),.offen .sprache,.offen .fc-knopf{transform:translateY(calc(100% + 48px));opacity:0;pointer-events:none}
+.nav{transition:transform .55s var(--e2)}
+.nav.kopf-aus{transform:translateY(-180%)}
+
+/* Fenster */
+.fc{position:fixed;z-index:69;right:max(16px,calc(var(--rand)*.5));bottom:calc(max(16px,calc(var(--rand)*.4)) + 66px);
+  width:min(408px,calc(100vw - 32px));height:min(680px,calc(100vh - 150px));height:min(680px,calc(100svh - 150px));
+  display:flex;flex-direction:column;overflow:hidden;border-radius:26px;-webkit-font-smoothing:antialiased;
+  font-family:var(--sans);background:var(--c-nacht);color:var(--c-hell);
+  box-shadow:0 0 0 1px rgba(235,219,206,.3),inset 0 1px 0 rgba(255,255,255,.08),0 40px 80px -24px rgba(0,0,0,.8),0 12px 24px -12px rgba(0,0,0,.5);
+  opacity:0;transform:translateY(14px) scale(.97);transform-origin:100% 100%;pointer-events:none;visibility:hidden;
+  transition:opacity .3s,transform .55s var(--e1),visibility 0s .55s}
+.fc-offen .fc{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition:opacity .25s,transform .55s var(--e1),visibility 0s}
+.fc-dunkel{position:fixed;inset:0;z-index:68;background:#07080d;opacity:0;pointer-events:none;transition:opacity .45s var(--e1)}
+.fc-offen .fc-dunkel{opacity:.55;pointer-events:auto}
+
+.fc__kopf{display:flex;align-items:center;gap:12px;padding:16px 12px 14px 18px;border-bottom:1px solid var(--c-linie);flex:none;background:linear-gradient(180deg,#1b1e30,#111421)}
+.fc__marke{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--c-creme);
+  background:linear-gradient(180deg,#343a56,#1e2236 50%,#11141f);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 0 0 1px rgba(235,219,206,.3)}
+.fc__marke .t{width:19px}
+.fc__kopf div{flex:1;min-width:0;line-height:1.3}
+.fc__kopf b{display:block;font-family:var(--titel);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;color:#fff}
+.fc__kopf div span{white-space:nowrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-taupe)}
+.fc__neu,.fc__zu{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#b9bcc4;transition:background .3s}
+.fc__neu:hover,.fc__zu:hover{background:rgba(255,255,255,.07)}
+.fc__neu svg,.fc__zu svg{width:15px;height:15px;stroke:currentColor;stroke-width:1.3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.fc__lauf{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:18px 20px 10px;display:flex;flex-direction:column;gap:18px}
+.fc__b{max-width:100%;font-size:14.5px;line-height:1.66}
+.fc__b--gast{align-self:flex-end;max-width:82%;padding:11px 17px;border-radius:22px 22px 6px 22px;line-height:1.45;color:var(--c-nacht);
+  background:linear-gradient(180deg,#f8eee4,#e3d1c0);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.fc__b--wir{align-self:stretch;color:rgba(248,241,232,.92)}
+.fc__b ul{margin:6px 0 0;padding:0;list-style:none}
+.fc__b li{position:relative;margin:7px 0;padding-left:16px}
+.fc__b li::before{content:'';position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--c-creme)}
+.fc__b li b{font-weight:500;color:#fff}
+.fc__b p+p,.fc__b ul+p,.fc__b p+ul{margin-top:9px}
+.fc__b--denkt{display:flex;gap:5px;padding:6px 0}
+.fc__b--denkt i{width:6px;height:6px;border-radius:50%;background:var(--c-creme);animation:fcDenkt 1s infinite}
+.fc__b--denkt i:nth-child(2){animation-delay:.15s}.fc__b--denkt i:nth-child(3){animation-delay:.3s}
+@keyframes fcDenkt{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+
+.fc__start{margin:auto 0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px 0 6px}
+.fc__start-z{display:none}
+.fc__start h3{margin:0 0 8px;font-family:var(--titel);font-weight:700;font-size:27px;line-height:1.04;letter-spacing:.02em;text-transform:uppercase;color:#fff}
+.fc__start p{margin:0 0 16px;font-size:13.5px;line-height:1.5;color:var(--c-taupe)}
+.fc__karten{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+.fc__karten button{display:flex;flex-direction:column;text-align:left;overflow:hidden;border-radius:16px;background:var(--c-flaeche);box-shadow:inset 0 0 0 1px var(--c-linie);
+  transition:box-shadow .35s,transform .5s var(--e2)}
+.fc__karten button:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(235,219,206,.5),0 14px 26px -16px rgba(0,0,0,.8)}
+.fc__k-bild{display:block;width:100%;aspect-ratio:2/1;overflow:hidden}
+.fc__k-bild img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--e1)}
+.fc__karten button:hover .fc__k-bild img{transform:scale(1.04)}
+.fc__k-text{display:flex;flex-direction:column;gap:3px;padding:10px 13px 12px}
+.fc__k-text b{font-family:var(--titel);font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.fc__k-text span{font-size:11.5px;color:var(--c-taupe)}
+
+.fc__vor{display:flex;flex-direction:column;gap:6px;margin-top:-4px}
+.fc__vor button{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:10px 14px;border-radius:14px;font-size:14px;color:var(--c-hell);
+  box-shadow:inset 0 0 0 1px rgba(235,219,206,.24);transition:background .3s}
+.fc__vor button:hover{background:var(--c-flaeche)}
+.fc__vor svg{flex:none;width:14px;height:14px;stroke:var(--c-creme);stroke-width:1.3;fill:none}
+
+.fc__feld{flex:none;display:flex;align-items:flex-end;gap:8px;margin:8px 14px 0;padding:12px 8px 8px 18px;border-radius:24px;background:var(--c-flaeche);box-shadow:0 0 0 1px rgba(235,219,206,.24)}
+.fc__feld label{flex:1;min-width:0}
+.fc__feld textarea{display:block;width:100%;height:calc(1.4em + 8px);max-height:132px;border:0;background:none;font:inherit;font-size:16px;line-height:1.4;color:#fff;padding:0 0 8px;margin:0;outline:none;resize:none;overflow-y:auto;scrollbar-width:none}
+.fc__feld textarea::placeholder{color:#8a8fa3}
+.fc__send{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--c-nacht);
+  background:linear-gradient(180deg,#fdf6ee,#d6c1ae);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 2px rgba(104,80,58,.38),0 2px 0 rgba(0,0,0,.5);transition:transform .4s var(--e2)}
+.fc__send:hover{transform:translateY(-1px)}
+.fc__send svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fc__fuss{flex:none;padding:9px 16px 13px;text-align:center;font-size:11px;line-height:1.5;color:#7d8296}
+.fc__fuss a{color:var(--c-creme)}
+.fc .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+@media (max-width:560px){
+  .fc{right:8px;left:8px;width:auto;bottom:74px;top:84px;height:auto}
+  .fc-knopf{width:48px;height:48px}
+}
+@media (prefers-reduced-motion:reduce){.fc,.fc-knopf>span,.fc-dunkel,.sprache,.fc-knopf{transition:none}.fc__b--denkt i{animation:none}}

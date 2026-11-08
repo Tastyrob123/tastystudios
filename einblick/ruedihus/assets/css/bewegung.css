@@ -1,0 +1,105 @@
+/* Landgasthof Ruedihus — BEWEGUNG beim Scrollen, an einer Stelle (Tasty Studios 13.10.2026, Roberts Auftrag: «dieses Pulsierende, dieses Federhaftige,
+   dass die Bilder nach oben fliegen, dass der Text so reinschwebt, wie beim Rivage und beim Carlton. Aber adaptiert und zum Stil der Seiten passend»).
+   Diese Datei wird zuletzt geladen. Mit assets/js/bewegung.js (teilt die Stücke ein) und drei Stellen in main.js (Auslöser 4 % und 6 %, kein Warten aufs
+   Entpacken, Gleiten an der Zeitachse) ist das die ganze Bewegung der Seiten. Vorsatz aller Namen: rb-.
+
+   Das Rezept (am Carlton-Europe von Robert abgenommen), im Mass dieses Hauses: ein Holzhaus von 1753, warm und handfest. Darum etwas kürzerer Weg,
+   kleinerer Ausschlag der Feder und eine Spur schneller als im Grandhotel.
+   1. Bilder, Tafeln, Platten und Blätter sind immer deckend. Ihr WEG nach oben hängt am Scrollen (translate über die Zeitachse des Browsers): das Stück kommt
+      mit dem Scrollen herauf und steht nie versetzt da. Ihr PULSIEREN läuft nach der Uhr (scale mit Federkurve), das Foto im Rahmen kommt dazu aus der Vergrösserung.
+   2. Fliesstext, kleine Zeilen und Knöpfe schweben nach der Uhr herein: kurzer Weg, lange Zeit, weiche Kurve. Überschriften, grosse Sätze und die Sätze in den
+      Fenstern rollen zeilenweise aus einem Schlitz hoch (Abschnitt 2a).
+   3. Gruppen (Raster, Bildgefüge, Galerien) kommen als Ganzes, ihre Teile stehen still. Wo Stücke übereinanderliegen: nur pulsieren, kein Weg.
+   4. Fotos gleiten im Rahmen am Scrollen (Zeitachse des Browsers, ohne eigene Ebene).
+   5. Die Auftritte, die dieses Haus schon hat (Aufhängen, Flug der Abzüge, Kippen der Platten, von links), bleiben in ihrer Art und bekommen denselben Takt.
+   6. Ein Stück pulsiert genau einmal. Mit «weniger Bewegung» und ?nomotion steht alles sofort. Der Auftakt jeder Seite bleibt, wie er ist.
+   Nur translate, scale, transform und opacity. Zurück zum Stand davor: _sicherung/2026-10-13-vor-bewegung/ (oder die zwei Zeilen in bau.py entfernen und
+   in main.js die mit «BEWEGUNG 13.10.2026» bezeichneten Stellen zurückstellen). */
+:root{--rb-sanft:cubic-bezier(.25,.6,.3,1);--rb-feder:cubic-bezier(.3,1.34,.42,1);--rb-feder-leise:cubic-bezier(.3,1.2,.4,1);--rb-zug:cubic-bezier(.3,.3,.45,1)}
+
+/* ---------- 2 · Schrift und Zeilen (gleiches Gewicht wie die Grundregel in main.css, steht später, gilt also; Sonderregeln einzelner Bausteine bleiben stärker) ---------- */
+[data-r]:where(:not([data-r="bild"],[data-r="schweb"],[data-r="haeng"],[data-r="flug"],[data-r="kipp"],[data-r="vonlinks"])){transform:translateY(clamp(20px,2.2vw,34px));transition:opacity 1.5s ease,transform 2.3s var(--rb-sanft);transition-delay:calc(var(--i,0)*120ms)}
+/* ---------- 2a · Überschriften, grosse Sätze und die Sätze in den Fenstern ROLLEN zeilenweise aus einem Schlitz hoch (Roberts Nachtrag 13.10.2026: «die Schriften in den
+   Fenstern und die Überschriften sollen schon hochrollen, nicht so wie jetzt erscheinen»). Baustein «Zeilen-Maske»: jede Zeile liegt in .z und fährt von unten hoch,
+   voll deckend, kein Einblenden. bewegung.js zerlegt jede Überschrift nach ihrem echten Umbruch in Zeilen (.rb-roll), auch am Handy und nach dem Drehen, und löst sie aus,
+   sobald sie im Fenster steht (.rb-los). Die Sätze in den Fenstern rollen, wenn das Fenster sie freigibt (.da aus main.js). Der Schlitz hat Luft für Umlaute, Unterlängen und Komma. ---------- */
+html:not(#a) .rb-roll[data-r],html:not(#a) .rb-fest[data-r]{opacity:1;transform:none;transition:none}
+html:not(#a) .rb-roll:not(.rb-geteilt){visibility:hidden}
+html:not(#a) .rb-roll .z{display:block;overflow:hidden;padding:.16em .1em .22em;margin:-.16em -.1em -.22em}
+html:not(#a) .rb-roll .z>span{display:block;white-space:nowrap;transform:translateY(118%);transition:transform 1.45s var(--e1);transition-delay:calc(var(--i,0)*90ms)}
+html:not(#a) .rb-roll.rb-los .z>span,html:not(#a) .rb-roll.rb-mit-da.da .z>span,html:not(#a) .da .rb-roll.rb-mit-da .z>span{transform:none}
+html:not(#a) .rb-roll.rb-gerollt .z{overflow:visible}
+html:not(#a) .rb-roll.rb-gerollt .z>span{transition:none;white-space:normal}
+.rb-w{display:inline-block}
+html:not(#a) .rb-roll .z.rb-lang>span{white-space:normal;overflow-wrap:anywhere;hyphens:auto}html:not(#a) .rb-roll .z.rb-lang .rb-w{display:inline}
+html.still:not(#a) .rb-roll{visibility:visible}
+
+/* ---------- 5 · Die eigenen Auftritte des Hauses im selben Takt: länger, weicher, mit leichtem Nachfedern ---------- */
+[data-r="haeng"]{transition:opacity .7s var(--e1),transform 2.3s cubic-bezier(.24,1.36,.36,1)}
+[data-r="flug"]{transition:opacity .6s var(--e1),transform 2.1s cubic-bezier(.2,1.1,.3,1)}
+[data-r="kipp"]{transition:opacity .6s var(--e2),transform 1.9s cubic-bezier(.24,1.3,.36,1)}
+[data-r="vonlinks"]{transition:opacity .8s var(--e2),transform 2.1s cubic-bezier(.22,1.14,.3,1)}
+
+/* ---------- 1 · Stücke: deckend, Weg am Scrollen, Pulsieren nach der Uhr. bewegung.js vergibt .rb-s (einzelnes Stück), .rb-g (Gruppe als Ganzes),
+   .rb-still (Teil einer Gruppe), .rb-p (nur pulsieren). Der Vorsatz html:not(#a) hebt die Regeln über die Auftritte in main.css. ---------- */
+@keyframes rb-weg{from{translate:0 var(--rb-weg,90px)}}
+@keyframes rb-puls{from{scale:var(--rb-kl,.945)}}
+@keyframes rb-feder{from{translate:0 var(--rb-weg,90px);scale:var(--rb-kl,.945)}}
+html:not(#a) .rb-s,html:not(#a) .rb-g{opacity:1;--rb-weg:calc(clamp(54px,6.4vw,100px) + min(var(--i,0),3)*16px);--rb-kl:.945;--rb-dauer:2.5s}
+html:not(#a) .rb-g{--rb-weg:clamp(54px,6.4vw,100px);--rb-kl:.966;--rb-dauer:2.7s}
+html:not(#a) .rb-s:not(.da){transform:none;transition:none;translate:0 var(--rb-weg);scale:var(--rb-kl)}
+html:not(#a) .rb-g:not(.rb-da){translate:0 var(--rb-weg);scale:var(--rb-kl)}
+html:not(#a) .rb-s.da{animation:rb-feder var(--rb-dauer) var(--rb-feder) backwards;animation-delay:calc(var(--i,0)*100ms)}
+html:not(#a) .rb-g.rb-da{animation:rb-feder var(--rb-dauer) var(--rb-feder-leise) backwards}
+html:not(#a) [data-gruppe] .rb-s.da{animation-delay:0s}
+/* Teile einer Gruppe stehen in ihr still */
+html:not(#a) .rb-still,html:not(#a) .rb-still.da{opacity:1;transform:none;translate:none;scale:none;animation:none;transition:none}
+/* nur pulsieren (übereinanderliegende Bilder, Zeilen einer Platte): kein Weg, eines nach dem anderen */
+html:not(#a) .rb-p{opacity:1;--rb-kl:.92}
+html:not(#a) .rb-p:not(.da){transform:none;transition:none;scale:var(--rb-kl)}
+html:not(#a) .rb-p.da{animation:rb-puls 2.3s var(--rb-feder) backwards}
+
+@supports (animation-timeline:view()){
+  html:not(#a) .rb-s:not(.da){translate:none;animation:rb-weg var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 56vh}
+  html:not(#a) .rb-s.da{animation:rb-weg var(--rb-zug) both,rb-puls var(--rb-dauer) var(--rb-feder) backwards;animation-duration:auto,var(--rb-dauer);animation-timeline:view(),auto;animation-range:cover 0% cover 56vh,normal;animation-delay:0s,calc(var(--i,0)*100ms)}
+  html:not(#a) [data-gruppe] .rb-s.da{animation-delay:0s,0s}
+  html:not(#a) .rb-s.da.rb-fertig{animation:rb-weg var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 56vh}
+  html:not(#a) .rb-g:not(.rb-da){translate:none;animation:rb-weg var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 56vh}
+  html:not(#a) .rb-g.rb-da{animation:rb-weg var(--rb-zug) both,rb-puls var(--rb-dauer) var(--rb-feder-leise) backwards;animation-duration:auto,var(--rb-dauer);animation-timeline:view(),auto;animation-range:cover 0% cover 56vh,normal}
+  html:not(#a) .rb-g.rb-da.rb-fertig{animation:rb-weg var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 56vh}
+  /* im Fuss und bei sehr hohen Stücken ist der Weg nach einem kürzeren Stück Scrollen zu Ende */
+  html:not(#a) .fuss .rb-s,html:not(#a) .fuss .rb-s.da,html:not(#a) .fuss .rb-s.da.rb-fertig,html:not(#a) .rb-kurz,html:not(#a) .rb-kurz.da,html:not(#a) .rb-kurz.da.rb-fertig,html:not(#a) .rb-kurz.rb-da,html:not(#a) .rb-kurz.rb-da.rb-fertig{animation-range:cover 0% cover 40vh,normal}
+}
+@supports not (animation-timeline:view()){html:not(#a) :is(.rb-s,.rb-g).rb-fertig{animation:none}}
+html:not(#a) .rb-p.rb-fertig{animation:none}
+/* am Handy kürzerer Weg */
+@media (max-width:700px){html:not(#a) .rb-s,html:not(#a) .rb-g{--rb-weg:calc(46px + min(var(--i,0),2)*10px);--rb-kl:.955}html:not(#a) .rb-g{--rb-weg:46px;--rb-kl:.972}}
+
+/* ---------- 4 · Gleiten: das Foto wandert in seinem Rahmen mit dem Scrollen (main.js setzt .rb-rahmen und .rb-gleit, wenn der Browser die Zeitachse kann).
+   Beim Auftritt kommt es aus der Vergrösserung zur Ruhe. Keine eigene Ebene (will-change), der Browser rechnet die Zeitachse selbst. ---------- */
+@keyframes rb-gleit{from{translate:0 5.4%}to{translate:0 -5.4%}}
+@supports (animation-timeline:view()){
+  .rb-rahmen{view-timeline:--rb-gl block}
+  img.rb-gleit{transform:none;scale:1.13;animation:rb-gleit linear both;animation-timeline:--rb-gl;animation-range:cover 0% cover 100%;transition:scale 2.6s var(--e1)}
+  [data-r]:not(.da) img.rb-gleit{scale:1.27}
+}
+
+/* ---------- 6 · Ohne Bewegung (Systemwunsch, ?nomotion) und im Druck steht alles sofort ---------- */
+html.still:not(#a) :is(.rb-s,.rb-g,.rb-p,.rb-still){animation:none!important;translate:none!important;scale:none!important;transform:none!important;opacity:1!important}
+html.still img.rb-gleit{animation:none!important;scale:none!important;translate:none!important}
+@media (prefers-reduced-motion:reduce){html:not(#a) :is(.rb-s,.rb-g,.rb-p,.rb-still){animation:none!important;translate:none!important;scale:none!important;opacity:1!important}img.rb-gleit{animation:none!important;scale:none!important;translate:none!important}}
+@media print{html:not(#a) :is(.rb-s,.rb-g,.rb-p,.rb-still),[data-r]{animation:none!important;translate:none!important;scale:none!important;transform:none!important;opacity:1!important}}
+
+/* ---------- Zimmer der Startseite (.zrl, 15.10.2026). Verlauf: federnd («zu viel») → elegant nach Auslöser («sollen nicht warten, bis ich den Abschnitt
+   berühre, sondern direkt reinkommen»; dazu ruckte es kurz zurück, weil das Skript die Bilder erst nach dem Laden nach unten setzte). Jetzt ohne Skript und ohne
+   Auslöser am Scrollen: ab dem ersten Pixel im Fenster schwebt jedes Bild deckend herauf (wie .rb-s, Bereich cover 0 % bis 56vh), das Foto zoomt dabei leicht
+   von 110 % auf 100 %. Kleiner Staffel über den Weg (80 px + 14 px je Zimmer). Browser ohne Zeitachse und «weniger Bewegung»: alles steht. ---------- */
+@keyframes zrl-schweb{from{translate:0 var(--zw)}}
+@keyframes zrl-zoom{from{scale:1.1}}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    html:not(.still) .zrl__z{--zw:calc(clamp(60px,6vw,90px) + var(--k,0)*14px);position:relative;animation:zrl-schweb var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 56vh}
+    html:not(.still) .zrl__b{overflow:clip}   /* hidden wäre ein eigener Scrollbehälter, das Foto hinge dann an ihm statt an der Seite */
+    html:not(.still) .zrl__b img{animation:zrl-zoom var(--rb-zug) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover 70vh}
+  }
+}

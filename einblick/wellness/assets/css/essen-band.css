@@ -1,0 +1,10 @@
+/* Wellness & Spa · Startseite «setzen Sie sich …»: die Teller als schwarzes Band (Robert 02.11.2026, Fassung 1 aus _varianten/essen-teller-10).
+   Fünf Teller Kante an Kante über die ganze Bildschirmbreite, im eigenen Querformat 3:2, nie beschnitten; ihr schwarzer Grund geht im Band auf.
+   Bewegung: die Teller tauchen aus dem Schwarz auf (1,1 → 1), ausgelöst über gt-los aus essen-gaenge.js. Nur transform. */
+.gt-reihe.gt-band{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;background:#000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+.gt-band .gt-tb{margin:0;aspect-ratio:3/2;overflow:hidden;background:#000}
+.gt-band .gt-tb img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 2.2s cubic-bezier(.33,1,.68,1) calc(var(--n,0)*.14s)}
+.gt-band.gt-los .gt-tb img{transform:none}
+.gt-band+.gt-blatt{margin-top:clamp(36px,3.6vw,56px)}
+@media(max-width:900px){.gt-reihe.gt-band{grid-template-columns:1fr 1fr}.gt-band .gt-tb:first-child{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){.gt-band .gt-tb img{transform:none;transition:none}}

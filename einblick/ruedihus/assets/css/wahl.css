@@ -1,0 +1,74 @@
+/* Landgasthof Ruedihus — jede Auswahl im Stil des Hauses (Tasty Studios 13.10.2026). Verhalten: assets/js/wahl.js.
+   Listen, Kalender und Uhrzeit klappen als helle Tafel auf, wie die Tafeln der Seite (.tafel): Papier mit Kante in Balkenbraun und einer Goldlinie innen,
+   Namen und Zahlen in Gelasio, gewählt in dunklem Holz wie die runden Tasten. Keine Punkte, keine Kästchen des Browsers. */
+
+/* ---------- Das Feld: echtes Feld unsichtbar als Wertträger, darüber der Knopf in der Schrift des Feldes ---------- */
+.rhw{position:relative;display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0}   /* Raster mit einer Spalte ab 0: ein langer Listentext drückt das Feld sonst im Safari-Kern breiter als den Schirm (essen.html, 320 px) */
+.rhw-nativ{position:absolute!important;left:0;top:0;width:100%!important;height:100%!important;margin:0!important;opacity:0!important;pointer-events:none!important;overflow:hidden!important;max-width:100%}   /* overflow: eine echte Liste mit langem Eintrag ragt im Safari-Kern sonst unsichtbar über den Rand */
+.rhw-nativ::-webkit-calendar-picker-indicator{display:none}
+.rhw-knopf{-webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-width:0;min-height:1.45em;margin:0;padding:0;border:0;border-radius:0;
+  background:none;color:inherit;font:inherit;line-height:1.3;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.rhw-wert{flex:1;min-width:0;font-weight:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rhw-leer .rhw-wert{opacity:.62}
+.rhw-knopf svg{flex:none;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;opacity:.7;transition:transform .5s var(--e1,cubic-bezier(.16,1,.3,1))}
+.rhw--offen .rhw-chev{transform:rotate(180deg)}
+.rhw-knopf:focus-visible{outline:0;box-shadow:0 2px 0 var(--kerze,#c98543)}
+.rhw--fehlt .rhw-knopf{box-shadow:0 2px 0 var(--kerze,#c98543)}
+.rhw--fehlt .rhw-wert{opacity:1}
+
+/* ---------- Die Tafel ---------- */
+.rhw-pop{position:fixed;z-index:2147483000;left:0;top:0;max-width:calc(100vw - 16px)}
+.rhw-karte{box-sizing:border-box;border-radius:22px;padding:9px;color:var(--tinte,#2a1a0e);text-align:left;
+  background:linear-gradient(#fcf6ec,#ecdcc5);
+  box-shadow:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(109,67,31,.42),inset 0 0 0 5px rgba(252,246,236,.9),inset 0 0 0 6px rgba(183,143,81,.46),inset 0 -3px 0 #c5ae8c,
+             0 34px 48px -24px rgba(23,13,6,.86),0 12px 20px -10px rgba(23,13,6,.5);
+  transform:translateY(-10px);transform-origin:50% 0;transition:transform .42s var(--e1,cubic-bezier(.16,1,.3,1))}
+.rhw-oben .rhw-karte{transform:translateY(10px);transform-origin:50% 100%}
+.rhw-auf .rhw-karte{transform:none}
+.rhw-titel{margin:0;padding:7px 8px 9px;font:500 10.5px/1 var(--mono,'DM Mono',ui-monospace,monospace);letter-spacing:.17em;text-transform:uppercase;color:var(--balken,#6d431f)}
+
+/* Liste */
+.rhw-liste{max-height:min(54vh,430px);margin:0;padding:3px;overflow:auto;overscroll-behavior:contain;list-style:none;outline:0;scrollbar-width:thin;scrollbar-color:rgba(109,67,31,.4) transparent}
+.rhw-liste li{position:relative;padding:11px 15px 12px;border-radius:13px;font:700 1.06rem/1.25 var(--titel,'Gelasio',Georgia,serif);color:var(--tinte,#2a1a0e);cursor:pointer}
+.rhw-liste li+li::before{content:'';position:absolute;left:15px;right:15px;top:0;height:1px;background:rgba(109,67,31,.16)}
+.rhw-liste li.rhw-hier{background:rgba(109,67,31,.12)}
+.rhw-liste li[aria-selected=true]{color:var(--licht,#f3cd94);background:linear-gradient(#55361c,#3a2412 55%,#2a180a);box-shadow:inset 0 1px 0 #84603c,inset 0 -2px 0 #120903,0 8px 12px -8px rgba(42,26,14,.7)}
+.rhw-liste li.rhw-hier::before,.rhw-liste li.rhw-hier+li::before,.rhw-liste li[aria-selected=true]::before,.rhw-liste li[aria-selected=true]+li::before{opacity:0}
+.rhw-liste li[aria-disabled=true]{opacity:.4;cursor:default}
+
+/* Kalender */
+.rhw-pop--datum{width:min(338px,calc(100vw - 16px))}
+.rhw-pop--datum .rhw-karte{padding:13px 14px 14px}
+.rhw-kopf{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 11px}
+.rhw-monat{margin:0;font:400 1.22rem/1.1 var(--titel,'Gelasio',Georgia,serif);color:var(--balken,#6d431f);font-variant-numeric:lining-nums}
+.rhw-monat b{font-weight:700;color:var(--tinte,#2a1a0e)}
+.rhw-pfeil{flex:none;display:grid;place-items:center;width:38px;height:38px;margin:0;padding:0;border:0;border-radius:50%;cursor:pointer;color:var(--papier,#efe4d3);
+  background:linear-gradient(#55361c,#2a180a);box-shadow:inset 0 1px 0 #84603c,inset 0 -2px 0 #120903,0 8px 12px -8px rgba(42,26,14,.8);transition:transform .4s var(--e2,cubic-bezier(.32,.72,0,1))}
+.rhw-pfeil:hover{transform:translateY(-1px)}.rhw-pfeil:active{transform:translateY(1px)}
+.rhw-pfeil[disabled]{opacity:.3;cursor:default;transform:none}
+.rhw-pfeil:focus-visible{outline:2px solid var(--kerze,#c98543);outline-offset:2px}
+.rhw-pfeil svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.rhw-pfeil--zur svg{transform:rotate(180deg)}
+.rhw-wtage,.rhw-raster{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px}
+.rhw-wtage{padding:10px 0 6px;border-top:1px solid rgba(109,67,31,.24);text-align:center}
+.rhw-wtage span{font:500 10px/1 var(--mono,'DM Mono',ui-monospace,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--balken,#6d431f)}
+.rhw-tag{display:grid;place-items:center;aspect-ratio:1;min-width:0;margin:0;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;
+  font:700 1.02rem/1 var(--titel,'Gelasio',Georgia,serif);font-variant-numeric:lining-nums;color:var(--tinte,#2a1a0e)}
+.rhw-tag:hover,.rhw-tag:focus-visible{outline:0;background:rgba(109,67,31,.14)}
+.rhw-tag--heute{box-shadow:inset 0 0 0 1.5px var(--gold,#b78f51)}
+.rhw-tag--zw{background:rgba(201,133,67,.2)}
+.rhw-tag--ende{box-shadow:inset 0 0 0 1.5px var(--balken,#6d431f);background:rgba(201,133,67,.2)}
+.rhw-tag[aria-pressed=true],.rhw-tag[aria-pressed=true]:hover{color:var(--licht,#f3cd94);background:linear-gradient(#55361c,#2a180a);box-shadow:inset 0 1px 0 #84603c,inset 0 -2px 0 #120903,0 6px 10px -6px rgba(42,26,14,.7)}
+.rhw-tag[disabled]{opacity:.26;cursor:default;background:none;box-shadow:none}
+
+/* Uhrzeit */
+.rhw-pop--zeit .rhw-karte{padding:11px 12px 12px}
+.rhw-zeit{display:flex;align-items:stretch;justify-content:center;gap:6px}
+.rhw-spalte{display:flex;flex-direction:column;gap:2px;width:74px;max-height:min(236px,42vh);overflow:auto;overscroll-behavior:contain;padding:2px;scrollbar-width:thin;scrollbar-color:rgba(109,67,31,.4) transparent}
+.rhw-z{flex:none;margin:0;padding:9px 0 10px;border:0;border-radius:12px;background:none;cursor:pointer;font:700 1.12rem/1 var(--titel,'Gelasio',Georgia,serif);font-variant-numeric:lining-nums;color:var(--tinte,#2a1a0e)}
+.rhw-z:hover,.rhw-z:focus-visible{outline:0;background:rgba(109,67,31,.14)}
+.rhw-z[aria-selected=true],.rhw-z[aria-selected=true]:hover{color:var(--licht,#f3cd94);background:linear-gradient(#55361c,#2a180a);box-shadow:inset 0 1px 0 #84603c,inset 0 -2px 0 #120903}
+.rhw-z[disabled]{opacity:.26;cursor:default;background:none}
+.rhw-punkt{align-self:center;font:700 1.3rem/1 var(--titel,'Gelasio',Georgia,serif);font-style:normal;color:var(--balken,#6d431f)}
+@media (prefers-reduced-motion:reduce){.rhw-karte,.rhw-knopf svg,.rhw-pfeil{transition:none}}
+html.still .rhw-karte{transition:none;transform:none}

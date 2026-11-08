@@ -1,0 +1,20 @@
+/* Bühnen der Beigaben in der Restaurant-Fassung (werkzeuge_gastro.py buehnen, Kopie von bz.py): Bausteine und Lagen aus bz.css,
+   hier nur Zeichen, Farben und Schrift von Maloja (Schnee #f4f1eb, Arvenholz #b98a5a, Nussbaum #231a14, Grau #6b655f; Tenor Sans, Hanken Grotesk) */
+@font-face{font-family:'Hanken Grotesk';font-weight:200 800;font-display:swap;src:url(/neu/runde3/werkzeuge-mj/_haus/fonts/HankenGrotesk-latin.woff2) format('woff2')}
+.mjst .mk-z{-webkit-mask-image:url(/neu/runde3/werkzeuge-mj/_haus/marke/zeichen.svg);mask-image:url(/neu/runde3/werkzeuge-mj/_haus/marke/zeichen.svg)}
+.mjst .mk-logo{-webkit-mask-image:url(/neu/runde3/werkzeuge-mj/_haus/marke/logo.svg);mask-image:url(/neu/runde3/werkzeuge-mj/_haus/marke/logo.svg);aspect-ratio:617.9/142}
+.mjst .igp-a{background:#231a14;color:#f4f1eb;box-shadow:0 0 0 .7cqw #000,0 0 0 1.2cqw #b98a5a}
+.mjst .umschlag{background:#f4f1eb;color:#231a14;font-family:'Hanken Grotesk',sans-serif}
+.mjst .umschlag .in::before{border-color:rgba(185,138,90,.6)}
+.mjst .vk{background:#231a14;color:#f4f1eb;font-family:'Hanken Grotesk',sans-serif}
+.mjst .vk-hell{background:#f4f1eb;color:#231a14}
+.mjst .vk-r b{font-family:'Tenor Sans',serif;font-weight:400}
+.mjst .vk-r i{color:#9a6f45}
+.mjst .vk-r span{color:#6b655f}
+.mjst .od{background:#f4f1eb;color:#231a14;font-family:'Hanken Grotesk',sans-serif}
+.mjst .od-k{border-bottom-color:rgba(35,26,20,.12)}
+.mjst .od-k b{font-family:'Tenor Sans',serif;font-weight:400}
+.mjst .od-k i{color:#9a6f45}
+.mjst .od-g figcaption{color:#6b655f}
+.mjst .od-dateien{background:#231a14;color:#f4f1eb}
+.mjst .od-dateien .od-k{border-color:rgba(244,241,235,.14)}

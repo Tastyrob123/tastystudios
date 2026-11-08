@@ -1,0 +1,124 @@
+/* Werkzeuge und Beigaben, Restaurant-Fassung (werkzeuge_gastro.py, Robert 04.11.2026): die Stücke von Maloja.
+   Papier in Schnee, Schrift Tenor Sans und Hanken Grotesk, Arvenholz als Linie, Rot nur als Punkt. Grössen in Einheiten der Bühne (cq). */
+.wv-pk .bz-buehne{--serif:'Tenor Sans',Optima,sans-serif;background:#2e231b;background-image:radial-gradient(80% 70% at 50% 40%,#3a2c22,#231a14 75%)}
+.mjw{display:flex;flex-direction:column;align-items:flex-start;gap:.9em;line-height:1;color:#2a2a2b}
+.mjw b{font:400 1.7em/1 'Tenor Sans',Optima,sans-serif;letter-spacing:.34em}
+.mjw small{font:400 .5em/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+.mjw small i{display:inline-block;width:.6em;height:.6em;border-radius:50%;background:#d52b1e;vertical-align:middle;margin:-.15em .8em 0}
+.mjw--mitte{align-items:center}
+.mjw-k{display:block;font:400 1em/1 'Tenor Sans',Optima,sans-serif;letter-spacing:.34em}
+.mjz{display:grid!important;place-items:center;background:#231a14!important;color:#f4f1eb!important;font:400 5cqw/1 'Tenor Sans',sans-serif;box-shadow:0 0 0 .7cqw #000,0 0 0 1.2cqw #b98a5a!important}
+.mjig{aspect-ratio:1;overflow:hidden;background:#e6dfd3}.mjig img{width:100%;height:100%;object-fit:cover;display:block}
+.wv-pk .bz-buehne .o.mjtel{box-shadow:none;container-type:normal;background:none}
+.wv-pk .bz-buehne .o.mjtel .lo{position:absolute;inset:0;width:100%;height:auto}
+.wv-pk .bz-buehne .o.mjp{background:#fbf9f4;box-shadow:0 .6cqh 1.2cqh rgba(0,0,0,.35),0 3cqh 5cqh -2cqh rgba(0,0,0,.45)}
+.wv-pk .bz-buehne .o.mjp.od{background:#fbf9f4}
+.mjd{position:absolute;inset:0;overflow:hidden;color:#2a2a2b;font-family:var(--sans)}
+.mjd>.in{position:absolute;inset:0;padding:8cqh 9cqw;display:flex;flex-direction:column}
+.mjd .mjw{font-size:4.6cqw}
+.mjd-k{margin:4cqh 0 2cqh;font:500 2.6cqw/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#9a6f45}
+.mjd ul{list-style:none;margin:0;padding:0}
+.mjd-f{margin-top:auto;padding-top:2cqh;border-top:1px solid rgba(185,138,90,.5);font-size:2.8cqw;color:#6b655f}
+.mjd-t{display:block;font:400 7.6cqw/1.12 'Tenor Sans',Optima,sans-serif;margin:3cqh 0 2cqh}
+.mjd p{margin:0 0 1.8cqh;font-size:2.9cqw;line-height:1.55}
+/* Menükarte (DL hoch) */
+.mjd-menue .in{padding:6cqh 10cqw;text-align:center;align-items:center}
+.mjd-menue .mjw{font-size:7cqw;align-items:center}
+.mjd-menue .mjd-k{font-size:4.2cqw}
+.mjd-menue li{padding:1.5cqh 0;border-top:1px solid rgba(185,138,90,.35)}
+.mjd-menue li small{display:block;font:500 3.2cqw/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#9a6f45}
+.mjd-menue li b{display:block;margin-top:.6cqh;font:400 6.8cqw/1.15 'Tenor Sans',sans-serif}
+.mjd-menue li span{display:block;font-size:4.6cqw;color:#6b655f}
+.mjd-menue .mjd-f{font-size:4.4cqw;width:100%}
+/* Barkarte (A6) */
+.mjd-bar li{display:grid;grid-template-columns:1fr auto;column-gap:3cqw;padding:1.6cqh 0;border-top:1px solid rgba(185,138,90,.35)}
+.mjd-bar li b{font:400 5.6cqw/1.2 'Tenor Sans',sans-serif}.mjd-bar li span{grid-row:2;font-size:3.6cqw;color:#6b655f}.mjd-bar li i{font-style:normal;font-size:4.4cqw}
+.mjd-bar .mjw{font-size:6.4cqw}.mjd-bar .mjd-k{font-size:3.8cqw}.mjd-bar .mjd-f{font-size:3.6cqw}
+/* Tischkarte (A7 quer) */
+.mjd-tisch .in{align-items:center;justify-content:center;text-align:center;padding:6cqh 6cqw}
+.mjd-tisch .mjw-k{font-size:6cqw;color:#9a6f45}.mjd-tisch p{margin:6cqh 0 2cqh;font-size:5cqw;letter-spacing:.14em;text-transform:uppercase;color:#6b655f}
+.mjd-n{font:400 10cqw/1.1 'Tenor Sans',sans-serif}.mjd-tisch small{margin-top:4cqh;font-size:4cqw;color:#9a6f45}
+/* Aushang (A5) */
+.mjd-aus .in{padding:0 0 6cqh}.mjd-aus .mjd-bild{height:46cqh;position:relative;overflow:hidden;background:#e6dfd3}
+.mjd-aus .mjd-bild img{width:100%;height:100%;object-fit:cover}.mjd-aus .mjw,.mjd-aus .mjd-t,.mjd-aus p{margin-left:8cqw;margin-right:8cqw}
+.mjd-aus .mjw{margin-top:5cqh;font-size:5cqw}.mjd-aus .mjd-t{font-size:9cqw}.mjd-aus p{font-size:3.8cqw}
+/* Gutschein (DL quer) */
+.mjd-gut .in{padding:9cqh 7cqw;justify-content:center}.mjd-gut .mjw-k{font-size:3.2cqw;color:#9a6f45}
+.mjd-gut small{margin-top:5cqh;font:500 2.2cqw/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#6b655f}
+.mjd-gut .mjd-t{font-size:5.6cqw;margin:2cqh 0}.mjd-gut p{font-size:2.6cqw;max-width:60%}
+.mjd-gut i{position:absolute;right:7cqw;bottom:9cqh;font:400 4.8cqw/1 'Tenor Sans',sans-serif;font-style:normal}
+.mjd-pkt{position:absolute;right:7cqw;top:9cqh;width:1.6cqw;height:1.6cqw;border-radius:50%;background:#d52b1e}
+.mjd-gut--d{background:#231a14;color:#f4f1eb}.mjd-gut--d small,.mjd-gut--d p{color:#d9cfc0}.mjd-gut--d .mjw-k{color:#c9a476}
+/* Brief, Angebot, Mappe (A4) */
+.mjd-brief .in{padding:7cqh 11cqw}.mjd-brief .mjw{font-size:3.4cqw;margin-bottom:6cqh}
+.mjd-brief p{font-size:2.55cqw;line-height:1.6}.mjd-d{text-align:right;color:#8a7f72}.mjd-a{margin-top:2cqh!important}
+.mjd-g b{display:block;margin-top:1.4cqh;font:400 4.2cqw/1 'Tenor Sans',sans-serif}
+.mjd-fu{margin-top:auto!important;padding-top:1.8cqh;border-top:1px solid rgba(185,138,90,.5);text-align:center;font-size:1.9cqw!important;color:#8a7f72}
+.mjd-ang .in{padding:8cqh 10cqw}.mjd-ang .mjd-t{font-size:8cqw}.mjd-ang .mjd-d{text-align:left;font-size:2.6cqw}
+.mjd-ang ul{margin-top:3cqh;border-top:1px solid rgba(42,42,43,.14)}
+.mjd-ang li{display:flex;justify-content:space-between;align-items:baseline;gap:4cqw;padding:2.4cqh 0;border-bottom:1px solid rgba(42,42,43,.14)}
+.mjd-ang li b{display:block;font:400 4cqw/1.1 'Tenor Sans',sans-serif}.mjd-ang li span{display:block;margin-top:.8cqh;font-size:2.3cqw;color:#6b655f}
+.mjd-ang li i{flex:none;font-style:normal;font-size:2.3cqw}.mjd-ang .mjd-f{font-size:2.3cqw}
+.mjd-mappe{background:#231a14;color:#f4f1eb}.mjd-mappe .in{padding:0;justify-content:flex-end}
+.mjd-mappe .mjd-bild{position:absolute;inset:0 0 34% 0;overflow:hidden}.mjd-mappe .mjd-bild img{width:100%;height:100%;object-fit:cover}
+.mjd-mappe .mjw-k{margin:0 10cqw;font-size:6.4cqw}.mjd-mappe small{margin:2.4cqh 10cqw 10cqh;font:400 2.4cqw/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#c9a476}
+/* Visitenkarten */
+.mjd-vk .in{padding:12cqh 9cqw}.mjd-vk b{font:400 12cqh/1 'Tenor Sans',sans-serif}
+.mjd-vk i{display:block;margin-top:4cqh;font:500 6cqh/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;font-style:normal;color:#9a6f45}
+.mjd-vk span{margin-top:auto;font-size:6.2cqh;line-height:1.5;color:#5d5650}
+.mjd-vk--d{background:#231a14;color:#f4f1eb}.mjd-vk--d .in{align-items:center;justify-content:center;gap:6cqh}
+.mjd-vk--d .mjw-k{font-size:9cqw}.mjd-vk--d small{font:400 5.4cqh/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:#c9a476}
+/* Markenbuch (16:10) */
+.mjd-mb .in{padding:8cqh 7cqw;justify-content:center}
+.mjd-mb small{font:500 2.6cqw/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#9a6f45;margin-bottom:4cqh}
+.mjd-mb p{margin-top:4cqh;font-size:2.6cqw;color:#6b655f;max-width:70%}
+.mjd-mb--titel{background:#231a14;color:#f4f1eb}.mjd-mb--titel .in{align-items:center;text-align:center}.mjd-mb--titel p{color:#d9cfc0;max-width:none}
+.mjw-k--gross{font-size:9cqw}.mjd-mb--titel small{margin:4cqh 0 0;color:#c9a476}
+.mjw--gross{font-size:7cqw}
+.mjd-farben{display:grid;grid-template-columns:repeat(5,1fr);gap:1.6cqw}
+.mjd-farben span{display:grid;gap:1cqh}.mjd-farben i{display:block;aspect-ratio:1;background:var(--c);border:1px solid rgba(42,42,43,.12)}
+.mjd-farben b{font:400 2.2cqw/1.1 'Tenor Sans',sans-serif}.mjd-farben em{font-style:normal;font:400 1.7cqw/1 var(--mono,monospace);color:#6b655f}
+.mjd-aa{font:400 22cqh/1 'Tenor Sans',sans-serif}.mjd-sch{font-size:3cqw!important}
+.mjd-bilder{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4cqw}.mjd-bilder div{position:relative;aspect-ratio:3/4;overflow:hidden;background:#e6dfd3}
+.mjd-bilder img{width:100%;height:100%;object-fit:cover}
+/* Materialordner */
+.mjp.od .od-k b{font-family:'Tenor Sans',sans-serif;font-weight:400}.mjp.od .od-k i{color:#9a6f45}
+.mjp.od .od-g figure{position:relative}.mjp.od .od-g img,.mjp.od .od-g .mj-platz{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;display:flex}
+.mjp.od-dateien{background:#231a14!important;color:#f4f1eb}.mjp.od-dateien .od-k{border-color:rgba(244,241,235,.15)}
+.mjp.od-dateien .od-d span{background:rgba(185,138,90,.18);color:#c9a476}
+/* Mails im Handy */
+.mjm{width:390px;height:844px;background:#f4f1eb;color:#2a2a2b;font-family:var(--sans);overflow:hidden;display:flex;flex-direction:column}
+.mjm-kopf{padding:18px 22px 14px;border-bottom:1px solid #e6dfd3}.mjm-kopf small{display:block;font-size:12px;color:#8a7f72}
+.mjm-kopf b{display:block;margin-top:6px;font:400 26px/1.15 'Tenor Sans',sans-serif}
+.mjm-bild{position:relative;height:250px;overflow:hidden;background:#e6dfd3}.mjm-bild img{width:100%;height:100%;object-fit:cover}
+.mjm-leib{padding:18px 22px;font-size:15px;line-height:1.55}.mjm-leib p{margin:0 0 12px}
+.mjm-k{display:inline-block;margin-top:6px;padding:13px 22px;border-radius:999px;background:#2a2a2b;color:#f4f1eb;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.mjm-gaenge li{display:block!important}.mjm-gaenge li small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9a6f45}
+/* Bildschirme der Werkzeuge */
+.mjp-schirm{position:relative;aspect-ratio:16/9;margin:0;overflow:hidden;background:#f6f1e8}
+.mjp-schirm .fx{position:absolute;left:0;top:0}
+.mjp-k{display:grid!important;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.mjp-k .pn-k{padding:16px 18px}.mjp-k .pn-k b{display:block;font:400 26px/1.1 'Tenor Sans',sans-serif}.mjp-k .pn-k span{font-size:13px;color:#6b655f}
+.mjp-res li.neu{display:flex!important}.mjp-res li span em{font-style:normal;font-size:13px;color:#6b655f}.mjp-res li b{font-size:16px}
+.mjp-felder{display:grid;gap:12px;margin-top:14px}.mjp-lang{white-space:normal!important;line-height:1.45}
+.mjp-vor{position:relative;margin-top:12px;height:300px;overflow:hidden;border-radius:10px;background:#e6dfd3}
+.mjp-vor img{width:100%;height:100%;object-fit:cover}.mjp-vor b{position:absolute;left:18px;bottom:16px;font:400 30px/1 'Tenor Sans',sans-serif;color:#fbf8f3}
+.mjp-druck{position:relative;height:560px;padding:0!important;overflow:hidden;container-type:size}
+.mjp-druck .mjd{inset:0 auto 0 50%;width:auto;aspect-ratio:99/210;container-type:size;transform:translateX(-50%);box-shadow:0 10px 30px -14px rgba(0,0,0,.4)}
+/* Beigabe-Seiten (wb.css) in der Welt von Maloja: Nussbaum und Schnee statt Nacht und Leinen, keine Tapete, Tenor Sans */
+.wb{--serif:'Tenor Sans',Optima,sans-serif;--licht:#c9a476;--messing:#b98a5a;font-synthesis:none}
+.wb.wb-nacht{background:#231a14;color:#f4f1eb}
+.wb.wb-leinen{background:#f4f1eb;color:#2a2a2b}
+.wb.wb-tief{background:#17110d;color:#f4f1eb}
+.wb-h,.wb-nr,.wb-stk b,.wb-post figcaption,.wb-foto figcaption,.wb-dateien b,.wb-ende p{font-weight:400!important}
+.wb-leinen .wb-stk b,.wb-leinen .wb-post figcaption,.wb-leinen .wb-foto figcaption{color:#2a2a2b}
+.wb-dateien a{background:#231a14;color:#c9a476}
+.mjposts figure,.mjfotos figure{position:relative}.mjposts img,.mjposts .mj-platz{aspect-ratio:4/5;width:100%;height:auto;object-fit:cover;display:flex}
+.mjfotos img,.mjfotos .mj-platz{aspect-ratio:4/3;width:100%;height:auto;object-fit:cover;display:flex}
+.wb-tablett.bz-buehne{background:#2e231b}.wb-leinen .wb-tablett.bz-buehne{background:#e6dfd3}
+.wb-schild{color:#c9a476}.wb-leinen .wb-schild{color:#9a6f45}
+.mjdateien li{display:grid;grid-template-columns:120px 1fr 2fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(185,138,90,.3)}
+.mjdateien span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c9a476}.mjdateien em{font-style:normal;opacity:.75}
+/* Bildplätze in kleinen Stücken: nur die Fläche, ohne Schrift */
+.mjd-bilder .mj-platz small,.mjd-bilder .mj-platz b,.od-g .mj-platz small,.mjig .mj-platz small,.mjd-aus .mj-platz small,.mjd-mappe .mj-platz small{display:none}
+.od-g .mj-platz b,.mjig .mj-platz b{font-size:9px}

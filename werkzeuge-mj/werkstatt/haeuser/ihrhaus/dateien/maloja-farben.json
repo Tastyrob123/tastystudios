@@ -1,0 +1,80 @@
+[
+ {
+  "k": "schnee",
+  "n": "Schnee",
+  "h": "#F4F1EB",
+  "rgb": [
+   244,
+   241,
+   235
+  ],
+  "r": "Grund: das weisse Tischtuch",
+  "g": "schnee",
+  "woher": "maloja.py, CHARAKTER.md"
+ },
+ {
+  "k": "kalkstein",
+  "n": "Kalkstein",
+  "h": "#E6DFD3",
+  "rgb": [
+   230,
+   223,
+   211
+  ],
+  "r": "zweite Fläche: der Kalkputz des Saals",
+  "g": "kalkstein",
+  "woher": "maloja.py, CHARAKTER.md"
+ },
+ {
+  "k": "arvenholz",
+  "n": "Arvenholz",
+  "h": "#B98A5A",
+  "rgb": [
+   185,
+   138,
+   90
+  ],
+  "r": "Holz und Linie: das Täfer der Arvenstube",
+  "g": "arvenholz",
+  "woher": "maloja.py, CHARAKTER.md"
+ },
+ {
+  "k": "granit",
+  "n": "Granit",
+  "h": "#2A2A2B",
+  "rgb": [
+   42,
+   42,
+   43
+  ],
+  "r": "Schrift: der Stein der Bar",
+  "g": "granit",
+  "woher": "maloja.py, CHARAKTER.md"
+ },
+ {
+  "k": "nussbaum",
+  "n": "Nussbaum",
+  "h": "#231A14",
+  "rgb": [
+   35,
+   26,
+   20
+  ],
+  "r": "Abend: der Saal nach Einbruch der Dunkelheit",
+  "g": "nussbaum",
+  "woher": "maloja.py, CHARAKTER.md"
+ },
+ {
+  "k": "schweizer-rot",
+  "n": "Schweizer Rot",
+  "h": "#D52B1E",
+  "rgb": [
+   213,
+   43,
+   30
+  ],
+  "r": "nur als ein Punkt",
+  "g": "schweizer rot",
+  "woher": "maloja.py, CHARAKTER.md"
+ }
+]

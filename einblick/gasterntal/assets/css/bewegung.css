@@ -1,0 +1,129 @@
+/* =====================================================================================================================
+   Berghotel Gasterntal — BEWEGUNG beim Scrollen, an einer Stelle (Tasty Studios 13.10.2026, Roberts Auftrag: «dieses Pulsierende,
+   Federhafte, dass die Bilder nach oben fliegen, dass der Text reinschwebt, wie beim Rivage und beim Carlton, aber zum Stil der Seiten passend»).
+   Wird als letztes Stylesheet geladen. Verhalten: assets/js/bewegung.js (Klassen bw-s, bw-g, bw-los, bw-fertig), Gleiten der Fotos: main.js (bw-rahmen, bw-gleit).
+   Das Rezept ist das am Carlton abgenommene, das Mass ist das dieses Hauses (einfach, ruhig): kürzere Wege, weniger Überschwung, derselbe weiche Takt.
+     1. Bilder, Karten, Kacheln, Blätter (bw-s): immer deckend. Der WEG nach oben hängt am Scrollen (translate an der Zeitachse des Browsers),
+        das PULSIEREN läuft nach der Uhr (scale .95 → 1 mit leiser Feder). Zwei Eigenschaften, die sich nicht stören. Ein Stück pulsiert genau einmal.
+     2. Gruppen (bw-g: Reihen, Galerien, Etappen, die vier Häuser im Fuss) kommen am Rechner als Ganzes, ihre Teile stehen still.
+        Am Handy stehen die Teile untereinander, dort kommt jedes für sich.
+     3. Schrift und Zeilen schweben nach der Uhr herein: kurzer Weg, lange Zeit, weiche Kurve. Auslöser kurz vor dem unteren Rand (main.js).
+     4. Fotos gleiten im Rahmen am Scrollen über die Zeitachse des Browsers, ohne will-change.
+   Nicht angefasst: der Auftakt jeder Seite (.auftakt, .seitenkopf), die Fenster (.bruch), das Wandern (data-tempo), Polaroids und Lampen (data-an).
+   Nur translate, scale, transform und opacity. Zurück zum Stand davor: _sicherung/2026-10-13-vor-bewegung/ (siehe UEBERGABE).
+   ===================================================================================================================== */
+:root{--bw-sanft:cubic-bezier(.25,.6,.3,1);--bw-feder:cubic-bezier(.3,1.3,.42,1);--bw-zugkurve:cubic-bezier(.3,.3,.45,1);--bw-weg:clamp(56px,6.4vw,96px);--bw-kl:.95;--bw-bis:52vh;--bw-dauer:2.4s}
+
+/* ---- 3. Schrift und Zeilen (gleiches Gewicht wie die Regeln in main.css, steht später, gilt also; Sonderfälle dort bleiben) ---- */
+/* der Auftakt jeder Seite (.auftakt, .seitenkopf) ist ausgenommen und bleibt beim alten Takt */
+[data-r]:where(:not(.auftakt *,.seitenkopf *)){transform:translateY(clamp(18px,2vw,30px));transition:opacity 1.5s ease,transform 2.2s var(--bw-sanft);transition-delay:calc(var(--i,0)*110ms)}
+[data-r].da:where(:not(.auftakt *,.seitenkopf *)){opacity:1;transform:none}
+/* ---- 3a. Überschriften, grosse Zahlen und die Sätze in den Fenstern ROLLEN zeilenweise aus einem Schlitz (Zeilen-Maske .z des Hauses; Roberts Nachtrag 13.10.2026:
+   «die Schriften in den Fenstern und die Überschriften sollen schon hochrollen, nicht so wie jetzt erscheinen»). Voll deckend, kein Einblenden.
+   Die Zeilen legt bau.py an oder, wo sie fehlen, bewegung.js (bw-zeilen, nach dem echten Umbruch). Auslöser: bw-auf, sobald die Überschrift im Fenster steht. ---- */
+:is(main>section:not(.auftakt):not(.seitenkopf),.fuss) .z>span{transition:transform 1.4s var(--e1);transition-delay:calc(var(--i,0)*90ms)}
+html:not(#bw) .bw-zeilen:not(.bw-auf) .z>span{transform:translateY(114%)}
+html:not(#bw) .bw-zeilen.bw-auf .z>span{transform:none}
+html:not(#bw) .bw-zeilen[data-r]{opacity:1;transform:none}
+/* ein Kasten mit rollender Überschrift steht deckend da, seine übrigen Teile schweben einzeln herein wie Schrift */
+html:not(#bw) .bw-fest{opacity:1;transform:none;transition:none}
+html:not(#bw) .bw-t{transition:opacity 1.5s ease,translate 2.2s var(--bw-sanft);transition-delay:calc(var(--bw-i,0)*110ms)}
+html:not(#bw) .bw-t:not(.bw-auf){opacity:0;translate:0 clamp(18px,2vw,30px)}
+
+/* ---- 1. Stücke: deckend, Weg am Scrollen, Pulsieren nach der Uhr ---- */
+@keyframes bw-zug{from{translate:0 var(--bw-weg)}}
+@keyframes bw-puls{from{scale:var(--bw-kl)}}
+@keyframes bw-feder{from{translate:0 var(--bw-weg);scale:var(--bw-kl)}}
+html:not(#bw) .bw-s{opacity:1}
+html:not(#bw) .bw-s:not(.da){transform:none;transition:none}   /* nur vor dem Auftritt: danach gelten die Regeln der Seite wieder (Maus, Übergänge) */
+html:not(#bw) .bw-s:not(.bw-los){translate:0 var(--bw-weg);scale:var(--bw-kl)}
+html:not(#bw) .bw-s.bw-los{animation:bw-feder var(--bw-dauer) var(--bw-feder) backwards}
+html:not(#bw) .bw-s.bw-los.bw-fertig{animation:none}
+/* Gruppen: als Ganzes, etwas leiser; ihre Teile stehen still und sind deckend */
+html:not(#bw) .bw-g{--bw-kl:.965;--bw-dauer:2.6s}
+html:not(#bw) .bw-g [data-r]{opacity:1}
+html:not(#bw) .bw-g [data-r]:not(.da){transform:none;transition:none}
+/* Fuss: kürzerer Weg am Scrollen, damit die Häuser am Seitenende sicher stehen */
+html:not(#bw) .fuss .bw-s{--bw-bis:40vh}
+/* der helle Balken (Takt) trägt schon das umlaufende Licht als Ablauf: es läuft weiter */
+html:not(#bw) .takt.bw-s.bw-los{animation:bw-feder var(--bw-dauer) var(--bw-feder) backwards,ga 8s linear infinite}
+html:not(#bw) .takt.bw-s.bw-los.bw-fertig{animation:ga 8s linear infinite}
+@supports (animation-timeline:view()){
+  html:not(#bw) .bw-s:not(.bw-los){translate:none;animation:bw-zug var(--bw-zugkurve) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--bw-bis)}
+  html:not(#bw) .bw-s.bw-los{animation:bw-zug var(--bw-zugkurve) both,bw-puls var(--bw-dauer) var(--bw-feder) backwards;animation-duration:auto,var(--bw-dauer);animation-timeline:view(),auto;animation-range:cover 0% cover var(--bw-bis),normal}
+  html:not(#bw) .bw-s.bw-los.bw-fertig{animation:bw-zug var(--bw-zugkurve) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--bw-bis)}
+  html:not(#bw) .takt.bw-s:not(.bw-los){animation:bw-zug var(--bw-zugkurve) both,ga 8s linear infinite;animation-duration:auto,8s;animation-timeline:view(),auto;animation-range:cover 0% cover var(--bw-bis),normal}
+  html:not(#bw) .takt.bw-s.bw-los{animation:bw-zug var(--bw-zugkurve) both,bw-puls var(--bw-dauer) var(--bw-feder) backwards,ga 8s linear infinite;animation-duration:auto,var(--bw-dauer),8s;animation-timeline:view(),auto,auto;animation-range:cover 0% cover var(--bw-bis),normal,normal}
+  html:not(#bw) .takt.bw-s.bw-los.bw-fertig{animation:bw-zug var(--bw-zugkurve) both,ga 8s linear infinite;animation-duration:auto,8s;animation-timeline:view(),auto;animation-range:cover 0% cover var(--bw-bis),normal}
+}
+@media (max-width:900px){:root{--bw-weg:44px;--bw-kl:.96;--bw-bis:44vh}}
+
+/* ---- 4. Fotos gleiten im Rahmen am Scrollen (Zeitachse des Browsers). Der Rahmen misst seinen Weg durchs Fenster, das Foto fährt daran. ---- */
+@keyframes bw-gleit{from{translate:0 var(--bw-glw,0px)}to{translate:0 calc(-1 * var(--bw-glw,0px))}}
+@supports (animation-timeline:view()){
+  .bw-rahmen{view-timeline:--bw-gl block}
+  img.bw-gleit{animation:bw-gleit linear both;animation-timeline:--bw-gl;animation-range:cover 0% cover 100%}
+}
+/* Flächen, die bisher mit overflow:hidden beschnitten: clip schneidet genauso, macht sie aber nicht zur eigenen Scroll-Fläche (sonst hingen ihre Fotos nicht am Scroll der Seite) */
+.fuss,.hinter{overflow:clip}
+
+/* ---- Ohne Bewegung (Wunsch des Geräts, ?nomotion = .still), im Druck: alles steht sofort ---- */
+.still [data-r],.still .z>span{transition:none;transform:none;opacity:1}
+html.still:not(#bw) :is(.bw-s,.bw-g,[data-r]){animation:none;translate:none;scale:none}
+.still img.bw-gleit{animation:none}
+@media (prefers-reduced-motion:reduce){
+  [data-r],.z>span{transition:none;transform:none;opacity:1}
+  html:not(#bw) .bw-zeilen .z>span{transform:none;transition:none}html:not(#bw) .bw-t{opacity:1;translate:none;transition:none}
+  html:not(#bw) :is(.bw-s,.bw-g){animation:none;translate:none;scale:none}
+  html:not(#bw) .takt.bw-s{animation:none}
+  img.bw-gleit{animation:none}
+}
+@media print{html:not(#bw) .bw-zeilen .z>span{transform:none}html:not(#bw) .bw-t{opacity:1;translate:none}[data-r],.z>span{transition:none;transform:none;opacity:1}html:not(#bw) :is(.bw-s,.bw-g){animation:none;translate:none;scale:none}img.bw-gleit{animation:none}}
+
+/* ---- 5. Bilder in Gruppen schweben wieder einzeln herein (Robert 18.10.2026 17:06: «Kann das sein, was bei diesen drei Bildern dieses Hereinzoomen
+   reinschweben fehlt, der Effekt?»). Seit 13.10. stellt Regel 2 (bw-g) die Teile einer Gruppe still und überschrieb damit ihren eigenen Auftritt
+   aus main.css (.reihe [data-r="schweb"]). Jetzt: Kommt die Gruppe ins Bild, schwebt jedes Bild nacheinander herauf und zoomt dabei auf seine Grösse,
+   einmal, nach der Uhr. Eigene Eigenschaften translate/scale, damit nichts mit dem Darüberfahren (transform) streitet. ---- */
+@keyframes bw-kind{from{translate:0 clamp(60px,8vw,120px);scale:.92}}
+html:not(#bw) .bw-g:not(.bw-los)>[data-r="schweb"],html:not(#bw) .bw-g:not(.bw-los)>.reihe>[data-r="schweb"],html:not(#bw) .bw-g:not(.bw-los) .duo>[data-r="schweb"]{translate:0 clamp(60px,8vw,120px);scale:.92}
+html:not(#bw) .bw-g.bw-los>[data-r="schweb"],html:not(#bw) .bw-g.bw-los>.reihe>[data-r="schweb"],html:not(#bw) .bw-g.bw-los .duo>[data-r="schweb"]{animation:bw-kind .45s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*60ms)}
+@media (prefers-reduced-motion:reduce){html:not(#bw) .bw-g [data-r="schweb"]{animation:none!important;translate:none!important;scale:none!important}}
+
+/* ---- 6. Direkt herein (Robert 18.10.2026 17:18: «und diese ganzen Bilder und so sollen direkt reinschweben, nicht warten. Alle auf der Seite.»):
+   nichts hängt mehr am Scrollen; Bilder, Kacheln, Zahlen und Schrift kommen nach der Uhr in rund 0,45 s, in Reihen 0,06 s auseinander,
+   ausgelöst schon kurz bevor sie ins Fenster rücken (main.js/bewegung.js). Ersetzt den Weg an der Zeitachse aus Abschnitt 1. ---- */
+@keyframes bw-schnell{from{translate:0 40px;scale:.97}}
+html:not(#bw) .bw-s:not(.bw-los){translate:0 40px;scale:.97;animation:none}
+html:not(#bw) .bw-s.bw-los,html:not(#bw) .bw-s.bw-los.bw-fertig{translate:none;scale:none;animation:bw-schnell .45s cubic-bezier(.2,.8,.2,1) backwards}
+html:not(#bw) .takt.bw-s:not(.bw-los){animation:ga 8s linear infinite}
+html:not(#bw) .takt.bw-s.bw-los,html:not(#bw) .takt.bw-s.bw-los.bw-fertig{animation:bw-schnell .45s cubic-bezier(.2,.8,.2,1) backwards,ga 8s linear infinite}
+[data-r]:where(:not(.auftakt *,.seitenkopf *)),[data-r="bild"],[data-r="schweb"],.reihe [data-r="schweb"],[data-r="rechts"],[data-r="links"]{transition-property:opacity,transform;transition-duration:.4s,.45s;transition-timing-function:ease,cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*60ms)}
+:is(main>section:not(.auftakt):not(.seitenkopf),.fuss) .z>span{transition:transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*60ms)}
+html:not(#bw) .bw-t{transition:opacity .4s ease,translate .45s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--bw-i,0)*60ms)}
+@media (prefers-reduced-motion:reduce){html:not(#bw) .bw-s{animation:none!important;translate:none!important;scale:none!important}}
+/* Robert 18.10.2026 17:19: «die warten und machen noch so einen kleinen Jump zurück»: keine Kurve schwingt mehr über, auch die alte Feder nicht */
+:root{--bw-feder:cubic-bezier(.2,.8,.2,1)}
+
+/* ---- 7. Die Mitte zwischen zu träge und zu hastig (Robert 18.10.2026 18:17 zu «Die Zimmer.»: «bei den Bildern ist der Effekt mit Reinschweben
+   zu früh, zu schnell»). Für alle Auftritte des Hauses: los, wenn rund ein Fünftel des Elements im Bild ist (main.js/bewegung.js «fuenftel»),
+   rund 0,85 s, weiche ease-out-Kurve ohne Überschwingen, Weg 40 px, Bilder und Kacheln zoomen dabei von 1,04 auf 1, in Reihen 0,12 s auseinander.
+   Kein Rücksprung, nichts wartet auf den Stillstand des Scrollens. Ersetzt die Zeiten aus Abschnitt 5 und 6. ---- */
+:root{--bw-zeit:.85s;--bw-aus:cubic-bezier(.22,.61,.36,1);--bw-takt:120ms}
+@keyframes bw-mitte{from{translate:0 40px;scale:1.04}}
+html:not(#bw) .bw-s:not(.bw-los){translate:0 40px;scale:1.04;animation:none}
+html:not(#bw) .bw-s.bw-los,html:not(#bw) .bw-s.bw-los.bw-fertig{translate:none;scale:none;animation:bw-mitte var(--bw-zeit) var(--bw-aus) backwards}
+html:not(#bw) .takt.bw-s.bw-los,html:not(#bw) .takt.bw-s.bw-los.bw-fertig{animation:bw-mitte var(--bw-zeit) var(--bw-aus) backwards,ga 8s linear infinite}
+html:not(#bw) .bw-g:not(.bw-los)>[data-r="schweb"],html:not(#bw) .bw-g:not(.bw-los)>.reihe>[data-r="schweb"],html:not(#bw) .bw-g:not(.bw-los) .duo>[data-r="schweb"]{translate:0 40px;scale:1.04}
+html:not(#bw) .bw-g.bw-los>[data-r="schweb"],html:not(#bw) .bw-g.bw-los>.reihe>[data-r="schweb"],html:not(#bw) .bw-g.bw-los .duo>[data-r="schweb"]{animation:bw-mitte var(--bw-zeit) var(--bw-aus) backwards;animation-delay:calc(var(--i,0)*var(--bw-takt))}
+[data-r]:where(:not(.auftakt *,.seitenkopf *)),[data-r="bild"],[data-r="schweb"],.reihe [data-r="schweb"],[data-r="rechts"],[data-r="links"]{transition-duration:.6s,var(--bw-zeit);transition-timing-function:ease,var(--bw-aus);transition-delay:calc(var(--i,0)*var(--bw-takt))}
+:is(main>section:not(.auftakt):not(.seitenkopf),.fuss) .z>span{transition:transform var(--bw-zeit) var(--bw-aus);transition-delay:calc(var(--i,0)*90ms)}
+html:not(#bw) .bw-t{transition:opacity .6s ease,translate var(--bw-zeit) var(--bw-aus);transition-delay:calc(var(--bw-i,0)*var(--bw-takt))}
+html:not(#bw) .bw-t:not(.bw-auf){translate:0 40px}
+@media (prefers-reduced-motion:reduce){html:not(#bw) :is(.bw-s,.bw-g [data-r="schweb"]){animation:none!important;translate:none!important;scale:none!important}}
+/* Stücke ausserhalb von bw-s (Polaroids, Tafeln, Stösse) und Schrift: derselbe Weg; Bilder zoomen von 1,04 auf 1, Schrift nur der Weg */
+html:not(#bw) :is([data-r="bild"],[data-r="schweb"],[data-r="rechts"],[data-r="links"]):where(:not(.auftakt *,.seitenkopf *,.bw-g *)):not(.da):not(.bw-s){transform:translateY(40px) scale(1.04);transform-origin:50% 50%}
+html:not(#bw) [data-r]:where(:not(.auftakt *,.seitenkopf *,.bw-g *,[data-r="bild"],[data-r="schweb"],[data-r="rechts"],[data-r="links"])):not(.da):not(.bw-s):not(.bw-zeilen):not(.bw-fest){transform:translateY(40px)}
+/* Seitenkopf der Unterseiten: Titelbild zoomt einmal von 1,04 an seinen Platz, sobald es geladen ist (main.js «bild-da»); nur scale, der Bildlauf (transform) bleibt */
+html:not(.still) .seitenkopf:not(.bild-da) .seitenkopf__bild img{scale:1.04}
+html:not(.still) .seitenkopf.bild-da .seitenkopf__bild img{scale:1;transition:scale 1.2s var(--bw-aus)}
+@media (prefers-reduced-motion:reduce){.seitenkopf .seitenkopf__bild img{scale:none!important;transition:none!important}}

@@ -1,0 +1,116 @@
+/* Stellen und Bewerbung im Fenster, Landgasthof Ruedihus (assets/js/anfrage.js, Robert 17.10.2026: «es öffnet sich die Stellenanzeige in so einem Fenster, was zentriert ist»).
+   Übernommen vom Waldhotel Doldenhorn (assets/css/anfrage.css), Farben aus dem Ruedihus: Stubenholz statt Nachtblau, Gold des Zeichens, Kerzenlicht in der Tafel.
+   Auftritt nur transform, das Blatt ist ab dem ersten Bild deckend, Hintergrund ohne Weichzeichner (Regel 55). */
+.anf__hinter{position:fixed;inset:0;z-index:2147483000;background:rgba(23,13,6,.66)}
+.anf__hinter[hidden]{display:none}
+dialog.anf{position:fixed;inset:0;z-index:2147483001;margin:auto;padding:0;border:0;background:none;color:var(--tinte);width:min(720px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+dialog.anf[open]{animation:anf-auf .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes anf-auf{from{transform:translateY(36px) scale(.97)}}
+html.anf-offen{overflow:hidden}
+.anf__blatt{position:relative;background:var(--blatt);border-radius:var(--r-l);padding:clamp(30px,4.4vw,52px) clamp(22px,4.4vw,56px) clamp(26px,3.6vw,44px);box-shadow:0 2px 4px rgba(23,13,6,.3),0 30px 70px -20px rgba(23,13,6,.6)}
+.anf__blatt::before{content:'';position:absolute;inset:9px;border:1px solid rgba(183,143,81,.38);border-radius:calc(var(--r-l) - 9px);pointer-events:none}
+.anf__zu{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(#55361c,#3a2412 55%,#2a180a);box-shadow:inset 0 1px 0 #84603c,inset 0 -2px 0 #120903;display:grid;place-items:center;z-index:2}
+.anf__zu span{grid-area:1/1;width:15px;height:1.5px;background:var(--papier);transform:rotate(45deg)}
+.anf__zu span+span{transform:rotate(-45deg)}
+.anf__kopf{text-align:center;margin-bottom:clamp(20px,2.6vw,30px)}
+.anf__zeichen{display:block;width:30px;height:auto;margin:0 auto 12px;color:var(--gold);fill:var(--gold)}
+.anf__kl{font-family:var(--mono);font-size:.778rem;letter-spacing:.24em;text-transform:uppercase;color:#8a6534;margin:0}
+.anf__titel{font-family:var(--titel);font-weight:700;font-size:clamp(1.836rem,3.456vw,2.7rem);line-height:1.1;margin:10px auto 0;max-width:20ch;color:var(--tinte)}
+.anf__linie{display:block;width:72px;height:1px;background:var(--gold);margin:18px auto 0}
+.anf__form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.anf__form[hidden],.anf__danke[hidden],.anf__feld[hidden]{display:none}
+.anf__feld{display:grid;gap:7px;min-width:0}
+.anf__feld--ganz{grid-column:1/-1}
+.anf__feld>span{font-family:var(--mono);font-size:.756rem;letter-spacing:.2em;text-transform:uppercase;color:#6f5d4a}
+.anf__feld input,.anf__feld textarea{width:100%;min-width:0;font:inherit;font-size:1.08rem;color:var(--tinte);background:#f4ebdc;border:1px solid #e2d2ba;border-radius:14px;padding:13px 16px;box-shadow:inset 0 2px 5px rgba(42,26,14,.08);outline:0}
+.anf__feld textarea{resize:vertical;min-height:120px;line-height:1.5}
+.anf__feld input:focus,.anf__feld textarea:focus{border-color:var(--gold);box-shadow:inset 0 2px 5px rgba(42,26,14,.08),0 0 0 3px rgba(183,143,81,.18)}
+.anf__feld.falsch input{border-color:#c42e13}
+.anf__honig{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.anf__meldung{grid-column:1/-1;margin:0;font-size:1.026rem;color:#9a2b14}
+.anf__meldung a{color:inherit}
+.anf__fuss{grid-column:1/-1;display:grid;justify-items:center;gap:14px;margin-top:10px;text-align:center}
+.anf__klein{margin:0;font-size:.929rem;line-height:1.5;color:#6f5d4a;max-width:46ch}
+.anf__danke{text-align:center}
+.anf__dank{font-family:var(--titel);font-weight:700;font-size:clamp(1.62rem,2.808vw,2.16rem);margin:0}
+.anf__dank-satz{margin:10px auto 0;max-width:42ch;color:#4a3a2c}
+.anf__zettel{margin:22px auto 0;max-width:460px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:6px 0;text-align:left}
+.anf__zettel div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:9px 0}
+.anf__zettel div+div{border-top:1px solid #e6d6bf}
+.anf__zettel dt{font-family:var(--mono);font-size:.756rem;letter-spacing:.2em;text-transform:uppercase;color:#8a6534;padding-top:3px}
+.anf__zettel dd{margin:0;overflow-wrap:anywhere}
+.anf__fuss--mitte{margin-top:24px}
+@media (max-width:600px){.anf__form{grid-template-columns:1fr}.anf__zettel div{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){dialog.anf[open]{animation:none}}
+html.still dialog.anf[open],html.rh-ruhig dialog.anf[open]{animation:none}
+/* Datum im Hausstil (auswahl.js setzt einen Knopf an die Stelle des Feldes): dieselbe vertiefte Fläche wie die anderen Felder */
+.anf__feld .dw-knopf{min-height:50px;font-size:1.08rem;color:var(--tinte);background:#f4ebdc;border:1px solid #e2d2ba;border-radius:14px;padding:13px 16px;box-shadow:inset 0 2px 5px rgba(42,26,14,.08)}
+.anf__feld .dw-knopf:focus-visible{border-color:var(--gold);outline:0}
+
+/* Stellenblatt (offene Stellen, assets/js/anfrage.js) */
+dialog.anf--stelle{width:min(820px,calc(100vw - 32px))}
+.stb{color:var(--tinte)}
+.stb__bereich{margin:-6px 0 0;text-align:center;font-family:var(--mono);font-size:.778rem;letter-spacing:.24em;text-transform:uppercase;color:#8a6534}
+.stb__ein{margin:12px auto 0;max-width:52ch;text-align:center;font-size:1.166rem;line-height:1.6}
+.stb__spalten{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,34px);margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(20px,2.2vw,26px);border-top:3px double rgba(183,143,81,.5)}
+.stb h3{margin:0 0 10px;font-family:var(--titel);font-weight:700;font-size:1.35rem}
+.stb ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.stb li{position:relative;padding-left:20px;font-size:1.058rem;line-height:1.5}
+.stb li::before{content:'';position:absolute;left:0;top:.62em;width:9px;height:1.5px;background:var(--gold)}
+.stb__haus{margin-top:clamp(20px,2.4vw,28px);padding:clamp(18px,2vw,24px) clamp(18px,2.2vw,28px);border-radius:16px;background:#f4ebdc;box-shadow:inset 0 2px 5px rgba(42,26,14,.06)}
+.stb__haus ul{grid-template-columns:1fr 1fr;column-gap:24px}
+.stb__gruss{margin:clamp(18px,2vw,24px) 0 0;text-align:center;font-family:var(--titel);font-weight:700;font-size:1.242rem;color:var(--balken)}
+@media (max-width:640px){.stb__spalten,.stb__haus ul{grid-template-columns:1fr}}
+/* 17.10.2026 · Robert zu den Stellenausschreibungen: «schöner, spannender, mit Bildern, richtig geil». Oben ein Kopfbild aus dem Arbeitsplatz bis an den Rand des Blatts,
+   unter den Spalten drei Bilder, «Was dich erwartet» als nachtblaue Tafel mit vier Stichworten in Goldprägung. Alles steht still. */
+dialog.anf--stelle .anf__blatt{display:flex;flex-direction:column;padding-top:0;overflow:hidden}
+dialog.anf--stelle .stb{display:contents}
+.stb__bild{order:-1;margin:0 calc(-1*clamp(22px,4.4vw,56px)) clamp(22px,2.6vw,32px);aspect-ratio:21/9;overflow:hidden;background:#1f1209}
+.stb__bild img{width:100%;height:100%;object-fit:cover;display:block}
+dialog.anf--stelle .anf__kopf{margin-top:0}
+.stb__bilder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,14px);margin-top:clamp(24px,2.8vw,34px)}
+.stb__bilder span{display:block;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#dccbb3;box-shadow:0 0 0 1px rgba(183,143,81,.35),0 18px 30px -22px rgba(42,26,14,.7)}
+.stb__bilder img{width:100%;height:100%;object-fit:cover;display:block}
+.stb__haus{background:radial-gradient(130% 120% at 50% 0%,#4a2e18 0%,#321f10 55%,#1f1209 100%);color:#efe4d3;box-shadow:inset 0 0 0 1px rgba(201,160,102,.5);border-radius:18px}
+.stb__haus h3{color:#f3cd94;text-align:center}
+.stb__haus ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
+.stb__haus li{padding:0;display:grid;gap:8px;align-content:start;text-align:center;font-size:.92rem;line-height:1.45;color:rgba(239,228,211,.78)}
+.stb__haus li::before{content:none}
+.stb__haus li b{font-family:var(--titel);font-weight:700;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1;background:linear-gradient(180deg,#f9e2b8,#d9a965 58%,#b78f51);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#f3cd94}
+.stb__haus li b::after{content:'';display:block;width:30px;height:1px;margin:10px auto 0;background:rgba(201,160,102,.6)}
+@media (max-width:640px){.stb__haus ul{grid-template-columns:1fr 1fr}.stb__bild{aspect-ratio:16/9}}
+.stb__haus li{min-width:0}.stb__haus li b{font-size:clamp(1.2rem,1.75vw,1.55rem);white-space:nowrap}
+
+/* 17.10.2026 · Robert zu den Stellen: «kein Blatt Papier, in dem man runterscrollt und rechts und links ist frei, sondern ein Fenster, wo die Informationen alle
+   drinstehen, schon ein grösseres». Ab Tablettbreite ein breites Fenster: links das Bild vom Arbeitsplatz bis an den Rand, darunter «Was dich erwartet» als Tafel,
+   rechts Titel, Text, beide Listen und der Knopf. Die drei kleinen Bilder entfallen hier, das Kopfbild trägt. */
+@media (min-width:901px){
+  dialog.anf--stelle{width:min(1240px,calc(100vw - 64px));max-height:calc(100dvh - 48px)}
+  dialog.anf--stelle .anf__blatt{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);grid-template-rows:auto auto auto auto auto 1fr;column-gap:0;padding:0}
+  dialog.anf--stelle .anf__blatt::before{left:calc(33.333% + 9px)}
+  dialog.anf--stelle .stb__bild{grid-column:1;grid-row:1/-1;margin:0;aspect-ratio:auto;min-height:0;position:relative}
+  dialog.anf--stelle .stb__bild img{position:absolute;inset:0}
+  dialog.anf--stelle .stb__bilder{display:none}
+  dialog.anf--stelle :is(.anf__kopf,.stb__bereich,.stb__ein,.stb__gruss,.anf__fuss){grid-column:2;padding-inline:clamp(30px,3.4vw,54px)}
+  dialog.anf--stelle .anf__kopf{grid-row:1;margin:0;padding-top:clamp(26px,2.6vw,36px)}
+  dialog.anf--stelle .anf__zeichen{display:none}
+  dialog.anf--stelle .anf__titel{font-size:clamp(1.8rem,2.5vw,2.3rem);max-width:none;margin-top:6px}
+  dialog.anf--stelle .anf__linie{margin-top:12px}
+  dialog.anf--stelle .stb__bereich{grid-row:2;margin:12px 0 0}
+  dialog.anf--stelle .stb__ein{grid-row:3;margin:8px auto 0;max-width:none;font-size:1.04rem;line-height:1.55}
+  dialog.anf--stelle .stb__spalten{grid-column:2;grid-row:4;margin:clamp(16px,1.8vw,22px) clamp(30px,3.4vw,54px) 0;padding-top:clamp(14px,1.6vw,20px)}
+  dialog.anf--stelle .stb h3{font-size:1.16rem;margin-bottom:8px}
+  dialog.anf--stelle .stb ul{gap:5px}
+  dialog.anf--stelle .stb li{font-size:.96rem;line-height:1.42}
+  dialog.anf--stelle .stb__haus{grid-column:2;grid-row:5;margin:clamp(16px,1.8vw,22px) clamp(30px,3.4vw,54px) 0;padding:16px 18px 14px}
+  dialog.anf--stelle .stb__haus h3{font-size:1.05rem;margin-bottom:10px}
+  dialog.anf--stelle .stb__haus ul{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  dialog.anf--stelle .stb__haus li{font-size:.8rem;line-height:1.35;gap:6px}
+  dialog.anf--stelle .stb__haus li b{font-size:clamp(1.15rem,1.5vw,1.4rem)}
+  dialog.anf--stelle .stb__haus li b::after{margin-top:6px}
+  dialog.anf--stelle .stb__gruss{grid-row:6;align-self:end;margin:0;padding-bottom:clamp(30px,2.9vw,40px);padding-right:250px;text-align:left;font-size:1.06rem}
+  dialog.anf--stelle .anf__fuss{grid-row:6;align-self:end;justify-items:end;margin:0;padding-bottom:clamp(22px,2.2vw,30px);pointer-events:none}
+  dialog.anf--stelle .anf__fuss .kn{pointer-events:auto}
+  dialog.anf--stelle .stb__haus{margin-bottom:clamp(18px,2vw,24px)}
+  dialog.anf--stelle .anf__zu{top:16px;right:16px}
+}

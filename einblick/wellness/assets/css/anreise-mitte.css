@@ -1,0 +1,24 @@
+/* 8 · Schluss «Mittelachse zwischen zwei Bildern» (Robert 24.10.2026, Fassung 12 aus v-anreise-luxus.html). Hell mit Tapete,
+   Haus links und Loft-Suite rechts laufen an den Seitenrand, in der Mitte Zeichen, Titel, Satz, Uhrzeiten zwischen Goldlinien. */
+.am{background:var(--pa) url(../zeichen/tapete-hell.svg) 50% 0/240px auto;--am-l:rgba(138,106,42,.32)}
+.am .rt{color:var(--ink)}
+.am-w{display:grid;grid-template-columns:1fr minmax(0,540px) 1fr;gap:clamp(30px,4vw,70px);margin:0 calc(var(--rand) * -1);align-items:center}
+.am-w figure{position:relative;margin:0;height:min(86vh,800px);overflow:hidden;box-shadow:var(--sch-h)}
+.am-w figure img{display:block;width:100%;height:100%;object-fit:cover}
+.am-w figure:first-child{border-radius:0 var(--rund) var(--rund) 0}
+.am-w figure:last-child{border-radius:var(--rund) 0 0 var(--rund)}
+.am-t{display:grid;justify-items:center;text-align:center}
+.am-z{margin:0 0 18px;width:clamp(40px,3.4vw,54px);color:var(--ms)}
+.am-z svg{display:block;width:100%;height:auto}
+.am-t .rl{margin-left:auto;margin-right:auto}
+.am-uhr{width:100%;margin-top:30px;border-top:1px solid var(--am-l)}
+.am-uhr p{margin:0;padding:14px 0;display:grid;justify-items:center;gap:5px;border-bottom:1px solid var(--am-l)}
+.am-uhr b{font-family:var(--licht);font-weight:300;font-size:clamp(30px,2.6vw,44px);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.am-uhr span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8A6A2A;line-height:1.5}
+.am .r-knoepfe{justify-content:center;margin-top:36px}
+.am .rbar{margin:clamp(56px,6vw,96px) auto 0}
+@media (max-width:860px){
+  .am-w{grid-template-columns:1fr;margin:0}
+  .am-w figure{height:46vh;border-radius:var(--rk)!important}
+  .am-w figure:last-child{display:none}
+}

@@ -1,0 +1,385 @@
+/* Wellness & Spa · Ideen für den Rest der Startseite (20.10.2026). Je Abschnitt eine eigene Bewegung, nur transform und opacity, Auftritt einmal beim Berühren des Rands. */
+.rest{--n1:#0E1638;--n2:#0A1129;--ms:#D9B758;--ms-h:#E9D49A;--pa:#F6F1EA;--ink:#18213F;--ink2:#4A536B;--sk:#22180F;--le:#EEE8DE;--sn:#EDF1F5}
+.ri{position:relative;padding:clamp(90px,10vw,160px) var(--rand);overflow:hidden}
+.ri img{display:block;width:100%;height:100%;object-fit:cover}
+.ri figure{margin:0}
+.ri-hell{background:var(--pa);color:var(--ink)} .ri-leinen{background:var(--le);color:var(--ink)} .ri-schnee{background:var(--sn);color:var(--ink)}
+.ri-nacht{background:var(--n1);color:#F4F2EC} .ri-schoko{background:var(--sk);color:#F4EDE3} .ri-schwarz{background:#000;color:#F4F2EC}
+.rt{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(42px,5vw,86px);line-height:1.04;letter-spacing:-.02em}
+.rt .sl{display:block;overflow:hidden;padding-bottom:.1em}
+.rt .sl>span{display:inline-block;transform:translateY(110%);transition:transform 1.4s var(--e1)}
+.ri.da .rt .sl>span{transform:none}
+.rl{margin:20px 0 0;max-width:44ch;font-family:var(--sans);font-size:18px;line-height:1.6;opacity:.86}
+.rs{margin:18px 0 0;max-width:52ch;font-family:var(--sans);font-size:15.5px;line-height:1.65;opacity:.8}
+.rs-k{font-size:13.5px;opacity:.62}
+.ro{margin:0 0 8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ms)}
+.ri-hell .ro,.ri-leinen .ro,.ri-schnee .ro{color:#8A6A2A}
+.rz{font-weight:inherit}
+.r-knoepfe{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(40px,4.5vw,64px)}
+.r-knoepfe--l{justify-content:flex-start}
+.rk{display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 6px 0 24px;border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+ color:#F4F2EC;background:linear-gradient(180deg,#1E2A55,#0E1638);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(217,183,88,.35),0 14px 30px -14px rgba(10,17,41,.7);transition:transform .5s var(--e1)}
+.rk em{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#F1E2B4,#C9A54E);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 3px 8px rgba(0,0,0,.35)}
+.rk svg{width:14px;height:14px;stroke:#1B2440;fill:none;stroke-width:1.5}
+.rk:hover{transform:translateY(-2px)}
+.rk--h{color:#18213F;background:linear-gradient(180deg,#FFFDF8,#EDE6D9);box-shadow:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(168,138,58,.35),0 14px 30px -14px rgba(0,0,0,.6)}
+.r-liste{margin:22px 0 0;padding:0;list-style:none;max-width:52ch}
+.r-liste li{padding:12px 0;border-top:1px solid rgba(24,33,63,.14);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.r-liste li:last-child{border-bottom:1px solid rgba(24,33,63,.14)}
+.r-liste a{color:inherit;text-decoration:none}
+.r-zeile{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(40px,4vw,60px);text-align:center}
+.r-zeile p{margin:0;display:grid;gap:6px}
+.r-zeile b{font-family:var(--licht);font-weight:300;font-size:clamp(32px,3.4vw,54px);letter-spacing:-.02em}
+.r-zeile span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.rnr{position:fixed;z-index:70;left:16px;bottom:14px;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:#fff;box-shadow:0 6px 22px rgba(0,0,0,.28);font:500 13px/1 var(--sans);color:#111}
+.rnr b{font-weight:500;padding:0 10px}
+.rnr a{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#EFECE6;color:#111;text-decoration:none;font-size:18px}
+
+/* ===== ZIMMER 1 · Der Zollstock (Bewegung: federt satt an den Platz) ===== */
+.zs-kopf{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:end;margin-bottom:clamp(40px,4.5vw,70px)}
+.zs-kopf .rl{justify-self:end;margin:0}
+.zs-buehne{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:clamp(30px,4vw,64px);align-items:stretch}
+.zs-bild{height:min(68vh,640px);border-radius:var(--rund);overflow:hidden;box-shadow:0 50px 90px -46px rgba(24,33,63,.55);transform:translateY(90px);transition:transform 1.5s var(--feder-leise)}
+.zs.da .zs-bild{transform:none}
+.zs-leiste{position:relative;display:grid;grid-template-columns:auto 1fr;gap:22px;transform:translateY(90px);transition:transform 1.5s var(--feder-leise) .12s}
+.zs.da .zs-leiste{transform:none}
+.zs-skala{position:relative;width:2px;background:linear-gradient(#C9A54E,#C9A54E);border-radius:2px;display:flex;flex-direction:column;justify-content:space-between}
+.zs-skala span{position:relative;left:14px;white-space:nowrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:#8A6A2A;transform:translateY(-50%)}
+.zs-skala span:last-child{transform:translateY(50%)}
+.zs-skala{background:none;box-shadow:inset 2px 0 0 #C9A54E}
+.zs-reihen{display:flex;flex-direction:column;justify-content:space-between;padding-left:42px}
+.zs-r{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid rgba(24,33,63,.1);position:relative;transition:color .4s}
+.zs-r::before{content:'';position:absolute;left:-49px;top:50%;width:14px;height:2px;background:#C9A54E;transition:transform .6s var(--feder);transform-origin:left;transform:scaleX(.5)}
+.zs-n{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.45vw,23px);color:#5D667E;transition:color .4s,transform .6s var(--feder);display:inline-block}
+.zs-m{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:#8A6A2A}
+.zs-r.an .zs-n{color:var(--ink);transform:translateX(6px)}
+.zs-r.an::before{transform:scaleX(2.2)}
+.zs-r:hover .zs-n{color:var(--ink)}
+.zs-zeile{display:flex;flex-wrap:wrap;gap:8px 28px;margin:28px 0 0;font-family:var(--sans);font-size:15px;color:var(--ink2)}
+.zs-zeile b{font-family:var(--licht);font-weight:400;font-size:20px;color:var(--ink)}
+/* ===== ZIMMER 2 · Drei grosse Zahlen (Bewegung: Zahl zählt hoch, Foto zoomt im Rahmen) ===== */
+.gz-kopf{text-align:center;display:grid;justify-items:center;margin-bottom:clamp(50px,6vw,90px)}
+.gz-z{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:center;max-width:1320px;margin:0 auto clamp(60px,7vw,110px)}
+.gz-z--r .gz-bild{order:2}
+.gz-bild{height:min(66vh,620px);border-radius:var(--rund);overflow:hidden;box-shadow:0 50px 90px -46px rgba(24,33,63,.5);transform:translateY(70px);transition:transform 1.5s var(--e1)}
+.gz-bild img{transform:scale(1.14);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)}
+.gz.da .gz-bild{transform:none}.gz.da .gz-bild img{transform:none}
+.gz-text .gz-zahl{margin:0;font-family:var(--licht);font-weight:200;font-size:clamp(120px,15vw,250px);line-height:.86;letter-spacing:-.05em;color:#B08B3A}
+.gz-text .gz-zahl small{font-size:.22em;letter-spacing:0;margin-left:.15em;color:#8A6A2A}
+.gz-text h3{margin:22px 0 0;font-family:var(--licht);font-weight:400;font-size:clamp(26px,2.4vw,38px);letter-spacing:-.01em}
+.gz-text p{margin:10px 0 0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--ink2);max-width:40ch}
+.gz-text .gz-preis{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:#8A6A2A}
+/* ===== ZIMMER 3 · Zwei Etagen (Bewegung: oben kommt von oben in den Platz, unten von unten, das Bild zoomt) ===== */
+.ze-kopf{text-align:center;display:grid;justify-items:center;margin-bottom:clamp(50px,6vw,90px)}
+.ze-schnitt{display:grid;grid-template-columns:1fr minmax(0,1.5fr) 1fr;gap:clamp(24px,3.4vw,56px);align-items:stretch;max-width:1380px;margin:0 auto}
+.ze-bild{height:min(80vh,760px);border-radius:var(--rund);overflow:hidden;box-shadow:0 60px 100px -50px rgba(0,0,0,.85)}
+.ze-bild img{transform:scale(1.12);transition:transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.ze.da .ze-bild img{transform:none}
+.ze-seite{display:flex;flex-direction:column;border-top:1px solid rgba(217,183,88,.4);padding-top:18px}
+.ze-unten{justify-content:flex-end;border-top:0;border-bottom:1px solid rgba(217,183,88,.4);padding:0 0 18px;text-align:right}
+.ze-oben{transform:translateY(-60px);transition:transform 1.5s var(--e1) .2s}
+.ze-unten{transform:translateY(60px);transition:transform 1.5s var(--e1) .2s}
+.ze.da .ze-oben,.ze.da .ze-unten{transform:none}
+.ze-gross{margin:6px 0;font-family:var(--licht);font-weight:300;font-size:clamp(28px,2.8vw,46px);line-height:1.08;letter-spacing:-.02em}
+.ze-seite p:last-child{margin:0;font-family:var(--sans);font-size:15px;opacity:.75}
+.ze-zeile{margin:30px 0 0;text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ms-h)}
+.ze-paar{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;max-width:1380px;margin:clamp(60px,7vw,100px) auto 0}
+.ze-paar figure{position:relative;height:min(52vh,480px);border-radius:var(--rund-m);overflow:hidden;transform:translateY(70px);transition:transform 1.5s var(--e1)}
+.ze-paar figure:nth-child(2){transition-delay:.1s}
+.ze.da .ze-paar figure{transform:none}
+.ze-paar figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 24px 20px;font-family:var(--sans);font-size:14px;color:#fff;background:linear-gradient(transparent,rgba(15,10,6,.62))}
+.ze-paar figcaption b{display:block;font-family:var(--licht);font-weight:400;font-size:22px;margin-bottom:4px}
+
+/* ===== SPA 1 · Die Wärmeleiter (Bewegung: Linie füllt sich von unten, Grade zählen, alles steigt langsam wie Wärme) ===== */
+.wl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(40px,6vw,110px);align-items:center}
+.wl-text .rk{margin-top:34px}
+.wl-flaeche{margin:40px 0 0;font-family:var(--licht);font-weight:200;font-size:clamp(80px,8vw,140px);line-height:.9;letter-spacing:-.04em;color:var(--ms-h)}
+.wl-flaeche small{font-size:.3em;letter-spacing:0}
+.wl-leiter{position:relative;display:grid;gap:12px;padding-left:120px}
+.wl-linie{position:absolute;left:96px;top:0;bottom:0;width:2px;background:rgba(217,183,88,.18)}
+.wl-linie i{position:absolute;inset:0;background:var(--ms);transform-origin:bottom;transform:scaleY(.15);transition:transform 2.6s cubic-bezier(.3,.6,.2,1) .3s}
+.wl.da .wl-linie i{transform:none}
+.wl-st{position:relative;display:grid;grid-template-columns:1fr;transform:translateY(90px);transition:transform 2.2s cubic-bezier(.2,.65,.2,1)}
+.wl-st:nth-child(3){transition-delay:.15s}.wl-st:nth-child(4){transition-delay:.3s}
+.wl.da .wl-st{transform:none}
+.wl-st figure{height:min(26vh,240px);border-radius:var(--rund-m);overflow:hidden}
+.wl-st--t{padding:18px 0}
+.wl-grad{position:absolute;left:-120px;top:50%;transform:translateY(-50%);width:90px;margin:0;text-align:right;font-family:var(--licht);font-weight:300;font-size:30px;line-height:1.1;color:var(--ms-h)}
+.wl-grad small{font-size:.55em}
+.wl-st:first-of-type .wl-grad{font-size:12.5px;font-family:var(--mono);letter-spacing:.06em;line-height:1.7;color:#C9D0E2}
+.wl-name{margin:10px 0 0;font-family:var(--sans);font-size:14.5px;opacity:.8}
+.wl-st--t .wl-name{margin:0;font-family:var(--licht);font-size:clamp(22px,2vw,30px);opacity:1}
+/* ===== SPA 2 · Die Anwendungen (Bewegung: Zeilen steigen in einem Zug aus dem Schlitz) ===== */
+.anw{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:center}
+.anw .an-hoch{height:min(88vh,860px);border-radius:var(--rund);overflow:hidden;transform:translateY(80px);transition:transform 1.6s var(--e1)}
+.anw.da .an-hoch{transform:none}
+.an-liste{margin:34px 0 0;padding:0;list-style:none}
+.an-liste li{overflow:hidden;border-top:1px solid rgba(217,183,88,.25)}
+.an-liste li:last-child{border-bottom:1px solid rgba(217,183,88,.25)}
+.an-liste a{display:flex;justify-content:space-between;align-items:center;padding:14px 0;color:#F4F2EC;text-decoration:none;font-family:var(--licht);font-weight:300;font-size:clamp(24px,2.3vw,36px);letter-spacing:-.01em;transform:translateY(105%);transition:transform 1.2s var(--e1),color .4s}
+.an-liste li:nth-child(2) a{transition-delay:.06s,0s}.an-liste li:nth-child(3) a{transition-delay:.12s,0s}.an-liste li:nth-child(4) a{transition-delay:.18s,0s}.an-liste li:nth-child(5) a{transition-delay:.24s,0s}
+.anw.da .an-liste a{transform:none}
+.an-liste em{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(217,183,88,.5)}
+.an-liste svg{width:13px;height:13px;stroke:var(--ms-h);fill:none;stroke-width:1.5}
+.an-liste a:hover{color:var(--ms-h)}
+.an-paar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px}
+.an-paar figure{height:min(22vh,200px);border-radius:var(--rund-m);overflow:hidden}
+/* ===== SPA 3 · Der Ruheraum (Bewegung: das Bild atmet langsam aus, Zahlen zählen) ===== */
+.rr-bild{position:relative;height:min(86vh,820px);border-radius:var(--rund);overflow:hidden}
+.rr-bild img{transform:scale(1.14);transition:transform 3.4s cubic-bezier(.25,.6,.2,1)}
+.rr.da .rr-bild img{transform:none}
+.rr-bild::after{content:'';position:absolute;left:0;bottom:0;width:85%;height:85%;background:radial-gradient(ellipse at 12% 92%,rgba(8,12,32,.86),rgba(8,12,32,.6) 38%,transparent 72%);pointer-events:none}
+.rr-bild figcaption{position:absolute;z-index:2;left:clamp(30px,4vw,70px);bottom:clamp(30px,4vw,64px);max-width:640px;color:#fff}
+.rr-zahlen{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:clamp(50px,5vw,80px);text-align:center}
+.rr-zahlen p{margin:0;font-family:var(--licht);font-weight:200;font-size:clamp(64px,6.4vw,110px);line-height:1;letter-spacing:-.04em;color:var(--ms-h)}
+.rr-zahlen small{font-size:.32em}
+.rr-zahlen span{display:block;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C9D0E2}
+.rr-s{margin:34px auto 0;text-align:center}
+
+/* ===== KÜCHE 1 · Das Menü eines Abends (Bewegung: Gänge legen sich nacheinander auf, Bild zoomt) ===== */
+.me{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,6vw,100px);align-items:center}
+.me-bild{height:min(84vh,800px);border-radius:var(--rund);overflow:hidden}
+.me-bild img{transform:scale(1.15);transition:transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.me.da .me-bild img{transform:none}
+.me-menue{margin:34px 0 22px}
+.me-g{padding:14px 0;border-top:1px solid rgba(217,183,88,.24);transform:translateY(40px);transition:transform 1.3s var(--e1)}
+.me-g:nth-child(2){transition-delay:.07s}.me-g:nth-child(3){transition-delay:.14s}.me-g:nth-child(4){transition-delay:.21s}.me-g:nth-child(5){transition-delay:.28s}
+.me.da .me-g{transform:none}
+.me-g p:last-child{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(16px,1.3vw,19px);line-height:1.45}
+.me-g i{display:inline-block;margin:0 10px;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ms)}
+.me .rk{margin-top:26px}
+/* ===== KÜCHE 2 · Der Speisesaal von Heinz Julen (Bewegung: Bild zoomt aus, Zeilen steigen in einem Zug) ===== */
+.sa-kopf{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:end;margin-bottom:clamp(40px,4.5vw,70px)}
+.sa-kopf .rl{justify-self:end;margin:0}
+.sa-bild{position:relative;height:min(80vh,780px);border-radius:var(--rund);overflow:hidden}
+.sa-bild img{transform:scale(1.16);transition:transform 3s cubic-bezier(.2,.7,.2,1)}
+.sa.da .sa-bild img{transform:none}
+.sa-bild::after{content:'';position:absolute;right:0;bottom:0;width:60%;height:60%;background:radial-gradient(ellipse at 90% 95%,rgba(20,12,6,.75),rgba(20,12,6,.35) 45%,transparent 72%)}
+.sa-bild figcaption{position:absolute;z-index:2;right:clamp(28px,4vw,64px);bottom:clamp(28px,4vw,56px);max-width:46ch;text-align:right;font-family:var(--licht);font-weight:300;font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:#fff}
+.sa-tag{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(50px,5vw,80px)}
+.sa-tag>div{border-top:1px solid rgba(217,183,88,.35);padding-top:18px;transform:translateY(50px);transition:transform 1.4s var(--e1)}
+.sa-tag>div:nth-child(2){transition-delay:.06s}.sa-tag>div:nth-child(3){transition-delay:.12s}.sa-tag>div:nth-child(4){transition-delay:.18s}
+.sa.da .sa-tag>div{transform:none}
+.sa-tag h3{margin:0 0 10px;font-family:var(--licht);font-weight:400;font-size:clamp(24px,2.1vw,32px)}
+.sa-tag p:last-child{margin:0;font-family:var(--sans);font-size:15px;line-height:1.6;opacity:.8}
+/* ===== KÜCHE 3 · Fünf Teller (Bewegung: die Teller werden in einem Zug aufgetragen) ===== */
+.ft-kopf{text-align:center;display:grid;justify-items:center}
+.ft-kopf .rs{margin-left:auto;margin-right:auto}
+.ft-teller{position:relative;display:grid;grid-template-columns:1fr 1.25fr 1fr;align-items:center;gap:0;max-width:1400px;margin:clamp(30px,4vw,60px) auto 0}
+.ft-t{aspect-ratio:3/2;transform:translateY(110px);transition:transform 1.6s var(--e1)}
+.ft-t1{transition-delay:.08s}.ft-t2{transition-delay:.16s}
+.ft-teller{max-width:1500px;margin-top:0}.ft-t{aspect-ratio:auto}.ft-t img{height:auto}
+.ft.da .ft-t{transform:none}
+
+/* ===== KINDER 1 · Die Burg (Bewegung: die Burg wächst mit Feder auf ihre Grösse) ===== */
+.kb{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);align-items:center}
+.kb-bild{position:relative;height:min(78vh,740px);border-radius:var(--rund);overflow:hidden;transform:scale(.9) translateY(40px);transition:transform 1.5s var(--feder-leise);box-shadow:0 50px 90px -46px rgba(24,33,63,.45)}
+.kb.da .kb-bild{transform:none}
+.kb-bild figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 22px;font-family:var(--sans);font-size:14.5px;color:#fff;background:linear-gradient(transparent,rgba(24,33,63,.6))}
+.kb .rk{margin-top:30px}
+/* ===== KINDER 2 · Kinder und Teenager (Bewegung: Schalter, Foto und Liste wechseln) ===== */
+.kt-kopf{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:clamp(40px,4.5vw,70px)}
+.kt-wahl{display:flex;gap:6px;padding:6px;border-radius:999px;background:#E2DACD;box-shadow:inset 0 2px 6px rgba(24,33,63,.14)}
+.kt-wahl button{all:unset;cursor:pointer;padding:14px 26px;border-radius:999px;font-family:var(--licht);font-size:18px;color:#5D667E;transition:background .4s,color .4s,box-shadow .4s}
+.kt-wahl .an{background:#fff;color:var(--ink);box-shadow:0 6px 16px -6px rgba(24,33,63,.4)}
+.kt-buehne{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.kt-bild{height:min(68vh,620px);border-radius:var(--rund);overflow:hidden;transform:scale(.92);transition:transform 1.5s var(--feder-leise)}
+.kt.da .kt-bild{transform:none}
+.kt-listen{display:grid}
+.kt-l{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s}
+.kt-l.an{opacity:1;visibility:visible}
+.kt-listen>.rs,.kt-listen>.rk{grid-row:2}
+.kt-listen>.rk{grid-row:3;margin-top:26px;justify-self:start}
+/* ===== KINDER 3 · Der Spielraum (Bewegung: die Breitbilder gleiten gegenläufig an ihren Platz, von unten und von oben) ===== */
+.ks{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:center}
+.ks-band{display:grid;gap:10px}
+.ks-band figure{aspect-ratio:1417/559;border-radius:var(--rund-m);overflow:hidden;transform:translateY(80px);transition:transform 1.5s var(--feder-leise)}
+.ks-band figure:nth-child(2){transition-delay:.1s}
+.ks.da .ks-band figure{transform:none}
+.ks .rk{margin-top:28px}
+
+/* ===== SAASTAL 1 · Die Loipe (Bewegung: die Höhenlinie zeichnet sich von links, die Orte setzen sich) ===== */
+.lo-kopf{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:end}
+.lo-kopf .rl{justify-self:end;margin:0}
+.lo-profil{position:relative;margin:clamp(40px,5vw,70px) 0 0}
+.lo-profil svg{display:block;width:100%;height:auto;overflow:visible}
+.lo-fl{fill:rgba(24,33,63,.06)}
+.lo-li{fill:none;stroke:#B08B3A;stroke-width:2.5;stroke-linejoin:round}
+.lp circle{fill:var(--sn);stroke:#18213F;stroke-width:2}
+.lp--h circle{fill:#B08B3A;stroke:#B08B3A}
+.lp text{font-family:var(--licht);font-size:17px;fill:#18213F}
+.lp .lp-m{font-family:var(--mono);font-size:12px;letter-spacing:.12em;fill:#8A6A2A}
+.lp--h text{font-weight:500}
+.lp{transform-box:fill-box;opacity:0;transition:opacity .6s ease calc(.3s + var(--i)*.22s)}
+.lo.da .lp{opacity:1}
+.lo-deck{position:absolute;inset:-60px -2% -10px 0;background:var(--sn);transform-origin:right;transition:transform 2.2s cubic-bezier(.45,.1,.2,1) .2s}
+.lo.da .lo-deck{transform:translateX(102%)}
+.lo-s{margin:30px auto 0;text-align:center;max-width:70ch}
+.lo-paar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:clamp(40px,5vw,70px)}
+.lo-paar figure{height:min(50vh,460px);border-radius:var(--rund-m);overflow:hidden}
+/* ===== SAASTAL 2 · Wo Pirmin anfing (Bewegung: der Satz steigt Zeile für Zeile, das Bild schwebt hoch) ===== */
+.pa{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:center}
+.pa-satz blockquote{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(30px,3.3vw,54px);line-height:1.18;letter-spacing:-.015em;transform:translateY(60px);transition:transform 1.6s var(--e1)}
+.pa.da .pa-satz blockquote{transform:none}
+.pa-bild{height:min(74vh,700px);border-radius:var(--rund);overflow:hidden;transform:translateY(100px);transition:transform 1.8s var(--e1) .15s}
+.pa.da .pa-bild{transform:none}
+.pa-zahlen{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(30px,4vw,60px);text-align:center}
+.pa-zahlen p{margin:0;display:grid;gap:8px;border-top:1px solid rgba(24,33,63,.16);padding-top:20px}
+.pa-zahlen b{font-family:var(--licht);font-weight:300;font-size:clamp(34px,3.6vw,58px);letter-spacing:-.02em}
+.pa-zahlen span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.pa>.rs{grid-column:1/-1;margin:34px auto 0;text-align:center}
+.pa>.r-knoepfe{grid-column:1/-1}
+/* ===== SAASTAL 3 · Sommer und Winter (Bewegung: beide Bilder zoomen gleichzeitig aus, Text steigt) ===== */
+.sw-kopf{text-align:center;display:grid;justify-items:center;margin-bottom:clamp(40px,5vw,70px)}
+.sw-paar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sw-paar figure{position:relative;height:min(82vh,780px);overflow:hidden}
+.sw-a{border-radius:var(--rund) 0 0 var(--rund)}.sw-b{border-radius:0 var(--rund) var(--rund) 0}
+.sw-paar img{transform:scale(1.15);transition:transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.sw.da .sw-paar img{transform:none}
+.sw-paar figure::after{content:'';position:absolute;left:0;right:0;bottom:0;height:70%;background:linear-gradient(transparent,rgba(12,18,40,.55) 40%,rgba(12,18,40,.85));pointer-events:none}
+.sw-paar figcaption{position:absolute;z-index:2;left:clamp(24px,3vw,48px);right:clamp(24px,3vw,48px);bottom:clamp(24px,3vw,44px);color:#fff;transform:translateY(40px);transition:transform 1.5s var(--e1) .3s}
+.sw.da .sw-paar figcaption{transform:none}
+.sw-paar figcaption .ro{color:var(--ms-h)}
+.sw-paar figcaption p:last-child{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(18px,1.6vw,24px);line-height:1.4}
+
+/* ===== ANGEBOTE 1 · Mit wem kommen Sie? (Bewegung: Worte steigen, Glanz läuft einmal über das Foto) ===== */
+.mw-kopf{margin-bottom:clamp(30px,4vw,60px)}
+.mw-buehne{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr);gap:clamp(30px,4vw,64px);align-items:center}
+.mw-worte{display:grid;gap:4px}
+.mw-w{all:unset;cursor:pointer;font-family:var(--licht);font-weight:300;font-size:clamp(34px,3.6vw,60px);line-height:1.15;letter-spacing:-.02em;color:#A7ADBD;transition:color .4s,transform .6s var(--feder)}
+.mw-w.an{color:var(--ink);transform:translateX(10px)}
+.mw-bild{position:relative;height:min(62vh,580px);border-radius:var(--rund);overflow:hidden;transform:translateY(70px);transition:transform 1.5s var(--e1)}
+.mw.da .mw-bild{transform:none}
+.mw-bild::after{content:'';position:absolute;inset:-20% auto -20% 0;width:40%;background:linear-gradient(100deg,transparent,rgba(255,250,235,.38),transparent);transform:translateX(-120%) skewX(-12deg);transition:transform 1.6s ease 1s}
+.mw.da .mw-bild::after{transform:translateX(330%) skewX(-12deg)}
+.mw-listen{display:grid}
+.mw-l{grid-area:1/1;margin:0;padding:0;list-style:none;opacity:0;visibility:hidden;transition:opacity .5s}
+.mw-l.an{opacity:1;visibility:visible}
+.mw-l li{border-top:1px solid rgba(24,33,63,.14)}
+.mw-l li:last-child{border-bottom:1px solid rgba(24,33,63,.14)}
+.mw-l a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;color:var(--ink);text-decoration:none;font-family:var(--sans);font-size:16px}
+.mw-l em{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(168,138,58,.5)}
+.mw-l svg{width:12px;height:12px;stroke:#8A6A2A;fill:none;stroke-width:1.5}
+/* ===== ANGEBOTE 2 · Der Gutschein (Bewegung: der Gutschein schwebt hoch, ein Glanzstreif läuft darüber) ===== */
+.gs{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(40px,6vw,100px);align-items:center}
+.gs-bild{height:min(80vh,760px);border-radius:var(--rund);overflow:hidden}
+.gs-bild img{transform:scale(1.12);transition:transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.gs.da .gs-bild img{transform:none}
+.gs-karte{position:relative;overflow:hidden;margin:34px 0 10px;padding:30px 34px;border-radius:var(--rund-m);background:linear-gradient(180deg,#1E2A55,#0E1638);color:#F4F2EC;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(217,183,88,.4),0 40px 70px -34px rgba(10,17,41,.8);transform:translateY(80px);transition:transform 1.6s var(--e1) .1s;max-width:460px}
+.gs.da .gs-karte{transform:none}
+.gs-karte::after{content:'';position:absolute;inset:-30% auto -30% 0;width:35%;background:linear-gradient(100deg,transparent,rgba(233,212,154,.28),transparent);transform:translateX(-140%) skewX(-12deg);transition:transform 1.5s ease 1.4s}
+.gs.da .gs-karte::after{transform:translateX(420%) skewX(-12deg)}
+.gs-z{position:absolute;right:26px;top:22px;width:74px;color:var(--ms);opacity:.9}
+.gs-z svg{width:100%;height:auto;display:block}
+.gs-name{margin:6px 0 0;font-family:var(--licht);font-weight:300;font-size:30px;line-height:1.15}
+.gs-ort{margin:14px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ms-h)}
+.r-liste--l a{font-family:var(--licht);font-size:19px}
+/* ===== ANGEBOTE 3 · Die Jasswochen (Bewegung: die Wochen werden wie Karten nacheinander ausgelegt, Kante an Kante) ===== */
+.jw-kopf{text-align:center;display:grid;justify-items:center;margin-bottom:clamp(40px,5vw,70px)}
+.jw-mitte{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(30px,4vw,64px);align-items:stretch}
+.jw-bild{min-height:420px;border-radius:var(--rund);overflow:hidden}
+.jw-wochen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.jw-wochen p{margin:0;display:grid;align-content:center;gap:8px;padding:24px;border-radius:var(--rund-m);background:#fff;box-shadow:inset 0 0 0 1px rgba(168,138,58,.25),0 20px 40px -26px rgba(24,33,63,.45);transform:translateY(70px);transition:transform 1.3s var(--feder-leise)}
+.jw-wochen p:nth-child(2){transition-delay:.06s}.jw-wochen p:nth-child(3){transition-delay:.12s}.jw-wochen p:nth-child(4){transition-delay:.18s}.jw-wochen p:nth-child(5){transition-delay:.24s}.jw-wochen p:nth-child(6){transition-delay:.3s}
+.jw.da .jw-wochen p{transform:none}
+.jw-wochen b{font-family:var(--licht);font-weight:300;font-size:clamp(44px,4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.jw-wochen b i{font-style:normal;font-size:.5em;color:#8A6A2A}
+.jw-wochen span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.jw>.rs{margin:30px auto 0;text-align:center}
+.jw-rest{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin:30px 0 0;padding:0;list-style:none}
+.jw-rest a{font-family:var(--licht);font-size:20px;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(168,138,58,.5)}
+
+/* ===== SCHLUSS (Bewegung je Fassung: Bild atmet aus · Sterne setzen sich · Bild atmet aus) ===== */
+.wn-bild,.ms-bild{position:relative;height:min(86vh,820px);border-radius:var(--rund);overflow:hidden}
+.wn-bild img,.ms-bild img{transform:scale(1.14);transition:transform 3.2s cubic-bezier(.25,.6,.2,1)}
+.wn.da .wn-bild img,.ms.da .ms-bild img{transform:none}
+.wn-bild::after,.ms-bild::after{content:'';position:absolute;left:0;top:0;width:75%;height:70%;background:radial-gradient(ellipse at 12% 12%,rgba(6,10,30,.7),rgba(6,10,30,.35) 42%,transparent 70%)}
+.wn-bild figcaption,.ms-bild figcaption{position:absolute;z-index:2;left:clamp(30px,4vw,70px);top:clamp(30px,4vw,64px);max-width:640px;color:#fff}
+.rbar{display:flex;align-items:center;width:max-content;max-width:100%;margin:clamp(-40px,-3vw,-30px) auto 0;position:relative;z-index:3;height:64px;padding:6px 6px 6px 26px;border-radius:999px;background:linear-gradient(180deg,#1E2A55,#0E1638);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(217,183,88,.42),0 30px 50px -24px rgba(0,0,0,.8)}
+.rbar label{display:grid;gap:3px;padding:0 22px 0 0}
+.rbar label span{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ms-h)}
+.rbar label b{font-family:var(--licht);font-weight:400;font-size:15px;color:#fff}
+.rbar i{width:1px;height:28px;background:rgba(217,183,88,.3);margin-right:22px}
+.rbar button{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;height:100%;padding:0 6px 0 22px;border-radius:999px;background:linear-gradient(180deg,#FFFDF8,#EDE6D9);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#18213F}
+.rbar button em{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#2B3A6E,#121C45)}
+.rbar svg{width:14px;height:14px;stroke:#F4F2EC;fill:none;stroke-width:1.5}
+.wn-satz{margin:44px 0 0;text-align:center;font-family:var(--licht);font-weight:300;font-size:clamp(20px,1.8vw,28px);color:#C9D0E2}
+.fs{text-align:center;padding-top:clamp(120px,13vw,200px);padding-bottom:clamp(120px,12vw,190px)}
+/* Schluss der Seiten auf Tapete: Messingsterne im Rautenraster wie die Tapete des Hauses (Robert 26.10.2026: «da bitte Tapete in den Hintergrund … überall auf allen Seiten») */
+.fs.ri-nacht{background:var(--n1) url(../zeichen/tapete-dunkel.svg) 50% 0/240px auto}
+.fs-st{display:flex;justify-content:center;gap:18px;color:var(--ms)}
+.fs-st svg{width:30px;height:30px;transform:translateY(30px) scale(.6);transition:transform 1s var(--feder)}
+.fs-st svg:nth-child(2){transition-delay:.12s}.fs-st svg:nth-child(3){transition-delay:.24s}.fs-st svg:nth-child(4){transition-delay:.36s}.fs-st svg:nth-child(5){transition-delay:.48s;width:38px}
+.fs.da .fs-st svg{transform:none}
+.fs-satz{margin:34px 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(54px,7vw,124px);line-height:1.02;letter-spacing:-.03em}
+.fs-satz .sl{display:block;overflow:hidden;padding-bottom:.08em}
+.fs-satz .sl>span{display:inline-block;transform:translateY(110%);transition:transform 1.5s var(--e1) .5s}
+.fs-satz .sl:nth-child(2)>span{transition-delay:.62s}
+.fs.da .fs-satz .sl>span{transform:none}
+.fs-l{margin:30px auto 60px;text-align:center}
+.fs .rbar{margin-top:0}
+.rest .familienband{--fb-grund:#0A1129;--fb-text:#F4F2EC;--fb-akzent:#D9B758;margin:0}
+.rf{background:#070C1F;color:#C9D0E2;padding:clamp(60px,6vw,90px) var(--rand) 26px}
+.rf-in{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:clamp(24px,4vw,70px);align-items:start;max-width:1320px;margin:0 auto}
+.rf-z{width:90px;color:var(--ms)}.rf-z svg{width:100%;height:auto;display:block}
+.rf-k p,.rf-k a{margin:0;font-family:var(--licht);font-weight:300;font-size:19px;line-height:1.45;color:#F4F2EC;text-decoration:none}
+.rf-k .ro{font-size:10.5px;margin-bottom:10px}
+.rf-nav{display:flex;flex-wrap:wrap;gap:10px 30px;max-width:1320px;margin:50px auto 0;padding-top:24px;border-top:1px solid rgba(217,183,88,.2)}
+.rf-nav a{font-family:var(--licht);font-size:17px;color:#F4F2EC;text-decoration:none}
+.rf-u{max-width:1320px;margin:30px auto 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,208,226,.6)}
+.rf-u a{color:inherit}
+
+/* ===== Handy ===== */
+@media (max-width:760px){
+ .ri{padding:80px 16px}
+ .rt{font-size:40px}
+ .zs-kopf,.sa-kopf,.lo-kopf{grid-template-columns:1fr;gap:0}.zs-kopf .rl,.sa-kopf .rl,.lo-kopf .rl{justify-self:start;margin-top:16px}
+ .zs-buehne{grid-template-columns:1fr}.zs-bild{height:46vh}.zs-leiste{min-height:380px}
+ .gz-z,.gz-z--r{grid-template-columns:1fr;gap:20px}.gz-z--r .gz-bild{order:0}.gz-bild{height:44vh}.gz-zahl{font-size:110px}
+ .ze-schnitt{grid-template-columns:1fr}.ze-bild{height:56vh;order:-1}.ze-unten{text-align:left}.ze-paar{grid-template-columns:1fr}.ze-paar figure{height:40vh}
+ .wl,.anw,.me,.kb,.ks,.pa,.gs,.kt-buehne,.mw-buehne,.jw-mitte{grid-template-columns:1fr}
+ .wl-leiter{padding-left:96px}.wl-linie{left:78px}.wl-grad{left:-96px;width:72px;font-size:24px}
+ .anw .an-hoch{height:60vh}.rr-bild,.wn-bild,.ms-bild{height:72vh}.rr-zahlen{grid-template-columns:1fr;gap:34px}
+ .me-bild{height:52vh}.sa-bild{height:56vh}.sa-tag{grid-template-columns:1fr 1fr}
+ .ft-teller{grid-template-columns:1fr}.ft-t0,.ft-t2{margin-top:0}
+ .kb-bild{height:56vh}.kt-kopf{flex-direction:column;align-items:flex-start}.kt-bild{height:44vh}
+ .r-zeile,.pa-zahlen{grid-template-columns:1fr 1fr}
+ .lp text{font-size:30px}.lp .lp-m{font-size:22px}.lo-paar,.sw-paar{grid-template-columns:1fr}.sw-paar figure{height:60vh;border-radius:var(--rund-m)}
+ .mw-bild{height:46vh}.jw-wochen{grid-template-columns:1fr 1fr}.gs-bild{height:52vh}
+ .rbar{flex-wrap:wrap;height:auto;width:calc(100% - 8px);border-radius:28px;padding:14px;row-gap:12px}.rbar i{display:none}.rbar button{width:100%;height:52px;justify-content:space-between}
+ .rf-in{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.ri *{transition:none!important}}
+
+.ze-klein{margin-top:auto;height:min(28vh,250px);border-radius:var(--rund-m);overflow:hidden}
+.ze-oben .ze-klein{margin-top:28px;flex:1 1 auto;max-height:none}
+.ze-unten .ze-klein{margin:0 0 28px;flex:1 1 auto}
+.wn-kopf{text-align:center;display:grid;justify-items:center;margin-bottom:clamp(40px,5vw,70px)}
+.wn-kopf .rl{margin-left:auto;margin-right:auto}
+.wn .wn-bild{max-width:1140px;height:auto;aspect-ratio:1140/400;margin:0 auto}
+.wn .wn-bild::after{display:none}
+.rest:not(.wstart) .nav{display:none!important}
+.kt-l{display:block}
+@media (max-width:760px){.ze-klein{display:none}}
+.ft{padding-bottom:clamp(60px,6vw,100px)}
+.ft .ft-teller{max-width:none;margin:clamp(10px,2vw,30px) calc(-1*var(--rand)) 0;grid-template-columns:1fr 1.2fr 1fr}
+.ft .ft-t img{width:100%;height:auto}
+@media (max-width:760px){
+ .ft .ft-teller{grid-template-columns:1fr;margin:20px -16px 0}
+ .sa-bild{height:auto}.sa-bild img{height:46vh}.sa-bild::after{display:none}
+ .sa-bild figcaption{position:static;text-align:left;padding:18px 4px 0;max-width:none;color:inherit;font-size:16px}
+}
+.lo-liste{display:none}
+@media (max-width:760px){
+ .lo-profil{display:none}
+ .lo-liste{display:block;margin:30px 0 0;padding:0 0 0 22px;list-style:none;position:relative;border-left:2px solid #B08B3A}
+ .lo-liste li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(24,33,63,.12);font-family:var(--licht);font-size:18px}
+ .lo-liste li b{font-weight:400;font-family:var(--mono);font-size:13px;color:#8A6A2A}
+ .lo-liste li.hier span{color:#8A6A2A}
+ .lo-liste{display:flex;flex-direction:column-reverse}
+}
+/* Knöpfe: Schrift mittig zwischen linkem Rand und Pfeilkreis (Robert 26.10.2026). Der Abstand zum Kreis entspricht dem linken Innenabstand,
+   der Nachlauf der Laufweite nach dem letzten Buchstaben wird abgezogen. */
+.rk{gap:24px}.rk>span{margin-right:-.2em}
+.kn{gap:26px}.kn.kn--klein{gap:23px}.kn>span{margin-right:-.14em}
+.rbar button{gap:22px}.rbar button>span{flex:1;text-align:center;margin-right:-.2em}

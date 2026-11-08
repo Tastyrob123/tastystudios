@@ -1,0 +1,214 @@
+/* Startseite ganz (20.10.2026): Feinheiten, die erst entstehen, wenn alle Abschnitte untereinander stehen. Baut auf eintreten.css und rest-ideen.css auf. */
+/* treten Sie ein: die Fenster sind von Anfang an da und steigen nur, der Satz zu Heinz Julen schliesst den Abschnitt */
+.wstart .ez1 .sch{opacity:1}
+.wstart .ez1{padding-bottom:clamp(90px,10vw,150px)}
+.ez-julen{max-width:62ch;margin:clamp(34px,4vw,56px) auto 0;text-align:center;font-family:var(--licht);font-weight:300;font-size:clamp(17px,1.35vw,21px);line-height:1.55;color:#C9D0E2}
+/* setzen Sie sich: der Tag am Tisch unter den Tellern */
+.ft .ft-tag{max-width:1320px;margin:clamp(30px,4vw,60px) auto 0}
+.ft.da .ft-tag>div{transform:none}
+.ft .ft-tag>div{border-top-color:rgba(217,183,88,.3)}
+/* folgen Sie uns: Pirmins Satz als ruhige Zeile über dem Knopf */
+.lo-pirmin{max-width:34ch;margin:clamp(50px,6vw,90px) auto 0;text-align:center;font-family:var(--licht);font-weight:300;font-size:clamp(24px,2.4vw,38px);line-height:1.3;letter-spacing:-.01em;color:var(--ink)}
+/* Angebote auf Schokolade */
+.jw.ri-schoko .jw-kopf .rl,.jw.ri-schoko>.rs{color:#E8DFD2;opacity:.85}
+.jw.ri-schoko .jw-rest a{color:#F4EDE3;border-bottom-color:rgba(217,183,88,.5)}
+.jw.ri-schoko .jw-wochen p{background:#FBF7F0;box-shadow:inset 0 0 0 1px rgba(217,183,88,.35),0 26px 50px -30px rgba(0,0,0,.8)}
+.jw.ri-schoko .jw-bild{box-shadow:0 50px 90px -46px rgba(0,0,0,.85)}
+/* Für jeden Stern: Übergang ins Familienband ohne Kante */
+.wstart .fs{padding-bottom:clamp(110px,11vw,170px)}
+.wstart .familienband{border-top:1px solid rgba(217,183,88,.18)}
+@media (max-width:760px){
+ .ez-julen{text-align:left;margin-left:0}
+ .lo-pirmin{text-align:left;font-size:24px}
+ .ft .ft-tag{grid-template-columns:1fr 1fr}
+}
+/* Feinschliff nach der Durchsicht der ganzen Seite (20.10.2026) */
+.wstart .ft .ft-teller{margin:clamp(10px,2vw,30px) auto 0;max-width:1480px;padding:0 1vw}
+.wstart .ft .ft-tag{margin-top:clamp(10px,2vw,30px)}
+@media (max-width:760px){
+ .wstart .rr-bild figcaption{left:20px;right:20px;bottom:22px}
+ .wstart .rr-bild .rt{font-size:34px}
+ .wstart .fs-satz{font-size:42px}
+ .wstart .rf-in{grid-template-columns:1fr;gap:24px}
+ .wstart .rf-k a{word-break:break-word}
+ .wstart .ft .ft-teller{padding:0}
+}
+
+/* ===== Kleinbilder und Reinschweben (20.10.2026, Robert: «viel mehr Kleinbildern … schönes Reinschweben … elegant und edel») ===== */
+/* Grundform: ein Kleinbild hält sein eigenes Seitenverhältnis, Bilder liegen aneinander, nie ineinander */
+.kl{position:relative;margin:0;aspect-ratio:var(--a);border-radius:clamp(12px,1.2vw,18px);overflow:hidden;box-shadow:0 26px 46px -28px rgba(0,0,0,.6)}
+.kl-k{display:block;width:100%;height:100%;overflow:hidden}
+.kl img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.8s cubic-bezier(.22,.8,.24,1) calc(var(--i,0)*90ms + .1s)}
+.kl.sw-da img{transform:none}
+@media (hover:hover){.kl.sw-da:hover img{transform:scale(1.045);transition:transform 1.2s cubic-bezier(.22,.8,.24,1)}}
+/* Reinschweben: weit von unten, wird dabei grösser, eins nach dem anderen, nur transform */
+.wstart [data-sw]{transform:translateY(80px) scale(.94);transition:transform 1.05s cubic-bezier(.33,1,.68,1) calc(var(--i,0)*90ms)}
+.wstart [data-sw].sw-da{transform:none}
+.kl figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 13px;font-family:var(--licht);font-weight:400;font-size:clamp(15px,1.15vw,18px);color:#fff;background:linear-gradient(transparent,rgba(12,10,8,.62))}
+
+/* treten Sie ein: Satz zwischen zwei Säulen aus Kleinbildern */
+.ez-saeulen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,3vw,56px);align-items:center;margin-top:clamp(40px,4.5vw,70px)}
+.ez-saeulen .ez-julen{margin:0}
+.kl-s{display:flex;gap:10px;align-items:flex-end}
+.kl-s .kl{flex:var(--a) 1 0;min-width:0}
+.kl-s:last-child{align-items:flex-start}
+
+/* schlafen Sie sich aus: Ansichten des Zimmers und Kleinigkeiten */
+.zs-mini{display:flex;gap:10px;margin-top:14px;min-height:76px}
+.zs-m-b{all:unset;cursor:pointer;width:112px;height:76px;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 0 transparent;position:relative}
+.zs-m-b img{display:block;width:100%;height:100%;object-fit:cover}
+.zs-m-b::after{content:'';position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 2px transparent;transition:box-shadow .4s}
+.zs-m-b.an::after{box-shadow:inset 0 0 0 2px #C9A54E}
+.zs-m-b:not(.an) img{filter:brightness(.82)}
+.zs-klein{display:flex;gap:10px;align-items:center;margin-top:clamp(50px,5vw,80px)}
+.zs-klein .kl{flex:var(--a) 1 0;min-width:0}
+.zs-klein .kl:nth-child(odd){margin-top:46px}
+.zs-klein .kl:nth-child(even){margin-bottom:46px}
+
+/* entspannen Sie sich: Welle zwischen Bild und Zahlen */
+.kl-welle{display:flex;gap:10px;align-items:flex-start;margin-top:clamp(40px,4vw,64px)}
+.kl-welle .kl{flex:var(--a) 1 0;min-width:0}
+.kl-welle .kl:nth-child(even){margin-top:56px}
+
+/* setzen Sie sich: über jedem Moment ein Kleinbild, quer und hoch im Wechsel, untenbündig */
+.ft-m .ft-b{height:clamp(190px,17vw,260px);display:flex;align-items:flex-end;margin-bottom:22px}
+.ft-m .ft-b .kl{width:100%}
+.ft-m:nth-child(even) .ft-b .kl{width:78%}
+.ft .ft-tag>div.ft-m{border-top:0;padding-top:0}
+.ft .ft-tag .ro{border-top:1px solid rgba(217,183,88,.3);padding-top:16px}
+
+/* Kinder: drei Spalten, rechts drei Kleinbilder übereinander */
+.wstart .kb{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,.55fr)}
+.kl-spalte{display:grid;gap:10px}
+.kl-spalte .kl:nth-child(2){width:82%;justify-self:end}
+
+/* folgen Sie uns: Kleinbilder stehen untenbündig unter der Höhenlinie, verschieden hoch wie Gipfel */
+.lo-bilder{display:flex;gap:10px;align-items:flex-end;margin-top:-8px}
+.lo-bilder .kl{flex:1 1 0;aspect-ratio:auto;height:var(--h)}
+.lo-bilder .lb0{--h:120px}.lo-bilder .lb1{--h:170px}.lo-bilder .lb2{--h:140px}.lo-bilder .lb3{--h:200px}.lo-bilder .lb4{--h:155px}.lo-bilder .lb5{--h:185px}.lo-bilder .lb6{--h:240px}
+.lo .lo-s{margin-top:40px}
+
+/* Angebote: vier Anlässe als Kleinbilder mit Namen, Höhen im Wechsel */
+.jw-anlass{display:flex;gap:10px;align-items:flex-end;justify-content:center;max-width:1100px;margin:clamp(40px,4vw,60px) auto 0}
+.jw-anlass a{display:block;flex:var(--x,1.5) 1 0;text-decoration:none}
+.jw-anlass a:nth-child(3){--x:.9}
+.jw-anlass .kl{aspect-ratio:auto;height:220px}
+.jw-anlass a:nth-child(even) .kl{height:170px}
+
+/* Handy */
+@media (max-width:760px){
+ .ez-saeulen{grid-template-columns:1fr;gap:20px}
+ .kl-s{height:auto}
+ .zs-mini{flex-wrap:wrap}.zs-m-b{width:calc(25% - 8px);height:60px}
+ .zs-klein{flex-wrap:wrap}.zs-klein .kl{flex:1 1 calc(33% - 10px);margin:0!important;aspect-ratio:1}
+ .kl-welle{flex-wrap:wrap}.kl-welle .kl{flex:1 1 calc(50% - 10px);margin:0!important;aspect-ratio:1.2}
+ .ft-m .ft-b{height:150px}
+ .wstart .kb{grid-template-columns:1fr}.kl-spalte{grid-template-columns:1fr 1fr 1fr}.kl-spalte .kl{width:100%!important;aspect-ratio:1}
+ .lo-bilder{flex-wrap:wrap}.lo-bilder .kl{flex:1 1 calc(33% - 10px);height:110px}
+ .jw-anlass{flex-wrap:wrap}.jw-anlass a{flex:1 1 calc(50% - 10px)}.jw-anlass .kl,.jw-anlass a:nth-child(even) .kl{height:150px}
+}
+.wstart .kb .rt{font-size:clamp(38px,3.6vw,62px)}
+@media (max-width:760px){.wstart .kb .rt{font-size:40px}}
+@media (max-width:760px){.lo-bilder{margin-top:26px}}
+
+/* ===== Leben in den Bildern (20.10.2026, Robert über Z0: «wie bei diesem Montemoro … viel mehr Action … richtig einladen») =====
+   Der Rahmen schwebt mit Feder herein (translate + scale), die Tiefe beim Scrollen setzt leben.js (transform), das Foto zoomt und gleitet im Rahmen (scale + translate).
+   Drei Eigenschaften, damit sich nichts in die Quere kommt. Nie eingeblendet, nichts von der Seite. */
+.wstart .lebt{transform:none;translate:0 clamp(80px,9vw,140px);scale:.93;transition:translate 2.1s var(--feder),scale 2.1s var(--feder);transition-delay:calc(var(--i,0)*110ms);will-change:transform}
+.wstart .lebt.sw-da{translate:0 0;scale:1}
+.wstart .lebt img{scale:1.12}
+.wstart .kl.lebt img{transform:none;scale:1.26;transition:scale 2.4s var(--e1)}
+.wstart .kl.lebt.sw-da img{scale:1.14}
+@media (hover:hover){.wstart .kl.lebt.sw-da:hover img{scale:1.2;transition:scale 1.2s var(--e1)}}
+.wstart .ez1 .sch.lebt{transition-delay:calc(var(--i,0)*120ms)}
+
+/* Ebenen: Kleinbilder liegen asymmetrisch, versetzt und teils über der Kante, jede in ihrer Tiefe */
+.wstart .zs-klein{position:relative;display:block;height:clamp(380px,36vw,520px);margin:clamp(40px,5vw,80px) calc(-1*var(--rand)) 0}
+.wstart .zs-klein .kl{position:absolute;margin:0!important}
+.wstart .zs-klein .kl:nth-child(1){left:4%;top:6%;width:27%}
+.wstart .zs-klein .kl:nth-child(2){left:25%;top:50%;width:18%;z-index:3}
+.wstart .zs-klein .kl:nth-child(3){left:41%;top:0;width:22%}
+.wstart .zs-klein .kl:nth-child(4){left:58%;top:44%;width:17%;z-index:2}
+.wstart .zs-klein .kl:nth-child(5){left:70%;top:4%;width:23%}
+.wstart .zs-klein .kl:nth-child(6){left:84%;top:56%;width:19%;z-index:3}
+
+.wstart .kl-welle{position:relative;display:block;height:clamp(360px,32vw,470px);margin:calc(-1*clamp(90px,9vw,150px)) calc(-1*var(--rand)) 0;z-index:3}
+.wstart .kl-welle .kl{position:absolute;margin:0!important}
+.wstart .kl-welle .kl:nth-child(1){left:3%;top:4%;width:23%;z-index:2}
+.wstart .kl-welle .kl:nth-child(2){left:23%;top:36%;width:11%}
+.wstart .kl-welle .kl:nth-child(3){left:35%;top:10%;width:21%;z-index:2}
+.wstart .kl-welle .kl:nth-child(4){left:53%;top:44%;width:19%}
+.wstart .kl-welle .kl:nth-child(5){left:70%;top:0;width:11%;z-index:2}
+.wstart .kl-welle .kl:nth-child(6){left:79%;top:34%;width:21%}
+.wstart .rr .rr-zahlen{margin-top:clamp(30px,3vw,50px)}
+
+.wstart .ez-saeulen .kl-s{position:relative;display:block;height:clamp(300px,27vw,400px)}
+.wstart .ez-saeulen .kl-s .kl{position:absolute}
+.wstart .ez-saeulen .kl-s:first-child .kl:nth-child(1){left:calc(-1*var(--rand));top:4%;width:88%}
+.wstart .ez-saeulen .kl-s:first-child .kl:nth-child(2){right:0;top:40%;width:40%;z-index:2}
+.wstart .ez-saeulen .kl-s:last-child .kl:nth-child(1){left:0;top:30%;width:40%;z-index:2}
+.wstart .ez-saeulen .kl-s:last-child .kl:nth-child(2){right:calc(-1*var(--rand));top:0;width:86%}
+
+.wstart .kl-spalte{position:relative;display:block;height:100%;min-height:clamp(560px,52vw,760px)}
+.wstart .kl-spalte .kl{position:absolute;width:100%}
+.wstart .kl-spalte .kl:nth-child(1){top:0;right:-24%;width:118%}
+.wstart .kl-spalte .kl:nth-child(2){top:30%;left:-6%;width:80%!important;z-index:2}
+.wstart .kl-spalte .kl:nth-child(3){bottom:0;right:-12%;width:104%}
+.wstart .kb{overflow:visible;overflow-x:clip}
+
+/* Schluss: vier Nachtbilder um den Leitsatz */
+.wstart .fs{position:relative;overflow-x:clip}
+.fs-kl .kl{position:absolute;z-index:0}
+.fs-kl .fk0{left:-2%;top:14%;width:22%;aspect-ratio:1.6}
+.fs-kl .fk1{left:6%;bottom:12%;width:13%;aspect-ratio:1.1}
+.fs-kl .fk2{right:-3%;top:22%;width:20%;aspect-ratio:1.5}
+.fs-kl .fk3{right:5%;bottom:10%;width:15%;aspect-ratio:1.9}
+.wstart .fs>*:not(.fs-kl){position:relative;z-index:1}
+
+@media (max-width:760px){
+ .wstart .zs-klein{height:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:30px 0 0}
+ .wstart .zs-klein .kl{position:relative;left:auto!important;top:auto!important;width:auto!important;aspect-ratio:1}
+ .wstart .kl-welle{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:-40px 8px 0}
+ .wstart .kl-welle .kl{position:relative;left:auto!important;top:auto!important;width:auto!important;aspect-ratio:1.2}
+ .wstart .ez-saeulen .kl-s{height:200px}
+ .wstart .ez-saeulen .kl-s:first-child .kl:nth-child(1){left:0;width:70%}
+ .wstart .ez-saeulen .kl-s:last-child .kl:nth-child(2){right:0;width:70%}
+ .wstart .kl-spalte{min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+ .wstart .kl-spalte .kl{position:relative;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;width:auto!important;aspect-ratio:1}
+ .fs-kl .fk1,.fs-kl .fk3{display:none}.fs-kl .fk0{top:3%;width:38%}.fs-kl .fk2{top:auto;bottom:4%;width:38%}
+}
+
+/* ===== Querprüfung 21.10.2026 (Kuchler-Learnings), gegen den heutigen Stand nachgemessen ===== */
+/* 2 Rahmen passt zum Foto: Fenster tragen hohe Fotos, die Burg ein queres Fenster, Gipfelbilder in ihrem eigenen Format */
+.wstart .kb-bild{height:auto;aspect-ratio:4/3}
+.wstart .lo-bilder .kl{aspect-ratio:var(--a);height:auto;flex:var(--g,1) 1 0}
+.wstart .lo-bilder .lb0{--g:1}.wstart .lo-bilder .lb1{--g:1.35}.wstart .lo-bilder .lb2{--g:.95}.wstart .lo-bilder .lb3{--g:1.6}.wstart .lo-bilder .lb4{--g:1.15}.wstart .lo-bilder .lb5{--g:1.3}.wstart .lo-bilder .lb6{--g:1.8}
+.ft-m:nth-child(even) .ft-b .kl{width:84%}
+/* 6 B Dichte: Kleinbilder grösser und enger, weniger leere Fläche zwischen den Ebenen */
+.wstart .zs-klein{height:clamp(360px,33vw,480px)}
+.wstart .zs-klein .kl:nth-child(1){left:2%;top:4%;width:31%}
+.wstart .zs-klein .kl:nth-child(2){left:26%;top:44%;width:22%}
+.wstart .zs-klein .kl:nth-child(3){left:38%;top:2%;width:26%}
+.wstart .zs-klein .kl:nth-child(4){left:56%;top:40%;width:21%}
+.wstart .zs-klein .kl:nth-child(5){left:68%;top:0;width:28%}
+.wstart .zs-klein .kl:nth-child(6){left:79%;top:46%;width:20%}
+.wstart .kl-welle{height:clamp(330px,29vw,430px)}
+.wstart .kl-welle .kl:nth-child(1){left:2%;top:2%;width:27%}
+.wstart .kl-welle .kl:nth-child(2){left:25%;top:26%;width:13%}
+.wstart .kl-welle .kl:nth-child(3){left:36%;top:4%;width:25%}
+.wstart .kl-welle .kl:nth-child(4){left:57%;top:36%;width:23%}
+.wstart .kl-welle .kl:nth-child(5){left:76%;top:0;width:13%}
+.wstart .kl-welle .kl:nth-child(6){left:84%;top:28%;width:18%}
+/* 11 Zoom leise: beim Überfahren nur 2 % über 2,6 s */
+@media (hover:hover){.wstart .kl.lebt.sw-da:hover img{scale:1.163;transition:scale 2.6s var(--e1)}.kl.sw-da:hover img{transform:none}}
+/* Handy: Rahmen im Format der Fotos */
+@media (max-width:760px){
+ .wstart .kl-welle .kl,.wstart .jw-anlass .kl,.wstart .jw-anlass a:nth-child(even) .kl{aspect-ratio:var(--a);height:auto}
+ .wstart .kl-welle{align-items:start}
+ .ez1-front .sch{height:260px!important}
+ .wstart .lo-bilder .kl{flex:1 1 calc(33% - 10px);aspect-ratio:var(--a)}
+}
+/* Spa: die Welle reicht nur in die untere Kante des Ruheraums, der Satz bleibt frei */
+.wstart .kl-welle{margin-top:calc(-1*clamp(50px,5vw,80px))}
+.wstart .rr-bild figcaption{bottom:clamp(110px,10vw,160px)}
+@media (max-width:760px){.wstart .rr-bild figcaption{bottom:60px}}

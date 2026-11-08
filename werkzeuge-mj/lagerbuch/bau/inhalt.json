@@ -1,0 +1,1135 @@
+{
+ "KARTEN": [
+  {
+   "id": "menue-herbst",
+   "name": "Das Menü · Herbst",
+   "ne": "The menu · Autumn",
+   "gruppe": "Das Menü",
+   "kurz": "Menü Herbst",
+   "bild": "m-saal",
+   "format": "tafel",
+   "pdf": "2026-10-27",
+   "stand": "live",
+   "menue": true,
+   "unter": "Dienstag bis Samstag ab 18.30 Uhr · letzter Einlass 21 Uhr",
+   "ue": "Tuesday to Saturday from 6.30 pm · last seating 9 pm",
+   "marke": [
+    {
+     "k": "Sieben Gänge",
+     "ke": "Seven courses",
+     "p": 168
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 98
+    }
+   ],
+   "fuss": "Sagen Sie es uns bei der Reservierung. Allergene stehen bei jedem Gericht auf der Karte.",
+   "fe": "Please tell us when you reserve. Allergens are listed with every dish on the menu.",
+   "r": [
+    {
+     "t": "Sieben Gänge",
+     "te": "Seven courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "Bünden · Hamburg",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "",
+       "b": "m-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+       "p": "",
+       "a": "A·D·G·L",
+       "h": "Bünden · Elbe",
+       "ne": "Barley soup",
+       "te": "Graubünden style, smoked eel, chives",
+       "v": "",
+       "b": "m-suppe",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Capuns",
+       "t": "Mangold, Saibling aus der Ostsee, Rahm",
+       "p": "",
+       "a": "A·C·D·G",
+       "h": "Bünden · Ostsee",
+       "ne": "Capuns",
+       "te": "Chard, Baltic char, cream",
+       "v": "",
+       "b": "m-capuns",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Chasselas-Sauce, junger Lauch",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Waadt · Nordsee",
+       "ne": "Turbot",
+       "te": "Chasselas sauce, young leek",
+       "v": "",
+       "b": "m-steinbutt",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Kalb Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Zürich · Franken",
+       "ne": "Veal Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "",
+       "b": "m-kalb",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Wagen",
+       "t": "Alpkäse aus Graubünden, Feigensenf",
+       "p": "",
+       "a": "G·M",
+       "h": "Alp",
+       "ne": "Cheese from the trolley",
+       "te": "Alpine cheese from Graubünden, fig mustard",
+       "v": "",
+       "b": "m-kaese",
+       "art": "kaese",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "Engadin · Vierlande",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "",
+       "b": "m-nusstorte",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch, ebenso sieben Gänge",
+     "te": "Vegetarian, also seven courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, Wurzelgemüse aus den Vierlanden",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Barley soup",
+       "te": "Graubünden style, root vegetables from the Vierlande",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Capuns",
+       "t": "Mangold, Bergkäse, Rahm",
+       "p": "",
+       "a": "A·C·G",
+       "h": "",
+       "ne": "Capuns",
+       "te": "Chard, mountain cheese, cream",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Alpkäse-Soufflé",
+       "t": "Holunder",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Alpine cheese soufflé",
+       "te": "Elderflower",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Sellerie Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Celeriac Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Wagen",
+       "t": "Alpkäse aus Graubünden, Feigensenf",
+       "p": "",
+       "a": "G·M",
+       "h": "",
+       "ne": "Cheese from the trolley",
+       "te": "Alpine cheese from Graubünden, fig mustard",
+       "v": "veg",
+       "b": "",
+       "art": "kaese",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "menue-fuenf",
+   "name": "Das Menü · Fünf Gänge",
+   "ne": "The menu · Five courses",
+   "gruppe": "Das Menü",
+   "kurz": "Fünf Gänge",
+   "bild": "m-fenster",
+   "format": "tafel",
+   "pdf": "2026-10-27",
+   "stand": "live",
+   "menue": true,
+   "unter": "Dienstag bis Samstag ab 18.30 Uhr · letzter Einlass 21 Uhr",
+   "ue": "Tuesday to Saturday from 6.30 pm · last seating 9 pm",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 138
+    }
+   ],
+   "fuss": "Sagen Sie es uns bei der Reservierung. Allergene stehen bei jedem Gericht auf der Karte.",
+   "fe": "Please tell us when you reserve. Allergens are listed with every dish on the menu.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "Bünden · Hamburg",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "",
+       "b": "m-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+       "p": "",
+       "a": "A·D·G·L",
+       "h": "Bünden · Elbe",
+       "ne": "Barley soup",
+       "te": "Graubünden style, smoked eel, chives",
+       "v": "",
+       "b": "m-suppe",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Chasselas-Sauce, junger Lauch",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Waadt · Nordsee",
+       "ne": "Turbot",
+       "te": "Chasselas sauce, young leek",
+       "v": "",
+       "b": "m-steinbutt",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Kalb Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Zürich · Franken",
+       "ne": "Veal Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "",
+       "b": "m-kalb",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "Engadin · Vierlande",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "",
+       "b": "m-nusstorte",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, Wurzelgemüse aus den Vierlanden",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Barley soup",
+       "te": "Graubünden style, root vegetables from the Vierlande",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Alpkäse-Soufflé",
+       "t": "Holunder",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Alpine cheese soufflé",
+       "te": "Elderflower",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Sellerie Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Celeriac Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bar",
+   "name": "Die Bar",
+   "ne": "The bar",
+   "gruppe": "Bar und Wein",
+   "kurz": "Bar",
+   "bild": "m-bar",
+   "format": "aufsteller",
+   "pdf": "2026-10-20",
+   "stand": "live",
+   "unter": "Ab 18 Uhr, auch ohne Reservierung",
+   "ue": "From 6 pm, no reservation needed",
+   "marke": null,
+   "fuss": "Die Bar öffnet um 18 Uhr, auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.",
+   "fe": "The bar opens at 6 pm, no reservation needed. The dishes are also served individually there.",
+   "r": [
+    {
+     "t": "Vom Abend, einzeln",
+     "te": "From the evening, individually",
+     "e": [
+      {
+       "n": "Gerstensuppe",
+       "t": "geräucherter Aal, Schnittlauch",
+       "p": 24,
+       "a": "A·D·G·L",
+       "h": "",
+       "ne": "Barley soup",
+       "te": "Smoked eel, chives",
+       "v": "",
+       "b": "m-suppe",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Capuns",
+       "t": "Saibling aus der Ostsee, Rahm",
+       "p": 32,
+       "a": "A·C·D·G",
+       "h": "",
+       "ne": "Capuns",
+       "te": "Baltic char, cream",
+       "v": "",
+       "b": "m-capuns",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Kalb Zürcher Art",
+       "t": "Rösti aus Bamberger Hörnchen",
+       "p": 52,
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Veal Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "",
+       "b": "m-kalb",
+       "art": "haupt",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Neu aus der Küche",
+     "te": "New from the kitchen",
+     "e": [
+      {
+       "n": "Steinbutt",
+       "t": "Chasselas-Sauce, junger Lauch",
+       "p": 48,
+       "a": "D·G·O",
+       "h": "",
+       "ne": "Turbot",
+       "te": "Chasselas sauce, young leek",
+       "v": "",
+       "b": "m-steinbutt",
+       "art": "haupt",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wein",
+   "name": "Die Weinbegleitung",
+   "ne": "The wine pairing",
+   "gruppe": "Bar und Wein",
+   "kurz": "Wein",
+   "bild": "m-wein",
+   "format": "weinbuch",
+   "pdf": "2026-09-30",
+   "stand": "live",
+   "zwei": [
+    "Glas",
+    "Begleitung"
+   ],
+   "zweiEn": [
+    "Glass",
+    "Pairing"
+   ],
+   "unter": "Aus der Schweiz und aus Deutschland",
+   "ue": "From Switzerland and Germany",
+   "marke": [
+    {
+     "k": "Weinbegleitung zum Menü",
+     "ke": "Wine pairing with the menu",
+     "p": 98
+    }
+   ],
+   "fuss": "Die Weinbegleitung kommt aus der Schweiz und aus Deutschland: Chasselas aus der Waadt neben Riesling von der Mosel.",
+   "fe": "The wine pairing comes from Switzerland and Germany: Chasselas from Vaud alongside Riesling from the Moselle.",
+   "r": [
+    {
+     "t": "Aus der Schweiz",
+     "te": "From Switzerland",
+     "e": [
+      {
+       "n": "Chasselas",
+       "t": "Waadt",
+       "p": "",
+       "a": "O",
+       "h": "Waadt",
+       "ne": "Chasselas",
+       "te": "Vaud",
+       "v": "",
+       "b": "m-glas",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Aus Deutschland",
+     "te": "From Germany",
+     "e": [
+      {
+       "n": "Riesling",
+       "t": "Mosel",
+       "p": "",
+       "a": "O",
+       "h": "Mosel",
+       "ne": "Riesling",
+       "te": "Moselle",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feier-stube",
+   "name": "Feier · Die Arvenstube",
+   "ne": "Celebration · The stone pine parlour",
+   "gruppe": "Feiern",
+   "kurz": "Feier Arvenstube",
+   "bild": "m-stube",
+   "format": "platz",
+   "pdf": "",
+   "stand": "entwurf",
+   "menue": true,
+   "anlass": "Familie Brandt · 12. Dezember 2026",
+   "anlassEn": "The Brandt family · 12 December 2026",
+   "unter": "Bis 12 Gäste an einem langen Tisch, nur für Sie",
+   "ue": "Up to 12 guests at one long table, just for you",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 138
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 98
+    }
+   ],
+   "fuss": "Wir stellen das Menü mit Ihnen zusammen, aus der Karte der Saison, mit Weinbegleitung aus der Schweiz und Deutschland.",
+   "fe": "We put the menu together with you, from the seasonal menu, with wine pairing from Switzerland and Germany.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "Bünden · Hamburg",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "",
+       "b": "m-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+       "p": "",
+       "a": "A·D·G·L",
+       "h": "Bünden · Elbe",
+       "ne": "Barley soup",
+       "te": "Graubünden style, smoked eel, chives",
+       "v": "",
+       "b": "m-suppe",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Chasselas-Sauce, junger Lauch",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Waadt · Nordsee",
+       "ne": "Turbot",
+       "te": "Chasselas sauce, young leek",
+       "v": "",
+       "b": "m-steinbutt",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Kalb Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Zürich · Franken",
+       "ne": "Veal Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "",
+       "b": "m-kalb",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "Engadin · Vierlande",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "",
+       "b": "m-nusstorte",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, Wurzelgemüse aus den Vierlanden",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Barley soup",
+       "te": "Graubünden style, root vegetables from the Vierlande",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Alpkäse-Soufflé",
+       "t": "Holunder",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Alpine cheese soufflé",
+       "te": "Elderflower",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Sellerie Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Celeriac Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feier-saal",
+   "name": "Feier · Der Kontorsaal",
+   "ne": "Celebration · The Kontor hall",
+   "gruppe": "Feiern",
+   "kurz": "Feier Kontorsaal",
+   "bild": "m-saal-abend",
+   "format": "platz",
+   "pdf": "2026-10-05",
+   "stand": "live",
+   "menue": true,
+   "anlass": "",
+   "anlassEn": "",
+   "unter": "Bis 34 Gäste, der ganze Saal mit Blick aufs Fleet",
+   "ue": "Up to 34 guests, the whole hall overlooking the canal",
+   "marke": [
+    {
+     "k": "Sieben Gänge",
+     "ke": "Seven courses",
+     "p": 168
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 98
+    }
+   ],
+   "fuss": "Wir stellen das Menü mit Ihnen zusammen, aus der Karte der Saison, mit Weinbegleitung aus der Schweiz und Deutschland.",
+   "fe": "We put the menu together with you, from the seasonal menu, with wine pairing from Switzerland and Germany.",
+   "r": [
+    {
+     "t": "Sieben Gänge",
+     "te": "Seven courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "Bünden · Hamburg",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "",
+       "b": "m-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+       "p": "",
+       "a": "A·D·G·L",
+       "h": "Bünden · Elbe",
+       "ne": "Barley soup",
+       "te": "Graubünden style, smoked eel, chives",
+       "v": "",
+       "b": "m-suppe",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Capuns",
+       "t": "Mangold, Saibling aus der Ostsee, Rahm",
+       "p": "",
+       "a": "A·C·D·G",
+       "h": "Bünden · Ostsee",
+       "ne": "Capuns",
+       "te": "Chard, Baltic char, cream",
+       "v": "",
+       "b": "m-capuns",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Chasselas-Sauce, junger Lauch",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Waadt · Nordsee",
+       "ne": "Turbot",
+       "te": "Chasselas sauce, young leek",
+       "v": "",
+       "b": "m-steinbutt",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Kalb Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Zürich · Franken",
+       "ne": "Veal Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "",
+       "b": "m-kalb",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Wagen",
+       "t": "Alpkäse aus Graubünden, Feigensenf",
+       "p": "",
+       "a": "G·M",
+       "h": "Alp",
+       "ne": "Cheese from the trolley",
+       "te": "Alpine cheese from Graubünden, fig mustard",
+       "v": "",
+       "b": "m-kaese",
+       "art": "kaese",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "Engadin · Vierlande",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "",
+       "b": "m-nusstorte",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "",
+       "ne": "Bread and butter",
+       "te": "Bündner plait, rye bread, salted butter",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Gerstensuppe",
+       "t": "nach Bündner Art, Wurzelgemüse aus den Vierlanden",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Barley soup",
+       "te": "Graubünden style, root vegetables from the Vierlande",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Capuns",
+       "t": "Mangold, Bergkäse, Rahm",
+       "p": "",
+       "a": "A·C·G",
+       "h": "",
+       "ne": "Capuns",
+       "te": "Chard, mountain cheese, cream",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Alpkäse-Soufflé",
+       "t": "Holunder",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Alpine cheese soufflé",
+       "te": "Elderflower",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Sellerie Zürcher Art",
+       "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+       "p": "",
+       "a": "A·G·L",
+       "h": "",
+       "ne": "Celeriac Zurich style",
+       "te": "Cream and mushrooms, rösti of Bamberg potatoes",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Wagen",
+       "t": "Alpkäse aus Graubünden, Feigensenf",
+       "p": "",
+       "a": "G·M",
+       "h": "",
+       "ne": "Cheese from the trolley",
+       "te": "Alpine cheese from Graubünden, fig mustard",
+       "v": "veg",
+       "b": "",
+       "art": "kaese",
+       "aus": false
+      },
+      {
+       "n": "Engadiner Nusstorte",
+       "t": "Vierländer Apfel, geschlagener Rahm",
+       "p": "",
+       "a": "A·C·G·H",
+       "h": "",
+       "ne": "Engadine walnut tart",
+       "te": "Vierlande apple, whipped cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "WOCHEN": [
+  {
+   "kw": 44,
+   "von": "2026-10-27",
+   "gruss": "Saibling aus der Ostsee, Mangold aus den Vierlanden.",
+   "stand": "vergangen",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+     "vn": "Brot und Butter",
+     "vt": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "n": "Capuns",
+     "t": "Mangold, Saibling aus der Ostsee, Rahm",
+     "vn": "Capuns",
+     "vt": "Mangold, Bergkäse, Rahm"
+    },
+    {
+     "n": "Steinbutt",
+     "t": "Chasselas-Sauce, junger Lauch",
+     "vn": "Alpkäse-Soufflé",
+     "vt": "Holunder"
+    },
+    {
+     "n": "Kalb Zürcher Art",
+     "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+     "vn": "Sellerie Zürcher Art",
+     "vt": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "n": "Engadiner Nusstorte",
+     "t": "Vierländer Apfel, geschlagener Rahm",
+     "vn": "Engadiner Nusstorte",
+     "vt": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ]
+  },
+  {
+   "kw": 45,
+   "von": "2026-11-03",
+   "gruss": "Steinbutt aus der Nordsee, Gerste aus Bünden.",
+   "stand": "live",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+     "vn": "Brot und Butter",
+     "vt": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "n": "Gerstensuppe",
+     "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+     "vn": "Gerstensuppe",
+     "vt": "nach Bündner Art, Wurzelgemüse aus den Vierlanden"
+    },
+    {
+     "n": "Steinbutt",
+     "t": "Chasselas-Sauce, junger Lauch",
+     "vn": "Alpkäse-Soufflé",
+     "vt": "Holunder"
+    },
+    {
+     "n": "Kalb Zürcher Art",
+     "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+     "vn": "Sellerie Zürcher Art",
+     "vt": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "n": "Engadiner Nusstorte",
+     "t": "Vierländer Apfel, geschlagener Rahm",
+     "vn": "Engadiner Nusstorte",
+     "vt": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ]
+  },
+  {
+   "kw": 46,
+   "von": "2026-11-10",
+   "gruss": "Aal aus der Elbe, Nüsse aus dem Engadin.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Bündner Zopf, Roggenbrot, gesalzene Butter",
+     "vn": "Brot und Butter",
+     "vt": "Bündner Zopf, Roggenbrot, gesalzene Butter"
+    },
+    {
+     "n": "Gerstensuppe",
+     "t": "nach Bündner Art, geräucherter Aal, Schnittlauch",
+     "vn": "Gerstensuppe",
+     "vt": "nach Bündner Art, Wurzelgemüse aus den Vierlanden"
+    },
+    {
+     "n": "Capuns",
+     "t": "Mangold, Saibling aus der Ostsee, Rahm",
+     "vn": "Capuns",
+     "vt": "Mangold, Bergkäse, Rahm"
+    },
+    {
+     "n": "Kalb Zürcher Art",
+     "t": "Rahm und Pilze, Rösti aus Bamberger Hörnchen",
+     "vn": "Sellerie Zürcher Art",
+     "vt": "Rahm und Pilze, Rösti aus Bamberger Hörnchen"
+    },
+    {
+     "n": "Engadiner Nusstorte",
+     "t": "Vierländer Apfel, geschlagener Rahm",
+     "vn": "Engadiner Nusstorte",
+     "vt": "Vierländer Apfel, geschlagener Rahm"
+    }
+   ]
+  }
+ ],
+ "ALLERGENE": [
+  [
+   "A",
+   "Gluten",
+   "Gluten"
+  ],
+  [
+   "B",
+   "Krebstiere",
+   "Crustaceans"
+  ],
+  [
+   "C",
+   "Ei",
+   "Egg"
+  ],
+  [
+   "D",
+   "Fisch",
+   "Fish"
+  ],
+  [
+   "E",
+   "Erdnuss",
+   "Peanut"
+  ],
+  [
+   "F",
+   "Soja",
+   "Soy"
+  ],
+  [
+   "G",
+   "Milch",
+   "Milk"
+  ],
+  [
+   "H",
+   "Schalenfrüchte",
+   "Tree nuts"
+  ],
+  [
+   "L",
+   "Sellerie",
+   "Celery"
+  ],
+  [
+   "M",
+   "Senf",
+   "Mustard"
+  ],
+  [
+   "N",
+   "Sesam",
+   "Sesame"
+  ],
+  [
+   "O",
+   "Sulfite",
+   "Sulphites"
+  ],
+  [
+   "P",
+   "Lupine",
+   "Lupin"
+  ],
+  [
+   "R",
+   "Weichtiere",
+   "Molluscs"
+  ]
+ ]
+}

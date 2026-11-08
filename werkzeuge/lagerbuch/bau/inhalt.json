@@ -1,0 +1,2745 @@
+{
+ "KARTEN": [
+  {
+   "id": "tafel-herbst",
+   "name": "Die Tafel · Herbst",
+   "ne": "The Table · Autumn",
+   "gruppe": "Die Tafel",
+   "kurz": "Tafel Herbst",
+   "bild": "r-gastraum",
+   "format": "tafel",
+   "pdf": "2026-10-29",
+   "stand": "live",
+   "menue": true,
+   "unter": "Donnerstag bis Samstag ab 19 Uhr · Einlass 18.30 Uhr",
+   "ue": "Thursday to Saturday from 7 pm · doors open 6.30 pm",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 89
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 48
+    }
+   ],
+   "fuss": "Gekocht wird, was der Hafenmarkt am Morgen hatte. Unverträglichkeiten bitte bis zum Vortag.",
+   "fe": "We cook what the harbour market had that morning. Please tell us about intolerances by the day before.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Sourdough from the oven, butter with sea salt",
+       "v": "",
+       "b": "r-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Nordseekrabben",
+       "t": "auf Schwarzbrot, Crème fraîche, Gurke, Dill",
+       "p": "",
+       "a": "A·B·G",
+       "h": "Fischmarkt Altona",
+       "ne": "North Sea shrimps",
+       "te": "On rye bread, crème fraîche, cucumber, dill",
+       "v": "",
+       "b": "r-krabben",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Zander",
+       "t": "auf der Haut gebraten, junger Lauch, Beurre blanc",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Fischmarkt Altona",
+       "ne": "Pike-perch",
+       "te": "Pan-fried on the skin, young leek, beurre blanc",
+       "v": "",
+       "b": "r-zander",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Salzwiesenlamm",
+       "t": "glasierte Möhren, Jus, wilde Kräuter",
+       "p": "",
+       "a": "L·O",
+       "h": "Dithmarschen",
+       "ne": "Salt-marsh lamb",
+       "te": "Glazed carrots, jus, wild herbs",
+       "v": "",
+       "b": "r-lamm",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Rote Grütze",
+       "t": "Johannisbeeren, Vanillecreme",
+       "p": "",
+       "a": "C·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Red berry compote",
+       "te": "Redcurrants, vanilla cream",
+       "v": "",
+       "b": "r-gruetze",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch, immer",
+     "te": "Always vegetarian",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Sourdough from the oven, butter with sea salt",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Rote Bete",
+       "t": "geräuchert, Meerrettich, Dill",
+       "p": "",
+       "a": "G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Beetroot",
+       "te": "Smoked, horseradish, dill",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steckrübe",
+       "t": "glasiert, braune Butter, Haselnuss",
+       "p": "",
+       "a": "G·H",
+       "h": "Hof in den Vierlanden",
+       "ne": "Swede",
+       "te": "Glazed, brown butter, hazelnut",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Pilze",
+       "t": "aus dem Ofen, Graupen, Petersilie",
+       "p": "",
+       "a": "A·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Mushrooms",
+       "te": "Roasted, pearl barley, parsley",
+       "v": "vegan",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Rote Grütze",
+       "t": "Johannisbeeren, Vanillecreme",
+       "p": "",
+       "a": "C·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Red berry compote",
+       "te": "Redcurrants, vanilla cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Dazu",
+     "te": "On the side",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Fünf Gläser, zu jedem Gang ausgesucht",
+       "p": 48,
+       "a": "O",
+       "h": "Keller unter dem Speicher",
+       "ne": "Wine pairing",
+       "te": "Five glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Begleitung ohne Alkohol",
+       "t": "Säfte, Tee und Limonaden aus dem Haus",
+       "p": 32,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Alcohol-free pairing",
+       "te": "Juices, teas and lemonades made in the house",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Hof",
+       "t": "Drei Sorten, Birnenchutney, Brot",
+       "p": 12,
+       "a": "A·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Farm cheese",
+       "te": "Three kinds, pear chutney, bread",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Kaffee und Hafenbonbons",
+       "t": "Aus der Rösterei zwei Strassen weiter",
+       "p": 4,
+       "a": "",
+       "h": "Rösterei Speicherstadt",
+       "ne": "Coffee and harbour sweets",
+       "te": "From the roastery two streets away",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tafel-winter",
+   "name": "Die Tafel · Winter",
+   "ne": "The Table · Winter",
+   "gruppe": "Die Tafel",
+   "kurz": "Tafel Winter",
+   "bild": "r-tisch-fenster",
+   "format": "tafel",
+   "pdf": "",
+   "stand": "entwurf",
+   "menue": true,
+   "unter": "Ab 3. Dezember · Donnerstag bis Samstag ab 19 Uhr",
+   "ue": "From 3 December · Thursday to Saturday from 7 pm",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 89
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 48
+    }
+   ],
+   "fuss": "Die Winterkarte wechselt mit dem Markt. Unverträglichkeiten bitte bis zum Vortag.",
+   "fe": "The winter menu changes with the market. Please tell us about intolerances by the day before.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Roggensauerteig, Butter mit Rauchsalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Rye sourdough, butter with smoked salt",
+       "v": "",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Matjes",
+       "t": "Apfel, rote Zwiebel, Kartoffelschaum",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Fischmarkt Altona",
+       "ne": "Young herring",
+       "te": "Apple, red onion, potato foam",
+       "v": "",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Kabeljau",
+       "t": "In Nussbutter gegart, Grünkohl, Senfsauce",
+       "p": "",
+       "a": "D·G·M",
+       "h": "Fischmarkt Altona",
+       "ne": "Cod",
+       "te": "Cooked in brown butter, kale, mustard sauce",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Ente aus den Vierlanden",
+       "t": "Rotkohl, Maronen, Portweinjus",
+       "p": "",
+       "a": "H·L·O",
+       "h": "Hof in den Vierlanden",
+       "ne": "Vierlande duck",
+       "te": "Red cabbage, chestnuts, port jus",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Bratapfel",
+       "t": "Marzipan, Vanilleeis",
+       "p": "",
+       "a": "C·G·H",
+       "h": "Altes Land",
+       "ne": "Baked apple",
+       "te": "Marzipan, vanilla ice cream",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch, immer",
+     "te": "Always vegetarian",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Roggensauerteig, Butter mit Rauchsalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Rye sourdough, butter with smoked salt",
+       "v": "veg",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Pastinake",
+       "t": "Als Suppe, geröstete Kerne, Petersilienöl",
+       "p": "",
+       "a": "G·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Parsnip",
+       "te": "As a soup, roasted seeds, parsley oil",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Sellerie",
+       "t": "Im Salzteig gebacken, Grünkohl, Senfsauce",
+       "p": "",
+       "a": "A·L·M",
+       "h": "Hof in den Vierlanden",
+       "ne": "Celeriac",
+       "te": "Baked in a salt crust, kale, mustard sauce",
+       "v": "vegan",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Serviettenknödel",
+       "t": "Rotkohl, Maronen, Portweinjus",
+       "p": "",
+       "a": "A·C·G·H·O",
+       "h": "Hof in den Vierlanden",
+       "ne": "Bread dumpling",
+       "te": "Red cabbage, chestnuts, port jus",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Bratapfel",
+       "t": "Marzipan, Vanilleeis",
+       "p": "",
+       "a": "C·G·H",
+       "h": "Altes Land",
+       "ne": "Baked apple",
+       "te": "Marzipan, vanilla ice cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Dazu",
+     "te": "On the side",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Fünf Gläser, zu jedem Gang ausgesucht",
+       "p": 48,
+       "a": "O",
+       "h": "Keller unter dem Speicher",
+       "ne": "Wine pairing",
+       "te": "Five glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Begleitung ohne Alkohol",
+       "t": "Säfte, Tee und Punsch aus dem Haus",
+       "p": 32,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Alcohol-free pairing",
+       "te": "Juices, teas and punch made in the house",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Hof",
+       "t": "Drei Sorten, Quittenbrot, Walnuss",
+       "p": 12,
+       "a": "A·G·H",
+       "h": "Hof in den Vierlanden",
+       "ne": "Farm cheese",
+       "te": "Three kinds, quince paste, walnut",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Kaffee und Hafenbonbons",
+       "t": "Aus der Rösterei zwei Strassen weiter",
+       "p": 4,
+       "a": "",
+       "h": "Rösterei Speicherstadt",
+       "ne": "Coffee and harbour sweets",
+       "te": "From the roastery two streets away",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "woche",
+   "name": "Karte der Woche",
+   "ne": "Menu of the week",
+   "gruppe": "Die Tafel",
+   "kurz": "Karte der Woche",
+   "bild": "r-zutaten",
+   "woche": true,
+   "format": "kreide",
+   "stand": "live",
+   "pdf": "2026-11-02",
+   "r": []
+  },
+  {
+   "id": "fruehstueck",
+   "name": "Frühstück",
+   "ne": "Breakfast",
+   "gruppe": "Haus und Bar",
+   "kurz": "Frühstück",
+   "bild": "r-franzbroetchen",
+   "format": "a4",
+   "pdf": "2026-10-12",
+   "stand": "live",
+   "unter": "7.30 bis 10.30 Uhr, sonntags bis 12 Uhr · im Raum zum Wasser",
+   "ue": "7.30 to 10.30 am, Sundays until noon · in the room by the water",
+   "marke": [
+    {
+     "k": "Gäste von aussen",
+     "ke": "Visitors",
+     "p": 28
+    },
+    {
+     "k": "Aufs Zimmer",
+     "ke": "In your room",
+     "p": 12
+    }
+   ],
+   "fuss": "Für Hausgäste ist das Frühstück eingeschlossen. Aufs Zimmer bringen wir es gegen 12 €.",
+   "fe": "Breakfast is included for hotel guests. We bring it to your room for 12 €.",
+   "r": [
+    {
+     "t": "Aus dem Ofen",
+     "te": "From the oven",
+     "e": [
+      {
+       "n": "Sauerteigbrot",
+       "t": "Hell und dunkel, aus dem eigenen Ofen",
+       "p": "",
+       "a": "A",
+       "h": "eigener Sauerteig",
+       "ne": "Sourdough bread",
+       "te": "Light and dark, from our own oven",
+       "v": "",
+       "b": "r-brot",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Franzbrötchen",
+       "t": "Zimt, Butter, Zucker, am Morgen gebacken",
+       "p": "",
+       "a": "A·C·G",
+       "h": "eigener Sauerteig",
+       "ne": "Franzbrötchen",
+       "te": "Cinnamon, butter, sugar, baked in the morning",
+       "v": "",
+       "b": "r-franzbroetchen",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Rundstück",
+       "t": "Das Hamburger Brötchen, knusprig",
+       "p": "",
+       "a": "A",
+       "h": "eigener Sauerteig",
+       "ne": "Rundstück",
+       "te": "The Hamburg bread roll, crisp",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vom Herd",
+     "te": "From the stove",
+     "e": [
+      {
+       "n": "Eier, wie Sie mögen",
+       "t": "Gekocht, gerührt oder als Spiegelei",
+       "p": "",
+       "a": "C",
+       "h": "Hof in den Vierlanden",
+       "ne": "Eggs as you like them",
+       "te": "Boiled, scrambled or fried",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Rührei mit Krabben",
+       "t": "Nordseekrabben, Schnittlauch",
+       "p": 6,
+       "a": "B·C·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Scrambled eggs with shrimps",
+       "te": "North Sea shrimps, chives",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Pfannkuchen",
+       "t": "Apfel, Zimt, Sirup aus Zuckerrüben",
+       "p": "",
+       "a": "A·C·G",
+       "h": "Altes Land",
+       "ne": "Pancakes",
+       "te": "Apple, cinnamon, sugar beet syrup",
+       "v": "veg",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vom Markt",
+     "te": "From the market",
+     "e": [
+      {
+       "n": "Räucherfisch",
+       "t": "Lachs und Makrele, Meerrettichsahne",
+       "p": "",
+       "a": "D·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Smoked fish",
+       "te": "Salmon and mackerel, horseradish cream",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Hof",
+       "t": "Drei Sorten, Honig, Walnuss",
+       "p": "",
+       "a": "G·H",
+       "h": "Hof in den Vierlanden",
+       "ne": "Farm cheese",
+       "te": "Three kinds, honey, walnut",
+       "v": "veg",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Obst der Saison",
+       "t": "Äpfel aus dem Alten Land, Birnen, Trauben",
+       "p": "",
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Seasonal fruit",
+       "te": "Apples from the Altes Land, pears, grapes",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Quark mit Grütze",
+       "t": "Rote Grütze, geröstete Haferflocken",
+       "p": "",
+       "a": "A·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Quark with berry compote",
+       "te": "Red berry compote, toasted oats",
+       "v": "veg",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Zu trinken",
+     "te": "To drink",
+     "e": [
+      {
+       "n": "Kaffee aus der Speicherstadt",
+       "t": "Filter, Espresso, Milchkaffee",
+       "p": "",
+       "a": "G",
+       "h": "Rösterei Speicherstadt",
+       "ne": "Coffee from the Speicherstadt",
+       "te": "Filter, espresso, café au lait",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Tee",
+       "t": "Ostfriesische Mischung, Kräuter, grüner Tee",
+       "p": "",
+       "a": "",
+       "h": "",
+       "ne": "Tea",
+       "te": "East Frisian blend, herbal, green tea",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Saft",
+       "t": "Apfel aus dem Alten Land, Orange frisch gepresst",
+       "p": "",
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Juice",
+       "te": "Apple from the Altes Land, freshly pressed orange",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bar",
+   "name": "Die Bar",
+   "ne": "The Bar",
+   "gruppe": "Haus und Bar",
+   "kurz": "Bar",
+   "bild": "bar",
+   "format": "aufsteller",
+   "pdf": "2026-10-20",
+   "stand": "live",
+   "unter": "Täglich ab 17 Uhr, Donnerstag bis Samstag bis 1 Uhr",
+   "ue": "Daily from 5 pm, Thursday to Saturday until 1 am",
+   "marke": null,
+   "fuss": "Hausgäste bekommen auch nach Schluss noch ein Glas.",
+   "fe": "Hotel guests can still have a glass after closing time.",
+   "r": [
+    {
+     "t": "Aus dem Shaker",
+     "te": "From the shaker",
+     "e": [
+      {
+       "n": "Hafen Sour",
+       "t": "Korn, Zitrone, Eiweiss, Kümmel",
+       "p": 13,
+       "a": "C",
+       "h": "",
+       "ne": "Harbour Sour",
+       "te": "Korn, lemon, egg white, caraway",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Speicher Old Fashioned",
+       "t": "Rum, Kaffee, Bitter",
+       "p": 14,
+       "a": "",
+       "h": "Rösterei Speicherstadt",
+       "ne": "Speicher Old Fashioned",
+       "te": "Rum, coffee, bitters",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Grog",
+       "t": "Rum, Zucker, heisses Wasser, Zitrone",
+       "p": 9,
+       "a": "",
+       "h": "",
+       "ne": "Grog",
+       "te": "Rum, sugar, hot water, lemon",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Gin Tonic vom Kai",
+       "t": "Gin aus Hamburg, Gurke, Tonic",
+       "p": 12,
+       "a": "",
+       "h": "",
+       "ne": "Gin and tonic from the quay",
+       "te": "Gin from Hamburg, cucumber, tonic",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Lütt un Lütt",
+       "t": "Ein kleines Pils und ein Korn",
+       "p": 8,
+       "a": "A",
+       "h": "",
+       "ne": "Lütt un Lütt",
+       "te": "A small pilsner and a shot of Korn",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vom Fass",
+     "te": "On tap",
+     "e": [
+      {
+       "n": "Alsterwasser",
+       "t": "Pils und Zitronenlimonade",
+       "p": 5,
+       "a": "A",
+       "h": "",
+       "ne": "Alsterwasser",
+       "te": "Pilsner and lemonade",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Pils vom Fass",
+       "t": "0,3 l, aus einer Brauerei in Hamburg",
+       "p": 4.5,
+       "a": "A",
+       "h": "",
+       "ne": "Draught pilsner",
+       "te": "0.3 l, from a Hamburg brewery",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Wein vom Fass",
+       "t": "Riesling oder Spätburgunder, 0,15 l",
+       "p": 7,
+       "a": "O",
+       "h": "",
+       "ne": "Wine on tap",
+       "te": "Riesling or Pinot Noir, 0.15 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Ohne Alkohol",
+     "te": "Without alcohol",
+     "e": [
+      {
+       "n": "Fritz Kola",
+       "t": "0,33 l",
+       "p": 4,
+       "a": "",
+       "h": "",
+       "ne": "Fritz Kola",
+       "te": "0.33 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Rhabarber-Limonade",
+       "t": "Aus dem Haus, 0,3 l",
+       "p": 5,
+       "a": "",
+       "h": "Hof in den Vierlanden",
+       "ne": "Rhubarb lemonade",
+       "te": "Made in the house, 0.3 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Zum Glas",
+     "te": "With your glass",
+     "e": [
+      {
+       "n": "Schmalzbrot",
+       "t": "Sauerteig, Zwiebel, Apfel",
+       "p": 6,
+       "a": "A",
+       "h": "eigener Sauerteig",
+       "ne": "Dripping on bread",
+       "te": "Sourdough, onion, apple",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Geröstete Mandeln",
+       "t": "Meersalz, Rosmarin",
+       "p": 5,
+       "a": "H",
+       "h": "",
+       "ne": "Roasted almonds",
+       "te": "Sea salt, rosemary",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Käse vom Hof",
+       "t": "Drei Sorten, Brot, Birnenchutney",
+       "p": 12,
+       "a": "A·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Farm cheese",
+       "te": "Three kinds, bread, pear chutney",
+       "v": "veg",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wein",
+   "name": "Wein",
+   "ne": "Wine",
+   "gruppe": "Haus und Bar",
+   "kurz": "Wein",
+   "bild": "r-weinkeller",
+   "format": "weinbuch",
+   "pdf": "2026-09-30",
+   "stand": "live",
+   "zwei": [
+    "Glas",
+    "Flasche"
+   ],
+   "zweiEn": [
+    "Glass",
+    "Bottle"
+   ],
+   "unter": "Aus dem Keller unter dem Speicher · Glas 0,1 l, Flasche 0,75 l",
+   "ue": "From the cellar beneath the warehouse · glass 0.1 l, bottle 0.75 l",
+   "marke": null,
+   "fuss": "Lennart Brinkmann empfiehlt Ihnen gern ein Glas zu jedem Gang.",
+   "fe": "Lennart Brinkmann will gladly suggest a glass for each course.",
+   "r": [
+    {
+     "t": "Schaumwein",
+     "te": "Sparkling",
+     "e": [
+      {
+       "n": "Riesling Sekt brut",
+       "t": "Pfalz · Apfel, feine Perlage",
+       "p": [
+        9,
+        52
+       ],
+       "a": "O",
+       "h": "Pfalz",
+       "ne": "Riesling Sekt brut",
+       "te": "Palatinate · apple, fine bubbles",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Crémant de Loire",
+       "t": "Frankreich · Brioche, Quitte",
+       "p": [
+        10,
+        58
+       ],
+       "a": "O",
+       "h": "Loire",
+       "ne": "Crémant de Loire",
+       "te": "France · brioche, quince",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Weisswein",
+     "te": "White",
+     "e": [
+      {
+       "n": "Riesling trocken",
+       "t": "Mosel · 2023 · Apfel, Schiefer, lebendige Säure",
+       "p": [
+        8,
+        39
+       ],
+       "a": "O",
+       "h": "Mosel",
+       "ne": "Dry Riesling",
+       "te": "Moselle · 2023 · apple, slate, lively acidity",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Grauburgunder",
+       "t": "Baden · 2023 · Birne, Nuss, weich",
+       "p": [
+        8,
+        40
+       ],
+       "a": "O",
+       "h": "Baden",
+       "ne": "Pinot Gris",
+       "te": "Baden · 2023 · pear, nut, soft",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Silvaner",
+       "t": "Franken · 2022 · Kräuter, Stein",
+       "p": [
+        9,
+        44
+       ],
+       "a": "O",
+       "h": "Franken",
+       "ne": "Silvaner",
+       "te": "Franconia · 2022 · herbs, stone",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Grüner Veltliner",
+       "t": "Wachau · 2023 · weisser Pfeffer, Zitrus",
+       "p": [
+        10,
+        49
+       ],
+       "a": "O",
+       "h": "Wachau",
+       "ne": "Grüner Veltliner",
+       "te": "Wachau · 2023 · white pepper, citrus",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Sauvignon Blanc",
+       "t": "Steiermark · 2023 · Stachelbeere, Holunder",
+       "p": [
+        11,
+        52
+       ],
+       "a": "O",
+       "h": "Steiermark",
+       "ne": "Sauvignon Blanc",
+       "te": "Styria · 2023 · gooseberry, elderflower",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Rosé",
+     "te": "Rosé",
+     "e": [
+      {
+       "n": "Spätburgunder Rosé",
+       "t": "Rheinhessen · 2024 · Erdbeere, frisch",
+       "p": [
+        8,
+        38
+       ],
+       "a": "O",
+       "h": "Rheinhessen",
+       "ne": "Pinot Noir rosé",
+       "te": "Rhine Hesse · 2024 · strawberry, fresh",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Rotwein",
+     "te": "Red",
+     "e": [
+      {
+       "n": "Spätburgunder",
+       "t": "Ahr · 2021 · Kirsche, Schiefer, Waldboden",
+       "p": [
+        11,
+        54
+       ],
+       "a": "O",
+       "h": "Ahr",
+       "ne": "Pinot Noir",
+       "te": "Ahr · 2021 · cherry, slate, forest floor",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Lemberger",
+       "t": "Württemberg · 2021 · Brombeere, Pfeffer",
+       "p": [
+        9,
+        42
+       ],
+       "a": "O",
+       "h": "Württemberg",
+       "ne": "Lemberger",
+       "te": "Württemberg · 2021 · blackberry, pepper",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Blaufränkisch",
+       "t": "Burgenland · 2020 · dunkle Beeren, Würze",
+       "p": [
+        10,
+        48
+       ],
+       "a": "O",
+       "h": "Burgenland",
+       "ne": "Blaufränkisch",
+       "te": "Burgenland · 2020 · dark berries, spice",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Zum Dessert",
+     "te": "With dessert",
+     "e": [
+      {
+       "n": "Riesling Auslese",
+       "t": "Rheingau · 2019 · Aprikose, Honig · 0,05 l",
+       "p": [
+        9,
+        ""
+       ],
+       "a": "O",
+       "h": "Rheingau",
+       "ne": "Riesling Auslese",
+       "te": "Rheingau · 2019 · apricot, honey · 0.05 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Tawny Port, zehn Jahre",
+       "t": "Douro · Feige, Nuss · 0,05 l",
+       "p": [
+        9,
+        ""
+       ],
+       "a": "O",
+       "h": "Douro",
+       "ne": "Ten-year-old tawny port",
+       "te": "Douro · fig, nut · 0.05 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alkoholfrei",
+   "name": "Ohne Alkohol",
+   "ne": "Without alcohol",
+   "gruppe": "Haus und Bar",
+   "kurz": "Ohne Alkohol",
+   "bild": "s-fensterplatz",
+   "format": "a5",
+   "pdf": "2026-10-20",
+   "stand": "live",
+   "unter": "Limonaden aus dem Haus, Säfte vom Hof, warm und kalt",
+   "ue": "House lemonades, farm juices, hot and cold",
+   "marke": null,
+   "fuss": "Unsere Limonaden setzen wir jede Woche frisch an.",
+   "fe": "We make our lemonades fresh every week.",
+   "r": [
+    {
+     "t": "Aus dem Haus",
+     "te": "Made in the house",
+     "e": [
+      {
+       "n": "Rhabarber-Limonade",
+       "t": "Rhabarber aus den Vierlanden, 0,3 l",
+       "p": 5,
+       "a": "",
+       "h": "Hof in den Vierlanden",
+       "ne": "Rhubarb lemonade",
+       "te": "Rhubarb from the Vierlande, 0.3 l",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Holunder-Limonade",
+       "t": "Blüten vom Deich, Zitrone, 0,3 l",
+       "p": 5,
+       "a": "",
+       "h": "",
+       "ne": "Elderflower lemonade",
+       "te": "Blossoms from the dyke, lemon, 0.3 l",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Sanddorn-Schorle",
+       "t": "Sanddorn von der Küste, Sprudel, 0,3 l",
+       "p": 5,
+       "a": "",
+       "h": "",
+       "ne": "Sea buckthorn spritzer",
+       "te": "Sea buckthorn from the coast, sparkling water, 0.3 l",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Hafen Sour ohne Alkohol",
+       "t": "Zitrone, Kümmelsirup, Kichererbsenschaum",
+       "p": 9,
+       "a": "",
+       "h": "",
+       "ne": "Alcohol-free Harbour Sour",
+       "te": "Lemon, caraway syrup, chickpea foam",
+       "v": "vegan",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vom Hof",
+     "te": "From the farm",
+     "e": [
+      {
+       "n": "Apfelsaft",
+       "t": "Aus dem Alten Land, naturtrüb, 0,3 l",
+       "p": 4.5,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Apple juice",
+       "te": "From the Altes Land, cloudy, 0.3 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Apfelschorle",
+       "t": "Mit Sprudel, 0,4 l",
+       "p": 4,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Apple spritzer",
+       "te": "With sparkling water, 0.4 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Birnensaft",
+       "t": "Naturtrüb, 0,3 l",
+       "p": 4.5,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Pear juice",
+       "te": "Cloudy, 0.3 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Kalt",
+     "te": "Cold",
+     "e": [
+      {
+       "n": "Fritz Kola",
+       "t": "0,33 l",
+       "p": 4,
+       "a": "",
+       "h": "",
+       "ne": "Fritz Kola",
+       "te": "0.33 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Ingwer-Tonic",
+       "t": "Frischer Ingwer, Tonic, 0,3 l",
+       "p": 5,
+       "a": "",
+       "h": "",
+       "ne": "Ginger tonic",
+       "te": "Fresh ginger, tonic, 0.3 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Pils ohne Alkohol",
+       "t": "0,33 l",
+       "p": 4.5,
+       "a": "A",
+       "h": "",
+       "ne": "Alcohol-free pilsner",
+       "te": "0.33 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Wasser",
+       "t": "Still oder sprudelnd, 0,75 l",
+       "p": 7,
+       "a": "",
+       "h": "",
+       "ne": "Water",
+       "te": "Still or sparkling, 0.75 l",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Warm",
+     "te": "Hot",
+     "e": [
+      {
+       "n": "Kaffee aus der Speicherstadt",
+       "t": "Filter, Espresso, Milchkaffee",
+       "p": 3.5,
+       "a": "G",
+       "h": "Rösterei Speicherstadt",
+       "ne": "Coffee from the Speicherstadt",
+       "te": "Filter, espresso, café au lait",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Tee",
+       "t": "Ostfriesische Mischung, Kräuter, grüner Tee",
+       "p": 3.5,
+       "a": "",
+       "h": "",
+       "ne": "Tea",
+       "te": "East Frisian blend, herbal, green tea",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Heisse Schokolade",
+       "t": "Mit geschlagener Sahne",
+       "p": 4.5,
+       "a": "G",
+       "h": "",
+       "ne": "Hot chocolate",
+       "te": "With whipped cream",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feier-dachboden",
+   "name": "Feier · Der Dachboden",
+   "ne": "Celebration · The Attic",
+   "gruppe": "Feiern",
+   "kurz": "Feier-Menü A",
+   "bild": "s-dachboden",
+   "format": "platz",
+   "pdf": "2026-10-05",
+   "stand": "live",
+   "menue": true,
+   "anlass": "Geburtstag von Ines Wohlers · 14. November",
+   "anlassEn": "Ines Wohlers’ birthday · 14 November",
+   "unter": "Bis 24 Gäste an einer langen Tafel unter dem Dachstuhl",
+   "ue": "Up to 24 guests at one long table beneath the roof beams",
+   "marke": [
+    {
+     "k": "Drei Gänge",
+     "ke": "Three courses",
+     "p": 59
+    },
+    {
+     "k": "Getränke",
+     "ke": "Drinks",
+     "p": 39
+    }
+   ],
+   "fuss": "Henrike Rademacher plant mit Ihnen persönlich.",
+   "fe": "Henrike Rademacher plans every detail with you in person.",
+   "r": [
+    {
+     "t": "Zum Empfang",
+     "te": "Welcome",
+     "e": [
+      {
+       "n": "Ein Glas Riesling Sekt",
+       "t": "Zur Begrüssung unter dem Dachstuhl",
+       "p": 9,
+       "a": "O",
+       "h": "Pfalz",
+       "ne": "A glass of Riesling Sekt",
+       "te": "To welcome you beneath the roof beams",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Kleine Krabbenbrote",
+       "t": "Schwarzbrot, Crème fraîche, Dill",
+       "p": 6,
+       "a": "A·B·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Small shrimp sandwiches",
+       "te": "Rye bread, crème fraîche, dill",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Drei Gänge",
+     "te": "Three courses",
+     "e": [
+      {
+       "n": "Kürbissuppe",
+       "t": "Ingwer, geröstete Kerne",
+       "p": "",
+       "a": "G·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Pumpkin soup",
+       "te": "Ginger, roasted seeds",
+       "v": "",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Kalbsbäckchen",
+       "t": "Kartoffelstampf, Wurzelgemüse, Jus",
+       "p": "",
+       "a": "G·L·O",
+       "h": "Hof in den Vierlanden",
+       "ne": "Braised veal cheeks",
+       "te": "Mashed potatoes, root vegetables, jus",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Apfelkuchen",
+       "t": "Äpfel aus dem Alten Land, Streusel, Sahne",
+       "p": "",
+       "a": "A·C·G",
+       "h": "Altes Land",
+       "ne": "Apple cake",
+       "te": "Apples from the Altes Land, crumble, cream",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Kürbissuppe",
+       "t": "Ingwer, geröstete Kerne",
+       "p": "",
+       "a": "G·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Pumpkin soup",
+       "te": "Ginger, roasted seeds",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Graupenrisotto",
+       "t": "Pilze, Bergkäse, Petersilie",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Pearl barley risotto",
+       "te": "Mushrooms, mountain cheese, parsley",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Apfelkuchen",
+       "t": "Äpfel aus dem Alten Land, Streusel, Sahne",
+       "p": "",
+       "a": "A·C·G",
+       "h": "Altes Land",
+       "ne": "Apple cake",
+       "te": "Apples from the Altes Land, crumble, cream",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Getränke",
+     "te": "Drinks",
+     "e": [
+      {
+       "n": "Getränke für den Abend",
+       "t": "Wein, Bier, Wasser, Säfte und Kaffee, vier Stunden",
+       "p": 39,
+       "a": "A·O",
+       "h": "",
+       "ne": "Drinks for the evening",
+       "te": "Wine, beer, water, juices and coffee, four hours",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Für Kinder bis zwölf",
+       "t": "Das Menü in kleiner Form",
+       "p": 29,
+       "a": "",
+       "h": "",
+       "ne": "For children up to twelve",
+       "te": "The menu in a smaller portion",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feier-tafel",
+   "name": "Feier · Die Tafel exklusiv",
+   "ne": "Celebration · The Table, exclusively yours",
+   "gruppe": "Feiern",
+   "kurz": "Feier-Menü B",
+   "bild": "s-lobby",
+   "format": "platz",
+   "pdf": "2026-10-05",
+   "stand": "live",
+   "menue": true,
+   "anlass": "Hochzeit Albers und Petersen · 12. Juni 2027",
+   "anlassEn": "Wedding of Albers and Petersen · 12 June 2027",
+   "unter": "Bis 28 Gäste, Donnerstag bis Samstag, der ganze Gastraum für Sie",
+   "ue": "Up to 28 guests, Thursday to Saturday, the whole dining room for you",
+   "marke": [
+    {
+     "k": "Vier Gänge",
+     "ke": "Four courses",
+     "p": 74
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 44
+    }
+   ],
+   "fuss": "Das Menü stimmen wir vier Wochen vorher mit Ihnen ab.",
+   "fe": "We agree the menu with you four weeks ahead.",
+   "r": [
+    {
+     "t": "Zum Empfang",
+     "te": "Welcome",
+     "e": [
+      {
+       "n": "Ein Glas Crémant",
+       "t": "Am Fenster zum Wasser",
+       "p": 10,
+       "a": "O",
+       "h": "Loire",
+       "ne": "A glass of Crémant",
+       "te": "By the window over the water",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Matjestatar",
+       "t": "Auf Kartoffelrösti, Schnittlauch",
+       "p": 7,
+       "a": "D·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Herring tartare",
+       "te": "On potato rösti, chives",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vier Gänge",
+     "te": "Four courses",
+     "e": [
+      {
+       "n": "Nordseekrabben",
+       "t": "Auf Schwarzbrot, Crème fraîche, Gurke, Dill",
+       "p": "",
+       "a": "A·B·G",
+       "h": "Fischmarkt Altona",
+       "ne": "North Sea shrimps",
+       "te": "On rye bread, crème fraîche, cucumber, dill",
+       "v": "",
+       "b": "r-krabben",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Zander",
+       "t": "Auf der Haut gebraten, Rieslingkraut",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Fischmarkt Altona",
+       "ne": "Pike-perch",
+       "te": "Pan-fried on the skin, Riesling sauerkraut",
+       "v": "",
+       "b": "r-zander",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Rinderfilet",
+       "t": "Kartoffelgratin, Bohnen, Rotweinjus",
+       "p": "",
+       "a": "G·L·O",
+       "h": "Dithmarschen",
+       "ne": "Fillet of beef",
+       "te": "Potato gratin, green beans, red wine jus",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Crème brûlée",
+       "t": "Tonkabohne, Beeren",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Crème brûlée",
+       "te": "Tonka bean, berries",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Rote Bete",
+       "t": "Geräuchert, Meerrettich, Dill",
+       "p": "",
+       "a": "G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Beetroot",
+       "te": "Smoked, horseradish, dill",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steckrübe",
+       "t": "Glasiert, braune Butter, Haselnuss",
+       "p": "",
+       "a": "G·H",
+       "h": "Hof in den Vierlanden",
+       "ne": "Swede",
+       "te": "Glazed, brown butter, hazelnut",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Crème brûlée",
+       "t": "Tonkabohne, Beeren",
+       "p": "",
+       "a": "C·G",
+       "h": "",
+       "ne": "Crème brûlée",
+       "te": "Tonka bean, berries",
+       "v": "veg",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Dazu",
+     "te": "On the side",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Vier Gläser, zu jedem Gang ausgesucht",
+       "p": 44,
+       "a": "O",
+       "h": "",
+       "ne": "Wine pairing",
+       "te": "Four glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Hochzeitstorte",
+       "t": "Nach Ihrem Wunsch, aus der eigenen Küche",
+       "p": "auf Anfrage",
+       "a": "A·C·G",
+       "h": "",
+       "ne": "Wedding cake",
+       "te": "As you wish, from our own kitchen",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feier-haus",
+   "name": "Feier · Das ganze Haus",
+   "ne": "Celebration · The whole house",
+   "gruppe": "Feiern",
+   "kurz": "Feier-Menü C",
+   "bild": "s-aussen-wasser",
+   "format": "platz",
+   "pdf": "2026-10-05",
+   "stand": "live",
+   "menue": true,
+   "anlass": "Zwanzig Jahre Kontor Brandt · 5. März 2027",
+   "anlassEn": "Twenty years of Kontor Brandt · 5 March 2027",
+   "unter": "Zwölf Zimmer, Tafel, Bar und Dachboden für ein Wochenende",
+   "ue": "Twelve rooms, the Table, the bar and the attic for one weekend",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 92
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 52
+    }
+   ],
+   "fuss": "Für das ganze Haus planen wir drei Monate vorher gemeinsam.",
+   "fe": "For the whole house we plan together three months ahead.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Sourdough from the oven, butter with sea salt",
+       "v": "",
+       "b": "r-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Lachsforelle",
+       "t": "Gebeizt, Gurke, Senfsaat",
+       "p": "",
+       "a": "D·M",
+       "h": "Fischmarkt Altona",
+       "ne": "Salmon trout",
+       "te": "Cured, cucumber, mustard seeds",
+       "v": "",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Beurre blanc, Spinat, Kartoffel",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Fischmarkt Altona",
+       "ne": "Turbot",
+       "te": "Beurre blanc, spinach, potato",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Salzwiesenlamm",
+       "t": "Glasierte Möhren, Jus, wilde Kräuter",
+       "p": "",
+       "a": "L·O",
+       "h": "Dithmarschen",
+       "ne": "Salt-marsh lamb",
+       "te": "Glazed carrots, jus, wild herbs",
+       "v": "",
+       "b": "r-lamm",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Rote Grütze",
+       "t": "Johannisbeeren, Vanillecreme",
+       "p": "",
+       "a": "C·G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Red berry compote",
+       "te": "Redcurrants, vanilla cream",
+       "v": "",
+       "b": "r-gruetze",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Rote Bete",
+       "t": "Geräuchert, Meerrettich, Dill",
+       "p": "",
+       "a": "G",
+       "h": "Hof in den Vierlanden",
+       "ne": "Beetroot",
+       "te": "Smoked, horseradish, dill",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Pilze",
+       "t": "Aus dem Ofen, Graupen, Petersilie",
+       "p": "",
+       "a": "A·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Mushrooms",
+       "te": "Roasted, pearl barley, parsley",
+       "v": "vegan",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Nach Mitternacht",
+     "te": "After midnight",
+     "e": [
+      {
+       "n": "Kartoffelsuppe",
+       "t": "Mit Krabben oder Würstchen, an der Bar",
+       "p": 12,
+       "a": "B·G·L",
+       "h": "Fischmarkt Altona",
+       "ne": "Potato soup",
+       "te": "With shrimps or sausage, at the bar",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Frühstück am Sonntag",
+       "t": "Bis 12 Uhr im Raum zum Wasser",
+       "p": "eingeschlossen",
+       "a": "A·C·G",
+       "h": "",
+       "ne": "Sunday breakfast",
+       "te": "Until noon in the room by the water",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Getränke",
+     "te": "Drinks",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Fünf Gläser, zu jedem Gang ausgesucht",
+       "p": 52,
+       "a": "O",
+       "h": "",
+       "ne": "Wine pairing",
+       "te": "Five glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Bar für den Abend",
+       "t": "Auf Rechnung nach Verbrauch",
+       "p": "nach Verbrauch",
+       "a": "",
+       "h": "",
+       "ne": "Bar for the evening",
+       "te": "Charged by consumption",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "weihnachten",
+   "name": "Weihnachten",
+   "ne": "Christmas",
+   "gruppe": "Feste",
+   "kurz": "Weihnachten",
+   "bild": "s-bibliothek",
+   "format": "aushang",
+   "pdf": "2026-10-26",
+   "stand": "live",
+   "menue": true,
+   "unter": "24. bis 26. Dezember · ab 18.30 Uhr an der Tafel",
+   "ue": "24 to 26 December · from 6.30 pm at the Table",
+   "marke": [
+    {
+     "k": "Fünf Gänge",
+     "ke": "Five courses",
+     "p": 98
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 52
+    }
+   ],
+   "fuss": "Reservierung nötig, auch für Hausgäste. Kinder ab zehn Jahren willkommen.",
+   "fe": "Booking required, also for hotel guests. Children aged ten and over are welcome.",
+   "r": [
+    {
+     "t": "Fünf Gänge",
+     "te": "Five courses",
+     "e": [
+      {
+       "n": "Brot und Butter",
+       "t": "Weihnachtsbrot mit Gewürzen, gesalzene Butter",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Spiced Christmas loaf, salted butter",
+       "v": "",
+       "b": "",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Hamburger Aalsuppe",
+       "t": "Backpflaume, Klösschen, Gemüse",
+       "p": "",
+       "a": "A·C·D·L",
+       "h": "Fischmarkt Altona",
+       "ne": "Hamburg eel soup",
+       "te": "Prune, dumplings, vegetables",
+       "v": "",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Karpfen blau",
+       "t": "Meerrettichsahne, Petersilienkartoffeln",
+       "p": "",
+       "a": "D·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Carp au bleu",
+       "te": "Horseradish cream, parsley potatoes",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Gänsebrust",
+       "t": "Rotkohl, Kartoffelklösse, Gänsejus",
+       "p": "",
+       "a": "A·C·L·O",
+       "h": "Hof in den Vierlanden",
+       "ne": "Breast of goose",
+       "te": "Red cabbage, potato dumplings, goose jus",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Lebkuchenparfait",
+       "t": "Glühweinbirne, Zimt",
+       "p": "",
+       "a": "A·C·G·H·O",
+       "h": "",
+       "ne": "Gingerbread parfait",
+       "te": "Mulled wine pear, cinnamon",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Vegetarisch",
+     "te": "Vegetarian",
+     "e": [
+      {
+       "n": "Maronensuppe",
+       "t": "Thymian, Brotchip",
+       "p": "",
+       "a": "A·G·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Chestnut soup",
+       "te": "Thyme, bread crisp",
+       "v": "veg",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Kürbis aus dem Ofen",
+       "t": "Rotkohl, Kartoffelklösse, Pilzjus",
+       "p": "",
+       "a": "A·C·L",
+       "h": "Hof in den Vierlanden",
+       "ne": "Roasted pumpkin",
+       "te": "Red cabbage, potato dumplings, mushroom jus",
+       "v": "veg",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Dazu",
+     "te": "On the side",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Fünf Gläser, zu jedem Gang ausgesucht",
+       "p": 52,
+       "a": "O",
+       "h": "",
+       "ne": "Wine pairing",
+       "te": "Five glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Begleitung ohne Alkohol",
+       "t": "Punsch, Säfte und Tee aus dem Haus",
+       "p": 34,
+       "a": "",
+       "h": "Altes Land",
+       "ne": "Alcohol-free pairing",
+       "te": "Punch, juices and tea made in the house",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Kinder von zehn bis vierzehn",
+       "t": "Das Menü in kleiner Form",
+       "p": 49,
+       "a": "",
+       "h": "",
+       "ne": "Children from ten to fourteen",
+       "te": "The menu in a smaller portion",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "silvester",
+   "name": "Silvester",
+   "ne": "New Year’s Eve",
+   "gruppe": "Feste",
+   "kurz": "Silvester",
+   "bild": "hero",
+   "format": "tafel",
+   "pdf": "2026-10-26",
+   "stand": "live",
+   "menue": true,
+   "unter": "31. Dezember · ab 19 Uhr · um Mitternacht auf dem Anleger",
+   "ue": "31 December · from 7 pm · at midnight on the jetty",
+   "marke": [
+    {
+     "k": "Sieben Gänge",
+     "ke": "Seven courses",
+     "p": 145
+    },
+    {
+     "k": "Weinbegleitung",
+     "ke": "Wine pairing",
+     "p": 68
+    }
+   ],
+   "fuss": "Um Mitternacht stehen wir mit Ihnen auf dem Anleger. Das Feuerwerk liegt über dem Hafen.",
+   "fe": "At midnight we stand with you on the jetty. The fireworks rise over the harbour.",
+   "r": [
+    {
+     "t": "Sieben Gänge",
+     "te": "Seven courses",
+     "e": [
+      {
+       "n": "Gruss aus der Küche",
+       "t": "Forellenkaviar auf Kartoffelrösti",
+       "p": "",
+       "a": "D·G",
+       "h": "Fischmarkt Altona",
+       "ne": "Greeting from the kitchen",
+       "te": "Trout caviar on potato rösti",
+       "v": "",
+       "b": "",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Brot und Butter",
+       "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+       "p": "",
+       "a": "A·G",
+       "h": "eigener Sauerteig",
+       "ne": "Bread and butter",
+       "te": "Sourdough from the oven, butter with sea salt",
+       "v": "",
+       "b": "r-brot",
+       "art": "brot",
+       "aus": false
+      },
+      {
+       "n": "Nordseekrabben",
+       "t": "Auf Schwarzbrot, Crème fraîche, Gurke, Dill",
+       "p": "",
+       "a": "A·B·G",
+       "h": "Fischmarkt Altona",
+       "ne": "North Sea shrimps",
+       "te": "On rye bread, crème fraîche, cucumber, dill",
+       "v": "",
+       "b": "r-krabben",
+       "art": "vor",
+       "aus": false
+      },
+      {
+       "n": "Steinbutt",
+       "t": "Champagnersauce, Lauch",
+       "p": "",
+       "a": "D·G·O",
+       "h": "Fischmarkt Altona",
+       "ne": "Turbot",
+       "te": "Champagne sauce, leek",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Sorbet",
+       "t": "Sanddorn und Sekt",
+       "p": "",
+       "a": "O",
+       "h": "",
+       "ne": "Sorbet",
+       "te": "Sea buckthorn and sparkling wine",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      },
+      {
+       "n": "Rinderfilet",
+       "t": "Trüffeljus, Kartoffelpüree, Schwarzwurzel",
+       "p": "",
+       "a": "G·L·O",
+       "h": "Dithmarschen",
+       "ne": "Fillet of beef",
+       "te": "Truffle jus, potato purée, salsify",
+       "v": "",
+       "b": "",
+       "art": "haupt",
+       "aus": false
+      },
+      {
+       "n": "Schokolade",
+       "t": "Dunkle Mousse, Kirsche, Haselnuss",
+       "p": "",
+       "a": "C·G·H",
+       "h": "",
+       "ne": "Chocolate",
+       "te": "Dark mousse, cherry, hazelnut",
+       "v": "",
+       "b": "",
+       "art": "dessert",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Um Mitternacht",
+     "te": "At midnight",
+     "e": [
+      {
+       "n": "Ein Glas Riesling Sekt",
+       "t": "Auf dem Anleger, mit Blick auf das Feuerwerk",
+       "p": "eingeschlossen",
+       "a": "O",
+       "h": "Pfalz",
+       "ne": "A glass of Riesling Sekt",
+       "te": "On the jetty, watching the fireworks",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Berliner aus der Küche",
+       "t": "Mit Hagebuttenmark",
+       "p": "eingeschlossen",
+       "a": "A·C·G",
+       "h": "",
+       "ne": "Doughnuts from our kitchen",
+       "te": "With rosehip jam",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    },
+    {
+     "t": "Dazu",
+     "te": "On the side",
+     "e": [
+      {
+       "n": "Weinbegleitung",
+       "t": "Sieben Gläser, zu jedem Gang ausgesucht",
+       "p": 68,
+       "a": "O",
+       "h": "",
+       "ne": "Wine pairing",
+       "te": "Seven glasses, each chosen for its course",
+       "v": "",
+       "b": "",
+       "art": "",
+       "aus": false
+      },
+      {
+       "n": "Vegetarisches Menü",
+       "t": "Alle sieben Gänge, bitte bei der Reservierung nennen",
+       "p": 145,
+       "a": "",
+       "h": "Hof in den Vierlanden",
+       "ne": "Vegetarian menu",
+       "te": "All seven courses, please mention when booking",
+       "v": "veg",
+       "b": "",
+       "art": "",
+       "aus": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "WOCHEN": [
+  {
+   "kw": 44,
+   "von": "2026-10-29",
+   "gruss": "Die ersten Steckrüben aus den Vierlanden.",
+   "stand": "vergangen",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Hamburger Aalsuppe",
+     "t": "Backpflaume, Klösschen",
+     "vn": "Kürbissuppe",
+     "vt": "Ingwer, geröstete Kerne"
+    },
+    {
+     "n": "Scholle",
+     "t": "Speck, Krabben, Kartoffelsalat",
+     "vn": "Lauch",
+     "vt": "Geschmort, Senfsaat, Kartoffel"
+    },
+    {
+     "n": "Ente",
+     "t": "Rotkohl, Birne, Jus",
+     "vn": "Steckrübe",
+     "vt": "Glasiert, braune Butter, Haselnuss"
+    },
+    {
+     "n": "Fliederbeersuppe",
+     "t": "Griessklösschen",
+     "vn": "Fliederbeersuppe",
+     "vt": "Griessklösschen"
+    }
+   ]
+  },
+  {
+   "kw": 45,
+   "von": "2026-11-05",
+   "gruss": "Was der Hafenmarkt am Donnerstag hatte.",
+   "stand": "live",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Nordseekrabben",
+     "t": "auf Schwarzbrot, Crème fraîche, Gurke, Dill",
+     "vn": "Rote Bete",
+     "vt": "geräuchert, Meerrettich, Dill"
+    },
+    {
+     "n": "Zander",
+     "t": "auf der Haut gebraten, junger Lauch, Beurre blanc",
+     "vn": "Steckrübe",
+     "vt": "glasiert, braune Butter, Haselnuss"
+    },
+    {
+     "n": "Salzwiesenlamm",
+     "t": "glasierte Möhren, Jus, wilde Kräuter",
+     "vn": "Pilze",
+     "vt": "aus dem Ofen, Graupen, Petersilie"
+    },
+    {
+     "n": "Rote Grütze",
+     "t": "Johannisbeeren, Vanillecreme",
+     "vn": "Rote Grütze",
+     "vt": "Johannisbeeren, Vanillecreme"
+    }
+   ]
+  },
+  {
+   "kw": 46,
+   "von": "2026-11-12",
+   "gruss": "Muscheln vom Wattenmeer, Grünkohl nach dem ersten Frost.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Miesmuscheln",
+     "t": "Weisswein, Lauch, Sahne",
+     "vn": "Pastinake",
+     "vt": "Als Suppe, Petersilienöl"
+    },
+    {
+     "n": "Kabeljau",
+     "t": "Senfsauce, Grünkohl",
+     "vn": "Sellerie",
+     "vt": "Im Salzteig gebacken, Senfsauce"
+    },
+    {
+     "n": "Kalbsbäckchen",
+     "t": "Kartoffelstampf, Wurzelgemüse",
+     "vn": "Serviettenknödel",
+     "vt": "Pilze, Rahm"
+    },
+    {
+     "n": "Apfelkuchen",
+     "t": "Streusel, Sahne",
+     "vn": "Apfelkuchen",
+     "vt": "Streusel, Sahne"
+    }
+   ]
+  },
+  {
+   "kw": 47,
+   "von": "2026-11-19",
+   "gruss": "Wild aus Dithmarschen, Quitten vom Hof.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Matjes",
+     "t": "Apfel, rote Zwiebel",
+     "vn": "Rote Bete",
+     "vt": "Geräuchert, Meerrettich"
+    },
+    {
+     "n": "Seelachs",
+     "t": "Beurre blanc, Spinat",
+     "vn": "Wirsing",
+     "vt": "Gefüllt, Graupen, Kräuter"
+    },
+    {
+     "n": "Rehrücken",
+     "t": "Rotkohl, Spätzle, Quitte",
+     "vn": "Spätzle",
+     "vt": "Bergkäse, Röstzwiebeln"
+    },
+    {
+     "n": "Quittenkompott",
+     "t": "Vanilleeis",
+     "vn": "Quittenkompott",
+     "vt": "Vanilleeis"
+    }
+   ]
+  },
+  {
+   "kw": 48,
+   "von": "2026-11-26",
+   "gruss": "Die letzte Woche der Herbstkarte.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Krabbensuppe",
+     "t": "Dill, Croûtons",
+     "vn": "Maronensuppe",
+     "vt": "Thymian, Brotchip"
+    },
+    {
+     "n": "Zander",
+     "t": "Rieslingkraut, Kartoffel",
+     "vn": "Kürbis",
+     "vt": "Aus dem Ofen, Ziegenkäse"
+    },
+    {
+     "n": "Salzwiesenlamm",
+     "t": "Bohnen, Jus",
+     "vn": "Pilze",
+     "vt": "Aus dem Ofen, Graupen, Petersilie"
+    },
+    {
+     "n": "Rote Grütze",
+     "t": "Johannisbeeren, Vanillecreme",
+     "vn": "Rote Grütze",
+     "vt": "Johannisbeeren, Vanillecreme"
+    }
+   ]
+  },
+  {
+   "kw": 49,
+   "von": "2026-12-03",
+   "gruss": "Die Winterkarte beginnt.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Roggensauerteig, Butter mit Rauchsalz",
+     "vn": "Brot und Butter",
+     "vt": "Roggensauerteig, Butter mit Rauchsalz"
+    },
+    {
+     "n": "Matjes",
+     "t": "Apfel, rote Zwiebel, Kartoffelschaum",
+     "vn": "Pastinake",
+     "vt": "Als Suppe, geröstete Kerne"
+    },
+    {
+     "n": "Kabeljau",
+     "t": "In Nussbutter gegart, Grünkohl",
+     "vn": "Sellerie",
+     "vt": "Im Salzteig gebacken, Grünkohl"
+    },
+    {
+     "n": "Ente aus den Vierlanden",
+     "t": "Rotkohl, Maronen, Portweinjus",
+     "vn": "Serviettenknödel",
+     "vt": "Rotkohl, Maronen"
+    },
+    {
+     "n": "Bratapfel",
+     "t": "Marzipan, Vanilleeis",
+     "vn": "Bratapfel",
+     "vt": "Marzipan, Vanilleeis"
+    }
+   ]
+  },
+  {
+   "kw": 50,
+   "von": "2026-12-10",
+   "gruss": "Labskaus, wie ihn die Speicherleute assen.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Labskaus",
+     "t": "Rote Bete, Spiegelei, Rollmops",
+     "vn": "Rote Bete",
+     "vt": "Rösti, Spiegelei"
+    },
+    {
+     "n": "Hecht",
+     "t": "Meerrettich, Lauch",
+     "vn": "Lauch",
+     "vt": "Geschmort, Haselnuss"
+    },
+    {
+     "n": "Ochsenbacke",
+     "t": "Kartoffelpüree, Wurzelgemüse",
+     "vn": "Graupenrisotto",
+     "vt": "Pilze, Bergkäse"
+    },
+    {
+     "n": "Franzbrötchen-Pudding",
+     "t": "Vanille, Karamell",
+     "vn": "Franzbrötchen-Pudding",
+     "vt": "Vanille, Karamell"
+    }
+   ]
+  },
+  {
+   "kw": 51,
+   "von": "2026-12-17",
+   "gruss": "Die Woche vor Weihnachten.",
+   "stand": "entwurf",
+   "g": [
+    {
+     "n": "Brot und Butter",
+     "t": "Sauerteig aus dem Ofen, Butter mit Meersalz",
+     "vn": "Brot und Butter",
+     "vt": "Sauerteig aus dem Ofen, Butter mit Meersalz"
+    },
+    {
+     "n": "Lachsforelle",
+     "t": "Gebeizt, Gurke, Senfsaat",
+     "vn": "Rote Bete",
+     "vt": "Gebeizt, Meerrettich"
+    },
+    {
+     "n": "Karpfen",
+     "t": "Meerrettichsahne, Kartoffel",
+     "vn": "Wirsing",
+     "vt": "Gefüllt, Graupen"
+    },
+    {
+     "n": "Gänsekeule",
+     "t": "Rotkohl, Kartoffelklösse",
+     "vn": "Kürbis",
+     "vt": "Rotkohl, Kartoffelklösse"
+    },
+    {
+     "n": "Lebkuchenparfait",
+     "t": "Glühweinbirne",
+     "vn": "Lebkuchenparfait",
+     "vt": "Glühweinbirne"
+    }
+   ]
+  },
+  {
+   "kw": 52,
+   "von": "2026-12-24",
+   "gruss": "Vom 24. bis 26. Dezember gilt das Weihnachtsmenü.",
+   "stand": "entwurf",
+   "fest": "weihnachten",
+   "g": []
+  },
+  {
+   "kw": 53,
+   "von": "2026-12-31",
+   "gruss": "Am 31. Dezember gilt das Silvestermenü.",
+   "stand": "entwurf",
+   "fest": "silvester",
+   "g": []
+  }
+ ],
+ "ALLERGENE": [
+  [
+   "A",
+   "Gluten",
+   "Gluten"
+  ],
+  [
+   "B",
+   "Krebstiere",
+   "Crustaceans"
+  ],
+  [
+   "C",
+   "Ei",
+   "Egg"
+  ],
+  [
+   "D",
+   "Fisch",
+   "Fish"
+  ],
+  [
+   "E",
+   "Erdnuss",
+   "Peanut"
+  ],
+  [
+   "F",
+   "Soja",
+   "Soy"
+  ],
+  [
+   "G",
+   "Milch",
+   "Milk"
+  ],
+  [
+   "H",
+   "Schalenfrüchte",
+   "Tree nuts"
+  ],
+  [
+   "L",
+   "Sellerie",
+   "Celery"
+  ],
+  [
+   "M",
+   "Senf",
+   "Mustard"
+  ],
+  [
+   "N",
+   "Sesam",
+   "Sesame"
+  ],
+  [
+   "O",
+   "Sulfite",
+   "Sulphites"
+  ],
+  [
+   "P",
+   "Lupine",
+   "Lupin"
+  ],
+  [
+   "R",
+   "Weichtiere",
+   "Molluscs"
+  ]
+ ]
+}

@@ -1,0 +1,27 @@
+/* treten Sie ein · Drei Räume mit Namen (26.10.2026, Fassung 8 aus _varianten/eintreten-stil).
+   Im Stil der übrigen Kapitel: Kopfzeile mit «·», Titel leicht, zwei Knöpfe, Zahlen wie beim Spa, Namen in Messing wie die Gänge der Küche.
+   Bewegung: die drei Räume steigen gestaffelt herauf (nur transform), die Zahlen zählen (eintreten-drei.js). */
+.ed{--mg:#D9B758;--mh:#E9D49A}
+.ed .ed-in{max-width:1320px;margin:0 auto}
+.ed figure{margin:0}
+.ed .rt{font-size:clamp(40px,4vw,68px)}
+.ed .rl{max-width:42ch}
+.ed .r-knoepfe{margin-top:32px}
+.ed-kopf{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:end;margin-bottom:clamp(40px,4vw,64px)}
+.ed-zahlen{display:flex;justify-content:flex-end;gap:clamp(22px,3vw,52px);margin:0 0 8px}
+.ed-zahlen p{margin:0;display:grid;gap:6px}
+.ed-zahlen b{font-family:var(--licht);font-weight:300;font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--mh);white-space:nowrap}
+.ed-zahlen b i{font-style:normal;font-size:.55em;vertical-align:.45em;margin:0 .05em}
+.ed-zahlen>p>span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+.ed-reihe{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px}
+/* Auftritt der drei Räume kommt seit 26.10. aus schweben-rivage.css (wie beim Grand Beau-Rivage) */
+.ed-z figure{height:clamp(320px,32vw,440px)}
+.ed-z p{margin:16px 2px 0;display:grid;gap:3px}
+.ed-z p span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mg)}
+.ed-z p b{font-family:var(--licht);font-weight:400;font-size:clamp(22px,1.9vw,30px)}
+@media (max-width:900px){
+  .ed-kopf{grid-template-columns:1fr;gap:28px}
+  .ed-zahlen{justify-content:flex-start;flex-wrap:wrap;gap:18px 28px}
+  .ed-reihe{grid-template-columns:1fr}
+  .ed-z figure{height:64vw}
+}

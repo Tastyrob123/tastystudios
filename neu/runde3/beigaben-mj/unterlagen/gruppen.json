@@ -1,0 +1,79 @@
+[
+ {
+  "id": "briefe",
+  "name": "Briefe",
+  "gruppe": "Auf jede Anfrage",
+  "seiten": [
+   "brief-hollmann",
+   "brief-brandes"
+  ]
+ },
+ {
+  "id": "pressemappe",
+  "name": "Pressemappe",
+  "gruppe": "Das Restaurant",
+  "seiten": [
+   "pressemappe-001",
+   "pressemappe-002",
+   "pressemappe-003",
+   "programm-001"
+  ]
+ },
+ {
+  "id": "speisekarte",
+  "name": "Speisekarte",
+  "gruppe": "Das Menü",
+  "seiten": [
+   "menuekarte-001",
+   "menuekarte-005"
+  ]
+ },
+ {
+  "id": "barkarte",
+  "name": "Barkarte",
+  "gruppe": "Die Bar",
+  "seiten": [
+   "flyer-003",
+   "aushang-001",
+   "hinweiskarte-006"
+  ]
+ },
+ {
+  "id": "hinweiskarten",
+  "name": "Hinweiskarten",
+  "gruppe": "Am Tisch",
+  "seiten": [
+   "hinweiskarte-001",
+   "hinweiskarte-002",
+   "hinweiskarte-003",
+   "hinweiskarte-004",
+   "hinweiskarte-005"
+  ]
+ },
+ {
+  "id": "aushaenge",
+  "name": "Aushänge",
+  "gruppe": "Am Eingang",
+  "seiten": [
+   "aushang-002",
+   "aushang-003",
+   "aushang-004",
+   "aushang-005",
+   "aushang-006",
+   "aushang-007"
+  ]
+ },
+ {
+  "id": "flyer",
+  "name": "Flyer",
+  "gruppe": "Für Gäste",
+  "seiten": [
+   "flyer-001",
+   "flyer-002",
+   "flyer-004",
+   "flyer-006",
+   "flyer-007",
+   "flyer-008"
+  ]
+ }
+]

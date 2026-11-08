@@ -1,0 +1,96 @@
+/* Wellness & Spa · Zimmer und Preise (24.10.2026). Aufbau nach Carlton (Kopf mit einem Foto, Übersicht als Karten, je Zimmer ein Abschnitt,
+   die besondere Suite dunkel), Oberfläche Wellness. Keine kleinen Einsatzbilder. Bewegung: Hochschweben (data-sw), Fotos setzen sich im Rahmen. */
+.useite .zh,.useite .zueber,.useite .zd,.useite .zl{--rk:clamp(14px,1.4vw,22px);--gold:#8A6A2A}
+.u figure{margin:0}
+.zh figure,.zk figure,.zd figure,.zl figure{position:relative;overflow:hidden;border-radius:var(--rk)}
+.zh img,.zk img,.zd img,.zl img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Kopf: Text links, ein grosses Foto rechts */
+.zh{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,90px);align-items:center;min-height:min(92svh,900px);padding-top:clamp(130px,12vw,180px);padding-bottom:clamp(60px,6vw,100px)}
+.zh .rt{font-size:clamp(42px,4.6vw,82px)}
+.zh .ro{margin-bottom:18px}
+.zh .rl{max-width:38ch}
+.zh .r-knoepfe{margin-top:34px}
+.zh-bild{height:min(70vh,680px);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 50px 90px -40px rgba(0,0,0,.8)}
+.zh-bild img{transform:scale(1.06);transition:transform 2.4s var(--e1)}
+.zh.da .zh-bild img{transform:none}
+
+/* Übersicht: Karten wie Carlton, 3 + 3 + 2 */
+.zueber .us-kopf{margin-bottom:clamp(30px,3vw,48px)}
+.zk-feld{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.8vw,28px)}
+.zk-feld+.zk-feld{margin-top:clamp(16px,1.8vw,28px)}
+.zk-feld--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.zk{position:relative;display:flex;flex-direction:column;padding:12px 12px 20px;border-radius:calc(var(--rk) + 8px);background:#FFFDF8;color:var(--ink);text-decoration:none;
+ box-shadow:0 1px 0 #fff inset,0 34px 60px -40px rgba(24,33,63,.55),0 8px 18px -12px rgba(24,33,63,.25);transform:translateY(46px);transition:transform 1.4s var(--e1)}
+.zk.sw-da{transform:none}
+.zk-feld .zk:nth-child(2).sw-da{transition-delay:.06s}.zk-feld .zk:nth-child(3).sw-da{transition-delay:.12s}
+@media (hover:hover){.zk.sw-da:hover{transform:translateY(-4px);transition-delay:0s;transition-duration:.6s}}
+.zk figure{aspect-ratio:4/3}
+.zk--gross figure{aspect-ratio:16/9}
+.zk-schild{align-self:flex-start;margin:-28px 0 0 12px;position:relative;z-index:2;padding:10px 18px;border-radius:12px;background:#FFFDF8;box-shadow:0 10px 22px -12px rgba(24,33,63,.45);
+ font-family:var(--licht);font-weight:400;font-size:clamp(19px,1.5vw,24px);line-height:1.2}
+.zk--gross .zk-schild{font-size:clamp(22px,1.9vw,30px)}
+.zk-eck{margin:14px 12px 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.zk-l{margin:8px 12px 0;font-size:14.5px;line-height:1.55;opacity:.8}
+.zk-fuss{margin:auto 12px 0;padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.zk-fuss b{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.zk-fuss span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.zk-fuss span::after{content:" ↓"}
+.zk-hinweis{margin:clamp(26px,2.6vw,40px) 0 0;padding-top:20px;border-top:1px solid rgba(24,33,63,.14);font-size:14px;line-height:1.6;opacity:.85}
+
+/* Je Zimmer ein Abschnitt: Text und grosse Fotos, im Wechsel */
+.zd{padding-top:clamp(70px,7vw,110px);padding-bottom:clamp(60px,6vw,96px)}
+.zd-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4.5vw,80px);align-items:center;transform:translateY(46px);transition:transform 1.4s var(--e1)}
+.zd-in.sw-da{transform:none}
+.zd--r .zd-in{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.zd--r .zd-t{order:2}
+.zd-n{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(34px,3.4vw,58px);line-height:1.06;letter-spacing:-.02em}
+.zd-ro{margin:12px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);line-height:1.6;max-width:40ch}
+.zd-eck{margin:26px 0 0;display:grid;grid-template-columns:auto auto minmax(0,1fr);border-top:1px solid rgba(24,33,63,.14);border-bottom:1px solid rgba(24,33,63,.14)}
+.zd-eck span{padding:12px 18px 12px 0;white-space:nowrap;font-family:var(--licht);font-size:16px;line-height:1.35}
+.zd-eck span+span{padding-left:18px;border-left:1px solid rgba(24,33,63,.14)}
+.zd-eck span:nth-child(2){order:3;white-space:normal}.zd-eck span:nth-child(3){order:2}
+.zd-eck i{display:block;margin-bottom:4px;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.zd .ul2{margin-top:18px}
+.zd .r-knoepfe{margin-top:28px}
+.zd-b{display:grid;gap:clamp(12px,1.2vw,18px);height:min(64vh,600px)}
+.zd-b1{grid-template-columns:1fr}
+.zd-b2{grid-template-columns:2fr 1fr}
+.zd-b3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
+.zd-b3 .zd-f1{grid-row:1/3}
+.zd-b figure{min-height:0;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 40px 70px -40px rgba(24,33,63,.55),0 10px 22px -14px rgba(24,33,63,.3)}
+.zd-b img{transform:scale(1.08);transition:transform 2s var(--e1)}
+.zd-in.sw-da .zd-b img{transform:none}
+.zd-z{margin:clamp(50px,5vw,80px) auto 0;width:34px;opacity:.55}
+.zd-z img{display:block;width:34px;height:auto}
+
+
+/* Loft-Suite: dunkel wie Carltons Penthouse */
+.zl{padding-top:clamp(90px,9vw,140px);padding-bottom:clamp(80px,8vw,120px)}
+.zl-kopf{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:end;padding-bottom:clamp(34px,3.4vw,54px);border-bottom:1px solid rgba(233,212,154,.22)}
+.zl .rt{font-size:clamp(42px,4.6vw,80px)}
+.zl-fakten{display:grid;grid-template-columns:repeat(4,auto);justify-content:end;gap:0}
+.zl-fakten p{margin:0;padding:4px 24px;border-left:1px solid rgba(233,212,154,.25);font-family:var(--licht);font-size:17px;line-height:1.35}
+.zl-fakten i{display:block;margin-bottom:6px;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#D9B758}
+.zl-mitte{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4.5vw,80px);align-items:center;margin-top:clamp(40px,4vw,64px)}
+.zl-satz{margin:10px 0 0;font-family:var(--licht);font-size:clamp(22px,2vw,32px);line-height:1.35;max-width:26ch}
+.zl-etagen{margin:30px 0 0}
+.zl-etagen div{padding:14px 0;border-top:1px solid rgba(233,212,154,.22)}
+.zl-etagen dd{margin:4px 0 0;font-size:15.5px;opacity:.85}
+.zl-gross{height:min(62vh,580px);box-shadow:0 50px 90px -40px rgba(0,0,0,.8)}
+.zl-reihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,22px);margin-top:clamp(30px,3vw,48px)}
+.zl-reihe figure{overflow:visible;border-radius:0}
+.zl-reihe figure>span{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:var(--rk);box-shadow:0 30px 60px -36px rgba(0,0,0,.8)}
+.zl-reihe figcaption{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#D9B758;text-align:center}
+.zl .r-knoepfe{margin-top:clamp(30px,3vw,46px);justify-content:center}
+
+@media (max-width:900px){
+ .zh,.zd-in,.zd--r .zd-in,.zl-kopf,.zl-mitte{grid-template-columns:1fr}
+ .zh{min-height:0}.zh-bild{height:auto;aspect-ratio:4/3}
+ .zk-feld,.zk-feld--2{grid-template-columns:1fr}
+ .zd--r .zd-t{order:0}
+ .zd-b{height:auto}.zd-b1 .zd-f1,.zd-b2 .zd-f1,.zd-b3 .zd-f1{aspect-ratio:3/2}.zd-b2,.zd-b3{grid-template-columns:1fr 1fr;grid-template-rows:auto}.zd-b2 .zd-f1,.zd-b3 .zd-f1{grid-column:1/-1;grid-row:auto}.zd-b2 .zd-f2,.zd-b3 .zd-f2,.zd-b3 .zd-f3{aspect-ratio:4/3}.zd-b2 .zd-f2{grid-column:1/-1;aspect-ratio:3/2}
+ .zl-fakten{grid-template-columns:1fr 1fr;justify-content:stretch;row-gap:14px}.zl-fakten p:nth-child(odd){border-left:0;padding-left:0}
+ .zl-gross{height:auto;aspect-ratio:3/2}
+ .zl-reihe{grid-template-columns:1fr 1fr}
+}

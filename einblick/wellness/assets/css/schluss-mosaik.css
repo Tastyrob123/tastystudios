@@ -1,0 +1,42 @@
+/* Schluss als geschlossenes Raster (Robert 26.10.2026, Spa-Seite, Fassung 6 aus _varianten/spa-schluss-15b).
+   Mitte: Sterne, Satz, Text; ringsum vier Fotos und der Weg zum nächsten Kapitel; die Leiste liegt über der Unterkante.
+   Eigener Moment: die Fotos gleiten nacheinander aus der Vergrösserung in ihre Felder (nur transform). */
+.sm{--r:clamp(18px,1.6vw,26px);--fuge:10px;--schatten:0 46px 80px -40px rgba(0,0,0,.75)}
+.sm-raster{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(2,clamp(200px,25vh,262px)) clamp(260px,32vh,340px);gap:var(--fuge)}
+.sm-raster figure,.sm-w{position:relative;margin:0;overflow:hidden;border-radius:var(--r);box-shadow:var(--schatten)}
+.sm-raster img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 2.2s var(--e1)}
+.sm.da .sm-raster img{transform:none}
+.sm-b img{transition-delay:.15s}.sm-c img{transition-delay:.3s}.sm-d img{transition-delay:.45s}.sm-w img{transition-delay:.6s}
+.sm-a{grid-column:1/4;grid-row:1/3}
+.sm-t{grid-column:4/10;grid-row:1/3;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,3.2vw,56px);border-radius:var(--r);background:#16204A;box-shadow:var(--schatten),inset 0 0 0 1px rgba(233,212,154,.12)}
+.sm-b{grid-column:10/13;grid-row:1/3}
+.sm-c{grid-column:1/5;grid-row:3}
+.sm-d{grid-column:5/9;grid-row:3}
+.sm-w{grid-column:9/13;grid-row:3;display:block;color:#F4F2EC;text-decoration:none}
+.sm-w>img{position:absolute;inset:0}
+/* Sterne und Krone grösser und mit mehr Luft zum Titel (Robert 02.11.2026: «zu nah und zu klein»). Sie blieben bisher in der Einflug-Stellung
+   aus rest-ideen.css stehen (verkleinert, nach unten versetzt), weil dort nur .fs.da sie freigibt; hier gibt .sm.da sie frei. */
+.sm .fs-st{display:flex;justify-content:flex-start;align-items:center;gap:clamp(16px,1.6vw,22px);color:var(--ms)}
+.sm .fs-st .st{width:clamp(24px,2vw,30px);height:auto;aspect-ratio:22/21}
+.sm .fs-st .kr{width:clamp(34px,2.8vw,42px);height:auto;aspect-ratio:31/18}
+.sm.da .fs-st svg{transform:none}
+.sm-satz{margin:clamp(30px,3vw,44px) 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(40px,4vw,70px);line-height:1.02;letter-spacing:-.03em;color:#F4F2EC}
+.sm-satz .sl{display:block}
+.sm.da .sm-satz .sl>span{transform:none}
+.sm-satz .sl:nth-child(2)>span{transition-delay:.12s}
+.sm-t .rl{margin:24px 0 0;max-width:44ch}
+.sm-tafel{position:absolute;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 18px;padding:20px 22px;border-radius:20px;background:var(--n1);box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.sm-tafel .ro{grid-column:1;margin:0}
+.sm-tafel b{grid-column:1;font-family:var(--licht);font-weight:300;font-size:clamp(24px,2.1vw,36px);letter-spacing:-.02em}
+.sm-tafel em{grid-column:2;grid-row:1/3;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#F1E2B4,#C9A54E)}
+.sm-tafel svg{width:15px;height:15px;stroke:#1B2440;fill:none;stroke-width:1.5}
+.sm-leiste{display:flex;justify-content:center;margin-top:-32px;position:relative;z-index:2}
+.sm-leiste .rbar{margin:0}
+@media (max-width:900px){
+ .sm-raster{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:minmax(220px,auto)}
+ .sm-raster>*{grid-column:auto;grid-row:auto}
+ .sm-t{grid-column:1/-1;order:-1}
+ .sm-w{grid-column:1/-1;min-height:260px}
+ .sm-leiste{margin-top:16px}
+}
+@media (prefers-reduced-motion:reduce){.sm-raster img{transform:none;transition:none}}

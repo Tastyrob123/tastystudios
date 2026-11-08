@@ -1,0 +1,7 @@
+Platzhalter in den Mails von Maloja
+
+[Name]      Anrede und Name des Gastes, füllt das Mailprogramm
+*|ARCHIVE|*  Link «Im Browser ansehen» (Mailchimp)
+*|UNSUB|*    Link «Vom Newsletter abmelden» (Mailchimp)
+
+Die Vorlagen kommen aus «Newsletter & E-Mail» der Drucksachen-Werkstatt. Dort wählt das Restaurant auch das Mailprogramm.

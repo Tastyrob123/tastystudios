@@ -1,0 +1,16 @@
+/* Zimmerseite · «Was in Ihrem Preis steckt», Fassung 5 «In Zahlen» (Robert 26.10.2026, Entwurfs-Maschine _varianten/preis-15). Fünf echte Zahlen
+   aus den Inklusivleistungen, je mit ihrem Bild: 5 Gänge, 1.100 m², 12 Saucen, 15 Min., 30.11. Die Zahlen zählen (rest.js, .rz), jedes Bild schwebt
+   deckend herauf, sobald seine Oberkante den unteren Rand erreicht, ohne Nachfedern (preis-zahlen.js). Darunter die übrigen Leistungen in zwei Spalten. */
+.inz{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,1.6vw,24px);margin-top:clamp(40px,4vw,64px)}
+.inz-z figure{position:relative;margin:0 0 22px;aspect-ratio:1;overflow:hidden;border-radius:clamp(14px,1.4vw,22px);box-shadow:0 40px 64px -38px rgba(24,33,63,.5),0 10px 20px -14px rgba(24,33,63,.3);
+  transform:translate3d(0,110px,0) scale(.96);transition:transform 1.2s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 60ms)}
+.inz-z figure img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.6s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 60ms)}
+.inz-z.da figure,.inz-z.da figure img{transform:none}
+.inz-z b{display:block;font-family:var(--licht);font-weight:300;font-size:clamp(46px,5.2vw,92px);line-height:1;letter-spacing:-.02em;color:#0A1129;white-space:nowrap}
+.inz-z b small{font-size:.34em;letter-spacing:0;margin-left:.08em;color:#8A6A2A}
+.inz-z p{margin:12px 0 0;font-size:15px;line-height:1.55;opacity:.78;max-width:24ch}
+.inz-rest{columns:2;column-gap:clamp(30px,5vw,90px);margin-top:clamp(50px,5vw,80px);border-top:1px solid rgba(138,106,42,.3)}
+.inz-rest li{break-inside:avoid;list-style:none;padding:14px 0;border-bottom:1px solid rgba(138,106,42,.3);font-size:clamp(16px,1.2vw,19px);line-height:1.45}
+.inz-rest ul{margin:0;padding:0}
+@media (max-width:900px){.inz{grid-template-columns:1fr 1fr;row-gap:36px}.inz-z:last-child{grid-column:1/-1}.inz-z:last-child figure{aspect-ratio:2/1}.inz-rest{columns:1}}
+@media (prefers-reduced-motion:reduce){.inz-z figure,.inz-z figure img{transform:none!important;transition:none!important}}

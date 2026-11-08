@@ -1,0 +1,66 @@
+{
+ "Plakat der Woche": {
+  "format": "Instagram 1:1 · 108 auf 108 mm",
+  "satz": "Jede Woche im Kontorsaal ihr Plakat: Foto, Wortmarke, Zeile, Akzentfarbe"
+ },
+ "Menükarte am Platz": {
+  "format": "DL hoch · 99 auf 210 mm",
+  "satz": "Die sieben Gänge der Woche, am Platz"
+ },
+ "Flyer und Programm": {
+  "format": "A5 hoch · 148 auf 210 mm",
+  "satz": "Zum Mitnehmen an der Bar und am Eingang. Dazu Programm."
+ },
+ "Plakat und Pressemappe": {
+  "format": "A3 hoch · 297 auf 420 mm",
+  "satz": "Für den Eingang, die Treppe und die Bar. Dazu Pressemappe."
+ },
+ "Speisekarte": {
+  "format": "A4 hoch · 210 auf 297 mm",
+  "satz": "Gerichte mit Beschreibung und Preis"
+ },
+ "Getränkekarte": {
+  "format": "DL hoch · 99 auf 210 mm",
+  "satz": "Die Bar: die Gerichte einzeln, der Wein"
+ },
+ "Einladung und Gutschein": {
+  "format": "Quadrat · 148 auf 148 mm",
+  "satz": "Zum Menü, zur Feier in der Arvenstube, zum Jahresabschluss. Dazu Gutschein."
+ },
+ "Aushang, Störung und Team": {
+  "format": "A4 hoch · 210 auf 297 mm",
+  "satz": "Zeiten, Hinweise, Regeln des Restaurants. Dazu Störungs-Aushang und Mitarbeiter-Aushang."
+ },
+ "Tischaufsteller": {
+  "format": "A6 hoch · 105 auf 148 mm",
+  "satz": "Für den Saal, die Bar und die Arvenstube"
+ },
+ "Feed und Newsletter": {
+  "format": "Instagram 4:5 · 108 auf 135 mm",
+  "satz": "Ein Bild im Format 4:5 fürs Handy. Dazu Newsletter."
+ },
+ "Tischkarte": {
+  "format": "A7 quer · 105 auf 74 mm",
+  "satz": "Tischnummer, Platzkarte, Reserviert"
+ },
+ "Untersetzer": {
+  "format": "Quadrat · 148 auf 148 mm",
+  "satz": "Für die Bar, unter jedes Glas"
+ },
+ "Hinweiskarte": {
+  "format": "A6 hoch · 105 auf 148 mm",
+  "satz": "Kleine Hinweise am Tisch und an der Bar"
+ },
+ "Menü-Einleger": {
+  "format": "A5 hoch · 148 auf 210 mm",
+  "satz": "Die vegetarische Fassung, Festtagsmenü zur Karte"
+ },
+ "Story": {
+  "format": "Story 9:16 · 108 auf 192 mm",
+  "satz": "Hochformat 9:16 fürs Handy"
+ },
+ "Leeres Blatt": {
+  "format": "Format frei wählbar",
+  "satz": "Selbst gestalten, in jedem Format"
+ }
+}

@@ -1,0 +1,307 @@
+/* Arbeiten als Atelier (Robert 02.11.2026). Jede Arbeit hat ihren eigenen Raum in den Farben ihrer Website und ihre eigene Bewegung.
+   Flächen wie Start- und Teamseite: Nacht, Samt, Creme. Bewegt wird nur transform und opacity, ein Takt (ar.js), nativer Scroll.
+   Über Bewegtem liegt nichts Durchsichtiges: Schrift steht auf deckenden Flächen. */
+
+.ar{--ar-nacht:#0a0c1a;--ar-creme:#f3ece2;--ar-tinte:#1c2140;--ar-messing:#7d6a43}
+.ar .lo img{display:block}
+.ar .lo-schirm img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+
+/* gemeinsame Schrift der Räume */
+.r .ar-t1{font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.006em;margin:0;font-size:clamp(3.3rem,10.4vw,11.4rem);line-height:.86}
+.r .ar-t2{font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.014em;margin:0;text-wrap:balance;font-size:clamp(2.5rem,5vw,5.2rem);line-height:.98}
+.r .ar-ort{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 22px;font:500 11.5px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--ak,var(--gold))}
+.r .ar-ort b{font-weight:500}
+.r .ar-ort span{color:rgba(255,255,255,.6);padding-left:14px;border-left:1px solid rgba(255,255,255,.24)}
+.r .ar-name{font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.008em;margin:0;font-size:clamp(3rem,6.4vw,6.8rem);line-height:.9;color:#fff;text-wrap:balance}
+.r .ar-name--gross{font-size:clamp(3rem,6.1vw,7.6rem);line-height:.88}
+.r .ar-satz{margin:28px 0 0;font-size:clamp(17px,1.36vw,20px);line-height:1.58;color:rgba(255,255,255,.86);max-width:30em}
+.r .ar-teile{display:flex;flex-wrap:wrap;gap:6px 0;margin:28px 0 0;font:600 clamp(15px,1.15vw,17px)/1.2 var(--titel);letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.ar-teile span{display:flex;align-items:center}
+.ar-teile span+span::before{content:'';width:5px;height:5px;margin:0 16px;border-radius:50%;background:var(--ak,var(--gold))}
+.ar-kn{margin-top:clamp(30px,2.8vw,42px)}
+.ar-chrom{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#1a1c26;border-bottom:1px solid rgba(255,255,255,.06)}
+.ar-chrom i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.18)}
+.ar-chrom span{margin-left:12px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- Auftakt: die Wand des Ateliers. Links eine deckende Wand mit dem Titel, rechts ziehen die Websites langsam vorbei */
+.ar-auf{height:100vh;height:100svh;min-height:680px;background:#06070d;color:#fff}
+.ar-wand{position:absolute;inset:0;overflow:hidden;background:#06070d}
+/* unter dem Titel gedämpft: Deckkraft je Spalte statt Maske (die Maske liess Safari die schräge Wand unscharf rechnen) */
+.ar-spalte--0{opacity:.17}.ar-spalte--1{opacity:.3}
+/* Robert 02.11.2026 «die sind immer noch unscharf»: Safari rechnet die schräge Ebene in ihrer Grösse und zieht sie dann auf.
+   Darum wird die Wand anderthalbfach gross angelegt und erst in der Drehung auf ihr Mass verkleinert, so bleibt jedes Bild scharf. */
+.ar-wand__raum{position:absolute;left:-4%;top:-46%;width:192%;height:192%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(18px,1.8vw,30px);
+  padding-left:clamp(60px,7.5vw,135px);box-sizing:border-box;transform:perspective(1900px) rotateY(-17deg) rotateX(4deg) scale(1.02) scale(.6667);transform-origin:0 50%}
+.ar-spalte{position:relative;overflow:hidden}
+.ar-spalte__zug{display:grid;gap:clamp(18px,1.8vw,30px);animation:ar-hoch 90s linear infinite;will-change:transform}
+.ar-spalte--0 .ar-spalte__zug{animation-duration:120s}
+.ar-spalte--1 .ar-spalte__zug,.ar-spalte--3 .ar-spalte__zug{animation-name:ar-runter;animation-duration:110s}
+.ar-spalte--2 .ar-spalte__zug{animation-duration:100s}
+.ar-spalte--4 .ar-spalte__zug{animation-duration:95s}
+.ar-auf.ruht .ar-spalte__zug{animation-play-state:paused}
+@keyframes ar-hoch{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-50%,0)}}
+@keyframes ar-runter{from{transform:translate3d(0,-50%,0)}to{transform:translate3d(0,0,0)}}
+.ar-abzug{margin:0;aspect-ratio:16/10;border-radius:15px;overflow:hidden;background:#11131d;outline:1.5px solid rgba(255,255,255,.07);outline-offset:-1.5px}
+.ar-abzug img{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+.ar-auf__t{position:absolute;z-index:2;inset:0 auto 0 0;width:44%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(110px,15vh,150px) clamp(28px,3.6vw,64px) clamp(44px,8vh,90px) var(--rand);}
+.ar-auf__t .r-mono{margin-bottom:24px}
+.r .ar-sub{margin:clamp(30px,3vw,44px) 0 0;font-size:clamp(17px,1.36vw,20px);line-height:1.56;color:rgba(255,255,255,.88);max-width:31em}
+.ar-zaehl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(26px,3vw,52px);margin-top:clamp(34px,4vh,54px);padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
+.ar-zaehl__e{display:grid;gap:10px;color:#fff;text-decoration:none}
+.ar-zaehl__e b{font:700 clamp(2.4rem,3.4vw,3.6rem)/.86 var(--titel);color:var(--gold);transition:transform .7s var(--feder)}
+.ar-zaehl__e span{font:500 11.5px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.ar-zaehl__e:hover b{transform:translateY(-4px)}
+
+/* ---------- Kapitel-Kopf Partner */
+.ar-kap{position:relative;padding:clamp(70px,6vw,96px) 0 clamp(50px,4.4vw,70px);background:var(--ar-nacht);color:#fff}
+.ar-kap__in{max-width:1560px;margin:0 auto;padding:0 var(--rand);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,110px);align-items:end}
+.ar-kap__l .r-lauf{margin-top:clamp(24px,2.4vw,34px);max-width:26em}
+.r .ar-kap .ar-t2{font-size:clamp(3rem,7.4vw,8rem);line-height:.88}
+.ar-pi{display:grid;border-top:1px solid rgba(255,255,255,.12)}
+.ar-pi__e{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:clamp(14px,1.4vw,22px) 0;border-bottom:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;overflow:hidden}
+.ar-pi__e::before{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ak);transform:scaleX(0);transform-origin:0 50%;transition:transform .9s var(--e1)}
+.ar-pi__name{font:700 clamp(2rem,3.7vw,4.2rem)/.95 var(--titel);letter-spacing:.012em;text-transform:uppercase;transition:transform .8s var(--feder),color .5s var(--e1)}
+.ar-pi__ort{display:flex;align-items:center;gap:14px;flex:none;font:500 11.5px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--ak)}
+.ar-pi__ort i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;transition:transform .6s var(--feder),background .4s var(--e1),border-color .4s}
+.ar-pi__ort svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.4;transform:rotate(90deg)}
+.ar-pi__e:hover::before{transform:none}
+.ar-pi__e:hover .ar-pi__name{transform:translateX(14px);color:var(--ak)}
+.ar-pi__e:hover .ar-pi__ort i{background:var(--ak);border-color:var(--ak);color:#0a0c1a;transform:translateY(3px)}
+
+/* ---------- Bildschirm mit echter Website (Robert 02.11.2026: «mit Klick auf den Bildschirm scrollen innerhalb des Bildschirmes»)
+   Zuerst die Aufnahme, die Seite lädt beim Darüberfahren und liegt dann darüber; ein Klick gibt das Scrollen frei, beim Verlassen ruht sie wieder. */
+.live{position:absolute;inset:0;overflow:hidden;background:#0b0e14;cursor:pointer}
+.live>img{position:absolute;z-index:2;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block;transition:opacity .45s var(--e1)}
+.live.aktiv.bereit>img{opacity:0;pointer-events:none}   /* Aufnahme bleibt stehen, bis geklickt wird: kein Flackern beim Durchscrollen (Robert 04.11.2026) */
+.live-f{position:absolute;z-index:1;left:0;top:0;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+
+.live.aktiv.bereit .live-f{pointer-events:auto}
+/* Freigegeben liegt nichts mehr über der Seite im Bildschirm, auch nichts Durchsichtiges (Geräterahmen, Vorschaubild, Hinweis):
+   sonst schickt der Browser das Mausrad bei Seiten von fremden Adressen an die Hauptseite (Robert 04.11.2026: «dann reagiert es nicht») */
+.lo-schirm:has(.live.aktiv.bereit){z-index:3}
+.live.aktiv.bereit>img,.live.aktiv .live-hint{visibility:hidden}
+.live-hint{pointer-events:none}
+.live.aktiv{cursor:auto}
+.live-hint{position:absolute;z-index:3;left:50%;bottom:7%;display:flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;background:#0b0d1c;color:#fff;
+  font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;box-shadow:0 0 0 1px rgba(199,180,137,.4);
+  transform:translate(-50%,8px);opacity:0;transition:opacity .35s var(--e1),transform .5s var(--feder);pointer-events:none}
+.live-hint i{width:14px;height:20px;border:1.4px solid var(--gold);border-radius:8px;position:relative}
+.live-hint i::after{content:'';position:absolute;left:50%;top:4px;width:2px;height:4px;margin-left:-1px;border-radius:1px;background:var(--gold)}
+.live:hover .live-hint i::after{animation:ar-maus 1.6s var(--e1) infinite}
+@keyframes ar-maus{0%{transform:none;opacity:1}70%{transform:translateY(6px);opacity:0}100%{opacity:0}}
+.live:hover .live-hint{opacity:1;transform:translate(-50%,0)}
+.live.aktiv .live-hint,.live.still .live-hint{opacity:0}
+.live.still{cursor:default}
+.lo--tel-loch .live-hint{bottom:5%;padding:7px 10px;gap:0}.lo--tel-loch .live-hint b{display:none}
+.ar-link{display:inline-flex;align-items:center;gap:10px;font:500 11.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:inherit;text-decoration:none}
+.ar-link i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ak,var(--gold));color:#0b0d1c;transition:transform .5s var(--feder)}
+.ar-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.4}
+.ar-link:hover i{transform:translateX(3px)}
+
+/* ---------- Partner: Text und Bühne (Laptop + Handy), darunter die Produkte, jedes ganz im eigenen Gerät */
+.ar-raum{position:relative;color:#fff;background:var(--bg,var(--ar-nacht))}
+.ar-p{padding:clamp(56px,4.6vw,70px) 0 clamp(56px,4.6vw,70px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.ar-p::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--ak);opacity:.75}
+.ar-p__in{max-width:1560px;margin:0 auto;padding:0 var(--rand);display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(30px,4vw,80px);align-items:center}
+.ar-p--r .ar-p__in{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}
+.ar-p--r .ar-text{order:2}
+.ar-p__buehne{position:relative;padding-bottom:5%}
+.ar-p__tel{position:absolute;right:-1%;bottom:0;width:21%;}
+.ar-p--r .ar-p__tel{right:auto;left:-1%}
+.ar-p__prod{max-width:1560px;margin:clamp(56px,5vw,84px) auto 0;padding:clamp(40px,3.6vw,56px) var(--rand) 0;display:grid;gap:clamp(18px,2.2vw,40px);align-items:end;
+  border-top:1px solid rgba(255,255,255,.1)}
+/* Breite je Gerät, damit alle in einer Reihe gleich gross wirken: Bildschirm 1,25 · Tablet 1 · Handy 0,42 */
+.ar-p__prod:not(.ar-p__prod--1){display:flex;align-items:flex-start}
+.ar-pr{margin:0;display:grid;grid-template-rows:auto auto;align-content:start;flex:1.25 1 0;min-width:0}
+.ar-pr--ipad{flex-grow:1}
+.ar-pr--tel{flex-grow:.42}
+.ar-pr figcaption{display:grid;gap:8px;padding-top:22px;border-top:1px solid var(--ak);margin-top:18px}
+.ar-pr figcaption b{font:700 clamp(1.25rem,1.6vw,1.65rem)/1 var(--titel);letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.ar-pr figcaption span{font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.74);max-width:26em}
+.ar-pr--tel figcaption span{font-size:14px}
+.ar-p .ar-p__buehne,.ar-p .ar-pr{opacity:0;transform:translateY(24px);transition:opacity .5s var(--e1),transform .8s var(--e1)}
+.ar-p .ar-pr{transition-delay:calc(var(--i,0) * .06s)}
+.ar-p.an .ar-p__buehne,.ar-p.an .ar-pr{opacity:1;transform:none}
+
+/* ---------- Designstudien: Creme, dicht an Rivage */
+.ar-stud{position:relative;z-index:2;margin-top:-28px;padding:clamp(64px,5.4vw,84px) 0 clamp(30px,3vw,46px);background:var(--ar-creme);color:var(--ar-tinte);border-radius:28px 28px 0 0}
+.ar-stud__in{max-width:var(--max);margin:0 auto;padding:0 var(--rand);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(30px,6vw,110px);align-items:end}
+.ar-stud .r-mono{margin-bottom:22px;color:var(--ar-messing)}
+.ar-stud .ar-t2{color:var(--ar-tinte)}
+.ar-stud .ar-t2 .gold{color:#8a7550}
+.ar-stud .r-lauf{color:#3d372f;max-width:32em}
+.ar-stud__teil{grid-column:1/-1;display:flex;align-items:center;gap:clamp(18px,2vw,30px);margin-top:clamp(40px,4vw,60px)}
+.ar-stud__teil span{font:700 clamp(1.7rem,2.6vw,2.6rem)/1 var(--titel);letter-spacing:.06em;text-transform:uppercase}
+.ar-stud__teil i{flex:1;height:1px;background:linear-gradient(90deg,#b29c67,rgba(178,156,103,.25))}
+.ar-stud__teil b{font:500 11.5px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--ar-messing)}
+
+/* ---------- Grand Beau-Rivage */
+.ar-gbr{background:var(--ar-creme);color:var(--ar-tinte);--ak:#8a7550;padding:clamp(30px,3vw,50px) 0 clamp(50px,4.4vw,66px)}
+.ar-gbr__in{max-width:1560px;margin:0 auto;padding:0 var(--rand);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,4vw,80px);align-items:center}
+.r .ar-gbr .ar-ort span{color:#5b544b;border-color:rgba(28,33,64,.2)}
+.r .ar-gbr .ar-name{color:var(--ar-tinte)}
+.r .ar-gbr .ar-name .gold{color:#8a7550}
+.r .ar-gbr .ar-satz{color:#3d372f}
+.ar-gbr__g{position:relative;padding-bottom:5%}
+.ar-gbr__tel{position:absolute;right:-1%;bottom:0;width:20%;}
+.ar-gbr .ar-gbr__g{opacity:0;transform:translateY(24px);transition:opacity .5s var(--e1),transform .8s var(--e1)}
+.ar-gbr.an .ar-gbr__g{opacity:1;transform:none}
+
+/* ---------- Familien: oben die gemeinsame Startseite, darunter die Häuser nebeneinander */
+.ar-fam{padding:clamp(56px,4.6vw,70px) 0 clamp(56px,4.6vw,70px)}
+.ar-fam--mae{background:var(--ar-creme);color:var(--ar-tinte);box-shadow:inset 0 1px 0 rgba(28,33,64,.1)}
+.ar-fam--zb{background:#090b1e;margin-top:-28px;border-radius:28px 28px 0 0;z-index:2}
+.ar-fam__in{max-width:1560px;margin:0 auto;padding:0 var(--rand)}
+.ar-fam__kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,110px);align-items:end;max-width:calc(var(--max) - 2 * var(--rand));margin:0 auto}
+.ar-fam--mae .ar-t2{color:var(--ar-tinte)}.ar-fam--mae .ar-t2 .gold{color:#8a7550}
+.ar-fam--mae .r-lauf{color:#3d372f}
+.ar-fam__oben{width:min(56%,880px);margin:clamp(40px,4vw,64px) auto 0;display:grid;justify-items:center}
+.ar-fam__lap{width:100%;}
+.ar-fam__label{display:flex;align-items:center;gap:20px;margin:18px 0 0;font:500 11.5px/1 var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--ak)}
+.ar-fam__label .ar-link{color:inherit}
+/* der Ast: aus der Mitte hinunter, quer über die Reihe, zu jedem Haus ein Zweig */
+.ar-fam__ast{position:relative;height:clamp(50px,5vw,76px);margin:6px auto 0}
+.ar-fam__ast b{position:absolute;left:50%;top:0;height:50%;width:1px;background:var(--ak);transform:scaleY(0);transform-origin:50% 0;transition:transform .35s var(--e1)}
+.ar-fam__ast span{position:absolute;left:calc(100% / var(--n,4) / 2);right:calc(100% / var(--n,4) / 2);top:50%;height:1px;background:var(--ak);transform:scaleX(0);transition:transform .6s var(--e1) .25s}
+.ar-fam__ast i{position:absolute;left:var(--x);top:50%;height:50%;width:1px;background:var(--ak);transform:scaleY(0);transform-origin:50% 0;transition:transform .4s var(--e1) .7s}
+.ar-fam.an .ar-fam__ast b,.ar-fam.an .ar-fam__ast i{transform:none}
+.ar-fam.an .ar-fam__ast span{transform:none}
+.ar-fam--mae .ar-fam__ast{--n:4}.ar-fam--zb .ar-fam__ast{--n:3}
+.ar-fam__reihe{display:grid;gap:clamp(16px,1.8vw,32px);align-items:start}
+.ar-fam__reihe--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ar-fam__reihe--3{grid-template-columns:repeat(3,minmax(0,1fr));width:84%;margin:0 auto}
+.ar-fam--zb .ar-fam__ast{width:84%}
+.ar-haus__t{padding-top:20px}
+.ar-haus__t .ar-ort{margin-bottom:12px}
+.ar-haus__t h3{margin:0;font:700 clamp(1.3rem,1.7vw,1.85rem)/1.02 var(--titel);letter-spacing:.03em;text-transform:uppercase}
+.ar-haus__t p:not(.ar-ort){margin:12px 0 0;font-size:15.5px;line-height:1.5;opacity:.82;max-width:28em}
+.ar-haus__t .ar-link{margin-top:16px}
+.ar-fam .ar-fam__oben{opacity:0;transform:translateY(24px);transition:opacity .5s var(--e1),transform .8s var(--e1)}
+.ar-fam.an .ar-fam__oben{opacity:1;transform:none}
+.ar-fam .ar-haus{transition:opacity .5s var(--e1),transform .8s var(--e1);transition-delay:calc(var(--i,0) * .06s)}
+
+/* ---------- Gastronomie: zwei Häuser fahren zur Mitte zusammen */
+.ar-gas{padding:clamp(60px,5vw,76px) 0 clamp(56px,4.6vw,70px);background:var(--ar-creme);color:var(--ar-tinte);margin-top:-28px;border-radius:28px 28px 0 0;z-index:3;overflow:hidden}
+.ar-gas__in{max-width:1560px;margin:0 auto;padding:0 var(--rand)}
+.ar-gas__kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(30px,6vw,110px);align-items:end;max-width:calc(var(--max) - 2 * var(--rand));margin:0 auto}
+.ar-gas__kopf .r-mono{grid-column:1/-1;margin-bottom:24px;color:var(--ar-messing)}
+.ar-gas .ar-t2{color:var(--ar-tinte)}.ar-gas .ar-t2 .gold{color:#8a7550}
+.ar-gas .r-lauf{color:#3d372f;max-width:32em}
+.ar-paar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,1.6vw,26px);margin-top:clamp(48px,4.6vw,72px)}
+.ar-paar__h{position:relative}
+.ar-paar__f{border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 60px -40px rgba(40,30,15,.55)}
+.ar-paar__f figure{margin:0;position:relative;aspect-ratio:16/10}
+
+.ar-paar__tel{position:absolute;top:clamp(170px,22vw,330px);width:clamp(110px,10vw,160px)}
+.ar-paar__h--0 .ar-paar__tel{left:-2%}
+.ar-paar__h--1 .ar-paar__tel{right:-2%}
+.ar-paar__h--0 .ar-paar__t{padding-left:clamp(110px,11vw,180px)}
+.ar-paar__h--1 .ar-paar__t{padding-right:clamp(110px,11vw,180px)}
+.ar-paar__t{padding-top:30px}
+.ar-paar__t .ar-ort{margin-bottom:14px;color:#8a7550}
+.ar-paar__t h3{margin:0;font:700 clamp(1.8rem,2.8vw,2.9rem)/1 var(--titel);letter-spacing:.03em;text-transform:uppercase;color:var(--ar-tinte)}
+.ar-paar__t p:not(.ar-ort){margin:14px 0 0;font-size:16.5px;line-height:1.55;color:#3d372f;max-width:30em}
+.ar-paar__t a{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font:500 11.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ar-tinte);text-decoration:none}
+.ar-paar__t a i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ar-tinte);color:#f3ece2;transition:transform .5s var(--feder)}
+.ar-paar__t a svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.4}
+.ar-paar__t a:hover i{transform:translateX(3px)}
+.ar-paar__h{transition:transform 1s var(--e1),opacity .6s var(--e1)}
+.ar-paar__h--0{transform:translateX(-14%);opacity:0}
+.ar-paar__h--1{transform:translateX(14%);opacity:0}
+.ar-paar__tel{transform:translateY(40px);opacity:0;transition:transform 1s var(--feder) .3s,opacity .5s var(--e1) .3s}
+.ar-gas.an .ar-paar__h,.ar-gas.an .ar-paar__tel{transform:none;opacity:1}
+
+/* ---------- Schluss */
+.ar-fin{padding:clamp(40px,3.4vw,56px) 0 clamp(56px,5vw,80px);background:var(--ar-nacht)}
+
+/* ---------- Handy und schmale Fenster */
+@media (max-width:1100px){
+  .ar-p__in,.ar-p--r .ar-p__in,.ar-gbr__in{grid-template-columns:minmax(0,1fr)}
+  .ar-p--r .ar-text{order:0}
+    .ar-fam__oben{width:min(74%,820px)}
+  .ar-fam__reihe--4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}
+  .ar-fam--mae .ar-fam__ast{display:none}
+}
+@media (max-width:860px){
+  .ar-auf{height:auto;min-height:0}
+  .ar-wand{position:relative;inset:auto;height:58vh}
+  .ar-spalte--0,.ar-spalte--1{display:none}
+  .ar-wand__raum{inset:-8% -30% -8% -6%;width:auto;height:auto;gap:12px;transform:rotate(-6deg) scale(1.05);grid-template-columns:repeat(3,minmax(0,1fr));padding-left:0}
+  .ar-spalte__zug{gap:12px}
+  .ar-abzug{border-radius:10px}
+  .ar-auf__t{position:relative;width:auto;padding:44px var(--rand) 56px;border-top:1px solid rgba(199,180,137,.32)}
+  .r .ar-t1{font-size:clamp(3.3rem,17vw,6rem)}
+  .ar-kap__in,.ar-stud__in,.ar-fam__kopf,.ar-gas__kopf{grid-template-columns:minmax(0,1fr);row-gap:24px}
+  .ar-p__prod:not(.ar-p__prod--1){display:grid;grid-template-columns:minmax(0,1fr);row-gap:44px}
+  .ar-pr--tel .lo{width:46%}
+  .ar-pr--ipad .lo{width:108%}
+  .ar-fam__oben{width:100%}
+  .ar-fam__ast{display:none}
+  .ar-fam__reihe--4,.ar-fam__reihe--3{grid-template-columns:minmax(0,1fr);width:100%;row-gap:48px}
+  .ar-paar{grid-template-columns:minmax(0,1fr);gap:56px}
+  .ar-paar__tel{display:none}
+  .ar-paar__h--0 .ar-paar__t,.ar-paar__h--1 .ar-paar__t{padding:26px 0 0}
+  .ar-paar__h--0,.ar-paar__h--1{transform:translateY(40px)}
+  .live-hint{display:none}
+  .ar-p,.ar-fam{padding:44px 0 48px}
+  .ar-kap{padding:56px 0 44px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ar-spalte__zug{animation:none}
+}
+
+/* Tablet-Render hat rechts freien Rand: auf die Spaltenbreite ausgleichen */
+.ar-pr--ipad .lo{width:117%}
+
+/* eine einzelne Arbeit steht neben ihrem Text statt allein in einer Reihe */
+.ar-p__prod--1{grid-template-columns:minmax(0,1fr)}
+.ar-p__prod--1 .ar-pr{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto;align-items:center;gap:clamp(30px,4vw,80px)}
+.ar-p__prod--1 .ar-pr figcaption{margin-top:0;align-self:center}
+.ar-p__prod--1 .ar-pr figcaption b{font-size:clamp(1.8rem,2.6vw,2.8rem)}
+.ar-p__prod--1 .ar-pr figcaption span{font-size:clamp(16px,1.25vw,18.5px)}
+@media (max-width:860px){.ar-p__prod--1 .ar-pr{grid-template-columns:minmax(0,1fr)}}
+
+/* Ebenen (Robert 02.11.2026: «Telefone und Ebenen-Hierarchien haben Probleme»): jedes Gerät ist eine eigene Ebene,
+   damit Rahmen und Bildschirm des Laptops nie durch das Handy davor scheinen; Handys liegen immer vorn */
+.ar .lo{isolation:isolate}
+.ar-p__tel,.ar-gbr__tel,.ar-paar__tel{z-index:3}
+.ar-paar__f{position:relative;z-index:1;isolation:isolate}
+
+/* Zeilen dürfen sich nie berühren (Robert 02.11.2026, «nirgendwo zeilenweise überschneiden, wie bei dem Komma»):
+   jede Antonio-Überschrift, die umbrechen kann, bekommt so viel Zeilenhöhe, dass Komma und Unterlängen frei über der nächsten Zeile stehen.
+   Geprüft mit _Werkzeuge/zeilen_ueberschnitt.js, Funde: 0. */
+.r .ar-t2,.r .ar-kap .ar-t2{line-height:1.08}
+.r .ar-name,.r .ar-name--gross{line-height:1.04}
+.ar-pi__name{line-height:1.06}
+.ar-haus__t h3,.ar-paar__t h3,.ar-pr figcaption b,.ar-stud__teil span{line-height:1.12}
+
+/* ---------- «Reinschweben edel» aus dem UI-Fundus (Robert 04.11.2026: die Bildschirme sollen reinschweben, alles «richtig edel»).
+   Rahmen steigt 46 px und wächst aus 0,975 (Deckkraft 1,5 s, Weg 2 s), die Aufnahme im Bildschirm kommt aus 1,12 zur Ruhe (2,6 s),
+   der Text rückt einen Atemzug später nach. Ersetzt das kurze Einblenden (0,5 s / 24 px). Nur transform und opacity. */
+.ar-p .ar-p__buehne,.ar-gbr__g,.ar-fam__oben{opacity:0;transform:translateY(46px) scale(.975);transform-origin:50% 100%;transition:opacity 1.5s cubic-bezier(.22,1,.36,1),transform 2s cubic-bezier(.16,1,.3,1)}
+.ar-p .ar-pr{opacity:0;transform:translateY(16px);transition:opacity 1.2s ease,transform 1.6s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * .11s + .45s)}
+.ar-p.an .ar-p__buehne,.ar-p.an .ar-pr,.ar-gbr.an .ar-gbr__g,.ar-fam.an .ar-fam__oben{opacity:1;transform:none}
+.ar-raum .live>img{transform:scale(1.12);transition:opacity .45s var(--e1),transform 2.6s cubic-bezier(.16,1,.3,1)}
+.ar-raum.an .live>img{transform:none}
+.ar-paar__tel{transform:translateY(46px) scale(.975);transition:transform 2s cubic-bezier(.16,1,.3,1) .35s,opacity 1.5s cubic-bezier(.22,1,.36,1) .35s}
+@media (prefers-reduced-motion:reduce){.ar-p .ar-p__buehne,.ar-gbr__g,.ar-fam__oben,.ar-p .ar-pr,.ar-raum .live>img{opacity:1;transform:none;transition:none}}
+
+/* Gastronomie, zwei Häuser (Robert 04.11.2026: «… dass sie so von links und rechts jeweils reingeschwebt kommen»): der Auftritt startet erst,
+   wenn die Bildschirme selbst ins Bild kommen (data-ar am Paar, nicht am ganzen Raum), und läuft edel: 2 s Weg, Telefon einen Atemzug später. */
+.ar-paar__h{transition:transform 2s cubic-bezier(.16,1,.3,1),opacity 1.5s cubic-bezier(.22,1,.36,1)}
+.ar-paar__h--0{transform:translateX(-14%) scale(.975);opacity:0}
+.ar-paar__h--1{transform:translateX(14%) scale(.975);opacity:0;transition-delay:.15s}
+.ar-paar .ar-paar__tel{transform:translateY(46px) scale(.975);opacity:0;transition:transform 2s cubic-bezier(.16,1,.3,1) .5s,opacity 1.5s cubic-bezier(.22,1,.36,1) .5s}
+.ar-gas.an .ar-paar:not(.an) .ar-paar__h--0{transform:translateX(-14%) scale(.975);opacity:0}
+.ar-gas.an .ar-paar:not(.an) .ar-paar__h--1{transform:translateX(14%) scale(.975);opacity:0}
+.ar-gas.an .ar-paar:not(.an) .ar-paar__tel{transform:translateY(46px) scale(.975);opacity:0}
+.ar-paar.an .ar-paar__h,.ar-paar.an .ar-paar__tel{transform:none;opacity:1}
+.ar-paar .live>img{transform:scale(1.12);transition:opacity .45s var(--e1),transform 2.6s cubic-bezier(.16,1,.3,1)}
+.ar-paar.an .live>img{transform:none}
+@media (max-width:860px){.ar-paar__h--0,.ar-paar__h--1,.ar-gas.an .ar-paar:not(.an) .ar-paar__h--0,.ar-gas.an .ar-paar:not(.an) .ar-paar__h--1{transform:translateY(46px) scale(.975)}}
+@media (prefers-reduced-motion:reduce){.ar-paar__h,.ar-paar .ar-paar__tel,.ar-paar .live>img{opacity:1;transform:none;transition:none}}
+
+/* Farbige Linie oben läuft mit durch die runden Ecken (Robert 04.11.2026), läuft an den Seiten weich aus */
+.ar-p::before{bottom:auto;height:calc(var(--ecke,0px) * 1.6);background:none;border:2px solid var(--ak);border-bottom:0;border-radius:var(--ecke,0px) var(--ecke,0px) 0 0;
+  -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);pointer-events:none}

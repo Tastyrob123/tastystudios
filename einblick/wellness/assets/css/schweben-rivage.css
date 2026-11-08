@@ -1,0 +1,11 @@
+/* Hereinschweben wie beim Grand Beau-Rivage (26.10.2026): jedes Stück fliegt in seinem eigenen ruhigen Tempo an seinen Platz (1,6 s, Kurve des
+   Rivage cubic-bezier(.16,1,.3,1): zügig los, lange weich auslaufend), das Foto darin setzt sich aus 1,13 zur Ruhe (2,2 s).
+   Alle Stücke fliegen denselben Weg, damit nichts ein anderes überholt (kein Überlappen bei schnellem Scrollen). Start steuert schweben-rivage.js.
+   Eigene Eigenschaften translate/scale, damit die Bewegungen der Kapitel (transform) unberührt weiterlaufen. Deckend von Anfang an. */
+.rv-t,.rv-b{translate:0 clamp(64px,6.2vw,96px);transition:translate 1.6s cubic-bezier(.16,1,.3,1),scale 1.6s cubic-bezier(.16,1,.3,1)}
+.rv-b{scale:.975;transform-origin:50% 100%}
+.rv-t.rv-da,.rv-b.rv-da{translate:none;scale:none}
+.rv-b img.rv-f{scale:1.13;transition:scale 2.2s cubic-bezier(.16,1,.3,1)}
+.rv-b.rv-da img.rv-f{scale:1.04}
+.rv-sofort,.rv-sofort img{transition:none!important}
+@media (prefers-reduced-motion:reduce){.rv-t,.rv-b,.rv-b img.rv-f{translate:none!important;scale:none!important;transition:none!important}}

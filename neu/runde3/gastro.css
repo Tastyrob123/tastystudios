@@ -1,0 +1,43 @@
+/* Restaurant-Fassung der Startseite (gastro.py, Robert 04.11.2026). Beispiel ist das Restaurant Maloja: seine Schrift (Tenor Sans),
+   seine Farben (Schnee, Arvenholz, Granit, Nussbaum), seine Bilder. Dazu der Beitrag für den Feed in der sechsten Kachel der Werkzeuge. */
+@font-face{font-family:'Tenor Sans';font-weight:400;font-display:swap;src:url(/neu/runde3/fonts/TenorSans.woff2) format('woff2')}
+
+/* die Welt des Beispiels: Farben und Schrift von Maloja statt «Ihr Haus» */
+.ih,.ihw,.pn,.ks,.ihs{--ih-nacht:#231a14;--ih-nacht2:#2e231b;--ih-stein:#9a6f45;--ih-licht:#c9a476;--ih-leinen:#f4f1eb;--ih-messing:#b98a5a;--ih-serif:'Tenor Sans',Optima,sans-serif}
+.ih-logo b,.ih h4,.ih h5,.ih-zk b,.ih-mz b,.s-wzg .d-nav b,.s-wzg .d-hero>b,.s-wzg .d-heute .c-w b,.d-band b,.s-wzg .d-liste li b,.s-wzg .w6m-kopf b,.s-wzg .w6m-t b,.s-wzg .w6m li b,
+.gfb-auf b,.ra-web .ih-logo b,.ra-web__t,.pk .ih-logo b,.pk-t,.pk li b,.vg-t span,.w6w-kopf b,.w6w-bild b,.w6w li b,.w6p-logo,.w6p-t,.w6p li b,.ps-zeichen,.bb-haus,
+.ks-logo b,.ks h4,.ihs-logo,.ihs-h,.dk .ih-logo b,.dk-t,.kb-seite h4{font-family:'Tenor Sans',Optima,'Avenir Next',sans-serif!important;font-weight:400!important}
+.ih-logo b,.w6p-logo,.ihs-logo,.ks-logo b,.bb-haus,.s-wzg .d-nav b,.s-wzg .w6m-kopf b{letter-spacing:.28em}
+.s-wzg .d-hero>b,.ihs-h{letter-spacing:0}
+
+/* Bildplatz, solange ein Bild von Maloja noch nicht erzeugt ist (Higgsfield-Tageslimit 04.11.2026): kein Ersatz aus einem anderen Haus */
+.mj-platz{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;height:100%;min-height:100%;aspect-ratio:3/2;padding:10px;box-sizing:border-box;text-align:center;
+  background:#e6dfd3;outline:1px dashed rgba(154,111,69,.6);outline-offset:-8px;color:#9a6f45;font-family:var(--sans,system-ui)}
+.mj-platz small{font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.mj-platz b{font-family:'Tenor Sans',Optima,sans-serif;font-weight:400;font-size:clamp(11px,1vw,16px);line-height:1.25;color:#2a2a2b}
+.fen__b .mj-platz{background:#2e231b;color:#c9a476;justify-content:flex-start;padding-top:56px}.fen__b .mj-platz b{color:#e6dfd3;font-size:20px}
+.gfb{width:390px;height:848px;display:flex;flex-direction:column;background:#0f1512;color:#efe7da;font-family:var(--sans);overflow:hidden}
+.gfb-kopf{display:flex;align-items:center;gap:12px;padding:14px 18px 12px}
+.gfb-kopf .ps-zeichen{width:42px;height:42px;font-size:16px;box-shadow:0 0 0 2px #0f1512,0 0 0 3px #c7b489}
+.gfb-kopf b{display:block;font-size:15px;font-weight:600}
+.gfb-kopf small{display:block;font-size:12px;opacity:.6;margin-top:2px}
+.gfb-bild{position:relative;aspect-ratio:4/5;overflow:hidden}
+.gfb-bild img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;display:block}
+.gfb-auf{position:absolute;left:18px;right:18px;top:18px;padding:14px 18px;background:rgba(239,231,218,.94);color:#16201b;border-radius:3px}
+.gfb-auf small{display:block;font-family:var(--mono,monospace);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#a16832}
+.gfb-auf b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.05;margin-top:6px}
+.gfb-auf span{display:block;font-size:13.5px;margin-top:4px;opacity:.75}
+.gfb-text{padding:14px 18px 0;font-size:14px;line-height:1.45;opacity:.85}
+.gfb-text b{font-weight:600;margin-right:4px}
+.gfb-fuss{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 18px 22px;border-top:1px solid rgba(239,231,218,.12);font-size:12px}
+.gfb-fuss span{opacity:.6}
+.gfb-fuss i{font-style:normal;font-family:var(--mono,monospace);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#e8ac57}
+/* Studio, Restaurant-Fassung: was auf den Geräten zur Seite von Maloja gehört, in seiner Schrift */
+.st-im__haus,.va-kopf b,.fz05-kk b,.b4-k>b,.v10-erg .vr,.zf-kopf b{font-family:'Tenor Sans',Optima,sans-serif!important;font-weight:400!important}
+/* Bildplätze ohne eigene Beschriftung und immer dunkel (Prüfung 04.11.2026: Beschriftung lag über Kacheltiteln, weisse Schrift stand auf hellem Grund).
+   Auf den Bildern liegt fast immer helle Schrift; Nussbaum hält sie lesbar, bis das Foto da ist. Der Name bleibt als aria-label. */
+.mj-platz{background:radial-gradient(90% 80% at 50% 40%,#3a2c22,#231a14 78%) #2e231b!important;outline:1px dashed rgba(201,164,118,.28)!important;outline-offset:-8px}
+.mj-platz small,.mj-platz b{display:none!important}
+/* Auftakt «Die Naht» von Maloja in den kleinen Seiten (vh_seite, Werkzeug-Kachel): zwei Bilder, eine Linie in Arvenholz dazwischen */
+.mj-naht{position:absolute;inset:0;display:flex}.mj-naht>img{position:static!important;flex:1 1 0;min-width:0;width:50%!important;height:100%!important;object-fit:cover}
+.mj-naht::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#b98a5a}

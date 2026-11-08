@@ -1,0 +1,33 @@
+/* entspannen Sie sich · «Das Zeichen im Wasser» (Robert 26.10.2026: Fassung 14 aus _varianten/spa-15c). Geordnet wie die übrige Startseite:
+   links der Text mit dem grossen Z in Messing dahinter, rechts das Schwimmbad gross, darunter Kante an Kante das Bad von oben und die Holzsauna.
+   Bewegung: das Z setzt sich beim Ankommen an seinen Platz (nur transform, von Anfang an sichtbar); die Zahlen zählen über rest.js (.rz). */
+.sq{--lin:rgba(217,183,88,.24);--e:cubic-bezier(.22,.61,.36,1)}
+.sq-w{max-width:1320px;margin:0 auto}
+.sq .rt{font-size:clamp(40px,4.2vw,70px)}
+.sq .rl{max-width:40ch}
+.sq .r-knoepfe{margin-top:clamp(28px,3vw,42px)}
+.sq figure{background:#05091C}
+.sq-zahlen{display:flex;gap:clamp(22px,3vw,52px);margin-top:clamp(26px,2.6vw,38px)}
+.sq-zahl{margin:0;display:grid;gap:6px}
+.sq-zahl b{font-family:var(--licht);font-weight:300;font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--ms-h);white-space:nowrap}
+.sq-zahl>span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+.sq-oz{margin-top:clamp(30px,3vw,46px)}
+
+.sq14{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.2fr);gap:clamp(40px,5.5vw,100px);align-items:center}
+.sq14-text{position:relative}
+.sq14-text>*:not(.sq14-z){position:relative}
+.sq14-z{position:absolute;left:-4%;top:-14%;width:min(78%,440px);margin:0;color:#D9B758;opacity:.13;transform:translateY(70px) scale(.94);transform-origin:30% 60%;transition:transform 2.6s var(--e) .2s;pointer-events:none}
+.sq14-z svg{width:100%;height:auto;display:block}
+.sq.da .sq14-z{transform:none}
+.sq14-gross{aspect-ratio:4/3}
+.sq14-paar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.sq14-paar figure{aspect-ratio:3/2}
+.sq14-dazu{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--lin);display:grid;gap:4px}
+.sq14-dazu .ro{margin:0;font-size:10.5px}
+.sq14-dazu span:not(.ro){font-family:var(--licht);font-size:clamp(15px,1.1vw,18px);opacity:.86}
+
+@media(max-width:900px){
+  .sq14{grid-template-columns:1fr}
+  .sq-zahlen{flex-wrap:wrap;gap:18px 28px}
+}
+@media(prefers-reduced-motion:reduce){.sq14-z{transform:none!important;transition:none!important}}

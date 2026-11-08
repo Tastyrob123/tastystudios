@@ -1,0 +1,1054 @@
+{
+ "Plakat der Woche": [
+  {
+   "id": "abendplakat-001",
+   "datei": "stuecke/plakat-der-woche/abendplakat-001.webp",
+   "titel": "Das Menü · 10. bis 14. November · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-002",
+   "datei": "stuecke/plakat-der-woche/abendplakat-002.webp",
+   "titel": "Das Menü · 10. bis 14. November · Rückseite mit Daten",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-003",
+   "datei": "stuecke/plakat-der-woche/abendplakat-003.webp",
+   "titel": "Das Menü · 17. bis 21. November · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-004",
+   "datei": "stuecke/plakat-der-woche/abendplakat-004.webp",
+   "titel": "Das Menü · 17. bis 21. November · Rückseite mit Daten",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-005",
+   "datei": "stuecke/plakat-der-woche/abendplakat-005.webp",
+   "titel": "Das Menü · 24. bis 28. November · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-006",
+   "datei": "stuecke/plakat-der-woche/abendplakat-006.webp",
+   "titel": "Das Menü · 24. bis 28. November · Rückseite mit Daten",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-007",
+   "datei": "stuecke/plakat-der-woche/abendplakat-007.webp",
+   "titel": "Das Menü · 1. bis 5. Dezember · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-008",
+   "datei": "stuecke/plakat-der-woche/abendplakat-008.webp",
+   "titel": "Das Menü · 1. bis 5. Dezember · Rückseite mit Daten",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-009",
+   "datei": "stuecke/plakat-der-woche/abendplakat-009.webp",
+   "titel": "Das Menü · 8. bis 12. Dezember · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "abendplakat-010",
+   "datei": "stuecke/plakat-der-woche/abendplakat-010.webp",
+   "titel": "Das Menü · 15. bis 19. Dezember · Plakat, vorne und hinten",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Menükarte am Platz": [
+  {
+   "id": "menuekarte-001",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-001.webp",
+   "titel": "Menükarte · 10. bis 14. November",
+   "format": "SAAL · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-002",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-002.webp",
+   "titel": "Menükarte · 17. bis 21. November",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-003",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-003.webp",
+   "titel": "Menükarte · 24. bis 28. November",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-004",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-004.webp",
+   "titel": "Menükarte · 1. bis 5. Dezember",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-005",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-005.webp",
+   "titel": "Menükarte · vegetarische Fassung",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-006",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-006.webp",
+   "titel": "Woher es kommt",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-007",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-007.webp",
+   "titel": "Fünf Gänge",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-008",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-008.webp",
+   "titel": "Weinbegleitung",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "menuekarte-009",
+   "datei": "stuecke/menuekarte-am-platz/menuekarte-009.webp",
+   "titel": "Menükarte · Goldene Hochzeit in der Arvenstube",
+   "format": "FEIERN · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Flyer und Programm": [
+  {
+   "id": "flyer-001",
+   "datei": "stuecke/flyer-und-programm/flyer-001.webp",
+   "titel": "Flyer · Ein Kontor über dem Fleet",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-002",
+   "datei": "stuecke/flyer-und-programm/flyer-002.webp",
+   "titel": "Flyer · Die Arvenstube",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-003",
+   "datei": "stuecke/flyer-und-programm/flyer-003.webp",
+   "titel": "Flyer · Die Bar am Fenster",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-004",
+   "datei": "stuecke/flyer-und-programm/flyer-004.webp",
+   "titel": "Flyer · Sieben Gänge",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-005",
+   "datei": "stuecke/flyer-und-programm/flyer-005.webp",
+   "titel": "Flyer · Ebenso sieben Gänge",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-006",
+   "datei": "stuecke/flyer-und-programm/flyer-006.webp",
+   "titel": "Flyer · Chasselas neben Riesling",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-007",
+   "datei": "stuecke/flyer-und-programm/flyer-007.webp",
+   "titel": "Flyer · Der Kontorsaal",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-008",
+   "datei": "stuecke/flyer-und-programm/flyer-008.webp",
+   "titel": "Flyer · Mitten in der Speicherstadt",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-009",
+   "datei": "stuecke/flyer-und-programm/flyer-009.webp",
+   "titel": "Flyer · Aus den Bergen",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "flyer-010",
+   "datei": "stuecke/flyer-und-programm/flyer-010.webp",
+   "titel": "Flyer · Von der Küste",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "programm-001",
+   "datei": "stuecke/flyer-und-programm/programm-001.webp",
+   "titel": "Die sieben Gänge und ihre Herkunft",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "programm-002",
+   "datei": "stuecke/flyer-und-programm/programm-002.webp",
+   "titel": "Die Abende im Advent",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "programm-003",
+   "datei": "stuecke/flyer-und-programm/programm-003.webp",
+   "titel": "Ein Abend im Maloja",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Plakat und Pressemappe": [
+  {
+   "id": "plakat-001",
+   "datei": "stuecke/plakat-und-pressemappe/plakat-001.webp",
+   "titel": "Plakat · Maloja",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "plakat-002",
+   "datei": "stuecke/plakat-und-pressemappe/plakat-002.webp",
+   "titel": "Plakat · Das Menü",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "plakat-003",
+   "datei": "stuecke/plakat-und-pressemappe/plakat-003.webp",
+   "titel": "Plakat · Die Arvenstube",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "plakat-004",
+   "datei": "stuecke/plakat-und-pressemappe/plakat-004.webp",
+   "titel": "Plakat · Der Kontorsaal",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "plakat-005",
+   "datei": "stuecke/plakat-und-pressemappe/plakat-005.webp",
+   "titel": "Plakat · Die Bar am Fenster",
+   "format": "BAR · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "pressemappe-001",
+   "datei": "stuecke/plakat-und-pressemappe/pressemappe-001.webp",
+   "titel": "Deckblatt Pressemappe",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "pressemappe-002",
+   "datei": "stuecke/plakat-und-pressemappe/pressemappe-002.webp",
+   "titel": "Deckblatt Feiern",
+   "format": "FEIERN · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "pressemappe-003",
+   "datei": "stuecke/plakat-und-pressemappe/pressemappe-003.webp",
+   "titel": "Deckblatt Das Menü",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Speisekarte": [
+  {
+   "id": "v0",
+   "datei": "stuecke/speisekarte/v0.webp",
+   "titel": "Karte mit Liste",
+   "format": "SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v1",
+   "datei": "stuecke/speisekarte/v1.webp",
+   "titel": "Karte mit Liste",
+   "format": "NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v2",
+   "datei": "stuecke/speisekarte/v2.webp",
+   "titel": "Karte mit Liste",
+   "format": "KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v3",
+   "datei": "stuecke/speisekarte/v3.webp",
+   "titel": "Titelblatt",
+   "format": "NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Getränkekarte": [
+  {
+   "id": "v0",
+   "datei": "stuecke/getraenkekarte/v0.webp",
+   "titel": "Karte mit Liste",
+   "format": "NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v1",
+   "datei": "stuecke/getraenkekarte/v1.webp",
+   "titel": "Karte mit Liste",
+   "format": "SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v2",
+   "datei": "stuecke/getraenkekarte/v2.webp",
+   "titel": "Karte mit Liste",
+   "format": "KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v3",
+   "datei": "stuecke/getraenkekarte/v3.webp",
+   "titel": "Titelblatt",
+   "format": "NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Einladung und Gutschein": [
+  {
+   "id": "einladung-001",
+   "datei": "stuecke/einladung-und-gutschein/einladung-001.webp",
+   "titel": "Einladung zum Menü",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "einladung-002",
+   "datei": "stuecke/einladung-und-gutschein/einladung-002.webp",
+   "titel": "Einladung in die Arvenstube",
+   "format": "FEIERN · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "einladung-003",
+   "datei": "stuecke/einladung-und-gutschein/einladung-003.webp",
+   "titel": "Einladung zum Jahresabschluss",
+   "format": "FEIERN · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-001",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-001.webp",
+   "titel": "Gutschein · Ein Abend im Kontor",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-002",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-002.webp",
+   "titel": "Gutschein · Sieben Gänge für zwei",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-003",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-003.webp",
+   "titel": "Gutschein · Fünf Gänge für zwei",
+   "format": "ANLÄSSE & EVENTS · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-004",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-004.webp",
+   "titel": "Gutschein · Für einen Abend im Maloja",
+   "format": "ANLÄSSE & EVENTS · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-005",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-005.webp",
+   "titel": "Gutschein · An der Bar",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-006",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-006.webp",
+   "titel": "Gutschein · Die Arvenstube",
+   "format": "ANLÄSSE & EVENTS · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-007",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-007.webp",
+   "titel": "Gutschein · Ein Abend im Advent",
+   "format": "ANLÄSSE & EVENTS · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "gutschein-008",
+   "datei": "stuecke/einladung-und-gutschein/gutschein-008.webp",
+   "titel": "Gutschein · Die Weinbegleitung",
+   "format": "ANLÄSSE & EVENTS · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Aushang, Störung und Team": [
+  {
+   "id": "aushang-001",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-001.webp",
+   "titel": "Aushang · Heute ab 18 Uhr",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-002",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-002.webp",
+   "titel": "Aushang · Heute ab 18.30 Uhr",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-003",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-003.webp",
+   "titel": "Aushang · Sonntag und Montag",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-004",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-004.webp",
+   "titel": "Aushang · Tische bis sechs Gäste",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-005",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-005.webp",
+   "titel": "Aushang · Unverträglichkeiten",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-006",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-006.webp",
+   "titel": "Aushang · Kinder willkommen",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-007",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-007.webp",
+   "titel": "Aushang · Hunde in der Bar",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-008",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-008.webp",
+   "titel": "Aushang · Bis 48 Stunden vorher",
+   "format": "RESTAURANT · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-009",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-009.webp",
+   "titel": "Aushang · Steinbutt",
+   "format": "RESTAURANT · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "aushang-010",
+   "datei": "stuecke/aushang-stoerung-und-team/aushang-010.webp",
+   "titel": "Aushang · Die Arvenstube",
+   "format": "RESTAURANT · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "stoerung-001",
+   "datei": "stuecke/aushang-stoerung-und-team/stoerung-001.webp",
+   "titel": "Der Kontorsaal ist heute reserviert",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "stoerung-002",
+   "datei": "stuecke/aushang-stoerung-und-team/stoerung-002.webp",
+   "titel": "Die Arvenstube ist heute reserviert",
+   "format": "FEIERN · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "teamaushang-001",
+   "datei": "stuecke/aushang-stoerung-und-team/teamaushang-001.webp",
+   "titel": "Ablauf eines Abends",
+   "format": "TEAM · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "teamaushang-002",
+   "datei": "stuecke/aushang-stoerung-und-team/teamaushang-002.webp",
+   "titel": "Hinweis fürs Team: Wünsche heute",
+   "format": "TEAM · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Tischaufsteller": [
+  {
+   "id": "tisch-001",
+   "datei": "stuecke/tischaufsteller/tisch-001.webp",
+   "titel": "Brot und Butter, am Tisch",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-002",
+   "datei": "stuecke/tischaufsteller/tisch-002.webp",
+   "titel": "Gerstensuppe, am Tisch",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-003",
+   "datei": "stuecke/tischaufsteller/tisch-003.webp",
+   "titel": "Capuns, am Tisch",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-004",
+   "datei": "stuecke/tischaufsteller/tisch-004.webp",
+   "titel": "Steinbutt, am Tisch",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-005",
+   "datei": "stuecke/tischaufsteller/tisch-005.webp",
+   "titel": "Kalb Zürcher Art, am Tisch",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-006",
+   "datei": "stuecke/tischaufsteller/tisch-006.webp",
+   "titel": "Käse vom Wagen, am Tisch",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-007",
+   "datei": "stuecke/tischaufsteller/tisch-007.webp",
+   "titel": "Engadiner Nusstorte, am Tisch",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-008",
+   "datei": "stuecke/tischaufsteller/tisch-008.webp",
+   "titel": "Reservieren im Kontorsaal",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-009",
+   "datei": "stuecke/tischaufsteller/tisch-009.webp",
+   "titel": "Die Bar · Karte am Tisch",
+   "format": "BAR · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-010",
+   "datei": "stuecke/tischaufsteller/tisch-010.webp",
+   "titel": "Vegetarisch · Aufsteller",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tisch-011",
+   "datei": "stuecke/tischaufsteller/tisch-011.webp",
+   "titel": "Die Arvenstube · Aufsteller",
+   "format": "FEIERN · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Feed und Newsletter": [
+  {
+   "id": "instagram-001",
+   "datei": "stuecke/feed-und-newsletter/instagram-001.webp",
+   "titel": "Beitrag · Ein Kontor am Fleet",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-002",
+   "datei": "stuecke/feed-und-newsletter/instagram-002.webp",
+   "titel": "Beitrag · Steinbutt",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-003",
+   "datei": "stuecke/feed-und-newsletter/instagram-003.webp",
+   "titel": "Beitrag · Ein langer Tisch",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-004",
+   "datei": "stuecke/feed-und-newsletter/instagram-004.webp",
+   "titel": "Beitrag · Ein Tisch für zwei",
+   "format": "FEED · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-005",
+   "datei": "stuecke/feed-und-newsletter/instagram-005.webp",
+   "titel": "Beitrag · Brot und Butter",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-006",
+   "datei": "stuecke/feed-und-newsletter/instagram-006.webp",
+   "titel": "Beitrag · Alpkäse aus Graubünden",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-007",
+   "datei": "stuecke/feed-und-newsletter/instagram-007.webp",
+   "titel": "Beitrag · Steinbutt aus der Nordsee",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-008",
+   "datei": "stuecke/feed-und-newsletter/instagram-008.webp",
+   "titel": "Beitrag · Ab 18 Uhr",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-009",
+   "datei": "stuecke/feed-und-newsletter/instagram-009.webp",
+   "titel": "Beitrag · Engadiner Nusstorte",
+   "format": "FEED · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-010",
+   "datei": "stuecke/feed-und-newsletter/instagram-010.webp",
+   "titel": "Beitrag · Von Hand angerichtet",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-011",
+   "datei": "stuecke/feed-und-newsletter/instagram-011.webp",
+   "titel": "Beitrag · Die Brücke im Nebel",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-012",
+   "datei": "stuecke/feed-und-newsletter/instagram-012.webp",
+   "titel": "Beitrag · Chasselas aus der Waadt",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-013",
+   "datei": "stuecke/feed-und-newsletter/instagram-013.webp",
+   "titel": "Beitrag · Kalb Zürcher Art",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-014",
+   "datei": "stuecke/feed-und-newsletter/instagram-014.webp",
+   "titel": "Beitrag · Der Saal am Abend",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "instagram-015",
+   "datei": "stuecke/feed-und-newsletter/instagram-015.webp",
+   "titel": "Beitrag · Alpkäse-Soufflé",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "newsletter-001",
+   "datei": "stuecke/feed-und-newsletter/newsletter-001.webp",
+   "titel": "Newsletter · Die Abende im Advent",
+   "format": "NEWSLETTER · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "newsletter-002",
+   "datei": "stuecke/feed-und-newsletter/newsletter-002.webp",
+   "titel": "Kopfbild · Das Kontor",
+   "format": "NEWSLETTER · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "newsletter-003",
+   "datei": "stuecke/feed-und-newsletter/newsletter-003.webp",
+   "titel": "Kopfbild · Das Menü",
+   "format": "NEWSLETTER · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Tischkarte": [
+  {
+   "id": "tischkarte-001",
+   "datei": "stuecke/tischkarte/tischkarte-001.webp",
+   "titel": "Platzkarte · Katrin Hollmann",
+   "format": "SAAL · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-002",
+   "datei": "stuecke/tischkarte/tischkarte-002.webp",
+   "titel": "Platzkarte · Familie Petersen",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-003",
+   "datei": "stuecke/tischkarte/tischkarte-003.webp",
+   "titel": "Platzkarte · Am Fenster",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-004",
+   "datei": "stuecke/tischkarte/tischkarte-004.webp",
+   "titel": "Platzkarte · Reserviert",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-005",
+   "datei": "stuecke/tischkarte/tischkarte-005.webp",
+   "titel": "Platzkarte · Familie Brandt",
+   "format": "SAAL · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-006",
+   "datei": "stuecke/tischkarte/tischkarte-006.webp",
+   "titel": "Platzkarte · Dr. Ulrike Brandes",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-007",
+   "datei": "stuecke/tischkarte/tischkarte-007.webp",
+   "titel": "Platzkarte · Lea Albers",
+   "format": "SAAL · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-008",
+   "datei": "stuecke/tischkarte/tischkarte-008.webp",
+   "titel": "Platzkarte · Tisch am Fleet",
+   "format": "SAAL · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-009",
+   "datei": "stuecke/tischkarte/tischkarte-009.webp",
+   "titel": "Platzkarte · Studio Nordlicht",
+   "format": "SAAL · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "tischkarte-010",
+   "datei": "stuecke/tischkarte/tischkarte-010.webp",
+   "titel": "Platzkarte · Der lange Tisch",
+   "format": "SAAL · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Untersetzer": [
+  {
+   "id": "etikett-001",
+   "datei": "stuecke/untersetzer/etikett-001.webp",
+   "titel": "Untersetzer · Maloja",
+   "format": "BAR · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-002",
+   "datei": "stuecke/untersetzer/etikett-002.webp",
+   "titel": "Untersetzer · Pickhuben 6",
+   "format": "BAR · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-003",
+   "datei": "stuecke/untersetzer/etikett-003.webp",
+   "titel": "Untersetzer · Die Bar",
+   "format": "BAR · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-004",
+   "datei": "stuecke/untersetzer/etikett-004.webp",
+   "titel": "Untersetzer · Chasselas",
+   "format": "BAR · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-005",
+   "datei": "stuecke/untersetzer/etikett-005.webp",
+   "titel": "Untersetzer · Riesling",
+   "format": "BAR · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-006",
+   "datei": "stuecke/untersetzer/etikett-006.webp",
+   "titel": "Untersetzer · Alpkäse",
+   "format": "BAR · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-007",
+   "datei": "stuecke/untersetzer/etikett-007.webp",
+   "titel": "Untersetzer · Nusstorte",
+   "format": "BAR · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-008",
+   "datei": "stuecke/untersetzer/etikett-008.webp",
+   "titel": "Untersetzer · Steinbutt",
+   "format": "BAR · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-009",
+   "datei": "stuecke/untersetzer/etikett-009.webp",
+   "titel": "Untersetzer · Die Arvenstube",
+   "format": "BAR · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-010",
+   "datei": "stuecke/untersetzer/etikett-010.webp",
+   "titel": "Untersetzer · Bis bald",
+   "format": "BAR · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-011",
+   "datei": "stuecke/untersetzer/etikett-011.webp",
+   "titel": "Untersetzer · Baumwall",
+   "format": "BAR · GRANIT",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "etikett-012",
+   "datei": "stuecke/untersetzer/etikett-012.webp",
+   "titel": "Untersetzer · L. Albers",
+   "format": "BAR · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Hinweiskarte": [
+  {
+   "id": "hinweiskarte-001",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-001.webp",
+   "titel": "Hinweiskarte · Allergene",
+   "format": "AM TISCH · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-002",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-002.webp",
+   "titel": "Hinweiskarte · Die Weinbegleitung",
+   "format": "AM TISCH · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-003",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-003.webp",
+   "titel": "Hinweiskarte · Käse vom Wagen",
+   "format": "AM TISCH · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-004",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-004.webp",
+   "titel": "Hinweiskarte · Fünf Gänge",
+   "format": "AM TISCH · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-005",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-005.webp",
+   "titel": "Hinweiskarte · Vegetarisch",
+   "format": "AM TISCH · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-006",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-006.webp",
+   "titel": "Hinweiskarte · Gerichte einzeln",
+   "format": "AM TISCH · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-007",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-007.webp",
+   "titel": "Hinweiskarte · Eine kleine Karte",
+   "format": "AM TISCH · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "hinweiskarte-008",
+   "datei": "stuecke/hinweiskarte/hinweiskarte-008.webp",
+   "titel": "Hinweiskarte · Zwei Herkünfte",
+   "format": "AM TISCH · SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Menü-Einleger": [
+  {
+   "id": "v0",
+   "datei": "stuecke/menue-einleger/v0.webp",
+   "titel": "Karte mit Liste",
+   "format": "KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v1",
+   "datei": "stuecke/menue-einleger/v1.webp",
+   "titel": "Karte mit Liste",
+   "format": "SCHNEE",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v2",
+   "datei": "stuecke/menue-einleger/v2.webp",
+   "titel": "Karte mit Liste",
+   "format": "NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "v3",
+   "datei": "stuecke/menue-einleger/v3.webp",
+   "titel": "Aushang",
+   "format": "KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  }
+ ],
+ "Story": [
+  {
+   "id": "story-001",
+   "datei": "stuecke/story/story-001.webp",
+   "titel": "Story · Nebel über dem Fleet",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-002",
+   "datei": "stuecke/story/story-002.webp",
+   "titel": "Story · Am Pass",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-003",
+   "datei": "stuecke/story/story-003.webp",
+   "titel": "Story · Am Kachelofen",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-004",
+   "datei": "stuecke/story/story-004.webp",
+   "titel": "Story · Ab 18 Uhr",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-005",
+   "datei": "stuecke/story/story-005.webp",
+   "titel": "Story · Das Fleet",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-006",
+   "datei": "stuecke/story/story-006.webp",
+   "titel": "Story · Bündner Zopf",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-007",
+   "datei": "stuecke/story/story-007.webp",
+   "titel": "Story · Alpkäse",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-008",
+   "datei": "stuecke/story/story-008.webp",
+   "titel": "Story · Ein Tisch für zwei",
+   "format": "FEED · KALKSTEIN",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-009",
+   "datei": "stuecke/story/story-009.webp",
+   "titel": "Story · Aus der Schweiz und Deutschland",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  },
+  {
+   "id": "story-010",
+   "datei": "stuecke/story/story-010.webp",
+   "titel": "Story · Das Kontor bei Nacht",
+   "format": "FEED · NUSSBAUM",
+   "satz": "ÜBERNEHMEN"
+  }
+ ]
+}

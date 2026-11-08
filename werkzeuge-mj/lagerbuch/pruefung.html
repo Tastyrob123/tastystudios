@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../_kleid/demo.js"></script>
+<title>Speisekarten · Prüfung · Maloja</title>
+<script src="../_kleid/haus.js"></script>
+<script src="oberflaeche/kleid/ihrhaus.js"></script>
+<script src="namen.js" defer></script>
+
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../_haus/marke/zeichen.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../_kleid/werkzeug.css">
+<link rel="stylesheet" href="carte.css">
+<link rel="stylesheet" href="tafel.css">
+<style>
+body.anl{padding:0}
+.anl main{max-width:900px;margin:0 auto;padding:54px 24px 90px}
+.anl h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.05;color:var(--navy)}
+.anl h1 em{font-style:normal;color:var(--taupe)}
+.anl h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--navy);margin:40px 0 4px;padding-top:18px;border-top:1px solid rgba(32,24,18,.35)}
+.anl p{max-width:66ch;color:rgba(46,37,31,.8)}
+.anl .zuruck{display:inline-flex;margin-bottom:26px}
+.anl .gesund div span{min-width:0;overflow-wrap:anywhere}
+.anl .gesund div b{flex:none;max-width:60%;text-align:right;overflow-wrap:anywhere;text-transform:none;letter-spacing:.04em}
+.rep{display:grid;gap:10px;margin-top:16px}
+.rep div{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;border-radius:16px;background:var(--platte);box-shadow:var(--platte-s)}
+.rep p{margin:0;font-size:14px}
+.rep .kn[data-scharf]{--o:#a17854;--m:#B3261E;--u:#6e130d}
+.pr-quit{margin-top:12px;font-size:14px;min-height:1.4em}
+@media (max-width:560px){.rep div{flex-direction:column;align-items:stretch}.anl .gesund div{flex-direction:column}.anl .gesund div b{max-width:none;text-align:left}}
+</style>
+<link rel="stylesheet" href="auftritte.css">
+<script src="/besuch.js?v=3c4c57a56e" defer></script><script src="/verweil.js?v=5881fd455d" defer></script></head>
+<body class="lc anl">
+<main>
+<a class="kn kn--klein kn--hell zuruck" href="index.html">Zurück: <span data-wo-name="karten">Speisekarten</span></a>
+<h1>Prüfung <em>des Werkzeugs.</em></h1>
+<p style="margin-top:16px">Diese Seite läuft auch dann, wenn das Werkzeug selbst nicht startet. Sie zeigt, ob Browser, Betrieb, Karten, Druck und Sicherungen in Ordnung sind, und hält die Reparaturen bereit. In der Vorführung läuft alles im Browser; keine Reparatur ändert etwas. Was eine Meldung bedeutet, steht unter <a href="anleitung.html#was-tun">«Was tun, wenn …»</a>.</p>
+<h2>Browser</h2><div class="gesund" id="p-browser"></div>
+<h2>Betrieb</h2><div class="gesund" id="p-server"><div><span>Antwort</span><b>wird gelesen …</b></div></div>
+<h2>Karten</h2><div class="gesund" id="p-karten"></div>
+<h2>Druck und Prüfung der PDF</h2><div class="gesund" id="p-druck"></div>
+<h2>Sicherungen</h2><div class="gesund" id="p-sich"></div>
+<h2>Fehler</h2><p>Die letzten Fehler, die das Werkzeug mitgeschrieben hat (neueste zuerst).</p><div class="gesund" id="p-fehler"></div>
+<h2>Alle Daten</h2><p>Alle Karten mit Stand, Entwurf, Ursprung und jeder früheren Fassung, dazu Einstellungen und Protokoll, als eine Datei für den eigenen Rechner. Dafür braucht es uns nicht.</p>
+<div class="rep"><div><p><b>Alle Daten herunterladen.</b> Eine Datei (JSON), lesbar mit jedem Texteditor.</p><a class="kn kn--klein" href="api/export" download>Herunterladen</a></div></div>
+<h2>Reparaturen</h2><p>Keine Reparatur ändert eine Karte. Jede braucht die Rolle Direktion und zwei Klicks: der erste macht den Knopf scharf, der zweite führt aus.</p>
+<div class="rep" id="p-rep">
+  <div><p><b>Sicherung jetzt anlegen.</b> Stand, Entwürfe, Verlauf und Protokoll als Archiv von heute (sonst einmal am Tag von selbst).</p><button class="kn kn--klein" type="button" data-rep="sicherung">Sicherung anlegen</button></div>
+  <div><p><b>Probe-PDFs wegräumen.</b> Gedruckte Proben löschen; die veröffentlichten PDFs bleiben.</p><button class="kn kn--klein" type="button" data-rep="probe">Proben wegräumen</button></div>
+  <div><p><b>Fehlerlisten leeren.</b> Server- und Browserfehler beiseitelegen, damit neue auffallen (die alten bleiben als Datei daneben).</p><button class="kn kn--klein" type="button" data-rep="fehler">Fehler leeren</button></div>
+</div>
+<p class="pr-quit" id="p-quit" aria-live="polite"></p>
+</main>
+<script src="daten.js"></script>
+<script src="vorfuehrung.js"></script>
+<script src="pruefung.js"></script>
+<script src="auftritte.js" data-alles></script>
+</body>
+</html>

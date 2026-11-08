@@ -1,0 +1,62 @@
+/* Wellness & Spa · «setzen Sie sich»: Fünf Gänge nebeneinander, Kopf «Titel und Bilder in Ebenen» (Robert 25.10.2026; aus _varianten/essen-15c Nr. 10
+   und _varianten/essen-10k Nr. 5). Bewegung: Teller werden Gang um Gang aufgetragen, das kleine Bild hebt sich über das grosse. Nur transform. */
+.gt{--gold:#8A6A2A}
+.gt-w{max-width:1320px;margin:0 auto}
+.gt-kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(40px,5vw,90px);align-items:center;margin-bottom:clamp(50px,5vw,80px)}
+.gt .rt{font-size:clamp(44px,4.4vw,74px)}
+.gt .rl{max-width:38ch}
+.gt-zeile{list-style:none;margin:28px 0 0;padding:14px 0;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:18px;border-top:1px solid rgba(138,106,42,.4);border-bottom:1px solid rgba(138,106,42,.4)}
+.gt-zeile li{display:flex;flex-direction:column;gap:3px}
+.gt-zeile span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.gt-zeile b{font-family:var(--licht);font-weight:400;font-size:clamp(16px,1.2vw,19px)}
+.gt .r-knoepfe{margin-top:clamp(30px,3vw,44px)}
+.gt-bilder{position:relative;height:min(54vh,500px)}
+.gt .gt-a{position:absolute;left:0;top:0;width:82%;height:84%}
+.gt .gt-b{position:absolute;right:0;bottom:0;width:40%;aspect-ratio:3/2;z-index:2;transform:translateY(70px);transition:transform 1.6s var(--e1) .4s}
+.gt.da .gt-b{transform:none}
+/* Fünf Teller aus der Küche (ohne Gerichtnamen) und darunter das Beispielmenü als Karte in fünf gleich gebauten Spalten (26.10.). */
+.gt-kueche{display:none;margin:0 0 22px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.gt-kueche span{display:block;margin-bottom:6px;color:var(--gold)}
+.gt-reihe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.gt .gt-t{aspect-ratio:4/5;background:#0A1129}
+/* Hereinschweben wie am 25.10. (Robert 26.10.: «wieder so wie vorher»): ein Zug von unten, weich, ohne Federn, Gang um Gang versetzt;
+   startet schon kurz bevor die Reihe ins Bild kommt (essen-gaenge.js), die Fotos sind dann längst geladen. */
+.gt-t{transform:translate3d(0,110px,0);transition:transform 1.8s cubic-bezier(.33,1,.68,1) calc(var(--n)*.14s)}
+.gt-t img{transform:scale(1.14);transition:transform 2.6s cubic-bezier(.33,1,.68,1) calc(var(--n)*.14s)}
+.gt-reihe.gt-los .gt-t,.gt-reihe.gt-los .gt-t img{transform:none}
+@media(max-width:900px){.gt-t{transform:translate3d(0,56px,0)}}
+@media(prefers-reduced-motion:reduce){.gt-t,.gt-t img{transform:none;transition:none}}
+/* Menükarte als Blatt (26.10., Robert: «großes 3D-Blatt … richtige edle Menükarte … mehr Substanz»). Zwei Blätter darunter versetzt geben
+   der Karte Dicke; innen ein gedruckter Doppelrahmen in Messing. Beim Ankommen legt sich das Blatt aus leichter Schräge flach (nur transform). */
+.gt-blatt{position:relative;max-width:1320px;margin:clamp(64px,7vw,110px) auto 0;perspective:2200px}
+.gt-blatt::before,.gt-blatt::after{content:"";position:absolute;inset:0;border-radius:6px;background:#F1EBE1;box-shadow:0 30px 60px -36px rgba(24,33,63,.4)}
+.gt-blatt::before{transform:rotate(-1.6deg) translate(-12px,16px);background:#ECE4D8}
+.gt-blatt::after{transform:rotate(1.1deg) translate(14px,10px);background:#F3EDE3}
+.gt-menu{position:relative;z-index:1;background:#FDFBF7;border-radius:6px;padding:clamp(40px,3.6vw,56px) clamp(28px,4vw,72px) clamp(34px,3vw,46px);
+ box-shadow:inset 0 1px 0 #fff,0 2px 3px rgba(24,33,63,.06),0 26px 40px -24px rgba(24,33,63,.35),0 70px 110px -50px rgba(24,33,63,.45);
+ transform-origin:50% 100%;transform:translate3d(0,70px,0) rotateX(16deg);transition:transform 2s cubic-bezier(.33,1,.68,1)}
+.gt-blatt.gt-liegt .gt-menu{transform:none}
+.gt-menu::before,.gt-menu::after{content:"";position:absolute;pointer-events:none;border:1px solid rgba(138,106,42,.5)}
+.gt-menu::before{inset:clamp(12px,1.4vw,20px)}
+.gt-menu::after{inset:clamp(17px,1.8vw,26px);border-color:rgba(138,106,42,.22)}
+.gt-z{display:block;width:clamp(42px,3.4vw,52px);height:auto;margin:0 auto 14px;color:#C9A54E}
+.gt-menu-fuss{display:flex;flex-direction:column;align-items:center;gap:6px;margin:clamp(8px,1vw,14px) 0 0;padding-top:clamp(14px,1.6vw,20px);text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.gt-menu-fuss::before{content:"";width:60px;height:1px;background:rgba(138,106,42,.45);margin-bottom:14px}
+.gt-menu-fuss span:last-child{color:var(--ink);opacity:.6;letter-spacing:.16em}
+@media(prefers-reduced-motion:reduce){.gt-menu{transform:none;transition:none}}
+.gt-menu-kopf{text-align:center;padding:0 20px clamp(14px,1.6vw,22px)}
+.gt-menu-titel{display:flex;align-items:center;justify-content:center;gap:18px;margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.gt-st{width:9px;height:9px;color:#C9A54E;flex:none}
+.gt-menu-unter{margin:10px 0 0;font-size:13.5px;letter-spacing:.02em;color:var(--ink);opacity:.55}
+/* Die Gänge nebeneinander, ohne Löcher (26.10., Robert: Zeilen «links schwach, rechts schwach», «nebeneinander schöner», aber keine Leerräume):
+   Spalten so breit wie ihr Inhalt, das Gericht steht mittig in einem gleich hohen Feld, die Messingstriche auf einer Linie, «oder» in der Zeile. */
+.gt-gaenge{list-style:none;margin:0 auto;padding:clamp(14px,1.6vw,22px) 0 clamp(8px,1vw,14px);display:grid;grid-template-columns:.92fr 1fr 1.05fr 1.3fr 1.15fr;grid-template-rows:auto auto auto}
+.gt-gaenge li{position:relative;display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;text-align:center;padding:6px clamp(12px,1.4vw,26px) 4px}
+.gt-gaenge li+li::before{content:"";position:absolute;left:0;top:10%;bottom:10%;width:1px;background:rgba(138,106,42,.2)}
+.gt-nr{font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);padding-bottom:12px}
+.gt-g{align-self:center;font-family:var(--licht);font-weight:300;font-size:clamp(18px,1.4vw,22px);line-height:1.3;letter-spacing:.005em;color:var(--ink)}
+.gt-wahl{display:flex;flex-direction:column;align-items:center;gap:7px}
+.gt-strich{display:block;width:28px;height:1px;margin:16px 0 8px;background:#C9A54E}
+.gt-wahl span{display:block;font-size:14px;line-height:1.45;color:#3A4160}
+.gt-wahl span i{display:inline;margin:0 .5em 0 0;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+@media(max-width:900px){.gt-menu{padding:44px 20px 34px}.gt-blatt::before{transform:rotate(-1.4deg) translate(-3px,8px)}.gt-blatt::after{transform:rotate(.9deg) translate(4px,5px)}.gt-kopf{grid-template-columns:1fr}.gt-bilder{height:76vw}.gt-zeile{grid-template-columns:1fr 1fr}.gt-reihe{grid-template-columns:1fr 1fr}.gt-t:first-child{grid-column:1/-1;aspect-ratio:3/2}.gt-gaenge{grid-template-columns:1fr}.gt-gaenge li{grid-row:auto;grid-template-rows:none;padding:20px 0}.gt-gaenge li+li::before{left:50%;top:0;bottom:auto;width:60px;height:1px;margin-left:-30px}.gt-strich{margin:12px 0 6px}}

@@ -1,0 +1,21 @@
+/* Unterseiten: Schweben wie bei Monte-Moro (Robert 02.11.2026), dieselben Werte wie auf der Startseite (gegenueber.css «SCHWEBEN»):
+   der Rahmen schwebt aus clamp(80px,9vw,140px) herauf, .93 → 1, 2,1 s Feder; von rechts aus clamp(70px,8vw,130px), .95 → 1, 2,3 s;
+   das Foto zoomt dabei von 1,25 in den Rahmen (2,4 s); Texte steigen 1,2 s, Titel 1,9 s aus dem Schlitz. Nichts hängt am Scrollen.
+   Ausgelöst von schweben.js; die Startseite (main.gg) ist ausgenommen. */
+:root{--mm-feder:cubic-bezier(.16,1,.3,1)}   /* ohne Überschwingen: in dichten Kacheln stiess das Federn an die Nachbarn und an die Schrift (Robert 02.11.2026) */
+main:not(.gg){overflow-x:clip}
+@media (prefers-reduced-motion:no-preference){
+  main:not(.gg) figure[data-r]:not([data-r=text]){transform:none;animation:none;translate:0 clamp(80px,9vw,140px);scale:.93;transition:translate 2.1s var(--mm-feder),scale 2.1s var(--mm-feder)}
+  main:not(.gg) figure[data-r][data-seite=rechts]:not([data-r=text]){translate:clamp(70px,8vw,130px) clamp(24px,3vw,46px);scale:.95;transition:translate 2.3s var(--e1),scale 2.3s var(--e1)}
+  main:not(.gg) figure[data-r]:not([data-r=text]).da{translate:0 0;scale:1;animation:none}
+  main:not(.gg) figure[data-r][data-zoom]:not([data-r=text]){overflow:clip}
+  main:not(.gg) figure[data-r][data-zoom]:not([data-r=text]) img{transform:none;scale:1.25;transition:scale 2.4s var(--e1)}
+  main:not(.gg) figure[data-r][data-zoom]:not([data-r=text]).da img{scale:1.08}
+  main:not(.gg) [data-zoom2]{overflow:clip}
+  main:not(.gg) .zoomhuelle{display:block}
+  main:not(.gg) [data-zoom2]>img{scale:1.25;transition:scale 2.4s var(--e1)}
+  main:not(.gg) [data-zoom2].zoom-da>img{scale:1.08}
+  main:not(.gg) [data-r=text]{transform:translateY(clamp(18px,2vw,30px));transition:transform 1.2s var(--e1);transition-delay:calc(var(--i,0) * 110ms)}
+  main:not(.gg) [data-r=text].da{transform:none}
+  main:not(.gg) [data-zeilen] .z>span{transition:transform 1.9s var(--e1) calc(var(--z,0) * 140ms)}
+}

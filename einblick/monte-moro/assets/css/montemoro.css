@@ -1,0 +1,513 @@
+/* Hotel Monte-Moro · «Ein Tag am Grat», veredelt · Designstudie Tasty Studios (18.10.2026)
+   Robert: «zu verspielt … nicht elegant umgesetzt … diesen luxuriösen, tasty, edlen Stil» (Master 2.1, Punkt 6: Würde das Haus diese Seite in einem Luxusmagazin zeigen?).
+   Faden und Szenen bleiben; die Gegenstände werden angedeutet, nicht nachgebaut: echte Fotos, feine Linien (1 px Lärche oder Messing), viel Raum,
+   grosse ruhige Typografie, Lärche nur als Akzent. Bewegung langsam und weich, ohne Hüpfen, Wackeln oder Klappern. Nur transform und opacity (Regel 55). */
+
+/* ---------- Schriften ---------- */
+@font-face{font-family:'Fjalla One';font-weight:400;font-display:swap;src:url(../fonts/FjallaOne-400.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:400 600;font-display:swap;src:url(../fonts/InstrumentSans-normal-400_600.woff2) format('woff2')}
+@font-face{font-family:'DM Mono';font-weight:400;font-display:swap;src:url(../fonts/DMMono-normal-400.woff2) format('woff2')}
+@font-face{font-family:'Titel Ersatz';src:local('Arial Narrow'),local('Arial');size-adjust:96%}
+
+/* ---------- Farben (Markenbuch, Farbwelt A) und Masse; Messing für feine Linien ---------- */
+:root{--nacht:#0A2A4A;--nachtblau:#0D3F6F;--tiefnacht:#071B2E;--blau:#115595;--laerche:#C67144;--laerche-tief:#9A4F2B;--messing:#B39867;--papier:#F5F2EE;--fassade:#E7E1DC;--wandschatten:#D6CCC1;--creme:#EFE9E1;--tinte:#13263A;--grau:#4A5D70;
+  --gh:clamp(16px,2.4vw,38px);--rand:clamp(22px,6vw,110px);--breit:1280px;
+  --e1:cubic-bezier(.16,1,.3,1);--sanft:cubic-bezier(.22,.61,.36,1);
+  --titel:'Fjalla One','Titel Ersatz','Arial Narrow',sans-serif;--text:'Instrument Sans',Arial,sans-serif;--mono:'DM Mono',ui-monospace,Menlo,monospace;
+  --grat-maske:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%2060'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2060%20L0%2038%20L70%2030%20L118%206%20L150%2026%20L196%2014%20L250%2040%20L300%2022%20L338%2034%20L380%208%20L430%2036%20L486%2018%20L540%2042%20L600%2028%20L640%2036%20L700%2012%20L748%2032%20L800%2024%20L860%2044%20L920%2020%20L962%2034%20L1000%2026%20L1000%2060%20Z'/%3E%3C/svg%3E")}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;font-synthesis:none;scroll-padding-top:90px}
+body{margin:0;background:var(--nacht);color:var(--tinte);font:400 17.5px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+h1,h2,p,ul,ol,figure,table,fieldset,legend{margin:0;padding:0}
+ul,ol{list-style:none} fieldset{border:0;min-width:0} em{font-style:normal}
+::selection{background:var(--laerche);color:#fff}
+:focus-visible{outline:1px solid var(--laerche);outline-offset:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr:focus{position:fixed;z-index:99;top:10px;left:10px;width:auto;height:auto;clip:auto;padding:10px 16px;background:var(--papier)}
+
+/* ---------- Schrift: grosse ruhige Titel in Fjalla One, kleine Zeilen in DM Mono, Lärche nur im letzten Wort ---------- */
+.ueber{font:400 11px/1.6 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--akzent,var(--laerche-tief))}
+.d1,.d2,.d3{font-family:var(--titel);font-weight:400;color:var(--kopf,var(--nacht));text-wrap:balance;overflow-wrap:break-word}
+.d1{font-size:clamp(3.2rem,7.6vw,8.8rem);line-height:.98;letter-spacing:.002em}
+.d2{font-size:clamp(2.6rem,5vw,5.8rem);line-height:1.02;margin-top:18px;letter-spacing:.004em}
+.d3{font-size:clamp(2rem,3.2vw,2.8rem);line-height:1.05;margin:8px 0 20px}
+.d1 em,.d2 em,.d3 em{color:var(--laerche)}
+.leise{max-width:44ch;margin-top:26px;font-size:clamp(1rem,1.08vw,1.07rem);line-height:1.75;color:var(--leise,var(--grau))}
+
+/* ---------- Knöpfe (Markenbuch): Pille mit Knauf; ruhiger Lichtstreifen beim Überfahren ---------- */
+.kn{--o:#FFFFFF;--m:#F4F0EB;--u:#E2DAD0;--t:var(--nacht);--licht:rgba(255,255,255,.95);--kante:rgba(10,42,74,.16);--tief:rgba(10,42,74,.32);--ko:#1B5E9C;--ku:#0D3F6F;--kt:#fff;--klicht:rgba(255,255,255,.22);
+  display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 8px 0 24px;border-radius:999px;position:relative;overflow:hidden;isolation:isolate;white-space:nowrap;text-decoration:none;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--t);
+  background:linear-gradient(180deg,var(--o) 0%,var(--m) 46%,var(--u) 100%);
+  box-shadow:inset 0 1px 0 var(--licht),inset 0 -2px 0 var(--kante),0 1px 1px rgba(0,0,0,.12),0 18px 30px -18px var(--tief);
+  transition:transform .8s var(--e1),box-shadow .8s var(--e1)}
+.kn:hover{transform:translateY(-1px)}
+.kn::after{content:'';position:absolute;z-index:-1;top:-20%;bottom:-20%;left:0;width:38%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.4) 50%,transparent 100%);transform:translateX(-180%) skewX(-18deg)}
+.kn:hover::after{transform:translateX(360%) skewX(-18deg);transition:transform 1.4s var(--sanft)}
+.kn i{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(180deg,var(--ko),var(--ku));color:var(--kt);box-shadow:inset 0 1px 0 var(--klicht),inset 0 -2px 0 rgba(0,0,0,.24),0 2px 5px rgba(0,0,0,.2);transition:transform .9s var(--e1)}
+.kn:hover i{transform:translateX(2px)}
+.kn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.4}
+.kn--laerche{--o:#D3845A;--m:#C67144;--u:#AE5E34;--t:#fff;--licht:rgba(255,255,255,.3);--kante:rgba(0,0,0,.22);--tief:rgba(90,40,15,.45);--ko:#FFFFFF;--ku:#EFE9E1;--kt:var(--nacht);--klicht:rgba(255,255,255,.95)}
+.kn--nacht{--o:#15466F;--m:#0D3F6F;--u:#0A2A4A;--t:#fff;--licht:rgba(255,255,255,.18);--kante:rgba(0,0,0,.35);--tief:rgba(3,10,16,.5);--ko:#FFFFFF;--ku:#EFE9E1;--kt:var(--nacht);--klicht:rgba(255,255,255,.95)}
+.kn--laerche::after,.kn--nacht::after,.kn--linie::after{background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.18) 50%,transparent 100%)}
+.kn--linie{--o:transparent;--m:transparent;--u:transparent;--t:currentColor;--licht:transparent;--kante:transparent;box-shadow:inset 0 0 0 1px currentColor}
+.kn--klein{height:44px;padding:0 6px 0 18px;font-size:10.5px}.kn--klein i{width:32px;height:32px}
+.kn-reihe{display:flex;flex-wrap:wrap;gap:12px 14px;margin-top:clamp(28px,3vw,40px)}
+@media(max-width:420px){.kn{padding-left:18px;gap:10px;font-size:10.5px;letter-spacing:.12em}}
+
+/* ---------- Kopf: schwebende Leiste aus Papier; verschwindet beim Runterscrollen ---------- */
+.kopf{position:fixed;z-index:50;top:14px;left:50%;width:min(1180px,calc(100% - 28px));height:62px;display:flex;align-items:center;gap:18px;padding:0 8px 0 22px;border-radius:999px;
+  background:rgba(245,242,238,.95);box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(10,42,74,.1),0 18px 40px -24px rgba(10,42,74,.45);transform:translateX(-50%);transition:transform .9s var(--e1)}
+.kopf.weg{transform:translate(-50%,-140%)}
+.kopf__marke{display:flex;align-items:center;gap:10px;color:var(--nacht);text-decoration:none;font:400 20px/1 var(--titel);letter-spacing:.05em}
+.kopf__marke svg{width:44px;height:auto;color:var(--laerche)}
+.kopf__nav{display:flex;gap:4px;margin:0 auto}
+.kopf__nav a{padding:10px 12px;border-radius:999px;font:400 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--nacht);transition:color .4s ease}
+.kopf__nav a:hover{color:var(--laerche-tief)}
+.kopf__buchen{margin-left:auto}
+.kopf__nav+.kopf__buchen{margin-left:0}
+.kopf__menue{display:none;width:46px;height:46px;border-radius:10px;background:var(--nacht);place-items:center;align-content:center;gap:6px}
+.kopf__menue i{display:block;width:18px;height:1px;background:var(--papier)}
+.menue{position:fixed;inset:0;z-index:60;display:grid;align-content:center;justify-items:start;gap:8px;padding:90px var(--rand) 60px;background:var(--papier);color:var(--nacht);opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s}
+.menue.auf{opacity:1;visibility:visible;transition:opacity .7s ease,visibility 0s}
+.menue a:not(.kn){font:400 clamp(2.4rem,10vw,4rem)/1.08 var(--titel);text-decoration:none}
+.menue .kn{margin-top:24px}
+.menue__zu{position:absolute;top:28px;right:var(--rand);font:400 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--laerche-tief)}
+@media(max-width:1100px){.kopf__nav{display:none}.kopf__buchen{margin-left:auto}}
+@media(max-width:640px){.kopf{height:56px;padding-left:16px}.kopf__buchen{display:none}.kopf__menue{display:grid;margin-left:auto}.kopf__marke{font-size:18px}.kopf__marke svg{width:36px}}
+
+/* ---------- Szenen und Staffelung: die nächste Szene fährt mit dem Grat und einer feinen Lärche-Linie darüber; die vorige weicht zurück und versinkt im Dunst ---------- */
+.szene{position:relative;color:var(--tinte);background:linear-gradient(180deg,transparent var(--gh),var(--grund) var(--gh))}
+.szene+.szene{margin-top:calc(-1 * var(--gh))}
+.grat-oben{position:absolute;z-index:2;left:0;top:0;display:block;width:100%;height:calc(var(--gh) + 1px);color:var(--grund);pointer-events:none;overflow:visible}
+.grat-oben__linie{fill:none;stroke:var(--laerche);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.75}
+.szene__innen{position:relative;z-index:1;padding:calc(var(--gh) + clamp(90px,11vw,180px)) var(--rand) clamp(130px,13vw,210px)}
+.szene__dunst{position:absolute;z-index:3;left:0;right:0;bottom:0;height:min(100%,100svh);background:var(--tiefnacht);opacity:0;pointer-events:none;will-change:opacity}
+.szene__innen>*{max-width:var(--breit);margin-left:auto;margin-right:auto}
+
+/* ---------- Bilder mit Grat-Oberkante: die Fotos des Hauses stehen wie Berge ---------- */
+.gratbild{position:relative;overflow:hidden;background:var(--wandschatten);
+  -webkit-mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat;
+  mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat}
+.gratbild img{width:100%;height:100%;object-fit:cover}
+figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:60px 24px 18px;background:linear-gradient(180deg,rgba(7,27,46,0),rgba(7,27,46,.6));font:400 10.5px/1.5 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);pointer-events:none}
+
+/* ---------- Bewegung: Titel steigen langsam aus dem Schlitz, Stücke gleiten herauf, Fotos zoomen ruhig im Rahmen; kein Federn ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js .zl{display:block;overflow:clip;padding:.18em 0 .06em;margin:-.18em 0 -.06em}
+  .js .zl>span{display:block;transform:translateY(105%);transition:transform 1.9s var(--e1);transition-delay:calc(var(--z,0)*140ms)}
+  .js [data-zeilen].da .zl>span{transform:none}
+  .js [data-s]{opacity:0;transform:translateY(24px);transition:transform 2s var(--e1),opacity 1.6s var(--sanft);transition-delay:calc(var(--i,0)*120ms)}
+  .js [data-s].da{opacity:1;transform:none}
+  .js .gratbild img{transform:scale(1.08);transition:transform 3.6s var(--e1)}
+  .js .gratbild.da img{transform:none}
+}
+
+/* ---------- 01 Auftakt: Morgenhimmel, die Sonne steigt hinter dem freigestellten Haus; zwei feine Grate im Himmel ---------- */
+.s-auf{--grund:#F2E5D8;height:205svh;background:var(--grund)}
+.s-auf .szene__innen{padding:0;height:100%}
+.auf__buehne{position:relative;height:100svh;min-height:600px;overflow:hidden}
+.auf__himmel,.auf__himmel i{position:absolute;inset:0}
+.auf__frueh{background:linear-gradient(180deg,#A7B5C6 0%,#D3CDCF 28%,#EFD3BA 56%,#F5E7DA 80%,#F2E5D8 100%)}
+.auf__tag{background:linear-gradient(180deg,#7EA6CB 0%,#B3CDE3 42%,#E2ECF3 80%,#F1F3F4 100%);opacity:0}
+.auf__sonne{position:absolute;left:62%;top:32%;width:min(56vw,820px);aspect-ratio:1;margin:calc(min(56vw,820px) / -2) 0 0 calc(min(56vw,820px) / -2)}
+.auf__sonne i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#FFFBF2 0 7%,#FFEBC9 13%,rgba(255,214,170,.6) 25%,rgba(246,190,140,.22) 44%,rgba(246,190,140,0) 66%)}
+.auf__grat{position:absolute;left:-2%;width:104%;display:block;overflow:visible}
+.auf__grat path{fill:none;vector-effect:non-scaling-stroke;stroke-width:1}
+.auf__grat--fern{top:44%;height:clamp(50px,7vw,110px)}.auf__grat--fern path{stroke:rgba(10,42,74,.22)}
+.auf__grat--nah{top:52%;height:clamp(60px,9vw,140px);scale:-1 1}.auf__grat--nah path{stroke:rgba(198,113,68,.55)}
+.auf__kopf{position:absolute;z-index:3;left:0;right:0;top:clamp(110px,16vh,170px);padding:0 var(--rand);text-align:center}
+.auf__kopf .ueber{color:var(--nacht);opacity:.7}
+.auf__kopf .d1{margin-top:20px}
+.auf__haus{position:absolute;z-index:2;left:0;bottom:0;width:100%;height:62svh;max-width:none;object-fit:cover;object-position:46% 0;transform-origin:52% 40%}
+.auf__fuss{position:absolute;z-index:4;left:50%;bottom:clamp(22px,4vh,42px);width:min(1060px,calc(100% - 2*var(--rand)));transform:translateX(-50%);display:grid;justify-items:start;gap:12px}
+.auf__preis{display:inline-flex;align-items:baseline;gap:14px;padding:11px 20px;border-radius:999px;background:rgba(7,27,46,.88);color:var(--papier)}
+.auf__preis b{font:400 1.35rem/1 var(--titel);letter-spacing:.03em;white-space:nowrap}
+.auf__preis span{font:400 10px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.82}
+@media (prefers-reduced-motion:no-preference){
+  .js .auf__sonne i{animation:aufgang 5s var(--e1) both .2s}
+  .js .auf__haus{animation:haus-da 3s var(--e1) both}
+}
+@keyframes aufgang{from{transform:translateY(30%);opacity:0}to{transform:none;opacity:1}}
+@keyframes haus-da{from{transform:translateY(3%);opacity:.0}to{transform:none;opacity:1}}
+@media(max-width:700px){.s-auf{height:175svh}.auf__haus{height:56svh;object-position:44% 0}.auf__kopf{top:100px}.auf__sonne{left:66%;top:36%;width:120vw;margin:-60vw 0 0 -60vw}.auf__preis{padding:8px 14px}.auf__preis b{font-size:1.15rem}}
+
+/* ---------- Buchungsleiste: drei Felder und der Knopf in einer Pille; Kalender und Gästezähler im Hausstil ---------- */
+.leiste{position:relative;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;align-items:center;padding:8px;border-radius:999px;background:var(--papier);box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(10,42,74,.1),0 30px 60px -32px rgba(3,10,16,.55)}
+.leiste label{position:relative;display:grid;gap:4px;padding:8px 24px;cursor:pointer}
+.leiste label+label{border-left:1px solid rgba(10,42,74,.12)}
+.leiste label>span{font:400 9.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--laerche-tief)}
+.leiste .wahl{display:block;width:100%;text-align:left;font:400 1.2rem/1.15 var(--titel);letter-spacing:.02em;color:var(--nacht);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.leiste--nacht{background:var(--nacht);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 30px 60px -32px rgba(3,10,16,.6)}
+.leiste--nacht label+label{border-color:rgba(245,242,238,.14)}.leiste--nacht label>span{color:var(--messing)}.leiste--nacht .wahl{color:var(--papier)}
+@media(max-width:860px){.leiste{grid-template-columns:1fr 1fr;border-radius:26px;padding:8px}.leiste label{padding:8px 14px}.leiste label:nth-of-type(3){grid-column:1/-1;border-left:0;border-top:1px solid rgba(10,42,74,.12)}.leiste--nacht label:nth-of-type(3){border-color:rgba(245,242,238,.14)}.leiste .kn{grid-column:1/-1;justify-content:center;margin-top:4px}}
+.wahlkarte{position:absolute;z-index:70;left:0;bottom:calc(100% + 12px);width:min(318px,calc(100vw - 40px));padding:18px;border-radius:4px;background:var(--papier);color:var(--tinte);box-shadow:0 0 0 1px rgba(10,42,74,.08),0 40px 60px -30px rgba(3,10,16,.5);transform:translateY(8px);visibility:hidden;opacity:0;transition:transform .7s var(--e1),opacity .4s ease,visibility 0s .4s}
+.wahlkarte.auf{transform:none;visibility:visible;opacity:1;transition:transform .7s var(--e1),opacity .4s ease}
+.wahlkarte header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;font:400 1.1rem/1 var(--titel);color:var(--nacht)}
+.wahlkarte header button{width:34px;height:34px;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(10,42,74,.2);color:var(--nacht)}
+.wahlkarte .wt{display:grid;grid-template-columns:repeat(7,1fr);font:400 9.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--laerche-tief);text-align:center;margin-bottom:6px}
+.wahlkarte .tage{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.wahlkarte .tage button{height:36px;border-radius:3px;font:400 1rem/1 var(--titel);color:var(--nacht)}
+.wahlkarte .tage button:hover{box-shadow:inset 0 0 0 1px var(--laerche)}
+.wahlkarte .tage button[disabled]{color:rgba(10,42,74,.25);cursor:default;box-shadow:none}
+.wahlkarte .tage button.gew{background:var(--nacht);color:#fff}
+.wahlkarte .tage button.zw{background:var(--fassade);border-radius:3px}
+.wahlkarte .zaehler{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(10,42,74,.1)}
+.wahlkarte .zaehler b{font:400 1.1rem/1 var(--titel);color:var(--nacht)}
+.wahlkarte .zaehler div{display:flex;align-items:center;gap:12px;font:400 1.2rem/1 var(--titel);color:var(--nacht)}
+.wahlkarte .zaehler button{width:34px;height:34px;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(10,42,74,.3);color:var(--nacht);font-size:1.1rem}
+.wahlkarte .zaehler button[disabled]{opacity:.3;cursor:default}
+
+/* ---------- Kapitel: liegen still an ihrem Platz; die Grenze ist der Grat des Logos mit feiner Lärche-Linie (Master 2.1 Punkt 6c) ---------- */
+.kapitel{position:relative;color:var(--tinte);background:linear-gradient(180deg,transparent var(--gh),var(--grund) var(--gh))}
+.kapitel+.kapitel,.kapitel+.schluss,.seitenkopf+.kapitel,.k-morgen+.kapitel{margin-top:calc(-1 * var(--gh))}
+.kapitel__innen{position:relative;padding:calc(var(--gh) + clamp(90px,10vw,160px)) var(--rand) clamp(100px,11vw,170px)}
+.kapitel__innen>*{max-width:var(--breit);margin-left:auto;margin-right:auto}
+.kap__kopf{margin-bottom:clamp(40px,5vw,70px)}
+.kap__kopf .leise{margin-top:22px}
+.kap__text{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px clamp(30px,5vw,90px);margin-top:clamp(36px,4vw,60px)!important}
+.kap__text p:not(.ueber){font-size:1.02rem;line-height:1.78;color:var(--leise,var(--grau))}
+.kap__text .kn-reihe{grid-column:1/-1;margin-top:10px}
+.kap__text--schmal{grid-template-columns:1fr}
+.kap__preise b{font:400 1.3rem/1 var(--titel);color:var(--kopf,var(--nacht))}
+.zim__t{font:400 clamp(1.3rem,1.8vw,1.75rem)/1.12 var(--titel);color:var(--kopf,var(--nacht))}
+/* Überleitung: der letzte Satz eines Kapitels führt ins nächste */
+.weiter{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:clamp(30px,3.4vw,52px)!important;font:400 clamp(1.4rem,2.2vw,2.1rem)/1.2 var(--titel);color:var(--kopf,var(--nacht))}
+.weiter::before{content:'';width:clamp(40px,6vw,90px);height:1px;background:var(--laerche)}
+.weiter a{font:400 10.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--akzent,var(--laerche-tief));text-decoration:none;padding-bottom:4px;border-bottom:1px solid currentColor}
+.dunkel-k{--tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing)}
+
+/* ---------- Bilder: wenige grosse Fotos, bündig, ohne Lücken; ruhige Bewegung (Foto zoomt langsam in seinem Rahmen) ---------- */
+.paar,.rahmen,.einzel{position:relative;max-width:none!important}
+.paar{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.paar figure,.rahmen figure,.einzel{position:relative;overflow:hidden;background:var(--wandschatten);margin:0}
+.paar figure{aspect-ratio:4/3.1}
+.paar img,.rahmen img,.einzel img{width:100%;height:100%;object-fit:cover}
+.rahmen{display:grid;grid-template-columns:1.62fr 1fr;grid-template-rows:1fr 1fr;gap:0;height:clamp(420px,62vh,720px)}
+.rahmen__gross{grid-row:1/3}
+.einzel{aspect-ratio:4/3}
+.einzel--breit{aspect-ratio:21/9;margin-top:clamp(40px,5vw,70px)!important}
+.paar,.rahmen,.einzel--breit{-webkit-mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat;mask:var(--grat-maske) top/100% var(--gh) no-repeat,linear-gradient(#000 0 0) 0 calc(var(--gh) - 1px)/100% 100% no-repeat}
+.paar figcaption,.rahmen figcaption,.einzel figcaption{opacity:0;transition:opacity .9s ease}
+.paar figure:hover figcaption,.rahmen figure:hover figcaption,.einzel:hover figcaption{opacity:1}
+@media (prefers-reduced-motion:no-preference){.js [data-bilder] img{transform:scale(1.06);transition:transform 3.6s var(--e1)}.js [data-bilder].da img{transform:none}}
+@media(max-width:900px){.paar{grid-template-columns:1fr}.paar figure{aspect-ratio:4/3}.rahmen{grid-template-columns:1fr 1fr;grid-template-rows:56vw 34vw;height:auto}.rahmen__gross{grid-column:1/3;grid-row:1}.kap__text{grid-template-columns:1fr}.paar figcaption,.rahmen figcaption,.einzel figcaption{opacity:1}}
+
+/* ---------- 1 Morgen: der Hero liegt still, die Sonne steigt beim Laden; darunter der erste Satz ins Zimmer ---------- */
+.k-morgen{--grund:#F2E5D8;background:var(--grund)}
+.k-morgen .auf__buehne{position:relative;height:100svh;min-height:620px;overflow:hidden}
+.auf__gast{margin-top:20px;font:400 10.5px/1.6 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--nacht);opacity:.75}
+.auf__weiter{display:flex;justify-content:center;align-items:center;gap:20px;padding:clamp(60px,7vw,100px) var(--rand) calc(var(--gh) + clamp(50px,6vw,90px));font:400 clamp(1.4rem,2.2vw,2.1rem)/1.2 var(--titel);color:var(--nacht);text-align:center;position:static;right:auto;bottom:auto}
+.auf__weiter::before,.auf__weiter::after{content:'';width:clamp(30px,5vw,70px);height:1px;background:var(--laerche)}
+
+/* ---------- Farben der Kapitel: hell und dunkel im Wechsel, Lärche nur als Akzent ---------- */
+.k-zimmer{--grund:var(--papier)}
+.k-bon{--grund:var(--nacht);--tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing)}
+.k-saastal{--grund:var(--fassade)}
+.k-spa{--grund:var(--creme)}
+.k-roesti{--grund:var(--tiefnacht);--tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing)}
+.k-kinder{--grund:var(--papier)}
+.k-wein{--grund:var(--nacht);--tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing)}
+.k-fam,.k-sommer,.k-preise{--grund:var(--fassade)}
+.k-wohn,.k-winter,.k-ankunft{--grund:var(--papier)}
+.k-karte{--grund:var(--nacht);--tinte:var(--papier);--kopf:var(--papier);--leise:rgba(245,242,238,.74);--akzent:var(--messing)}
+.k-anreise{--grund:var(--creme)}
+
+/* ---------- 3 Frühstück und der Bon: links Titel, Frühstücksfoto und Text dicht, rechts der Bon ---------- */
+.k-bon .kapitel__innen{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(50px,6vw,110px);align-items:start}
+.k-bon .kapitel__innen>*{max-width:none;margin:0}
+.k-bon .weiter{grid-column:1/-1}
+.bon__foto{margin-top:clamp(28px,3vw,44px)!important;aspect-ratio:16/10}
+.bon__satz{margin-top:26px;font-size:1.02rem;line-height:1.75;color:rgba(245,242,238,.8)}
+.bon__gratis{margin-top:16px;font-size:.94rem;line-height:1.7;color:rgba(245,242,238,.72)}
+.bon__gratis b{color:var(--papier);font-weight:600}
+.bon__drucker{justify-self:center;width:min(380px,100%);display:grid;justify-items:center;padding-top:30px}
+.bon__theke{position:relative;z-index:2;width:118%;height:1px;background:linear-gradient(90deg,transparent,var(--messing) 15%,var(--messing) 85%,transparent)}
+.bon__theke span{position:absolute;left:50%;top:-24px;transform:translateX(-50%);font:400 9.5px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--messing)}
+.bon__fach{width:100%;overflow:hidden;padding:0 14px 60px}
+.bon__papier{position:relative;padding:34px 28px 20px;background:#FBF9F5;color:#1D2530;font:400 12px/1.6 var(--mono);box-shadow:0 40px 60px -36px rgba(0,0,0,.75)}
+.bon__kopf{display:grid;justify-items:center;text-align:center;gap:2px;letter-spacing:.08em}
+.bon__kamm{width:64px;color:var(--laerche);margin-bottom:8px}
+.bon__kopf b{font:400 1.15rem/1.1 var(--titel);letter-spacing:.08em;text-transform:uppercase;color:var(--nacht)}
+.bon__titel{display:flex;justify-content:space-between;margin-top:20px;text-transform:uppercase;letter-spacing:.16em}
+.bon__trenn{height:0;margin:12px 0;border-top:1px dotted rgba(29,37,48,.5)}
+.bon__zeilen li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:6px 0}
+.bon__zeilen b{display:block;font-weight:400;text-transform:uppercase;letter-spacing:.12em}
+.bon__zeilen small{display:block;font-size:10.5px;line-height:1.45;color:#66707C}
+.bon__zeilen em{font-weight:400;color:var(--laerche-tief)}
+.bon__summe{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;text-transform:uppercase;letter-spacing:.18em}
+.bon__summe b{font:400 1.25rem/1 var(--titel);letter-spacing:.08em;color:var(--laerche-tief);padding-bottom:3px;border-bottom:1px solid var(--laerche)}
+.bon__dank{margin-top:18px;text-align:center;letter-spacing:.1em}
+.bon__abriss{position:absolute;left:0;top:calc(100% - 1px);display:block;width:100%;height:12px;fill:#FBF9F5;transform:scaleY(-1)}
+@media (prefers-reduced-motion:no-preference){.js .bon__drucker .bon__papier{transform:translateY(-104%)}.js .bon__drucker.da .bon__papier{transform:none;transition:transform 1.6s var(--e1)}}
+@media(max-width:900px){.k-bon .kapitel__innen{grid-template-columns:1fr}}
+
+/* ---------- 4 Saastal: Rahmen mit drei Bildern, darunter die Wege als Zeilen aus Fussspuren (einzige Bewegung) ---------- */
+.saastal__unten{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);margin-top:clamp(40px,5vw,70px)!important}
+.wege{border-top:1px solid rgba(10,42,74,.16)}
+.wege li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 16px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(10,42,74,.1)}
+.wege b{grid-row:1/3;font:400 clamp(2.6rem,3.6vw,3.6rem)/.9 var(--titel);color:var(--laerche)}
+.wege strong{font:400 1.15rem/1.15 var(--titel);color:var(--nacht);font-weight:400}
+.wege small{grid-column:2;font-size:.9rem;line-height:1.5;color:var(--grau)}
+.spur{display:flex;gap:6px;height:10px;align-items:center}
+.spur i{width:6px;height:3px;border-radius:50%;background:var(--nacht);opacity:.5}
+.spur i:nth-child(odd){transform:translateY(-3px)}
+@media (prefers-reduced-motion:no-preference){.js .spur i{opacity:0;transition:opacity .9s var(--sanft);transition-delay:calc(var(--k)*60ms + .3s)}.js .wege.da .spur i{opacity:.5}}
+.wege--gross li{grid-template-columns:80px minmax(0,1fr)}
+@media(max-width:900px){.saastal__unten{grid-template-columns:1fr}}
+
+/* ---------- 6 Röstihüs: zwei grosse Bilder, die Karte als aufgeschlagenes Heft ---------- */
+.buch{position:relative;display:grid;grid-template-columns:1fr 1fr;max-width:1080px!important;margin-top:clamp(70px,8vw,120px)!important;perspective:2400px;box-shadow:0 60px 90px -50px rgba(0,0,0,.9)}
+.buch::after{content:'';position:absolute;left:50%;top:0;bottom:0;width:60px;margin-left:-30px;background:linear-gradient(90deg,transparent,rgba(19,38,58,.12) 45%,rgba(19,38,58,.18) 50%,rgba(19,38,58,.12) 55%,transparent);pointer-events:none;z-index:3}
+.buch__seite{position:relative;padding:clamp(34px,4vw,64px) clamp(26px,3.6vw,58px);background:#FBF9F5;color:var(--tinte);outline:1px solid rgba(179,152,103,.6);outline-offset:-14px}
+.buch__seite--l{transform-origin:100% 50%;backface-visibility:hidden}
+.buch__kopf{text-align:center;font:400 9.5px/1 var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--laerche-tief)}
+.buch__titel{margin:18px 0 14px;text-align:center;font:400 clamp(1.6rem,2.4vw,2.3rem)/1.05 var(--titel);color:var(--nacht)}
+.buch__titel--klein{margin-top:30px;font-size:1.3rem}
+.buch__namen li{display:grid;grid-template-columns:auto minmax(12px,1fr) auto;gap:0 10px;align-items:baseline;padding:7px 0}
+.buch__namen span{font:400 clamp(1.02rem,1.25vw,1.18rem)/1.15 var(--titel);color:var(--nacht);letter-spacing:.02em}
+.buch__namen i{height:0;border-bottom:1px dotted rgba(19,38,58,.35);transform:translateY(-4px)}
+.buch__namen em{font:400 11px/1 var(--mono);color:var(--laerche-tief)}
+.buch__namen small{grid-column:1/-1;font-size:.8rem;line-height:1.4;color:var(--grau)}
+.kn-reihe--mitte{justify-content:center}
+.k-roesti .kn--linie,.k-karte .kn--linie,.k-bon .kn--linie,.k-wein .kn--linie{color:var(--papier)}
+@media (prefers-reduced-motion:no-preference){.js .buch__seite--l{transform:rotateY(-178deg);transition:transform 2.4s var(--e1) .2s}.js .buch.da .buch__seite--l{transform:none}}
+@media(max-width:900px){.buch{grid-template-columns:1fr}.buch::after{display:none}.js .buch__seite--l{transform:none}.buch__namen small{display:none}}
+
+/* ---------- 7 Kinder: ein grosses Bild, die Uhr bleibt ---------- */
+.k-kinder .kapitel__innen{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(50px,7vw,130px);align-items:center}
+.k-kinder .kapitel__innen>*{max-width:none;margin:0}
+.k-kinder .weiter{grid-column:1/-1}
+.kinder__bild{aspect-ratio:4/3}
+.kind__zeit{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;margin:22px 0 4px}
+.kind__bis{font:400 10.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--laerche-tief)}
+.zaehlwerk{display:inline-flex;gap:2px}
+.walze{display:block;position:relative;height:1.06em;overflow:hidden;font:400 clamp(3.4rem,6.6vw,7rem)/1.06 var(--titel);color:var(--nacht);box-shadow:inset 0 1px 0 rgba(198,113,68,.6),inset 0 -1px 0 rgba(198,113,68,.6);isolation:isolate;transform:translateZ(0)}
+.walze>span{display:block;transition:transform 1.6s var(--e1);transition-delay:calc(var(--w)*110ms)}
+.walze i{display:block;height:1.06em;font-style:normal;text-align:center;width:.6em}
+.walze-zeichen{font:400 clamp(3.4rem,6.6vw,7rem)/1 var(--titel);color:var(--laerche)}
+.kind__zeit .zaehlwerk:last-of-type .walze>span{transition-delay:calc(var(--w)*110ms + .4s)}
+.js .kind__zeit .walze>span{transform:translateY(0)}
+.kind__zeit.da .walze>span,html:not(.js) .walze>span{transform:translateY(calc(var(--d) * -1.06em))}
+@media(max-width:900px){.k-kinder .kapitel__innen{grid-template-columns:1fr}}
+
+/* ---------- 8 Wein von Fabian: das Stübli gross, zwei Gläser als Messinglinie ---------- */
+.k-wein .kapitel__innen{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(50px,7vw,130px);align-items:center}
+.k-wein .kapitel__innen>*{max-width:none;margin:0}
+.wein__bild{aspect-ratio:4/4.6}
+.wein__glaeser{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,70px);margin-top:clamp(40px,5vw,70px)}
+.wein{display:grid;justify-items:center;text-align:center;gap:22px}
+.glas{width:clamp(84px,7.4vw,118px);height:auto;overflow:visible}
+.glas__linie{fill:none;stroke:var(--messing);stroke-width:1;vector-effect:non-scaling-stroke}
+.glas__glanz{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1;vector-effect:non-scaling-stroke}
+.glas__wein{transform-box:fill-box;transform-origin:50% 100%}
+.wein__etikett{width:100%;padding-top:18px;border-top:1px solid rgba(179,152,103,.4)}
+.wein--silber .ueber{color:#C3CAD3}.wein--gold .ueber{color:#D5B67C}
+.wein__name{margin-top:10px;font:400 clamp(1.2rem,1.5vw,1.5rem)/1.08 var(--titel)}
+.wein__h,.wein__r{margin-top:6px;font-size:.84rem;line-height:1.5;color:rgba(245,242,238,.66)}
+.wein__p{margin-top:12px;font:400 11px/1 var(--mono);letter-spacing:.14em;color:var(--messing)}
+.wein__mehr{margin-top:clamp(36px,4vw,60px);font-size:.98rem;line-height:1.7;color:rgba(245,242,238,.78)}
+@media (prefers-reduced-motion:no-preference){.js .glas__wein{transform:scaleY(0);transition:transform 3.4s var(--e1);transition-delay:calc(var(--w)*.6s + .2s)}.js .wein__glaeser.da .glas__wein{transform:none}}
+@media(max-width:900px){.k-wein .kapitel__innen{grid-template-columns:1fr}}
+
+/* ---------- Schluss: und morgen scheint die Sonne wieder; Buchung und ein Satz zur Anreise ---------- */
+.schluss{--grund:var(--papier);position:relative;margin-top:calc(-1 * var(--gh));background:linear-gradient(180deg,transparent var(--gh),var(--grund) var(--gh))}
+.schluss__innen{max-width:1080px;margin:0 auto;padding:calc(var(--gh) + clamp(90px,10vw,160px)) var(--rand) clamp(110px,12vw,180px);text-align:center}
+.schluss__satz{font:400 clamp(2.6rem,5.4vw,5.6rem)/1.02 var(--titel);color:var(--nacht);margin-bottom:clamp(40px,5vw,70px)}
+.schluss__satz em{color:var(--laerche)}
+.schluss__bild{margin:0 calc(-1 * var(--rand)) clamp(40px,5vw,70px);overflow:hidden}
+.schluss__bild img{display:block;width:100%;aspect-ratio:12/5;object-fit:cover}
+.schluss__bild figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(min-width:1081px){.schluss__bild{margin-left:0;margin-right:0}}
+.schluss__anreise{margin-top:28px;font-size:.98rem;line-height:1.7;color:var(--grau)}
+.schluss__anreise a{color:var(--laerche-tief)}
+
+/* ---------- Unterseiten: Anfang mit grossem Foto, Titel und dem ersten Satz ---------- */
+.seitenkopf{position:relative;display:grid;min-height:min(88svh,860px);background:var(--nacht);color:var(--papier);overflow:hidden}
+.seitenkopf__bild{position:absolute;inset:0;margin:0}
+.seitenkopf__bild img{width:100%;height:100%;object-fit:cover}
+.seitenkopf__bild::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,46,.15) 30%,rgba(7,27,46,.82))}
+.seitenkopf__text{position:relative;align-self:end;max-width:var(--breit);width:100%;margin:0 auto;padding:140px var(--rand) calc(var(--gh) + clamp(60px,8vw,110px));--kopf:var(--papier);--leise:rgba(245,242,238,.84);--akzent:var(--messing)}
+.seitenkopf__text .leise{max-width:56ch}
+.preise__tafeln{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(30px,4vw,60px);align-items:start}
+.tafel-ruhig{width:100%;border-collapse:collapse}
+.tafel-ruhig caption{text-align:left;padding-bottom:12px;font:400 9.5px/1.6 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--laerche-tief)}
+.tafel-ruhig th,.tafel-ruhig td{padding:11px 10px 11px 0;border-top:1px solid rgba(10,42,74,.12);text-align:left;font-weight:400;font-size:.94rem;line-height:1.45;color:var(--grau);vertical-align:baseline}
+.tafel-ruhig td:last-child{text-align:right;white-space:nowrap;font:400 1.12rem/1 var(--titel);color:var(--nacht)}
+.tafel-ruhig thead th{font:400 1.15rem/1.1 var(--titel);color:var(--nacht)}
+.wohn__texte,.saastal__namen,.anreise__texte{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,5vw,90px);margin-top:clamp(28px,3vw,44px)!important;margin-bottom:clamp(50px,6vw,90px)!important}
+.anreise__texte{grid-template-columns:repeat(3,minmax(0,1fr))}
+.wohn__texte p:not(.zim__t),.saastal__namen p:not(.zim__t),.anreise__texte p:not(.ueber):not(.zim__t){margin-top:10px;font-size:.98rem;line-height:1.75;color:var(--grau)}
+.strecke{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:clamp(50px,6vw,90px)!important;position:relative}
+.strecke::before{content:'';position:absolute;left:0;right:12%;top:6px;height:1px;background:var(--laerche)}
+.strecke li{position:relative;display:grid;gap:6px;padding-right:20px}
+.strecke i{display:block;width:12px;height:12px;background:var(--grund);box-shadow:inset 0 0 0 1px var(--laerche);rotate:45deg;margin-bottom:10px}
+.strecke li:last-child i{background:var(--laerche)}
+.strecke b{font:400 clamp(1.3rem,1.8vw,1.8rem)/1.05 var(--titel);color:var(--nacht);font-weight:400}
+.strecke small{font:400 9.5px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--grau)}
+.spa__unten{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(40px,6vw,110px);margin-top:clamp(50px,6vw,90px)!important}
+.spa__angebot{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,3vw,50px);border-top:1px solid rgba(10,42,74,.14)}
+.spa__angebot li{padding:13px 0;border-bottom:1px solid rgba(10,42,74,.09);font:400 1.08rem/1.25 var(--titel);color:var(--nacht)}
+.spa__preise{display:grid;gap:18px;align-content:start}
+.spa__preise p:not(.spa__inkl){display:grid;gap:4px;padding-bottom:16px;border-bottom:1px solid rgba(10,42,74,.12)}
+.spa__preise b{font:400 clamp(2rem,3vw,2.8rem)/1 var(--titel);color:var(--nacht);font-weight:400}
+.spa__preise span{font:400 9.5px/1.6 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--laerche-tief)}
+.spa__inkl{font-size:.95rem;line-height:1.6;color:var(--grau)}
+@media(max-width:900px){.preise__tafeln,.wohn__texte,.saastal__namen,.anreise__texte,.spa__unten,.spa__angebot{grid-template-columns:1fr}.strecke{grid-template-columns:1fr 1fr;gap:28px 0}.strecke::before{display:none}}
+
+/* ---------- Fuss: der Teil des Hauses, dann das Familienband ---------- */
+.fuss{--grund:var(--nacht);position:relative;margin-top:calc(-1 * var(--gh));background:linear-gradient(180deg,transparent var(--gh),var(--nacht) var(--gh));color:var(--papier);padding:calc(var(--gh) + clamp(80px,9vw,150px)) var(--rand) 0}
+.fuss__haus{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,.7fr));gap:clamp(30px,4vw,70px);max-width:var(--breit);margin:0 auto;padding-bottom:clamp(60px,7vw,110px)}
+.fuss__wort{width:min(300px,64vw);height:auto;color:var(--papier)}
+.fuss__satz{margin-top:22px;font:400 clamp(1.4rem,2vw,1.9rem)/1.15 var(--titel);color:var(--laerche)}
+.fuss__spalte{display:grid;align-content:start;gap:6px}
+.fuss__spalte .ueber{--akzent:var(--messing);margin-bottom:8px}
+.fuss__spalte p,.fuss__spalte a{font-size:.95rem;line-height:1.8;color:rgba(245,242,238,.8);text-decoration:none}
+.fuss__spalte a:hover{color:var(--papier)}
+.studie{display:flex;justify-content:space-between;gap:12px 30px;flex-wrap:wrap;max-width:var(--breit);margin:0 auto;padding:26px 0 100px;border-top:1px solid rgba(245,242,238,.12);font:400 10.5px/1.6 var(--mono);letter-spacing:.06em;color:rgba(245,242,238,.45)}
+.studie a{text-decoration:none}
+@media(max-width:900px){.fuss__haus{grid-template-columns:1fr 1fr}.fuss__marke{grid-column:1/-1}}
+
+/* ---------- Familienband (gleich auf allen drei Häusern; Farben aus dem Haus: --fb-grund, --fb-text, --fb-akzent) ---------- */
+.familienband{--fb-grund:#071B2E;--fb-text:#F5F2EE;--fb-akzent:#B39867;margin:0 calc(-1 * clamp(22px,6vw,110px));padding:clamp(60px,7vw,110px) clamp(22px,6vw,110px);background:var(--fb-grund);color:var(--fb-text);font-family:'Tenor Sans','Avenir Next',sans-serif}
+.fb__kopf{display:flex;align-items:center;gap:16px;max-width:1280px;margin:0 auto;color:var(--fb-text);text-decoration:none;font-size:clamp(1.1rem,1.5vw,1.4rem);letter-spacing:.04em}
+.fb__kopf img{width:44px;height:auto}
+.fb__haeuser{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,32px);max-width:1280px;margin:clamp(30px,4vw,50px) auto 0;padding:0;list-style:none}
+.fb__haus a,.fb__haus>div{display:grid;gap:6px;color:var(--fb-text);text-decoration:none}
+.fb__haus figure{margin:0 0 10px;aspect-ratio:4/3;overflow:hidden;background:rgba(255,255,255,.06)}
+.fb__haus img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 2.4s cubic-bezier(.16,1,.3,1)}
+.fb__haus a:hover img{transform:scale(1.03)}
+.fb__name{font-size:clamp(1.05rem,1.3vw,1.25rem);line-height:1.2}
+.fb__zusatz{font-size:.92rem;opacity:.75}
+.fb__ort{font-size:.88rem;opacity:.6}
+.fb__hier,.fb__weiter{margin-top:6px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fb-akzent)}
+.fb__haus--hier figure{outline:1px solid var(--fb-akzent);outline-offset:4px}
+@media(max-width:800px){.fb__haeuser{grid-template-columns:1fr 1fr}}
+/* ---------- Ende Familienband ---------- */
+
+/* ---------- Anfrage-Fenster: jede Anfrage bleibt auf der Seite (Regel «Anfragen im Fenster, nie mailto») ---------- */
+.anf{width:min(640px,calc(100% - 28px));max-height:calc(100svh - 40px);padding:0;border:0;border-radius:4px;background:var(--papier);color:var(--tinte);box-shadow:0 60px 90px -30px rgba(3,10,16,.6);overflow:auto}
+.anf::backdrop{background:rgba(7,27,46,.62)}
+.anf__blatt{position:relative;padding:clamp(28px,3.4vw,46px)}
+.anf__zu{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(10,42,74,.2);color:var(--nacht);font-size:1.3rem;line-height:1}
+.anf .ueber{--akzent:var(--laerche-tief)}
+.anf__titel{font:400 clamp(2rem,3.4vw,2.8rem)/1.05 var(--titel);color:var(--nacht);margin:8px 0 22px}
+.anf__felder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 24px;border-top:1px solid rgba(10,42,74,.14)}
+.anf__felder label{display:grid;gap:4px;padding:12px 0;border-bottom:1px solid rgba(10,42,74,.14)}
+.anf__felder label[hidden]{display:none}
+.anf__felder .ganz{grid-column:1/-1}
+.anf__felder span{font:400 9.5px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--laerche-tief)}
+.anf__felder input,.anf__felder textarea{width:100%;min-width:0;border:0;background:none;font:400 1.08rem/1.35 var(--text);color:var(--nacht);padding:2px 0;outline:none;resize:vertical}
+.anf__felder input:focus,.anf__felder textarea:focus{box-shadow:inset 0 -1px 0 var(--laerche)}
+.anf__honig{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.anf__hinweis{margin:16px 0 20px;font-size:.86rem;line-height:1.6;color:var(--grau)}
+.anf__meldung{margin-top:12px;font-size:.9rem;color:#9A2B2B}
+.anf__danke{display:grid;gap:14px}
+.anf__danke[hidden],.anf__form[hidden]{display:none}
+.anf__danke p{font-size:1rem;line-height:1.7;color:var(--grau)}
+@media(max-width:640px){.anf__felder{grid-template-columns:1fr}}
+
+/* ---------- Ebenen für die Bewegung (kein Neuzeichnen je Bild) ---------- */
+
+
+/* ---------- Rezeption im Chat: Pille unten rechts, erst nach dem Auftakt ---------- */
+.chat-knopf{position:fixed;z-index:55;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 20px 0 16px;border-radius:999px;background:rgba(7,27,46,.92);color:var(--papier);font:400 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 36px -20px rgba(0,0,0,.7);transition:transform .9s var(--e1)}
+.chat-knopf.weg{transform:translateY(calc(100% + 30px))}
+.chat-knopf svg{width:17px;height:17px;fill:none;stroke:var(--messing);stroke-width:1.3}
+.chat{position:fixed;z-index:56;right:16px;bottom:80px;width:min(400px,calc(100% - 32px));max-height:min(620px,calc(100svh - 120px));display:flex;flex-direction:column;border-radius:4px;overflow:hidden;background:var(--papier);box-shadow:0 50px 80px -30px rgba(3,10,16,.6),0 0 0 1px rgba(10,42,74,.08);transform:translateY(14px);opacity:0;transition:transform .8s var(--e1),opacity .5s ease}
+.chat.auf{transform:none;opacity:1}.chat[hidden]{display:none}
+.chat header{display:flex;align-items:baseline;gap:10px;padding:16px 18px;background:var(--nacht);color:var(--papier)}
+.chat header b{font:400 1.2rem/1 var(--titel)}
+.chat header small{font:400 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--messing)}
+.chat header button{margin-left:auto;font-size:1.4rem;line-height:1;color:var(--papier)}
+.chat__verlauf{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:16px;display:grid;gap:10px;align-content:start}
+.chat__m{max-width:88%;padding:12px 14px;border-radius:3px;font-size:.94rem;line-height:1.55}
+.chat__m--haus{background:#fff;color:var(--tinte);box-shadow:inset 0 0 0 1px rgba(10,42,74,.07)}
+.chat__m--gast{justify-self:end;background:var(--nacht);color:var(--papier)}
+.chat__m small{display:block;margin-top:8px;font:400 9.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--laerche-tief)}
+.chat__m a{color:var(--blau)}
+.chat__vorschlag{display:grid;gap:0;border-top:1px solid rgba(10,42,74,.1)}
+.chat__vorschlag button{padding:10px 2px;font-size:.88rem;text-align:left;color:var(--nacht);border-bottom:1px solid rgba(10,42,74,.1);transition:color .4s ease}
+.chat__vorschlag button:hover{color:var(--laerche-tief)}
+.chat__eingabe{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end;padding:12px 14px;border-top:1px solid rgba(10,42,74,.08)}
+.chat__eingabe textarea{width:100%;max-height:7.5em;resize:none;padding:11px 14px;border:0;border-radius:3px;background:#fff;box-shadow:inset 0 0 0 1px rgba(10,42,74,.16);font:inherit;font-size:.95rem;line-height:1.45;color:var(--nacht);overflow-y:auto}
+.chat__eingabe button{width:44px;height:44px;border-radius:4px;display:grid;place-items:center;background:var(--nacht);color:#fff}
+.chat__eingabe button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+.chat__fuss{padding:0 16px 12px;font-size:.78rem;color:var(--grau)}
+@media (max-width:640px){.chat-knopf span{display:none}.chat-knopf{padding:0 15px}}
+
+/* ---------- Punkte der Karten als feine Rauten (Master 2.1 Punkt 6a: keine Kreise) ---------- */
+.ort__p,.ziel rect,.haus-ort rect{transform-box:fill-box;transform-origin:center;rotate:45deg}
+
+/* ---------- Flug ins Tal (zurück auf Roberts Wunsch, im heutigen Stil): die Bühne bleibt an ihrem Platz, nur die Karte zoomt; Rauten statt Kreise ---------- */
+.k-saastal--flug .kapitel__innen,.k-anreise--flug .kapitel__innen{padding-top:var(--gh)}
+.flug__wrap{position:relative;height:240svh;max-width:none!important;margin:0 calc(-1 * var(--rand)) clamp(60px,7vw,110px)!important}
+.flug__buehne{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;background:var(--grund)}
+.flug{position:absolute;inset:0;width:100%;height:100%}
+.flug .relief__linien path{fill:none;stroke:rgba(10,42,74,.15);stroke-width:1;vector-effect:non-scaling-stroke}
+.flug .relief__linien path:nth-child(4n+2){stroke:rgba(10,42,74,.26)}
+.flug .relief__linien .relief__grat{stroke:var(--laerche);opacity:.75}
+.flug .tal{fill:none;stroke:var(--nacht);stroke-width:1;stroke-dasharray:2 5;vector-effect:non-scaling-stroke;opacity:.5}
+.flug .tal--strecke{stroke:var(--laerche);stroke-width:1.5;stroke-dasharray:none;opacity:.9}
+.flug .ort__p{fill:var(--nacht)}
+.flug .ort--haus .ort__p{fill:var(--laerche)}
+.flug .ort__n{font:400 22px var(--titel);fill:var(--nacht)}
+.flug .ort--haus .ort__n{fill:var(--laerche-tief)}
+.flug .ort__s{font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;fill:var(--grau)}
+.flug__detail ellipse{fill:var(--nacht);opacity:0;transition:opacity .9s var(--sanft);transition-delay:calc(var(--k)*45ms)}
+.flug__detail .ziel rect{fill:var(--laerche)}
+.flug__detail text{font:400 2.2px var(--titel);fill:var(--nacht);letter-spacing:.02em}
+.flug__detail .haus-ort rect{fill:var(--nacht)}
+.flug__detail .haus-ort text{font-size:1.8px;fill:var(--laerche-tief)}
+.flug__detail{opacity:0;transition:opacity 1.2s var(--sanft)}
+.flug.nah .flug__detail{opacity:1}
+.flug.nah .flug__detail ellipse{opacity:.7}
+.flug.flieg .ort{opacity:0}
+.flug .ort{transition:opacity .6s ease}
+.flug .ziel rect,.flug .haus-ort rect,.flug .ort__p{transform-box:fill-box;transform-origin:center;rotate:45deg}
+.flug__text{position:absolute;z-index:3;max-width:520px;padding:clamp(24px,3vw,40px);background:rgba(245,242,238,.94)}
+.k-saastal .flug__text{background:rgba(231,225,220,.94)}
+.flug__text .d2{margin-top:10px}
+.flug__text--1{left:var(--rand);bottom:clamp(60px,9vh,100px)}
+.flug__text--2{right:var(--rand);top:50%;transform:translateY(-50%);opacity:0;max-width:440px}
+.flug__minuten{margin-top:22px;border-top:1px solid rgba(10,42,74,.16)}
+.flug__minuten li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:0 16px;padding:14px 0;border-bottom:1px solid rgba(10,42,74,.1)}
+.flug__minuten b{font:400 clamp(2.6rem,3.8vw,3.8rem)/.9 var(--titel);color:var(--laerche);font-weight:400}
+.flug__minuten strong{display:block;font:400 1.15rem/1.15 var(--titel);color:var(--nacht);font-weight:400}
+.flug__minuten small{display:block;margin-top:4px;font-size:.86rem;line-height:1.5;color:var(--grau)}
+.flug__schema{position:absolute;z-index:3;left:var(--rand);bottom:22px;font:400 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--grau)}
+@media(max-width:800px){.flug__wrap{height:230svh}.flug__text--1{left:16px;right:16px;bottom:16px;padding:20px}.flug__text--2{left:16px;right:16px;top:auto;bottom:16px;transform:none;max-width:none;padding:20px}.flug__minuten li{padding:9px 0}.flug__minuten b{font-size:2.2rem}.flug__minuten small{display:none}.flug__schema{display:none}}
+
+/* ---------- Abfahrtstafel als Fallblatt (anreise.html): jedes Zeichen in seinem Blatt, von Anfang an lesbar, klappt beim Erscheinen einmal kurz ---------- */
+.kap__kopf--tafel{margin-top:clamp(20px,3vw,40px)}
+.tafel{padding:clamp(22px,3vw,44px) clamp(22px,3vw,48px);background:#0B1722;color:#F3EEE4;box-shadow:0 50px 80px -50px rgba(3,10,16,.8);margin-bottom:clamp(60px,7vw,110px)!important}
+.tafel__kopf,.tafel li{display:grid;grid-template-columns:minmax(80px,.45fr) minmax(0,2fr) minmax(0,1.1fr);gap:20px;align-items:center}
+.tafel__kopf{padding-bottom:14px;font:400 9.5px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:rgba(243,238,228,.45)}
+.tafel li{padding:12px 0;border-top:1px solid rgba(255,255,255,.08)}
+.tafel__art{font:400 10.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--messing)}
+.fb{display:flex;gap:2px}
+.fb i{position:relative;flex:1 1 0;min-width:0;max-width:1.5em;height:1.75em;background:linear-gradient(180deg,#1D2A36 0 49.5%,#16212C 50.5%);font:400 clamp(.82rem,1.55vw,1.4rem)/1.75em var(--mono);color:#F3EEE4;text-align:center;font-style:normal;perspective:180px}
+.fb i::after{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6)}
+.fb b{display:block;font-weight:400;transform-origin:50% 50%}
+@media(max-width:800px){.tafel__kopf{display:none}.tafel li{grid-template-columns:1fr;gap:6px;padding:14px 0}.fb i{height:1.85em;line-height:1.85em;font-size:.8rem}}
+
+/* ---------- Pflicht-Liste 9d (23.10.2026): Impressum, Datenschutz, 404 – helles Papier unter dem Himmel des Auftakts, eine ruhige Textspalte ---------- */
+.recht{position:relative;padding:clamp(120px,16vh,170px) var(--rand) clamp(70px,8vw,120px);background:linear-gradient(180deg,#A7B5C6 0%,#D3CDCF 14%,#EFD3BA 30%,var(--papier) 46%,var(--papier) 100%)}
+.recht__kopf{display:grid;justify-items:center;gap:12px;text-align:center;max-width:900px;margin:0 auto clamp(40px,5vw,70px)}
+.recht__kamm{width:clamp(64px,6vw,92px);height:auto;color:var(--messing)}
+.recht__text{max-width:68ch;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(22px,4vw,60px);background:#fff;border-radius:14px;box-shadow:0 1px 2px rgba(10,42,74,.05),0 10px 26px -12px rgba(10,42,74,.16),0 34px 70px -40px rgba(10,42,74,.22)}
+.recht__text p{margin:0 0 14px;font-size:clamp(.98rem,1.05vw,1.04rem);line-height:1.75;color:var(--tinte);overflow-wrap:break-word}
+.recht__h{margin:clamp(26px,3vw,38px) 0 10px;font:400 clamp(1.3rem,1.6vw,1.6rem)/1.15 var(--titel);color:var(--nacht)}
+.recht__h:first-child{margin-top:0}
+.recht__links a,.recht__liste a,.recht__text a{color:var(--laerche-tief);text-underline-offset:3px}
+.recht__liste{margin:0 0 14px;padding:0}
+.recht__liste li{position:relative;padding:0 0 8px 18px;font-size:clamp(.95rem,1vw,1rem);line-height:1.6}
+.recht__liste li::before{content:'';position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--messing)}
+.recht__studie{margin-top:clamp(28px,3vw,40px)!important;padding-top:18px;border-top:1px solid var(--wandschatten);font:400 12px/1.7 var(--mono)!important;letter-spacing:.02em;color:var(--grau)!important}
+.recht--404{min-height:max(78svh,560px);display:grid;align-content:center}
+.recht--404 .recht__kopf{margin-bottom:0}
+.recht--404 .kn-reihe{margin-top:18px}

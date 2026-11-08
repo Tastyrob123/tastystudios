@@ -1,0 +1,4 @@
+/* Ergänzung zu den Werkbank-Stilen für die Beigaben von Ihr Haus: die Fotowand im Materialordner (Fotos statt Aufkleber in der Wand «etk»). */
+.etk.fotowand .b{aspect-ratio:3/2;height:auto;display:block}
+.etk.fotowand .b img{width:100%;height:100%;max-height:none;object-fit:cover;border-radius:6px;filter:none;box-shadow:0 1.2vw 2.6vw rgba(0,0,0,.4)}
+.etk.fotowand p{margin-top:14px}

@@ -1,0 +1,136 @@
+/* Bühne «Und alles, was dazugehört.» (bz.py): Fassung 1 «Auf dem Tisch», die echten Stücke von Ihr Haus auf nachtblauer Tapete.
+   Grössen in Bühnen-Einheiten (cqh/cqw), damit Bildschirm und Handy-Band dieselbe Komposition zeigen. Bewegung nur transform und opacity. */
+.wv-pk .bz-buehne{--serif:'Cormorant Garamond',Georgia,serif;background:#10151d url(/neu/runde3/bz/tapete-nacht.svg) 0 0/360px auto;box-shadow:none}
+.wv-pk .bz-f.bz-buehne{border-radius:14px}
+.wv-pk .bz-buehne .st{position:absolute;inset:0;container-type:size;display:flex;align-items:center;justify-content:center;gap:0}
+.wv-pk .bz-buehne :where(.st img){position:static;inset:auto;width:auto;height:auto;transform:none;transition:none;max-width:none}
+.wv-pk .bz-buehne .o,.wv-pk .bz-buehne .o *{box-sizing:border-box}
+.wv-pk .bz-buehne .o{position:relative;flex:none;min-width:0;min-height:0;height:calc(var(--k)*var(--s,1)*100cqh);aspect-ratio:var(--ar);margin:0 .5cqw;
+  box-shadow:0 0 0 1px rgba(255,255,255,.07),0 .15cqh .3cqh rgba(0,0,0,.28),0 1cqh 2.4cqh rgba(0,0,0,.32),0 3cqh 6cqh rgba(0,0,0,.3);
+  transform:rotate(calc(var(--p)*2.4deg - 1deg)) translateY(calc(var(--i)*1.4cqh - 2cqh));
+  transition:transform 1.1s cubic-bezier(.16,1,.3,1) calc(var(--i,0)*.06s),opacity .8s calc(var(--i,0)*.06s)}
+.wv-pk .bz-b:not(.an) .o{opacity:0;transform:rotate(calc(var(--p)*2.4deg - 1deg)) translateY(4cqh)}
+.wv-pk .bz-buehne .o>img{display:block;width:100%;height:100%;object-fit:cover}
+.wv-pk .bz-buehne .o.d{container-type:size}
+.wv-pk .bz-buehne .o.d>.in{position:absolute;inset:0}
+
+/* frei gelegte Stücke */
+.wv-pk .bz-buehne .st-frei{display:block}
+.wv-pk .bz-buehne .o.f{position:absolute;margin:0;height:calc(var(--h)*1cqh);container-type:size;transform:translate(-50%,-50%) rotate(var(--r));transition-delay:calc(var(--z,1)*.04s)}
+.wv-pk .bz-b:not(.an) .o.f{opacity:0;transform:translate(-50%,-46%) rotate(var(--r))}
+.wv-pk .bz-buehne .o.f>.in{position:absolute;inset:0}
+
+.mk{display:block;background:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.mk-logo{-webkit-mask-image:url(/neu/runde3/bz/logo.svg);mask-image:url(/neu/runde3/bz/logo.svg);aspect-ratio:713/290}
+.mk-z{-webkit-mask-image:url(/neu/runde3/bz/zeichen.svg);mask-image:url(/neu/runde3/bz/zeichen.svg);aspect-ratio:1}
+
+/* ---------- Feed: Handy aus Blender, Profil als Bildschirm, Abzüge ringsum ---------- */
+.wv-pk .bz-buehne .o.hy3{box-shadow:none;container-type:normal}
+.hy3 .fh{position:absolute;overflow:hidden;border-radius:13%/6%}
+.hy3 .fh-l{position:absolute;inset:0;overflow:hidden;opacity:0;background:#000;pointer-events:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.wv-pk .bz-buehne .hy3 .fh-l img{display:block;width:100%;height:auto}
+.hy3 .fh.live .fh-l{opacity:1;overflow-y:auto;pointer-events:auto;scrollbar-width:none}
+.hy3 .fh.live .fh-l::-webkit-scrollbar{display:none}
+.hy3 .fh-k{position:absolute;left:50%;bottom:13%;translate:-50% 0;padding:.6em 1.1em;border-radius:40px;background:rgba(16,21,29,.86);box-shadow:0 0 0 1px rgba(226,174,104,.5);
+  color:#efe7da;font:500 clamp(6px,.5vw,8px)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:opacity .4s}
+.hy3 .fh.live .fh-k{opacity:0}
+.hy3 .fh{cursor:pointer}
+.wv-pk .bz-buehne .hy3 .fh-g{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 2cqh 3cqh rgba(0,0,0,.55))}
+.wv-pk .bz-buehne .o.igc{display:flex;flex-direction:column;background:#000;border-radius:1.2cqh;overflow:hidden;color:#f5f5f5;font-family:-apple-system,system-ui,sans-serif;
+  box-shadow:0 0 0 1px rgba(255,255,255,.1),0 1.4cqh 3cqh rgba(0,0,0,.5)}
+.igp-k{flex:none;display:flex;align-items:center;gap:4cqw;height:16cqw;padding:0 5cqw;font-size:6.4cqw;font-weight:600}
+.igp-k b{flex:1;font-weight:600}.igp-k i{font-style:normal;letter-spacing:.06em;opacity:.8}
+.igp-a{flex:none;display:grid;place-items:center;width:10cqw;height:10cqw;border-radius:50%;background:#10151d;color:#e2ae68;box-shadow:0 0 0 .7cqw #000,0 0 0 1.2cqw #c7b489}
+.igp-a .mk{width:62%}
+.wv-pk .bz-buehne .igc>img{display:block;width:100%;aspect-ratio:4/5;height:auto;object-fit:cover}
+.igp-i{flex:1;display:flex;align-items:center;justify-content:space-between;padding:0 4.6cqw}
+.igp-i span{display:flex;gap:4.4cqw}
+.igp-i svg{display:block;width:8.6cqw;height:8.6cqw;fill:none;stroke:#f5f5f5;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round}
+/* schweben von unten ein, sobald der Abschnitt im Bild ist und der Feed gewählt ist */
+.wv-pk .bz-f .o.igc{transition:transform 1.3s cubic-bezier(.16,1,.3,1) calc(.15s + var(--d)*.09s),opacity .9s calc(.15s + var(--d)*.09s)}
+.wv-pk .bz-f .bz-r:not(.da) .o.igc,.wv-pk .bz-r:not(.da) .bz-f .o.igc,.wv-pk .bz-f .bz-b:not(.an) .o.igc{opacity:0;transform:translate(-50%,40%) rotate(var(--r))}
+
+/* ---------- Sticker und Etiketten ---------- */
+.wv-pk .bz-buehne .o.stk,.wv-pk .bz-buehne .o.stk-r,.wv-pk .bz-buehne .o.stk-e,.wv-pk .bz-buehne .o.tag,.wv-pk .bz-buehne .o.b3d,.wv-pk .bz-buehne .o.bimg{box-shadow:none}
+.wv-pk .bz-buehne .stk-r img,.wv-pk .bz-buehne .stk-e img{display:block;width:100%;height:100%}
+.wv-pk .bz-buehne .o.stk-r{border-radius:50%;padding:2.6cqh;background:#f4efe6;filter:drop-shadow(0 .8cqh 1.2cqh rgba(0,0,0,.4))}
+.stk-r img{border-radius:50%}
+.stk-r::after{content:"";position:absolute;inset:7cqh;border-radius:50%;box-shadow:0 0 0 1px rgba(226,174,104,.6);pointer-events:none}
+.wv-pk .bz-buehne .o.stk-e{border-radius:4cqh;padding:2.6cqh;background:#f4efe6;filter:drop-shadow(0 .8cqh 1.2cqh rgba(0,0,0,.4))}
+.stk-e img{border-radius:2.6cqh}
+.tag{filter:drop-shadow(0 1cqh 1.6cqh rgba(0,0,0,.45))}
+.tag-b{position:absolute;inset:0;border-radius:4.4cqw;overflow:hidden}
+.wv-pk .bz-buehne .tag-b img{display:block;width:100%;height:100%;-webkit-mask:radial-gradient(circle at 50% 7%,transparent 3.6cqw,#000 3.7cqw);mask:radial-gradient(circle at 50% 7%,transparent 3.6cqw,#000 3.7cqw)}
+.tag-o{position:absolute;left:50%;top:7%;width:11cqw;height:11cqw;translate:-50% -50%;border-radius:50%;box-shadow:inset 0 0 0 1.6cqw #a8844f,inset 0 0 0 2cqw rgba(0,0,0,.25)}
+.tag-s{position:absolute;left:50%;top:-20%;width:24cqw;height:27%;translate:-48% 0;overflow:visible}
+.tag-s path{stroke:#c9b48f;stroke-width:1.3;stroke-linecap:round}
+
+.wv-pk .bz-buehne .o.stk{container-type:normal;filter:drop-shadow(0 .5cqh .6cqh rgba(0,0,0,.35)) drop-shadow(0 1.6cqh 2cqh rgba(0,0,0,.3))}
+.stk svg{display:block}
+
+/* ---------- Gästemappe, Mails: Handys aus Blender, Schatten im Bild ---------- */
+.wv-pk .bz-buehne .b3d img,.wv-pk .bz-buehne .bimg img{display:block;width:100%;height:100%}
+.wv-pk .bz-buehne .o.bimg{box-shadow:0 0 0 1px rgba(255,255,255,.07),0 1cqh 2.4cqh rgba(0,0,0,.35),0 3cqh 6cqh rgba(0,0,0,.3)}
+
+/* ---------- Papier ---------- */
+.blatt,.umschlag,.vk,.od{overflow:hidden;font-family:var(--sans)}
+.wv-pk .bz-buehne .blatt{background:#f8f4ed;color:#1d222b}
+.blatt>.in{padding:9cqh 11cqw 0}
+.br-k{color:#10151d;display:flex;justify-content:center;margin-bottom:7cqh}.br-k .mk{width:40cqw}
+.blatt p{margin:0 0 2.2cqh;font-size:2.55cqw;line-height:1.6}
+.br-d{text-align:right;color:#8a7a62}
+.br-a{margin-top:3cqh!important}
+.br-g b{display:block;margin-top:1.4cqh;font:500 4.4cqw/1 var(--serif);color:#10151d}
+.br-f{position:absolute;left:11cqw;right:11cqw;bottom:5cqh;margin:0!important;padding-top:1.8cqh;border-top:1px solid rgba(168,132,79,.5);text-align:center;font-size:1.9cqw!important;color:#8a7a62}
+.wv-pk .bz-buehne .angebot{background:#efe7da}
+.an-k{display:flex;align-items:center;gap:2.6cqw;color:#a8844f;margin-bottom:7cqh}
+.an-k .mk{width:6cqw}.an-k i,.an-m{font:500 2.1cqw/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;font-style:normal;color:#a8844f}
+.an-m{display:block}
+.angebot h4{margin:2cqh 0 2.4cqh;font:500 8.4cqw/1.04 var(--serif);color:#10151d}
+.angebot .an-f{color:#8a7a62;font-size:2.3cqw}
+.an-l{list-style:none;margin:4cqh 0 0;padding:0;border-top:1px solid rgba(16,21,29,.14)}
+.an-l li{display:flex;justify-content:space-between;align-items:baseline;gap:4cqw;padding:2.4cqh 0;border-bottom:1px solid rgba(16,21,29,.14)}
+.an-l b{display:block;font:500 4.2cqw/1.1 var(--serif);color:#10151d}
+.an-l span{display:block;margin-top:.8cqh;font-size:2.3cqw;color:#6d6255}
+.an-l i{flex:none;font:500 2.1cqw/1 var(--mono);letter-spacing:.08em;font-style:normal;color:#10151d}
+.angebot .an-s{margin-top:4cqh;font-size:2.4cqw;color:#5d5547}
+.wv-pk .bz-buehne .umschlag{background:#efe7da;color:#10151d}
+.um-k{position:absolute;left:7cqw;top:12cqh;width:24cqw;color:#a8844f}
+.um-a{position:absolute;left:52cqw;top:50cqh;margin:0;font:500 7.4cqh/1.25 var(--serif)}
+.umschlag .in::before{content:"";position:absolute;right:6cqw;top:10cqh;width:12cqw;height:30cqh;border:1px solid rgba(168,132,79,.6)}
+.wv-pk .bz-buehne .vk{background:#10151d;color:#e2ae68;border-radius:1.4cqh}
+.vk-v{display:grid;place-items:center}.vk-v .mk{width:64cqw}
+.wv-pk .bz-buehne .vk-hell{background:#f8f4ed;color:#10151d}
+.vk-r{padding:14cqh 9cqw}
+.vk-r b{display:block;font:500 13cqh/1 var(--serif)}
+.vk-r i{display:block;margin-top:4cqh;font:500 6.4cqh/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;font-style:normal;color:#a8844f}
+.vk-r span{position:absolute;left:9cqw;bottom:12cqh;font-size:6.6cqh;line-height:1.5;color:#5d5547}
+
+/* ---------- Markenbuch: Blätter ---------- */
+.wv-pk .bz-buehne .mbb img{display:block;width:100%;height:100%;border-radius:.6cqh}
+
+/* ---------- Materialordner ---------- */
+.wv-pk .bz-buehne .od{background:#f8f4ed;color:#10151d}
+.od>.in{padding:5cqh 5cqw}
+.od-k{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:2.4cqh;margin-bottom:3cqh;border-bottom:1px solid rgba(16,21,29,.12)}
+.od-k b{font:500 5.4cqh/1 var(--serif)}.od-k i{font:500 2.4cqh/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#a8844f;font-style:normal}
+.od-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.6cqh 2.4cqw}
+.od-g figure{margin:0}.wv-pk .bz-buehne .od-g figure img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:.6cqh}
+.od-g figcaption{margin-top:1cqh;font-size:2.3cqh;color:#5d5547}
+.wv-pk .bz-buehne .od-dateien{background:#10151d;color:#efe7da}.od-dateien .od-k{border-color:rgba(239,231,218,.14)}
+.od-d{list-style:none;margin:0;padding:0}
+.od-d li{display:flex;align-items:center;gap:3cqw;padding:2.2cqh 0;border-bottom:1px solid rgba(239,231,218,.1)}
+.od-d span{flex:none;width:17cqw;padding:1cqh 0;border-radius:.8cqh;background:rgba(226,174,104,.14);color:#e2ae68;text-align:center;font:500 1.9cqh/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.od-d b{font:400 2.6cqh/1 var(--mono)}
+
+/* Handy-Band: dieselben Bühnen, etwas höher */
+@media (max-width:860px){.wv-pk .bz-mb.bz-buehne{aspect-ratio:16/11;border-radius:12px}.wv-pk .bz-mb .st .o{--s:.88}.wv-pk .bz-mb .o.f{height:calc(var(--h)*.9cqh)}.wv-pk .bz-mb .hy3 .fh-k{display:none}}
+@media (prefers-reduced-motion:reduce){.wv-pk .bz-buehne .o{transition:none}}
+
+/* Satz und «Ansehen» unter der Bühne (Robert 04.11.2026: eigene Seite je Beigabe) */
+.wv-pk .bz-tx .bz-s{display:flex;align-items:center;justify-content:space-between;gap:28px;max-width:none;pointer-events:none}
+.wv-pk .bz-tx .bz-s.an{pointer-events:auto}
+.wv-pk .bz-s p{margin:0;max-width:46ch}
+.wv-pk .bz-s .kn{flex:none}
+.wv-pk .bz-m figcaption .kn{justify-self:start;margin-top:10px}
+.wv-pk .bz-s .kn{margin-top:0}

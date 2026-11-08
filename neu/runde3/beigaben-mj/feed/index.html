@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Der Feed · Maloja · Tasty Studios</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#201812">
+
+<style>
+@font-face{font-family:'Cormorant Haus';font-weight:300 700;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/TenorSans.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-weight:200 800;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/HankenGrotesk-latin.woff2') format('woff2')}
+@font-face{font-family:'DM Mono';font-weight:400;font-display:swap;src:url('/neu/runde3/beigaben-mj/fonts/DMMono-normal-400.woff2') format('woff2')}
+:root{--nacht:#201812;--navy:#36271d;--gold:#bf9163;--papier:#d6c9bc;--e1:cubic-bezier(.16,1,.3,1);--e2:cubic-bezier(.32,.72,0,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--nacht);color:#fff;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--nacht) url(/neu/runde3/beigaben-mj/tapete-nacht.svg) 0 0/360px auto;min-height:100vh}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.stage{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;gap:clamp(40px,7vw,110px);padding:56px 24px}
+.aside{max-width:430px}
+.aside>*{opacity:0;transform:translateY(34px);animation:auf 1.2s var(--e1) forwards}
+.aside>*:nth-child(2){animation-delay:.1s}.aside>*:nth-child(3){animation-delay:.2s}.aside>*:nth-child(4){animation-delay:.3s}.aside>*:nth-child(5){animation-delay:.4s}.aside>*:nth-child(6){animation-delay:.5s}.aside>*:nth-child(7){animation-delay:.6s}.aside>*:nth-child(8){animation-delay:.7s}
+@keyframes auf{to{opacity:1;transform:none}}
+.aside svg.ce{width:84px;height:auto;color:var(--gold);margin-bottom:30px;display:block}
+.aside .kap{display:flex;align-items:center;gap:16px;font-family:'Cormorant Haus',Georgia,serif;color:var(--gold);font-size:1.08rem;margin-bottom:22px}
+.aside .kap i{width:64px;height:1px;background:currentColor;opacity:.75}
+.aside h1{font-family:'Cormorant Haus',Georgia,serif;font-weight:500;font-size:clamp(2.8rem,4.6vw,4.3rem);line-height:1.06;margin-bottom:26px}
+.aside h1 em{font-style:normal;color:var(--gold);display:block}
+.aside p{font-size:1.1rem;line-height:1.66;color:rgba(255,255,255,.82)}
+.aside p+p{margin-top:14px}
+.aside dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;margin-top:30px;padding-top:24px;border-top:1px solid rgba(191,160,129,.3);font-size:.98rem}
+.aside dt{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:3px}
+.aside dd{color:rgba(255,255,255,.82);line-height:1.5}
+.kn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 8px 0 26px;border-radius:999px;margin-top:32px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#241a14;
+  background:linear-gradient(180deg,#f8f3e9,#cebaa6 46%,#b49e88);box-shadow:inset 0 1px 0 rgba(255,255,255,.92),inset 0 -3px 0 rgba(97,77,57,.38),0 16px 26px -14px rgba(0,0,0,.6);transition:transform .55s var(--e2)}
+.kn:hover{transform:translateY(-2px)}.kn:active{transform:translateY(1px) scale(.985)}
+.kn i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#4e3c2f,#150f0b);color:#faf6f0;box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 3px 6px rgba(0,0,0,.35)}
+.kn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.2}
+/* Gerät */
+.devwrap{position:relative;flex:none;opacity:0;transform:translateY(90px) rotate(3deg);animation:geraet 1.5s var(--e1) .25s forwards}
+@keyframes geraet{to{opacity:1;transform:none}}
+.device{width:402px;height:874px;border-radius:62px;background:#000;padding:12px;position:relative;box-shadow:0 0 0 2px #3c3631,0 0 0 9px #140f0b,0 0 0 10px rgba(191,145,99,.35),0 60px 90px -30px rgba(0,0,0,.85)}
+.screen{width:100%;height:100%;border-radius:50px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:124px;height:36px;border-radius:20px;background:#000;z-index:30}
+.status{height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 8px 36px;font-size:16px;font-weight:600;flex:none;position:relative;z-index:25;background:#000}
+.status .ic{display:flex;gap:6px;align-items:center}
+.scroll{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.top{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 10px;position:sticky;top:0;background:#000;z-index:20}
+.top .u{display:flex;align-items:center;gap:6px;font-size:20px;font-weight:700;letter-spacing:-.01em}
+.top .r{display:flex;gap:22px}
+.head{display:flex;align-items:center;gap:22px;padding:4px 16px 10px}
+.avr{width:86px;height:86px;border-radius:50%;padding:2px;background:conic-gradient(#977c60,#d4af8a,#6f5841,#bf9163,#977c60);flex:none}
+.avr img{width:100%;height:100%;border-radius:50%;border:3px solid #000;display:block;object-fit:cover}
+.nums{display:flex;flex:1;justify-content:space-around;text-align:center}
+.nums b{display:block;font-size:17px;font-weight:700}
+.nums span{font-size:13px;color:#e8e8e8}
+.bio{padding:0 16px;font-size:14px;line-height:1.38}
+.bio .n{font-weight:600}.bio .cat{color:#a8a8a8}.bio .l{color:#f4efeb;font-weight:600}
+.btns{display:flex;gap:6px;padding:12px 16px 4px}
+.btns div{flex:1;background:#262626;border-radius:9px;text-align:center;font-size:14px;font-weight:600;padding:8px 0}
+.btns div.p{background:#bf9163;color:#201812}
+.hl{display:flex;gap:14px;padding:14px 16px 12px;overflow-x:auto;scrollbar-width:none}
+.hl::-webkit-scrollbar{display:none}
+.h{text-align:center;font-size:12px;flex:none;width:68px}
+.h i{display:block;width:66px;height:66px;border-radius:50%;border:1px solid #3a3a3a;padding:3px;margin:0 auto 6px}
+.h i img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.tabs{display:flex;border-bottom:1px solid #262626;position:sticky;top:48px;background:#000;z-index:19}
+.tabs div{flex:1;display:flex;justify-content:center;padding:11px 0;color:#8e8e8e}
+.tabs div.on{color:#fff;box-shadow:inset 0 -1.5px 0 #fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.t{aspect-ratio:3/4;overflow:hidden;background:#36271d;position:relative;cursor:pointer;padding:0;display:block;width:100%}
+.t img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transform:scale(1.08);transition:opacity .9s var(--e1),transform 1.3s var(--e1);transition-delay:calc(var(--i)*55ms + .9s)}
+.geladen .t img{opacity:1;transform:none}
+.nav{height:82px;flex:none;display:flex;justify-content:space-around;align-items:flex-start;padding-top:12px;border-top:1px solid #1d1d1d;background:#000}
+.nav .me{width:26px;height:26px;border-radius:50%;border:2px solid #fff;overflow:hidden}
+.nav .me img{width:100%;height:100%;object-fit:cover;display:block}
+.post{position:absolute;inset:0;background:#000;z-index:40;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--e2);visibility:hidden}
+.post.on{transform:none;visibility:visible}
+.post .bar{height:54px;flex:none}
+.post .ph{display:flex;align-items:center;gap:10px;padding:8px 14px}
+.post .ph b{font-size:14px}
+.post .ph .mini{width:32px;height:32px;border-radius:50%;overflow:hidden;border:1px solid #333}
+.post .ph .mini img{width:100%;height:100%;object-fit:cover;display:block}
+.post .ph .back{margin-right:6px;font-size:24px;line-height:1;padding:4px 8px 6px 0}
+.post .body{flex:1;overflow-y:auto;scrollbar-width:none}
+.post .body::-webkit-scrollbar{display:none}
+.post .img{width:100%;aspect-ratio:4/5;display:block;object-fit:cover;background:#36271d}
+.post .act{display:flex;gap:16px;padding:10px 14px 4px}
+.post .act span{margin-left:auto}
+.post .cap{padding:6px 14px 18px;font-size:14px;line-height:1.42}
+.post .cap b{font-weight:600}
+.post .nx{display:flex;justify-content:space-between;padding:0 14px 22px;font-size:13px;color:#a8a8a8}
+.post .nx button{padding:6px 0}
+@media (max-width:1000px){.stage{gap:44px}.aside{max-width:340px}}
+@media (max-width:820px){
+  body{background:#000}
+  .stage{padding:0;gap:0;min-height:100svh;display:block}
+  .aside{display:none}
+  .devwrap{animation:none;opacity:1;transform:none}
+  .device{width:100vw;height:100svh;border-radius:0;padding:0;box-shadow:none}
+  .screen{border-radius:0}.island{display:none}.status{height:14px}.status>*{display:none}.post .bar{height:14px}
+  .zurueck{display:flex}
+}
+.zurueck{display:none;position:fixed;z-index:60;right:14px;bottom:96px;height:44px;padding:0 18px;border-radius:999px;align-items:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#241a14;background:linear-gradient(180deg,#f8f3e9,#b49e88);box-shadow:0 10px 20px -8px rgba(0,0,0,.8)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.aside>*,.devwrap,.t img{opacity:1!important;transform:none!important}}
+</style>
+<script src="/besuch.js?v=3c4c57a56e" defer></script><script src="/verweil.js?v=5881fd455d" defer></script></head>
+<body>
+<div class="stage">
+  <div class="aside">
+    <svg class="ce" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" transform="translate(22.00 12.00) scale(0.5458)"><path d="M18.8 22.0H12.0V92.0H16.400000000000002V34.9H16.8L47.7 93.2H49.5L81.10000000000001 35.3H81.5V92.0H90.60000000000001V22.0H83.7L51.300000000000004 82.1H50.900000000000006Z"/></g><circle cx="50" cy="79.21" r="3.4" fill="#d52b1e"/></svg>
+    <p class="kap"><b style="font-weight:400">06</b><i></i><span>Instagram</span></p>
+    <h1>Die Alpen <em>und die Küste.</em></h1>
+    <p>Maloja liegt in einem Kontor am Fleet der Speicherstadt. Der Feed lebt von den Fotos des Restaurants, jedes kommt einmal vor. In jeder Reihe steht ein gestalteter Beitrag aus den Drucksachen, mit einem Satz von der Karte.</p>
+    <p>Die gestalteten Beiträge rücken jedes Mal eine Spalte weiter, so entsteht im Raster ein ruhiges Muster. Tippen Sie einen Beitrag an, dann sehen Sie ihn gross und mit einem Text dazu.</p>
+    <dl>
+      <dt>Beiträge</dt><dd>39 in 13 Reihen, 1080 × 1350</dd>
+      <dt>Aufbau</dt><dd>in jeder Reihe ein gestalteter Beitrag, versetzt, sonst Fotos</dd>
+      <dt>Bilder</dt><dd>26 Fotos des Restaurants, jedes einmal</dd>
+      <dt>Texte</dt><dd>Sätze von der Karte und die Bildzeilen der Website</dd>
+    </dl>
+    <a class="kn" href="/werkzeuge-r.html#paket">Zur Übersicht<i><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></i></a>
+  </div>
+  <div class="devwrap"><div class="device" id="device"><div class="screen">
+    <div class="island"></div>
+    <div class="status"><span>9:41</span><span class="ic">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="#fff"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" opacity=".5"/><rect x="2" y="2" width="19" height="8" rx="2" fill="#fff"/><rect x="24" y="4" width="1.6" height="4" rx=".8" fill="#fff" opacity=".5"/></svg></span></div>
+    <div class="scroll" id="scroll">
+      <div class="top"><div class="u">maloja.hamburg <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1.5 6 6.5l5-5" stroke="#fff" stroke-width="1.8" fill="none"/></svg></div><div class="r"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div></div>
+      <div class="head">
+        <div class="avr"><img src="/neu/runde3/beigaben-mj/feed/avatar.jpg" alt="Profilbild: das M von Maloja mit dem roten Punkt auf Nussbaum"></div>
+        <div class="nums"><div><b>39</b><span>Beiträge</span></div><div><b>1.180</b><span>Follower</span></div><div><b>96</b><span>Gefolgt</span></div></div>
+      </div>
+      <div class="bio"><div class="n">Maloja</div><div class="cat">Restaurant</div><div>Die Alpen und die Küste an einem Tisch, in einem Kontor der Speicherstadt.</div><div>Dienstag bis Samstag ab 18.30 Uhr, die Bar ab 18 Uhr.</div><div class="l">maloja-hamburg.de</div></div>
+      <div class="btns"><div class="p">Folgen</div><div>Nachricht</div><div>Kontakt</div></div>
+      <div class="hl"><div class="h"><i><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/h-0.webp" alt=""></i>Der Saal</div><div class="h"><i><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/h-1.webp" alt=""></i>Das Menü</div><div class="h"><i><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/h-2.webp" alt=""></i>Die Bar</div><div class="h"><i><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/h-3.webp" alt=""></i>Arvenstube</div><div class="h"><i><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/h-4.webp" alt=""></i>Das Fleet</div></div>
+      <div class="tabs"><div class="on"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 8h18M9 3l3 5M15 3l3 5"/><path d="m10.5 11.5 4 2.5-4 2.5z" fill="currentColor"/></svg></div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19a6 6 0 0 1 11 0"/></svg></div></div>
+      <div class="grid" id="grid"><button class="t" type="button" data-i="0" style="--i:0" aria-label="Beitrag 1 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/01.webp" alt=""></button><button class="t" type="button" data-i="1" style="--i:1" aria-label="Beitrag 2 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/02.webp" alt=""></button><button class="t" type="button" data-i="2" style="--i:2" aria-label="Beitrag 3 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/03.webp" alt=""></button><button class="t" type="button" data-i="3" style="--i:3" aria-label="Beitrag 4 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/04.webp" alt=""></button><button class="t" type="button" data-i="4" style="--i:4" aria-label="Beitrag 5 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/05.webp" alt=""></button><button class="t" type="button" data-i="5" style="--i:5" aria-label="Beitrag 6 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/06.webp" alt=""></button><button class="t" type="button" data-i="6" style="--i:6" aria-label="Beitrag 7 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/07.webp" alt=""></button><button class="t" type="button" data-i="7" style="--i:7" aria-label="Beitrag 8 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/08.webp" alt=""></button><button class="t" type="button" data-i="8" style="--i:8" aria-label="Beitrag 9 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/09.webp" alt=""></button><button class="t" type="button" data-i="9" style="--i:9" aria-label="Beitrag 10 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/10.webp" alt=""></button><button class="t" type="button" data-i="10" style="--i:10" aria-label="Beitrag 11 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/11.webp" alt=""></button><button class="t" type="button" data-i="11" style="--i:11" aria-label="Beitrag 12 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/12.webp" alt=""></button><button class="t" type="button" data-i="12" style="--i:12" aria-label="Beitrag 13 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/13.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="13" style="--i:13" aria-label="Beitrag 14 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/14.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="14" style="--i:14" aria-label="Beitrag 15 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/15.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="15" style="--i:15" aria-label="Beitrag 16 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/16.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="16" style="--i:16" aria-label="Beitrag 17 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/17.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="17" style="--i:17" aria-label="Beitrag 18 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/18.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="18" style="--i:18" aria-label="Beitrag 19 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/19.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="19" style="--i:19" aria-label="Beitrag 20 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/20.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="20" style="--i:20" aria-label="Beitrag 21 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/21.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="21" style="--i:21" aria-label="Beitrag 22 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/22.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="22" style="--i:22" aria-label="Beitrag 23 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/23.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="23" style="--i:23" aria-label="Beitrag 24 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/24.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="24" style="--i:24" aria-label="Beitrag 25 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/25.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="25" style="--i:25" aria-label="Beitrag 26 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/26.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="26" style="--i:26" aria-label="Beitrag 27 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/27.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="27" style="--i:27" aria-label="Beitrag 28 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/28.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="28" style="--i:28" aria-label="Beitrag 29 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/29.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="29" style="--i:29" aria-label="Beitrag 30 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/30.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="30" style="--i:30" aria-label="Beitrag 31 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/31.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="31" style="--i:31" aria-label="Beitrag 32 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/32.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="32" style="--i:32" aria-label="Beitrag 33 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/33.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="33" style="--i:33" aria-label="Beitrag 34 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/34.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="34" style="--i:34" aria-label="Beitrag 35 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/35.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="35" style="--i:35" aria-label="Beitrag 36 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/36.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="36" style="--i:36" aria-label="Beitrag 37 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/37.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="37" style="--i:37" aria-label="Beitrag 38 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/38.webp" alt="" loading=lazy></button><button class="t" type="button" data-i="38" style="--i:38" aria-label="Beitrag 39 öffnen"><img src="/neu/runde3/beigaben-mj/feed/thumbs-w/39.webp" alt="" loading=lazy></button></div>
+    </div>
+    <div class="nav"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M3.5 10.5 12 3.5l8.5 7V20.5h-5.5v-6h-6v6H3.5z"/></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 8h18M9 3l3 5M15 3l3 5"/><path d="m10.5 11.5 4 2.5-4 2.5z" fill="currentColor"/></svg><div class="me"><img src="/neu/runde3/beigaben-mj/feed/avatar.jpg" alt=""></div></div>
+    <div class="post" id="post" aria-hidden="true">
+      <div class="bar"></div>
+      <div class="ph"><button class="back" type="button" id="zu" aria-label="Zurück zum Profil">‹</button><div class="mini"><img src="/neu/runde3/beigaben-mj/feed/avatar.jpg" alt=""></div><b>maloja.hamburg</b></div>
+      <div class="body"><img class="img" id="pimg" alt=""><div class="act"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.400-7.5 10-7.5 10z"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.400L3.5 20.5l1.600-4.400A8.5 8.5 0 1 1 20.5 11.5z"/></svg><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5z"/></svg><span><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M6 3.5h12v17l-6-4.5-6 4.5z"/></svg></span></div>
+        <div class="cap"><b>maloja.hamburg</b> <span id="pcap"></span></div>
+        <div class="nx"><button type="button" id="vor">‹ Vorheriger</button><span id="pnr"></span><button type="button" id="nach">Nächster ›</button></div></div>
+    </div>
+  </div></div></div>
+</div>
+<a class="zurueck" href="/werkzeuge-r.html#paket">Zur Übersicht</a>
+<script>
+(function () {
+  var D = ["Ein Kontor am Fleet. Kurz bevor im ersten Stock die Kerzen angehen.", "Das Kontor von Maloja am Fleet in der Speicherstadt, die Fenster im ersten Stock brennen.", "Die offene Tür aus Lärchenholz und die Granittreppe hinauf.", "Der Kontorsaal vor dem Service, die Kerzen brennen.", "Steinbutt. Chasselas-Sauce, junger Lauch. Der vierte Gang, von Hand angerichtet.", "Ein Tisch für zwei am Bogenfenster zum Fleet.", "Die Arvenstube mit langem Tisch und Kachelofen.", "Die Bar aus Granit und Arvenholz vor dem Öffnen.", "Ein langer Tisch. Arvenholz von der Decke bis zum Boden, ein Kachelofen, zwölf Plätze.", "Ein Tisch für zwei. Das Fleet vor dem Bogenfenster, die Kerze brennt schon.", "Die Weinwand aus Arvenholz mit Leiter.", "Der Pass der Küche vor dem Service.", "Der Kontorsaal.", "Brot und Butter. Bündner Zopf, Roggenbrot, gesalzene Butter. So beginnt jeder Abend.", "Der Saal am Abend, auf jedem Tisch eine Kerze.", "Brot und Butter, Bündner Zopf, Roggenbrot, gesalzene Butter.", "Gerstensuppe, nach Bündner Art, geräucherter Aal, Schnittlauch.", "Alpkäse aus Graubünden. Er kommt an den Tisch, auf dem Wagen aus Arvenholz.", "Steinbutt aus der Nordsee. Saibling aus der Ostsee, Aal aus der Elbe, Gemüse aus den Vierlanden.", "Capuns, Mangold, Saibling aus der Ostsee, Rahm.", "Steinbutt mit Chasselas-Sauce und jungem Lauch.", "Kalb Zürcher Art mit Rösti.", "Ab 18 Uhr. Auch ohne Reservierung. Dort gibt es die Gerichte auch einzeln.", "Der Käsewagen aus Arvenholz.", "Alpkäse-Soufflé mit Holunder.", "Engadiner Nusstorte, Vierländer Apfel, geschlagener Rahm.", "Engadiner Nusstorte. Vierländer Apfel, geschlagener Rahm.", "Von Hand angerichtet. Jeder Teller, jeder Abend.", "Ein Laib Alpkäse wird angeschnitten.", "Ein Steinbutt aus der Nordsee auf Eis.", "Gemüse aus den Vierlanden.", "Die Brücke im Nebel.", "Von Hand angerichtet.", "Ein Glas Chasselas im Abendlicht am Fenster.", "Ein gedeckter Platz.", "Chasselas aus der Waadt. Neben Riesling von der Mosel, in der Weinbegleitung zum Menü.", "Kalb Zürcher Art. Rahm und Pilze, Rösti aus Bamberger Hörnchen.", "Ein Fleet der Speicherstadt am Abend.", "Eine Brücke in der Speicherstadt im Morgennebel."], post = document.getElementById('post'), img = document.getElementById('pimg'), cap = document.getElementById('pcap'), nr = document.getElementById('pnr'), n = 0;
+  function zeig(i) { n = (i + D.length) % D.length; img.src = 'posts/' + ('0' + (n + 1)).slice(-2) + '.jpg'; cap.textContent = D[n]; nr.textContent = (n + 1) + ' / ' + D.length; post.classList.add('on'); post.setAttribute('aria-hidden', 'false'); post.querySelector('.body').scrollTop = 0; }
+  function zu() { post.classList.remove('on'); post.setAttribute('aria-hidden', 'true'); }
+  document.getElementById('grid').addEventListener('click', function (e) { var t = e.target.closest('.t'); if (t) zeig(+t.dataset.i); });
+  document.getElementById('zu').addEventListener('click', zu);
+  document.getElementById('vor').addEventListener('click', function () { zeig(n - 1); });
+  document.getElementById('nach').addEventListener('click', function () { zeig(n + 1); });
+  document.addEventListener('keydown', function (e) { if (!post.classList.contains('on')) return; if (e.key === 'Escape') zu(); if (e.key === 'ArrowRight') zeig(n + 1); if (e.key === 'ArrowLeft') zeig(n - 1); });
+  requestAnimationFrame(function () { document.body.classList.add('geladen'); });
+})();
+</script>
+
+<script id="ruecksprung">/* Rücksprung (Robert 1.11.2026): Zurück/Vor im Browser landet auf der alten Höhe der Seite, nie ganz oben.
+   Merkt je Seite in sessionStorage (rs:<Pfad>) die Höhe und das Inhaltsstück am oberen Fensterrand (beim Scrollen, beim Klick auf einen Link, bei pagehide).
+   Kommt man mit Zurück/Vor wieder (Navigation «back_forward»), richtet sich die Seite nach dem Aufbau an diesem Stück aus, nicht nur an der Pixelzahl:
+   Abschnitte mit content-visibility:auto stehen nach dem Laden als 1400-px-Platzhalter da, dieselbe Pixelhöhe zeigt sonst anderen Inhalt.
+   Für den Moment des Sprungs: alles einmal gezeichnet, keine Übergänge, keine Auftakt-Bewegung (rs-sofort); alles bis zum Fensterrand gilt als gezeigt (.da).
+   Aus dem bfcache stellt der Browser die Höhe selbst her. Keine unload-Handler. Seiten mit eigenem Rückweg (#rh-zurueck, «wb-y») und Rahmen bleiben unberührt, ausser der Rückweg trägt data-rs (dann führt er nur ?y= aus, Zurück/Vor macht der Rücksprung).
+   Merkpunkt: das nächste feststehende Stück auf einem Drittel der Höhe; liegt dort eine mitlaufende Bühne (sticky), gilt der Abschnitt, der sie trägt (Robert 1.11.2026, Werkbänke mit Handy-/Laptop-Bühnen). */
+(function () {
+  var RH = document.getElementById('rh-zurueck');   /* eigener Rückweg: nur wenn er Zurück/Vor ausdrücklich dem Rücksprung überlässt (data-rs) */
+  if (RH && !RH.hasAttribute('data-rs')) return;
+  try { if (window.top !== window) return; } catch (e) { return; }
+  var K = 'rs:' + location.pathname, H = document.documentElement, sperre = false, t = 0;
+  var SEL = 'h1,h2,h3,h4,h5,p,li,figure,img,picture,video,blockquote,table,tr,section,article,header,footer,div';
+  function festAb(e) {   /* das äusserste mitlaufende (fixed/sticky) Element über e, sonst null */
+    var f = null; for (; e && e !== document.body && e !== H; e = e.parentElement) { var p = getComputedStyle(e).position; if (p === 'fixed' || p === 'sticky') f = e; } return f;
+  }
+  function stand(e) {   /* das nächste feststehende Inhaltsstück: in einer mitlaufenden Bühne (sticky) gilt der Abschnitt, der sie trägt; schwebende Leisten (fixed) nie */
+    for (var n = 0; e && n < 30; n++) {
+      var c = e.closest && e.closest(SEL); if (!c || c === document.body || c === H) return null;
+      var f = festAb(c); if (!f) return c;
+      if (getComputedStyle(f).position === 'fixed') return null;
+      e = f.parentElement;
+    }
+    return null;
+  }
+  function text(e) { return (e.textContent || e.getAttribute('src') || '').replace(/\s+/g, ' ').trim().slice(0, 40); }
+  function anker() {   /* das Inhaltsstück auf einem Drittel der Fensterhöhe (nicht die schwebende Leiste) */
+    if (!document.elementsFromPoint) return null;
+    var l = null, xs = [.5, .25, .75];
+    for (var k = 0; k < xs.length; k++) {
+      var st = document.elementsFromPoint(innerWidth * xs[k], innerHeight * .3);
+      for (var j = 0; j < st.length; j++) { var c = stand(st[j]); if (c) { l = c; break; } }
+      if (l) break;
+    }
+    if (!l) return null;
+    /* lieber der Abschnitt drumherum (section, article, Kopf, Fuss, Stück mit id): bewegte Teile darin (Chat, Film, Bühne) verrutschen, der Abschnitt nicht */
+    var g = l.closest('section,article,header,footer,[id]');
+    if (g && g !== document.body && g !== H && g.tagName !== 'MAIN' && g.matches(SEL) && !festAb(g) && g.getBoundingClientRect().height <= innerHeight * 4) l = g;
+    var alle = document.querySelectorAll(SEL), i = [].indexOf.call(alle, l);
+    return i < 0 ? null : { i: i, d: l.id || '', n: l.tagName, t: text(l), o: Math.round(l.getBoundingClientRect().top) };
+  }
+  function merk(mitAnker) {
+    if (sperre) return;
+    var w = { y: Math.round(window.scrollY || 0) };
+    if (mitAnker) { try { var a = anker(); if (a) w.a = a; } catch (e) {} }
+    else { try { var alt = JSON.parse(sessionStorage.getItem(K) || '{}'); if (alt.a && Math.abs(alt.y - w.y) < 2) w.a = alt.a; } catch (e) {} }
+    try { sessionStorage.setItem(K, JSON.stringify(w)); } catch (e) {}
+  }
+  addEventListener('scroll', function () { if (!t) t = setTimeout(function () { t = 0; merk(false); }, 150); }, { passive: true });
+  document.addEventListener('click', function (ev) { if (ev.target.closest && ev.target.closest('a[href]')) merk(true); }, true);
+  addEventListener('pagehide', function () {   /* beim Verlassen übernimmt der Rücksprung die Höhe ganz: sonst setzt Chrome beim Zurück die alte Pixelhöhe noch mehrmals nach */
+    try { history.scrollRestoration = 'manual'; } catch (e) {}
+    merk(true);
+  });
+
+  var nav; try { nav = performance.getEntriesByType('navigation')[0]; } catch (e) {}
+  if (!nav || (nav.type !== 'back_forward' && nav.type !== 'reload')) return;   /* Zurück/Vor und Neuladen landen an der alten Stelle */
+  var w; try { w = JSON.parse(sessionStorage.getItem(K)); } catch (e) {}
+  if (!w || typeof w.y !== 'number' || w.y < 2) return;
+  sperre = true;
+  try { history.scrollRestoration = 'manual'; } catch (e) {}
+  var st = document.createElement('style');
+  st.textContent = 'html.rs-sofort,html.rs-sofort *{transition:none!important;animation-duration:0s!important;animation-delay:0s!important;scroll-behavior:auto!important}'
+    + 'html.rs-ganz *{content-visibility:visible!important}';
+  (document.head || H).appendChild(st);
+  H.classList.add('rs-sofort', 'rs-ganz');
+  var weg = false;
+  function fertig() { sperre = false; H.classList.remove('rs-ganz'); }
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (k) { addEventListener(k, function () { weg = true; fertig(); }, { once: true, passive: true }); });
+  function stueck() {   /* das gemerkte Stück wiederfinden: über seine id, sonst gleiche Stelle, sonst gleiche Art mit gleichem Anfang, die nächste zur alten Stelle
+                           (Seiten bauen nach dem Laden noch Teile dazu, z. B. Chat-Vorführungen: die Stelle im Aufbau verschiebt sich) */
+    var a = w.a; if (!a) return null;
+    if (stueck.e && stueck.e.isConnected) return stueck.e;
+    var e = a.d && document.getElementById(a.d);
+    if (e && e.tagName === a.n) return e;
+    var alle = document.querySelectorAll(SEL); e = alle[a.i];
+    if (e && e.tagName === a.n && text(e) === a.t) return e;
+    var best = null, bd = 1e9;
+    for (var k = 0; k < alle.length; k++) { var x = alle[k]; if (x.tagName === a.n && Math.abs(k - a.i) < bd && text(x) === a.t) { best = x; bd = Math.abs(k - a.i); } }
+    return (stueck.e = best);
+  }
+  function ziel() { var e = stueck(); return e ? Math.max(0, Math.round(window.scrollY + e.getBoundingClientRect().top - w.a.o)) : w.y; }
+  function zeig() {
+    var g = window.scrollY + innerHeight;
+    [].forEach.call(document.querySelectorAll('[data-a],.odo,.zt,.roll,img.ld'), function (e) {
+      if (!e.classList.contains('da') && e.getBoundingClientRect().top + window.scrollY < g) e.classList.add('da');
+    });
+  }
+  function geh() { if (weg) return; var y = ziel(); if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y); zeig(); }
+  function los() {
+    geh();
+    requestAnimationFrame(function () { geh(); requestAnimationFrame(function () { geh(); H.classList.remove('rs-sofort'); }); });
+    var n = 0, iv = setInterval(function () {
+      n++; geh();
+      if (n >= 16 || weg) { clearInterval(iv); geh(); fertig(); requestAnimationFrame(function () { geh(); merk(true); }); }
+    }, 150);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', los); else los();
+  addEventListener('load', function () { if (sperre) geh(); });
+})();</script>
+</body>
+</html>

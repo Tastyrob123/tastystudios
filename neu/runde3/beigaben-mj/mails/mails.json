@@ -1,0 +1,44 @@
+[
+ {
+  "key": "ticket",
+  "ordner": "01-ticket",
+  "titel": "Ihr Tisch ist reserviert",
+  "betreff": "Ihr Tisch ist reserviert",
+  "wann": "Als Bestätigung, sobald ein Tisch reserviert ist."
+ },
+ {
+  "key": "warteliste",
+  "ordner": "02-warteliste",
+  "titel": "Ein Tisch ist frei",
+  "betreff": "Ein Tisch ist frei geworden",
+  "wann": "An die Warteliste, sobald ein Tisch frei wird."
+ },
+ {
+  "key": "danke",
+  "ordner": "03-danke",
+  "titel": "Danke für Ihren Besuch",
+  "betreff": "Danke für Ihren Besuch",
+  "wann": "Am Tag nach dem Abend."
+ },
+ {
+  "key": "rueckblick",
+  "ordner": "04-rueckblick",
+  "titel": "Rückblick auf den Abend",
+  "betreff": "Ein Abend im Kontorsaal",
+  "wann": "An die Gäste des Abends."
+ },
+ {
+  "key": "abend",
+  "ordner": "05-abend",
+  "titel": "Das Menü diese Woche",
+  "betreff": "Die Abende im Advent",
+  "wann": "An alle Gäste, die Post von Maloja möchten."
+ },
+ {
+  "key": "einladung",
+  "ordner": "06-einladung",
+  "titel": "Einladung an Stammgäste",
+  "betreff": "Einladung: Feiern in der Arvenstube",
+  "wann": "An ausgewählte Gäste."
+ }
+]

@@ -1,0 +1,7 @@
+Maloja · Farben
+Schnee	#f4f1eb	Grund: das weisse Tischtuch
+Kalkstein	#e6dfd3	zweite Fläche: der Kalkputz des Saals
+Arvenholz	#b98a5a	Holz und Linie: das Täfer der Arvenstube
+Granit	#2a2a2b	Schrift: der Stein der Bar
+Nussbaum	#231a14	Abend: der Saal nach Einbruch der Dunkelheit
+Schweizer Rot	#d52b1e	nur als ein Punkt

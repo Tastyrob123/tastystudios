@@ -1,0 +1,40 @@
+/* Anfrage-Fenster (formular.js), Quelle _werkzeuge/reception/baustein/anfrage.css, Vorsatz afr (Werkbank-Chat 17.10.2026) */
+/* Anfrage-Fenster des Landgasthof Ruedihus (Baustein, 17.10.2026): gebaut wie dialog.buchen der Website (Wandholz, Goldrahmen innen, Felder .feld,
+   Knöpfe .kn), Werte nur aus main.css (:root). Bewegung nur über opacity und transform, «Weniger Bewegung» steht sofort. */
+dialog.afr{width:min(620px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:var(--r-xl);background:var(--holz);color:var(--papier);
+  overflow:auto;overscroll-behavior:contain;box-shadow:0 60px 120px -40px #000;opacity:0;transform:translateY(18px) scale(.985);transition:opacity .45s var(--e2),transform .7s var(--e1)}
+dialog.afr.offen{opacity:1;transform:none}
+dialog.afr::backdrop{background:rgba(10,5,2,.86)}
+.afr__in{position:relative;padding:clamp(30px,4.4vw,52px) clamp(22px,4vw,48px) clamp(24px,3vw,40px)}
+.afr__in::before{content:'';position:absolute;inset:10px;border:1px solid rgba(183,143,81,.34);border-radius:calc(var(--r-xl) - 10px);pointer-events:none}
+.afr__in::after{content:'';position:absolute;inset:0;z-index:-1;background:url("../img/butzen-09.png") 0 0/56px 56px;opacity:.55;pointer-events:none;border-radius:inherit}
+.afr__zu{position:absolute;z-index:2;right:22px;top:22px}
+.afr__kopf{text-align:center}
+.afr__kopf .mono{color:var(--kerze)}
+.afr__kopf h2{margin-top:10px;color:var(--blatt)}
+svg.afr__z{display:block;width:44px;height:auto;margin:0 auto 14px;color:var(--gold)}
+.afr__zus{margin:24px 0 4px;padding:14px 18px;border-radius:14px;background:rgba(10,5,2,.32);box-shadow:inset 0 0 0 1px rgba(var(--lh),.12)}
+.afr__zus li{padding:7px 0;border-top:1px solid rgba(var(--lh),.12);font-size:.98rem;line-height:1.45;color:var(--papier);overflow-wrap:anywhere}
+.afr__zus li:first-child{border-top:0}
+.afr .felder{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.afr .feld textarea{width:100%;min-width:0;border:0;background:transparent;color:var(--papier);font:500 1.04rem var(--sans);padding:0;resize:none;overflow:hidden;color-scheme:dark;overflow-wrap:anywhere}
+.afr .feld input::placeholder{color:rgba(var(--lh),.42)}
+.afr .feld :is(input,select,textarea):focus{outline:none;box-shadow:none}
+.afr .feld:has(:focus-visible){box-shadow:inset 0 0 0 1px rgba(210,179,132,.6)}
+.afr__frei[hidden],.afr__zus[hidden]{display:none}
+.afr__weg{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.afr__meldung{min-height:1.5em;margin-top:14px;font-size:.98rem;line-height:1.5;color:var(--licht)}
+.afr__meldung a,.afr__klein a,.afr__dk a{box-shadow:inset 0 -1px 0 currentColor}
+.afr .knoepfe{margin-top:8px}
+.afr .kn{width:100%}
+.afr__klein{font-size:.92rem}
+.afr__danke{text-align:center;padding:18px 0 4px}
+.afr__dt{margin:6px auto 0;max-width:30ch;color:var(--blatt)}
+.afr__dk{margin-top:14px;opacity:.84}
+.afr__danke .knoepfe{margin-top:22px}
+@media (max-width:560px){
+  dialog.afr{width:calc(100% - 16px);border-radius:var(--r-l)}
+  .afr__in::before{border-radius:calc(var(--r-l) - 10px)}
+  .afr .felder{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){dialog.afr{transition:none;transform:none}}

@@ -1,0 +1,55 @@
+/* Fenster und Übergänge mit runden Ecken (Robert 02.11.2026) */
+
+/* Übergänge: jeder Abschnitt legt sich mit runden oberen Ecken über den vorigen */
+body.r main>section+section{--ecke:clamp(22px,2.6vw,40px);position:relative;margin-top:calc(-1 * var(--ecke));border-radius:var(--ecke) var(--ecke) 0 0;overflow:clip}
+
+/* feste Reihenfolge, damit Safari das stehende Fensterbild nicht über die Ecke des nächsten Abschnitts legt */
+body.r main>:nth-child(1){z-index:1}body.r main>:nth-child(2){z-index:2}body.r main>:nth-child(3){z-index:3}body.r main>:nth-child(4){z-index:4}body.r main>:nth-child(5){z-index:5}body.r main>:nth-child(6){z-index:6}body.r main>:nth-child(7){z-index:7}body.r main>:nth-child(8){z-index:8}body.r main>:nth-child(9){z-index:9}body.r main>:nth-child(10){z-index:10}body.r main>:nth-child(11){z-index:11}body.r main>:nth-child(12){z-index:12}body.r main>:nth-child(13){z-index:13}body.r main>:nth-child(14){z-index:14}body.r main>:nth-child(15){z-index:15}body.r main>:nth-child(16){z-index:16}body.r main>:nth-child(17){z-index:17}body.r main>:nth-child(18){z-index:18}body.r main>:nth-child(19){z-index:19}body.r main>:nth-child(20){z-index:20}body.r main>:nth-child(21){z-index:21}body.r main>:nth-child(22){z-index:22}body.r main>:nth-child(23){z-index:23}body.r main>:nth-child(24){z-index:24}body.r main>:nth-child(25){z-index:25}body.r main>:nth-child(26){z-index:26}body.r main>:nth-child(27){z-index:27}body.r main>:nth-child(28){z-index:28}body.r main>:nth-child(29){z-index:29}body.r main>:nth-child(30){z-index:30}
+
+/* Fenster: Bild steht, die Seite zieht darüber, Satz in der Mitte (Mass wie die Fenster der Tasty-Seite) */
+.fen{position:relative;height:min(60vh,620px);color:#fff;background:#0a0c1a;isolation:isolate}
+.fen__h{position:absolute;left:0;right:0;top:-100vh;top:-100lvh;bottom:-100vh;bottom:-100lvh}
+.fen__b{position:sticky;top:0;height:100vh;height:100lvh}
+.fen__b img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.fen__t{position:sticky;top:0;height:100vh;height:100lvh;margin-top:-100vh;margin-top:-100lvh;display:grid;place-items:center;padding:0 var(--rand,24px);text-align:center}
+.r .fen__satz{font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.014em;margin:0;font-size:clamp(2rem,3.6vw,3.5rem);line-height:1.04;text-shadow:0 .03em .1em rgba(3,6,14,.5),0 .1em .6em rgba(3,6,14,.35)}
+@media(max-width:860px){.fen{height:54svh}}
+
+/* Fenster ohne Beschneiden (wie GBR, Safari 11.10.2026; Robert 02.11.2026: «das Bild lädt erst später, da entsteht ein Balken»).
+   Safari schob das stehende Bild auf dem Scroll-Faden, den runden Ausschnitt erst danach: dunkler Balken unter dem Bild.
+   Jetzt beschneidet das Fenster nichts mehr: Bild und Satz liegen unter allem, die deckenden Nachbarn verdecken, was übersteht.
+   Die runden Ecken oben malt ::after in der Farbe des Abschnitts davor; dessen untere Kante (unter dem Fenster) bleibt dafür frei. */
+body.r main>.fen{overflow:visible;border-radius:0;background:transparent;isolation:auto;z-index:auto}
+.fen::before{content:'';position:absolute;inset:0;z-index:-1;background:#0a0c1a}
+.fen__b,.fen__t{z-index:-1}
+.fen::after{content:'';position:absolute;left:0;right:0;top:0;height:var(--ecke,22px);pointer-events:none;
+  background:radial-gradient(circle at 100% 100%,transparent calc(var(--ecke,22px) - .25px),var(--fen-l,#0a0c1a) calc(var(--ecke,22px) + .25px)) left top/var(--ecke,22px) 100% no-repeat,
+             radial-gradient(circle at 0 100%,transparent calc(var(--ecke,22px) - .25px),var(--fen-r,#0a0c1a) calc(var(--ecke,22px) + .25px)) right top/var(--ecke,22px) 100% no-repeat}
+body.r main>.s-ueb:has(+.fen){--ecke:clamp(22px,2.6vw,40px);background:radial-gradient(50% 70% at 85% 0%,rgba(46,58,128,.35),transparent 70%) top/100% 100% no-repeat,linear-gradient(#0a0c1a,#0a0c1a) top/100% calc(100% - var(--ecke,22px)) no-repeat}
+
+/* Zwei weitere Fenster (Robert 02.11.2026): sie legen sich nicht über den Abschnitt davor, die runden Ecken oben malt ::after in dessen Farbe */
+body.r main>.fen.fen--frei{margin-top:0}
+/* Ecken in der gemessenen Farbe des Abschnitts davor (Samt der KI unten links heller, Betreuung #0e1124) */
+.s-ki+.fen--frei{--fen-l:#111123;--fen-r:#0b0d1b}
+.s-hbl+.fen--frei{--fen-l:#0e1124;--fen-r:#0e1124}
+
+/* Satz im Fenster rollt erst, wenn fen.js das Fenster freigibt (.los), nicht schon mit dem allgemeinen Auftritt (.da) */
+.fenjs .r .fen:not(.los) .zl .z>span{transform:translateY(130%)}
+
+/* Fuss nach einem Fenster (Robert 04.11.2026): er legt sich wie jeder Abschnitt mit runden oberen Ecken über das Fenster */
+body.r main:has(>.fen:last-child)+.fuss{--ecke:clamp(22px,2.6vw,40px);position:relative;z-index:40;margin-top:calc(-1 * var(--ecke));border-radius:var(--ecke) var(--ecke) 0 0}
+
+/* Letztes Fenster vor dem Fuss (Robert 04.11.2026): nichts schneidet das Fenster ab, sonst verschiebt Safari Bild und Ausschnitt getrennt
+   und das Bild fehlt beim Zurückscrollen («kompletter blauer Bereich»). Die Hülle endet genau mit dem Fuss am Seitenende (fen.js misst --fuss),
+   so steht das Bild bis zum Schluss still und ragt nirgends unter dem Fuss heraus. */
+body.r main>.fen:last-child .fen__h{bottom:calc(-1 * var(--fuss,100lvh))}
+
+/* Letztes Fenster vor dem Fuss: oben keine runden Ecken (Robert 04.11.2026: «Fenster haben keine abgerundeten Ecken oben») */
+body.r main>.fen:last-child::after{display:none}
+
+/* Fenster vor dem Fuss: oben keine runden Ecken (Robert 04.11.2026: «Fenster haben oberhalb keine abgerundeten Ecken») */
+body.r main>.fen:last-child::after{display:none}
+
+/* Grundregel (Robert 04.11.2026): Fenster haben oben keine abgerundeten Ecken, in beiden Fassungen, auf allen Seiten.
+   Die Ecken malte ::after in der Farbe des Abschnitts davor; ohne sie läuft die obere Kante des Fensters gerade durch. */
+.fen::after{content:none!important;display:none!important}

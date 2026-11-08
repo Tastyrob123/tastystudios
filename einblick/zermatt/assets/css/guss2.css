@@ -1,0 +1,376 @@
+/* Probe 2 «Aus einem Guss» (Robert 20.10.2026 abends): jedes Kapitel eigene Darstellung und Bewegung aus der Welt des Hauses.
+   Bewegt wird nur über transform; was hereinkommt, ist von Anfang an sichtbar (Master 541). Fotos liegen aneinander (Tasty-Sprache E). */
+
+.guss2 .eb{box-shadow:none}
+.g2-marke{display:inline-flex;align-items:center;gap:12px;color:var(--grau)}
+.g2-marke--hell{color:var(--silber)}
+.g2-mitte{display:flex;justify-content:center}
+.startliste--mitte{margin:0 auto}
+
+/* 1 · Das Fenster geht auf (stehende Bühne über zweieinhalb Bildschirme) */
+.g2-fenster{position:relative;height:260svh;background:var(--nacht)}
+.g2-fenster__buehne{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}
+.g2-fenster__kopf{position:absolute;left:0;right:0;top:clamp(80px,13svh,150px);text-align:center;color:#F7F6EC;display:grid;justify-items:center;gap:16px;z-index:1;padding:0 var(--rand)}
+.g2-fenster__kopf h2{font-size:clamp(2.4rem,5vw,5.2rem);font-weight:400}
+.g2-fenster__kopf h2 em{color:rgba(247,246,236,.55)}
+.g2-fenster__rahmen{position:absolute;inset:0;z-index:2;transform-origin:50% 64%;transform:scale(.34);will-change:transform;overflow:hidden;border-radius:6px}
+.g2-fenster__innen{position:absolute;inset:0;transform:scale(1.5);transform-origin:50% 60%;will-change:transform}
+.g2-fenster__innen img{width:100%;height:100%;object-fit:cover}
+.g2-fenster__satz{position:absolute;z-index:3;left:50%;bottom:clamp(36px,7svh,80px);width:min(86%,820px);translate:-50% 0;text-align:center;color:#fff;font:400 clamp(1.3rem,2.2vw,2.1rem)/1.3 var(--text);letter-spacing:-.02em;text-wrap:balance;transform:translateY(40svh);will-change:transform;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.g2-fenster__buehne::after{content:'';position:absolute;z-index:2;left:0;right:0;bottom:0;height:40%;background:radial-gradient(ellipse 70% 90% at 50% 100%,rgba(16,15,20,.6),rgba(16,15,20,0) 72%);pointer-events:none;opacity:var(--schatten,0)}
+
+/* 2 · Gastgeber: drei Abzüge auf einer Kante, verschieden hoch, steigen nacheinander herauf */
+.g2-gast{background:var(--nacht);color:#F7F6EC;padding:clamp(100px,10vw,160px) var(--rand) clamp(110px,10vw,170px)}
+.g2-gast__kante{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.6fr) minmax(0,.8fr);align-items:end;gap:4px;max-width:1320px;margin:0 auto}
+.g2-gast__a{aspect-ratio:4/5}
+.g2-gast__b{aspect-ratio:16/11}
+.g2-gast__c{aspect-ratio:4/5.6}
+.g2-gast__kante [data-r="schweb"]{--weg:160px}
+.g2-gast__text{max-width:720px;margin:clamp(50px,6vw,80px) auto 0;text-align:center;display:grid;justify-items:center;gap:18px}
+.g2-gast__text h2{font-size:clamp(2.4rem,4.4vw,4.4rem);font-weight:400}
+.g2-gast__text h2 em{color:rgba(247,246,236,.55)}
+.g2-gast__text p{font-size:16px;line-height:1.75;color:rgba(247,246,236,.8)}
+.g2-gast__apero b{font-weight:500;color:#F7F6EC}
+.g2-gast .weiter{color:#F7F6EC}
+
+/* 3 · Suiten: Fläche als Balken je Zeile, füllt sich von links nach rechts */
+.g2-liste button{position:relative}
+.g2-flaeche{position:absolute;left:2.4rem;right:0;bottom:-1px;height:2px;background:var(--rot);transform-origin:left;transform:scaleX(0);transition:transform 1.8s var(--e1);transition-delay:calc(var(--z,0)*130ms)}
+.g2-liste.da .g2-flaeche{transform:scaleX(var(--f))}
+.g2-liste li:nth-child(1) .g2-flaeche{--z:0}.g2-liste li:nth-child(2) .g2-flaeche{--z:1}.g2-liste li:nth-child(3) .g2-flaeche{--z:2}.g2-liste li:nth-child(4) .g2-flaeche{--z:3}.g2-liste li:nth-child(5) .g2-flaeche{--z:4}
+.g2-liste button[aria-pressed=false] .g2-flaeche{background:var(--silber)}
+.guss2 .s4{padding-bottom:clamp(60px,6vw,90px)}
+
+/* 4 · Für zwei: Bildgruppe aneinander, Glanz läuft einmal beim Ankommen */
+.g2-zimmer{background:var(--schnee);padding:0 var(--rand) clamp(110px,10vw,170px)}
+.g2-zimmer__kopf{max-width:1320px;margin:0 auto 22px;display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-top:1px solid var(--silber-h);padding-top:22px}
+.g2-zimmer__kopf .mono{color:var(--grau)}
+.g2-zimmer__satz{font-size:clamp(1.1rem,1.5vw,1.4rem);letter-spacing:-.01em;color:var(--nacht)}
+.g2-zimmer__gruppe{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:4px;max-width:1320px;margin:0 auto;height:clamp(300px,30vw,480px)}
+.g2-zi{position:relative;overflow:hidden;display:block;background:var(--tief);color:#fff}
+.g2-zi img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--e1)}
+.g2-zi:hover img{transform:scale(1.04)}
+.g2-zi__name{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 18px;display:grid;gap:4px;background:radial-gradient(ellipse 120% 100% at 0% 100%,rgba(16,15,20,.62),rgba(16,15,20,0) 75%)}
+.g2-zi__name b{font:450 clamp(1.05rem,1.4vw,1.3rem)/1.2 var(--text)}
+.g2-zi__name small{font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.g2-glanz{position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-120%)}
+.g2-zi.da .g2-glanz{animation:g2glanz 1.6s var(--e1) both;animation-delay:calc(.5s + var(--i,0)*260ms)}
+@keyframes g2glanz{to{transform:translateX(120%)}}
+
+/* 5 · Balkon: Kamerafahrt, das Bild gleitet im Rahmen, der Satz steigt */
+.g2-balkon{position:relative;height:clamp(560px,100svh,1000px);overflow:hidden;background:var(--tief)}
+.g2-balkon__bild{position:absolute;left:0;right:0;top:-18%;height:136%;will-change:transform}
+.g2-balkon__bild img{width:100%;height:100%;object-fit:cover}
+.g2-balkon::after{content:'';position:absolute;left:0;right:0;bottom:0;height:50%;background:radial-gradient(ellipse 70% 90% at 50% 100%,rgba(16,15,20,.58),rgba(16,15,20,0) 72%);pointer-events:none}
+.g2-balkon__satz{position:absolute;z-index:1;left:50%;bottom:clamp(40px,9svh,100px);width:min(88%,1100px);translate:-50% 0;text-align:center;color:#fff;font-size:clamp(1.8rem,3.8vw,3.8rem);font-weight:400;will-change:transform;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+
+/* 6 · Der Morgen: Text links mittig, Bestellplatte rechts; die Haken setzen sich nacheinander */
+.g2-morgen{background:var(--schnee);padding:clamp(110px,10vw,170px) var(--rand) clamp(100px,9vw,150px)}
+.g2-morgen__zwei{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,100px);align-items:center;max-width:1320px;margin:0 auto}
+.g2-morgen__text{display:grid;gap:18px}
+.g2-morgen__text h2{font-size:clamp(2.4rem,4.4vw,4.4rem);font-weight:400}
+.g2-morgen__text>p{font-size:16px;line-height:1.75;color:var(--grau)}
+.g2-zitat{font-size:clamp(1.15rem,1.5vw,1.4rem)!important;line-height:1.5!important;color:var(--nacht)!important;letter-spacing:-.01em}
+.g2-teile{display:grid;gap:0;border-top:1px solid var(--silber-h)}
+.g2-teile li{display:grid;grid-template-columns:9rem 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--silber-h)}
+.g2-teile b{font-weight:500;font-size:15px} .g2-teile span{font-size:14px;line-height:1.6;color:var(--grau)}
+.g2-morgen .mo .haken i::after{transform:scaleX(0);transform-origin:left;transition:transform .7s var(--e1)}
+.g2-morgen .mo.ja .haken i::after{transform:none}
+.g2-morgen .mo.ja .haken:nth-child(2) i::after{transition-delay:.35s}.g2-morgen .mo.ja .haken:nth-child(3) i::after{transition-delay:.7s}
+.g2-morgen__bilder{max-width:1320px;margin:clamp(70px,7vw,110px) auto 0}
+
+/* 7 · Vor der Tür: die Linie zeichnet sich von links nach rechts, Station um Station */
+.g2-tuer{background:var(--getoent);padding:clamp(110px,10vw,170px) var(--rand) clamp(110px,10vw,170px)}
+.g2-tuer__kopf{text-align:center;display:grid;justify-items:center;gap:16px;max-width:900px;margin:0 auto clamp(56px,6vw,90px)}
+.g2-tuer__kopf h2{font-size:clamp(2.6rem,5.2vw,5.4rem);font-weight:400}
+.g2-weg{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1320px;margin:0 auto;padding-top:28px}
+.g2-weg::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--rot);transform-origin:left;transform:scaleX(0);transition:transform 2.6s var(--e1)}
+.g2-weg.da::before{transform:none}
+.g2-weg li{position:relative;display:grid;gap:6px;padding-right:18px}
+.g2-weg li i{position:absolute;left:0;top:-36px;width:2px;height:18px;background:var(--nacht);transform-origin:bottom;transform:scaleY(0);transition:transform .8s var(--e1);transition-delay:calc(.3s + var(--k)*.45s)}
+.g2-weg.da li i{transform:none}
+.g2-weg li b{font:450 clamp(1.05rem,1.4vw,1.3rem)/1.2 var(--text);transform:translateY(16px);transition:transform 1.2s var(--e1);transition-delay:calc(.3s + var(--k)*.45s)}
+.g2-weg li span{font-size:13.5px;line-height:1.5;color:var(--grau);transform:translateY(16px);transition:transform 1.2s var(--e1);transition-delay:calc(.35s + var(--k)*.45s)}
+.g2-weg.da li b,.g2-weg.da li span{transform:none}
+.g2-tuer__quelle{max-width:1320px;margin:18px auto 0}
+.g2-jahr{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-rows:auto auto;gap:4px;max-width:1320px;margin:clamp(70px,7vw,110px) auto 0}
+.g2-jahr__w{grid-column:1;grid-row:1/3;min-height:clamp(480px,46vw,780px)}
+.g2-jahr__s{grid-column:2;grid-row:1;aspect-ratio:4/3.2}
+.g2-jahr__k1,.g2-jahr__k2{aspect-ratio:auto;height:100%}
+.g2-jahr .g2-jahr__k1{grid-column:2;grid-row:2;display:none}
+.g2-jahr__k2{grid-column:2;grid-row:2}
+.g2-jahr figure{position:relative}
+.g2-jahr figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 20px;color:#fff;display:grid;gap:6px;background:radial-gradient(ellipse 120% 100% at 0% 100%,rgba(16,15,20,.6),rgba(16,15,20,0) 75%)}
+.g2-jahr figcaption .mono{color:rgba(255,255,255,.8)}
+.g2-jahr figcaption b{font-size:clamp(1.4rem,2.2vw,2.2rem);font-weight:400}
+.g2-tuer__golf{max-width:760px;margin:30px auto 26px;text-align:center;font-size:15px;line-height:1.75;color:var(--grau)}
+
+/* 8 · Wellness: ein schmaler Schlitz im Dunkeln öffnet sich zum ganzen Bild */
+.g2-schlitz{position:relative;height:240svh;background:var(--tief)}
+.g2-schlitz__buehne{position:sticky;top:0;height:100svh;overflow:hidden}
+.g2-schlitz__rahmen{position:absolute;inset:0;overflow:hidden;transform:scaleX(.06);will-change:transform}
+.g2-schlitz__bild{position:absolute;inset:0;transform:scaleX(16.6);will-change:transform}
+.g2-schlitz__bild img{width:100%;height:100%;object-fit:cover}
+.g2-schlitz__satz{position:absolute;z-index:2;left:50%;top:50%;width:min(86%,1000px);translate:-50% -50%;text-align:center;color:#fff;font-size:clamp(1.7rem,3.4vw,3.4rem);font-weight:400;text-shadow:0 2px 30px rgba(0,0,0,.55);will-change:transform}
+.g2-schlitz__buehne::after{content:'';position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 55% 45% at 50% 50%,rgba(16,15,20,.5),rgba(16,15,20,0) 75%);pointer-events:none}
+.g2-warm{background:var(--nacht);color:#F7F6EC;padding:clamp(110px,10vw,170px) var(--rand)}
+.g2-warm__zwei{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(40px,6vw,100px);align-items:center;max-width:1320px;margin:0 auto}
+.g2-warm__text{display:grid;gap:18px}
+.g2-warm__text h2{font-size:clamp(2.2rem,3.8vw,3.8rem);font-weight:400} .g2-warm__text h2 em{color:rgba(247,246,236,.55)}
+.g2-warm__text>p{font-size:15.5px;line-height:1.75;color:rgba(247,246,236,.8)}
+.g2-warm .weiter{color:#F7F6EC}
+.g2-warm__namen{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.g2-warm__namen li{padding:10px 0;border-bottom:1px solid rgba(177,178,180,.22);font-size:14.5px;transform:translateY(14px);transition:transform 1s var(--e1)}
+.g2-warm__namen.da li{transform:none}
+.g2-warm__namen li:nth-child(n){transition-delay:calc(var(--n,0)*70ms)}
+.g2-warm__bilder{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:4px}
+.g2-warm__a{grid-column:1/-1;aspect-ratio:16/11}
+.g2-warm__a img{object-position:50% 70%}
+.g2-warm__b,.g2-warm__c{aspect-ratio:4/3}
+
+/* 9 · Abend und Bar: Bilder oben aneinander, darunter Fondue und Lounge, dann der Renntag Zeile um Zeile */
+.g2-abend{background:var(--tief);color:#F7F6EC;padding:clamp(110px,10vw,170px) var(--rand)}
+.g2-abend__oben{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr);gap:4px;max-width:1320px;margin:0 auto;height:clamp(320px,32vw,520px)}
+.g2-abend__oben .eb{height:100%}
+.g2-abend__zwei{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(40px,6vw,100px);max-width:1320px;margin:clamp(60px,6vw,90px) auto 0;align-items:start}
+.g2-abend__zwei h2{font-size:clamp(2.4rem,4.4vw,4.4rem);font-weight:400;margin:16px 0 18px} .g2-abend__zwei h2 em{color:rgba(247,246,236,.55)}
+.g2-abend__zwei p{font-size:15.5px;line-height:1.75;color:rgba(247,246,236,.8)}
+.g2-fondue{margin-top:22px;border-top:1px solid rgba(177,178,180,.25)}
+.g2-fondue li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(177,178,180,.25);transform:translateY(14px);transition:transform 1s var(--e1)}
+.g2-fondue.da li{transform:none} .g2-fondue li:nth-child(2){transition-delay:.12s} .g2-fondue li:nth-child(3){transition-delay:.24s}
+.g2-fondue b{font-weight:450;font-size:clamp(1.05rem,1.4vw,1.3rem)} .g2-fondue span{font:400 12px/1.6 var(--mono);letter-spacing:.1em;color:var(--silber)}
+.g2-hinweis{color:var(--silber)!important;margin-top:12px;font-size:12px!important}
+.g2-bar{display:grid;gap:14px}
+.g2-bar__bild{aspect-ratio:4/3}
+.g2-bar .mono{color:var(--silber)}
+.g2-bar .weiter{color:#F7F6EC}
+.g2-renntag{max-width:1320px;margin:clamp(80px,8vw,120px) auto 0}
+.g2-renntag__titel{color:var(--silber);text-align:center}
+.g2-renntag .karte li{transform:translateY(12px);transition:transform 1s var(--e1)}
+.g2-renntag .karte.da li{transform:none}
+.g2-renntag__nach{display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:34px;text-align:center}
+.g2-renntag__nach p{font-size:15px;color:rgba(247,246,236,.8)}
+
+/* 10 · Pakete: Kalender füllt sich (Balken aus zm.css), Knopf mittig */
+.g2-kal__knopf{margin-top:clamp(40px,4vw,60px)}
+
+/* 11 · Pirmins Satz, das Matterhorn steigt wieder herauf */
+.g2-start{position:relative;min-height:max(118svh,820px);overflow:hidden;background:linear-gradient(180deg,#26324F 0%,#5C6488 50%,#C9A6A8 85%,#E8CFC4 100%);color:#fff;display:grid;place-items:start center}
+.g2-start__berg{position:absolute;left:-2%;right:-2%;bottom:0;height:72%;transform:translateY(40%);will-change:transform}
+.g2-start__berg img{width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:brightness(.82) sepia(.2) hue-rotate(190deg) saturate(1.3)}
+.g2-start__mitte{position:relative;z-index:1;display:grid;justify-items:center;gap:22px;text-align:center;padding:clamp(110px,14svh,170px) var(--rand) 0;max-width:1080px}
+.g2-start__marke{color:rgba(255,255,255,.75)}
+.g2-start__satz{font-size:clamp(2.2rem,4.6vw,4.8rem);font-weight:400;line-height:1.05}
+.g2-start__quelle{color:rgba(255,255,255,.6);font-size:10px}
+.g2-start .startliste{margin-top:16px}
+
+/* Fuss */
+.g2-fuss{background:var(--tief);color:#F7F6EC;padding:clamp(80px,8vw,120px) 0 0}
+.g2-fuss__noten{display:grid;justify-items:center;gap:14px;padding:0 var(--rand) clamp(60px,6vw,90px);margin-bottom:clamp(50px,5vw,80px);border-bottom:1px solid rgba(177,178,180,.18)}
+.g2-fuss__noten ul{display:flex;gap:clamp(30px,6vw,90px);justify-content:center}
+.g2-fuss__noten li{display:grid;justify-items:center;gap:6px;transform:translateY(16px);transition:transform 1.2s var(--e1)}
+.g2-fuss__noten ul.da li{transform:none} .g2-fuss__noten li:nth-child(2){transition-delay:.12s} .g2-fuss__noten li:nth-child(3){transition-delay:.24s}
+.g2-fuss__noten b{font:300 clamp(2.4rem,4vw,3.6rem)/1 var(--text);letter-spacing:-.04em}
+.g2-fuss__noten span{font:400 10px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--silber)}
+.g2-fuss__noten>.mono{color:rgba(247,246,236,.5);font-size:10px}
+/* Logos der Portale (01.11.2026): im Originalton, ohne Kachel; Höhen je Logo so, dass sie gleich schwer wirken */
+.portal{display:block;width:auto;height:24px;max-width:none}
+.portal--booking{height:25px}.portal--tripadvisor{height:32px}.portal--google{height:32px}
+@media (max-width:760px){.portal--booking{height:15px}.portal--tripadvisor{height:19px}.portal--google{height:20px}}
+.g2-fuss__noten li .portal{margin-bottom:10px}
+.g2-fuss__zeilen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(30px,4vw,70px);max-width:1320px;margin:0 auto;padding:0 var(--rand)}
+.g2-fuss__zeilen .mono{color:var(--silber);margin-bottom:10px}
+.g2-fuss__zeilen p{font-size:15px;line-height:1.7;color:rgba(247,246,236,.82)}
+.g2-fuss__zeilen .weiter{color:#F7F6EC;margin-top:14px}
+.g2-fuss__ig{max-width:1320px;margin:clamp(60px,6vw,90px) auto 0;padding:0 var(--rand)}
+.g2-fuss__ig .mono{color:var(--silber);margin-bottom:16px;text-align:center}
+.g2-fuss__ig-bilder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.g2-fuss__ig-bilder img{width:100%;aspect-ratio:1;object-fit:cover}
+
+@media (max-width:760px){
+  .g2-fenster{height:220svh}
+  .g2-fenster__rahmen{transform:scale(.5)}
+  .g2-gast__kante{grid-template-columns:1fr 1fr}
+  .g2-gast__b{grid-column:1/-1;grid-row:1}
+  .g2-gast__a,.g2-gast__c{aspect-ratio:4/4.6}
+  .g2-zimmer__kopf{flex-direction:column;gap:8px}
+  .g2-zimmer__gruppe{grid-template-columns:1fr 1fr;height:auto}
+  .g2-zi{aspect-ratio:4/3.2}
+  .g2-zi--0{grid-column:1/-1}
+  .g2-morgen__zwei,.g2-warm__zwei,.g2-abend__zwei{grid-template-columns:1fr}
+  .g2-teile li{grid-template-columns:1fr;gap:4px}
+  .g2-weg{grid-template-columns:1fr;padding-top:0;padding-left:28px}
+  .g2-weg::before{left:0;right:auto;top:0;bottom:0;width:2px;height:auto;transform-origin:top;transform:scaleY(0)}
+  .g2-weg li{padding:0 0 22px}
+  .g2-weg li i{left:-28px;top:9px;width:18px;height:2px;transform-origin:left;transform:scaleX(0)}
+  .g2-jahr{grid-template-columns:1fr 1fr}
+  .g2-jahr__w{grid-column:1/-1;grid-row:1;min-height:0;aspect-ratio:4/4.4}
+  .g2-jahr__s{grid-column:1;grid-row:2;aspect-ratio:1}
+  .g2-jahr__k2{grid-column:2;grid-row:2;aspect-ratio:1;height:auto}
+  .g2-jahr figcaption{padding:50px 14px 14px}
+  .g2-schlitz{height:200svh}
+  .g2-abend__oben{grid-template-columns:1fr 1fr;height:auto}
+  .g2-abend__a{grid-column:1/-1;aspect-ratio:4/3}
+  .g2-abend__b,.g2-abend__c{aspect-ratio:1}
+  .g2-start{min-height:max(110svh,720px)}
+  .g2-start__berg{height:50%}
+  .g2-fuss__noten ul{gap:22px}
+  .g2-fuss__zeilen{grid-template-columns:1fr}
+  .g2-fuss__ig-bilder{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .g2-fenster,.g2-schlitz{height:auto}
+  .g2-fenster__buehne,.g2-schlitz__buehne{position:relative}
+  .g2-fenster__rahmen,.g2-fenster__innen,.g2-schlitz__rahmen,.g2-schlitz__bild,.g2-fenster__satz,.g2-start__berg{transform:none}
+}
+/* Feinschliff 20.10. abends: Titel bleibt über dem wachsenden Fenster lesbar; Namen am Handy kleiner */
+.g2-fenster__kopf{z-index:4;text-shadow:0 2px 26px rgba(0,0,0,.45)}
+@media (max-width:760px){
+  .g2-zi__name{padding:34px 10px 10px}.g2-zi__name b{font-size:.95rem}.g2-zi__name small{font-size:8.5px;letter-spacing:.1em}
+  .g2-jahr figcaption b{font-size:1.15rem}.g2-jahr__s figcaption .mono{display:none}
+}
+/* Querprüfung 21.10.2026: Rahmen in Richtung des Fotos, Titel gleich gross, Zoom leise */
+.guss2 .auf__gruss h1{font-size:clamp(2.6rem,5.2vw,4.68rem)}
+.g2-gast__a{aspect-ratio:4/3}
+.g2-gast__c{aspect-ratio:4/3.3}
+.g2-zimmer__gruppe{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:1fr 1fr;height:clamp(420px,40vw,640px)}
+.g2-zi--0{grid-row:1/3}
+.g2-morgen .mo__bild{aspect-ratio:5/4}
+.g2-abend__oben{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-rows:1fr 1fr;height:clamp(440px,42vw,680px)}
+.g2-abend__a{grid-row:1/3}
+.g2-zi:hover img{transform:scale(1.02)}
+.g2-zi img{transition:transform 2.6s var(--e1)}
+@media (max-width:760px){
+  .g2-zimmer__gruppe{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .g2-zi--0{grid-row:auto}
+  .g2-abend__oben{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .g2-abend__a{grid-row:auto}
+  .g2-abend__b,.g2-abend__c{aspect-ratio:4/3}
+  .guss2 .s4__k1,.guss2 .s4__k2{height:auto;aspect-ratio:4/3}
+  .g2-gast__a,.g2-gast__c{aspect-ratio:4/3}
+}
+@media (max-width:760px){.g2-zi__name b{min-height:2.4em;display:flex;align-items:flex-end}}
+
+/* =====================================================================================================================
+   LEBEN (23.10.2026, Robert 20.10.: «viel zu langweilig, da muss viel mehr passieren … ruhig noch ein bisschen länger»;
+   Richtung Monte-Moro: mehr Fotos, Ebenen mit Tiefe). Fotos liegen dicht aneinander auf einer Bühne; jede Ebene wandert beim Scrollen
+   mit eigenem Faktor (guss2.js, nur transform), das Foto gleitet im Rahmen. Nichts kommt von der Seite, nichts wird eingeblendet.
+   ===================================================================================================================== */
+.lb-buehne{position:relative;aspect-ratio:var(--ar);width:100%;max-width:1320px;margin:0 auto}
+.lb-buehne>.lb{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);width:calc(var(--w)*1%);height:calc(var(--h)*1%);margin:0}
+.lb img{scale:1.1}
+.lb.da img{scale:1.07}
+.lb figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 20px;color:#fff;display:grid;gap:6px;background:radial-gradient(ellipse 120% 100% at 0% 100%,rgba(16,15,20,.6),rgba(16,15,20,0) 75%);z-index:1}
+.lb figcaption .mono{color:rgba(255,255,255,.8)}
+.lb figcaption b{font-size:clamp(1.4rem,2.2vw,2.2rem);font-weight:400}
+[data-tiefe]{will-change:transform}
+@media (max-width:760px){
+  .lb-buehne{aspect-ratio:var(--mar)}
+  .lb-buehne>.lb{left:calc(var(--mx)*1%);top:calc(var(--my)*1%);width:calc(var(--mw)*1%);height:calc(var(--mh)*1%)}
+  .lb--rechner{display:none}
+  .lb figcaption{padding:44px 14px 14px}.lb figcaption b{font-size:1.15rem}
+}
+
+/* 1b · Das Haus über den Tag: Text links, vier Fotos als Ebenen rechts, darunter die Zahlen des Hauses */
+.g2-haus2{background:var(--schnee);padding:clamp(110px,10vw,170px) var(--rand) clamp(90px,8vw,130px)}
+.g2-haus2__zwei{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(40px,6vw,100px);align-items:center;max-width:1320px;margin:0 auto}
+.g2-haus2__text{display:grid;gap:18px;justify-items:start}
+.g2-haus2__text h2{font-size:clamp(2.4rem,4.4vw,4.4rem);font-weight:400}
+.g2-haus2__text>p{font-size:16px;line-height:1.75;color:var(--grau)}
+.g2-haus2__bilder{width:100%}
+.g2-zahlen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1320px;margin:clamp(70px,7vw,110px) auto 0;border-top:1px solid var(--silber-h)}
+.g2-zahlen li{display:grid;gap:10px;padding:26px 20px 0 0;transform:translateY(18px);transition:transform 1.2s var(--e1)}
+.g2-zahlen.da li{transform:none}
+.g2-zahlen li:nth-child(2){transition-delay:.1s}.g2-zahlen li:nth-child(3){transition-delay:.2s}.g2-zahlen li:nth-child(4){transition-delay:.3s}
+.g2-zahlen b{font-size:clamp(3.4rem,7vw,7rem);font-weight:300;line-height:.9;letter-spacing:-.05em;color:var(--nacht)}
+.g2-zahlen li:first-child b{color:var(--rot)}
+.g2-zahlen .mono{color:var(--grau)}
+.g2-zahlen__quelle{max-width:1320px;margin:18px auto 0}
+
+/* Gastgeber: Laufbahn als leise Zeile */
+.g2-gast__lauf{color:var(--silber)!important;font-size:11px!important;letter-spacing:.14em}
+
+/* Morgen, Vor der Tür, Wellness, Abend: die Bühnen */
+.g2-morgen__bilder{margin-top:clamp(70px,7vw,110px)}
+.g2-jahr2{margin-top:clamp(70px,7vw,110px)}
+.g2-warm2{width:100%}
+.g2-abend2{margin-bottom:0}
+
+@media (max-width:760px){
+  .g2-haus2__zwei{grid-template-columns:1fr}
+  .g2-zahlen{grid-template-columns:1fr 1fr;gap:0 16px}
+  .g2-zahlen li{padding-top:20px}
+  .g2-zahlen b{font-size:3.4rem}
+}
+@media (prefers-reduced-motion:reduce){[data-tiefe]{transform:none!important}}
+
+/* UNTERSEITEN (23.10.2026): Bühnen statt schwebender Abzüge; Wellness warm und kalt als dichte Bildsäulen, Namen auf dem Foto */
+.su-buehne{margin-top:4px}
+.wk__spalten{gap:clamp(24px,3vw,48px)}
+.wk__spalte{gap:4px}
+.wk__spalte--kalt{padding-top:clamp(60px,7vw,120px)}
+.wk__stueck,.wk__stueck:nth-child(n){position:relative;width:100%;gap:0;justify-self:stretch}
+.wk__stueck figure{position:relative;overflow:hidden}
+.wk__stueck img,.wk__stueck:nth-child(n) img{display:block;aspect-ratio:4/3.2;border-radius:0}
+.wk__stueck:nth-child(3n+1) img{aspect-ratio:4/4.4}
+.wk__stueck figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:80px 20px 18px;color:rgba(255,255,255,.82);background:radial-gradient(ellipse 120% 100% at 0% 100%,rgba(16,15,20,.66),rgba(16,15,20,0) 75%)}
+.wk__stueck ul{position:absolute;left:20px;right:20px;bottom:40px;pointer-events:none}
+.wk__stueck li{color:#fff;font-size:clamp(1.2rem,1.8vw,1.7rem)!important;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.wk__stueck:has(ul:empty) figcaption{padding-bottom:18px}
+@media (max-width:760px){.wk__spalte--kalt{padding-top:0}.wk__stueck figcaption{padding:60px 14px 12px}.wk__stueck ul{left:14px;bottom:32px}}
+/* Rechtsseite: lange Adressen brechen am Handy um, nichts läuft über den Rand */
+.recht__blatt{grid-template-columns:minmax(0,1fr);overflow-wrap:anywhere}
+/* 404 */
+.s-bild--404{min-height:100svh}
+.fehler__knoepfe{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:26px}
+.fehler__knoepfe .weiter{color:#fff}
+/* Barrierefreiheit: Sprung zum Inhalt, sichtbar nur mit der Tastatur; Datenschutz-Hinweis an Formularen */
+.zum-inhalt{position:fixed;left:16px;top:-80px;z-index:999;padding:12px 18px;background:var(--nacht);color:#fff;font:400 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;transition:top .3s var(--e1)}
+.zum-inhalt:focus{top:16px}
+.ds-hinweis{font-size:12px!important;line-height:1.6!important}
+.ds-hinweis a{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){.g2-morgen__zwei,.g2-warm__zwei,.g2-abend__zwei,.g2-haus2__zwei{grid-template-columns:minmax(0,1fr)}.g2-morgen .mo,.g2-morgen .mo__platte{min-width:0;max-width:100%}}
+@media (max-width:860px){.kap__zwei--morgen{grid-template-columns:minmax(0,1fr)}.kap__zwei--morgen>*{min-width:0}}
+@media (max-width:420px){.mo__platte{margin:-14% 3% 0;padding:20px 18px}.mo__platte .knopf{max-width:100%;font-size:10px;letter-spacing:.12em}}
+
+/* =====================================================================================================================
+   FUSS · Fassung 2 (Robert 01.11.2026: «wahl-fuss.html 2»), alle Seiten. Regeln 1:1 aus wahl-fuss.css (Klassen wf, wf-*, wf2-*).
+   ===================================================================================================================== */
+.wf [class*="-oben"]{max-width:1320px;margin:0 auto clamp(70px,7vw,110px);padding:0 var(--rand);color:rgba(247,246,236,.84)}
+.wf p{font-size:15px;line-height:1.7}
+.wf a:hover{color:#fff}
+.wf .wf-l{color:var(--silber);margin-bottom:10px;font-size:10.5px}
+.wf .weiter{color:#F7F6EC;margin-top:14px}
+.wf-stand{color:rgba(247,246,236,.46)!important;font-size:10px!important}
+.wf-handle{display:block;color:var(--silber);font-size:10.5px!important;margin-top:16px}
+.wf-handle:hover{color:#fff}
+.wf-ig{display:block;position:relative;overflow:clip;background:#29272c}
+.wf-ig figure{aspect-ratio:9/16;overflow:clip}
+.wf-ig img{width:100%;height:100%;object-fit:cover;transition:transform 2.6s var(--e1)}
+.wf-ig:hover img{transform:scale(1.02)}
+.wf-ig--rund img,.wf-ig--rund:hover img{transform:scale(1.14)}
+.wf ul b{font:300 clamp(2rem,3.2vw,3rem)/1 var(--text);letter-spacing:-.04em;color:#F7F6EC}
+.wf ul .mono{display:block;color:var(--silber);font-size:9.5px;margin-top:8px}
+.wf .t{color:#F7F6EC}
+.wf li .portal{margin-bottom:10px}
+.wf2-oben{text-align:center;display:grid;justify-items:center}
+.wf2-tel{font-size:clamp(2.6rem,7.4vw,7.6rem);letter-spacing:-.045em;line-height:1;overflow:clip;padding-bottom:.06em}
+.wf2-tel span{display:block;transform:translateY(105%);transition:transform 1.5s var(--e1)}.wf2-tel.da span{transform:none}
+.wf2-mail{margin:10px 0 34px;font-size:17px!important}
+.wf2-zeile{display:flex;gap:clamp(20px,3vw,48px);align-items:baseline;justify-content:center;flex-wrap:wrap;padding:22px 0;border-top:1px solid rgba(177,178,180,.2);border-bottom:1px solid rgba(177,178,180,.2);width:100%}
+.wf2-zeile .weiter{margin-top:0}
+.wf2-noten{display:flex;gap:clamp(34px,6vw,96px);margin:44px 0 10px}
+.wf2-noten li{transform:translateY(16px);transition:transform 1.2s var(--e1)}.wf2-noten.da li{transform:none}
+.wf2-noten li:nth-child(2){transition-delay:.1s}.wf2-noten li:nth-child(3){transition-delay:.2s}
+.wf2-fries{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;width:100%;margin-top:50px}
+.wf2-fries .wf-ig{transform:translateY(50px);transition:transform 1.6s var(--e1) calc(var(--k,0)*90ms)}
+.wf2-fries.da .wf-ig{transform:none}
+.wf2-fries .wf-ig:nth-child(2){--k:1}.wf2-fries .wf-ig:nth-child(3){--k:2}.wf2-fries .wf-ig:nth-child(4){--k:3}.wf2-fries .wf-ig:nth-child(5){--k:4}
+@media (prefers-reduced-motion:reduce){.wf *{transition:none!important;animation:none!important}}
+@media (max-width:760px){
+  .wf ul b{font-size:1.9rem}
+  .wf2-noten{gap:20px;justify-content:space-between}
+  .wf ul .mono{font-size:8.5px;letter-spacing:.1em}
+  .wf2-fries{grid-template-columns:repeat(3,minmax(0,1fr))}.wf2-fries .wf-ig:nth-child(n+4){display:none}
+  .wf2-zeile{flex-direction:column;align-items:center;gap:8px}
+}

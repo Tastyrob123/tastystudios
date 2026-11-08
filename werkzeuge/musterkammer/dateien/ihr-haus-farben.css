@@ -1,0 +1,9 @@
+:root{
+  --nacht:#10151D;  /* Nacht: Grundton: das Wasser nach Einbruch der Dunkelheit */
+  --flaschengruen:#16221D;  /* Flaschengrün: nur die Tafel: Fliesen und Wände des Gastraums */
+  --leinen:#EFE7DA;  /* Leinen: helle Flächen: die Bettwäsche */
+  --tinte:#1C2029;  /* Tinte: Lesetext auf Leinen, nie reines Schwarz */
+  --licht:#E2AE68;  /* Licht: nur als Linie und Knauf: die Fenster am Abend */
+  --messing:#A8844F;  /* Messing: Linien, kleine Schrift: Lampen und Schlüssel */
+  --backstein:#8C4B34;  /* Backstein: sparsam: die Fassade */
+}

@@ -1,0 +1,52 @@
+/* Speisekarten · Nachbau der Website (Vorführung), nach dem Vorbild von Maloja/maloja.css: Schnee, Kalkstein, Arvenholz als Linie, Granit,
+   Tenor Sans und Hanken Grotesk. Nur zum Ansehen im Werkzeug; nichts ist ein Link. */
+@font-face{font-family:'Tenor Sans';font-weight:300 700;font-display:block;src:url(../../_haus/fonts/TenorSans.woff2) format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-weight:200 800;font-display:block;src:url(../../_haus/fonts/HankenGrotesk-latin.woff2) format('woff2')}
+:root{--schnee:#f4f1eb;--kalk:#e6dfd3;--arve:#b98a5a;--arve2:#9a6f45;--granit:#2a2a2b;--grau:#6b655f;--nuss:#231a14;--rot:#d52b1e;--rand:clamp(20px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--schnee);color:var(--granit);font:300 15px/1.6 'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wk{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:18px var(--rand);background:var(--schnee);box-shadow:0 1px 0 rgba(185,138,90,.35);font:400 11.5px/1 'Hanken Grotesk',sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.wk nav{display:flex;gap:26px}.wk nav.r{justify-content:flex-end}
+.wk b{font-weight:400;color:var(--arve2)}
+.wk__logo{display:block;width:120px;height:20px;background:var(--granit);-webkit-mask:url(../../_haus/marke/wortmarke.svg) center/contain no-repeat;mask:url(../../_haus/marke/wortmarke.svg) center/contain no-repeat}
+.wh{position:relative;height:300px;overflow:hidden;background:var(--nuss)}
+.wh--gross{height:420px}
+.wh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wh::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(35,26,20,.72),rgba(35,26,20,.08) 70%)}
+.wh__t{position:absolute;left:var(--rand);right:var(--rand);bottom:34px;z-index:1;color:var(--schnee)}
+.wh h1{font:400 clamp(48px,7vw,96px)/1.02 'Tenor Sans',Optima,sans-serif;letter-spacing:.01em}
+.wh p{max-width:52ch;font-size:18px;color:rgba(244,241,235,.9);margin-top:12px}
+.wt{padding:clamp(48px,6vw,90px) var(--rand)}
+.wt--gruen{background:var(--kalk)}
+.wt__k h2{font:400 clamp(40px,5vw,68px)/1.04 'Tenor Sans',Optima,sans-serif;max-width:16ch}
+.wt__k p{max-width:56ch;font-size:17px;color:var(--grau);margin-top:16px}
+.wf{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:40px}
+.wf img{width:100%;aspect-ratio:4/3.2;object-fit:cover}
+.wf figcaption{font-size:13px;color:var(--grau);margin-top:10px;line-height:1.35}
+.wf figcaption b{display:block;font:400 21px/1.15 'Tenor Sans',Optima,sans-serif;color:var(--granit)}
+.wu{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:14px;margin-top:28px;align-items:start}
+.wl,.wp{background:#fbf9f5;color:var(--granit);padding:24px 28px;box-shadow:0 0 0 1px rgba(185,138,90,.28) inset}
+.wl__r+.wl__r{margin-top:20px}
+.wl__rt{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--arve2);margin-bottom:6px}
+.wl__z{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(185,138,90,.22)}
+.wl__z b{font:400 20px/1.2 'Tenor Sans',Optima,sans-serif}
+.wl__z span{font-size:13px;color:var(--grau);text-align:right}
+.wl__z em{display:block;font-style:normal;color:rgba(42,42,43,.5)}
+.wl__z i{font:400 19px/1 'Tenor Sans',Optima,sans-serif;font-style:normal}
+.wp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wp span{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--arve2)}
+.wp b{font:400 42px/1.1 'Tenor Sans',Optima,sans-serif}
+.wp p{grid-column:1/-1;font-size:14px;color:var(--grau)}
+.wp .wp__kn{grid-column:1/-1;justify-self:start;display:flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;background:linear-gradient(180deg,#3a3937,#232323);color:var(--schnee);font-size:12px;letter-spacing:.16em}
+.ws{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:36px}
+.ws__e img{width:100%;aspect-ratio:4/3.2;object-fit:cover;margin-bottom:10px}
+.ws__e b{display:block;font:400 21px/1.15 'Tenor Sans',Optima,sans-serif}
+.ws__e span{display:block;font-size:13px;color:var(--grau)}
+.ws__e i{display:block;font:400 18px/1.2 'Tenor Sans',Optima,sans-serif;font-style:normal;color:var(--arve2);margin-top:4px}
+.ws__mehr{margin-top:28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--arve2)}
+@media (max-width:760px){
+  .wk{grid-template-columns:1fr auto;font-size:10.5px}.wk nav:first-child{display:none}.wk nav.r span{display:none}
+  .wf,.ws{grid-template-columns:1fr 1fr}.wu{grid-template-columns:1fr}
+  .wl__z{grid-template-columns:1fr auto}.wl__z span{grid-column:1/-1;grid-row:2;text-align:left}
+}

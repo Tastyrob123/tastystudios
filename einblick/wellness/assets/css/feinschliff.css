@@ -1,0 +1,45 @@
+/* Feinschliff 23.10.2026 · Startseite und Unterseiten. Baut auf rest-ideen.css und startseite.css auf. */
+
+/* ===== Loft-Suite: das Kapitel im Kapitel. Links der Gruss von loftsuite.ch, rechts die zwei Etagen als Gruppe in Tiefe ===== */
+.lf{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,5vw,96px);align-items:center}
+.lf-marke{margin:0}
+.lf-marke img{width:clamp(170px,14vw,237px);height:auto;object-fit:contain}
+.lf .rt{font-size:clamp(40px,4.1vw,70px);margin-top:clamp(22px,2.4vw,34px)}
+.lf-etagen{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:clamp(28px,3vw,40px) 0 0;padding-top:22px;border-top:1px solid rgba(217,183,88,.3)}
+.lf-etagen dd{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.3vw,20px);line-height:1.38;color:#F4EDE3}
+.lf-zeile{margin:24px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.17em;line-height:1.8;text-transform:uppercase;color:var(--ms-h)}
+.lf .r-knoepfe{margin-top:clamp(28px,3vw,40px)}
+.lf-gruppe{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(10,clamp(38px,4.4vw,64px))}
+.lf-gruppe figure{position:relative;border-radius:clamp(14px,1.4vw,22px);overflow:hidden;box-shadow:0 46px 80px -40px rgba(0,0,0,.85)}
+.lf-a{grid-column:2/13;grid-row:1/8}
+.lf-b{grid-column:1/7;grid-row:6/11;z-index:2}
+.lf-c{grid-column:8/13;grid-row:7/10;z-index:3}
+@media (max-width:900px){
+ .lf{grid-template-columns:1fr}
+ .lf-gruppe{grid-template-rows:repeat(10,clamp(30px,8vw,52px))}
+ .lf-etagen{grid-template-columns:1fr}
+}
+
+/* ===== Startseite: Abstände dichter, nichts hängt lose ===== */
+.wstart .ez1{padding-bottom:clamp(70px,7vw,110px)}
+.wstart .zs .zs-klein{margin-top:clamp(28px,3vw,44px)}
+.wstart .zs .r-knoepfe{margin-top:clamp(30px,3vw,44px)}
+
+/* Menü am Handy: Nachtblau statt Holz, Montserrat */
+.rest .menue{background:#0A1129;color:#F4F2EC}
+.rest .menue a:not(.kn){font-family:var(--licht);font-weight:300;letter-spacing:-.01em}
+.rest .menue .zu{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(217,183,88,.35);color:#F4F2EC}
+
+/* Handy (23.10.2026): nichts liegt über einem Text */
+@media (max-width:760px){
+ .wstart .ez-saeulen{display:flex;flex-direction:column;gap:14px}
+ .wstart .ez-saeulen .ez-julen{order:-1;text-align:left}
+ .wstart .ez-saeulen .kl-s{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:stretch}
+ .wstart .ez-saeulen .kl-s .kl{aspect-ratio:1.25;width:100%}
+ .wstart .kl-welle{margin-bottom:34px}
+ .wstart .rr-zahlen{position:relative;z-index:3;margin-top:20px}
+ .wstart .fs-kl{display:none}
+}
+
+/* Familienband in der Schrift der Seite (Tenor Sans wird nicht geladen) */
+.rest .familienband{font-family:var(--licht)}

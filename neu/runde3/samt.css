@@ -1,0 +1,5 @@
+/* Samt-Tapete (Robert 02.11.2026: Tapete 13 aus _varianten/tapete-reise), sporadisch auf dunklen Abschnitten.
+   Liegt als Bild auf dem Abschnitt selbst, unter dem Lichtschein (::before) und dem Inhalt; steht still. */
+body section.samt.samt{background-image:repeating-linear-gradient(112deg,rgba(255,255,255,.014) 0 1px,transparent 1px 3px),
+  linear-gradient(112deg,transparent 18%,rgba(92,70,140,.13) 40%,rgba(130,110,190,.07) 48%,transparent 66%),
+  linear-gradient(112deg,transparent 52%,rgba(46,58,128,.16) 74%,transparent 92%)}

@@ -1,0 +1,29 @@
+/* Saastal · Ski-Abschnitt «Horizont oben» (Robert 01.11.2026, Fassung 14 aus _varianten/saastal-ski-15). Oben zwei breite Bilder, darunter Text
+   und Familie im Wald als eine Wand. Bewegung nur über transform: .hoch schwebt deckend von unten herauf, .zoom setzt das Foto in seinen Rahmen. */
+.skv{--rk:clamp(16px,1.6vw,26px);--sch:0 40px 70px -40px rgba(24,33,63,.55),0 10px 22px -14px rgba(24,33,63,.28);--w:90px}
+.skv>div{max-width:1560px;margin-left:auto;margin-right:auto}
+.skv figure{margin:0;position:relative;overflow:hidden;border-radius:var(--rk);box-shadow:var(--sch);background:#D9DFE7}
+.skv figure img{display:block;width:100%;height:100%;object-fit:cover}
+.skv .ro{margin-bottom:14px}
+.sk-f{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(32px,3.3vw,58px);line-height:1.13;letter-spacing:-.015em}
+.sk-a{margin:22px 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(20px,1.65vw,28px);line-height:1.38;letter-spacing:-.005em}
+.skv .rs{margin-top:22px}
+.skv .r-knoepfe{margin-top:clamp(26px,2.6vw,40px)}
+.skv .hoch{transform:translate3d(0,var(--w),0);transition:transform 1.5s var(--e1) var(--d,0s)}
+.skv.da .hoch:not([data-sk]),.skv .hoch.sk-da{transform:none}
+.skv .zoom img{transform:scale(1.12);transition:transform 2.4s var(--e1) var(--d,0s)}
+.skv.da .hoch:not([data-sk]) .zoom img{transform:none}
+@media(prefers-reduced-motion:reduce){.skv .hoch,.skv .zoom img{transform:none!important;transition:none}}
+.s14-horizont{display:grid;grid-template-columns:1fr 1fr;gap:10px;height:clamp(200px,22vw,340px)}
+.s14-unten{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px;margin-top:10px;align-items:stretch}
+.s14-t{padding:clamp(36px,4vw,70px) clamp(20px,4vw,70px) clamp(20px,2vw,30px) 0}
+.s14-bild{min-height:min(64vh,620px)}
+@media(max-width:900px){
+ .skv{--w:56px}
+ .sk-f{font-size:clamp(28px,7.6vw,40px)}
+ .s14-unten{grid-template-columns:1fr}
+ .s14-bild{height:auto;aspect-ratio:4/3;min-height:0}
+ .s14-horizont{grid-template-columns:1fr;height:auto}
+ .s14-horizont figure{aspect-ratio:2.6/1}
+ .s14-t{padding:28px 0 20px}
+}

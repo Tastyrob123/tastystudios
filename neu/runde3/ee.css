@@ -1,0 +1,119 @@
+/* Erster Eindruck, Fassung 01 «Bühne» (Robert 02.11.2026): Laptop mit Bestätigung in der Mitte, links das Design (Baukasten gegen Code), rechts die Portale mit Beispielrechnung.
+   Grundregeln aus _varianten/eindruck-30/ek.css übernommen. Auftritte deckend von unten, nur transform. */
+.ek{position:relative;padding:clamp(96px,8.5vw,136px) 0 clamp(96px,8.5vw,136px);background:#07080f;isolation:isolate;overflow:hidden;--serif:'Cormorant Garamond',Georgia,serif;--ez:cubic-bezier(.16,1,.3,1)}
+.ek::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 45% at 50% 0%,rgba(46,58,128,.38),transparent 72%),radial-gradient(40% 40% at 85% 100%,rgba(199,180,137,.06),transparent 70%);pointer-events:none}
+.ek .s-reise__kopf{margin-bottom:clamp(48px,4.6vw,72px)}
+.ek-kopf-l{display:grid;gap:20px;justify-items:start}
+.ek-kopf-m{display:grid;gap:18px;justify-items:center;text-align:center}.ek-kopf-m .r-lauf{text-align:center}
+.ek h3{margin:0;font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.016em;line-height:1.04;color:#fff;text-wrap:balance}
+.ek-st{display:grid;gap:14px;align-content:start}
+.ek-st h3{font-size:clamp(1.45rem,2.05vw,2.15rem)}
+.ek-st p{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.55vw,24px);line-height:1.34;color:rgba(255,255,255,.76);max-width:24em;text-wrap:pretty}
+.ek-zwei{max-width:1180px;margin:clamp(48px,4.4vw,70px) auto 0;padding:0 var(--rand);display:grid;grid-template-columns:1fr 1px 1fr;gap:clamp(30px,4.6vw,76px)}
+.ek-strich{background:linear-gradient(180deg,transparent,rgba(199,180,137,.55) 20%,rgba(199,180,137,.55) 80%,transparent)}
+.ek-schluss{margin:clamp(48px,4.4vw,70px) auto 0;padding:0 var(--rand);text-align:center;font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(1.15rem,1.5vw,1.5rem);color:var(--gold)}
+/* Auftritte: deckend, von unten, glatt */
+.ek [data-a]{transform:translateY(64px);transition:transform 1.5s var(--ez)}
+.ek [data-a].los{transform:none}
+/* Bestätigung */
+.ek-bb{display:grid;justify-items:center}
+.ek-bb .bb{width:330px}
+/* Bühne: drei Spalten */
+.ee-buehne{max-width:1440px;margin:0 auto;padding:0 var(--rand);display:grid;grid-template-columns:minmax(240px,300px) minmax(0,1fr) minmax(240px,300px);gap:clamp(30px,3vw,52px);align-items:center}
+.ek01-b{position:relative;padding-bottom:28px}
+.ek01-lap{width:100%;margin:0}
+.ek01-lap .lo{filter:drop-shadow(0 50px 60px rgba(0,0,0,.6))}
+.ek01-bb{position:absolute;right:-4%;bottom:-2%}
+.ek01-bb .ek-bb{transform:scale(.7);transform-origin:100% 100%}
+.ek01-bb .bb{width:310px;box-shadow:0 50px 90px -30px rgba(0,0,0,.95)}
+/* Seiten: beide gleich gebaut, oben bündig */
+.ee-buehne{align-items:start}
+.ek01-b{margin-top:clamp(10px,2vw,40px)}
+.ee-seite{display:grid;gap:22px;align-content:start;padding-top:22px;border-top:1px solid rgba(199,180,137,.38);margin-top:clamp(30px,3.4vw,60px)}
+.ee-etik{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.ee-seite h4{margin:-6px 0 0;font-family:var(--titel);font-weight:700;text-transform:uppercase;letter-spacing:.016em;line-height:1.04;font-size:clamp(1.55rem,2vw,2.05rem);color:#fff;min-height:2.08em;text-wrap:balance}
+.ee-logos{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.ee-logo{display:flex;align-items:center;height:24px}
+.ee-logo img{display:block;max-width:100%;height:17px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1);opacity:.55}
+.ee-logo--airbnb img{height:21px}.ee-logo--hotelscom img{height:18px}.ee-logo--wordpress img{height:22px}.ee-logo--squarespace img{height:22px}.ee-logo--jimdo img{height:19px}
+.ee-zeilen{margin:0;display:grid;grid-template-columns:1fr auto;font-family:var(--serif);font-weight:500;font-size:clamp(17px,1.2vw,19px)}
+.ee-zeilen dt,.ee-zeilen dd{margin:0;padding:11px 0;border-top:1px solid rgba(255,255,255,.1);white-space:nowrap}
+.ee-zeilen dd{padding-left:14px;text-align:right;font-variant-numeric:tabular-nums}
+.ee-zeilen .ee-grau,.ee-zeilen .ee-minus{color:rgba(255,255,255,.62)}
+.ee-zeilen dd.ee-minus{color:#d9957c}
+/* die eigene Zeile hebt sich ab: Zeichen, grösser, heller Gold, Goldlinie */
+.ee-zeilen .ee-dir{color:#f0dfb4;font-size:clamp(18px,1.4vw,21px);font-weight:600;padding:14px 0;border-top:1px solid rgba(199,180,137,.6);border-bottom:1px solid rgba(199,180,137,.6)}
+.ee-zeilen dd.ee-dir{padding-left:14px}
+
+.ee-fuss{margin:-8px 0 0;font-family:var(--sans);font-size:12px;line-height:1.45;color:rgba(255,255,255,.42)}
+/* Tablet: Laptop oben, die beiden Seiten nebeneinander darunter */
+@media (max-width:1180px){
+  .ee-buehne{grid-template-columns:1fr 1fr;max-width:980px}
+  .ek01-b{grid-column:1/-1;grid-row:1;max-width:760px;width:100%;margin:0 auto}
+  .ek01-bb .ek-bb{transform:scale(.76)}
+  .ee-l{grid-row:2;grid-column:1}.ee-r{grid-row:2;grid-column:2}
+  .ee-seite{margin-top:24px}.ek01-b{margin-top:0}
+}
+@media (max-width:860px){
+  .ek-zwei{grid-template-columns:1fr}.ek-strich{height:1px}
+}
+@media (max-width:720px){
+  .ee-buehne{grid-template-columns:1fr}
+  .ee-l,.ee-r{grid-column:1;grid-row:auto}
+  .ek01-lap{width:100%}
+  .ek01-bb{position:relative;right:auto;bottom:auto;margin:-60px 0 -100px}.ek01-bb .ek-bb{transform:scale(.7);transform-origin:50% 0}.ek01-bb .bb{width:300px}
+  .ee-code{font-size:10.5px}
+}
+
+/* Ablauf links und rechts (Robert 02.11.2026): «Individuell für Ihr Haus entwickelt» und «Direkt bei Ihnen» sind der Höhepunkt.
+   Rechts zählt die Provision hoch, dann treten Logos und graue Zeile zurück (nichts wird durchgestrichen, Robert 02.11.2026),
+   die Goldlinie zieht unter der eigenen Zeile durch, die Zeile federt und ein Lichtstreif läuft über die Schrift. Einmal, ab .spielt (ee.js). */
+.ee-zeilen dt,.ee-zeilen dd{position:relative}
+.ee-l .ee-grau,.ee-r .ee-minus{transition:opacity .9s var(--ez) 1.5s}
+.spielt .ee-zeilen .ee-grau,.spielt .ee-zeilen .ee-minus{opacity:.45}
+.ee-logo img{transition:opacity 1s var(--ez) 1.5s}
+.spielt .ee-logo img{opacity:.24}
+/* die eigene Zeile: ein Stück über beide Spalten. Schrift bleibt immer sichtbar (Safari kennt den Text-Ausschnitt so nicht, Robert 02.11.2026).
+   Goldlinie und Lichtwelle laufen zusammen in einem Wisch von links nach rechts; die Welle geht Buchstabe für Buchstabe durch (ee.js setzt --p). */
+.ee-zeilen div.ee-dir{grid-column:1/-1;position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;
+  border-top:1px solid rgba(199,180,137,.6);border-bottom:1px solid rgba(199,180,137,.22);font-size:clamp(18px,1.4vw,21px);font-weight:600;white-space:nowrap;color:#f0dfb4}
+.ee-zeilen div.ee-dir dt,.ee-zeilen div.ee-dir dd{padding:0;border:0;color:inherit}
+.ee-zeilen div.ee-dir::before{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,#c7b489,#f3e2b6);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.3s cubic-bezier(.45,0,.2,1) 1.9s}
+.spielt .ee-zeilen div.ee-dir::before{transform:scaleX(1)}
+.ee-dir .ee-bu{transition:none}
+.spielt .ee-dir .ee-bu{animation:ee-welle .6s ease-in-out calc(1.75s + var(--p) * 1.3s) both}
+@keyframes ee-welle{0%,100%{color:#f0dfb4;text-shadow:none}45%{color:#fffaf0;text-shadow:0 0 14px rgba(255,236,190,.75)}}
+@media (prefers-reduced-motion:reduce){.ee-seite *,.ee-seite *::before,.ee-seite *::after{transition:none!important;animation:none!important}}
+.ee-zeilen div.ee-dir{font-size:clamp(17px,1.22vw,20px);gap:10px}
+/* Robert 04.11.2026: «Eigener Code, für Ihr Haus geschrieben» als ein zusammenhängender Satz, ohne Lücke in der Mitte */
+.ee-zeilen div.ee-dir.ee-satz{justify-content:flex-start;gap:.3em}
+
+/* Robert 04.11.2026: «den Bereich … geil animieren, dass die Sachen aus allen möglichen Richtungen reingeflogen kommen und sich dann aufbauen».
+   Ein Takt für den ganzen Bereich (ee.js setzt .flug, dann .fliegt): Laptop steigt von unten, die Bestätigung segelt von rechts unten auf ihn,
+   links baut sich die Design-Seite von links auf, rechts die Portale von rechts, die Logos kommen jedes aus einer eigenen Richtung,
+   die zwei Sätze unten von schräg unten, der Strich dazwischen wächst. Nur transform und opacity, nur am grossen Bildschirm. */
+@media (min-width:861px){
+  .ek01.flug [data-a]{transform:none;transition:none}
+  .ek01.flug .ee-seite{border-top-color:transparent;transition:border-color 1.2s ease .3s}
+  .ek01.flug.fliegt .ee-seite{border-top-color:rgba(199,180,137,.38)}
+  .ek01.flug .ek01-lap{transform:translateY(200px) scale(.84);transition:transform 1.7s var(--ez)}
+  .ek01.flug .ek01-bb{opacity:0;transform:translate(360px,240px) rotate(10deg);transition:transform 1.5s cubic-bezier(.22,1.18,.36,1) .6s,opacity .5s ease .6s}
+  .ek01.flug.fliegt .ek01-lap{transform:none}
+  .ek01.flug.fliegt .ek01-bb{opacity:1;transform:none}
+  .ek01.flug :is(.ee-etik,.ee-seite h4,.ee-logo,.ee-zeilen,.ee-fuss),.ek01.flug .ek-st{opacity:0;transform:translate(var(--fx,0),var(--fy,0));
+    transition:transform 1.4s var(--ez) var(--fd,0s),opacity .6s ease var(--fd,0s)}
+  .ek01.flug.fliegt :is(.ee-etik,.ee-seite h4,.ee-logo,.ee-zeilen,.ee-fuss),.ek01.flug.fliegt .ek-st{opacity:1;transform:none}
+  .ek01 .ee-l{--r:-1}.ek01 .ee-r{--r:1}
+  .ek01 .ee-seite .ee-etik{--fx:calc(var(--r) * 140px);--fd:.25s}
+  .ek01 .ee-seite h4{--fx:calc(var(--r) * 220px);--fd:.35s}
+  .ek01 .ee-logo:nth-child(1){--fx:calc(var(--r) * 170px);--fy:-90px;--fd:.5s}
+  .ek01 .ee-logo:nth-child(2){--fx:calc(var(--r) * -40px);--fy:-150px;--fd:.6s}
+  .ek01 .ee-logo:nth-child(3){--fx:calc(var(--r) * 200px);--fy:110px;--fd:.7s}
+  .ek01 .ee-logo:nth-child(4){--fx:calc(var(--r) * -60px);--fy:160px;--fd:.8s}
+  .ek01 .ee-zeilen{--fx:calc(var(--r) * 240px);--fd:.9s}
+  .ek01 .ee-fuss{--fy:50px;--fd:1.1s}
+  .ek01 .ek-zwei .ek-st:first-child{--fx:-200px;--fy:140px;--fd:1s}
+  .ek01 .ek-zwei .ek-st:last-child{--fx:200px;--fy:140px;--fd:1.1s}
+  .ek01.flug .ek-strich{transform:scaleY(0);transition:transform 1.2s var(--ez) 1.3s}
+  .ek01.flug.fliegt .ek-strich{transform:none}
+}

@@ -1,0 +1,52 @@
+/* Speisekarten · Nachbau der Website (Vorführung), nach dem Vorbild von Ihr Haus/ihrhaus.css: Nacht, Leinen, Licht als Linie, Flaschengrün für die Tafel,
+   Cormorant Garamond 500 und Instrument Sans. Nur zum Ansehen im Werkzeug; nichts ist ein Link. */
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-display:block;src:url(../../_haus/fonts/CormorantGaramond-500.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-weight:400 600;font-display:block;src:url(../../_haus/fonts/InstrumentSans-normal-400_600.woff2) format('woff2')}
+:root{--nacht:#10151d;--leinen:#efe7da;--tinte:#1c2029;--licht:#e2ae68;--messing:#a8844f;--gruen:#16221d;--rand:clamp(20px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nacht);color:var(--leinen);font:400 15px/1.55 'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wk{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:18px var(--rand);border-bottom:1px solid rgba(239,231,218,.12);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+.wk nav{display:flex;gap:26px}.wk nav.r{justify-content:flex-end}
+.wk b{font-weight:500;color:var(--licht)}
+.wk__logo{display:block;width:96px;height:38px;background:var(--leinen);-webkit-mask:url(../../_haus/marke/logo.svg) center/contain no-repeat;mask:url(../../_haus/marke/logo.svg) center/contain no-repeat}
+.wh{position:relative;height:300px;overflow:hidden}
+.wh--gross{height:420px}
+.wh img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wh::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,21,29,.78),rgba(16,21,29,.1) 70%)}
+.wh__t{position:absolute;left:var(--rand);right:var(--rand);bottom:34px;z-index:1}
+.wh h1{font:500 clamp(48px,7vw,96px)/1 'Cormorant Garamond',Georgia,serif}
+.wh p{max-width:52ch;font-size:18px;color:rgba(239,231,218,.86);margin-top:12px}
+.wt{padding:clamp(48px,6vw,90px) var(--rand)}
+.wt--gruen{background:var(--gruen)}
+.wt__k h2{font:500 clamp(40px,5vw,68px)/1.02 'Cormorant Garamond',Georgia,serif;max-width:14ch}
+.wt__k p{max-width:56ch;font-size:17px;color:rgba(239,231,218,.84);margin-top:16px}
+.wf{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:40px}
+.wf img{width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:6px}
+.wf figcaption{font-size:13px;color:rgba(239,231,218,.74);margin-top:10px;line-height:1.35}
+.wf figcaption b{display:block;font:500 21px/1.15 'Cormorant Garamond',Georgia,serif;color:var(--leinen)}
+.wu{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:14px;margin-top:28px;align-items:start}
+.wl,.wp{background:var(--leinen);color:var(--tinte);border-radius:10px;padding:24px 28px}
+.wl__r+.wl__r{margin-top:20px}
+.wl__rt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--messing);margin-bottom:6px}
+.wl__z{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(28,32,41,.1)}
+.wl__z b{font:500 20px/1.2 'Cormorant Garamond',Georgia,serif}
+.wl__z span{font-size:13px;color:rgba(28,32,41,.64);text-align:right}
+.wl__z em{display:block;font-style:normal;color:rgba(28,32,41,.5)}
+.wl__z i{font:500 19px/1 'Cormorant Garamond',Georgia,serif;font-style:normal}
+.wp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wp span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--messing)}
+.wp b{font:500 42px/1.1 'Cormorant Garamond',Georgia,serif}
+.wp p{grid-column:1/-1;font-size:14px;color:rgba(28,32,41,.68)}
+.wp .wp__kn{grid-column:1/-1;justify-self:start;display:flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;background:var(--nacht);color:var(--leinen);font-size:12px;letter-spacing:.14em}
+.ws{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:36px}
+.ws__e img{width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:6px;margin-bottom:10px}
+.ws__e b{display:block;font:500 21px/1.15 'Cormorant Garamond',Georgia,serif}
+.ws__e span{display:block;font-size:13px;color:rgba(239,231,218,.72)}
+.ws__e i{display:block;font:500 18px/1.2 'Cormorant Garamond',Georgia,serif;font-style:normal;color:var(--licht);margin-top:4px}
+.ws__mehr{margin-top:28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--licht)}
+@media (max-width:760px){
+  .wk{grid-template-columns:1fr auto;font-size:10.5px}.wk nav:first-child{display:none}.wk nav.r span{display:none}
+  .wf,.ws{grid-template-columns:1fr 1fr}.wu{grid-template-columns:1fr}
+  .wl__z{grid-template-columns:1fr auto}.wl__z span{grid-column:1/-1;grid-row:2;text-align:left}
+}

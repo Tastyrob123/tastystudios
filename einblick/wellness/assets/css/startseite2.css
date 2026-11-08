@@ -1,0 +1,287 @@
+/* Startseite Neuaufbau 23.10.2026. Je Kapitel eine eigene Anordnung und eine eigene tragende Bewegung. Nur transform und opacity. */
+.s2{--rk:clamp(14px,1.4vw,22px);--sch:0 1px 0 rgba(255,255,255,.06) inset,0 42px 70px -38px rgba(0,0,0,.75),0 10px 22px -14px rgba(0,0,0,.45);--sch-h:0 40px 64px -38px rgba(24,33,63,.5),0 10px 20px -14px rgba(24,33,63,.3);padding-top:clamp(80px,8vw,130px);padding-bottom:clamp(80px,8vw,130px)}
+.s2 figure{margin:0;position:relative;overflow:hidden;border-radius:var(--rk);box-shadow:var(--sch)}
+.s2.ri-hell figure,.s2.ri-schnee figure{box-shadow:var(--sch-h)}
+.s2 figure img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* 1 · Die Fenster gehen an: fünf Scheiben Kante an Kante, die mittlere trägt den Text; die Scheiben gehen nacheinander an */
+.fn-front{display:grid;grid-template-columns:1fr 1fr 1.9fr 1fr 1fr;gap:8px;height:min(78vh,720px)}
+.fn-s i{position:absolute;inset:0;background:#030614;opacity:.7;transition:opacity 1.1s ease calc(var(--n)*.22s + .2s)}
+.fn.da .fn-s i{opacity:0}
+.fn-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,2.6vw,44px);border-radius:var(--rk);background:linear-gradient(180deg,#16215A,#0E1638);box-shadow:inset 0 0 0 1px rgba(233,212,154,.32),var(--sch)}
+.fn-text .rt{font-size:clamp(36px,3.4vw,58px)}
+.fn-text .rs{margin-top:22px}
+
+/* 2 · Der Abend wird aufgetragen: Saal gross, die Karte liegt darüber, die Gänge drucken sich Zeile für Zeile hinein */
+.at-kopf{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,80px);align-items:end;margin-bottom:clamp(34px,3.6vw,56px)}
+.at-kopf .rl{margin:0 0 .5em}
+.at-buehne{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(12,clamp(34px,3.7vw,54px));gap:12px}
+.at-saal{grid-area:1/1/12/8}
+.at-karte{grid-area:2/6/13/11;z-index:2;padding:clamp(26px,2.8vw,46px);border-radius:var(--rk);background:linear-gradient(180deg,#FFFDF8,#F1EADD);color:var(--ink);box-shadow:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(168,138,58,.3),0 60px 90px -40px rgba(0,0,0,.9);overflow:hidden}
+.at-karte .ro{color:#8A6A2A}
+.at-z{margin:0 0 10px;color:#A88A3A}.at-z svg{width:42px;height:auto}
+.at-karte ol{margin:14px 0 10px;padding:0;list-style:none}
+.at-karte li{padding:10px 0;border-top:1px solid rgba(138,106,42,.25);opacity:0;transform:translateY(8px);transition:opacity .6s ease calc(var(--n)*.28s + .5s),transform .8s var(--e1) calc(var(--n)*.28s + .5s)}
+.at.da .at-karte li{opacity:1;transform:none}
+.at-karte li .ro{margin:0 0 4px;font-size:10px}
+.at-karte li p:last-child{margin:0;font-family:var(--licht);font-size:clamp(14px,1.05vw,16.5px);line-height:1.45}
+.at-karte li i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2A;margin:0 .6em}
+.at-k1{grid-area:1/11/7/13}.at-k2{grid-area:7/11/13/13}
+.at-tag{margin:clamp(30px,3vw,46px) 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(17px,1.35vw,21px);line-height:1.6;color:#E8DFD2}
+.at-tag b{font-weight:400;color:var(--ms-h)}
+
+/* 3 · Die Wärme steigt: Messinglinie füllt sich von unten, Bilder auf ihrer Höhe, rechts der Ruheraum */
+.ws{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3.2fr) minmax(0,4.8fr);grid-template-rows:auto auto;gap:clamp(24px,3vw,54px);align-items:stretch}
+.ws-text{grid-column:1;grid-row:1/3;align-self:center}
+.ws-text .rt{font-size:clamp(38px,3.8vw,64px)}
+.ws-leiter{grid-column:2;grid-row:1/3;position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding-left:34px;min-height:min(84vh,760px)}
+.ws-linie{position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(217,183,88,.2);border-radius:2px;overflow:hidden}
+.ws-linie i{position:absolute;inset:0;background:linear-gradient(0deg,#C9A54E,#F1E2B4);transform:scaleY(0);transform-origin:50% 100%;transition:transform 2.6s var(--e1) .3s}
+.ws.da .ws-linie i{transform:none}
+.ws-st{display:grid;gap:10px;transform:translateY(40px);transition:transform 1.4s var(--e1)}
+.ws-st.ws-1{transition-delay:.4s}.ws-st.ws-2{transition-delay:1.1s}.ws-st.ws-3{transition-delay:1.8s}
+.ws.da .ws-st{transform:none}
+.ws-st figure{aspect-ratio:3/2}
+.ws-2 figure{aspect-ratio:16/9;width:78%}
+.ws-st p{margin:0;display:grid;gap:4px}
+.ws-st b{font-family:var(--licht);font-weight:300;font-size:clamp(28px,2.6vw,42px);line-height:1;color:var(--ms-h)}
+.ws-st span:not(.rz){font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
+.ws-st::before{content:'';position:absolute;left:-39px;width:12px;height:12px;border-radius:50%;background:#C9A54E;box-shadow:0 0 0 5px rgba(201,165,78,.2)}
+.ws-st{position:relative}
+.ws-ruhe{grid-column:3;grid-row:1;min-height:min(70vh,640px)}
+.ws-ruhe img{scale:1.03;transition:scale 6s ease}
+.ws.da .ws-ruhe img{scale:1}
+.ws-oz{grid-column:3;grid-row:2;margin:0}
+
+/* 4 · Zwei Spalten im Gegenlauf: Zimmer in zwei Spalten, die gegeneinander wandern; rechts Titel und Satz */
+.gl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,2.4vw,40px);align-items:start}
+.gl-sp{display:grid;gap:clamp(20px,2.4vw,36px)}
+.gl-b{margin-top:clamp(120px,14vw,220px)}
+.gl-z{display:grid;gap:12px;text-decoration:none;color:inherit}
+.gl-z figure{aspect-ratio:4/5}
+.gl-z img{transition:scale 2.6s var(--e1)}
+@media (hover:hover){.gl-z:hover img{scale:1.02}}
+.gl-z p{margin:0;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.gl-z b{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.35vw,21px)}
+.gl-z span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A6A2A;white-space:nowrap}
+.gl-text{position:relative;top:0;align-self:start;padding-top:clamp(40px,5vw,90px)}
+.gl-text .rt{font-size:clamp(40px,4vw,68px)}
+.wstart .gl-sp.lebt{translate:0 0;scale:1}
+
+/* 5 · Zwei Etagen treffen sich: oben kommt von oben, unten von unten */
+.le{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,96px);align-items:center}
+.le-haus{display:grid;grid-template-rows:1fr 1fr;gap:10px;height:min(84vh,780px)}
+.le-o{transform:translateY(-90px);transition:transform 1.6s var(--e1)}
+.le-u{transform:translateY(90px);transition:transform 1.6s var(--e1)}
+.le.da .le-o,.le.da .le-u{transform:none}
+.le figcaption{position:absolute;left:18px;bottom:16px;padding:8px 14px;border-radius:999px;background:#22180F;color:#F4EDE3;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 20px -10px rgba(0,0,0,.6)}
+.le .rt{font-size:clamp(40px,4vw,68px);margin-top:26px}
+
+/* 6 · Die Loipe vor den Bergen: das Tal unter der Höhenlinie, die Orte setzen sich nacheinander auf die Linie */
+.lo2-kopf{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,80px);align-items:end}
+.lo2-kopf .rl{margin:0 0 .5em}
+.lo2-berg{position:relative;aspect-ratio:1400/420;margin-top:clamp(20px,2vw,30px)}
+.lo2-foto{position:absolute;inset:0;overflow:hidden;border-radius:0 0 var(--rk) var(--rk)}
+.lo2-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.lo2-berg svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lo2-li{fill:none;stroke:#A88A3A;stroke-width:2;vector-effect:non-scaling-stroke}
+.lp{transform-box:fill-box;transform-origin:50% 100%;transform:translateY(16px);opacity:0;transition:transform .9s var(--feder) calc(var(--n)*.16s + .3s),opacity .5s ease calc(var(--n)*.16s + .3s)}
+.lo2.da .lp{transform:none;opacity:1}
+.lp circle{fill:#fff;stroke:#18213F;stroke-width:2}
+.lp--h circle{fill:#C9A54E;stroke:#fff}
+.lp text{font-family:var(--licht);font-size:17px;fill:#18213F}
+.lp .lp-m{font-family:var(--mono);font-size:12px;letter-spacing:.1em;fill:#8A6A2A}
+.lo2-unten{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,3fr) minmax(0,3fr);gap:clamp(24px,3vw,54px);align-items:start;margin-top:clamp(40px,4vw,64px)}
+.lo2-pirmin{margin:0;font-family:var(--licht);font-weight:300;font-size:clamp(24px,2.3vw,38px);line-height:1.3;letter-spacing:-.01em;color:var(--ink)}
+.lo2-zahlen{display:grid;gap:18px}
+.lo2-zahlen p{margin:0;display:grid;gap:4px;border-top:1px solid rgba(138,106,42,.3);padding-top:10px}
+.lo2-zahlen b{font-family:var(--licht);font-weight:300;font-size:clamp(26px,2.2vw,36px);line-height:1}
+.lo2-zahlen span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2A}
+.lo2-k{aspect-ratio:3/4}
+.lo2-unten .r-knoepfe{grid-column:1;margin-top:0}
+
+/* 7 · Ausgeteilt wie beim Jass: fünf Karten, schnell gestaffelt von links */
+.ja-kopf{margin-bottom:clamp(34px,3.6vw,56px)}
+.ja-tisch{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+.jk{display:flex;flex-direction:column;padding:12px 12px 22px;border-radius:var(--rk);background:linear-gradient(180deg,#FFFDF8,#F1EADD);color:var(--ink);text-decoration:none;box-shadow:inset 0 1px 0 #fff,inset 0 0 0 1px rgba(168,138,58,.28),0 40px 70px -40px rgba(0,0,0,.9);
+  transform:translateX(-50px);opacity:0;transition:transform .7s var(--e1) calc(var(--n)*.09s),opacity .4s ease calc(var(--n)*.09s)}
+.ja.da .jk{transform:none;opacity:1}
+.jk figure{aspect-ratio:4/5;box-shadow:none;border-radius:calc(var(--rk) - 6px)}
+.jk-n{margin:16px 8px 0;font-family:var(--licht);font-weight:400;font-size:clamp(19px,1.5vw,24px)}
+.jk ul{margin:10px 8px 0;padding:0;list-style:none;font-size:13.5px;line-height:1.5;opacity:.85}
+.jk ul li{padding:6px 0;border-top:1px solid rgba(138,106,42,.2)}
+.jk-jass{padding:26px 20px;background:linear-gradient(180deg,#2A1D12,#1D140C);color:#F4EDE3;box-shadow:inset 0 0 0 1px rgba(217,183,88,.4),0 40px 70px -40px rgba(0,0,0,.9)}
+.jk-jass .jk-n{margin:6px 0 0;font-size:clamp(22px,1.8vw,28px)}
+.jk-d{margin:16px 0 0!important}
+.jk-d li{border-top-color:rgba(217,183,88,.25)!important;font-family:var(--licht);font-size:15px}
+.jk-p{margin:auto 0 0;padding-top:16px;font-size:13px;line-height:1.5;color:var(--ms-h)}
+
+/* 8 · Für jeden Stern: Winternacht im Rahmen, Sterne setzen sich nacheinander */
+.st2{text-align:center}
+.st2-bild{position:relative;max-width:1180px;margin:0 auto;aspect-ratio:16/8}
+.st2-bild figcaption{position:absolute;inset:auto 0 0 0;padding:clamp(40px,5vw,80px) 20px clamp(30px,3vw,48px);background:radial-gradient(ellipse at 50% 100%,rgba(6,10,30,.72),rgba(6,10,30,0) 72%)}
+.st2 .fs-satz{margin-top:18px;color:#fff;text-shadow:0 2px 30px rgba(4,8,28,.6)}
+.st2 .fs-l{margin-top:clamp(36px,3.6vw,56px)}
+
+/* Handy */
+@media (max-width:900px){
+ .fn-front{grid-template-columns:1fr 1fr;height:auto}.fn-text{grid-column:1/-1;order:-1}.fn-s{aspect-ratio:3/4}
+ .at-kopf,.lo2-kopf{grid-template-columns:1fr}
+ .at-buehne{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto}.at-saal{grid-area:auto;grid-column:1/-1;aspect-ratio:4/3}.at-karte{grid-area:auto;grid-column:1/-1;margin-top:-60px;margin-inline:12px}.at-k1,.at-k2{grid-area:auto;aspect-ratio:1}
+ .ws{grid-template-columns:1fr}.ws-text,.ws-leiter,.ws-ruhe,.ws-oz{grid-column:1;grid-row:auto}.ws-leiter{min-height:0}.ws-ruhe{min-height:0;aspect-ratio:4/3}
+ .gl{grid-template-columns:1fr 1fr}.gl-text{grid-column:1/-1;order:-1;padding-top:0}.gl-b{margin-top:60px}
+ .le{grid-template-columns:1fr}.le-haus{height:auto}.le-haus figure{aspect-ratio:3/2}
+ .lo2-unten{grid-template-columns:1fr}
+ .lp text{font-size:30px}.lp .lp-m{display:none}
+ .ja-tisch{grid-template-columns:1fr 1fr}.jk-jass{grid-column:1/-1}
+ .st2-bild{aspect-ratio:4/5}
+}
+
+/* Feinschliff nach der ersten Durchsicht (23.10.2026) */
+.gl{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gl-z figure{aspect-ratio:5/4}
+.gl-b{margin-top:clamp(90px,10vw,160px)}
+.gl-c .gl-text{padding:0 0 clamp(10px,1vw,20px)}
+.gl-kinder{margin:0}.gl-kinder a{color:#8A6A2A;text-decoration:underline;text-underline-offset:3px}
+.at-fuss{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:clamp(30px,3vw,46px)}
+.at-fuss .at-tag{margin:0}.at-fuss .r-knoepfe{margin:0;flex:none}
+.lo2-foto{display:flex}
+.lo2-foto span{flex:1 1 0;min-width:0;height:100%}
+.lo2-foto span img{display:block;width:100%;height:100%;object-fit:cover}
+.lo2-unten .r-knoepfe{margin-top:clamp(26px,2.6vw,40px)}
+.st2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4vw,80px);align-items:center;text-align:left}
+.st2 .st2-bild{max-width:none;margin:0;aspect-ratio:3/2}
+.st2 .fs-st{justify-content:flex-start}
+.st2 .fs-satz{font-size:clamp(46px,5vw,86px);color:#F4F2EC;text-shadow:none;margin-top:22px}
+.st2 .rl{margin-top:26px}
+.st2 .rbar{grid-column:1/-1;margin-top:clamp(40px,4vw,64px)}
+.le .lf-etagen{margin-top:clamp(24px,2.4vw,34px)}
+@media (max-width:900px){.st2{grid-template-columns:1fr}.at-fuss{flex-direction:column;align-items:flex-start}.gl-c{grid-column:1/-1}}
+@media (max-width:900px){.gl{grid-template-columns:1fr}.gl-sp{transform:none!important}.gl-b{margin-top:0}.gl-c .gl-text{order:-1}.gl-z figure{aspect-ratio:4/3}}
+@media (max-width:900px){.gl-c{order:-1}}
+
+/* ===== Runde 2 (23.10.2026 abends, Roberts Punkte je Kapitel) ===== */
+/* 2 · Die Karte eines Abends: hell wie Papier, Gänge gross links, Bilder rechts, nichts liegt über einem Bild */
+.at2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,96px);align-items:start;background:#F6F1EA}
+.at2 .rt{font-size:clamp(40px,4vw,68px)}
+.at2-ro{margin-top:clamp(30px,3vw,46px)!important}
+.at2 ol{margin:10px 0 14px;padding:0;list-style:none}
+.at2 li{padding:14px 0;border-top:1px solid rgba(138,106,42,.28);opacity:0;transform:translateY(10px);transition:opacity .6s ease calc(var(--n)*.3s + .4s),transform .9s var(--e1) calc(var(--n)*.3s + .4s)}
+.at2.da li{opacity:1;transform:none}
+.at2 li .ro{margin:0 0 6px;font-size:10px}
+.at2 li p:last-child{margin:0;font-family:var(--licht);font-size:clamp(16px,1.3vw,20px);line-height:1.45}
+.at2 li i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2A;margin:0 .6em}
+.at2-bilder{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:sticky;top:0}
+.at2-bilder figure{aspect-ratio:4/3}
+.at2-saal{grid-column:1/-1;aspect-ratio:16/11!important}
+.at2-saal img{scale:1.08;transition:scale 3s var(--e1)}
+.at2.da .at2-saal img{scale:1}
+.at2-tag{grid-column:1/-1;margin:16px 0 0;font-family:var(--licht);font-weight:300;font-size:clamp(16px,1.3vw,20px);line-height:1.6}
+.at2-tag b{font-weight:400;color:#8A6A2A}
+.at2-bilder .r-knoepfe{grid-column:1/-1;margin-top:10px}
+
+/* 4 · Die Zimmer nebeneinander: vier Spalten, das erste Feld trägt den Titel, die Fläche kommt gemeinsam */
+.zn-feld{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,30px) clamp(14px,1.6vw,24px)}
+.zn-text .rt{font-size:clamp(38px,3.6vw,60px)}
+.zn-text .r-knoepfe{margin-top:22px}
+.zn-z{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.zn-z figure{aspect-ratio:4/3}
+.zn-z img{scale:1.1;transition:scale 2.4s var(--e1)}
+.zn-feld.sw-da .zn-z img{scale:1}
+.zn-feld.sw-da .zn-z:nth-child(2) img{transition-delay:.05s}.zn-feld.sw-da .zn-z:nth-child(3) img{transition-delay:.1s}.zn-feld.sw-da .zn-z:nth-child(4) img{transition-delay:.15s}
+@media (hover:hover){.zn-z:hover img{scale:1.02}}
+.zn-n{margin:14px 0 0;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.zn-n b{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.35vw,21px);line-height:1.25}
+.zn-n span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:#8A6A2A;white-space:nowrap}
+.zn-l{margin:6px 0 0;font-size:14px;line-height:1.5;opacity:.8}
+.zn-p{margin:8px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#18213F}
+.zn-kinder{margin-top:clamp(30px,3vw,46px)!important}
+.zn-kinder a{color:#8A6A2A;text-decoration:underline;text-underline-offset:3px}
+
+/* 5 · Loft: zwei Etagen plus eine Spalte mit drei Ansichten */
+.le{grid-template-columns:minmax(0,4.2fr) minmax(0,5fr) minmax(0,2.8fr);gap:clamp(20px,2.6vw,44px)}
+.le-haus{height:min(82vh,760px)}
+.le-seite{display:grid;grid-template-rows:1.4fr 1fr 1fr;gap:10px;height:min(82vh,760px);transform:translateY(120px);transition:transform 1.8s var(--e1) .25s}
+.le.da .le-seite{transform:none}
+
+/* 6 · Die Loipe: ganze Fotos hängen an Fäden unter den Orten und gleiten herab */
+.lo3-berg{position:relative;aspect-ratio:1400/540;margin-top:clamp(20px,2vw,30px)}
+.lo3-berg svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lo3-f{stroke:#A88A3A;stroke-width:1;stroke-dasharray:2 4;opacity:.8}
+.lo3-b{position:absolute;width:24%;aspect-ratio:3/2;transform:translate(-50%,-30px);opacity:1;transition:transform 1.3s var(--e1) calc(var(--n)*.18s + 1.2s)}
+.lo3.da .lo3-b{transform:translate(-50%,0)}
+.lo3 .lp{transition-delay:calc(var(--n)*.14s + .2s)}
+.lo3.da .lp{transform:none;opacity:1}
+
+/* 7 · Der Winter in Wochen: Lineal November bis April, die Jasswochen wachsen an ihrem Datum */
+.jw2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,96px);align-items:center}
+.jw2-bild{aspect-ratio:4/5}
+.jw2 .rt{font-size:clamp(40px,4vw,68px)}
+.jw2-lineal{position:relative;height:96px;margin:clamp(30px,3vw,46px) 0 0;border-top:1px solid rgba(217,183,88,.4)}
+.jw2-m{position:absolute;top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,237,227,.6)}
+.jw2-m::before{content:'';position:absolute;left:0;top:-16px;width:1px;height:12px;background:rgba(217,183,88,.5)}
+.jw2-w{position:absolute;top:36px;height:52px}
+.jw2-w i{position:absolute;left:0;right:0;top:0;height:8px;border-radius:4px;background:linear-gradient(90deg,#C9A54E,#F1E2B4);transform:scaleX(0);transform-origin:0 50%;transition:transform .9s var(--e1) calc(var(--n)*.22s + .4s)}
+.jw2.da .jw2-w i{transform:none}
+.jw2-w em{position:absolute;left:0;top:16px;font-style:normal;font-family:var(--licht);font-size:13px;white-space:nowrap;color:#F4EDE3}
+.jw2-w:nth-child(even) em{top:34px}
+.jw2-preis{margin:26px 0 0;font-size:15px;line-height:1.6;opacity:.85}
+.jw2-preis b{font-family:var(--licht);font-weight:400;font-size:24px;color:var(--ms-h);margin-right:6px}
+.jw2-ro{margin-top:clamp(30px,3vw,44px)!important}
+.jw2-mehr{margin:6px 0 0;padding:0;list-style:none}
+.jw2-mehr a{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid rgba(217,183,88,.25);color:inherit;text-decoration:none}
+.jw2-mehr b{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.4vw,21px)}
+.jw2-mehr span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ms-h);white-space:nowrap}
+
+/* 8 · Am Empfang: Ankunft statt Leitsatz; die Zeilen bekommen nacheinander ihren Messingstrich */
+.em{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(36px,5vw,96px);align-items:center}
+.em-bild{aspect-ratio:4/3}
+.em .rt{font-size:clamp(40px,4vw,68px)}
+.em-f{margin:clamp(24px,2.6vw,36px) 0 0;padding:0;list-style:none}
+.em-f li{position:relative;display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0}
+.em-f li::before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:#C9A54E;transform:scaleX(0);transform-origin:0 50%;transition:transform 1s var(--e1) calc(var(--n)*.25s + .3s)}
+.em.da .em-f li::before{transform:none}
+.em-f b{font-family:var(--licht);font-weight:400;font-size:18px;color:var(--ms-h)}
+.em-f span{font-size:15px;line-height:1.55;opacity:.88}
+.em .rbar{grid-column:1/-1;margin-top:clamp(40px,4vw,64px)}
+
+@media (max-width:900px){
+ .at2,.jw2,.em{grid-template-columns:1fr}.at2-bilder{position:relative}
+ .zn-feld{grid-template-columns:1fr 1fr}.zn-text{grid-column:1/-1}
+ .le{grid-template-columns:1fr}.le-seite{grid-template-rows:none;grid-template-columns:repeat(3,1fr);height:auto}.le-seite figure{aspect-ratio:3/4}
+ .lo3-b{width:22%}.lp text{font-size:30px}
+ .jw2-w em{display:none}
+ .em-f li{grid-template-columns:1fr;gap:4px}
+}
+.lo3 .lo3-b{position:absolute;margin:0}
+
+/* 2b · setzen Sie sich, «Gezeichnet mit Z» (24.10.2026): Schachbrett aus einem Guss. Oben drei Nahbilder mit dem Z (Mappe, Bar-Karte, Hauswein),
+   unten Teller auf Schwarz, die Karte, das Z in Messing mit dem Tag am Tisch. Bewegung: die Nahbilder setzen sich im Rahmen, nur transform. */
+.gz{background:#F6F1EA}
+.gz-brett{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-radius:var(--rk);overflow:hidden;box-shadow:var(--sch-h)}
+.gz .gz-brett figure{border-radius:0;box-shadow:none}
+.gz-nah{aspect-ratio:1/1}
+.gz-nah img{transform:scale(1.13);transition:transform 2.4s var(--e1) calc(var(--n)*.18s)}
+.gz.da .gz-nah img{transform:none}
+.gz-teller{background:#000}
+.gz .gz-teller img{object-fit:contain}
+.gz-karte{padding:clamp(30px,3.4vw,56px) clamp(24px,2.8vw,48px);background:#F6F1EA}
+.gz .rt{font-size:clamp(32px,2.5vw,46px);white-space:nowrap}
+.gz-ro{margin-top:clamp(24px,2.4vw,36px)!important}
+.gz ol{margin:8px 0 14px;padding:0;list-style:none}
+.gz li{padding:12px 0;border-top:1px solid rgba(138,106,42,.28)}
+.gz li .ro{margin:0 0 5px;font-size:10px}
+.gz li p:last-child{margin:0;font-family:var(--licht);font-size:clamp(15px,1.1vw,18px);line-height:1.45}
+.gz li i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A2A;margin:0 .2em}
+.gz-nacht{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:clamp(30px,3.4vw,56px) clamp(24px,2.8vw,48px);background:#0A1129;color:#F6F1EA}
+.gz-z{margin:0;color:#D9B758}
+.gz-z svg{display:block;width:clamp(90px,9vw,150px);height:auto}
+.gz-tag{margin:0;padding:0;list-style:none}
+.gz-tag li{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(217,183,88,.3)}
+.gz-tag b{font-family:var(--licht);font-weight:400;font-size:clamp(17px,1.3vw,21px);color:#E9D49A}
+.gz-tag span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.gz-nacht .r-knoepfe{margin:0}
+@media (max-width:900px){
+ .gz-teller,.gz-karte,.gz-nacht{grid-column:1/-1}
+ .gz-teller{aspect-ratio:16/10;order:1}.gz-nacht{order:2}
+}

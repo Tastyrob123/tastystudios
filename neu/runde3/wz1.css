@@ -1,0 +1,148 @@
+/* Werkzeuge-Seite, gewählte Fassung 01 «Kapitel im Wechsel» (Robert 03.11.2026, aus _varianten/werkzeugseite-30).
+   Aufbau wz1.py, Verhalten wz1.js. Bewegung nur über transform, Auftritte deckend. */
+
+/* ---------- Grundlage ---------- */
+.wv{position:relative;padding:clamp(90px,8vw,130px) 0;background:#0e1124;color:var(--txt);isolation:isolate;overflow-x:clip}
+.wv::before{content:'';position:absolute;left:var(--rand);right:var(--rand);top:0;height:1px;background:rgba(199,180,137,.2)}
+.wv-pk{background:#060807}
+.wv-in{max-width:var(--max);margin:0 auto;padding:0 var(--rand)}
+.wv figure{margin:0}
+.wv img{display:block;max-width:100%}
+.wv .r-kopf{margin-bottom:clamp(44px,4.4vw,64px)}
+
+.wv-schirm{border-radius:14px;overflow:hidden;background:#151a36;box-shadow:0 0 0 1px rgba(199,180,137,.2),0 40px 80px -40px rgba(0,0,0,.85)}
+.wv-chrom{display:flex;align-items:center;gap:7px;height:32px;padding:0 14px;background:#151a36;border-bottom:1px solid rgba(199,180,137,.14)}
+.wv-chrom i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
+.wv-chrom span{margin:0 auto;padding-right:44px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wv-schirm img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 0}
+
+.wv-name{margin-top:10px;font-family:var(--titel);font-weight:700;text-transform:uppercase;font-size:clamp(30px,2.8vw,46px);line-height:1;letter-spacing:.006em;color:var(--gold3)}
+.wv-satz{margin-top:12px;font-size:clamp(17px,1.25vw,19px);line-height:1.5;color:var(--gold2)}
+.wv-kann{list-style:none;margin:22px 0 0;padding:0}
+.wv-kann li{position:relative;padding:12px 0 12px 24px;border-top:1px solid rgba(199,180,137,.16);font-size:15.5px;line-height:1.5;color:var(--txt)}
+.wv-kann li:last-child{border-bottom:1px solid rgba(199,180,137,.16)}
+.wv-kann li::before{content:'';position:absolute;left:0;top:24px;width:12px;height:1px;background:var(--gold)}
+.wv .kn{margin-top:28px;border:0;cursor:pointer}
+.wv-demo{margin-top:clamp(40px,4vw,60px);text-align:center;opacity:.8}
+
+
+[data-v]{transform:translateY(56px)}
+[data-v].da{transform:none;transition:transform 1.5s cubic-bezier(.22,1,.36,1)}
+
+
+
+/* Fenster mit der Vorführung */
+.wv-fenster{position:fixed;inset:0;z-index:2147483000;display:flex;flex-direction:column;gap:12px;padding:clamp(10px,1.6vw,24px);background:rgba(4,6,5,.94);opacity:0;transition:opacity .35s var(--e1)}
+.wv-fenster[hidden]{display:none}
+.wv-fenster.da{opacity:1}
+.wv-fenster__kopf{display:flex;align-items:center;gap:18px;padding:0 4px}
+.wv-fenster__kopf b{font-family:var(--titel);font-weight:700;text-transform:uppercase;font-size:clamp(18px,1.5vw,24px);letter-spacing:.012em;color:var(--gold3)}
+.wv-zu{margin-left:auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(199,180,137,.5);color:var(--gold3)}
+.wv-zu svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round}
+.wv-fenster iframe{flex:1;width:100%;border:0;border-radius:14px;background:#10151d;box-shadow:0 0 0 1px rgba(199,180,137,.18)}
+html.wv-offen{overflow:hidden}
+
+
+/* 01 Kapitel im Wechsel */
+.v1-r{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(30px,4.4vw,76px);align-items:center;padding:clamp(40px,4vw,64px) 0;border-top:1px solid rgba(199,180,137,.16)}
+.v1-r:nth-of-type(even) .v1-s{order:2}
+.v1-r:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}  /* Bildschirm rechts ist genauso gross wie links (Robert 04.11.2026) */
+.v1-n{display:block;font-style:normal;font-family:var(--titel);font-weight:700;font-size:clamp(56px,5.4vw,88px);line-height:.9;color:rgba(199,180,137,.32);margin-bottom:14px}
+
+/* Textseite: Textfassung 01 «Zahl als Umriss» (Robert 03.11.2026), Kopf mit Luft zwischen Aufgabe, Name und Satz */
+.v1-t{position:relative;padding-top:clamp(74px,6.4vw,100px)}
+.v1-zahl{position:absolute;left:-.04em;top:0;z-index:-1;font-family:var(--titel);font-weight:700;font-size:clamp(130px,12vw,190px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(199,180,137,.42)}
+.v1-t .r-mono{display:inline-block;margin:0;padding:5px 12px 5px 0;background:#0e1124}  /* deckt die Linien der Ziffer hinter der kleinen Schrift ab */
+.v1-t .wv-name{margin-top:18px;line-height:.98}
+.v1-t .wv-satz{margin-top:22px}
+.v1-kann{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;list-style:none;margin:32px 0 0;padding:0}
+.v1-kann li{padding-top:14px;border-top:1px solid rgba(199,180,137,.22);font-size:15.5px;line-height:1.5;color:var(--txt)}
+.v1-t .kn{margin-top:32px}
+
+/* Beigaben als Register mit Vorschau (Fassung 01 aus paket-20, Robert 04.11.2026) */
+.bz{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4vw,70px);align-items:start}
+.bz ul{list-style:none;margin:0;padding:0}
+.bz-l{border-top:1px solid rgba(199,180,137,.18)}
+.bz-w{display:flex;justify-content:space-between;align-items:baseline;gap:20px;width:100%;margin:0;padding:17px 0 16px;border:0;border-bottom:1px solid rgba(199,180,137,.18);background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.bz-w b{font-family:var(--titel);font-weight:700;text-transform:uppercase;font-size:clamp(22px,1.95vw,30px);line-height:1.05;letter-spacing:.012em;color:rgba(239,230,210,.42);transition:color .4s,transform .6s cubic-bezier(.22,1,.36,1)}
+.bz-w i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(199,180,137,.4);white-space:nowrap;transition:color .4s}
+.bz-w:hover b{color:rgba(239,230,210,.7)}
+.bz-w.an b{color:var(--gold3);transform:translateX(10px)}.bz-w.an i{color:var(--gold)}
+.bz-f{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#151a36;box-shadow:0 0 0 1px rgba(199,180,137,.16)}
+.bz-b{position:absolute;inset:0;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1)}
+.bz-b.an{opacity:1}
+.bz-b img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;transform:scale(1.04);transition:transform 1.6s cubic-bezier(.16,1,.3,1)}
+.bz-b.an img{transform:none}
+.bz-tx{display:grid;margin-top:22px}
+.bz-s{grid-area:1/1;margin:0;max-width:46ch;font-size:clamp(16px,1.2vw,18px);line-height:1.5;color:rgba(255,255,255,.78);opacity:0;transform:translateY(8px);transition:opacity .5s,transform .7s cubic-bezier(.22,1,.36,1)}
+.bz-s.an{opacity:1;transform:none}
+.bz [data-v]{opacity:0;transform:translateY(34px);transition:opacity 1.2s cubic-bezier(.22,1,.36,1),transform 1.6s cubic-bezier(.16,1,.3,1)}
+.bz .bz-r[data-v]{transition-delay:.12s}
+.bz [data-v].da{opacity:1;transform:none}
+.bz-band{display:none}
+
+@media (max-width:860px){
+  .v1-r,.v1-r:nth-of-type(even){grid-template-columns:1fr}
+  .v1-r:nth-of-type(even) .v1-s{order:0}
+  .v1-kann{grid-template-columns:1fr}
+  .bz{display:none}
+  .bz-band{display:flex;gap:12px;margin:0 calc(var(--rand)*-1);padding:0 var(--rand) 6px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--rand);scrollbar-width:none}
+  .bz-band::-webkit-scrollbar{display:none}
+  .bz-m{flex:0 0 78vw;margin:0;scroll-snap-align:start}
+  .bz-mb{position:relative;aspect-ratio:16/11;border-radius:12px;overflow:hidden;background:#151a36;box-shadow:0 0 0 1px rgba(199,180,137,.16)}
+  .bz-mb img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
+  .bz-m figcaption{display:grid;gap:6px;margin-top:14px;text-align:left}
+  .bz-m figcaption b{font-family:var(--titel);font-weight:700;text-transform:uppercase;font-size:20px;line-height:1.06;letter-spacing:.012em;color:var(--gold3)}
+  .bz-m figcaption span{font-size:15px;line-height:1.5;color:rgba(255,255,255,.72)}
+}
+@media (prefers-reduced-motion:reduce){[data-v]{transform:none}}
+
+/* ---------- Auftritt wie auf den anderen Seiten (Robert 04.11.2026): Stück schwebt hoch (data-v), Schrift rollt ein (.zl, r.js),
+   Texte schweben gestaffelt (data-k, r.js), das Bild im Bildschirm zoomt leicht herein. Nur transform. */
+.wv-schirm figure{position:relative;aspect-ratio:16/10;overflow:hidden}
+.v1-r .wv-schirm .live>img{transform:scale(1.1);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.v1-r.da .wv-schirm .live>img{transform:none}
+
+/* ---------- Bildschirme mit dem echten Werkzeug (wie im Atelier, ar.js): zuerst die Aufnahme, beim Darüberfahren lädt das Werkzeug,
+   ein Klick gibt Bedienen und Scrollen darin frei, beim Verlassen ruht es wieder. Erst nach dem Auftritt. */
+.live{position:absolute;inset:0;overflow:hidden;background:#0b0e14;cursor:pointer}
+.live>img{position:absolute;z-index:2;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block;aspect-ratio:auto}
+.live.aktiv.bereit>img{opacity:0;pointer-events:none;transition:opacity .45s var(--e1)}   /* Aufnahme bleibt stehen, bis geklickt wird (Robert 04.11.2026) */
+.live-f{position:absolute;z-index:1;left:0;top:0;border:0;transform-origin:0 0;pointer-events:none;background:#10151d}
+.live.aktiv.bereit .live-f{pointer-events:auto}
+/* Freigegeben liegt nichts mehr über der Seite im Bildschirm, auch nichts Durchsichtiges (Geräterahmen, Vorschaubild, Hinweis):
+   sonst schickt der Browser das Mausrad bei Seiten von fremden Adressen an die Hauptseite (Robert 04.11.2026: «dann reagiert es nicht») */
+.live.aktiv.bereit>img,.live.aktiv .live-tipp{visibility:hidden}
+.live-tipp{pointer-events:none}
+.live.aktiv{cursor:auto}
+.live-tipp{position:absolute;z-index:3;left:50%;bottom:14px;transform:translate(-50%,8px);opacity:0;padding:9px 14px;border-radius:999px;background:rgba(11,14,31,.92);border:1px solid rgba(199,180,137,.35);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold3);pointer-events:none;transition:opacity .35s var(--e1),transform .35s var(--e1)}
+.v1-r.frei .live:hover .live-tipp{opacity:1;transform:translate(-50%,0)}
+.live.aktiv .live-tipp{opacity:0}
+.v1-r:not(.frei) .live{cursor:default}
+@media (prefers-reduced-motion:reduce){.v1-r .wv-schirm .live>img{transform:none;transition:none}}
+
+/* ---------- Fassung 01 «Mehr Luft» aus trenner/ (Robert 04.11.2026): keine Linie zwischen den Kapiteln, nur mehr Abstand */
+.v1-r{border-top:0!important;padding:clamp(90px,9vw,160px) 0!important}
+
+/* ---------- Auftritte über die ganze Seite wie bei Arbeiten und Team (Robert 04.11.2026): Auftaktbild zoomt herein, Schluss fährt auf */
+.wz-auf .wz-auf__b img{transform:scale(1.09);transition:transform 3.4s var(--e1)}
+.los .wz-auf .wz-auf__b img{transform:none}
+@media (prefers-reduced-motion:reduce){.wz-auf .wz-auf__b img{transform:none;transition:none}}
+
+/* ---------- «Reinschweben edel» aus dem UI-Fundus (Robert 04.11.2026: «Das muss alles richtig edel sein», Knöpfe nicht aus dem Nichts).
+   Rahmen steigt 46 px und wächst aus 0,975 (Deckkraft 1,5 s, Weg 2 s), das Bild kommt aus 1,12 zur Ruhe (2,6 s),
+   Text und Knopf rücken einen Atemzug später nach. Nur transform und opacity. */
+.v1-r[data-v],.v1-r[data-v].da{transform:none}
+.v1-r .wv-schirm{opacity:0;transform:translateY(46px) scale(.975);transform-origin:50% 100%;transition:opacity 1.5s cubic-bezier(.22,1,.36,1),transform 2s cubic-bezier(.16,1,.3,1)}
+.v1-r.da .wv-schirm{opacity:1;transform:none}
+.v1-r .wv-schirm .live>img{transform:scale(1.12);transition:opacity .45s var(--e1),transform 2.6s cubic-bezier(.16,1,.3,1)}
+.v1-r.da .wv-schirm .live>img{transform:none}
+.wv [data-k]{transform:translateY(14px);transition:opacity 1.2s ease,transform 1.6s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*110ms + .45s)}
+.wv .kn[data-k]{transform:translateY(22px) scale(.965);transform-origin:0 50%;transition:opacity 1.4s ease,transform 2s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*110ms + .45s)}
+.wv .kn[data-k]>i{transform:translateX(-12px) scale(.8);opacity:0;transition:transform 1.4s cubic-bezier(.16,1,.3,1),opacity 1s ease;transition-delay:calc(var(--i,0)*110ms + 1.25s)}
+.wv .kn[data-k].da>i,.wv .da .kn[data-k]>i{transform:none;opacity:1}
+@media (prefers-reduced-motion:reduce){.v1-r .wv-schirm,.bz [data-v],.wv .kn[data-k]>i{opacity:1;transform:none;transition:none}}
+
+/* Liste als Links (Robert 04.11.2026) */
+a.bz-w{text-decoration:none}

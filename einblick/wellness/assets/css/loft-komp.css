@@ -1,0 +1,29 @@
+/* Zimmerseite · Loft-Wellness-Suite, Fassung 5 «Komposition» (Robert 26.10.2026, Entwurfs-Maschine _varianten/loft-15). Unter dem Kopf mit den
+   Fakten eine Bildkomposition über die ganze Breite wie beim Spa der Startseite und bei Monte-Moro: das Foto beider Etagen gross, dazu nahe
+   Ausschnitte (Galerie, Bett, Whirlpool, Sauna), die sich überlappen und beim Scrollen in eigener Tiefe treiben; der Text sitzt mit darin.
+   Bewegung: jedes Foto schwebt deckend herauf, sobald seine Oberkante den unteren Rand erreicht, ohne Nachfedern (loft-komp.js). Nur transform. */
+.lk-komp{position:relative;aspect-ratio:1/.6;margin-top:clamp(56px,6vw,96px)}
+.lk-eb{position:absolute;left:var(--l);top:var(--t);width:var(--w);z-index:var(--z);transform:translate3d(0,var(--y,0px),0)}
+.lk-eb figure{aspect-ratio:var(--ar);box-shadow:0 46px 80px -40px rgba(0,0,0,.8),0 10px 22px -14px rgba(0,0,0,.5);
+  transform:translate3d(0,110px,0) scale(.96);transition:transform 1.2s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 50ms)}
+.lk-eb.da figure{transform:none}
+.lk-eb figure>img{transform:scale(1.12);transition:transform 1.6s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 50ms)}
+.lk-eb.da figure>img{transform:none}
+/* naher Ausschnitt: Punkt (--px,--py) des Fotos in der Mitte, --s = Fotobreite in Rahmenbreiten */
+.zl .lk-nah>img{position:absolute;left:50%;top:50%;width:calc(var(--s) * 100%);height:auto;aspect-ratio:3/2;max-width:none;transform:translate(calc(var(--px) * -1),calc(var(--py) * -1)) scale(1.06);transform-origin:var(--px) var(--py)}
+.zl .lk-eb.da .lk-nah>img{transform:translate(calc(var(--px) * -1),calc(var(--py) * -1))}
+.lk-eb figcaption{position:absolute;left:14px;right:14px;bottom:12px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#F6F1EA;text-shadow:0 1px 10px rgba(0,0,0,.75)}
+.lk-t{position:absolute;left:0;top:68%;width:40%;transform:translateY(60px);transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
+.lk-komp.da .lk-t{transform:none}
+.lk-n{font-family:var(--licht);font-weight:400;font-size:clamp(40px,4.4vw,76px);line-height:1.02;letter-spacing:-.01em;color:#F6F1EA;margin:12px 0 14px}
+.lk-t .ro{color:var(--ms-h)}
+.lk-t .rs{margin:0;font-size:clamp(16px,1.2vw,19px)}
+.zl .r-knoepfe{margin-top:clamp(40px,4vw,64px)}
+@media (max-width:900px){
+  .lk-komp{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .lk-eb{position:relative;left:auto;top:auto;width:auto;transform:none}
+  .lk-eb figure{aspect-ratio:1}
+  .lk-eb:first-child{grid-column:1/-1}.lk-eb:first-child figure{aspect-ratio:3/2}
+  .lk-t{position:relative;left:auto;top:auto;width:auto;grid-column:1/-1;order:-1;margin-bottom:8px}
+}
+@media (prefers-reduced-motion:reduce){.lk-eb,.lk-eb figure,.lk-eb figure>img,.lk-t{transform:none!important;transition:none!important}.zl .lk-nah>img{transform:translate(calc(var(--px) * -1),calc(var(--py) * -1))!important}}

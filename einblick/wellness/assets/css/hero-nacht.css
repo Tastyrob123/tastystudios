@@ -1,0 +1,72 @@
+/* 20 Heros mit dem Winterabend (20.10.2026). Grundlage auftakt-20.css. */
+@font-face{font-family:'Montserrat';font-weight:400;font-display:block;src:url(../fonts/montserrat-400-latin.woff2) format('woff2')}
+.hn{--navy:#0E1638;--creme:#F4F2EC;background:#0B1026;color:#fff}
+.hn .b{background:inherit}
+.hn .t{font-weight:400;letter-spacing:-.02em}
+.hn .t em{font-style:normal;color:#E9D49A}
+.hn .m{color:#E8ECF6}
+.hn .voll{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:56% 40%}
+.hn .bx{position:absolute;overflow:hidden}
+.hn .bx img{width:100%;height:100%;object-fit:cover;object-position:56% 40%;display:block}
+.hn .lei{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:min(100% - 28px,900px)}
+.hn .lei .leiste,.hn .h16k .leiste,.hn .h18b .leiste{padding:9px;border-radius:999px;background:var(--platte-h);box-shadow:var(--platte-h-s)}
+.hn .sterne svg{width:14px;height:14px} .hn .sterne .kr{width:19px;height:12px}
+.g-navy{background:#0E1638!important} .g-creme{background:#F1EEE6!important;color:#253338} .g-creme .t{color:#253338} .g-creme .t em{color:#7A5A2E} .g-creme .m{color:#3F4A4B}
+.g-schwarz{background:#07080C!important} .g-schiefer{background:#253338 url(../img/auftakt-neu/grund-schiefer.webp) 0 0/512px!important}
+.g-zwei{background:linear-gradient(#F1EEE6 0 50%,#E7ECF3 50% 100%)!important;color:#253338} .g-zwei .t{color:#253338} .g-zwei .t em{color:#2F4E8A} .g-zwei .m{color:#3F4A4B}
+.hn .sh{text-shadow:0 2px 28px rgba(5,10,40,.6)}
+/* 01 / 05 / 12 Name im Himmel */
+.h1t{position:absolute;left:0;right:0;top:15%;text-align:center;display:grid;gap:14px;justify-items:center}
+.h1t .t{font-size:4.6vw;text-shadow:0 2px 28px rgba(5,10,40,.55)}
+/* 02 Gross im Schnee */
+.h2t{position:absolute;left:5vw;bottom:7%;display:grid;gap:16px} .h2t .t{font-size:9vw;line-height:.92;text-shadow:0 2px 30px rgba(5,10,40,.45)}
+.h2k{position:absolute;right:5vw;bottom:9%}
+/* 03 Das Z wie ein Mond */
+.h3z{position:absolute;left:21vw;top:14%;width:11vw;color:#E9D49A;filter:drop-shadow(0 0 22px rgba(233,212,154,.45))} .h3z svg{width:100%;height:auto;display:block}
+.h3t{position:absolute;left:0;right:0;bottom:7%;display:grid;gap:16px;justify-items:center;text-align:center} .h3t .t{font-size:3.6vw;text-shadow:0 2px 28px rgba(5,10,40,.6)}
+/* 04 Sterne und Krone */
+.h4s{position:absolute;left:0;right:0;top:11.5%;display:flex;justify-content:center} .h4s .sterne{gap:2vw} .h4s .sterne svg{width:3.4vw;height:3.4vw;color:#E9D49A} .h4s .sterne .kr{width:4.6vw;height:3vw}
+.h4t{position:absolute;left:0;right:0;top:19%;text-align:center;display:grid;gap:10px;justify-items:center} .h4t .t{font-size:3vw;text-shadow:0 2px 28px rgba(5,10,40,.6)} .h4t .l{color:#E8ECF6;max-width:none}
+/* 05 Himmel ruhig: navy Grund unter freigestelltem Bild */
+/* 06 Haus vor heller Fläche */
+.h6t{position:absolute;left:0;right:0;top:12.5%;display:grid;gap:12px;justify-items:center;text-align:center} .h6t .t{font-size:3.5vw}
+.h6k{position:absolute;left:0;right:0;bottom:7%;display:flex;justify-content:center}
+/* 07 Kinoformat */
+.h7f{left:0;right:0;top:11%;height:62%}
+.h7u{position:absolute;left:5vw;right:5vw;bottom:0;height:27%;display:flex;justify-content:space-between;align-items:center;gap:30px} .h7u .t{font-size:2.8vw}
+/* 08 Passepartout */
+.h8f{left:3vw;right:3vw;top:96px;bottom:130px;border-radius:var(--rund-m)}
+.h8u{position:absolute;left:3vw;right:3vw;bottom:0;height:130px;display:flex;justify-content:space-between;align-items:center;gap:24px} .h8u .t{font-size:2.6vw}
+/* 09 Hochkant rechts */
+.h9f{right:0;top:0;bottom:0;width:56vw;border-radius:var(--rund) 0 0 var(--rund)}
+.h9t{position:absolute;left:5vw;top:50%;transform:translateY(-44%);display:grid;gap:24px;justify-items:start} .h9t .t{font-size:5vw;line-height:1}
+/* 10 Helle Spalte rechts */
+.h10f{left:0;top:0;bottom:0;width:64vw}
+.h10t{position:absolute;right:0;top:0;bottom:0;width:36vw;padding:110px 4vw 50px;display:grid;align-content:center;gap:22px;justify-items:start} .h10t .t{font-size:4.6vw} .h10t .l{color:#3F4A4B}
+/* 11 Streifen */
+.h11o{position:absolute;left:0;right:0;top:12%;text-align:center;display:grid;gap:14px;justify-items:center} .h11o .t{font-size:5.2vw}
+.h11f{left:0;right:0;top:33%;height:46%}
+.h11u{position:absolute;left:6vw;right:6vw;bottom:5%;display:flex;justify-content:space-between;align-items:center}
+/* 12 Nur die Lichter: Grund abgedunkelt, die Fenster leuchten voll */
+.h12d{position:absolute;inset:0;background:rgba(3,6,20,.42)}
+/* 13 Nah am Pavillon */
+.h13t{position:absolute;left:5vw;bottom:8%;display:grid;gap:16px;justify-items:start} .h13t .t{font-size:4.2vw;max-width:12ch;text-shadow:0 2px 28px rgba(5,10,40,.6)}
+/* 14 Senkrecht */
+.h14s{position:absolute;right:3vw;top:0;bottom:0;display:grid;place-items:center} .h14s .t{writing-mode:vertical-rl;font-size:min(4.4vw,5.8vh);letter-spacing:.12em;white-space:nowrap}
+.h14u{position:absolute;left:5vw;bottom:7%;display:flex;gap:26px;align-items:center}
+/* 15 Rechts im Dunkel */
+.h15t{position:absolute;right:3.5vw;top:50%;transform:translateY(-46%);width:19vw;display:grid;gap:20px;justify-items:end;text-align:right} .h15t .t{font-size:3.4vw} .h15t .l{color:#E8ECF6}
+/* 16 Karte im Schnee */
+.h16k{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:min(900px,92vw);padding:30px 30px 26px;border-radius:34px;background:#F4F2EC;color:#253338;display:grid;gap:12px;justify-items:center;text-align:center;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.h16k .t{font-size:2.6vw;color:#253338} .h16k .t em{color:#7A5A2E} .h16k .m{color:#3F4A4B} .h16k .leiste{width:100%;margin-top:8px}
+/* 17 Im Tal */
+.h17t{position:absolute;left:12vw;top:16%;display:grid;gap:12px} .h17t .t{font-size:3.4vw;text-shadow:0 2px 28px rgba(5,10,40,.6)}
+/* 18 Grosse Tafel */
+.h18b{position:absolute;left:5vw;right:5vw;bottom:5%;padding:22px 26px;border-radius:30px;background:rgba(14,22,56,.92);display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center}
+.h18n{display:grid;gap:8px} .h18n .t{font-size:2.2vw}
+/* 19 Dunkle Leiste oben */
+.h19o{position:absolute;left:0;right:0;top:0;height:30%;padding:96px 5vw 0;display:flex;justify-content:space-between;align-items:center;gap:30px} .h19o .t{font-size:3.2vw}
+.h19f{left:0;right:0;top:30%;bottom:0}
+/* 20 Grosse Kachel */
+.h20f{left:4vw;right:4vw;top:96px;bottom:24%;border-radius:var(--rund);box-shadow:0 50px 90px -40px rgba(0,0,0,.7)}
+.h20u{position:absolute;left:4vw;right:4vw;bottom:0;height:24%;display:flex;justify-content:space-between;align-items:center;gap:30px} .h20u .t{font-size:4.4vw}

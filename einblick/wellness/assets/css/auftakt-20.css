@@ -1,0 +1,113 @@
+/* 20 Auftakt-Anordnungen (20.10.2026), Standbilder zur Wahl. Farben aus dem Hausfoto, Montserrat leicht wie die Wortmarke. */
+@font-face{font-family:'Montserrat';font-weight:300;font-display:block;src:url(../fonts/montserrat-300-latin.woff2) format('woff2')}
+.v20{--schiefer:#253338;--fassade:#3F4A4B;--dach:#D5D6D8;--hell:#ECEBE6;--laerche:#30401A;--gruen:#435B21;--creme:#F4F2EC;--licht:'Montserrat','Instrument Sans',system-ui,sans-serif;margin:0;padding:0!important}
+.v20 .vnav{position:absolute;top:0;left:0;right:0;height:0;z-index:50}
+.v20 .menue{display:none}
+.v20 .b{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.v20 .t{font-family:var(--licht);font-weight:300;letter-spacing:-.01em;line-height:1.02;margin:0}
+.v20 .t em{font-style:normal}
+.v20 .m{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;display:block}
+.v20 .l{font-family:var(--sans);font-size:17px;line-height:1.55;margin:0;max-width:34ch}
+.v20 .foto{position:absolute;overflow:hidden;border-radius:var(--rund-m)}
+.v20 .foto img{width:100%;height:100%;object-fit:cover;display:block}
+.v20 .voll{inset:0;border-radius:0}
+.v20 .sterne{display:inline-flex;gap:7px;vertical-align:middle;color:#D9B758}
+.v20 .sterne svg{width:11px;height:11px} .v20 .sterne .kr{width:15px;height:10px}
+.v20 .nr{position:fixed;z-index:60;left:16px;bottom:14px;padding:8px 14px;border-radius:999px;background:#fff;color:#111;font:500 13px/1 var(--sans);box-shadow:0 4px 18px rgba(0,0,0,.25);text-decoration:none}
+.v20 .kn--dunkel,.v20 .nav .kn{--o:#4A5A60;--m:var(--fassade);--u:var(--schiefer);--t:var(--creme);--licht:rgba(255,255,255,.2);--kante:rgba(0,0,0,.5);--tf:rgba(0,0,0,.5);--ko:#FFFFFF;--ku:var(--dach);--kt:var(--schiefer)}
+.v20 .kn--hell{--o:#FFFFFF;--m:var(--creme);--u:var(--dach);--t:var(--schiefer);--ko:#4A5A60;--ku:var(--schiefer);--kt:var(--creme)}
+.g-schiefer{background:var(--schiefer) url(../img/auftakt-neu/grund-schiefer.webp) 0 0/512px;color:var(--creme)}
+.g-hell{background:var(--hell) url(../img/auftakt-neu/grund-hell.webp) 0 0/512px;color:var(--schiefer)}
+.g-laerche{background:var(--laerche) url(../img/auftakt-neu/grund-laerche.webp) 0 0/512px;color:var(--creme)}
+.g-dach{background:#D9DADB url(../img/auftakt-neu/grund-hell.webp) 0 0/512px;background-blend-mode:multiply;color:var(--schiefer)}
+.g-hell .t em,.g-dach .t em{color:var(--gruen)} .g-schiefer .t em{color:#C9D98A} .g-laerche .t em{color:#C9D98A}
+.g-hell .m,.g-dach .m{color:var(--fassade)} .g-schiefer .m,.g-laerche .m{color:var(--dach)}
+/* 01 Querband */
+.c1-f{left:50%;top:52%;width:26vw;height:66vh;transform:translate(-50%,-50%);z-index:2;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.g-schiefer .band{position:absolute;left:0;right:0;top:36%;height:32%;background:var(--hell) url(../img/auftakt-neu/grund-hell.webp) 0 0/512px}
+.c1-l,.c1-r{position:absolute;top:52%;transform:translateY(-50%);color:var(--schiefer);z-index:3}
+.c1-l{right:calc(50% + 13vw + 3vw);text-align:right} .c1-r{left:calc(50% + 13vw + 3vw)}
+.c1-l .t,.c1-r .t{font-size:5.2vw} .c1-l .m,.c1-r .m{color:var(--fassade);margin-top:12px;font-size:11px}
+.c1-o{position:absolute;left:0;right:0;top:12%;text-align:center;display:flex;justify-content:center;gap:14px;align-items:center}
+.c1-u{position:absolute;left:0;right:0;bottom:6%;display:flex;justify-content:center}
+/* 02 Wort hinter dem Haus */
+.c2-w{position:absolute;left:0;right:0;top:15%;text-align:center;font-size:13.2vw;letter-spacing:.02em;color:var(--schiefer)}
+.c2-f{left:16vw;right:16vw;top:34%;height:48vh;z-index:2;box-shadow:0 40px 80px -36px rgba(0,0,0,.45)}
+.c2-u{position:absolute;left:16vw;right:16vw;bottom:5%;display:flex;justify-content:space-between;align-items:center}
+/* 03 Hochformat am Rand */
+.c3-f{left:0;top:0;bottom:0;width:46vw;border-radius:0 var(--rund) var(--rund) 0}
+.c3-t{position:absolute;left:52vw;right:6vw;top:50%;transform:translateY(-46%);display:grid;gap:26px;justify-items:start}
+.c3-t .t{font-size:5vw}
+/* 04 Passepartout */
+.c4-f{left:3vw;right:3vw;top:96px;bottom:150px}
+.c4-u{position:absolute;left:3vw;right:3vw;bottom:0;height:150px;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center}
+.c4-u .t{font-size:3.6vw}
+/* 05 Panoramastreifen */
+.g-zwei{background:linear-gradient(var(--schiefer) 0 50%,var(--hell) 50% 100%);color:var(--creme)}
+.c5-o{position:absolute;left:0;right:0;top:12%;text-align:center} .c5-o .t{font-size:6vw} .c5-o .t em{color:#C9D98A} .c5-o .m{color:var(--dach);margin-top:14px}
+.c5-f{left:0;right:0;top:32%;height:54vh;border-radius:0}
+.c5-u{position:absolute;left:6vw;right:6vw;bottom:5%;display:flex;justify-content:space-between;align-items:center} .c5-u .m{color:var(--fassade)}
+/* 06 Karte auf dem Winterbild */
+.c6-k{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:min(560px,90vw);padding:42px 44px;border-radius:var(--rund);background:var(--hell);color:var(--schiefer);display:grid;gap:18px;justify-items:center;text-align:center;box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
+.c6-k .t{font-size:3.6vw} .c6-k .m{color:var(--fassade)}
+/* 07 Helle Spalte rechts */
+.c7-f{left:0;top:0;bottom:0;width:66vw;border-radius:0}
+.c7-s{position:absolute;right:0;top:0;bottom:0;width:34vw;padding:120px 4vw 60px;display:grid;align-content:center;gap:26px}
+.c7-s .t{font-size:4.6vw}
+/* 08 Wort, Bild, Wort */
+.c8-a,.c8-b{position:absolute;left:0;right:0;text-align:center;font-size:7vw}
+.c8-a{top:10.5%} .c8-b{bottom:7%}
+.c8-f{left:18vw;right:18vw;top:27%;bottom:25%}
+.c8-m{position:absolute;left:4vw;top:50%;transform:rotate(-90deg) translateX(-50%);transform-origin:0 0} .c8-n{position:absolute;right:4vw;top:50%;transform:rotate(90deg) translateX(50%);transform-origin:100% 0}
+/* 09 Das Z */
+.c9-z{position:absolute;left:4vw;top:16%;width:30vw;color:var(--gruen)} .c9-z svg{width:100%;height:auto}
+.c9-f{right:4vw;top:15%;bottom:8%;width:46vw}
+.c9-t{position:absolute;left:5vw;bottom:9%;width:42vw;display:grid;gap:22px;justify-items:start} .c9-t .t{font-size:4vw}
+/* 10 Das Schild am Turm */
+.c10-f{left:5vw;top:13%;bottom:6%;width:50vw}
+.c10-f img{transform:scale(1.75);transform-origin:73% 80%}
+.c10-t{position:absolute;left:60vw;right:5vw;top:50%;transform:translateY(-44%);display:grid;gap:24px;justify-items:start} .c10-t .t{font-size:5.4vw}
+/* 11 Bild oben, Kante unten */
+.c11-f{left:0;right:0;top:0;height:70vh;border-radius:0 0 var(--rund) var(--rund)}
+.c11-u{position:absolute;left:5vw;right:5vw;bottom:0;height:30vh;display:flex;justify-content:space-between;align-items:center}
+.c11-u .t{font-size:5.4vw} .c11-u>div{display:grid;gap:18px;justify-items:end}
+/* 12 Block dahinter */
+.c12-b{position:absolute;left:44vw;top:22%;width:50vw;height:68vh;border-radius:var(--rund-m);background:var(--schiefer)}
+.c12-f{left:40vw;top:16%;width:50vw;height:66vh;z-index:2}
+.c12-t{position:absolute;left:5vw;top:50%;transform:translateY(-44%);width:32vw;display:grid;gap:22px;justify-items:start} .c12-t .t{font-size:5.4vw}
+/* 13 Senkrechter Name */
+.c13-s{position:absolute;left:0;top:0;bottom:0;padding-top:70px;width:9vw;background:var(--schiefer);display:grid;place-items:center}
+.c13-s .t{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:min(4.2vw,5.6vh);letter-spacing:.1em;color:var(--creme)}
+.c13-f{left:12vw;right:3vw;top:96px;bottom:110px}
+.c13-u{position:absolute;left:12vw;right:3vw;bottom:0;height:110px;display:flex;justify-content:space-between;align-items:center}
+/* 14 Der Turm */
+.c14-a,.c14-b{position:absolute;font-size:4.9vw;z-index:3}
+.c14-a{right:calc(50% + 18vw);top:20%} .c14-b{left:calc(50% + 18vw);bottom:14%}
+.c14-f{left:50%;top:53%;width:30vw;height:76vh;transform:translate(-50%,-50%)}
+.c14-l{position:absolute;left:6vw;bottom:10%} .c14-r{position:absolute;right:6vw;top:18%}
+/* 15 Die Ecken */
+.c15-a,.c15-b{position:absolute;font-size:9vw}
+.c15-a{left:4vw;top:10%} .c15-b{right:4vw;bottom:5%}
+.c15-f{left:30vw;right:30vw;top:27%;bottom:24%;z-index:2}
+.c15-m{position:absolute;right:4vw;top:16%;display:flex;gap:14px;align-items:center} .c15-k{position:absolute;left:4vw;bottom:8%}
+/* 16 Zwei Zeilen und ein Quadrat */
+.c16-t{position:absolute;left:5vw;top:50%;transform:translateY(-44%);display:grid;gap:26px;justify-items:start} .c16-t .t{font-size:10vw;line-height:.95}
+.c16-f{right:5vw;top:50%;width:40vw;height:40vw;max-height:76vh;transform:translateY(-44%)}
+/* 17 Unten die helle Leiste */
+.c17-f{left:0;right:0;top:0;bottom:120px;border-radius:0}
+.c17-t{position:absolute;left:0;right:0;top:15%;text-align:center} .c17-t .t{font-size:6.4vw;color:#fff;text-shadow:0 2px 30px rgba(5,10,40,.5)}
+.c17-u{position:absolute;left:0;right:0;bottom:0;height:120px;background:var(--hell);display:flex;justify-content:space-around;align-items:center} .c17-u .m{color:var(--fassade)}
+/* 18 Band über dem Wald */
+.c18-b{position:absolute;left:0;right:0;top:50%;transform:translateY(-40%);padding:34px 6vw;background:var(--hell);color:var(--schiefer);display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
+.c18-b .t{font-size:3.4vw;text-align:center} .c18-b .t em{color:var(--gruen)} .c18-b .m{color:var(--fassade);max-width:16ch;line-height:1.6}
+/* 19 Drei Zeilen gross */
+.c19-t{position:absolute;left:5vw;top:15%;display:grid;gap:22px} .c19-t .t{font-size:6.8vw;line-height:.98}
+.c19-f{right:5vw;bottom:8%;width:32vw;height:44vh}
+.c19-k{position:absolute;right:5vw;top:16%}
+/* 20 Hell und Schiefer, Bild über der Naht */
+.g-naht{background:linear-gradient(90deg,var(--hell) 0 50%,var(--schiefer) 50% 100%)}
+.c20-a,.c20-b{position:absolute;top:50%;transform:translateY(-50%);font-size:5.2vw}
+.c20-a{right:calc(50% + 16vw);color:var(--schiefer)} .c20-b{left:calc(50% + 16vw);color:var(--creme)}
+.c20-f{left:50%;top:53%;width:28vw;height:70vh;transform:translate(-50%,-50%)}
+.c20-l{position:absolute;left:5vw;bottom:8%;color:var(--fassade)} .c20-r{position:absolute;right:5vw;bottom:8%} .c20-r .m{color:var(--dach)} .c20-l .m{color:var(--fassade)}
+.c20-k{position:absolute;right:5vw;top:15%}

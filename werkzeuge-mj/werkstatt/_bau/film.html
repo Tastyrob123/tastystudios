@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<title>Bildfolge · Aufnahme</title>
+<!-- Bauhilfe, nicht Teil des Werkzeugs: stellt das Werkzeug für ein Bild der Führung ein (_bau/filme.py nimmt es mit vergleich.py auf).
+     film.html?s=<bild>  bilder: 1a 1b 2a 3a 3b 5b 6a 6b 6c 7a 8a 9a 9b -->
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#201812}iframe{position:fixed;inset:0;width:100%;height:100%;border:0}
+#zeiger{position:fixed;z-index:5;width:22px;height:30px;left:-40px;top:-40px;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}</style>
+<script src="/besuch.js?v=3c4c57a56e" defer></script><script src="/verweil.js?v=5881fd455d" defer></script></head><body>
+<iframe id="f"></iframe>
+<svg id="zeiger" viewBox="0 0 22 30"><path d="M2 2v22l6-5.5 4 9 3.6-1.6-4-8.8H20z" fill="#fff" stroke="#201812" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<script>
+const s = new URLSearchParams(location.search).get('s') || '3a';
+const HASH = { '2a': 'entwuerfe', '9a': 'speichern', '9b': 'pdf' };
+const f = document.getElementById('f');
+f.src = '../index.html#' + (HASH[s] || 'editor');
+const warte = ms => new Promise(ok => setTimeout(ok, ms));
+function zeige(el, dx, dy) {   // Mauszeiger auf ein Element im Werkzeug
+  if (!el) return; const r = el.getBoundingClientRect(), z = document.getElementById('zeiger');
+  z.style.left = (r.left + r.width * (dx ?? .6)) + 'px'; z.style.top = (r.top + r.height * (dy ?? .6)) + 'px';
+}
+(async () => {
+  let W; for (let i = 0; i < 80; i++) { W = f.contentWindow; if (W && W.DSStudio && W.DSStudio.doc && W.DSStudio.doc()) break; await warte(100); }
+  if (!/^2a|9a|9b$/.test(s)) await warte(1300);
+  const D = W.document, $ = q => D.querySelector(q), tab = t => { const b = $('.studio button[data-tab="' + t + '"]'); if (b) b.click(); return b; };
+  const titel = () => { const se = W.DSStudio.seite(); const el = se && se.el.find(e => e.typ === 'text' && /Men/.test(e.text || '')) || se && se.el.find(e => e.typ === 'text'); return el; };
+  switch (s) {
+    case '1a': tab('entwerfen'); await warte(300); zeige($('#auftrag'), .8, .55); break;
+    case '1b': tab('entwerfen'); { const a = $('#auftrag'); a.value = 'Kofferetikett für die Dachsuite, dunkel wie die Nacht am Kai, mit dem Kran'; a.dispatchEvent(new W.Event('input', { bubbles: true })); } await warte(300); zeige($('#btnEntwerfen'), .85, .55); break;
+    case '2a': await warte(3800); zeige(D.querySelector('.ms-haupt img, .entwurf, .ew'), .5, .5); break;
+    case '3a': zeige($('#wirt'), .7, .5); break;
+    case '3b': { const el = titel(); if (el) W.DSStudio.waehle(el.id); await warte(700); zeige($('#wirt .el.sel, #wirt .el[data-id="' + (el && el.id) + '"]'), .62, .7); } break;
+    case '5b': { const b = $('#werkzeug [data-neu="zeichen"]'); if (b) b.click(); await warte(800); zeige(b, .5, .6); } break;
+    case '6a': tab('vorlagen'); await warte(900); zeige($('#vorlagen .vk, #vorlagen button'), .5, .5); break;
+    case '6b': tab('fotos'); await warte(900); zeige($('#fotoRaster button, #fotoRaster img'), .5, .5); break;
+    case '6c': tab('ablage'); await warte(900); zeige($('.studio button[data-tab="ablage"]'), .5, .6); break;
+    case '7a': { const el = titel(); if (el) W.DSStudio.aendern(() => { el.text = 'Menü der Woche'; }, true); await warte(500); zeige($('#btnZurueck'), .55, .6); } break;
+    case '8a': { const se = W.DSStudio.seite(), el = se.el.find(e => e.typ === 'text' && /Grütze/.test(e.text || '')), el2 = se.el.find(e => e.typ === 'text' && /Johannisbeeren/.test(e.text || '')); W.DSStudio.aendern(() => { if (el) el.text += ' · [Preis]'; if (el2) el2.text = el2.text.replace('Vanillecreme', '[Beilage]'); }, true); await warte(400); } $('#btnPruefen').click(); await warte(1500); zeige(D.querySelector('#dialog li'), .55, .6); break;
+    case '9a': await warte(1400); zeige(D.querySelector('#menueSpeichern button'), .7, .6); break;
+    case '9b': await warte(3600); break;
+  }
+  document.title = 'bereit ' + s;
+})();
+</script>
+</body></html>

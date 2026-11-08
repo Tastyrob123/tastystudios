@@ -1,0 +1,42 @@
+/* Wellness & Spa · «schlafen Sie sich aus»: Versetzte Rahmen (Fassung 4 der Runde zimmer-15, von Robert gewählt 24.10.2026).
+   Die Zimmer im Wechsel links und rechts, jedes Foto gross, dahinter ein Messingrahmen, der beim Ankommen zur Seite rückt; der Preis in seiner Ecke.
+   Ein Moment je Zimmer: Rahmen rückt (transform), Zeile schwebt herauf (transform). */
+/* ---------- gemeinsam */
+.zv{--gold:#8A6A2A;--rk:clamp(14px,1.4vw,22px)}
+.zv a:where(:not(.rk)){color:inherit}
+.zv .zv-ausschnitt img{transform:scale(2.1);transform-origin:var(--o)}
+.zv-kopf .rt{font-size:clamp(40px,4vw,66px)}
+.zv-kopf .rl{max-width:36ch}
+.zv-mono{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.zv-name{margin:10px 0 0;font-family:var(--licht);font-weight:400;font-size:clamp(28px,2.6vw,44px);line-height:1.08;letter-spacing:-.015em}
+.zv-leit{margin:12px 0 0;font-size:15.5px;line-height:1.55;opacity:.82;max-width:42ch}
+.zv-eck{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--gold)}
+.zv-aus{list-style:none;margin:18px 0 0;padding:0;max-width:46ch}
+.zv-aus li{padding:9px 0;border-top:1px solid rgba(24,33,63,.12);font-size:14px;line-height:1.45;opacity:.85}
+.zv-aus li:last-child{border-bottom:1px solid rgba(24,33,63,.12)}
+.zv-preis{margin:16px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.zv-preis small{display:block;margin-top:5px;font-size:10px;letter-spacing:.12em;opacity:.6;text-transform:none}
+.zv .r-knoepfe{margin-top:22px}
+.zv .rk{margin-top:0}
+.zv button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.zv .zn-kinder{margin-top:clamp(40px,4vw,64px)!important}
+.zv .zn-kinder a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.zv [data-sw]{transform:translateY(46px);transition:transform 1.4s var(--e1)}
+.zv [data-sw].sw-da{transform:none}
+
+/* ---------- 04 Versetzte Rahmen */
+.r4-kopf{margin-bottom:clamp(30px,4vw,60px)}
+.r4{display:grid;grid-template-columns:7fr 5fr;gap:clamp(30px,5vw,90px);align-items:center;padding:clamp(28px,3.5vw,56px) 0}
+.r4--r{grid-template-columns:5fr 7fr}
+.r4--r .r4-bild{order:2}
+.r4-bild{position:relative;aspect-ratio:3/2}
+.r4-bild figure{position:relative;z-index:1;height:100%}
+.r4-rahmen{position:absolute;inset:0;border:1px solid #C9A54E;border-radius:var(--rk);transform:translate(0,0);transition:transform 1.6s var(--e1) .2s}
+.r4.sw-da .r4-rahmen{transform:translate(28px,28px)}
+.r4--r.sw-da .r4-rahmen{transform:translate(-28px,28px)}
+.r4-rahmen span{position:absolute;right:16px;bottom:-26px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--gold);font-style:normal}
+.r4--r .r4-rahmen span{right:auto;left:16px}
+.r4-rahmen span::before{content:"ab CHF "}
+.r4 .zv-name{font-size:clamp(32px,3vw,52px)}
+
+@media (max-width:900px){.r4{grid-template-columns:1fr}.r4--r{grid-template-columns:1fr}.r4--r .r4-bild{order:0}.r4.sw-da .r4-rahmen{transform:translate(12px,12px)}.r4--r.sw-da .r4-rahmen{transform:translate(-12px,12px)}}

@@ -1,0 +1,217 @@
+/* Familie Zurbriggen · Einstiegsseite zurbriggen.ch · Designstudie Tasty Studios (18.10.2026)
+   Neutral in Nacht und Schnee, das rote Pinsel-Z der Familie als einziger Farbpunkt; jede Hauskarte trägt die Farbwelt ihres Hauses
+   (Markenbücher Station 05). Titel Tenor Sans (Robert 18.10.2026), Lesetext Instrument Sans, kleine Marken DM Mono.
+   Bewegung nur über transform, nativer Scroll, nichts wird aus der Deckkraft eingeblendet (Website-Briefing 8, Regel 55). */
+
+:root{
+  --nacht:#1d1c20;--tief:#151418;--blatt:#26252a;--schnee:#f4f2ec;--creme:#e9e6dd;--tinte:#2a292d;--leise:#6b6a6f;
+  --silber:#c9c7c0;--silber-d:#9c9a94;--rot:#E2001A;
+  --rand:clamp(20px,4.6vw,76px);--abst:clamp(76px,9vw,148px);
+  --e1:cubic-bezier(.16,1,.3,1);--knopf:cubic-bezier(.32,.72,0,1);
+  --titel:"Tenor Sans","Avenir Next",sans-serif;--text:"Instrument Sans","Helvetica Neue",sans-serif;--mono:"DM Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{margin:0;background:var(--schnee);color:var(--tinte);font:400 18px/1.64 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+.in{max-width:1400px;margin:0 auto;padding:0 var(--rand)}
+main>section{position:relative;z-index:1}
+.tapete{background-color:var(--nacht);background-image:url(zeichen/tapete-nacht.svg);background-size:120px 104px;color:var(--schnee)}
+
+/* Titel: Tenor Sans, normale Schreibung, Betonung nur über Farbe */
+.titel{font:400 clamp(2.2rem,4.4vw,4rem)/1.08 var(--titel);letter-spacing:.005em;margin:0;text-wrap:balance}
+.titel em{font-style:normal;color:var(--leise)}
+.tapete .titel em{color:var(--silber)}
+
+/* Abschnittskopf mittig mit dem Zeichen; links gesetzte Variante auf dunklen Flächen */
+.kopf{text-align:center;max-width:860px;margin:0 auto clamp(36px,4vw,56px)}
+.kopf__z{width:46px;height:auto;margin:0 auto 18px;opacity:.9}
+.kopf p{margin:18px auto 0;max-width:60ch;color:var(--leise)}
+.tapete .kopf p{color:rgba(244,242,236,.72)}
+.kopf--links{text-align:left;margin-left:0}
+.kopf--links p{margin-left:0}
+
+/* Knöpfe: Pille mit Tiefe, runder Knauf mit Pfeil */
+.knopf{--k-bg:linear-gradient(180deg,#3a393f 0%,#2a292e 55%,#232227 100%);--k-fg:var(--schnee);--knauf:var(--schnee);--pfeil:var(--tinte);
+  display:inline-flex;align-items:center;gap:16px;height:54px;padding:0 7px 0 26px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;
+  background:var(--k-bg);color:var(--k-fg);font:500 12.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -2px 0 rgba(0,0,0,.28),0 14px 26px -14px rgba(0,0,0,.55);
+  transition:transform .5s var(--knopf),box-shadow .5s var(--knopf)}
+.knopf i{width:40px;height:40px;border-radius:50%;background:var(--knauf);position:relative;flex:0 0 40px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+.knopf i::after{content:"";position:absolute;inset:0;margin:auto;width:12px;height:12px;border-top:1.6px solid var(--pfeil);border-right:1.6px solid var(--pfeil);transform:translate(-2px,2px) rotate(45deg) scale(.85);transform-origin:center}
+@media (hover:hover){.knopf:hover{transform:translateY(-2px)}}
+.knopf:active{transform:translateY(1px)}
+.knopf--hell{--k-bg:linear-gradient(180deg,#fbfaf6 0%,#efece4 60%,#e4e0d6 100%);--k-fg:var(--tinte);--knauf:var(--tinte);--pfeil:var(--schnee)}
+.knopf--klein{height:44px;padding-left:18px;gap:12px;font-size:11.5px}
+.knopf--klein i{width:32px;height:32px;flex-basis:32px}
+
+/* Leiste oben: schmale Insel, verschwindet beim Runterscrollen */
+.leiste{position:fixed;z-index:50;top:16px;left:0;right:0;margin:0 auto;width:max-content;max-width:calc(100% - 24px);display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);
+  padding:7px 7px 7px 18px;border-radius:999px;background:linear-gradient(180deg,rgba(38,37,42,.94),rgba(24,23,27,.94));color:var(--schnee);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 16px 30px -18px rgba(0,0,0,.7);transition:transform .6s var(--e1);white-space:nowrap}
+.leiste.weg{transform:translateY(-140%)}
+.leiste__marke{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 19px/1 var(--titel);letter-spacing:.04em}
+.leiste__marke img{width:30px;height:auto}
+.leiste__nav{display:flex;gap:clamp(12px,1.8vw,26px)}
+.leiste__nav a{font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;position:relative;padding:6px 0;opacity:.86}
+.leiste__nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--e1)}
+.leiste__nav a:hover::after{transform:scaleX(1)}
+@media(max-width:860px){.leiste__nav{display:none}.leiste{top:12px}}
+@media(max-width:520px){.leiste{gap:12px;padding-left:14px}.leiste__marke{font-size:16px;gap:8px}.leiste__marke img{width:24px}.leiste__knopf{padding-left:14px;letter-spacing:.1em}}
+
+/* Auftakt: das Stammhaus am Winterabend, ganzes Foto, darüber der Gruss */
+.auftakt{min-height:max(100svh,600px);display:grid;place-items:start center;color:var(--schnee);background:#0c1a3d;overflow:clip}
+.auftakt__bild,.auftakt__bild img{position:absolute;inset:0;width:100%;height:100%}
+.auftakt__bild img{object-fit:cover;object-position:50% 100%;transform:scale(1.08);transition:transform 3.2s var(--e1)}
+.auftakt.da .auftakt__bild img{transform:none}
+.auftakt__text{position:relative;text-align:center;padding:clamp(84px,10vh,118px) var(--rand) 0;max-width:1000px}
+.auftakt__z{width:clamp(48px,4.4vw,64px);height:auto;margin:0 auto 22px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.35))}
+.auftakt .titel{font-size:clamp(2.6rem,5.2vw,4.6rem);text-shadow:0 2px 26px rgba(4,10,30,.55)}
+.auftakt__satz{margin:20px auto 30px;font-size:clamp(17px,1.5vw,20px);color:rgba(244,242,236,.9);text-shadow:0 1px 14px rgba(4,10,30,.6)}
+
+/* Häuser */
+.haeuser{padding:var(--abst) 0;background:var(--schnee)}
+.finder{display:grid;justify-items:center;gap:14px;margin:0 auto clamp(34px,4vw,54px)}
+.finder__frage{margin:0;font:500 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--leise)}
+.finder__wahl{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:6px;border-radius:999px;background:var(--creme);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.08),inset 0 -1px 0 rgba(255,255,255,.8)}
+.finder__wahl button{border:0;background:transparent;color:var(--tinte);font:500 15px/1 var(--text);padding:13px 20px;border-radius:999px;cursor:pointer;transition:background .6s ease,color .6s ease,box-shadow .6s ease}
+.finder__wahl button[aria-pressed="true"]{background:var(--tinte);color:var(--schnee);box-shadow:0 8px 16px -10px rgba(0,0,0,.6)}
+@media (hover:hover){.finder__wahl button:not([aria-pressed="true"]):hover{background:rgba(255,255,255,.7)}}
+
+.gastgeber{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(14px,1.6vw,24px);align-items:start}
+.gastgeber__wer{margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid rgba(42,41,45,.16);font:500 11.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--leise)}
+.karten{display:grid;gap:clamp(14px,1.6vw,24px)}
+.gastgeber__gruppe--zwei .karten{grid-template-columns:1fr 1fr}
+.karte{--k:#2a292d;--k-t:var(--schnee);--k-a:var(--silber);border-radius:26px;background:var(--k);color:var(--k-t);overflow:clip;display:grid;grid-template-rows:auto 1fr;
+  box-shadow:0 26px 40px -26px rgba(20,18,16,.55);transition:transform .7s var(--e1),opacity .6s ease}
+.karte__bild{margin:0;aspect-ratio:4/3;overflow:clip;background:#000}
+.karte__bild img{width:100%;height:100%;object-fit:cover}
+.karte__text{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px}
+.karte h3{margin:0;font:400 clamp(21px,1.7vw,25px)/1.2 var(--titel);color:var(--k-a)}
+.karte__ort{margin:0;font-size:14.5px;line-height:1.45;opacity:.82}
+.karte__satz{margin:4px 0 14px;font:400 16px/1.45 var(--text)}
+.karte .knopf{margin-top:auto;align-self:flex-start}
+.knopf--karte{--k-bg:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));--k-fg:var(--k-t);--knauf:var(--k-a);--pfeil:var(--k);height:46px;padding-left:20px;font-size:11.5px;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 -2px 0 rgba(0,0,0,.2)}
+.knopf--karte i{width:34px;height:34px;flex-basis:34px}
+.karte--w{--k:#4B3624;--k-a:#D9B758}
+.karte--m{--k:#0A2A4A;--k-a:#E7A884}
+.karte--z{--k:#2E2C30;--k-a:#F7F6EC;box-shadow:inset 0 4px 0 #E2001A,0 26px 40px -26px rgba(20,18,16,.55)}
+.karte--c{--k:#5a4936;--k-a:#efe3cf}
+.gastgeber.wahl-an .karte{opacity:.5}
+.gastgeber.wahl-an .karte.gewaehlt{opacity:1;transform:translateY(-10px)}
+@media(max-width:1100px){.gastgeber{grid-template-columns:1fr 1fr}.gastgeber__gruppe--zwei{grid-column:1/-1}}
+@media(max-width:640px){.gastgeber,.gastgeber__gruppe--zwei .karten{grid-template-columns:1fr}.finder__wahl{border-radius:26px}.finder__wahl button{flex:1 1 100%}}
+
+/* Fenster: das Bild steht, die Seite zieht darüber (Bauart Grand Beau-Rivage «Fenster ohne Beschneiden») */
+.fenster{height:min(64vh,620px);z-index:0!important;background:transparent;display:grid;place-items:center}
+.fenster__f{position:fixed;inset:0;z-index:-1;visibility:hidden;background:#0d1a2a}
+.fenster.nah .fenster__f{visibility:visible}
+.fenster__f img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.fenster__f::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 46% at 50% 50%,rgba(8,14,24,.42),rgba(8,14,24,0) 72%)}
+.fenster__satz{position:relative;z-index:0;max-width:22ch;text-align:center;color:var(--schnee);font-size:clamp(1.9rem,3.6vw,3.2rem);text-shadow:0 2px 24px rgba(5,10,20,.55);padding:0 var(--rand)}
+
+/* Geschichte: Band zum Blättern mit grossen Jahreszahlen */
+.geschichte{padding:var(--abst) 0}
+.band{margin-top:6px}
+.band__spur{display:flex;gap:clamp(14px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--rand) 34px;scrollbar-width:none;scroll-padding-left:var(--rand)}
+.band__spur::-webkit-scrollbar{display:none}
+.jahr{flex:0 0 clamp(250px,24vw,340px);scroll-snap-align:start;background:linear-gradient(180deg,#2c2b31,#232227);border-radius:26px;padding:30px 28px 30px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 22px 34px -24px rgba(0,0,0,.8);display:flex;flex-direction:column}
+.jahr__z{display:block;font:400 clamp(3.4rem,5vw,4.6rem)/1 var(--titel);color:var(--schnee);letter-spacing:.01em;padding-bottom:26px;margin-bottom:22px;border-bottom:1px solid rgba(244,242,236,.14)}
+.jahr p{margin:0;font-size:16.5px;line-height:1.55;color:rgba(244,242,236,.82)}
+.jahr--bild{flex-basis:clamp(300px,30vw,420px);padding-top:16px}
+.jahr--bild figure{margin:0 0 22px;border-radius:18px;overflow:clip;aspect-ratio:3/2}
+.jahr--bild figure img{width:100%;height:100%;object-fit:cover}
+.jahr--bild .jahr__z{padding-bottom:18px}
+.band__steuer{display:flex;align-items:center;gap:18px;padding:0 var(--rand);max-width:1400px;margin:0 auto}
+.band__pfeil{width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(180deg,#3a393f,#2a292e);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 18px -10px rgba(0,0,0,.7);position:relative}
+.band__pfeil i::after{content:"";position:absolute;inset:0;margin:auto;width:11px;height:11px;border-top:1.6px solid var(--schnee);border-right:1.6px solid var(--schnee);transform:translateX(-2px) rotate(45deg)}
+.band__pfeil[data-richtung="-1"] i::after{transform:translateX(2px) rotate(-135deg)}
+.band__lauf{flex:1;height:2px;background:rgba(244,242,236,.16);border-radius:2px;overflow:clip}
+.band__lauf span{display:block;height:100%;width:100%;background:var(--silber);transform-origin:left;transform:scaleX(.2);transition:transform .4s var(--e1)}
+
+/* Pirmin und Heidi */
+.laufbahn{padding:var(--abst) 0;background:var(--schnee)}
+.zahlen{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(42,41,45,.2);border-bottom:1px solid rgba(42,41,45,.2);margin:0 0 clamp(44px,5vw,70px);position:relative}
+.zahlen::before,.zahlen::after{content:"";position:absolute;left:0;right:0;height:1px;background:rgba(42,41,45,.12)}
+.zahlen::before{top:4px}.zahlen::after{bottom:4px}
+.zahl{padding:clamp(26px,3vw,40px) 16px;text-align:center;display:grid;gap:10px;align-content:start}
+.zahl+.zahl{border-left:1px solid rgba(42,41,45,.12)}
+.zahl b{font:400 clamp(3rem,6vw,5.4rem)/1 var(--titel);font-variant-numeric:tabular-nums;color:var(--tinte)}
+.zahl span{font-size:15px;color:var(--leise);max-width:22ch;margin:0 auto}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.person h3{margin:0 0 12px;font:400 clamp(28px,2.6vw,36px)/1.1 var(--titel)}
+.person p{margin:0 0 14px;max-width:60ch}
+.person__bild{margin:0 0 26px;border-radius:26px;overflow:clip;aspect-ratio:3/2;max-width:560px;box-shadow:0 24px 36px -24px rgba(20,18,16,.5)}
+.person__bild img{width:100%;height:100%;object-fit:cover}
+.person--heidi{padding-top:clamp(0px,6vw,90px)}
+.palmares{margin-top:22px;border-top:1px solid rgba(42,41,45,.16)}
+.palmares summary{cursor:pointer;list-style:none;padding:16px 0;font:500 12px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.palmares summary::-webkit-details-marker{display:none}
+.palmares summary::after{content:"";width:9px;height:9px;border-right:1.5px solid var(--tinte);border-bottom:1.5px solid var(--tinte);transform:rotate(45deg);transition:transform .4s var(--e1)}
+.palmares[open] summary::after{transform:rotate(-135deg)}
+.palmares ul{margin:0 0 10px;padding:0;list-style:none;display:grid;gap:10px;font-size:16px}
+.palmares li{padding-bottom:10px;border-bottom:1px solid rgba(42,41,45,.1)}
+.palmares li b{display:block;font-weight:500}
+@media(max-width:860px){.zahlen{grid-template-columns:1fr 1fr}.zahl:nth-child(3){border-left:0}.zahl:nth-child(n+3){border-top:1px solid rgba(42,41,45,.12)}.zwei{grid-template-columns:1fr}.person--heidi{padding-top:0}}
+
+/* Kontakt: Anfrage im Fenster des Hauses, nie ins Mailprogramm */
+.kontakt{padding:var(--abst) 0}
+.kontakt__g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+.anfrage{background:linear-gradient(180deg,#f8f6f0,#efece4);color:var(--tinte);border-radius:30px;padding:clamp(24px,3vw,40px);display:grid;gap:16px;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}
+.feld{display:grid;gap:7px}
+.feld__l{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--leise)}
+.feld input,.feld textarea,.wahl__k{width:100%;border:0;border-radius:16px;background:#e6e2d8;padding:14px 16px;font:400 17px/1.4 var(--text);color:var(--tinte);
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.09),inset 0 -1px 0 rgba(255,255,255,.85);outline:none}
+.feld textarea{resize:vertical;min-height:120px}
+.feld input:focus-visible,.feld textarea:focus-visible,.wahl__k:focus-visible{box-shadow:inset 0 2px 5px rgba(0,0,0,.09),0 0 0 2px var(--tinte)}
+.wahl{position:relative}
+.wahl__k{display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left}
+.wahl__k i{width:9px;height:9px;border-right:1.5px solid var(--tinte);border-bottom:1.5px solid var(--tinte);transform:rotate(45deg) translateY(-3px);flex:0 0 9px}
+.wahl__liste{position:absolute;z-index:5;left:0;right:0;top:calc(100% + 8px);margin:0;padding:8px;list-style:none;border-radius:18px;background:#fbfaf6;box-shadow:0 0 0 1px rgba(42,41,45,.12),0 24px 40px -18px rgba(0,0,0,.45)}
+.wahl__liste li{padding:12px 14px;border-radius:12px;cursor:pointer;font-size:16.5px}
+.wahl__liste li[aria-selected="true"]{background:var(--tinte);color:var(--schnee)}
+.wahl__liste li:not([aria-selected="true"]):hover{background:#ece8de}
+.anfrage__hinweis{margin:0;font-size:13.5px;color:var(--leise)}
+.anfrage .knopf{justify-self:start;--k-bg:linear-gradient(180deg,#3a393f 0%,#2a292e 55%,#232227 100%);--k-fg:var(--schnee);--knauf:var(--schnee);--pfeil:var(--tinte)}
+.anfrage__probe{margin:0;font-size:14px;color:var(--tinte);background:#e6e2d8;border-radius:12px;padding:10px 14px}
+.adressen{display:grid;gap:12px}
+.adresse{display:grid;gap:4px;padding:18px 22px;border-radius:22px;background:linear-gradient(180deg,#2c2b31,#232227);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);transition:box-shadow .5s ease}
+.adresse b{font:400 20px/1.25 var(--titel);color:var(--schnee)}
+.adresse span{font-size:15.5px;color:rgba(244,242,236,.72)}
+.adresse a{font:500 13px/1.6 var(--mono);letter-spacing:.08em;color:var(--silber);text-decoration:none}
+.adresse.an{box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 0 0 1.5px var(--silber)}
+@media(max-width:900px){.kontakt__g{grid-template-columns:1fr}}
+
+/* Fuss: ruhig, Tapete, der Gruss, die Häuser, die Studien-Zeile */
+.fuss{position:relative;z-index:1;background-color:var(--tief);background-image:url(zeichen/tapete-nacht.svg);background-size:120px 104px;color:var(--schnee);padding:clamp(64px,7vw,104px) 0 0}
+.fuss__gruss{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 clamp(34px,4vw,52px);font:400 clamp(24px,2.6vw,34px)/1.2 var(--titel);text-align:center}
+.fuss__gruss img{width:40px;height:auto}
+.fuss__haeuser{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:clamp(40px,5vw,64px)}
+.fuss__haeuser a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-top:1px solid rgba(244,242,236,.18);text-decoration:none;font-size:16px}
+.fuss__haeuser i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(244,242,236,.4);position:relative;flex:0 0 26px}
+.fuss__haeuser i::after{content:"";position:absolute;inset:0;margin:auto;width:7px;height:7px;border-top:1.4px solid var(--schnee);border-right:1.4px solid var(--schnee);transform:translateX(-1px) rotate(45deg)}
+.fuss__unten{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:18px var(--rand);margin:0 calc(-1 * var(--rand));background:#0f0e12;font:400 12.5px/1.5 var(--mono);letter-spacing:.06em;color:rgba(244,242,236,.66)}
+@media(max-width:860px){.fuss__haeuser{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.fuss__haeuser{grid-template-columns:1fr}}
+
+/* ---------- Bewegung (Website-Briefing 8: deckend, von unten, Titel aus dem Schlitz, Fotos zoomen; nichts wartet, nichts federt über) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* Titelzeilen aus dem Schlitz */
+  .zl{display:block;overflow:clip;padding-bottom:.08em;margin-bottom:-.08em}
+  .zl>span{display:block;transform:translateY(108%);transition:transform 1.3s var(--e1);transition-delay:calc(var(--z,0)*95ms)}
+  .da .zl>span,.zl.da>span,[data-zeilen].da .zl>span{transform:none}
+  /* Stücke steigen von unten, deckend */
+  [data-s]{transform:translateY(38px);transition:transform 1.8s var(--e1);transition-delay:calc(var(--i,0)*90ms)}
+  [data-s].da{transform:none}
+  /* Fotos zoomen in ihren Rahmen */
+  .karte__bild img,.person__bild img,.jahr--bild figure img{transform:scale(1.12);transition:transform 2.6s var(--e1)}
+  .da .karte__bild img,.person__bild.da img,.da .person__bild img,.jahr--bild.da figure img{transform:none}
+  /* Fotos und Karten am Scrollen gekoppelt, wo der Browser es kann (nichts wartet) */
+  @supports (animation-timeline:view()){
+    .karte[data-s],.person[data-s]{transform:none;transition:none;animation:zug linear both;animation-timeline:view();animation-range:cover 0% cover 46vh}
+  }
+}
+@keyframes zug{from{translate:0 90px}to{translate:0 0}}

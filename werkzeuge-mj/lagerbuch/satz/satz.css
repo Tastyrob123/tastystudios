@@ -1,0 +1,92 @@
+/* Speisekarten · Maloja (Vorführung) — Satz der Karten (bau/bau.py und satz.js ABEND), Aufbau wie der Satz der Vorlage.
+   Farben und Schriften von Maloja (CHARAKTER.md): Schnee als Papier, Granit als Schrift, Arvenholz als Linie, Rot nur als Punkt im Logo;
+   Tenor Sans für Titel, Gerichte und Preise, Hanken Grotesk für den Lauf. Nie fett, nie kursiv.
+   Masse in mm, Schrift in pt über --s (blatt.js passt je Seite an, damit nichts überläuft). Gesperrte Versalien höchstens .08em. */
+@font-face{font-family:'Tenor Sans';src:url('../../_haus/fonts/TenorSans.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:block}
+@font-face{font-family:'Hanken Grotesk';src:url('../../_haus/fonts/HankenGrotesk-latin.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:block}
+:root{--papier:#f8f6f1;--nacht:#2a2a2b;--tinte:#2a2a2b;--leise:#6b655f;--messing:#b98a5a;--messing-tief:#9a6f45;--licht:#b98a5a;--stein:#9a6f45;--gruen:#2a2a2b;--linie:rgba(185,138,90,.3)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#e6dfd3;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.blatt{--s:1;position:relative;overflow:hidden;margin:8mm auto;background:var(--papier);color:var(--tinte);display:flex;flex-direction:column;
+  font-family:'Hanken Grotesk',Arial,sans-serif;font-weight:400;font-size:calc(9.2pt*var(--s));line-height:1.45;page-break-after:always;break-after:page}
+:where(.blatt) :where(h1,h2,h3,h4,p){margin:0;padding:0;font-weight:inherit}
+:where(.blatt) b{font-weight:500}   /* nie fett (Kleid des Hauses) */
+/* oben eine feine Kante in Arvenholz wie das Täfer der Stube, sonst ruhiges Schnee */
+.blatt::before{content:'';position:absolute;left:0;right:0;top:0;height:1.4mm;background:var(--licht);pointer-events:none}
+/* die Tafel in Flaschengrün wie Fliesen und Wände des Gastraums */
+.blatt.ih-gruen{--papier:var(--gruen);--tinte:#d6c9bc;--leise:rgba(214,201,188,.72);--messing-tief:#b79572;--linie:rgba(191,145,99,.32);color:#d6c9bc}
+.inhalt{position:relative;z-index:1;flex:1;min-height:0;padding:18mm 20mm 4mm;display:flex;flex-direction:column}
+.ufuss2{position:relative;z-index:1;flex:none;margin:0 20mm;padding:3mm 0 11mm;border-top:.2mm solid var(--linie);font-size:6.8pt;letter-spacing:.04em;text-align:center;color:var(--leise)}
+
+/* Kopf: Logo, Titel der Karte, Unterzeile, Anlass */
+.sb-quer{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;text-align:center}
+.sb-oben{display:flex;flex-direction:column;align-items:center}
+.sb-zeichen{display:block;color:var(--nacht)}
+.ih-gruen .sb-zeichen{color:#d6c9bc}
+.ih-wm{display:block;width:calc(38mm*min(var(--s),1.12));height:auto}   /* das Logo wächst bei kurzen Karten nur wenig mit */
+.sb-band{font-family:'Tenor Sans',Georgia,serif;font-weight:500;font-size:calc(30pt*var(--s));line-height:1.04;color:var(--tinte);margin-top:calc(6mm*var(--s))}
+.sb-datum{font-size:calc(7.6pt*var(--s));letter-spacing:.08em;text-transform:uppercase;color:var(--messing-tief);margin-top:calc(3mm*var(--s))}
+.sb-mit{font-family:'Tenor Sans',Georgia,serif;font-size:calc(11pt*var(--s));color:var(--leise);margin-top:calc(1.6mm*var(--s))}
+
+/* Rubriken und Einträge */
+.sb-karte,.sb-menue{display:flex;flex-direction:column;justify-content:center;width:100%;padding:calc(4mm*var(--s)) 0;gap:calc(5mm*var(--s))}
+.ih-menue .sb-karte{align-items:center;text-align:center}
+.sb-paar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:12mm;width:100%;align-items:start}
+.sb-r{width:100%;break-inside:avoid}
+.ih-menue .sb-r{max-width:150mm}
+.sb-h{display:flex;align-items:center;gap:calc(3mm*var(--s));font-family:'Tenor Sans',Georgia,serif;font-weight:500;font-size:calc(15pt*var(--s));line-height:1.1;color:var(--tinte);margin-bottom:calc(2.6mm*var(--s))}
+.ih-liste .sb-h::after{content:'';flex:1;height:.2mm;background:var(--linie)}
+.ih-menue .sb-h{justify-content:center}
+.ih-menue .sb-h::before,.ih-menue .sb-h::after{content:'';width:calc(7mm*var(--s));height:.2mm;background:var(--messing)}
+.sb-m{break-inside:avoid;max-width:150mm;margin:0 auto;padding:calc(.6mm*var(--s)) 0}
+.sb-gn{font-size:calc(7pt*var(--s));letter-spacing:.08em;text-transform:uppercase;color:var(--messing-tief);margin-bottom:calc(1.2mm*var(--s))}
+.sb-n,.sb-band,.sb-t,.sb-dr{text-wrap:balance}
+.sb-n{font-family:'Tenor Sans',Georgia,serif;font-weight:500;font-size:calc(13pt*var(--s));line-height:1.2;color:var(--tinte)}
+.sb-t{font-size:calc(8.4pt*var(--s));color:var(--leise);line-height:1.42;margin-top:calc(.6mm*var(--s))}
+.sb-dr{font-size:calc(8.6pt*var(--s));color:var(--leise);line-height:1.45;margin-top:calc(1.6mm*var(--s))}
+.sb-dr::before{content:'Vegetarisch';display:block;font-size:calc(6.4pt*var(--s));letter-spacing:.08em;text-transform:uppercase;color:var(--messing-tief);margin-bottom:calc(.5mm*var(--s))}
+.sb-gn+.sb-dr::before{display:none}
+.sb-e{display:flex;align-items:baseline;gap:calc(4mm*var(--s));padding:calc(1.3mm*var(--s)) 0;break-inside:avoid}
+.sb-ez{flex:1;min-width:0}
+.sb-e .sb-p{flex:none;display:flex;align-items:baseline;gap:calc(1.6mm*var(--s))}
+.sb-m .sb-p{display:flex;justify-content:center;align-items:baseline;gap:calc(1.6mm*var(--s));margin-top:calc(.8mm*var(--s))}
+.sb-e .sb-p b,.sb-m .sb-p b{font-family:'Tenor Sans',Georgia,serif;font-weight:500;font-size:calc(12.5pt*var(--s));color:var(--tinte);font-variant-numeric:lining-nums}
+.sb-e .sb-p em,.sb-m .sb-p em{font-style:normal;font-size:calc(6.4pt*var(--s));letter-spacing:.08em;text-transform:uppercase;color:var(--messing-tief)}
+/* Allergene als Kürzel, klein hochgestellt am Ende der Zeile, mit feinen Punkten getrennt */
+.sb-k{font-size:calc(6.4pt*var(--s));letter-spacing:.04em;color:var(--messing-tief);vertical-align:.45em;line-height:0;white-space:nowrap}
+.sb-k .sb-ab{font-size:0;font-style:normal}
+.sb-k .sb-ab::before{content:'·';font-size:calc(6.4pt*var(--s));padding:0 .12em}
+.sb-tr.bruch{display:block;height:0;overflow:hidden;font-size:0;line-height:0}   /* Trenner, an dem die Zeile bricht (blatt.js trennerAmRand) */
+.sb-gang{display:flex;justify-content:center;padding:calc(2.4mm*var(--s)) 0}
+.sb-gang i{display:block;width:.25mm;height:calc(4.4mm*var(--s));background:var(--licht)}
+/* Hinweis und Zusatz unter der Karte */
+.sb-hinweis{margin-top:calc(3mm*var(--s));font-size:calc(8.6pt*var(--s));color:var(--leise);max-width:140mm}
+.sb-zusatz{margin-top:calc(2.4mm*var(--s));font-size:calc(8.6pt*var(--s));color:var(--leise)}
+
+/* Preis der Karte als ruhige Marke: Angabe klein in Versalien, Zahl in Cormorant, Währung klein */
+.sb-unten{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 8mm}
+.sb-unten .sb-hinweis{flex-basis:100%;text-align:center;margin-left:auto;margin-right:auto}
+.sb-lunchpreis{display:block;padding:calc(2.2mm*var(--s)) 8mm;border-top:.2mm solid var(--linie);border-bottom:.2mm solid var(--linie)}
+.sb-lunchpreis .sb-p{display:flex;justify-content:center}
+.sb-lunchpreis .sb-p>span{display:flex;align-items:baseline;gap:2.4mm}
+.sb-p em{font-style:normal;font-size:calc(6.8pt*var(--s));letter-spacing:.08em;text-transform:uppercase;color:var(--messing-tief)}
+.sb-lunchpreis .sb-p b{font-family:'Tenor Sans',Georgia,serif;font-weight:500;font-size:calc(19pt*var(--s));line-height:1;color:var(--tinte)}
+.sb-p small{font-size:calc(7.4pt*var(--s));letter-spacing:.04em;color:var(--leise)}
+
+/* Gestalten (Fortgeschritten): Stile, die satz.js an ein Element legt (nie fett, nie kursiv) */
+[data-gf]{font-family:var(--gf)!important}
+[data-gc]{color:var(--gc)!important}
+[data-ga="versal"]{text-transform:uppercase!important;letter-spacing:.06em}
+[data-ga="normal"]{text-transform:none!important;letter-spacing:0!important}
+[data-gal]{text-align:var(--gal)!important;justify-content:var(--gai)!important;align-items:var(--gai)}
+[data-gz]{line-height:var(--gz)!important}
+@media print{html,body{background:none}.blatt{margin:0}}
+/* Flächen wachsen, schrumpfen aber nie: sonst läuft Inhalt unbemerkt übereinander statt dass blatt.js die Schrift einpasst (Fehlerbuch 9) */
+.sb-quer,.sb-menue,.sb-karte{flex:1 0 auto;min-height:auto}
+.sb-menue,.sb-karte{flex:0 0 auto}
+/* Nach den beiden Spalten (Gänge, vegetarisch) stehen die übrigen Rubriken einer Menükarte zweispaltig, die Rubrik darüber in der Mitte */
+.ih-menue .sb-paar~.sb-r{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:12mm;row-gap:calc(1.6mm*var(--s))}
+.ih-menue .sb-paar~.sb-r .sb-h{grid-column:1/-1}
+/* Listen (Bar, Wein, Frühstück): Namen links, Preise rechts in einer Spalte */
+.ih-liste .sb-karte{text-align:left;align-items:stretch}
+.sb-e .sb-p b{min-width:calc(7mm*var(--s));text-align:right}

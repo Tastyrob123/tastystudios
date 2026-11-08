@@ -1,0 +1,129 @@
+{
+ "mails": [
+  {
+   "key": "abend",
+   "titel": "Das Menü diese Woche",
+   "betreff": "Die Abende im Advent",
+   "vorschau": "Sieben Gänge, von Hand angerichtet, Dienstag bis Samstag ab 18.30 Uhr.",
+   "datei": "stuecke/mails/abend.webp"
+  },
+  {
+   "key": "warteliste",
+   "titel": "Ein Tisch ist frei",
+   "betreff": "Ein Tisch ist frei geworden",
+   "vorschau": "Für Samstag, den 12. Dezember, ist ein Tisch am Fenster wieder frei.",
+   "datei": "stuecke/mails/warteliste.webp"
+  },
+  {
+   "key": "rueckblick",
+   "titel": "Rückblick auf den Abend",
+   "betreff": "Ein Abend im Kontorsaal",
+   "vorschau": "Danke, dass Sie bei uns waren.",
+   "datei": "stuecke/mails/rueckblick.webp"
+  },
+  {
+   "key": "einladung",
+   "titel": "Einladung an Stammgäste",
+   "betreff": "Einladung: Feiern in der Arvenstube",
+   "vorschau": "Ein langer Tisch aus Arvenholz für Ihre Feier im Dezember.",
+   "datei": "stuecke/mails/einladung.webp"
+  },
+  {
+   "key": "ticket",
+   "titel": "Ihr Tisch ist reserviert",
+   "betreff": "Ihr Tisch ist reserviert",
+   "vorschau": "Freitag, 13. November, 19 Uhr · Tisch für zwei am Fenster · Pickhuben 6",
+   "datei": "stuecke/mails/ticket.webp"
+  },
+  {
+   "key": "danke",
+   "titel": "Danke für Ihren Besuch",
+   "betreff": "Danke für Ihren Besuch",
+   "vorschau": "Wir hoffen, der Abend im Kontor war schön.",
+   "datei": "stuecke/mails/danke.webp"
+  }
+ ],
+ "markenbuch": [
+  {
+   "id": "oben",
+   "titel": "",
+   "datei": "stuecke/markenbuch/oben.webp"
+  },
+  {
+   "id": "haltung",
+   "titel": "Die Alpen und die Küste an einem Tisch.",
+   "datei": "stuecke/markenbuch/haltung.webp"
+  },
+  {
+   "id": "zeichen",
+   "titel": "Ein Name, ein Punkt.",
+   "datei": "stuecke/markenbuch/zeichen.webp"
+  },
+  {
+   "id": "farben",
+   "titel": "Zehn Töne, jeder mit Fundstelle.",
+   "datei": "stuecke/markenbuch/farben.webp"
+  },
+  {
+   "id": "abende",
+   "titel": "Jeder Raum hat seinen Ton.",
+   "datei": "stuecke/markenbuch/abende.webp"
+  },
+  {
+   "id": "herkunft",
+   "titel": "Woher die Farben kommen.",
+   "datei": "stuecke/markenbuch/herkunft.webp"
+  },
+  {
+   "id": "schrift",
+   "titel": "Eine Schrift für den Namen.",
+   "datei": "stuecke/markenbuch/schrift.webp"
+  },
+  {
+   "id": "tapete",
+   "titel": "Arvenholz im Täfer.",
+   "datei": "stuecke/markenbuch/tapete.webp"
+  },
+  {
+   "id": "bilder",
+   "titel": "Die Stunde vor dem ersten Gast.",
+   "datei": "stuecke/markenbuch/bilder.webp"
+  },
+  {
+   "id": "bausteine",
+   "titel": "Knopf, Karte und Titel.",
+   "datei": "stuecke/markenbuch/bausteine.webp"
+  },
+  {
+   "id": "logo",
+   "titel": "Eingesetzt, nie verändert.",
+   "datei": "stuecke/markenbuch/logo.webp"
+  },
+  {
+   "id": "welt",
+   "titel": "Was nur Maloja ist.",
+   "datei": "stuecke/markenbuch/welt.webp"
+  },
+  {
+   "id": "mitnehmen",
+   "titel": "Alles für das nächste Stück.",
+   "datei": "stuecke/markenbuch/mitnehmen.webp"
+  }
+ ],
+ "karte": [
+  {
+   "titel": "Die Karte auf der Website",
+   "datei": "stuecke/karte/website.webp"
+  }
+ ],
+ "briefe": [
+  {
+   "titel": "Antwort an Katrin Hollmann",
+   "datei": "stuecke/briefe/katrin-hollmann.webp"
+  },
+  {
+   "titel": "Antwort an Dr. Ulrike Brandes",
+   "datei": "stuecke/briefe/dr-ulrike-brandes.webp"
+  }
+ ]
+}

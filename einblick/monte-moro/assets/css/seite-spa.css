@@ -1,0 +1,62 @@
+/* Eigenes CSS der Unterseite spa.html (siehe seiten/spa.py) · Neubau 20.10.2026: der Weg hinüber, die Folge der Räume, der Eintritt.
+   Fotos liegen aneinander, nie ineinander; bewegt wird nur über transform (Regel 55). */
+.k-spw{--grund:var(--creme)}
+.k-spr{--grund:var(--papier)}
+.k-spt{--grund:var(--creme)}
+.spa-mitte{display:grid;justify-items:center;text-align:center}
+.spa-mitte .d2{width:100%}
+.k-spw .weiter,.k-spr .weiter,.k-spt .weiter{justify-content:center;text-align:center}
+
+/* 1 · Der Weg hinüber: das Haus nebenan und die Liege im Bademantel, bündig aneinander */
+.spw__bilder{display:grid;grid-template-columns:1.5fr 1fr;height:clamp(380px,38vw,620px);box-shadow:0 50px 70px -46px rgba(10,42,74,.45)}
+.spw__bilder .fo{height:100%}
+.spw__bereit{display:grid;justify-items:center;margin-top:clamp(50px,6vw,96px)!important;text-align:center}
+.spw__dinge{display:flex;justify-content:center;align-items:baseline}
+.spw__dinge span{padding:0 clamp(20px,3.2vw,56px);font:400 clamp(2.1rem,4.4vw,4.6rem)/1 var(--titel);color:var(--nacht);letter-spacing:.01em}
+.spw__dinge span+span{border-left:1px solid rgba(179,152,103,.55)}
+.spw__dinge span:last-child{color:var(--laerche)}
+.spw__satz{margin-top:22px;font:400 11px/1.6 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--laerche-tief)}
+
+/* 2 · Das Angebot als Folge der Räume: Bad, Sauna, Massage als ein Band; unter jedem Raum, was dazugehört */
+.spr{display:grid;grid-template-columns:.9fr 1.35fr .78fr;align-items:start}
+.spr__raum .fo{height:clamp(360px,32vw,520px)}
+.spr__text{margin:0 clamp(14px,1.6vw,26px) 0 0;padding:clamp(30px,3vw,46px) 0 0 clamp(18px,1.8vw,28px);border-left:1px solid rgba(179,152,103,.55)}
+.spr__name{font:400 clamp(1.5rem,2vw,2rem)/1.08 var(--titel);color:var(--nacht);margin-bottom:14px}
+.spr__text li{padding:11px 0;border-bottom:1px solid rgba(10,42,74,.09);font-size:clamp(1.02rem,1.18vw,1.14rem);line-height:1.4;color:var(--tinte)}
+.spr__text li:last-child{border-bottom:0}
+
+/* 3 · Der Eintritt: Ruheraum über der Platte in Nachtblau, Tarife als eine Zeile, Glanzstreif einmal darüber */
+.spt{max-width:1040px!important;box-shadow:0 60px 80px -50px rgba(7,27,46,.6),0 18px 30px -20px rgba(7,27,46,.35)}
+.spt__bild{aspect-ratio:2.25/1;height:auto!important}
+.spt__platte{position:relative;overflow:hidden;display:grid;justify-items:center;padding:clamp(40px,4.6vw,70px) clamp(22px,4vw,70px) clamp(40px,4.4vw,64px);background:var(--nacht);color:var(--papier);text-align:center;isolation:isolate}
+.spt__platte::after{content:'';position:absolute;z-index:2;top:0;bottom:0;left:0;width:60%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.13) 50%,transparent 100%);transform:translateX(-110%);pointer-events:none}
+.spt__zeile{display:grid;grid-template-columns:1fr 1fr;width:100%}
+.spt__tarif{display:grid;justify-items:center;align-content:start;gap:12px;padding:0 clamp(14px,2.4vw,40px)}
+.spt__tarif+.spt__tarif{border-left:1px solid rgba(179,152,103,.4)}
+.spt__preis{font:400 clamp(2.8rem,5.2vw,5.2rem)/.95 var(--titel);color:var(--papier);white-space:nowrap;font-variant-numeric:tabular-nums}
+.spt__preis i{font-style:normal;color:var(--laerche)}
+.spt__preis span:first-child{font-size:.42em;letter-spacing:.06em;margin-right:.18em;color:var(--messing);vertical-align:.95em}
+.spt__was{font:400 11px/1.6 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--messing)}
+.spt__zusatz{max-width:30ch;font-size:.92rem;line-height:1.5;color:rgba(245,242,238,.72)}
+.spt__platte .kn-reihe{margin-top:clamp(34px,3.6vw,52px)}
+@media (prefers-reduced-motion:no-preference){
+  .js .spt.da .spt__platte::after{transform:translateX(280%);transition:transform 2.2s var(--sanft) .9s}
+}
+
+@media (max-width:860px){
+  .spw__bilder{grid-template-columns:1fr;height:auto}
+  .spw__haus{aspect-ratio:4/3}
+  .spw__liege{aspect-ratio:4/3}
+  .spw__liege img{object-position:0% 50%!important}
+  .spw__dinge{flex-direction:column;align-items:center}
+  .spw__dinge span{padding:14px 0;font-size:clamp(2.2rem,10vw,3rem)}
+  .spw__dinge span+span{border-left:0;border-top:1px solid rgba(179,152,103,.55);padding-top:16px;min-width:9ch}
+  .spr{grid-template-columns:1fr;gap:clamp(46px,12vw,70px)}
+  .spr__raum .fo{height:auto;aspect-ratio:4/3}
+  .spr__raum--bad .fo{aspect-ratio:5/6}
+  .spr__raum--pflege .fo{aspect-ratio:4/5}
+  .spr__text{margin-right:0}
+  .spt__bild{aspect-ratio:4/3}
+  .spt__zeile{grid-template-columns:1fr;gap:30px}
+  .spt__tarif+.spt__tarif{border-left:0;border-top:1px solid rgba(179,152,103,.4);padding-top:30px}
+}

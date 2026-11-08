@@ -1,0 +1,167 @@
+/* =====================================================================================================================
+   Waldhotel Doldenhorn — BEWEGUNG beim Scrollen, an EINER Stelle (Robert 13.10.2026: «dieses Pulsierende, dieses Federhafte, dass die Bilder
+   nach oben fliegen, dass der Text so reinschwebt … adaptiert und zum Stil der Seiten passend»). Massstab: Grand Beau-Rivage und Carlton-Europe,
+   das Mass ist das dieses Hauses: ruhig und festlich, eher lang und weich als schnell. Diese Datei wird als letzte geladen; Skript: assets/js/bewegung.js.
+   K = was als Stück gilt (Foto im Rahmen, Karte, Blatt): die lange Auswahl steht in jeder Regel gleich; wer ein Stück ergänzt, ersetzt sie überall. Vorsatz «html:not(#a):not(#b)»: die Regeln
+   gelten vor den älteren in main.css, ohne !important.
+
+   1. ÜBERSCHRIFTEN, grosse Sätze und die Sätze in den Fenstern rollen Zeile für Zeile aus einem Schlitz hoch (deckend, 1,5 s, Staffel 100 ms).
+      FLIESSTEXT, kleine Zeilen und Knöpfe schweben nach der Uhr herein: Deckkraft 1,7 s, Weg 22 bis 36 px in 2,6 s, Kurve --dh-sanft, Staffel 130 ms.
+   2. FOTOS, KARTEN, BLÄTTER sind immer deckend. Zwei Bewegungen auf zwei Eigenschaften:
+      der WEG nach oben hängt am Scrollen (translate über die Zeitachse des Browsers, cover 0 % bis 58vh): das Stück kommt mit dem Scrollen herauf, es wartet nie;
+      das PULSIEREN läuft nach der Uhr (scale 0,945 → 1 in 3 s mit Federkurve). Ein Stück pulsiert genau einmal (.dh-fertig).
+   3. GRUPPEN (Raster, Bildgefüge, Bänder, die vier Häuser im Fuss) kommen als Ganzes (.dh-gr, .dh-da setzt bewegung.js), ihre Teile stehen still.
+      Wo Stücke übereinanderliegen (Foto-Gruppen mit Drift, Karten auf einem Foto): nur pulsieren, kein Weg (.dh-puls).
+   4. Das FOTO im Rahmen kommt aus der Vergrösserung zur Ruhe und gleitet am Scrollen (Zeitachse des Rahmens, ohne will-change, ohne Skript im Takt).
+   5. Was beim Laden schon im Bild steht (.dh-oben), pulsiert nur. Nahe am Seitenende endet der Weg früher (--dh-bis), damit nichts versetzt stehen bleibt.
+   6. Ohne Scroll-Zeitachse fährt der Browser Weg und Pulsieren nach der Uhr (dh-feder); das Gleiten rechnet dann wie bisher main.js.
+   7. «Weniger Bewegung», ?nomotion und Druck: alles steht sofort.
+   Der Auftakt der Startseite und der Kopf der Unterseiten bleiben, wie sie sind. Nur translate, scale, transform und opacity.
+   Zurück zum Stand davor: _sicherung/2026-10-13-vor-bewegung/ (bau.py, assets/js/main.js zurücklegen; diese Datei und bewegung.js entfallen).
+   ===================================================================================================================== */
+:root{--dh-sanft:cubic-bezier(.25,.6,.3,1);--dh-feder:cubic-bezier(.29,1.34,.42,1);--dh-feder-leise:cubic-bezier(.3,1.22,.4,1);--dh-weg:clamp(70px,8vw,120px);--dh-kl:.945;--dh-dauer:3s}
+@keyframes dh-zug{from{translate:0 var(--dh-weg)}}
+@keyframes dh-puls{from{scale:var(--dh-kl)}}
+@keyframes dh-feder{from{translate:0 var(--dh-weg);scale:var(--dh-kl)}}
+@keyframes dh-gleit{from{translate:0 var(--dh-glw,0px)}to{translate:0 calc(-1*var(--dh-glw,0px))}}
+@keyframes dh-zoom{from{scale:calc(var(--dh-ruhe,1) + .12)}}
+
+/* ---------- 1 · Schrift und Zeilen ---------- */
+html:not(#a):not(#b) [data-r]:where(:not([data-r="bild"],[data-r="schweb"],.blatt,.dn-karte-dunkel,.dn-rechner,.dn-summe,.dn-gs-form,.fh,.fuss__ecke,.fuss__kontakt,.wahl__buehne,.gruss__gast)):not(.auftakt *):not(.seitenkopf *){transform:translateY(clamp(22px,2.4vw,36px));transition:opacity 1.7s ease,transform 2.6s var(--dh-sanft);transition-delay:calc(var(--i,0)*130ms)}
+html:not(#a):not(#b) [data-r].da:where(:not([data-r="bild"],[data-r="schweb"],.blatt,.dn-karte-dunkel,.dn-rechner,.dn-summe,.dn-gs-form,.fh,.fuss__ecke,.fuss__kontakt,.wahl__buehne,.gruss__gast)):not(.auftakt *):not(.seitenkopf *){opacity:1;transform:none}
+/* Überschriften rollen wie bisher Zeile für Zeile aus dem Schlitz, im selben ruhigen Takt; grosse Zahlen ebenso */
+/* Überschriften, grosse Sätze und die Sätze in den Fenstern ROLLEN Zeile für Zeile aus einem Schlitz hoch (Baustein «Zeilen-Maske», Robert 13.10.2026:
+   «sollen schon hochrollen, nicht so wie jetzt erscheinen»). Die Schrift ist dabei voll deckend, kein Einblenden. bewegung.js legt die Zeilen nach dem echten Umbruch
+   in Schlitze (.dh-roll), auch dort, wo eine Überschrift bisher nur erschien. 1,5 s, Kurve e1, Staffel 100 ms je Zeile. */
+html:not(#a):not(#b) .z>span:not(.auftakt *):not(.seitenkopf *){transition:transform 1.5s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*100ms)}
+html:not(#a):not(#b):not(#c) .dh-roll{opacity:1;transform:none;transition:none}
+html:not(#a):not(#b):not(#c) .dh-roll .z{padding:.18em 0 .14em;margin:-.18em 0 -.14em}
+/* gerollt wird, sobald die Überschrift im Fenster steht (.dh-rollt, setzt bewegung.js 8 % über dem unteren Rand); in den Fenstern (.bruch), sobald das Fenster den Satz freigibt (.da, main.js) */
+html:not(#a):not(#b):not(#c) .dh-roll:not(.dh-rollt):not(.bruch *) .z>span{transform:translateY(108%)}
+html:not(#a):not(#b):not(#c) .dh-roll.dh-rollt:not(.bruch *) .z>span{transform:none}
+html:not(#a):not(#b):not(#c) .dh-roll .z>span{overflow-wrap:break-word}   /* ein Wort, das breiter ist als seine Spalte, bricht um, statt im Schlitz abgeschnitten zu werden */
+.dh-w{display:inline}
+html:not(#a):not(#b) .jahr b span{transition:transform 2.2s cubic-bezier(.2,.75,.2,1);transition-delay:calc(var(--i,0)*140ms)}
+
+/* ---------- 2 · Fotos, Karten und Blätter einzeln: deckend, Weg und Pulsieren ---------- */
+html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch):not(.da){opacity:1;transform:none;scale:var(--dh-kl);translate:0 var(--dh-weg)}
+html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).da{opacity:1;animation:dh-feder var(--dh-dauer) var(--dh-feder) backwards;animation-delay:calc(var(--i,0)*110ms)}
+html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).da.dh-fertig{animation:none}
+/* sehr hohe Blätter (ganze Karten, Rechtstexte) steigen nur ein kurzes Stück, ohne kleiner zu werden */
+html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-hoch:not(.da){opacity:1;transform:translateY(clamp(22px,2.4vw,36px))}
+html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-hoch{transition:transform 2.6s var(--dh-sanft)}
+
+/* Bühnen mit Fotos, die bisher eingeblendet wurden («Worauf freuen Sie sich?», das Gästefoto der Begrüssung): deckend, an ihrem Platz, nur das Pulsieren */
+html:not(#a):not(#b) :is(.wahl__buehne,.gruss__gast)[data-r]:not(.da){opacity:1;transform:none;scale:.965}
+html:not(#a):not(#b) :is(.wahl__buehne,.gruss__gast)[data-r].da{opacity:1;transform:none;animation:dh-puls 3.2s var(--dh-feder-leise) backwards}
+html:not(#a):not(#b) :is(.wahl__buehne,.gruss__gast)[data-r].da.dh-fertig{animation:none}
+
+/* ---------- 3 · Gruppen: als Ganzes, die Teile stehen still ---------- */
+html:not(#a):not(#b) [data-gruppe] :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]),html:not(#a):not(#b) [data-gruppe] :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).da{opacity:1;transform:none;translate:none;scale:none;animation:none}
+html:not(#a):not(#b) .fuss__haeuser .fh[data-r]:not(.da){opacity:1;transform:none}
+html:not(#a):not(#b) .dh-gr{--dh-weg:clamp(60px,7vw,108px);--dh-kl:.965;--dh-dauer:3.2s}
+html:not(#a):not(#b) .dh-gr:not(.dh-da){scale:var(--dh-kl);translate:0 var(--dh-weg)}
+html:not(#a):not(#b) .dh-gr.dh-da{animation:dh-feder var(--dh-dauer) var(--dh-feder-leise) backwards}
+html:not(#a):not(#b) .dh-gr.dh-da.dh-fertig{animation:none}
+/* nur pulsieren: Stücke, die übereinanderliegen oder selbst schon mit dem Scrollen wandern */
+html:not(#a):not(#b) :is(.dh-gr,[data-r]).dh-puls:not(.dh-da):not(.da){translate:none}
+html:not(#a):not(#b) .dh-gr.dh-puls.dh-da,html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-puls.da:not([data-gruppe] *){animation:dh-puls var(--dh-dauer) var(--dh-feder-leise) backwards}
+html:not(#a):not(#b) .dh-gr.dh-puls.dh-da.dh-fertig,html:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-puls.da.dh-fertig{animation:none}
+
+@supports (animation-timeline:view()){
+  /* der Weg am Scrollen, das Pulsieren nach der Uhr */
+  html.dh-za:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch):not(.da):not(.dh-oben):not(.dh-puls){translate:none;animation:dh-zug cubic-bezier(.3,.3,.45,1) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--dh-bis,58vh)}
+  html.dh-za:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).da:not(.dh-oben):not(.dh-puls){animation:dh-zug cubic-bezier(.3,.3,.45,1) both,dh-puls var(--dh-dauer) var(--dh-feder) backwards;animation-duration:auto,var(--dh-dauer);animation-timeline:view(),auto;animation-range:cover 0% cover var(--dh-bis,58vh),normal;animation-delay:0s,calc(var(--i,0)*110ms)}
+  html.dh-za:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).da.dh-fertig:not(.dh-oben):not(.dh-puls){animation:dh-zug cubic-bezier(.3,.3,.45,1) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--dh-bis,58vh)}
+  html.dh-za:not(#a):not(#b) .dh-gr:not(.dh-da):not(.dh-oben):not(.dh-puls){translate:none;animation:dh-zug cubic-bezier(.3,.3,.45,1) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--dh-bis,58vh)}
+  html.dh-za:not(#a):not(#b) .dh-gr.dh-da:not(.dh-oben):not(.dh-puls){animation:dh-zug cubic-bezier(.3,.3,.45,1) both,dh-puls var(--dh-dauer) var(--dh-feder-leise) backwards;animation-duration:auto,var(--dh-dauer);animation-timeline:view(),auto;animation-range:cover 0% cover var(--dh-bis,58vh),normal}
+  html.dh-za:not(#a):not(#b) .dh-gr.dh-da.dh-fertig:not(.dh-oben):not(.dh-puls){animation:dh-zug cubic-bezier(.3,.3,.45,1) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--dh-bis,58vh)}
+  /* schon im Bild beim Laden: kein Weg, nur das Pulsieren */
+  html.dh-za:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).dh-oben:not(.da),html.dh-za:not(#a):not(#b) .dh-gr.dh-oben:not(.dh-da){translate:none}
+  html.dh-za:not(#a):not(#b) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.dh-hoch).dh-oben.da:not(.dh-fertig){animation:dh-puls var(--dh-dauer) var(--dh-feder) backwards;animation-delay:calc(var(--i,0)*110ms)}
+  html.dh-za:not(#a):not(#b) .dh-gr.dh-oben.dh-da:not(.dh-fertig){animation:dh-puls var(--dh-dauer) var(--dh-feder-leise) backwards}
+  html.dh-za:not(#a):not(#b) .fuss .dh-gr{--dh-bis:40vh}
+
+  /* ---------- 4 · Das Foto im Rahmen: aus der Vergrösserung zur Ruhe, dann gleitet es am Scrollen (nur mit Zeitachse; sonst rechnet main.js wie bisher) ---------- */
+  html.dh-za:not(#a):not(#b) .lk{overflow:clip}   /* beschneiden wie bisher, ohne dass der Browser die Karte für die Scroll-Fläche hält */
+  html.dh-za .dh-quelle{view-timeline:--dh-gl block}
+  html.dh-za:not(#a):not(#b) img.dh-bild{transform:none;transition:none;scale:var(--dh-ruhe,1)}
+  html.dh-za:not(#a):not(#b) img.dh-gleit{--dh-ruhe:1.14;animation:dh-gleit linear both;animation-timeline:--dh-gl;animation-range:cover 0% cover 100%}
+  html.dh-za:not(#a):not(#b) [data-r]:not(.da) img.dh-bild{scale:calc(var(--dh-ruhe,1) + .12)}
+  html.dh-za:not(#a):not(#b) [data-r].da img.dh-bild:not(.dh-gleit){animation:dh-zoom 3.2s cubic-bezier(.16,1,.3,1) backwards}
+  html.dh-za:not(#a):not(#b) [data-r].da img.dh-gleit{animation:dh-gleit linear both,dh-zoom 3.2s cubic-bezier(.16,1,.3,1) backwards;animation-duration:auto,3.2s;animation-timeline:--dh-gl,auto;animation-range:cover 0% cover 100%,normal}
+}
+/* Breite Fotos über die ganze Spalte (.weit): der Rahmen pulsiert nicht. Gemessen am 13.10.2026, sechsfach gebremst: pulsiert der grosse Rahmen, während das Foto darin
+   aus der Vergrösserung kommt und gleitet, dauern zwei bis fünf Bilder 34 bis 50 ms (Angebote, erster Abschnitt); ohne das Pulsieren des Rahmens keines.
+   Der Rahmen kommt deckend mit dem Scrollen herauf, das Pulsieren übernimmt das Foto darin (aus der Vergrösserung zur Ruhe). */
+html:not(#a):not(#b):not(#c) .rahmen.weit[data-r]{--dh-kl:1}
+@supports (animation-timeline:view()){
+  html.dh-za:not(#a):not(#b):not(#c) .rahmen.weit[data-r],html.dh-za:not(#a):not(#b):not(#c) .rahmen.weit[data-r].da,html.dh-za:not(#a):not(#b):not(#c) .rahmen.weit[data-r].da.dh-fertig{scale:none;translate:none;animation:dh-zug cubic-bezier(.3,.3,.45,1) both;animation-duration:auto;animation-timeline:view();animation-range:cover 0% cover var(--dh-bis,58vh);animation-delay:0s}
+  html.dh-za:not(#a):not(#b):not(#c) .rahmen.weit[data-r].dh-oben,html.dh-za:not(#a):not(#b):not(#c) .rahmen.weit[data-r].dh-oben.da{animation:none;translate:none;scale:none}
+}
+@media (max-width:700px){:root{--dh-weg:58px;--dh-kl:.955}html:not(#a):not(#b) .dh-gr{--dh-weg:48px;--dh-kl:.97}}
+
+/* ---------- 7 · ohne Bewegung ---------- */
+html.dh-ruhig .z>span,html.still .z>span{transform:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){.z>span{transform:none!important;transition:none!important}}
+html.dh-ruhig:not(#a):not(#b) :is([data-r],.dh-gr,img.dh-bild),html.still:not(#a):not(#b) :is([data-r],.dh-gr,img.dh-bild){animation:none!important;translate:none!important;scale:none!important;transform:none!important;opacity:1!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){html:not(#a):not(#b) :is([data-r],.dh-gr,img.dh-bild){animation:none!important;translate:none!important;scale:none!important;transform:none!important;opacity:1!important;transition:none!important}}
+@media print{html:not(#a):not(#b) :is([data-r],.dh-gr,img.dh-bild){animation:none!important;translate:none!important;scale:none!important;transform:none!important;opacity:1!important}}
+
+/* ---------- 8 · Schein über den Karten «Demnächst im Haus» (wie im Grand Beau-Rivage, Robert 15.10.2026) ----------
+   Ein feiner Goldschein läuft einmal von links nach rechts über die Textseite, sobald die Karte beim Scrollen oder Blättern gut im Bild steht (bewegung.js setzt dh-schein),
+   und wieder beim Darüberfahren. Nur transform, eine Ebene unter dem Text, ausserhalb des Bildes ruht sie. */
+.lk__t{position:relative;isolation:isolate;overflow:hidden}
+.lk__t::after{content:'';position:absolute;top:-20%;bottom:-20%;left:0;width:40%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(243,227,182,.09) 50%,transparent);transform:translateX(-160%) skewX(-16deg)}
+.lk.dh-schein .lk__t::after{animation:dh-schein 1.8s cubic-bezier(.16,1,.3,1) .25s}
+@keyframes dh-schein{from{transform:translateX(-160%) skewX(-16deg)}to{transform:translateX(330%) skewX(-16deg)}}
+@media (hover:hover){.lk:hover .lk__t::after{transform:translateX(330%) skewX(-16deg);transition:transform 1.6s cubic-bezier(.16,1,.3,1)}}
+html.dh-ruhig .lk__t::after,html.still .lk__t::after{display:none}
+@media (prefers-reduced-motion:reduce){.lk__t::after{display:none}}
+
+/* Prüf-Chat «Auftritte» 18.10.2026 (nach Robert 17:46 «stell das bitte überall sicher»):
+   Fusszeile: deckend von Anfang an, nur Weg, ohne Warten (vorher 0,25–0,47 s unsichtbar, dann 1 s Einblenden) */
+html:not(#a):not(#b) footer.fuss [data-r][data-r]:not(.fh):not(.fuss__ecke):not(.fuss__kontakt){opacity:1;transition:transform 1.4s var(--dh-sanft);transition-delay:0s}
+/* Grosse Zahlen: der Satz unter der Zahl steigt mit der Zahl hoch, statt stehen zu bleiben */
+html:not(#a):not(#b) .jahr p{transform:translateY(26px);transition:transform 1.6s var(--e1)}
+html:not(#a):not(#b) .jahr:nth-child(2) p{transition-delay:.12s}
+html:not(#a):not(#b) .jahr:nth-child(3) p{transition-delay:.24s}
+html:not(#a):not(#b) .jahr:nth-child(4) p{transition-delay:.36s}
+html:not(#a):not(#b) .jahre.da .jahr p{transform:none}
+@media (prefers-reduced-motion:reduce){html:not(#a):not(#b) .jahr p{transform:none;transition:none}}
+.still .jahr p{transform:none!important;transition:none!important}
+
+/* ---------- 9 · Die Mitte zwischen zu träge und zu hastig (Robert 18.10.2026, 18:17, Gasterntal zimmer.html: «bei den Bildern ist der Effekt mit Reinschweben
+   zu früh, zu schnell»; Oberchef: alle Häuser gleich). Los, wenn rund ein Fünftel im Bild ist (main.js/bewegung.js «fuenftel»), 0,85 s, weiche Kurve ohne
+   Überschwingen, Weg 40 px, Fotos, Karten und Gruppen zoomen dabei von 1,04 auf 1, Schrift nur der Weg, Reihen 0,12 s, Zeilen der Überschriften 0,09 s.
+   Nach der Uhr, nicht mehr am Scrollen. Ersetzt die Zeiten aus 1 bis 5; das Gleiten der Fotos im Rahmen bleibt. Zurück: _sicherung/2026-10-18-mitte/. ---------- */
+:root{--dh-mz:.85s;--dh-mk:cubic-bezier(.22,.61,.36,1);--dh-mt:120ms}
+@keyframes dh-mitte{from{translate:0 40px;scale:1.04}}
+@keyframes dh-mitte-puls{from{scale:1.04}}
+@keyframes dh-mitte-zoom{from{scale:calc(var(--dh-ruhe,1) + .04)}}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r]:where(:not([data-r="bild"],[data-r="schweb"],.blatt,.dn-karte-dunkel,.dn-rechner,.dn-summe,.dn-gs-form,.fh,.fuss__ecke,.fuss__kontakt,.wahl__buehne,.gruss__gast)):not(.auftakt *):not(.seitenkopf *){opacity:1;transform:translateY(40px);transition:transform var(--dh-mz) var(--dh-mk);transition-delay:calc(var(--i,0)*var(--dh-mt))}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r].da:where(:not([data-r="bild"],[data-r="schweb"],.blatt,.dn-karte-dunkel,.dn-rechner,.dn-summe,.dn-gs-form,.fh,.fuss__ecke,.fuss__kontakt,.wahl__buehne,.gruss__gast)):not(.auftakt *):not(.seitenkopf *){transform:none}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .z>span:not(.auftakt *):not(.seitenkopf *){transition:transform var(--dh-mz) var(--dh-mk);transition-delay:calc(var(--i,0)*90ms)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .jahr b span,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .jahr p{transition:transform var(--dh-mz) var(--dh-mk)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .jahr p{transform:translateY(40px)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .jahre.da .jahr p{transform:none}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) footer.fuss [data-r][data-r]:not(.fh):not(.fuss__ecke):not(.fuss__kontakt){transition:transform var(--dh-mz) var(--dh-mk);transition-delay:0s}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *):not(.da),html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *).dh-oben:not(.da),html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .rahmen.weit[data-r]:not(.da){animation:none;transform:none;translate:0 40px;scale:1.04}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *).da,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]):not(.auftakt *):not(.seitenkopf *):not(.wahl *):not(.stapel):not(.freude__bild):not([data-gruppe] *).da.dh-fertig,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .rahmen.weit[data-r].da,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .rahmen.weit[data-r].da.dh-fertig{translate:none;scale:none;transform:none;animation:dh-mitte var(--dh-mz) var(--dh-mk) backwards;animation-delay:calc(var(--i,0)*var(--dh-mt));animation-timeline:auto}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-hoch:not(.da){translate:none;scale:none;transform:translateY(40px)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-hoch{animation:none;transition:transform var(--dh-mz) var(--dh-mk)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-hoch.da{transform:none}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .dh-gr:not(.dh-da),html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .dh-gr.dh-oben:not(.dh-da){animation:none;translate:0 40px;scale:1.04}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .dh-gr.dh-da,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .dh-gr.dh-da.dh-fertig{translate:none;scale:none;animation:dh-mitte var(--dh-mz) var(--dh-mk) backwards;animation-timeline:auto}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is(.dh-gr,[data-r]).dh-puls:not(.dh-da):not(.da){translate:none;scale:1.04}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) .dh-gr.dh-puls.dh-da,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is([data-r="bild"],[data-r="schweb"],.blatt[data-r],.dn-karte-dunkel[data-r],.dn-rechner[data-r],.dn-summe[data-r],.dn-gs-form[data-r]).dh-puls.da:not([data-gruppe] *){translate:none;animation:dh-mitte-puls var(--dh-mz) var(--dh-mk) backwards}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is(.wahl__buehne,.gruss__gast)[data-r]:not(.da){scale:1.04}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is(.wahl__buehne,.gruss__gast)[data-r].da,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) :is(.wahl__buehne,.gruss__gast)[data-r].da.dh-fertig{animation:dh-mitte-puls var(--dh-mz) var(--dh-mk) backwards}
+/* das Foto im Rahmen: kommt in derselben Zeit aus 1,04 zur Ruhe, das Gleiten am Scrollen bleibt */
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r="bild"] .rahmen__k img,html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r="schweb"] .rahmen__k img{transition-duration:var(--dh-mz);transition-timing-function:var(--dh-mk)}
+html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r="bild"]:not(.da) .rahmen__k img:not(.dh-bild),html.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r="schweb"]:not(.da) .rahmen__k img:not(.dh-bild){transform:scale(1.04)}
+@supports (animation-timeline:view()){
+  html.dh-za.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r]:not(.da) img.dh-bild{scale:calc(var(--dh-ruhe,1) + .04)}
+  html.dh-za.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r].da img.dh-bild:not(.dh-gleit){animation:dh-mitte-zoom var(--dh-mz) var(--dh-mk) backwards}
+  html.dh-za.dh-mitte:not(#a):not(#b):not(#c):not(#d) [data-r].da img.dh-gleit{animation:dh-gleit linear both,dh-mitte-zoom var(--dh-mz) var(--dh-mk) backwards;animation-duration:auto,var(--dh-mz);animation-timeline:--dh-gl,auto;animation-range:cover 0% cover 100%,normal}
+}

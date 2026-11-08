@@ -1,0 +1,31 @@
+/* Wellness & Spa · Kopf der Zimmerseite (Robert 26.10.2026): Fassung 9 aus _varianten/zimmerhero4, ohne Vorhang.
+   Das Zimmer bildfüllend, davor Sterne, Titel und Buchungsleiste; beim Laden fährt alles hoch. Warme Schatten statt Nachtblau. Nur transform. */
+@font-face{font-family:'Montserrat';font-weight:500;font-display:block;src:url(../fonts/montserrat-500-latin.woff2) format('woff2')}
+.zq{--es:#1A120B;--es2:#2A1D12;--ms:#D9B758;--msh:#E9D49A;--cr:#F4F2EC;--pa:#F6F1EA;--ink:#18213F;--sch:20,13,7;
+ position:relative;min-height:100svh;padding:0!important;overflow:hidden;background:var(--es);color:var(--cr);display:block}
+.zq figure{margin:0;position:relative;overflow:hidden}
+.zq figure img{display:block;width:100%;height:100%;object-fit:cover}
+.zq .rbar{margin:0}
+
+/* gemeinsame Teile */
+.zqs{display:flex;align-items:center;gap:9px;margin:0 0 22px;transform:translateY(16px);transition:transform 1.2s var(--e1) .1s}
+.zq.da .zqs{transform:none}
+.zq .zqs img{width:15px;height:15px;filter:drop-shadow(0 1px 5px rgba(var(--sch),.6))}.zq .zqs .zqk{width:21px;height:17px;margin-left:4px}
+.zqt{margin:0;font-family:var(--licht);font-weight:400;font-size:clamp(44px,6vw,100px);line-height:1.02;letter-spacing:-.025em;text-shadow:0 1px 2px rgba(var(--sch),.3),0 8px 34px rgba(var(--sch),.5)}
+.zqt--ink{color:var(--ink);text-shadow:none}
+.zqz{display:block;overflow:hidden;padding-bottom:.07em}
+.zqz>span{display:inline-block;transform:translateY(106%);transition:transform 1.5s var(--e1) .25s}
+.zqz+.zqz>span{transition-delay:.4s}
+.zq.da .zqz>span{transform:none}
+.zqu{margin:18px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#F6ECD6;text-shadow:0 1px 2px rgba(var(--sch),.8),0 0 16px rgba(var(--sch),.6)}
+.zq-voll{position:absolute!important;inset:0}
+.zq-voll img{transform:scale(1.08);transition:transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.zq.da .zq-voll img{transform:none}
+.zqv{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(var(--sch),.5),rgba(var(--sch),.15) 26%,rgba(var(--sch),.2) 60%,rgba(var(--sch),.66))}
+.zq-mm{position:relative;z-index:3;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px var(--rand) 80px}
+.zq-mm .zqs{justify-content:center}.zq-mm .rbar{margin-top:34px}
+
+.zqv--mitte{background:radial-gradient(ellipse 58% 38% at 50% 56%,rgba(var(--sch),.84),rgba(var(--sch),.6) 55%,rgba(var(--sch),0) 88%),radial-gradient(ellipse 90% 85% at 50% 50%,rgba(var(--sch),0) 50%,rgba(var(--sch),.5)),linear-gradient(180deg,rgba(var(--sch),.5),rgba(var(--sch),.12) 24%,rgba(var(--sch),.15) 64%,rgba(var(--sch),.66))}
+.zq-09 .zq-mm{z-index:3}
+
+@media (prefers-reduced-motion:reduce){.zq *{animation:none!important;transition:none!important}}

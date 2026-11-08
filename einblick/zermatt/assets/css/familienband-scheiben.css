@@ -1,0 +1,21 @@
+/* Familienband, Fassung 1 «Vier Scheiben» (Robert 26.10.2026, gewählt auf Wellness, Entwurfs-Maschine _varianten/fuss-15b; FAMILIEN-FOOTER.md).
+   Gleich auf allen drei Häusern; hier nur die Farben aus Rot und Schnee: Grund wie der Fuss (--tief), damit es eine Fläche ist, Akzent Rot (zm.css).
+   Reihenfolge im Fuss: Teil des Hauses (.g2-fuss), darunter das Familienband, ganz unten die Rechtszeile (.studie).
+   Inhalte, Reihenfolge, Texte und Fotos bleiben; neu ist nur die Anordnung: vier hohe Scheiben 2:3 Kante an Kante, aussen gerundet;
+   das eigene Haus trägt unten einen Strich im Akzent statt des Rahmens. Bewegung: familienband-scheiben.js, nur transform. */
+.familienband{--fb-grund:var(--tief);--fbr:clamp(14px,1.4vw,22px);padding-top:clamp(60px,6vw,96px);padding-bottom:clamp(50px,5vw,80px)}
+.familienband .fb__haeuser{gap:6px;max-width:1320px}
+.familienband .fb__kopf{max-width:1320px}
+.familienband .fb__haus figure{position:relative;aspect-ratio:2/3;margin:0 0 18px;border-radius:0}
+.familienband .fb__haus:first-child figure{border-radius:var(--fbr) 0 0 var(--fbr)}
+.familienband .fb__haus:last-child figure{border-radius:0 var(--fbr) var(--fbr) 0}
+.familienband .fb__haus--hier figure{outline:0}
+.familienband .fb__haus--hier figure::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--fb-akzent)}
+.familienband .fb__haus .fb__name,.familienband .fb__haus .fb__zusatz,.familienband .fb__haus .fb__ort,.familienband .fb__haus .fb__hier,.familienband .fb__haus .fb__weiter{padding-right:14px}
+.familienband .fb__haus{transform:translate3d(0,110px,0) scale(.96);transition:transform 1.2s cubic-bezier(.22,.61,.36,1) calc(var(--n,0) * 70ms)}
+.familienband .fb__haus.da{transform:none}
+@media (max-width:800px){
+  .familienband .fb__haeuser{grid-template-columns:1fr 1fr;row-gap:30px}
+  .familienband .fb__haus figure,.familienband .fb__haus:first-child figure,.familienband .fb__haus:last-child figure{border-radius:var(--fbr)}
+}
+@media (prefers-reduced-motion:reduce){.familienband .fb__haus{transform:none!important;transition:none!important}}
