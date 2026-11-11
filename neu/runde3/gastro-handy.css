@@ -50,10 +50,18 @@
   /* ---------- «Ein Partner statt sechs»: kein loser Lichtfleck zwischen Gerät und Titel (Robert 12.11.2026) */
   .fa-licht{display:none}
 
-  /* ---------- «Nach dem Start bleiben wir»: der Anker sitzt genau unter der Linie, die Linie endet an seiner Spitze (Robert 12.11.2026: «eleganter») */
-  .s-hbl .hbl-ende svg{width:48px;height:48px;margin-left:-16px}
-  .s-hbl .hbl-spur,.s-hbl .hbl-gold{bottom:54px}
-  .s-hbl .hbl-ende::before{left:9px;top:46px}
+  /* ---------- «Nach dem Start bleiben wir»: unten schwingt die Linie nach rechts zur Mitte, dort steht der Anker gross (Robert 12.11.2026:
+     «wenn er unten angekommen ist, dass er nochmal so kurz einen Swoosh nach rechts macht und der Anker dann da ist, in der Mitte … unser Logo») */
+  .s-hbl .hbl-ende{justify-items:center;padding-top:76px}
+  .s-hbl .hbl-ende>svg:not(.hbl-schwung){width:76px;height:76px;margin-left:0}
+  .s-hbl .hbl-spur,.s-hbl .hbl-gold{bottom:152px}
+  .s-hbl .hbl-ende::before{left:50%;top:114px;width:140px;height:140px;margin:-70px 0 0 -70px}
+  .s-hbl .hbl-ende svg.hbl-schwung{position:absolute;left:0;top:0;width:100%;height:76px;margin:0;overflow:visible;fill:none;filter:none;animation:none;pointer-events:none;z-index:0}
+  .hbl-schwung path{fill:none;stroke-width:2;stroke-linecap:round}
+  .hbl-schwung .spur{stroke:rgba(199,180,137,.16)}
+  .hbl-schwung .gold{stroke:var(--gold,#c7b489);stroke-dasharray:var(--l,400);stroke-dashoffset:var(--l,400);transition:stroke-dashoffset .9s cubic-bezier(.65,0,.35,1)}
+  .hbl-ende.an .hbl-schwung .gold{stroke-dashoffset:0}
+  .s-hbl .hbl-ende.an>svg:not(.hbl-schwung),.s-hbl .hbl-ende.an::before{animation-delay:.8s}
 
   /* ---------- KI-Abschnitt: Frage im Chat breiter, damit sie nicht in ein, zwei Wörtern je Zeile steht */
   .cg-q{max-width:88%}
@@ -89,3 +97,4 @@
   .hs.hs-segel{translate:90px 120px;scale:.9;rotate:7deg;transition:opacity .7s ease .55s,translate 1.5s cubic-bezier(.22,1.12,.36,1) .55s,scale 1.5s cubic-bezier(.22,1.12,.36,1) .55s,rotate 1.5s cubic-bezier(.22,1.12,.36,1) .55s}
   .hs.hs-segel.hs-da{translate:0 0;scale:1;rotate:0deg}
 }
+@media (max-width:860px) and (prefers-reduced-motion:reduce){.hbl-schwung .gold{stroke-dashoffset:0;transition:none}}

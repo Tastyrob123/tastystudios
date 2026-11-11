@@ -5,6 +5,25 @@
    Nur translate, scale und opacity, ein Beobachter für die ganze Seite. */
 (function () {
   if (!window.matchMedia || !matchMedia('(max-width:860px)').matches) return;
+  /* «Nach dem Start bleiben wir»: Schwung von der Linie zur Mitte, wo der Anker steht */
+  function schwung() {
+    var e = document.querySelector('.s-hbl .hbl-ende'), g = document.querySelector('.s-hbl .hbl-gold'); if (!e || !g) return;
+    var alt = e.querySelector('.hbl-schwung'); if (alt) alt.remove();
+    var er = e.getBoundingClientRect(), gr = g.getBoundingClientRect(), W = Math.round(er.width), x0 = Math.round(gr.left + gr.width / 2 - er.left), xm = Math.round(W / 2);
+    var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('class', 'hbl-schwung'); svg.setAttribute('viewBox', '0 0 ' + W + ' 76'); svg.setAttribute('aria-hidden', 'true');
+    var d = 'M' + x0 + ' 0 C' + x0 + ' 46 ' + xm + ' 24 ' + xm + ' 72';
+    ['spur', 'gold'].forEach(function (c) { var p = document.createElementNS(ns, 'path'); p.setAttribute('d', d); p.setAttribute('class', c); svg.appendChild(p); });
+    e.insertBefore(svg, e.firstChild);
+    svg.style.setProperty('--l', Math.ceil(svg.querySelector('.gold').getTotalLength()) + '');
+  }
+  addEventListener('resize', function () { clearTimeout(schwung._t); schwung._t = setTimeout(schwung, 200); });
+
+  if (document.readyState === 'complete') schwung(); else addEventListener('load', schwung);
+})();
+
+(function () {
+  if (!window.matchMedia || !matchMedia('(max-width:860px)').matches) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
 
   var BLOCK = 'figure, .lo, .bb, .cg, [class*="karte"], [class*="kachel"], [class*="tel"], article, li';
