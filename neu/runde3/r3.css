@@ -224,3 +224,5 @@
 }
 @media (max-width:520px){.rs-reihe,.r-wirkung,.s-ang__lief{grid-template-columns:1fr}.w-drei{grid-template-columns:1fr}}
 @media (max-width:860px){.h4-karte{display:none}.tel--h4{width:24%}}
+/* Handy, alle Seiten (11.11.2026): Titelzeilen mit Zeilenhöhe 1,08 (Höhe der Buchstaben), damit umbrechende Zeilen sich nie berühren oder überlappen (Prüfpunkt 21) */
+@media (max-width:860px){.r .zl{line-height:1.08!important}}

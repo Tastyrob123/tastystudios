@@ -305,3 +305,5 @@
 /* Farbige Linie oben läuft mit durch die runden Ecken (Robert 04.11.2026), läuft an den Seiten weich aus */
 .ar-p::before{bottom:auto;height:calc(var(--ecke,0px) * 1.6);background:none;border:2px solid var(--ak);border-bottom:0;border-radius:var(--ecke,0px) var(--ecke,0px) 0 0;
   -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);pointer-events:none}
+/* Handy (11.11.2026): Bilderwand etwas niedriger, damit «Aus dem Atelier.» im ersten Bild ganz zu sehen ist */
+@media (max-width:860px){.ar-wand{height:44vh;height:44svh}}

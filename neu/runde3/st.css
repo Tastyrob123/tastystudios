@@ -696,3 +696,9 @@ section.st-im>.st-im__b{position:absolute;inset:0;margin:0;overflow:hidden;backg
 .st-frb.vor .fr-k>div>*{opacity:0;transform:none}
 .st-frb .fr-k>div>*{transform:none;transition:opacity .9s ease;transition-delay:calc(.5s + var(--i,0)*.12s + var(--j,0)*.08s)}
 @media (prefers-reduced-motion:reduce){.st-frb.vor .fr-band{opacity:1;transform:none}}
+/* Handy (11.11.2026): «Passt am besten» bekommt die ganze Breite, damit «Der Tisch am Fenster» ganz zu lesen ist */
+@media (max-width:860px){
+  .v10-f:nth-child(3){grid-column:1/-1;border-right:0;border-top:1px solid rgba(160,124,63,.2)}
+  .v10-f:nth-child(1),.v10-f:nth-child(2){border-bottom:0}
+  .v10-erg{grid-column:1/-1}
+}

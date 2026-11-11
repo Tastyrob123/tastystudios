@@ -119,7 +119,7 @@
       uhren.push(setTimeout(einmal, dauer));
     }
     w._start = function () { if (an) return; an = true; if (ruhig) fertig(); else einmal(); };
-    w._stop = function () { an = false; uhren.forEach(clearTimeout); uhren = []; };
+    w._stop = function () { an = false; uhren.forEach(clearTimeout); uhren = []; fertig(); };   /* ausser Sicht: fertige Antwort stehen lassen, nie ein halb leerer Chat (11.11.2026) */
     fertig(); /* Ausgangslage: fertige Antwort, falls der Ablauf nie startet */
     w._start0 = true;
   });

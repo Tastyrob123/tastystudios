@@ -897,3 +897,11 @@ html.warte body{visibility:hidden}
   .a16 .a16-in{grid-template-columns:1fr 1fr;row-gap:30px}.a16 .a16-mitte{grid-column:1/-1;order:-1}.a16 .a16-sp{padding:24px 10px}.a16 .a16-l{border-right:1px solid var(--l)}.a16 .a16-r{border-left:0}.a16 .a16-sp span{font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){.fa *{animation:none!important;transition:none!important}}
+
+/* Handy, alle Seiten: Fuss-Wege in zwei ruhigen Spalten wie auf der Startseite (vorher auf den Unterseiten ungleiche Kästchen in drei Reihen, 11.11.2026) */
+@media (max-width:860px){
+  .fuss--t .ft-wege{display:grid;grid-template-columns:1fr 1fr;justify-content:stretch;border-bottom:0}
+  .fuss--t .ft-wege a{padding:17px 0;font-size:11.5px;letter-spacing:.2em;border-bottom:1px solid var(--l);text-align:left}
+  .fuss--t .ft-wege a+a{border-left:0}
+  .fuss--t .ft-wege a:nth-child(even){padding-left:18px;border-left:1px solid var(--l)}
+}
