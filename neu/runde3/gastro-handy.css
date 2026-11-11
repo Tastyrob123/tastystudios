@@ -50,6 +50,11 @@
   /* ---------- «Ein Partner statt sechs»: kein loser Lichtfleck zwischen Gerät und Titel (Robert 12.11.2026) */
   .fa-licht{display:none}
 
+  /* ---------- «Nach dem Start bleiben wir»: der Anker sitzt genau unter der Linie, die Linie endet an seiner Spitze (Robert 12.11.2026: «eleganter») */
+  .s-hbl .hbl-ende svg{width:48px;height:48px;margin-left:-16px}
+  .s-hbl .hbl-spur,.s-hbl .hbl-gold{bottom:54px}
+  .s-hbl .hbl-ende::before{left:9px;top:46px}
+
   /* ---------- KI-Abschnitt: Frage im Chat breiter, damit sie nicht in ein, zwei Wörtern je Zeile steht */
   .cg-q{max-width:88%}
 
