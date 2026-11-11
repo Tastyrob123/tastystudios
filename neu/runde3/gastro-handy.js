@@ -12,7 +12,7 @@
     var er = e.getBoundingClientRect(), gr = g.getBoundingClientRect(), W = Math.round(er.width), x0 = Math.round(gr.left + gr.width / 2 - er.left), xm = Math.round(W / 2);
     var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('class', 'hbl-schwung'); svg.setAttribute('viewBox', '0 0 ' + W + ' 76'); svg.setAttribute('aria-hidden', 'true');
-    var d = 'M' + x0 + ' 0 C' + x0 + ' 46 ' + xm + ' 24 ' + xm + ' 72';
+    var d = 'M' + x0 + ' 0 V30 H' + xm + ' V72';   // rechter Winkel: kurz runter, waagrecht nach rechts, gerade runter in den Anker (Robert 12.11.2026: «90 Grad … nicht so schräg»)
     ['spur', 'gold'].forEach(function (c) { var p = document.createElementNS(ns, 'path'); p.setAttribute('d', d); p.setAttribute('class', c); svg.appendChild(p); });
     e.insertBefore(svg, e.firstChild);
     svg.style.setProperty('--l', Math.ceil(svg.querySelector('.gold').getTotalLength()) + '');

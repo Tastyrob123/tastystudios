@@ -57,7 +57,7 @@
   .s-hbl .hbl-spur,.s-hbl .hbl-gold{bottom:152px}
   .s-hbl .hbl-ende::before{left:50%;top:114px;width:140px;height:140px;margin:-70px 0 0 -70px}
   .s-hbl .hbl-ende svg.hbl-schwung{position:absolute;left:0;top:0;width:100%;height:76px;margin:0;overflow:visible;fill:none;filter:none;animation:none;pointer-events:none;z-index:0}
-  .hbl-schwung path{fill:none;stroke-width:2;stroke-linecap:round}
+  .hbl-schwung path{fill:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter}
   .hbl-schwung .spur{stroke:rgba(199,180,137,.16)}
   .hbl-schwung .gold{stroke:var(--gold,#c7b489);stroke-dasharray:var(--l,400);stroke-dashoffset:var(--l,400);transition:stroke-dashoffset .9s cubic-bezier(.65,0,.35,1)}
   .hbl-ende.an .hbl-schwung .gold{stroke-dashoffset:0}
