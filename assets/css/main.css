@@ -857,3 +857,43 @@ html.warte body{visibility:hidden}
 .fuss--t .ft-end span:last-child{display:flex;gap:22px}
 .fuss--t .ft-end a:hover{color:#fff}
 @media (prefers-reduced-motion:reduce){.fuss--t .ft-linie,.fuss--t .ft-voll{transition:none}}
+
+/* Fuss: Anker in der Mitte, Backoffice und Masterclass links und rechts (Robert 08.11.2026, Fassung 16 aus _varianten/fuss-anker) */
+.fd{--sch:#1f212c;--cr:#ebdbce;--nv:#1f213b;--pb:var(--sch);--pf:#fff;--pt:rgba(255,255,255,.62);overflow:hidden}
+.fd .p-t{--pb:#1f212c;--pf:#fff;--pt:rgba(255,255,255,.6)}
+.fd .p-h{--pb:#ebdbce;--pf:#111421;--pt:rgba(17,20,33,.64)}
+.fd .p-a{--pb:#1f213b;--pf:#fff;--pt:rgba(255,255,255,.62)}
+.fd a{color:inherit;text-decoration:none}
+.fd .lz{display:block;width:100%;height:100%;fill:currentColor;overflow:visible}
+.fd .ft-in{width:100%;box-sizing:border-box}
+/* das Zeichen wie heute: Linie, dann Fläche */
+.fd .dm{position:relative;aspect-ratio:1}
+.fd .dm>svg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:visible}
+.fd .dm-linie{fill:none;stroke:var(--g);stroke-width:7;opacity:0;transform:translateY(14px);transition:opacity 1.1s,transform 1.6s var(--e3)}
+.fd .dm-voll{fill:var(--creme);opacity:0;transition:opacity 1.6s ease 1s}
+.fd .an .dm-linie,.fd .dm.an .dm-linie{opacity:1;transform:none}
+.fd .an .dm-voll,.fd .dm.an .dm-voll{opacity:1}
+.fa .aa{width:clamp(150px,14vw,220px);margin:0 auto}
+.fa .ft-name{margin-top:34px}
+.fa .lz{fill:currentColor}
+
+
+.a16 .a16-in{max-width:var(--max);margin:0 auto;padding:clamp(70px,7vw,120px) var(--rand) 0;display:grid;grid-template-columns:1fr 1.6fr 1fr;align-items:center}
+.a16 .a16-mitte{display:flex;flex-direction:column;align-items:center;padding:0 clamp(20px,3vw,50px)}
+.a16 .a16-a{width:clamp(170px,15vw,230px)}
+.a16 .a16-sp{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 20px;color:rgba(255,255,255,.6);opacity:0;transition:opacity 1s .9s,color .3s}
+.a16 .a16-in.an .a16-sp{opacity:1}
+.a16 .a16-l{border-right:1px solid var(--l)}.a16 .a16-r{border-left:1px solid var(--l)}
+.a16 .a16-sp:hover{color:#fff}
+.a16 .a16-z{width:64px;height:64px;color:var(--creme)}
+.a16 .a16-sp b{margin-top:22px;font-family:var(--titel);font-weight:700;letter-spacing:.24em;padding-left:.24em;text-transform:uppercase;font-size:1.1rem;color:#fff}
+.a16 .a16-sp span{margin-top:8px;font-size:14px;line-height:1.5;max-width:24ch}
+.a16 .a16-pf{margin-top:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--l);display:grid;place-items:center;transition:transform .5s var(--e3),border-color .3s}
+.a16 .a16-pf svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6}
+.a16 .a16-sp:hover .a16-pf{transform:rotate(45deg);border-color:currentColor}
+.a16 .a16-wege{padding-top:clamp(40px,4vw,60px)}
+
+@media (max-width:760px){
+  .a16 .a16-in{grid-template-columns:1fr 1fr;row-gap:30px}.a16 .a16-mitte{grid-column:1/-1;order:-1}.a16 .a16-sp{padding:24px 10px}.a16 .a16-l{border-right:1px solid var(--l)}.a16 .a16-r{border-left:0}.a16 .a16-sp span{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.fa *{animation:none!important;transition:none!important}}
