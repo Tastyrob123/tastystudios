@@ -47,6 +47,9 @@
   .s-wzg .pn-gruss,.s-wzg .pn-haupt h4{max-width:600px}
   .s-wzg .d-hero,.s-wzg .d-band{overflow:visible}   /* Schrift der kleinen Seitenbilder steht ganz im Bild, der Rahmen muss sie nicht kappen */
 
+  /* ---------- «Ein Partner statt sechs»: kein loser Lichtfleck zwischen Gerät und Titel (Robert 12.11.2026) */
+  .fa-licht{display:none}
+
   /* ---------- KI-Abschnitt: Frage im Chat breiter, damit sie nicht in ein, zwei Wörtern je Zeile steht */
   .cg-q{max-width:88%}
 
