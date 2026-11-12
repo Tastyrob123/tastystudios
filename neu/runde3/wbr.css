@@ -2,8 +2,8 @@
 /* Seiten der Beigaben wie die Werkbank-Seiten (beigaben.py): Tapete von Ihr Haus, Kapitel im Wechsel Leinen und Nacht, Stücke auf Tabletts.
    Farben aus dem Markenbuch von Ihr Haus, Titel in Cormorant Garamond. Bewegung nur transform und opacity. */
 .wb{--serif:'Cormorant Garamond',Georgia,serif;--licht:#e2ae68;--messing:#a8844f;position:relative;padding:clamp(86px,9vw,150px) 0;overflow-x:clip}
-.wb.wb-nacht{background:#10151d url(/neu/runde3/bz/tapete-nacht.svg) 0 0/360px auto;color:#efe7da}
-.wb.wb-leinen{background:#efe7da url(/neu/runde3/bz/tapete-leinen.svg) 0 0/360px auto;color:#10151d}
+.wb.wb-nacht{background:#10151d url(../../neu/runde3/bz/tapete-nacht.svg) 0 0/360px auto;color:#efe7da}
+.wb.wb-leinen{background:#efe7da url(../../neu/runde3/bz/tapete-leinen.svg) 0 0/360px auto;color:#10151d}
 .wb.wb-tief{background:#0a0d13;color:#efe7da;padding:clamp(56px,6vw,90px) 0}
 .wb-in{max-width:var(--max);margin:0 auto;padding:0 var(--rand)}
 .wb figure{margin:0}

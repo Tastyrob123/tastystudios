@@ -1,12 +1,12 @@
 /* Die Hausregeln · Maloja · Markenbuch (Gerüst der Vorlage, Kleid von Maloja) */
 
-@font-face{font-family:'Tenor Sans';font-style:normal;font-weight:300 700;font-display:block;src:url('/neu/runde3/werkzeuge-mj/_haus/fonts/TenorSans.woff2') format('woff2')}
-@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:200 800;font-display:block;src:url('/neu/runde3/werkzeuge-mj/_haus/fonts/HankenGrotesk-latin.woff2') format('woff2')}
+@font-face{font-family:'Tenor Sans';font-style:normal;font-weight:300 700;font-display:block;src:url('../../../../../neu/runde3/werkzeuge-mj/_haus/fonts/TenorSans.woff2') format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:200 800;font-display:block;src:url('../../../../../neu/runde3/werkzeuge-mj/_haus/fonts/HankenGrotesk-latin.woff2') format('woff2')}
 @font-face{font-family:'Titel Ersatz';src:local('Georgia');size-adjust:92%}
 @property --ga{syntax:'<angle>';inherits:false;initial-value:0deg}
 
 /* Maloja · Farben (CHARAKTER.md 5, maloja.css) und die Töne der Räume */
-:root,[data-welt="a"]{--weiss:#fbf9f5;--papier:#f4f1eb;--creme:#e6dfd3;--sand:#ece6dc;--marine:#231a14;--d0:#1a130e;--d1:#231a14;--d2:#2e231b;--d3:#3a2d23;--blau:#3a2d23;--aare:#4a3a2f;--aare-h:#9AA0A8;--tinte:#2a2a2b;--gold:#b98a5a;--gold-h:#cba37b;--gold-h2:#ddc4a8;--gold-t:#9a6f45;--taupe:#9a6f45;--akzent:#9a6f45;--taupe-tief:#7f5a37;--rot:#d52b1e;--rahmen:#b98a5a;--tap-d:url(/neu/runde3/werkzeuge-mj/_haus/marke/tapete-nacht.svg);--tap-h:url(/neu/runde3/werkzeuge-mj/_haus/marke/tapete-leinen.svg)}
+:root,[data-welt="a"]{--weiss:#fbf9f5;--papier:#f4f1eb;--creme:#e6dfd3;--sand:#ece6dc;--marine:#231a14;--d0:#1a130e;--d1:#231a14;--d2:#2e231b;--d3:#3a2d23;--blau:#3a2d23;--aare:#4a3a2f;--aare-h:#9AA0A8;--tinte:#2a2a2b;--gold:#b98a5a;--gold-h:#cba37b;--gold-h2:#ddc4a8;--gold-t:#9a6f45;--taupe:#9a6f45;--akzent:#9a6f45;--taupe-tief:#7f5a37;--rot:#d52b1e;--rahmen:#b98a5a;--tap-d:url(/tastystudios/neu/runde3/werkzeuge-mj/_haus/marke/tapete-nacht.svg);--tap-h:url(/tastystudios/neu/runde3/werkzeuge-mj/_haus/marke/tapete-leinen.svg)}
 /* Die Töne der Räume: je Raum ein Ton für Dunkel (gold) und einer für Hell (tief), aus den Farben von Maloja */
 :root[data-abend="arve"],body[data-abend="arve"]{--gold:#b98a5a;--gold-h:#cba37b;--gold-h2:#ddc4a8;--gold-t:#9a6f45;--taupe:#9a6f45;--akzent:#9a6f45;--taupe-tief:#7f5a37}
 :root[data-abend="granit"],body[data-abend="granit"]{--gold:#a9a6a3;--gold-h:#c4c2bf;--gold-h2:#dfdedc;--gold-t:#2a2a2b;--taupe:#2a2a2b;--akzent:#2a2a2b;--taupe-tief:#2a2a2b}

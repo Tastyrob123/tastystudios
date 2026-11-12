@@ -1,6 +1,6 @@
 /* Bühne «Und alles, was dazugehört.» (bz.py): Fassung 1 «Auf dem Tisch», die echten Stücke von Ihr Haus auf nachtblauer Tapete.
    Grössen in Bühnen-Einheiten (cqh/cqw), damit Bildschirm und Handy-Band dieselbe Komposition zeigen. Bewegung nur transform und opacity. */
-.wv-pk .bz-buehne{--serif:'Cormorant Garamond',Georgia,serif;background:#10151d url(/neu/runde3/bz/tapete-nacht.svg) 0 0/360px auto;box-shadow:none}
+.wv-pk .bz-buehne{--serif:'Cormorant Garamond',Georgia,serif;background:#10151d url(../../neu/runde3/bz/tapete-nacht.svg) 0 0/360px auto;box-shadow:none}
 .wv-pk .bz-f.bz-buehne{border-radius:14px}
 .wv-pk .bz-buehne .st{position:absolute;inset:0;container-type:size;display:flex;align-items:center;justify-content:center;gap:0}
 .wv-pk .bz-buehne :where(.st img){position:static;inset:auto;width:auto;height:auto;transform:none;transition:none;max-width:none}
@@ -21,8 +21,8 @@
 .wv-pk .bz-buehne .o.f>.in{position:absolute;inset:0}
 
 .mk{display:block;background:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
-.mk-logo{-webkit-mask-image:url(/neu/runde3/bz/logo.svg);mask-image:url(/neu/runde3/bz/logo.svg);aspect-ratio:713/290}
-.mk-z{-webkit-mask-image:url(/neu/runde3/bz/zeichen.svg);mask-image:url(/neu/runde3/bz/zeichen.svg);aspect-ratio:1}
+.mk-logo{-webkit-mask-image:url(../../neu/runde3/bz/logo.svg);mask-image:url(../../neu/runde3/bz/logo.svg);aspect-ratio:713/290}
+.mk-z{-webkit-mask-image:url(../../neu/runde3/bz/zeichen.svg);mask-image:url(../../neu/runde3/bz/zeichen.svg);aspect-ratio:1}
 
 /* ---------- Feed: Handy aus Blender, Profil als Bildschirm, Abzüge ringsum ---------- */
 .wv-pk .bz-buehne .o.hy3{box-shadow:none;container-type:normal}

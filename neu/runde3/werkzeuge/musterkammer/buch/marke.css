@@ -1,12 +1,12 @@
 /* Die Hausregeln · Ihr Haus · Markenbuch (Gerüst der Vorlage, Kleid von Ihr Haus) */
 
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:block;src:url('/neu/runde3/werkzeuge/_haus/fonts/CormorantGaramond-500.woff2') format('woff2')}
-@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 600;font-display:block;src:url('/neu/runde3/werkzeuge/_haus/fonts/InstrumentSans-normal-400_600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:block;src:url('../../../../../neu/runde3/werkzeuge/_haus/fonts/CormorantGaramond-500.woff2') format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 600;font-display:block;src:url('../../../../../neu/runde3/werkzeuge/_haus/fonts/InstrumentSans-normal-400_600.woff2') format('woff2')}
 @font-face{font-family:'Titel Ersatz';src:local('Georgia');size-adjust:92%}
 @property --ga{syntax:'<angle>';inherits:false;initial-value:0deg}
 
 /* Ihr Haus · Farben (haus.py MARKE, ihrhaus.css) und die Töne der Räume */
-:root,[data-welt="a"]{--weiss:#FBF8F2;--papier:#F7F1E7;--creme:#EFE7DA;--sand:#E5DAC8;--marine:#10151D;--d0:#0B0F15;--d1:#10151D;--d2:#171D28;--d3:#1F2633;--blau:#1F2633;--aare:#2A3242;--aare-h:#9AA0A8;--tinte:#1C2029;--gold:#E2AE68;--gold-h:#EBC48F;--gold-h2:#F5E3C6;--gold-t:#A8844F;--taupe:#A8844F;--akzent:#8A6A3C;--taupe-tief:#8A6A3C;--rot:#8C4B34;--rahmen:#A8844F;--tap-d:url(/neu/runde3/werkzeuge/_haus/marke/tapete-nacht.svg);--tap-h:url(/neu/runde3/werkzeuge/_haus/marke/tapete-leinen.svg)}
+:root,[data-welt="a"]{--weiss:#FBF8F2;--papier:#F7F1E7;--creme:#EFE7DA;--sand:#E5DAC8;--marine:#10151D;--d0:#0B0F15;--d1:#10151D;--d2:#171D28;--d3:#1F2633;--blau:#1F2633;--aare:#2A3242;--aare-h:#9AA0A8;--tinte:#1C2029;--gold:#E2AE68;--gold-h:#EBC48F;--gold-h2:#F5E3C6;--gold-t:#A8844F;--taupe:#A8844F;--akzent:#8A6A3C;--taupe-tief:#8A6A3C;--rot:#8C4B34;--rahmen:#A8844F;--tap-d:url(/tastystudios/neu/runde3/werkzeuge/_haus/marke/tapete-nacht.svg);--tap-h:url(/tastystudios/neu/runde3/werkzeuge/_haus/marke/tapete-leinen.svg)}
 /* Die Töne der Räume (Platz der Abendfarben): gerechnet aus den Hausfarben, je Raum ein Ton für Dunkel (gold) und einer für Hell (tief) */
 :root[data-abend="licht"],body[data-abend="licht"]{--gold:#E2AE68;--gold-h:#ECCA9D;--gold-h2:#F6E7D2;--gold-t:#846946;--taupe:#846946;--akzent:#846946;--taupe-tief:#846946}
 :root[data-abend="messing"],body[data-abend="messing"]{--gold:#A8844F;--gold-h:#C6AF8D;--gold-h2:#E5DACA;--gold-t:#826842;--taupe:#826842;--akzent:#826842;--taupe-tief:#826842}

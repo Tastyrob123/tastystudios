@@ -4,9 +4,9 @@
    Glanzkante, Fenster, Hochschweben federnd, Band zum Blättern, grosse Zahlen, Logo-Laufband. Bewegt wird nur transform und opacity,
    nativer Scroll, ein Element in Bewegung je Blick (CLAUDE.md Regel 55). Bilder blenden nie auf, sie steigen. */
 
-@font-face{font-family:'Antonio';src:url('/assets/fonts/Antonio-normal-100_700.woff2') format('woff2');font-weight:100 700;font-display:swap}
-@font-face{font-family:'Instrument Sans';src:url('/assets/fonts/InstrumentSans-normal-400_600.woff2') format('woff2');font-weight:400 600;font-display:swap}
-@font-face{font-family:'DM Mono';src:url('/assets/fonts/DMMono-normal-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Antonio';src:url('../../assets/fonts/Antonio-normal-100_700.woff2') format('woff2');font-weight:100 700;font-display:swap}
+@font-face{font-family:'Instrument Sans';src:url('../../assets/fonts/InstrumentSans-normal-400_600.woff2') format('woff2');font-weight:400 600;font-display:swap}
+@font-face{font-family:'DM Mono';src:url('../../assets/fonts/DMMono-normal-400.woff2') format('woff2');font-weight:400;font-display:swap}
 
 :root{
   --nacht:#111421;--navy:#1f213b;--schiefer:#1f212c;--knopf:#151929;--tief:#0c0e18;
@@ -190,7 +190,7 @@ ul,ol{list-style:none}
 /* Logo-Maske: einfarbiges Zeichen eines Hauses auf einer inneren Lage */
 .firma{display:block;position:relative;isolation:isolate;height:var(--e,30px);width:calc(var(--e,30px)*var(--w,3));opacity:.92}
 .firma::before{content:'';position:absolute;inset:0;background:currentColor;-webkit-mask:var(--m) left center/contain no-repeat;mask:var(--m) left center/contain no-repeat}
-.t{display:block;aspect-ratio:1744/1688;background:currentColor;-webkit-mask:url('/assets/t.svg') center/contain no-repeat;mask:url('/assets/t.svg') center/contain no-repeat}
+.t{display:block;aspect-ratio:1744/1688;background:currentColor;-webkit-mask:url('../../assets/t.svg') center/contain no-repeat;mask:url('../../assets/t.svg') center/contain no-repeat}
 
 /* ---------- Leiste: eine schmale Insel in der Mitte, Sprache links in der Ecke, Projekt rechts in der Ecke ---------- */
 .nav{position:fixed;z-index:60;top:22px;left:0;right:0;display:flex;justify-content:center;padding:0 var(--rand);pointer-events:none;transition:transform .6s var(--e2)}
@@ -270,7 +270,7 @@ ul,ol{list-style:none}
 .laufband.laeuft .laufband__zug{animation-play-state:running;will-change:transform}
 @media(hover:hover){.laufband:hover .laufband__zug{animation-play-state:paused}}
 .laufband li{flex:none;display:flex;align-items:center;gap:clamp(22px,2.6vw,44px);padding-right:clamp(22px,2.6vw,44px);font-family:var(--titel);font-weight:700;font-size:clamp(1.15rem,1.6vw,1.5rem);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
-.laufband li::after{content:'';width:15px;aspect-ratio:1744/1688;background:currentColor;opacity:.5;-webkit-mask:url('/assets/t.svg') center/contain no-repeat;mask:url('/assets/t.svg') center/contain no-repeat}
+.laufband li::after{content:'';width:15px;aspect-ratio:1744/1688;background:currentColor;opacity:.5;-webkit-mask:url('../../assets/t.svg') center/contain no-repeat;mask:url('../../assets/t.svg') center/contain no-repeat}
 .laufband__zeile{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(11,12,16,.55);padding-bottom:12px}
 .laufband--dunkel .laufband__zeile{color:var(--taupe)}
 .laufband--logos li{height:clamp(44px,5vw,68px);padding-right:clamp(50px,6vw,110px);gap:0}
@@ -503,7 +503,7 @@ ul,ol{list-style:none}
 .fuss__band.laeuft ul{animation-play-state:running;will-change:transform}
 .fuss__band li{flex:none;display:flex;align-items:center;gap:clamp(26px,3.4vw,60px);padding-right:clamp(26px,3.4vw,60px);font-family:var(--titel);font-weight:700;font-size:clamp(4.2rem,14vw,14.5rem);line-height:.95;text-transform:uppercase;color:var(--creme);white-space:nowrap}
 .fuss__band li:nth-child(even){color:transparent;-webkit-text-stroke:1.5px rgba(235,219,206,.55)}
-.fuss__band li::after{content:'';width:.42em;aspect-ratio:1744/1688;background:var(--creme);-webkit-mask:url('/assets/t.svg') center/contain no-repeat;mask:url('/assets/t.svg') center/contain no-repeat}
+.fuss__band li::after{content:'';width:.42em;aspect-ratio:1744/1688;background:var(--creme);-webkit-mask:url('../../assets/t.svg') center/contain no-repeat;mask:url('../../assets/t.svg') center/contain no-repeat}
 .fuss__mitte{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(20px,4vw,80px);align-items:center;max-width:var(--max);margin:0 auto;padding:clamp(10px,2vw,30px) var(--rand) 0}
 .fuss__wege a{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(14px,1.8vw,26px) 0;border-bottom:1px solid rgba(235,219,206,.2);font-family:var(--titel);font-weight:700;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1;letter-spacing:.012em;text-transform:uppercase;color:#fff}
 .fuss__wege a:first-child{border-top:1px solid rgba(235,219,206,.2)}
@@ -588,14 +588,14 @@ html.warte body{visibility:hidden}
 .welten .kachel__n small{white-space:normal}
 
 /* Logo-Masken der Häuser: Pfad relativ zur CSS-Datei, damit er unter jeder Adresse stimmt */
-.firma--logo-carlton{--m:url(/assets/img/logo-carlton.png)}
-.firma--logo-doldenhorn{--m:url(/assets/img/logo-doldenhorn.png)}
-.firma--logo-gasterntal{--m:url(/assets/img/logo-gasterntal.png)}
-.firma--logo-gbr{--m:url(/assets/img/logo-gbr.png)}
-.firma--logo-ruedihus{--m:url(/assets/img/logo-ruedihus.png)}
-.firma--logo-saltsilver{--m:url(/assets/img/logo-saltsilver.png)}
-.firma--logo-seiler{--m:url(/assets/img/logo-seiler.png)}
-.firma--logo-txtme{--m:url(/assets/img/logo-txtme.png)}
+.firma--logo-carlton{--m:url(/tastystudios/assets/img/logo-carlton.png)}
+.firma--logo-doldenhorn{--m:url(/tastystudios/assets/img/logo-doldenhorn.png)}
+.firma--logo-gasterntal{--m:url(/tastystudios/assets/img/logo-gasterntal.png)}
+.firma--logo-gbr{--m:url(/tastystudios/assets/img/logo-gbr.png)}
+.firma--logo-ruedihus{--m:url(/tastystudios/assets/img/logo-ruedihus.png)}
+.firma--logo-saltsilver{--m:url(/tastystudios/assets/img/logo-saltsilver.png)}
+.firma--logo-seiler{--m:url(/tastystudios/assets/img/logo-seiler.png)}
+.firma--logo-txtme{--m:url(/tastystudios/assets/img/logo-txtme.png)}
 .ki__zwei .lauf p{font-size:clamp(17px,1.45vw,21px)}
 
 /* ---------- Konzept-Fassung 01.11.2026: Bewegung statt Bildmaterial ---------- */
@@ -733,7 +733,7 @@ html.warte body{visibility:hidden}
 .welten3{position:relative;aspect-ratio:470/262;width:min(100%,520px);justify-self:end;margin:0;padding:0;list-style:none}
 .welten3 li{position:absolute;width:44.6%}
 .welten3 li:nth-child(1){left:0;top:0}.welten3 li:nth-child(2){left:27.6%;top:31.5%;z-index:2}.welten3 li:nth-child(3){left:55.2%;top:0}
-.welten3 a{position:relative;display:block;aspect-ratio:640/553;color:#fff;background:url(/assets/eigen/welt-block.webp) center/100% 100% no-repeat;text-shadow:0 1px 2px rgba(0,0,0,.9);pointer-events:none;transition:transform .6s var(--e1)}
+.welten3 a{position:relative;display:block;aspect-ratio:640/553;color:#fff;background:url(../../assets/eigen/welt-block.webp) center/100% 100% no-repeat;text-shadow:0 1px 2px rgba(0,0,0,.9);pointer-events:none;transition:transform .6s var(--e1)}
 .welten3 a::before{content:"";position:absolute;inset:0;pointer-events:auto;clip-path:polygon(30% 4%,70% 4%,92% 37%,92% 48%,72% 86%,27% 86%,9% 48%,9% 37%)}
 .welten3 a:hover{transform:translateY(-5px)}
 .welten3 i{position:absolute;left:0;right:0;top:27%;text-align:center;font-style:normal;font-family:var(--mono);font-size:clamp(9px,.75vw,11px);letter-spacing:.2em;color:#dccdb6}

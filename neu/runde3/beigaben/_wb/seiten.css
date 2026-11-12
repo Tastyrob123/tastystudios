@@ -1,6 +1,6 @@
 /* Unterseiten der Werkbank (Drucksachen, Kofferetiketten, Unterlagen, Material). Liegt über werkbank.css. */
 .leiste--sofort{animation-delay:.5s}
-.sk{position:relative;padding:clamp(128px,15vh,180px) var(--rand) calc(clamp(56px,7vw,110px) + var(--rund));background:var(--nacht) url(/neu/runde3/beigaben/tapete-nacht.svg) 0 0/360px auto;overflow:hidden;--vz:350ms}
+.sk{position:relative;padding:clamp(128px,15vh,180px) var(--rand) calc(clamp(56px,7vw,110px) + var(--rund));background:var(--nacht) url(../../../../neu/runde3/beigaben/tapete-nacht.svg) 0 0/360px auto;overflow:hidden;--vz:350ms}
 .sk .in{display:grid;gap:clamp(34px,5vw,80px);align-items:center}
 @media(min-width:1040px){.sk .in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
 .sk h1{font-size:clamp(2.5rem,4.9vw,5.2rem)}

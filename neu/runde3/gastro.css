@@ -1,6 +1,6 @@
 /* Restaurant-Fassung der Startseite (gastro.py, Robert 04.11.2026). Beispiel ist das Restaurant Maloja: seine Schrift (Tenor Sans),
    seine Farben (Schnee, Arvenholz, Granit, Nussbaum), seine Bilder. Dazu der Beitrag für den Feed in der sechsten Kachel der Werkzeuge. */
-@font-face{font-family:'Tenor Sans';font-weight:400;font-display:swap;src:url(/neu/runde3/fonts/TenorSans.woff2) format('woff2')}
+@font-face{font-family:'Tenor Sans';font-weight:400;font-display:swap;src:url(../../neu/runde3/fonts/TenorSans.woff2) format('woff2')}
 
 /* die Welt des Beispiels: Farben und Schrift von Maloja statt «Ihr Haus» */
 .ih,.ihw,.pn,.ks,.ihs{--ih-nacht:#231a14;--ih-nacht2:#2e231b;--ih-stein:#9a6f45;--ih-licht:#c9a476;--ih-leinen:#f4f1eb;--ih-messing:#b98a5a;--ih-serif:'Tenor Sans',Optima,sans-serif}
