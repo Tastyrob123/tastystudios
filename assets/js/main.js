@@ -218,6 +218,7 @@
     'branding': ['Mein Branding entdecken', 'Wir möchten sehen, wie Sie das Branding für unser Haus entwickeln würden.'],
     'ki-check': ['Mein KI-Check', 'Wir möchten wissen, wie ChatGPT und andere KIs unser Haus heute finden und beschreiben.']
   };
+  if (window.TastySprache && TastySprache.en && TastySprache.chat && TastySprache.chat.anliegen) ANLIEGEN = TastySprache.chat.anliegen;   /* Englisch, 22.11.2026 */
   var anl = ANLIEGEN[(/[?&]anliegen=([a-z-]+)/.exec(location.search) || [])[1]];
   if (anl) alle('form.form').forEach(function (f) {
     f.setAttribute('data-betreff', anl[0]);
@@ -237,7 +238,7 @@
       if (laeuft) return;
       var w = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
       var wahl = alle('.taste[aria-pressed="true"]', f).map(function (b) { return b.textContent.trim(); });
-      var L = f.getAttribute('data-l') === 'de';
+      var L = f.getAttribute('data-l') === 'de' && !(window.TastySprache && TastySprache.en);
       var betreff = f.getAttribute('data-betreff') || 'Tasty Studios';
       function perMail() {
         var z = [(L ? 'Haus oder Marke: ' : 'Property or brand: ') + w('property'), 'Website: ' + w('website'), (L ? 'Was soll sich ändern: ' : 'What to change: ') + wahl.join(', '), '', w('text'), '', w('name'), w('mail')];

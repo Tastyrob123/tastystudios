@@ -588,14 +588,14 @@ html.warte body{visibility:hidden}
 .welten .kachel__n small{white-space:normal}
 
 /* Logo-Masken der Häuser: Pfad relativ zur CSS-Datei, damit er unter jeder Adresse stimmt */
-.firma--logo-carlton{--m:url(/tastystudios/assets/img/logo-carlton.png)}
-.firma--logo-doldenhorn{--m:url(/tastystudios/assets/img/logo-doldenhorn.png)}
-.firma--logo-gasterntal{--m:url(/tastystudios/assets/img/logo-gasterntal.png)}
-.firma--logo-gbr{--m:url(/tastystudios/assets/img/logo-gbr.png)}
-.firma--logo-ruedihus{--m:url(/tastystudios/assets/img/logo-ruedihus.png)}
-.firma--logo-saltsilver{--m:url(/tastystudios/assets/img/logo-saltsilver.png)}
-.firma--logo-seiler{--m:url(/tastystudios/assets/img/logo-seiler.png)}
-.firma--logo-txtme{--m:url(/tastystudios/assets/img/logo-txtme.png)}
+.firma--logo-carlton{--m:url(../../assets/img/logo-carlton.png)}
+.firma--logo-doldenhorn{--m:url(../../assets/img/logo-doldenhorn.png)}
+.firma--logo-gasterntal{--m:url(../../assets/img/logo-gasterntal.png)}
+.firma--logo-gbr{--m:url(../../assets/img/logo-gbr.png)}
+.firma--logo-ruedihus{--m:url(../../assets/img/logo-ruedihus.png)}
+.firma--logo-saltsilver{--m:url(../../assets/img/logo-saltsilver.png)}
+.firma--logo-seiler{--m:url(../../assets/img/logo-seiler.png)}
+.firma--logo-txtme{--m:url(../../assets/img/logo-txtme.png)}
 .ki__zwei .lauf p{font-size:clamp(17px,1.45vw,21px)}
 
 /* ---------- Konzept-Fassung 01.11.2026: Bewegung statt Bildmaterial ---------- */

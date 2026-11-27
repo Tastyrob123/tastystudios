@@ -72,6 +72,17 @@
   var OHNE = 'Dazu habe ich hier keine hinterlegte Antwort. Schreiben Sie uns gern direkt an ' + MAIL + ', wir antworten persönlich.';
   var KARTEN = [['Was Sie bekommen', 'Ein Partner statt sechs', 'leistung', 'k-empfang-900.webp'], ['Die Werkzeuge', 'Ihr Team pflegt selbst', 'werkzeuge', 'k-kn-bildschirm-900.webp'],
                 ['Der Ablauf', 'Vier Schritte bis zum Start', 'ablauf', 'k-kn-plan-900.webp'], ['Das Team', 'Anna Llorens, Robert Reff', 'team', 'k-studio-900.webp']];
+  /* Englisch (Robert 22.11.2026): Antwortbuch aus /assets/js/sprache-en.js, deutsche Suchwörter bleiben dazu */
+  var EN = window.TastySprache && TastySprache.en && TastySprache.chat;
+  if (EN) {
+    var gw = document.documentElement.getAttribute('data-welt') === 'gastro';
+    BUCH.forEach(function (x) {
+      var b = EN.buch[x.k] || {}, g = (gw && EN.gastro[x.k]) || {};
+      x.f = g.f || b.f || x.f; x.a = (g.a || b.a || x.a).replace(/\{MAIL\}/g, MAIL); x.s = x.s.concat(g.s || b.s || []);
+    });
+    OHNE = EN.ohne.replace(/\{MAIL\}/g, MAIL);
+    KARTEN.forEach(function (k, i) { if (EN.karten[i]) { k[0] = EN.karten[i][0]; k[1] = EN.karten[i][1]; } });
+  }
 
   var ZEICHEN = '<span class="t" aria-hidden="true"></span>';
   var KREUZ = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg>';

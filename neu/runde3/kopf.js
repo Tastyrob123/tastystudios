@@ -70,7 +70,8 @@
   var w = d.getAttribute('data-welt'), as = wa.querySelectorAll('.wahl__k');
   for (var i = 0; i < as.length; i++) (function (a) {
     var x = a.getAttribute('data-welt');
-    a.setAttribute('href', './' + (x === 'gastro' ? g : h) + location.hash);
+    var z = x === 'gastro' ? g : h; if (z === '01.html') z = '';   /* Startseite Hotel liegt an der Wurzel, 01.html gibt es nicht (22.11.2026) */
+    a.setAttribute('href', './' + z + location.hash);
     if (x === w) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     a.addEventListener('click', function () { try { localStorage.setItem('tasty-welt', x); } catch (e) {} });
   })(as[i]);
