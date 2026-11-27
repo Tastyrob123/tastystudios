@@ -1,5 +1,13 @@
 /* Wörterbuch Deutsch → Englisch (22.11.2026). Schlüssel = Text der Seite, Leerraum zusammengezogen. Gebaut von buch.py. */
 TastySprache.buch={
+"Für Ihr Haus entworfen": "Designed for your house",
+"Für Sie entworfen": "Designed for you",
+"Als echter Text lesbar": "Readable as real text",
+"Strategie und Gestaltung.": "Strategy and design.",
+"Technik und Team.": "Technology and team.",
+"Strategie, Gestaltung, Technik und Team · Zur Startseite": "Strategy, design, technology and team · To the home page",
+"Ankunft, Tisch, Anlass und Allergien stehen in einer Nachricht.": "Arrival, table, occasion and allergies are in one message.",
+"Uhrzeit, Platz, Anlass und Allergien stehen in einer Nachricht.": "Time, seat, occasion and allergies are in one message.",
 "Tasty Studios · Fassung 01 · Runde 3": "Tasty Studios · Version 01 · Round 3",
 "Für wen": "For whom",
 "Werkzeuge": "Tools",

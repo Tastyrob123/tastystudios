@@ -1,0 +1,104 @@
+/* Korrekturen 27.11.2026 (Prüfskript oberflaeche_pruefen.js). Wird als letzte Datei geladen. */
+/* 17: Beschriftungen, Knöpfe, Leiste mindestens 13 px */
+html body .ar-auf__t > p.r-mono,
+html body .ar-fam__label > a.ar-link,
+html body .ar-fam__label > span,
+html body .ar-gas__kopf > p.r-mono,
+html body .ar-haus__t > a.ar-link,
+html body .ar-ort > b,
+html body .ar-ort > span,
+html body .ar-paar__t > a,
+html body .ar-pi__e > span.ar-pi__ort,
+html body .ar-stud__l > p.r-mono,
+html body .ar-stud__teil > b,
+html body .ar-zaehl__e > span,
+html body .bz-w > i,
+html body .c-n > b,
+html body .c-n > span,
+html body .eb-n > p.vx-code,
+html body .ee-seite > p.ee-fuss,
+html body .ee-seite > small.ee-etik,
+html body .fa > p.fa-zahl,
+html body .fa-zahl > span,
+html body .fb-chip > small,
+html body .fb-etik > span,
+html body .feld > span,
+html body .fin-inhalt > p.r-mono,
+html body .fin-team > span.r-mono,
+html body .fr-k > small.st-frb__fn,
+html body .ft-wege > a,
+html body .fz05-faden > small.fz05-l,
+html body .fz05-zl > dt,
+html body .glanz > span,
+html body .hbl-txt > small,
+html body .hbm-kopf > p.r-mono,
+html body .hbm-teil > p.r-mono.hbm-unter,
+html body .hx12-m > p.r-mono,
+html body .kk > span,
+html body .kn > span,
+html body .lauf > p.mono,
+html body .nl-feld > span,
+html body .nl-t > p.r-mono,
+html body .pz-eins > small,
+html body .pz-n > span,
+html body .r-mono > span,
+html body .rl > i,
+html body .s-ang__weg > p.r-mono.s-ang__wt,
+html body .s-hbl__in > p.r-mono.hbl-zus-t,
+html body .sn-h > em,
+html body .sn-pp__t > small,
+html body .sprache > button,
+html body .sprache > i,
+html body .st-auf__t > p.r-mono,
+html body .st-etik > span,
+html body .sv-i > dt,
+html body .tasten > button.taste,
+html body .tm-wir__kopf > p.r-mono,
+html body .ul-t > small,
+html body .v02-l > small.kv-etikett,
+html body .v02-r > small.kv-etikett,
+html body .v1-t > p.r-mono,
+html body .vb-fuss > span,
+html body .vx-code > b.vx-p,
+html body .vx-code > i.vx-k,
+html body .vx-code > span.vx-s,
+html body .vx-code > u.vx-v,
+html body .wahl > a.wahl__k,
+html body .wl-ihr > small,
+html body .wv-bild > span,
+html body .wv-in > p.wv-demo.r-mono,
+html body .wz-auf__t > p.r-mono,
+html body .r-mono,
+html body .st-frb__fn,
+html body .sn-h li em,
+html body .hbm-lb{font-size:13px!important}
+/* 21: Titel-Zeilen hoch genug für die Buchstaben (Antonio, Umlaute) */
+html body.r .r-t1,html[data-welt] body.r .r-t1{line-height:1.1}
+@media (max-width:860px){html body.r .r-t2,html[data-welt] body.r .r-t2{line-height:1.1}}
+/* 21: Schatten der Fenster-Sätze bleibt innerhalb der Zeilenmaske */
+html body.r .fen__satz{text-shadow:0 .03em .12em rgba(3,6,14,.6)}
+html body.r .fen__satz .z{padding-left:.2em;padding-right:.2em;margin-left:-.2em;margin-right:-.2em}
+/* 35: Knopf «Zu den Werkzeugen» endet auf Höhe der rechten Kartenspalte */
+@media (min-width:861px){html body.r .wzo-kn{margin-bottom:0}}
+/* 37: Chat-Titel in der Seitenleiste umbrechen statt abschneiden */
+html body .gd-seite span{white-space:normal;text-overflow:clip;line-height:1.3}
+/* 21: Abstand zwischen «Wie wir arbeiten» und den Schritten (Wert aus st.css), damit «Verstehen» beim Einflug nicht an die Zeile stösst */
+html body.r .s-ang__wt{margin-bottom:26px}
+/* 21: Zeilenmaske der Haltungs-Sätze mit Luft für die Buchstaben, Startlage weiter unten, damit vor dem Auftritt nichts hervorlugt */
+html body .hbm-z{padding:.2em 0 .26em;margin:-.2em 0 -.26em}
+html body .hbm-z>span{transform:translateY(140%)}
+html body .hbm.los .hbm-z>span{transform:none}
+/* 21: Bildzeile in der kleinen Beispielseite mit feinerem Schatten */
+html body .ihs-zt{text-shadow:0 1px 4px rgba(0,0,0,.7)}
+/* 20: Frage im Chat am Handy breiter */
+@media (max-width:860px){html body .cg-q{max-width:100%}}
+/* 37: Etiketten im Haltungs-Bild mit 13 px, enger gesperrt, damit sie in ihr Feld passen */
+html body .hbm-lb{letter-spacing:.05em}
+/* 21: Titel «Strategie und Gestaltung.» mit Luft für die Buchstaben */
+html body.r .s-ang__t .r-t2{line-height:1.1}
+/* 37: Dateiname und Adresszeile am Handy ganz lesbar */
+@media (max-width:860px){
+html body .s-wzg .c-tag{white-space:normal;overflow-wrap:anywhere;line-height:1.3}
+html body .br-url{width:94%;padding:5px 8px}
+html body .br-url em{font-size:11px}
+}
